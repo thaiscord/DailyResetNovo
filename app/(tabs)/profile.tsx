@@ -620,6 +620,7 @@ export default function ProfileScreen() {
   const [editing, setEditing]       = useState(false);
   const [showPrivacy, setShowPrivacy]     = useState(false);
   const [showTerms, setShowTerms]         = useState(false);
+  const [showResetModal, setShowResetModal] = useState(false);
   const [lang, setLangState]              = useState<Lang>(contextLang);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [showProfilePicker, setShowProfilePicker] = useState(false);
@@ -704,19 +705,18 @@ export default function ProfileScreen() {
   const saveName = async () => { await setItem(StorageKeys.USER_NAME, name); setEditing(false); };
 
   const handleReset = () => {
-    console.log('REAL RESET BUTTON PRESSED');
-    Alert.alert(t('profile.reset.title'), t('profile.reset.msg'), [
-      { text: t('profile.reset.cancel'), style: 'cancel' },
-      {
-        text: t('profile.reset.confirm'), style: 'destructive', onPress: async () => {
-          console.log('REAL CONFIRM RESET PRESSED');
-          await clearAllUserData();
-          if (Platform.OS !== 'web') {
-            router.replace('/splash');
-          }
-        },
-      },
-    ]);
+    console.log('RESET MODAL OPENED');
+    setShowResetModal(true);
+  };
+
+  const handleConfirmReset = async () => {
+    console.log('RESET CONFIRMED FROM CUSTOM MODAL');
+    setShowResetModal(false);
+    await clearAllUserData();
+    console.log('CLEAR ALL USER DATA FINISHED');
+    if (Platform.OS !== 'web') {
+      router.replace('/splash');
+    }
   };
 
   const { t } = useLanguage();
@@ -1019,6 +1019,40 @@ export default function ProfileScreen() {
           <Text style={styles.version}>{t('profile.version')}</Text>
         )}
       </ScrollView>
+
+      {/* ── Reset Confirmation Modal ────────────────────────────────────── */}
+      <Modal
+        visible={showResetModal}
+        animationType="fade"
+        transparent
+        onRequestClose={() => setShowResetModal(false)}
+      >
+        <View style={styles.resetModalOverlay}>
+          <View style={styles.resetModalCard}>
+            <View style={styles.resetModalIconWrap}>
+              <Ionicons name="trash-outline" size={24} color={Colors.danger} />
+            </View>
+            <Text style={styles.resetModalTitle}>{t('profile.reset.title')}</Text>
+            <Text style={styles.resetModalMsg}>{t('profile.reset.msg')}</Text>
+            <View style={styles.resetModalActions}>
+              <TouchableOpacity
+                style={styles.resetModalCancel}
+                onPress={() => setShowResetModal(false)}
+                activeOpacity={0.75}
+              >
+                <Text style={styles.resetModalCancelText}>{t('profile.reset.cancel')}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={styles.resetModalConfirm}
+                onPress={handleConfirmReset}
+                activeOpacity={0.75}
+              >
+                <Text style={styles.resetModalConfirmText}>{t('profile.reset.confirm')}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      </Modal>
 
       {/* ── Language Picker Modal ───────────────────────────────────────── */}
       <Modal
@@ -1518,6 +1552,73 @@ const styles = StyleSheet.create({
   rowLabelDanger: { color: Colors.danger },
   rowValue: { fontSize: Typography.sizes.sm, color: Colors.textMuted },
   version: { textAlign: 'center', fontSize: Typography.sizes.xs, color: Colors.textMuted, marginTop: Spacing.xxl },
+
+  // ── Reset Confirmation Modal ──────────────────────────────────────────────
+  resetModalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(20,16,8,0.6)',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: Spacing.xl,
+  },
+  resetModalCard: {
+    backgroundColor: Colors.card,
+    borderRadius: Radii.xxl,
+    padding: Spacing.xl,
+    alignItems: 'center',
+    width: '100%',
+    maxWidth: 360,
+    ...Shadows.cardStrong,
+  },
+  resetModalIconWrap: {
+    width: 52, height: 52, borderRadius: 26,
+    backgroundColor: 'rgba(224,64,64,0.1)',
+    alignItems: 'center', justifyContent: 'center',
+    marginBottom: Spacing.md,
+  },
+  resetModalTitle: {
+    fontSize: Typography.sizes.lg,
+    fontWeight: Typography.weights.bold,
+    color: Colors.textPrimary,
+    textAlign: 'center',
+    marginBottom: Spacing.sm,
+  },
+  resetModalMsg: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    textAlign: 'center',
+    lineHeight: 20,
+    marginBottom: Spacing.xl,
+  },
+  resetModalActions: {
+    flexDirection: 'row',
+    gap: Spacing.sm,
+    width: '100%',
+  },
+  resetModalCancel: {
+    flex: 1,
+    paddingVertical: Spacing.md,
+    borderRadius: Radii.lg,
+    backgroundColor: Colors.backgroundSecondary,
+    alignItems: 'center',
+  },
+  resetModalCancelText: {
+    fontSize: Typography.sizes.sm,
+    fontWeight: Typography.weights.semibold,
+    color: Colors.textPrimary,
+  },
+  resetModalConfirm: {
+    flex: 1,
+    paddingVertical: Spacing.md,
+    borderRadius: Radii.lg,
+    backgroundColor: Colors.danger,
+    alignItems: 'center',
+  },
+  resetModalConfirmText: {
+    fontSize: Typography.sizes.sm,
+    fontWeight: Typography.weights.semibold,
+    color: '#FFFFFF',
+  },
 
   // ── Language Picker ───────────────────────────────────────────────────────
   langOverlay: {
