@@ -46,60 +46,58 @@ async function clearAllIndexedDB(): Promise<void> {
 }
 
 /**
- * Full nuclear reset — clears every persisted key including language and
- * notification settings. On web it wipes localStorage, sessionStorage,
- * AsyncStorage, IndexedDB, Cache API, cookies, and unregisters service workers
- * before reloading, so React state is fully re-initialized from scratch.
- * Use this from the "Clear my data" button in Profile.
+ * Full nuclear reset — clears every persisted storage layer.
+ * On web: wipes localStorage, sessionStorage, AsyncStorage, IndexedDB,
+ * Cache API, service workers, cookies, then hard-reloads with a cache-bust URL.
+ * On native: removes all named + dynamic keys then returns (caller navigates).
+ * This function is called directly from the "Clear my data" button in Profile.
  */
 export async function clearAllUserData(): Promise<void> {
   try {
     if (Platform.OS === 'web') {
-      // ── localStorage ──────────────────────────────────────────────────
-      try { console.log('Before reset localStorage', Object.keys(window.localStorage)); } catch { /* ignore */ }
+      console.log('FORCE HARD RESET CLICKED');
 
-      console.log('Clearing localStorage');
-      try { window.localStorage.clear(); } catch { /* ignore */ }
+      try { console.log('Before reset localStorage', Object.keys(window.localStorage)); } catch(e) { console.log(e); }
 
-      // ── sessionStorage ────────────────────────────────────────────────
-      console.log('Clearing sessionStorage');
-      try { window.sessionStorage.clear(); } catch { /* ignore */ }
+      try { localStorage.clear(); } catch(e) { console.log(e); }
 
-      // ── AsyncStorage (maps to localStorage/IndexedDB on web) ──────────
-      console.log('Clearing AsyncStorage');
-      try { await AsyncStorage.clear(); } catch { /* ignore */ }
+      try { sessionStorage.clear(); } catch(e) { console.log(e); }
 
-      // ── IndexedDB ─────────────────────────────────────────────────────
-      console.log('Clearing IndexedDB');
-      await clearAllIndexedDB();
+      try { await AsyncStorage.clear(); } catch(e) { console.log(e); }
 
-      // ── Cache API ─────────────────────────────────────────────────────
-      console.log('Clearing caches');
+      try {
+        if (window.indexedDB && window.indexedDB.databases) {
+          const dbs = await indexedDB.databases();
+          await Promise.all(
+            dbs.map(db => db.name
+              ? new Promise<void>(resolve => {
+                  const req = indexedDB.deleteDatabase(db.name!);
+                  req.onsuccess = () => resolve();
+                  req.onerror = () => resolve();
+                  req.onblocked = () => resolve();
+                })
+              : Promise.resolve()
+            )
+          );
+        }
+      } catch(e) { console.log(e); }
+
       try {
         if ('caches' in window) {
-          const cacheNames = await caches.keys();
-          await Promise.all(cacheNames.map(name => caches.delete(name)));
+          const keys = await caches.keys();
+          await Promise.all(keys.map(key => caches.delete(key)));
         }
-      } catch { /* ignore */ }
+      } catch(e) { console.log(e); }
 
-      // ── Service Workers ───────────────────────────────────────────────
-      console.log('Unregistering service workers');
       try {
         if ('serviceWorker' in navigator) {
-          const registrations = await navigator.serviceWorker.getRegistrations();
-          await Promise.all(registrations.map(r => r.unregister()));
+          const regs = await navigator.serviceWorker.getRegistrations();
+          await Promise.all(regs.map(reg => reg.unregister()));
         }
-      } catch { /* ignore */ }
-
-      // ── Cookies ───────────────────────────────────────────────────────
-      try {
-        document.cookie.split(';').forEach(c => {
-          const name = c.split('=')[0].trim();
-          document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
-        });
-      } catch { /* ignore */ }
+      } catch(e) { console.log(e); }
 
       console.log('RESET FINISHED - RELOADING');
+      window.location.replace('/?reset=' + Date.now());
     } else {
       // ── native: remove all named + dynamic keys ───────────────────────
       const allNamedKeys = Object.values(StorageKeys);

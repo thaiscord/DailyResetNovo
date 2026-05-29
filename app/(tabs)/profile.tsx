@@ -708,13 +708,12 @@ export default function ProfileScreen() {
       { text: t('profile.reset.cancel'), style: 'cancel' },
       {
         text: t('profile.reset.confirm'), style: 'destructive', onPress: async () => {
-          console.log('DELETE DATA BUTTON CLICKED - REAL BUTTON');
           await clearAllUserData();
-          if (Platform.OS === 'web') {
-            window.location.replace('/');
-          } else {
+          if (Platform.OS !== 'web') {
             router.replace('/splash');
           }
+          // web: clearAllUserData() logs "FORCE HARD RESET CLICKED" and calls
+          // window.location.replace("/?reset=" + Date.now()) internally
         },
       },
     ]);
