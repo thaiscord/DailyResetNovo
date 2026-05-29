@@ -1,0 +1,643 @@
+{
+  "theme": "Courage",
+  "user_state": "Afraid. Avoidant. Knows what they need to do but is paralyzed. Confusing fear with inability.",
+  "core_need": "Permission to act imperfectly.",
+  "emotional_tone": "Warm. Honest. Quietly bold.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "courage_arr_1",
+        "heading": "You are afraid. That is honest.",
+        "subheading": "Fear and forward movement are not opposites. They can exist at the same time."
+      },
+      {
+        "id": "courage_arr_2",
+        "heading": "Ready is not a feeling.",
+        "subheading": "It is a choice. You can choose it before the feeling arrives."
+      },
+      {
+        "id": "courage_arr_3",
+        "heading": "The fear is real.",
+        "subheading": "So is your ability to move alongside it. Both are true."
+      },
+      {
+        "id": "courage_arr_4",
+        "heading": "You have waited to feel ready.",
+        "subheading": "It hasn't come. It might not. Go anyway."
+      },
+      {
+        "id": "courage_arr_5",
+        "heading": "Imperfect and done.",
+        "subheading": "That is always more useful than perfect and waiting."
+      },
+      {
+        "id": "courage_arr_6",
+        "heading": "The avoidance is costing you.",
+        "subheading": "Not because you are weak. Because the fear has been making decisions."
+      },
+      {
+        "id": "courage_arr_7",
+        "heading": "One step.",
+        "subheading": "Not the whole thing. Not with certainty. Just one step, with the fear alongside."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "courage_rel_1",
+        "heading": "What are you afraid of?",
+        "subheading": "Name it directly. The vague fear is harder to move through than the named one.",
+        "field_placeholder": "What specifically are you afraid will happen..."
+      },
+      {
+        "id": "courage_rel_2",
+        "heading": "What are you avoiding?",
+        "subheading": "Not why. Just what. Name the thing itself.",
+        "field_placeholder": "The thing you have been circling instead of doing..."
+      },
+      {
+        "id": "courage_rel_3",
+        "heading": "What is the fear asking you to protect?",
+        "subheading": "It is guarding something. What does it think is at stake?",
+        "field_placeholder": "What is the fear trying to protect you from..."
+      },
+      {
+        "id": "courage_rel_4",
+        "heading": "What would you do if you were not afraid?",
+        "subheading": "Write it. That is the direction.",
+        "field_placeholder": "Without the fear, what would your next step be..."
+      },
+      {
+        "id": "courage_rel_5",
+        "heading": "What has the avoidance already cost you?",
+        "subheading": "Not blame. Just honesty.",
+        "field_placeholder": "What has waiting cost you so far..."
+      },
+      {
+        "id": "courage_rel_6",
+        "heading": "The worst version you are imagining.",
+        "subheading": "Write it down. Then notice how often that exact thing has happened before.",
+        "field_placeholder": "Describe the worst-case scenario your mind is running..."
+      },
+      {
+        "id": "courage_rel_7",
+        "heading": "What do you already know you need to do?",
+        "subheading": "You know. Name it here.",
+        "field_placeholder": "The thing you already know, that you are still not doing..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "courage_br_1",
+        "heading": "Breathe like someone who has decided.",
+        "instruction": "Slow inhale. Hold briefly. Long exhale. The body follows the breath into steadiness."
+      },
+      {
+        "id": "courage_br_2",
+        "heading": "The breath before the step.",
+        "instruction": "One full inhale. One full exhale. Then move. Just that."
+      },
+      {
+        "id": "courage_br_3",
+        "heading": "Steady.",
+        "instruction": "Four counts in. Four hold. Four out. Repeat. Courage lives in steady breathing."
+      },
+      {
+        "id": "courage_br_4",
+        "heading": "Breathe through the resistance.",
+        "instruction": "The body tightens before action. Breathe into the tightness. Three times."
+      },
+      {
+        "id": "courage_br_5",
+        "heading": "Ground before you go.",
+        "instruction": "Feel your feet on the floor. Breathe once, fully. Then take the first step."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "courage_mom_1",
+        "heading": "What is the one thing you have been avoiding?"
+      },
+      {
+        "id": "courage_mom_2",
+        "heading": "What is the smallest version of the step you are afraid of?"
+      },
+      {
+        "id": "courage_mom_3",
+        "heading": "What would imperfect action look like today?"
+      },
+      {
+        "id": "courage_mom_4",
+        "heading": "What is the fear protecting? Is that worth the cost?"
+      },
+      {
+        "id": "courage_mom_5",
+        "heading": "What is one thing you can do today that your fear says not to?"
+      },
+      {
+        "id": "courage_mom_6",
+        "heading": "What would you do if you knew the outcome would be okay?"
+      },
+      {
+        "id": "courage_mom_7",
+        "heading": "The thing you already know you need to do. Name it."
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "courage_comp_1",
+        "heading": "You moved alongside the fear.",
+        "subheading": "That is not the absence of courage. That is exactly what it is."
+      },
+      {
+        "id": "courage_comp_2",
+        "heading": "Imperfect and done.",
+        "subheading": "You did the thing. The fear was there. You went anyway."
+      },
+      {
+        "id": "courage_comp_3",
+        "heading": "You chose forward.",
+        "subheading": "Not because it was easy. Because you decided it mattered more."
+      },
+      {
+        "id": "courage_comp_4",
+        "heading": "The step happened.",
+        "subheading": "Small or large. Perfect or rough. It happened. That counts."
+      },
+      {
+        "id": "courage_comp_5",
+        "heading": "You were afraid.",
+        "subheading": "And you did it anyway. Remember that the next time you think fear means stop."
+      },
+      {
+        "id": "courage_comp_6",
+        "heading": "Ready never arrived.",
+        "subheading": "You went without it. That is the definition of the thing."
+      },
+      {
+        "id": "courage_comp_7",
+        "heading": "You showed up to the thing.",
+        "subheading": "Not to the version where everything went perfectly. To the real thing."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "courage_hc_1",
+      "headline": "Ready is a decision, not a feeling.",
+      "subheadline": "You can decide before the feeling arrives."
+    },
+    {
+      "id": "courage_hc_2",
+      "headline": "The fear is real and so is the next step.",
+      "subheadline": "Both are true at the same time."
+    },
+    {
+      "id": "courage_hc_3",
+      "headline": "Waiting to feel ready is its own kind of loss.",
+      "subheadline": "The cost of not acting is also a cost."
+    },
+    {
+      "id": "courage_hc_4",
+      "headline": "Imperfect action is always better than perfect waiting.",
+      "subheadline": "The gap between them is where avoidance lives."
+    },
+    {
+      "id": "courage_hc_5",
+      "headline": "You are not avoiding because you are weak.",
+      "subheadline": "You are avoiding because the fear is making decisions."
+    },
+    {
+      "id": "courage_hc_6",
+      "headline": "The smallest step is still a step.",
+      "subheadline": "Direction matters more than distance."
+    },
+    {
+      "id": "courage_hc_7",
+      "headline": "You already know what to do.",
+      "subheadline": "The knowing is not the problem. The starting is."
+    },
+    {
+      "id": "courage_hc_8",
+      "headline": "Courage is not the absence of fear.",
+      "subheadline": "It is moving alongside it. That is what you are doing."
+    },
+    {
+      "id": "courage_hc_9",
+      "headline": "The thing you're avoiding knows you're nearby.",
+      "subheadline": "You've been circling it. Today you can step closer."
+    },
+    {
+      "id": "courage_hc_10",
+      "headline": "The outcome is not the only thing.",
+      "subheadline": "The act of choosing is also something."
+    },
+    {
+      "id": "courage_hc_11",
+      "headline": "Fear and forward movement can coexist.",
+      "subheadline": "You don't have to wait for the fear to leave."
+    },
+    {
+      "id": "courage_hc_12",
+      "headline": "Done badly beats not done.",
+      "subheadline": "Every time. The perfectionism is not protecting you."
+    },
+    {
+      "id": "courage_hc_13",
+      "headline": "One step is not the whole thing.",
+      "subheadline": "It is just the step. That is all that is being asked."
+    },
+    {
+      "id": "courage_hc_14",
+      "headline": "The fear has been running the schedule.",
+      "subheadline": "Today you can take back one item on that schedule."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "courage_act_1",
+      "content": "Write down the one thing you have been avoiding. Just name it. No plan yet.",
+      "why": "Naming it brings it out of the imagination, where it is larger, into reality."
+    },
+    {
+      "id": "courage_act_2",
+      "content": "Do the first 5% of the avoided task. Nothing more.",
+      "why": "Starting is the barrier. The first step is always harder than the second."
+    },
+    {
+      "id": "courage_act_3",
+      "content": "Send the message, make the call, or write the email you have been delaying.",
+      "why": "Delayed communication costs more in anxiety than the discomfort of sending."
+    },
+    {
+      "id": "courage_act_4",
+      "content": "Write: 'What I am afraid of is ___. What I will do anyway is ___.'",
+      "why": "Holding both truths simultaneously is how you move through rather than around."
+    },
+    {
+      "id": "courage_act_5",
+      "content": "Tell one person about the thing you've been avoiding. Just the fact of avoiding it.",
+      "why": "Saying it aloud reduces the shame that reinforces avoidance."
+    },
+    {
+      "id": "courage_act_6",
+      "content": "Schedule the avoided thing in your calendar for today. Block the time.",
+      "why": "Intention without scheduling rarely becomes action. Make it an appointment."
+    },
+    {
+      "id": "courage_act_7",
+      "content": "Do the hard thing first. Before checking messages, email, or notifications.",
+      "why": "The avoided task grows when you face everything else first."
+    },
+    {
+      "id": "courage_act_8",
+      "content": "Write down the worst realistic outcome of taking the step. Then write: 'And I would survive that.'",
+      "why": "The imagined worst-case is almost always survivable. Making it concrete reduces its power."
+    },
+    {
+      "id": "courage_act_9",
+      "content": "Set a two-minute timer. Work on the feared task only until it ends.",
+      "why": "Two minutes is almost always enough to prove you can start."
+    },
+    {
+      "id": "courage_act_10",
+      "content": "Ask for help with the thing you have been trying to handle alone.",
+      "why": "Asking for help is a form of courage. Isolation reinforces avoidance."
+    },
+    {
+      "id": "courage_act_11",
+      "content": "Write down three times you did a hard thing without feeling ready first.",
+      "why": "Evidence of past courage is the most credible argument against the current fear."
+    },
+    {
+      "id": "courage_act_12",
+      "content": "Make the decision you have been delaying. Not the perfect one. The next one.",
+      "why": "A made decision, even an imperfect one, costs less than an unmade one."
+    },
+    {
+      "id": "courage_act_13",
+      "content": "Write one sentence about what you want. Not what you think is realistic. What you want.",
+      "why": "Fear often silences wanting. Naming it restores the direction."
+    },
+    {
+      "id": "courage_act_14",
+      "content": "Do one thing today that requires other people to see you.",
+      "why": "Visibility is often what avoidance is protecting against. Small doses build tolerance."
+    },
+    {
+      "id": "courage_act_15",
+      "content": "Identify the first objection your fear has to taking the step. Write it. Then question it.",
+      "why": "Fears state their case loudly. Examining the case reduces its authority."
+    },
+    {
+      "id": "courage_act_16",
+      "content": "Go to the place or open the thing you have been avoiding. Just arrive. Nothing more yet.",
+      "why": "Physical arrival changes the internal state. Presence is its own kind of progress."
+    },
+    {
+      "id": "courage_act_17",
+      "content": "Write a letter to yourself from one year from now, assuming you took the step.",
+      "why": "Future perspective reduces the weight the present moment is carrying."
+    },
+    {
+      "id": "courage_act_18",
+      "content": "Apologize for something you have been avoiding apologizing for.",
+      "why": "The dread of apologizing is almost always longer-lasting than the apology itself."
+    },
+    {
+      "id": "courage_act_19",
+      "content": "Raise your hand, your voice, or your idea in the next available moment.",
+      "why": "Small acts of visibility accumulate into the capacity for larger ones."
+    },
+    {
+      "id": "courage_act_20",
+      "content": "Write down what you actually think. About the hard thing. Your real opinion.",
+      "why": "Suppressing a real view costs energy and grows avoidance."
+    },
+    {
+      "id": "courage_act_21",
+      "content": "Say no to the thing you agreed to out of fear of disappointing someone.",
+      "why": "Fear-based yes is not generosity. Honest no is its own form of courage."
+    },
+    {
+      "id": "courage_act_22",
+      "content": "Start the project before it is perfect. Write the draft, submit the rough version.",
+      "why": "Perfectionism is avoidance with better branding."
+    },
+    {
+      "id": "courage_act_23",
+      "content": "Describe the fear in writing as if it were a character. Give it a voice. Then argue back.",
+      "why": "Externalizing the fear creates distance and makes its logic easier to examine."
+    },
+    {
+      "id": "courage_act_24",
+      "content": "Take the step you've been afraid of in a smaller context first.",
+      "why": "A smaller version of the feared thing proves the mechanism works before the stakes are high."
+    },
+    {
+      "id": "courage_act_25",
+      "content": "Tell the truth about something you have been softening.",
+      "why": "Chronic softening of truth builds the habit of self-suppression."
+    },
+    {
+      "id": "courage_act_26",
+      "content": "Publish, send, or share the thing you have been holding back.",
+      "why": "The barrier between done and sent is often only fear of being seen."
+    },
+    {
+      "id": "courage_act_27",
+      "content": "Set a boundary you have been afraid to set.",
+      "why": "Boundaries protect what matters. Fear of setting them gives away what matters."
+    },
+    {
+      "id": "courage_act_28",
+      "content": "Write what you would tell a friend who was facing exactly what you are facing.",
+      "why": "The counsel you give freely to others is usually what you need most."
+    },
+    {
+      "id": "courage_act_29",
+      "content": "Do the thing in a way you know is imperfect. Let imperfect be enough.",
+      "why": "Permission to be imperfect is the specific thing avoidance requires to end."
+    },
+    {
+      "id": "courage_act_30",
+      "content": "Commit out loud: 'I will do ___ today, even though I am afraid.'",
+      "why": "Spoken commitment activates accountability in a way that silent intention does not."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "courage_ref_1",
+      "content": "What are you most afraid of right now? Can you name it specifically?"
+    },
+    {
+      "id": "courage_ref_2",
+      "content": "What would you do today if you knew you could not fail?"
+    },
+    {
+      "id": "courage_ref_3",
+      "content": "What has avoidance been costing you? Quietly, over time?"
+    },
+    {
+      "id": "courage_ref_4",
+      "content": "When have you acted despite fear before? What happened?"
+    },
+    {
+      "id": "courage_ref_5",
+      "content": "What is the smallest version of the feared step you could take today?"
+    },
+    {
+      "id": "courage_ref_6",
+      "content": "What does your fear tell you will happen if you take the step?"
+    },
+    {
+      "id": "courage_ref_7",
+      "content": "What is the real thing you are protecting by staying where you are?"
+    },
+    {
+      "id": "courage_ref_8",
+      "content": "What would you tell someone you love who was facing exactly what you are facing?"
+    },
+    {
+      "id": "courage_ref_9",
+      "content": "What is the difference between the story the fear tells and what is actually true?"
+    },
+    {
+      "id": "courage_ref_10",
+      "content": "What would you regret more: trying and failing, or not trying at all?"
+    },
+    {
+      "id": "courage_ref_11",
+      "content": "What does readiness actually require? Is that requirement real?"
+    },
+    {
+      "id": "courage_ref_12",
+      "content": "What part of you already knows what to do?"
+    },
+    {
+      "id": "courage_ref_13",
+      "content": "What would happen if the fear turned out to be wrong?"
+    },
+    {
+      "id": "courage_ref_14",
+      "content": "Who have you seen act despite fear? What did that teach you?"
+    },
+    {
+      "id": "courage_ref_15",
+      "content": "What is the cost of one more day of waiting?"
+    },
+    {
+      "id": "courage_ref_16",
+      "content": "What does imperfect action look like for the thing you are avoiding?"
+    },
+    {
+      "id": "courage_ref_17",
+      "content": "What is the fear protecting you from that you might not actually need protecting from?"
+    },
+    {
+      "id": "courage_ref_18",
+      "content": "What would you start if you knew it was okay to start badly?"
+    },
+    {
+      "id": "courage_ref_19",
+      "content": "What has the avoidance been like for your body? Your sleep? Your focus?"
+    },
+    {
+      "id": "courage_ref_20",
+      "content": "Who do you become when you act despite fear?"
+    },
+    {
+      "id": "courage_ref_21",
+      "content": "What is the thing you want so much that the fear of failing it is this strong?"
+    },
+    {
+      "id": "courage_ref_22",
+      "content": "What have you been rehearsing in your head instead of doing?"
+    },
+    {
+      "id": "courage_ref_23",
+      "content": "What would forward movement look like today? Not eventually. Today."
+    },
+    {
+      "id": "courage_ref_24",
+      "content": "What would you do if no one was watching and judgment was not possible?"
+    },
+    {
+      "id": "courage_ref_25",
+      "content": "What do you know about fear that your past self did not?"
+    },
+    {
+      "id": "courage_ref_26",
+      "content": "What is the most courageous small thing you could do today?"
+    },
+    {
+      "id": "courage_ref_27",
+      "content": "What would it mean about you if you took the step and it went badly?"
+    },
+    {
+      "id": "courage_ref_28",
+      "content": "What would it mean about you if you never took the step at all?"
+    },
+    {
+      "id": "courage_ref_29",
+      "content": "What is the fear trying to preserve? Is it working?"
+    },
+    {
+      "id": "courage_ref_30",
+      "content": "What would the version of you who acts look like? What would she do first?"
+    }
+  ],
+
+  "words": [
+    { "id": "courage_w_1",  "word": "STEP",    "meaning": "One step alongside the fear. That is the whole practice." },
+    { "id": "courage_w_2",  "word": "FORWARD", "meaning": "Not fast. Not far. Forward." },
+    { "id": "courage_w_3",  "word": "HONEST",  "meaning": "The fear is real. Name it honestly. That is where it starts." },
+    { "id": "courage_w_4",  "word": "CHOOSE",  "meaning": "Ready is a choice. You can choose before you feel it." },
+    { "id": "courage_w_5",  "word": "BOLD",    "meaning": "Quiet boldness. The kind that happens without an audience." },
+    { "id": "courage_w_6",  "word": "DESPITE", "meaning": "Despite the fear. Not after it leaves." },
+    { "id": "courage_w_7",  "word": "REAL",    "meaning": "The fear is real. So is the next step. Both are real." },
+    { "id": "courage_w_8",  "word": "BEGIN",   "meaning": "Not finish. Not succeed. Begin." },
+    { "id": "courage_w_9",  "word": "MOVE",    "meaning": "Movement changes the internal state. Start with the body." },
+    { "id": "courage_w_10", "word": "TRUST",   "meaning": "Trust what you have done before. You have done hard things." },
+    { "id": "courage_w_11", "word": "DECIDE",  "meaning": "The decision is the act. Make it." },
+    { "id": "courage_w_12", "word": "STAY",    "meaning": "Stay with the discomfort a little longer. It eases." },
+    { "id": "courage_w_13", "word": "FACE",    "meaning": "Turn toward the thing. Not into it. Toward it." },
+    { "id": "courage_w_14", "word": "RISK",    "meaning": "Not recklessness. The risk of being seen doing something real." },
+    { "id": "courage_w_15", "word": "NOW",     "meaning": "The waiting was never going to produce ready. Now is the time." },
+    { "id": "courage_w_16", "word": "OPEN",    "meaning": "Open to the outcome. It may not be what the fear predicted." },
+    { "id": "courage_w_17", "word": "KNOWN",   "meaning": "You already know what to do. You have known for a while." },
+    { "id": "courage_w_18", "word": "VOICE",   "meaning": "Say what is true. Even if the voice shakes." },
+    { "id": "courage_w_19", "word": "DARE",    "meaning": "Not grandly. Quietly. Do it." },
+    { "id": "courage_w_20", "word": "PERSIST", "meaning": "After the false start. After the stumble. Persist." },
+    { "id": "courage_w_21", "word": "SHOW",    "meaning": "Show up to the thing. Fully. Without the armor." },
+    { "id": "courage_w_22", "word": "SMALL",   "meaning": "Small courage still counts. It compounds." },
+    { "id": "courage_w_23", "word": "ENOUGH",  "meaning": "You are enough to take the next step. Just the next one." },
+    { "id": "courage_w_24", "word": "THROUGH", "meaning": "Through the fear, not around it." },
+    { "id": "courage_w_25", "word": "PRESS",   "meaning": "Press gently into the resistance. It often gives." },
+    { "id": "courage_w_26", "word": "READY",   "meaning": "Ready is what happens when you begin. Not before." },
+    { "id": "courage_w_27", "word": "FIRST",   "meaning": "First is always the hardest. It doesn't mean stop." },
+    { "id": "courage_w_28", "word": "CLAIM",   "meaning": "Claim the thing you want. Say it aloud." },
+    { "id": "courage_w_29", "word": "SEEN",    "meaning": "Being seen doing imperfect work is still being seen." },
+    { "id": "courage_w_30", "word": "SPEAK",   "meaning": "What you have been not-saying. Speak it." },
+    { "id": "courage_w_31", "word": "TOWARD",  "meaning": "Not there yet. Toward. Direction is enough." },
+    { "id": "courage_w_32", "word": "BRAVE",   "meaning": "Brave is not the absence of fear. It is the next sentence." },
+    { "id": "courage_w_33", "word": "ACT",     "meaning": "The act itself changes things. Not the plan for the act." },
+    { "id": "courage_w_34", "word": "HOLD",    "meaning": "Hold the fear and the forward intention at the same time." },
+    { "id": "courage_w_35", "word": "LEAD",    "meaning": "Let action lead. The feelings follow action." },
+    { "id": "courage_w_36", "word": "RISE",    "meaning": "Not above it. With it. Rise alongside the difficulty." },
+    { "id": "courage_w_37", "word": "ANSWER",  "meaning": "The only answer to avoidance is the small yes." },
+    { "id": "courage_w_38", "word": "ATTEMPT", "meaning": "The attempt is the whole act. Not the result. The attempt." },
+    { "id": "courage_w_39", "word": "CLEAR",   "meaning": "Clear about what you want. Even if the path is not." },
+    { "id": "courage_w_40", "word": "DIRECT",  "meaning": "The direct path is usually shorter than the avoidance path." },
+    { "id": "courage_w_41", "word": "FULL",    "meaning": "Show up fully. Not polished. Fully." },
+    { "id": "courage_w_42", "word": "GROUND",  "meaning": "Grounded courage. Not frantic energy. Quiet and grounded." },
+    { "id": "courage_w_43", "word": "INTENT",  "meaning": "Intend it. Then do it. Intention alone is not enough." },
+    { "id": "courage_w_44", "word": "LEAN",    "meaning": "Lean into the difficulty. Just slightly. Just today." },
+    { "id": "courage_w_45", "word": "MATTER",  "meaning": "The thing you're avoiding matters to you. That's why it's hard." },
+    { "id": "courage_w_46", "word": "NAME",    "meaning": "Name the fear. Named, it is smaller than imagined." },
+    { "id": "courage_w_47", "word": "PLACE",   "meaning": "Put yourself in the place where the thing can happen." },
+    { "id": "courage_w_48", "word": "QUIET",   "meaning": "Quiet courage. No announcement. Just the act." },
+    { "id": "courage_w_49", "word": "START",   "meaning": "Start before you are ready. That is the instruction." },
+    { "id": "courage_w_50", "word": "TRUE",    "meaning": "Do the true thing. Not the safe thing." },
+    { "id": "courage_w_51", "word": "WILLING", "meaning": "Willing to be afraid and go anyway. That is all it takes." },
+    { "id": "courage_w_52", "word": "YES",     "meaning": "One yes. To the right thing. Despite the fear saying no." }
+  ],
+
+  "notification_pool": [
+    { "id": "courage_n_1",  "copy": "You already know what to do. Do it today.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_2",  "copy": "Fear and forward movement can coexist.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_3",  "copy": "Ready is a decision, not a feeling.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_4",  "copy": "One step alongside the fear. Just one.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_5",  "copy": "What you're avoiding is still waiting.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_6",  "copy": "The first step is the whole barrier.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_7",  "copy": "Imperfect and done beats perfect and waiting.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_8",  "copy": "The fear has been making decisions for you.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_9",  "copy": "You've done hard things before. Evidence exists.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_10", "copy": "Start badly. Adjust. Keep going.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_11", "copy": "The thing you fear is smaller when you start.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_12", "copy": "What would you do if you weren't afraid today?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_13", "copy": "The cost of avoidance is also a cost.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_14", "copy": "Name the fear. Then name the step.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_15", "copy": "Two minutes on the avoided task. Just two.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_16", "copy": "You've been circling it. Step closer today.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_17", "copy": "Brave is just the next sentence.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_18", "copy": "Not the whole thing. The first part only.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_19", "copy": "Forward, not perfect.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_20", "copy": "The avoided thing gets heavier with time.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_21", "copy": "Say the thing you've been not-saying.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_22", "copy": "One small yes changes the whole direction.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_23", "copy": "The fear is not evidence of inability.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_24", "copy": "Do it imperfectly. That still counts.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_25", "copy": "You are not avoiding because you can't.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_26", "copy": "The next step is simpler than the fear says.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_27", "copy": "What would today look like if you went anyway?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_28", "copy": "The courage doesn't arrive first. You do.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "courage_ev_1",  "content": "What did you do today that the fear told you not to do?" },
+    { "id": "courage_ev_2",  "content": "What are you still avoiding? What would it take to begin tomorrow?" },
+    { "id": "courage_ev_3",  "content": "When did you feel most afraid today? What did you do with that?" },
+    { "id": "courage_ev_4",  "content": "What imperfect thing did you do today that you are glad you did?" },
+    { "id": "courage_ev_5",  "content": "Where did you choose forward today, even a little?" },
+    { "id": "courage_ev_6",  "content": "What did you say that you almost didn't say?" },
+    { "id": "courage_ev_7",  "content": "What does avoidance feel like in your body at the end of a day?" },
+    { "id": "courage_ev_8",  "content": "What would one less day of avoidance have changed today?" },
+    { "id": "courage_ev_9",  "content": "What is one small thing you did today that required courage?" },
+    { "id": "courage_ev_10", "content": "What fear turned out to be smaller than you expected today?" },
+    { "id": "courage_ev_11", "content": "What did you learn about yourself by attempting the hard thing?" },
+    { "id": "courage_ev_12", "content": "What does the version of you who acts more freely look like?" },
+    { "id": "courage_ev_13", "content": "What are you proud of from today, even slightly?" },
+    { "id": "courage_ev_14", "content": "What is the first thing you will do tomorrow with the fear still there?" }
+  ]
+
+}

@@ -1,35 +1,124 @@
+import { useRef, useEffect } from 'react';
+import { Animated, TouchableOpacity, Text, Platform } from 'react-native';
 import { Tabs } from 'expo-router';
-import React from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import * as Haptics from 'expo-haptics';
+import { useLanguage } from '../../hooks/useLanguage';
 
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+type IoniconsName = React.ComponentProps<typeof Ionicons>['name'];
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+// ─── Tab definitions ──────────────────────────────────────────────────────────
+const TABS = [
+  { name: 'today',    label: 'Today',    icon: 'sunny'     },
+  { name: 'journal',  label: 'Journal',  icon: 'book'      },
+  { name: 'progress', label: 'Progress', icon: 'bar-chart' },
+  { name: 'mindset',  label: 'Mindset',  icon: 'bulb'      },
+  { name: 'profile',  label: 'You',      icon: 'person'    },
+] as const;
+
+// ─── Localized tab labels ─────────────────────────────────────────────────────
+const TAB_LABELS: Record<string, Partial<Record<string, string>>> = {
+  today:    { pt: 'Hoje',      es: 'Hoy',      fr: "Aujourd'hui", de: 'Heute'       },
+  journal:  { pt: 'Diário',    es: 'Diario',   fr: 'Journal',     de: 'Tagebuch'    },
+  progress: { pt: 'Progresso', es: 'Progreso',  fr: 'Progrès',     de: 'Fortschritt' },
+  mindset:  { pt: 'Mindset',   es: 'Mindset',  fr: 'Mindset',     de: 'Mindset'     },
+  profile:  { pt: 'Você',      es: 'Tú',       fr: 'Moi',         de: 'Ich'         },
+};
+
+function getTabLabel(tabName: string, defaultLabel: string, lang: string): string {
+  return TAB_LABELS[tabName]?.[lang] ?? defaultLabel;
+}
+
+// ─── Design tokens ────────────────────────────────────────────────────────────
+const GOLD       = '#C9973A';
+const MUTED      = '#A89F94';
+const NAV_BG     = '#FAF6EF';
+const NAV_BORDER = 'rgba(201, 151, 58, 0.12)';
+
+// ─── Tab icon with spring animation ──────────────────────────────────────────
+function TabIcon({ iconName, focused }: { iconName: string; focused: boolean }) {
+  const scale = useRef(new Animated.Value(1)).current;
+
+  useEffect(() => {
+    Animated.spring(scale, {
+      toValue: focused ? 1 : 0.94,
+      friction: 11,
+      tension: 160,
+      useNativeDriver: true,
+    }).start();
+  }, [focused]);
+
+  return (
+    <Animated.View style={{ transform: [{ scale }] }}>
+      <Ionicons
+        name={(focused ? iconName : `${iconName}-outline`) as IoniconsName}
+        size={22}
+        color={focused ? GOLD : MUTED}
+      />
+    </Animated.View>
+  );
+}
+
+// ─── Layout ───────────────────────────────────────────────────────────────────
+export default function TabsLayout() {
+  const { lang } = useLanguage();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
+        tabBarStyle: {
+          backgroundColor: NAV_BG,
+          borderTopColor: NAV_BORDER,
+          borderTopWidth: 1,
+          height: Platform.OS === 'ios' ? 84 : 64,
+          paddingBottom: Platform.OS === 'ios' ? 26 : 8,
+          paddingTop: 10,
+          shadowColor: '#C9973A',
+          shadowOffset: { width: 0, height: -2 },
+          shadowOpacity: 0.06,
+          shadowRadius: 16,
+          elevation: 6,
+        },
+        tabBarActiveTintColor: GOLD,
+        tabBarInactiveTintColor: MUTED,
+        tabBarButton: (props) => (
+          <TouchableOpacity
+            {...(props as any)}
+            onPress={(e: any) => {
+              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+              (props as any).onPress?.(e);
+            }}
+            activeOpacity={1}
+          />
+        ),
+      }}
+    >
+      {TABS.map(tab => (
+        <Tabs.Screen
+          key={tab.name}
+          name={tab.name}
+          options={{
+            tabBarIcon: ({ focused }) => (
+              <TabIcon iconName={tab.icon} focused={focused} />
+            ),
+            tabBarLabel: ({ focused }) => (
+              <Text style={{
+                fontSize: 10,
+                fontWeight: focused ? '600' : '400',
+                color: focused ? GOLD : MUTED,
+                letterSpacing: 0.15,
+                marginTop: 2,
+              }}>
+                {getTabLabel(tab.name, tab.label, lang)}
+              </Text>
+            ),
+          }}
+        />
+      ))}
+
+      {/* habits route kept internally — hidden from nav */}
+      <Tabs.Screen name="habits" options={{ href: null }} />
     </Tabs>
   );
 }

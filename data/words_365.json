@@ -1,0 +1,3656 @@
+{
+  "version": "1.0",
+  "total_days": 365,
+  "words": [
+    {
+      "day": 1,
+      "week": 1,
+      "arc": "RETURNING",
+      "word": "RETURNING",
+      "category": "identity",
+      "meaning": "Coming back does not require explanation. You are here, and that is already the whole first step.",
+      "notification_hook": "The door was always open.",
+      "evening_prompt": "What did you return to today?"
+    },
+    {
+      "day": 2,
+      "week": 1,
+      "arc": "RETURNING",
+      "word": "SOFT",
+      "category": "permission",
+      "meaning": "Soft is not weak. It is what you get to be when you stop bracing for impact.",
+      "notification_hook": "You are allowed to be soft today.",
+      "evening_prompt": "Where did you let yourself be soft?"
+    },
+    {
+      "day": 3,
+      "week": 1,
+      "arc": "RETURNING",
+      "word": "HERE",
+      "category": "identity",
+      "meaning": "Being here is enough. You do not need to be anywhere else to count.",
+      "notification_hook": "Just this. Just now.",
+      "evening_prompt": "What did it feel like to simply be here?"
+    },
+    {
+      "day": 4,
+      "week": 1,
+      "arc": "RETURNING",
+      "word": "OPEN",
+      "category": "reframe",
+      "meaning": "Open does not mean unguarded. It means you are willing to let something good in today.",
+      "notification_hook": "Something good can still reach you.",
+      "evening_prompt": "What came through when you stayed open?"
+    },
+    {
+      "day": 5,
+      "week": 1,
+      "arc": "RETURNING",
+      "word": "RELEASE",
+      "category": "relief",
+      "meaning": "You are allowed to put it down. Not forever — just for today.",
+      "notification_hook": "Put it down for today.",
+      "evening_prompt": "What did you release today, even a little?"
+    },
+    {
+      "day": 6,
+      "week": 1,
+      "arc": "RETURNING",
+      "word": "PAUSE",
+      "category": "permission",
+      "meaning": "A pause is not a failure. It is how you stay in this without breaking.",
+      "notification_hook": "Pausing is part of going.",
+      "evening_prompt": "Did you let yourself pause today?"
+    },
+    {
+      "day": 7,
+      "week": 1,
+      "arc": "RETURNING",
+      "word": "ALLOWED",
+      "category": "permission",
+      "meaning": "You are allowed to be struggling and still deserve care. Both things are true at the same time.",
+      "notification_hook": "You are allowed to be here.",
+      "evening_prompt": "What did you allow yourself today?"
+    },
+    {
+      "day": 8,
+      "week": 2,
+      "arc": "RETURNING",
+      "word": "GROUND",
+      "category": "identity",
+      "meaning": "The ground is not somewhere you have to reach. You are already standing on it.",
+      "notification_hook": "You are already standing.",
+      "evening_prompt": "Where did you find ground today?"
+    },
+    {
+      "day": 9,
+      "week": 2,
+      "arc": "RETURNING",
+      "word": "PERMISSION",
+      "category": "permission",
+      "meaning": "You have permission to be exactly where you are. You do not need to be further along.",
+      "notification_hook": "You had it all along.",
+      "evening_prompt": "What did you give yourself permission for today?"
+    },
+    {
+      "day": 10,
+      "week": 2,
+      "arc": "RETURNING",
+      "word": "PRESENT",
+      "category": "identity",
+      "meaning": "Present does not mean calm or certain. It just means you are here, in this moment.",
+      "notification_hook": "Here is enough.",
+      "evening_prompt": "What were you most present for today?"
+    },
+    {
+      "day": 11,
+      "week": 2,
+      "arc": "RETURNING",
+      "word": "NOTICE",
+      "category": "reframe",
+      "meaning": "Noticing is the beginning of everything. You do not have to fix — just see what is there.",
+      "notification_hook": "You don't have to fix it. Just see it.",
+      "evening_prompt": "What did you notice today?"
+    },
+    {
+      "day": 12,
+      "week": 2,
+      "arc": "RETURNING",
+      "word": "EXHALE",
+      "category": "relief",
+      "meaning": "The exhale is the release. Your body already knows what your mind resists letting go.",
+      "notification_hook": "Before anything else today.",
+      "evening_prompt": "When did you finally exhale today?"
+    },
+    {
+      "day": 13,
+      "week": 2,
+      "arc": "RETURNING",
+      "word": "GENTLE",
+      "category": "permission",
+      "meaning": "Gentle is a pace, not a weakness. Moving gently is still moving.",
+      "notification_hook": "Gentle counts as going.",
+      "evening_prompt": "Where were you gentle with yourself today?"
+    },
+    {
+      "day": 14,
+      "week": 2,
+      "arc": "RETURNING",
+      "word": "ENOUGH",
+      "category": "permission",
+      "meaning": "You have done enough for someone who is running on empty. Enough is the honest floor, not the ceiling.",
+      "notification_hook": "You've already done it.",
+      "evening_prompt": "Did you let yourself be enough today?"
+    },
+    {
+      "day": 15,
+      "week": 3,
+      "arc": "RETURNING",
+      "word": "BREATHE",
+      "category": "relief",
+      "meaning": "Breathing on purpose changes something small but real. One breath, before you face what is next.",
+      "notification_hook": "Before anything else today.",
+      "evening_prompt": "How did breathing through it help today?"
+    },
+    {
+      "day": 16,
+      "week": 3,
+      "arc": "RETURNING",
+      "word": "SLOW",
+      "category": "reframe",
+      "meaning": "Slow is not behind. Slow is the pace that keeps you in the long run.",
+      "notification_hook": "Slow is still moving.",
+      "evening_prompt": "What went better because you moved slowly?"
+    },
+    {
+      "day": 17,
+      "week": 3,
+      "arc": "RETURNING",
+      "word": "ANCHOR",
+      "category": "identity",
+      "meaning": "You have something that holds you when everything shifts. Find it and return to it today.",
+      "notification_hook": "You are more anchored than you feel.",
+      "evening_prompt": "What anchored you when things felt uncertain?"
+    },
+    {
+      "day": 18,
+      "week": 3,
+      "arc": "RETURNING",
+      "word": "SETTLE",
+      "category": "relief",
+      "meaning": "Settling is not giving up. It is letting the dust come down so you can see clearly.",
+      "notification_hook": "Let the dust settle.",
+      "evening_prompt": "Where did you settle today instead of fighting?"
+    },
+    {
+      "day": 19,
+      "week": 3,
+      "arc": "RETURNING",
+      "word": "UNCLENCH",
+      "category": "relief",
+      "meaning": "You have been gripping so hard for so long. Today you can loosen the grip a little.",
+      "notification_hook": "You can loosen just a little.",
+      "evening_prompt": "What did you stop gripping today?"
+    },
+    {
+      "day": 20,
+      "week": 3,
+      "arc": "RETURNING",
+      "word": "LIGHTER",
+      "category": "relief",
+      "meaning": "You do not need to carry all of it today. Even one thing down makes the rest feel lighter.",
+      "notification_hook": "You don't have to carry all of it.",
+      "evening_prompt": "What felt lighter today?"
+    },
+    {
+      "day": 21,
+      "week": 3,
+      "arc": "RETURNING",
+      "word": "REST",
+      "category": "permission",
+      "meaning": "Rest is not earned by exhaustion. It is something you are allowed before you reach that point.",
+      "notification_hook": "You don't have to earn this.",
+      "evening_prompt": "Did you rest, even a little?"
+    },
+    {
+      "day": 22,
+      "week": 4,
+      "arc": "RETURNING",
+      "word": "SURRENDER",
+      "category": "permission",
+      "meaning": "Surrender is not giving up. It is releasing what you cannot change or control today.",
+      "notification_hook": "Surrender is not giving up.",
+      "evening_prompt": "What did you let go of today?"
+    },
+    {
+      "day": 23,
+      "week": 4,
+      "arc": "RETURNING",
+      "word": "CARRY",
+      "category": "reframe",
+      "meaning": "Notice what you are carrying. Some of it is not yours to hold today.",
+      "notification_hook": "Not all of it is yours to carry.",
+      "evening_prompt": "What were you carrying that you could put down?"
+    },
+    {
+      "day": 24,
+      "week": 4,
+      "arc": "RETURNING",
+      "word": "CHOOSE",
+      "category": "protection",
+      "meaning": "You cannot do everything. Choosing is not failing — it is protecting what matters most.",
+      "notification_hook": "Choosing is how you protect yourself.",
+      "evening_prompt": "What did you choose today, and why?"
+    },
+    {
+      "day": 25,
+      "week": 4,
+      "arc": "RETURNING",
+      "word": "LESS",
+      "category": "reframe",
+      "meaning": "Less is not deprivation. Less is clarity — knowing what actually matters and what does not.",
+      "notification_hook": "Less than you think you need.",
+      "evening_prompt": "What did you do less of today?"
+    },
+    {
+      "day": 26,
+      "week": 4,
+      "arc": "RETURNING",
+      "word": "CLEAR",
+      "category": "relief",
+      "meaning": "You do not need perfect clarity. Just enough to take the next step in front of you.",
+      "notification_hook": "Just enough to see the next step.",
+      "evening_prompt": "What became clearer today?"
+    },
+    {
+      "day": 27,
+      "week": 4,
+      "arc": "RETURNING",
+      "word": "SPACE",
+      "category": "relief",
+      "meaning": "You are allowed to create space between yourself and the demand. Even a moment is real space.",
+      "notification_hook": "A moment of space is still space.",
+      "evening_prompt": "Where did you find space today?"
+    },
+    {
+      "day": 28,
+      "week": 4,
+      "arc": "RETURNING",
+      "word": "LET",
+      "category": "permission",
+      "meaning": "Let things be what they are today. Forcing takes energy you do not have to spare.",
+      "notification_hook": "Let it be what it is.",
+      "evening_prompt": "What did you let be today?"
+    },
+    {
+      "day": 29,
+      "week": 5,
+      "arc": "RETURNING",
+      "word": "LISTEN",
+      "category": "identity",
+      "meaning": "Your body has been talking. It tells the truth before your mind catches up.",
+      "notification_hook": "Your body already knows.",
+      "evening_prompt": "What did you hear when you listened today?"
+    },
+    {
+      "day": 30,
+      "week": 5,
+      "arc": "RETURNING",
+      "word": "SENSE",
+      "category": "reframe",
+      "meaning": "Sense what is happening in you, not just around you. That information is real and worth trusting.",
+      "notification_hook": "What do you sense right now?",
+      "evening_prompt": "What did your senses tell you today?"
+    },
+    {
+      "day": 31,
+      "week": 5,
+      "arc": "RETURNING",
+      "word": "FEEL",
+      "category": "identity",
+      "meaning": "Feeling is not weakness. It is information your body insists on giving you regardless.",
+      "notification_hook": "Feeling it is the first step.",
+      "evening_prompt": "What did you feel today that you didn't push away?"
+    },
+    {
+      "day": 32,
+      "week": 5,
+      "arc": "RETURNING",
+      "word": "SIGNAL",
+      "category": "protection",
+      "meaning": "Fatigue, tension, resistance — these are not problems. They are signals worth paying attention to.",
+      "notification_hook": "Your signals are telling you something.",
+      "evening_prompt": "What signals did you receive today?"
+    },
+    {
+      "day": 33,
+      "week": 5,
+      "arc": "RETURNING",
+      "word": "SOFTEN",
+      "category": "relief",
+      "meaning": "Softening is not collapsing. It is choosing a gentler way to hold what is hard.",
+      "notification_hook": "You can soften without falling apart.",
+      "evening_prompt": "What softened in you today?"
+    },
+    {
+      "day": 34,
+      "week": 5,
+      "arc": "RETURNING",
+      "word": "EASE",
+      "category": "relief",
+      "meaning": "Ease is available to you right now. Not comfort — just a slightly less tight grip on the day.",
+      "notification_hook": "A little ease goes a long way.",
+      "evening_prompt": "Where did ease show up today?"
+    },
+    {
+      "day": 35,
+      "week": 5,
+      "arc": "RETURNING",
+      "word": "RECEIVE",
+      "category": "permission",
+      "meaning": "You are allowed to receive. Help, rest, kindness — receiving is not weakness, it is wisdom.",
+      "notification_hook": "Receiving is not weakness.",
+      "evening_prompt": "What did you receive today?"
+    },
+    {
+      "day": 36,
+      "week": 6,
+      "arc": "RETURNING",
+      "word": "SUFFICIENT",
+      "category": "reframe",
+      "meaning": "Sufficient is not settling. It is an honest measure of what today actually needed from you.",
+      "notification_hook": "Sufficient is honest. Sufficient is real.",
+      "evening_prompt": "What was sufficient about today?"
+    },
+    {
+      "day": 37,
+      "week": 6,
+      "arc": "RETURNING",
+      "word": "DONE",
+      "category": "permission",
+      "meaning": "Done is a permission slip. When you are done, you are allowed to stop without apology.",
+      "notification_hook": "Done means you can stop now.",
+      "evening_prompt": "What did you let yourself be done with today?"
+    },
+    {
+      "day": 38,
+      "week": 6,
+      "arc": "RETURNING",
+      "word": "LIMIT",
+      "category": "protection",
+      "meaning": "Your limits are information, not failures. They tell you where protection is needed.",
+      "notification_hook": "Your limits are protecting you.",
+      "evening_prompt": "What limit did you honor today?"
+    },
+    {
+      "day": 39,
+      "week": 6,
+      "arc": "RETURNING",
+      "word": "ACCEPT",
+      "category": "reframe",
+      "meaning": "Acceptance is not approval. It is letting what is real be real, so you can work with it.",
+      "notification_hook": "Accept what is — then move.",
+      "evening_prompt": "What did you accept today without fighting it?"
+    },
+    {
+      "day": 40,
+      "week": 6,
+      "arc": "RETURNING",
+      "word": "STOP",
+      "category": "permission",
+      "meaning": "Stopping is not quitting. It is recognizing that the day has given what it can give.",
+      "notification_hook": "You are allowed to stop.",
+      "evening_prompt": "When did you stop today, and was it right?"
+    },
+    {
+      "day": 41,
+      "week": 6,
+      "arc": "RETURNING",
+      "word": "COMPLETE",
+      "category": "identity",
+      "meaning": "You are complete as you are right now. Not finished — complete. There is a real difference.",
+      "notification_hook": "You are complete as you are.",
+      "evening_prompt": "What felt complete today?"
+    },
+    {
+      "day": 42,
+      "week": 6,
+      "arc": "RETURNING",
+      "word": "WORTHY",
+      "category": "permission",
+      "meaning": "You are worthy of care before you have earned it. Worthiness is not a reward for performance.",
+      "notification_hook": "You were already worthy.",
+      "evening_prompt": "Did you treat yourself as worthy today?"
+    },
+    {
+      "day": 43,
+      "week": 7,
+      "arc": "RETURNING",
+      "word": "SHIFT",
+      "category": "identity",
+      "meaning": "Something has shifted — not everything, not loudly. But there is a difference in you now.",
+      "notification_hook": "Something has shifted in you.",
+      "evening_prompt": "What shift did you notice in yourself today?"
+    },
+    {
+      "day": 44,
+      "week": 7,
+      "arc": "RETURNING",
+      "word": "DIFFERENT",
+      "category": "reframe",
+      "meaning": "Different does not mean broken. Different means you are not where you were before.",
+      "notification_hook": "Different is not broken.",
+      "evening_prompt": "How are you different today from who you were?"
+    },
+    {
+      "day": 45,
+      "week": 7,
+      "arc": "RETURNING",
+      "word": "QUIET",
+      "category": "relief",
+      "meaning": "Quiet is a resource. Even a moment of it changes the texture of the day.",
+      "notification_hook": "Even a moment of quiet counts.",
+      "evening_prompt": "Where did you find quiet today?"
+    },
+    {
+      "day": 46,
+      "week": 7,
+      "arc": "RETURNING",
+      "word": "MOVED",
+      "category": "identity",
+      "meaning": "You have been moved by what you have been through. That is not softness — that is depth.",
+      "notification_hook": "Being moved is a form of strength.",
+      "evening_prompt": "What moved you today?"
+    },
+    {
+      "day": 47,
+      "week": 7,
+      "arc": "RETURNING",
+      "word": "LETTING",
+      "category": "permission",
+      "meaning": "Letting go is a practice, not an event. You do not have to get it all the way gone today.",
+      "notification_hook": "You don't have to finish letting go.",
+      "evening_prompt": "What did you practice letting go of today?"
+    },
+    {
+      "day": 48,
+      "week": 7,
+      "arc": "RETURNING",
+      "word": "STILL",
+      "category": "reframe",
+      "meaning": "You are still here. That is not nothing — that is everything the last seven weeks required.",
+      "notification_hook": "Still here. Still going.",
+      "evening_prompt": "What does it mean that you are still here?"
+    },
+    {
+      "day": 49,
+      "week": 7,
+      "arc": "RETURNING",
+      "word": "WHOLE",
+      "category": "identity",
+      "meaning": "Whole does not mean fixed. It means all parts of you — tired, uncertain, trying — belong here.",
+      "notification_hook": "All of you belongs here.",
+      "evening_prompt": "What part of yourself felt whole today?"
+    },
+    {
+      "day": 50,
+      "week": 8,
+      "arc": "STEADYING",
+      "word": "PROTECT",
+      "category": "protection",
+      "meaning": "Protecting your attention is not selfishness. It is survival in a world that wants all of it.",
+      "notification_hook": "What you protect grows.",
+      "evening_prompt": "What did you protect today?"
+    },
+    {
+      "day": 51,
+      "week": 8,
+      "arc": "STEADYING",
+      "word": "GUARD",
+      "category": "protection",
+      "meaning": "You are allowed to guard your energy like something precious. Because it is.",
+      "notification_hook": "Guard it like it matters.",
+      "evening_prompt": "What did you guard today?"
+    },
+    {
+      "day": 52,
+      "week": 8,
+      "arc": "STEADYING",
+      "word": "NARROW",
+      "category": "protection",
+      "meaning": "Narrowing your focus is not limitation. It is the only way to go deep enough to matter.",
+      "notification_hook": "Narrow in. Find what matters.",
+      "evening_prompt": "What did you narrow your focus to today?"
+    },
+    {
+      "day": 53,
+      "week": 8,
+      "arc": "STEADYING",
+      "word": "SINGLE",
+      "category": "protection",
+      "meaning": "One thing. Not ten things with one eye on each — one thing with all of you in it.",
+      "notification_hook": "One thing at a time.",
+      "evening_prompt": "What was your one thing today?"
+    },
+    {
+      "day": 54,
+      "week": 8,
+      "arc": "STEADYING",
+      "word": "SELECTIVE",
+      "category": "protection",
+      "meaning": "Selective is intentional. When your energy is limited, being selective is the wisest choice.",
+      "notification_hook": "Being selective is being wise.",
+      "evening_prompt": "What were you selective about today?"
+    },
+    {
+      "day": 55,
+      "week": 8,
+      "arc": "STEADYING",
+      "word": "FOCUSED",
+      "category": "protection",
+      "meaning": "Focus is a form of care. What you focus on receives your best, and that is worth protecting.",
+      "notification_hook": "Focus is a form of care.",
+      "evening_prompt": "What held your focus today?"
+    },
+    {
+      "day": 56,
+      "week": 8,
+      "arc": "STEADYING",
+      "word": "BOUNDARY",
+      "category": "protection",
+      "meaning": "A boundary is not a wall. It is a door you get to decide when and whether to open.",
+      "notification_hook": "Your boundaries are yours to keep.",
+      "evening_prompt": "What boundary did you hold today?"
+    },
+    {
+      "day": 57,
+      "week": 9,
+      "arc": "STEADYING",
+      "word": "ONE",
+      "category": "reframe",
+      "meaning": "One is not too small. One thing finished is worth more than ten things started and abandoned.",
+      "notification_hook": "One thing. That's enough.",
+      "evening_prompt": "What was the one thing that mattered today?"
+    },
+    {
+      "day": 58,
+      "week": 9,
+      "arc": "STEADYING",
+      "word": "NEXT",
+      "category": "action",
+      "meaning": "You do not have to see the whole path. Next is enough — the step directly in front of you.",
+      "notification_hook": "Just the next step. That's all.",
+      "evening_prompt": "What was your next step today?"
+    },
+    {
+      "day": 59,
+      "week": 9,
+      "arc": "STEADYING",
+      "word": "STEP",
+      "category": "action",
+      "meaning": "Steps do not need to be dramatic. Small and steady is how things actually get done.",
+      "notification_hook": "One step is real progress.",
+      "evening_prompt": "What step did you take today?"
+    },
+    {
+      "day": 60,
+      "week": 9,
+      "arc": "STEADYING",
+      "word": "SIMPLE",
+      "category": "reframe",
+      "meaning": "Simple is not simplistic. Simple is what complexity distills into when you are finally honest.",
+      "notification_hook": "What if it's simpler than you think?",
+      "evening_prompt": "What got simpler when you stopped overcomplicating?"
+    },
+    {
+      "day": 61,
+      "week": 9,
+      "arc": "STEADYING",
+      "word": "FORWARD",
+      "category": "action",
+      "meaning": "Forward does not require speed. Any motion in the right direction counts as forward.",
+      "notification_hook": "Moving forward, even slowly.",
+      "evening_prompt": "What moved forward today?"
+    },
+    {
+      "day": 62,
+      "week": 9,
+      "arc": "STEADYING",
+      "word": "PROCEED",
+      "category": "action",
+      "meaning": "You are allowed to proceed without being ready. Readiness often arrives after you start, not before.",
+      "notification_hook": "You can proceed before you're ready.",
+      "evening_prompt": "What did you proceed with despite uncertainty?"
+    },
+    {
+      "day": 63,
+      "week": 9,
+      "arc": "STEADYING",
+      "word": "SAFE",
+      "category": "permission",
+      "meaning": "You are allowed to feel safe here. This is not a place that asks you to perform.",
+      "notification_hook": "You are safe here.",
+      "evening_prompt": "Where did you feel safe today?"
+    },
+    {
+      "day": 64,
+      "week": 10,
+      "arc": "STEADYING",
+      "word": "DISCERN",
+      "category": "reframe",
+      "meaning": "Discernment is quiet knowing. It is the difference between the noise and what is actually true.",
+      "notification_hook": "What's signal, and what's noise?",
+      "evening_prompt": "What did you discern today that helped you?"
+    },
+    {
+      "day": 65,
+      "week": 10,
+      "arc": "STEADYING",
+      "word": "TRUTH",
+      "category": "depth",
+      "meaning": "The truth is usually quieter than the fear. It does not shout — it waits for you.",
+      "notification_hook": "Underneath the noise, there's truth.",
+      "evening_prompt": "What truth were you willing to hear today?"
+    },
+    {
+      "day": 66,
+      "week": 10,
+      "arc": "STEADYING",
+      "word": "CORE",
+      "category": "identity",
+      "meaning": "Your core self does not change when things get hard. It waits for you beneath the noise.",
+      "notification_hook": "Your core is still there.",
+      "evening_prompt": "When did you feel most like yourself today?"
+    },
+    {
+      "day": 67,
+      "week": 10,
+      "arc": "STEADYING",
+      "word": "FILTER",
+      "category": "protection",
+      "meaning": "You get to filter what comes in. Not everything that demands your attention deserves it.",
+      "notification_hook": "Not everything deserves your attention.",
+      "evening_prompt": "What did you filter out today?"
+    },
+    {
+      "day": 68,
+      "week": 10,
+      "arc": "STEADYING",
+      "word": "CLEAR",
+      "category": "relief",
+      "meaning": "Clarity comes when you stop adding and start removing. Take one thing away and see what remains.",
+      "notification_hook": "Remove, and clarity follows.",
+      "evening_prompt": "What became clear when the noise quieted?"
+    },
+    {
+      "day": 69,
+      "week": 10,
+      "arc": "STEADYING",
+      "word": "SILENCE",
+      "category": "depth",
+      "meaning": "Silence is information. Notice what surfaces when nothing is clamoring for your attention.",
+      "notification_hook": "In the silence, something true waits.",
+      "evening_prompt": "What did silence reveal to you today?"
+    },
+    {
+      "day": 70,
+      "week": 10,
+      "arc": "STEADYING",
+      "word": "ENOUGH",
+      "category": "permission",
+      "meaning": "You are enough for this week, for this season, for this particular hard stretch you are in.",
+      "notification_hook": "You are enough for this.",
+      "evening_prompt": "Did you let yourself feel like enough today?"
+    },
+    {
+      "day": 71,
+      "week": 11,
+      "arc": "STEADYING",
+      "word": "RHYTHM",
+      "category": "identity",
+      "meaning": "You are building a rhythm. Not a perfect routine — a real, returning, imperfect rhythm.",
+      "notification_hook": "Your rhythm is building.",
+      "evening_prompt": "What rhythm showed up today?"
+    },
+    {
+      "day": 72,
+      "week": 11,
+      "arc": "STEADYING",
+      "word": "DAILY",
+      "category": "reframe",
+      "meaning": "Daily does not mean perfect every day. It means you come back, again and again, even imperfectly.",
+      "notification_hook": "Showing up daily is enough.",
+      "evening_prompt": "What did you show up for today?"
+    },
+    {
+      "day": 73,
+      "week": 11,
+      "arc": "STEADYING",
+      "word": "RETURN",
+      "category": "action",
+      "meaning": "The practice is not perfect attendance. It is always finding your way back when you drift.",
+      "notification_hook": "You can always find your way back.",
+      "evening_prompt": "What practice did you come back to today?"
+    },
+    {
+      "day": 74,
+      "week": 11,
+      "arc": "STEADYING",
+      "word": "PATTERN",
+      "category": "identity",
+      "meaning": "You are creating a pattern. Small, repeated acts quietly become who you are over time.",
+      "notification_hook": "Your patterns are becoming you.",
+      "evening_prompt": "What pattern did you reinforce today?"
+    },
+    {
+      "day": 75,
+      "week": 11,
+      "arc": "STEADYING",
+      "word": "CONSISTENT",
+      "category": "reframe",
+      "meaning": "Consistency is not sameness. It is the thread that runs through even the hard, imperfect days.",
+      "notification_hook": "Consistency over perfection.",
+      "evening_prompt": "What does consistency release you from having to be?"
+    },
+    {
+      "day": 76,
+      "week": 11,
+      "arc": "STEADYING",
+      "word": "SMALL",
+      "category": "reframe",
+      "meaning": "Small is not less. Small is sustainable — the size at which things actually last.",
+      "notification_hook": "Smaller than you think you need.",
+      "evening_prompt": "What small thing mattered today?"
+    },
+    {
+      "day": 77,
+      "week": 11,
+      "arc": "STEADYING",
+      "word": "PRACTICE",
+      "category": "identity",
+      "meaning": "Practice means you get to keep practicing. Not arriving — just continuing, day after day.",
+      "notification_hook": "The practice is the point.",
+      "evening_prompt": "What are you practicing becoming?"
+    },
+    {
+      "day": 78,
+      "week": 12,
+      "arc": "STEADYING",
+      "word": "REST",
+      "category": "permission",
+      "meaning": "Rest is not a gap in the work. It is part of the work — the part that makes everything else possible.",
+      "notification_hook": "Rest is part of the work.",
+      "evening_prompt": "How did rest serve you today?"
+    },
+    {
+      "day": 79,
+      "week": 12,
+      "arc": "STEADYING",
+      "word": "RESTORE",
+      "category": "relief",
+      "meaning": "Restore means to bring back what was depleted. You are allowed to take time to refill.",
+      "notification_hook": "You are allowed to refill.",
+      "evening_prompt": "What restored you today?"
+    },
+    {
+      "day": 80,
+      "week": 12,
+      "arc": "STEADYING",
+      "word": "RECOVERY",
+      "category": "reframe",
+      "meaning": "Recovery is not failure. It is the active process of becoming capable again after real depletion.",
+      "notification_hook": "Recovery is active. It counts.",
+      "evening_prompt": "What did recovery look like for you today?"
+    },
+    {
+      "day": 81,
+      "week": 12,
+      "arc": "STEADYING",
+      "word": "NOURISH",
+      "category": "relief",
+      "meaning": "Nourishment is not indulgence. You need real fuel to keep going without burning all the way down.",
+      "notification_hook": "Nourishment is not optional.",
+      "evening_prompt": "How did you nourish yourself today?"
+    },
+    {
+      "day": 82,
+      "week": 12,
+      "arc": "STEADYING",
+      "word": "PAUSE",
+      "category": "permission",
+      "meaning": "A pause in the middle of a hard stretch is not surrender. It is strategy.",
+      "notification_hook": "Pausing mid-way is smart, not weak.",
+      "evening_prompt": "When did you pause today, and did it help?"
+    },
+    {
+      "day": 83,
+      "week": 12,
+      "arc": "STEADYING",
+      "word": "PERMISSION",
+      "category": "permission",
+      "meaning": "You still have permission to rest without guilt. You do not need to earn the right to stop.",
+      "notification_hook": "Permission is still yours.",
+      "evening_prompt": "What permission did you give yourself today?"
+    },
+    {
+      "day": 84,
+      "week": 12,
+      "arc": "STEADYING",
+      "word": "GENTLE",
+      "category": "permission",
+      "meaning": "Twelve weeks in, gentle is still the right pace. You are rebuilding — gentleness is not slow, it is wise.",
+      "notification_hook": "Still gentle. Still wise.",
+      "evening_prompt": "How were you gentle with yourself today?"
+    },
+    {
+      "day": 85,
+      "week": 13,
+      "arc": "STEADYING",
+      "word": "TRUST",
+      "category": "identity",
+      "meaning": "Trust is built by small acts repeated, not by grand gestures. You have more evidence than you know.",
+      "notification_hook": "The evidence is already there.",
+      "evening_prompt": "What did you trust yourself to do today?"
+    },
+    {
+      "day": 86,
+      "week": 13,
+      "arc": "STEADYING",
+      "word": "BELIEVE",
+      "category": "identity",
+      "meaning": "Belief does not require certainty. It asks you to act as if it is possible, just for today.",
+      "notification_hook": "Act as if. Just for today.",
+      "evening_prompt": "What did you choose to believe today?"
+    },
+    {
+      "day": 87,
+      "week": 13,
+      "arc": "STEADYING",
+      "word": "EVIDENCE",
+      "category": "reframe",
+      "meaning": "You have evidence that you can do this. Look at what you have shown up for already.",
+      "notification_hook": "Look at what you've already done.",
+      "evening_prompt": "What evidence did today add to your record?"
+    },
+    {
+      "day": 88,
+      "week": 13,
+      "arc": "STEADYING",
+      "word": "RELIABLE",
+      "category": "identity",
+      "meaning": "You are more reliable than you feel right now. The record says so, even when the feeling does not.",
+      "notification_hook": "You are more reliable than you think.",
+      "evening_prompt": "Where were you reliable today?"
+    },
+    {
+      "day": 89,
+      "week": 13,
+      "arc": "STEADYING",
+      "word": "STEADY",
+      "category": "identity",
+      "meaning": "Steady does not mean fast or certain. It means you keep going even when it wavers.",
+      "notification_hook": "Even when it wavers, you are steady.",
+      "evening_prompt": "What did you release this week, trusting steadiness to hold?"
+    },
+    {
+      "day": 90,
+      "week": 13,
+      "arc": "STEADYING",
+      "word": "FAITHFUL",
+      "category": "identity",
+      "meaning": "Faithful to the small practice, even imperfectly. That faithfulness is quietly building something real.",
+      "notification_hook": "Faithful to the small things.",
+      "evening_prompt": "What were you faithful to today?"
+    },
+    {
+      "day": 91,
+      "week": 13,
+      "arc": "STEADYING",
+      "word": "ALLOWED",
+      "category": "permission",
+      "meaning": "You are allowed to have hard days and still be someone who is making real progress.",
+      "notification_hook": "Hard days are allowed here.",
+      "evening_prompt": "What were you allowed to be today?"
+    },
+    {
+      "day": 92,
+      "week": 14,
+      "arc": "REBUILDING",
+      "word": "RECLAIM",
+      "category": "identity",
+      "meaning": "You are reclaiming something that was always yours. Self-trust is not built from scratch — it is recovered.",
+      "notification_hook": "Something you lost is finding its way back.",
+      "evening_prompt": "What did you reclaim today, however small?"
+    },
+    {
+      "day": 93,
+      "week": 14,
+      "arc": "REBUILDING",
+      "word": "KNOW",
+      "category": "identity",
+      "meaning": "You know more than you give yourself credit for. The knowing is quiet but it has always been there.",
+      "notification_hook": "You know more than you think.",
+      "evening_prompt": "What did you know today that you almost ignored?"
+    },
+    {
+      "day": 94,
+      "week": 14,
+      "arc": "REBUILDING",
+      "word": "INSTINCT",
+      "category": "identity",
+      "meaning": "Your instincts did not break during the hard months. They are available to you now, if you listen.",
+      "notification_hook": "Your instincts are still intact.",
+      "evening_prompt": "What instinct guided you today?"
+    },
+    {
+      "day": 95,
+      "week": 14,
+      "arc": "REBUILDING",
+      "word": "CAPABLE",
+      "category": "reframe",
+      "meaning": "Capable is not a fixed state. It is what you are, rebuilt a little more each day you show up.",
+      "notification_hook": "You are more capable than you feel.",
+      "evening_prompt": "What did you prove to yourself today?"
+    },
+    {
+      "day": 96,
+      "week": 14,
+      "arc": "REBUILDING",
+      "word": "EXHALE",
+      "category": "relief",
+      "meaning": "The week is ending. Your exhale is allowed to carry everything you no longer need to hold.",
+      "notification_hook": "Exhale what the week gave you.",
+      "evening_prompt": "What did your exhale release today?"
+    },
+    {
+      "day": 97,
+      "week": 14,
+      "arc": "REBUILDING",
+      "word": "SOLID",
+      "category": "identity",
+      "meaning": "You are more solid than you feel. The work you have done has added real ground beneath you.",
+      "notification_hook": "More solid than you know.",
+      "evening_prompt": "Where did you feel solid today?"
+    },
+    {
+      "day": 98,
+      "week": 14,
+      "arc": "REBUILDING",
+      "word": "VALID",
+      "category": "permission",
+      "meaning": "You are valid in this moment exactly as you are. Your struggle does not make you less — it makes you real.",
+      "notification_hook": "You are valid exactly as you are.",
+      "evening_prompt": "What part of you did you validate today?"
+    },
+    {
+      "day": 99,
+      "week": 15,
+      "arc": "REBUILDING",
+      "word": "BENEATH",
+      "category": "depth",
+      "meaning": "Beneath the exhaustion is someone who has been here the whole time. Go a layer deeper today.",
+      "notification_hook": "There is more of you than the tired.",
+      "evening_prompt": "What did you find beneath the surface today?"
+    },
+    {
+      "day": 100,
+      "week": 15,
+      "arc": "REBUILDING",
+      "word": "ORIGINAL",
+      "category": "identity",
+      "meaning": "You have an original self that stress cannot erase. It has been waiting for the noise to quiet.",
+      "notification_hook": "Your original self is still there.",
+      "evening_prompt": "What feels most originally you today?"
+    },
+    {
+      "day": 101,
+      "week": 15,
+      "arc": "REBUILDING",
+      "word": "IDENTITY",
+      "category": "depth",
+      "meaning": "Identity does not erase under pressure. It reveals itself — the parts that held, the parts that grew.",
+      "notification_hook": "Pressure reveals. It doesn't erase.",
+      "evening_prompt": "What did today reveal about who you are?"
+    },
+    {
+      "day": 102,
+      "week": 15,
+      "arc": "REBUILDING",
+      "word": "AUTHENTIC",
+      "category": "identity",
+      "meaning": "Authentic means true to what is actually there, not what you think should be. Start there.",
+      "notification_hook": "Start with what is actually there.",
+      "evening_prompt": "Where were you most authentic today?"
+    },
+    {
+      "day": 103,
+      "week": 15,
+      "arc": "REBUILDING",
+      "word": "GENUINE",
+      "category": "identity",
+      "meaning": "Genuine is what remains when you stop performing. It is not a smaller version — it is the real one.",
+      "notification_hook": "The performance can rest today.",
+      "evening_prompt": "What did you let be genuine today?"
+    },
+    {
+      "day": 104,
+      "week": 15,
+      "arc": "REBUILDING",
+      "word": "INHERENT",
+      "category": "identity",
+      "meaning": "What is inherent in you was not diminished by what you went through. It was always there.",
+      "notification_hook": "It was always there.",
+      "evening_prompt": "What inherent quality did you notice in yourself?"
+    },
+    {
+      "day": 105,
+      "week": 15,
+      "arc": "REBUILDING",
+      "word": "COMPASSION",
+      "category": "permission",
+      "meaning": "You deserve the same compassion you would offer someone else in your situation. Offer it now.",
+      "notification_hook": "You deserve what you give others.",
+      "evening_prompt": "How did you offer compassion to yourself today?"
+    },
+    {
+      "day": 106,
+      "week": 16,
+      "arc": "REBUILDING",
+      "word": "WILLINGNESS",
+      "category": "identity",
+      "meaning": "Willingness is the beginning of courage. You do not need to feel ready — you need to be willing.",
+      "notification_hook": "Willing is enough to start.",
+      "evening_prompt": "What were you willing to try today?"
+    },
+    {
+      "day": 107,
+      "week": 16,
+      "arc": "REBUILDING",
+      "word": "IMPERFECT",
+      "category": "reframe",
+      "meaning": "Imperfect action moves things. Waiting for perfect keeps you exactly where you are.",
+      "notification_hook": "Imperfect is better than waiting.",
+      "evening_prompt": "What imperfect thing did you do that mattered?"
+    },
+    {
+      "day": 108,
+      "week": 16,
+      "arc": "REBUILDING",
+      "word": "ATTEMPT",
+      "category": "action",
+      "meaning": "An attempt is a real thing. It counts, whether or not it worked the way you hoped.",
+      "notification_hook": "The attempt itself counts.",
+      "evening_prompt": "What did you attempt today?"
+    },
+    {
+      "day": 109,
+      "week": 16,
+      "arc": "REBUILDING",
+      "word": "BEFORE",
+      "category": "reframe",
+      "meaning": "You have done hard things before, without feeling ready. This is not different from those times.",
+      "notification_hook": "You've done hard things before.",
+      "evening_prompt": "What has your history of before taught you?"
+    },
+    {
+      "day": 110,
+      "week": 16,
+      "arc": "REBUILDING",
+      "word": "ONWARD",
+      "category": "action",
+      "meaning": "Onward is the quiet version of forward. Not triumphant — just continuing, past what stopped you.",
+      "notification_hook": "Onward. Quietly. Past what stopped you.",
+      "evening_prompt": "What did you move past today?"
+    },
+    {
+      "day": 111,
+      "week": 16,
+      "arc": "REBUILDING",
+      "word": "BRAVE",
+      "category": "identity",
+      "meaning": "Brave does not feel like bravery from the inside. It feels like doing it anyway, scared.",
+      "notification_hook": "Brave is doing it anyway.",
+      "evening_prompt": "When were you brave today?"
+    },
+    {
+      "day": 112,
+      "week": 16,
+      "arc": "REBUILDING",
+      "word": "SUFFICIENT",
+      "category": "reframe",
+      "meaning": "Three months in, sufficient looks different. You know what it costs and you choose it anyway.",
+      "notification_hook": "What you have done is sufficient.",
+      "evening_prompt": "What was sufficient about this week?"
+    },
+    {
+      "day": 113,
+      "week": 17,
+      "arc": "REBUILDING",
+      "word": "DISTANCE",
+      "category": "reframe",
+      "meaning": "There is distance between who you were and who you are now. That distance is evidence of movement.",
+      "notification_hook": "Look how far you've actually come.",
+      "evening_prompt": "What distance did you notice today?"
+    },
+    {
+      "day": 114,
+      "week": 17,
+      "arc": "REBUILDING",
+      "word": "PROGRESS",
+      "category": "reframe",
+      "meaning": "Progress is rarely straight or obvious. It lives in the gap between last month and this one.",
+      "notification_hook": "Progress is already happening.",
+      "evening_prompt": "What progress do you see when you look closely?"
+    },
+    {
+      "day": 115,
+      "week": 17,
+      "arc": "REBUILDING",
+      "word": "CHANGED",
+      "category": "identity",
+      "meaning": "You have changed — not in a way you chose, but in a way that is real. It is allowed to be real.",
+      "notification_hook": "You are not who you were.",
+      "evening_prompt": "What change in you did you acknowledge today?"
+    },
+    {
+      "day": 116,
+      "week": 17,
+      "arc": "REBUILDING",
+      "word": "GROWN",
+      "category": "identity",
+      "meaning": "Something in you has grown through the hard months. Not despite what happened — because of it.",
+      "notification_hook": "You have grown through this.",
+      "evening_prompt": "What in you has grown that you hadn't noticed?"
+    },
+    {
+      "day": 117,
+      "week": 17,
+      "arc": "REBUILDING",
+      "word": "BRIDGE",
+      "category": "reframe",
+      "meaning": "You are a bridge between who you were and who you are becoming. You get to walk it, not explain it.",
+      "notification_hook": "You don't have to explain it.",
+      "evening_prompt": "What did you release about who you used to be?"
+    },
+    {
+      "day": 118,
+      "week": 17,
+      "arc": "REBUILDING",
+      "word": "BETWEEN",
+      "category": "reframe",
+      "meaning": "Between where you were and where you are going is exactly where you are now. That is allowed.",
+      "notification_hook": "Between is a real place to be.",
+      "evening_prompt": "What are you in between today?"
+    },
+    {
+      "day": 119,
+      "week": 17,
+      "arc": "REBUILDING",
+      "word": "INTEGRATE",
+      "category": "depth",
+      "meaning": "Integrating then and now takes time. You are allowed to hold both without needing resolution yet.",
+      "notification_hook": "Both can be true at the same time.",
+      "evening_prompt": "What are you learning to hold together?"
+    },
+    {
+      "day": 120,
+      "week": 18,
+      "arc": "REBUILDING",
+      "word": "CLARITY",
+      "category": "reframe",
+      "meaning": "Clarity after fog does not arrive all at once. It comes as a clearing, not a revelation.",
+      "notification_hook": "Clarity is coming, piece by piece.",
+      "evening_prompt": "What became clearer today?"
+    },
+    {
+      "day": 121,
+      "week": 18,
+      "arc": "REBUILDING",
+      "word": "EMERGE",
+      "category": "action",
+      "meaning": "To emerge is to come through. Not out the other side — just through, into the open, a little.",
+      "notification_hook": "You are beginning to emerge.",
+      "evening_prompt": "What are you emerging from today?"
+    },
+    {
+      "day": 122,
+      "week": 18,
+      "arc": "REBUILDING",
+      "word": "SEE",
+      "category": "reframe",
+      "meaning": "You can see yourself more clearly now. Not perfectly — but with less of the fog between you.",
+      "notification_hook": "You can see more clearly now.",
+      "evening_prompt": "What do you see about yourself that is new?"
+    },
+    {
+      "day": 123,
+      "week": 18,
+      "arc": "REBUILDING",
+      "word": "PLAIN",
+      "category": "reframe",
+      "meaning": "Plain is not bare. Plain is honest — stripped of what was covering the actual thing.",
+      "notification_hook": "Plain is honest. Plain is real.",
+      "evening_prompt": "What looked different when you saw it plainly?"
+    },
+    {
+      "day": 124,
+      "week": 18,
+      "arc": "REBUILDING",
+      "word": "FOCUS",
+      "category": "protection",
+      "meaning": "Focus after fog is a return to yourself. What matters has not changed — you can see it again.",
+      "notification_hook": "Focus returns after every fog.",
+      "evening_prompt": "What did you release to regain focus today?"
+    },
+    {
+      "day": 125,
+      "week": 18,
+      "arc": "REBUILDING",
+      "word": "VISIBLE",
+      "category": "reframe",
+      "meaning": "What was hidden during the hardest months is becoming visible again. You are becoming visible to yourself, and that changes things.",
+      "notification_hook": "You are becoming visible again.",
+      "evening_prompt": "What became visible to you today?"
+    },
+    {
+      "day": 126,
+      "week": 18,
+      "arc": "REBUILDING",
+      "word": "SIMPLE",
+      "category": "reframe",
+      "meaning": "The complexity is clearing. What remains is simpler than you feared — and enough for today.",
+      "notification_hook": "Simpler than you feared.",
+      "evening_prompt": "What became simple when the fog lifted?"
+    },
+    {
+      "day": 127,
+      "week": 19,
+      "arc": "REBUILDING",
+      "word": "SMALL",
+      "category": "reframe",
+      "meaning": "Small acts do not stay small. They compound into something real over weeks and months.",
+      "notification_hook": "Smaller than you think you need.",
+      "evening_prompt": "What small act compounded today?"
+    },
+    {
+      "day": 128,
+      "week": 19,
+      "arc": "REBUILDING",
+      "word": "COMPOUND",
+      "category": "reframe",
+      "meaning": "The acts you think are too small are compounding. What you plant quietly grows without fanfare.",
+      "notification_hook": "It's compounding. Trust the math.",
+      "evening_prompt": "What are you compounding day by day?"
+    },
+    {
+      "day": 129,
+      "week": 19,
+      "arc": "REBUILDING",
+      "word": "BUILD",
+      "category": "action",
+      "meaning": "You are building something. It may not be visible yet, but the foundation is already real.",
+      "notification_hook": "You are building something real.",
+      "evening_prompt": "What are you building, one day at a time?"
+    },
+    {
+      "day": 130,
+      "week": 19,
+      "arc": "REBUILDING",
+      "word": "ACCUMULATE",
+      "category": "reframe",
+      "meaning": "Every showing up accumulates. Nothing is wasted, even the days that felt like they didn't count.",
+      "notification_hook": "Nothing is wasted.",
+      "evening_prompt": "What has accumulated in you this week?"
+    },
+    {
+      "day": 131,
+      "week": 19,
+      "arc": "REBUILDING",
+      "word": "STEP",
+      "category": "action",
+      "meaning": "Each step releases the need for the whole journey to be planned. One step was enough today.",
+      "notification_hook": "One step at a time releases the rest.",
+      "evening_prompt": "What step released you from needing to see ahead?"
+    },
+    {
+      "day": 132,
+      "week": 19,
+      "arc": "REBUILDING",
+      "word": "LAYER",
+      "category": "reframe",
+      "meaning": "Everything you are building is happening in layers. Each one necessary, each one enough.",
+      "notification_hook": "Layer by layer. That's how it works.",
+      "evening_prompt": "What layer did you add today?"
+    },
+    {
+      "day": 133,
+      "week": 19,
+      "arc": "REBUILDING",
+      "word": "PATIENCE",
+      "category": "reframe",
+      "meaning": "Patience is not passivity. It is the active act of trusting that what you are doing is working.",
+      "notification_hook": "Patience is active, not passive.",
+      "evening_prompt": "Where did patience serve you this week?"
+    },
+    {
+      "day": 134,
+      "week": 20,
+      "arc": "REBUILDING",
+      "word": "MOMENTUM",
+      "category": "identity",
+      "meaning": "Momentum does not announce itself. You notice it when something feels slightly less hard than before.",
+      "notification_hook": "You have more momentum than you feel.",
+      "evening_prompt": "Where did you feel momentum today?"
+    },
+    {
+      "day": 135,
+      "week": 20,
+      "arc": "REBUILDING",
+      "word": "MOTION",
+      "category": "action",
+      "meaning": "You are in motion. Not fast, not certain — but genuinely moving in a direction that is yours.",
+      "notification_hook": "You are in motion. That counts.",
+      "evening_prompt": "What was your motion today?"
+    },
+    {
+      "day": 136,
+      "week": 20,
+      "arc": "REBUILDING",
+      "word": "MOVEMENT",
+      "category": "action",
+      "meaning": "Movement does not require speed. It requires direction — and you have one.",
+      "notification_hook": "Direction matters more than speed.",
+      "evening_prompt": "What moved today that seemed stuck before?"
+    },
+    {
+      "day": 137,
+      "week": 20,
+      "arc": "REBUILDING",
+      "word": "TRACTION",
+      "category": "reframe",
+      "meaning": "Traction is what happens when effort meets the right surface. You are finding your footing.",
+      "notification_hook": "You are finding your footing.",
+      "evening_prompt": "Where did you feel traction today?"
+    },
+    {
+      "day": 138,
+      "week": 20,
+      "arc": "REBUILDING",
+      "word": "STEADY",
+      "category": "identity",
+      "meaning": "Something in you has steadied over these months. It is quiet, but it is real and it is yours.",
+      "notification_hook": "You have steadied. It shows.",
+      "evening_prompt": "What steady thing in you can you release to?"
+    },
+    {
+      "day": 139,
+      "week": 20,
+      "arc": "REBUILDING",
+      "word": "QUIET",
+      "category": "relief",
+      "meaning": "Quiet is where momentum lives between efforts. Let today be quieter than yesterday.",
+      "notification_hook": "Momentum lives in the quiet too.",
+      "evening_prompt": "Where did you find quiet today?"
+    },
+    {
+      "day": 140,
+      "week": 20,
+      "arc": "REBUILDING",
+      "word": "GROWING",
+      "category": "identity",
+      "meaning": "You are growing. Not toward a finished version — just deeper into who you actually are.",
+      "notification_hook": "You are already growing.",
+      "evening_prompt": "What are you growing into right now?"
+    },
+    {
+      "day": 141,
+      "week": 21,
+      "arc": "DEEPENING",
+      "word": "DEEPER",
+      "category": "depth",
+      "meaning": "Deeper is not harder. It is more honest — the level where what is real finally lives.",
+      "notification_hook": "Deeper is where the real things are.",
+      "evening_prompt": "What did you go deeper with today?"
+    },
+    {
+      "day": 142,
+      "week": 21,
+      "arc": "DEEPENING",
+      "word": "BENEATH",
+      "category": "depth",
+      "meaning": "Beneath the routine and the noise, something in you is asking to be recognized. It is worth a moment of your full, unhurried attention.",
+      "notification_hook": "Something beneath is asking to be heard.",
+      "evening_prompt": "What surfaced from beneath today?"
+    },
+    {
+      "day": 143,
+      "week": 21,
+      "arc": "DEEPENING",
+      "word": "INTERIOR",
+      "category": "depth",
+      "meaning": "Your interior life is real and worth attending to. Not as a project — just as something that exists and matters.",
+      "notification_hook": "Your interior is worth attending to.",
+      "evening_prompt": "What did you notice in your interior today?"
+    },
+    {
+      "day": 144,
+      "week": 21,
+      "arc": "DEEPENING",
+      "word": "HIDDEN",
+      "category": "depth",
+      "meaning": "What has been hidden from you — about yourself, about what you need — is worth uncovering slowly.",
+      "notification_hook": "What's hidden is worth uncovering.",
+      "evening_prompt": "What hidden thing became a little clearer today?"
+    },
+    {
+      "day": 145,
+      "week": 21,
+      "arc": "DEEPENING",
+      "word": "SURFACE",
+      "category": "reframe",
+      "meaning": "The surface was where you stayed to survive. Going deeper is now available to you.",
+      "notification_hook": "You can go deeper now.",
+      "evening_prompt": "What can you release that's been surface-level only?"
+    },
+    {
+      "day": 146,
+      "week": 21,
+      "arc": "DEEPENING",
+      "word": "UNDERNEATH",
+      "category": "depth",
+      "meaning": "Underneath what you present to the world is something more complex. It is also more worth knowing.",
+      "notification_hook": "Underneath is worth knowing.",
+      "evening_prompt": "What is underneath what you showed today?"
+    },
+    {
+      "day": 147,
+      "week": 21,
+      "arc": "DEEPENING",
+      "word": "LET",
+      "category": "permission",
+      "meaning": "Let what is there be there. You do not have to manage or resolve everything you find inside.",
+      "notification_hook": "Let it be there. That's enough.",
+      "evening_prompt": "What did you let exist without managing it?"
+    },
+    {
+      "day": 148,
+      "week": 22,
+      "arc": "DEEPENING",
+      "word": "ESSENTIAL",
+      "category": "depth",
+      "meaning": "Essential is what survives all the simplifying. You know what it is — you have been circling it.",
+      "notification_hook": "What's essential is already clear.",
+      "evening_prompt": "What was essential today?"
+    },
+    {
+      "day": 149,
+      "week": 22,
+      "arc": "DEEPENING",
+      "word": "MATTERS",
+      "category": "depth",
+      "meaning": "What actually matters has gotten clearer through the hard months. Hold that clarity gently.",
+      "notification_hook": "What matters has been revealing itself.",
+      "evening_prompt": "What did you decide matters most today?"
+    },
+    {
+      "day": 150,
+      "week": 22,
+      "arc": "DEEPENING",
+      "word": "VITAL",
+      "category": "depth",
+      "meaning": "Vital means necessary for life — not productivity, not performance, just life. Knowing what is vital protects you from spending yourself on what is not.",
+      "notification_hook": "What is vital to you, actually?",
+      "evening_prompt": "What vital thing did you protect today?"
+    },
+    {
+      "day": 151,
+      "week": 22,
+      "arc": "DEEPENING",
+      "word": "CORE",
+      "category": "identity",
+      "meaning": "Your core has held through all of it. What you find there now is the same — steadier and more known.",
+      "notification_hook": "Your core is still holding.",
+      "evening_prompt": "What does your core say about what matters?"
+    },
+    {
+      "day": 152,
+      "week": 22,
+      "arc": "DEEPENING",
+      "word": "RELEASE",
+      "category": "relief",
+      "meaning": "Release what is not essential. Not with force — just let it slip away when you stop holding it.",
+      "notification_hook": "Let it slip when you stop holding.",
+      "evening_prompt": "What did you release today that was not essential?"
+    },
+    {
+      "day": 153,
+      "week": 22,
+      "arc": "DEEPENING",
+      "word": "CLEAR",
+      "category": "relief",
+      "meaning": "You are clearer now than you were six months ago. What is left is truer — keep what is here.",
+      "notification_hook": "What is left is truer.",
+      "evening_prompt": "What feels clearest to you right now?"
+    },
+    {
+      "day": 154,
+      "week": 22,
+      "arc": "DEEPENING",
+      "word": "REST",
+      "category": "permission",
+      "meaning": "Rest now comes with less guilt. You have earned the right to know rest is real work.",
+      "notification_hook": "Rest comes with less guilt now.",
+      "evening_prompt": "How has your relationship with rest changed?"
+    },
+    {
+      "day": 155,
+      "week": 23,
+      "arc": "DEEPENING",
+      "word": "STORY",
+      "category": "depth",
+      "meaning": "You have been telling yourself a story about who you are. It is worth examining what it says.",
+      "notification_hook": "What story are you telling yourself?",
+      "evening_prompt": "What story shaped how you saw today?"
+    },
+    {
+      "day": 156,
+      "week": 23,
+      "arc": "DEEPENING",
+      "word": "NARRATIVE",
+      "category": "depth",
+      "meaning": "Your narrative about yourself has changed. The old one was survival — this one is something more.",
+      "notification_hook": "Your narrative is shifting.",
+      "evening_prompt": "How is your story about yourself changing?"
+    },
+    {
+      "day": 157,
+      "week": 23,
+      "arc": "DEEPENING",
+      "word": "REFRAME",
+      "category": "reframe",
+      "meaning": "Reframing is not denial. It is choosing which true thing to look at first.",
+      "notification_hook": "Which true thing will you look at first?",
+      "evening_prompt": "What did you reframe today?"
+    },
+    {
+      "day": 158,
+      "week": 23,
+      "arc": "DEEPENING",
+      "word": "CHOOSE",
+      "category": "protection",
+      "meaning": "You choose which story has your attention. Not always, but more often than you think.",
+      "notification_hook": "You have more choice than you think.",
+      "evening_prompt": "What story did you choose to focus on today?"
+    },
+    {
+      "day": 159,
+      "week": 23,
+      "arc": "DEEPENING",
+      "word": "DIFFERENT",
+      "category": "reframe",
+      "meaning": "The story of who you are is different now. Releasing the old version is not betrayal — it is honesty.",
+      "notification_hook": "Releasing the old version is honest.",
+      "evening_prompt": "What old story did you let go of today?"
+    },
+    {
+      "day": 160,
+      "week": 23,
+      "arc": "DEEPENING",
+      "word": "WITNESS",
+      "category": "depth",
+      "meaning": "Witness your story without judgment for a day. Just observe — what has happened, how you held it.",
+      "notification_hook": "Witness without judgment today.",
+      "evening_prompt": "What did you witness about yourself today?"
+    },
+    {
+      "day": 161,
+      "week": 23,
+      "arc": "DEEPENING",
+      "word": "ACCEPTANCE",
+      "category": "permission",
+      "meaning": "Accepting your story — the hard parts, the gaps, the imperfect growing — is a form of self-respect. You do not have to love all of it to accept it.",
+      "notification_hook": "Accepting your story is self-respect.",
+      "evening_prompt": "What part of your story did you accept today?"
+    },
+    {
+      "day": 162,
+      "week": 24,
+      "arc": "DEEPENING",
+      "word": "BOUNDARY",
+      "category": "protection",
+      "meaning": "A boundary drawn from self-respect is different from one drawn from fear. You know the difference — and you can trust it.",
+      "notification_hook": "Your boundaries say what you value.",
+      "evening_prompt": "What boundary did you draw from self-respect today?"
+    },
+    {
+      "day": 163,
+      "week": 24,
+      "arc": "DEEPENING",
+      "word": "NO",
+      "category": "protection",
+      "meaning": "No is a complete sentence. It does not require justification to be real and to be honored.",
+      "notification_hook": "No is a complete sentence.",
+      "evening_prompt": "What did you say no to today?"
+    },
+    {
+      "day": 164,
+      "week": 24,
+      "arc": "DEEPENING",
+      "word": "LIMIT",
+      "category": "protection",
+      "meaning": "Your limits are not flaws. They are information about what sustains you and what does not.",
+      "notification_hook": "Your limits tell you what you value.",
+      "evening_prompt": "What limit protected you today?"
+    },
+    {
+      "day": 165,
+      "week": 24,
+      "arc": "DEEPENING",
+      "word": "PROTECT",
+      "category": "protection",
+      "meaning": "Protecting yourself is not selfishness. It is the prerequisite for everything else you do.",
+      "notification_hook": "You can't give what you don't protect.",
+      "evening_prompt": "What did you protect today that matters?"
+    },
+    {
+      "day": 166,
+      "week": 24,
+      "arc": "DEEPENING",
+      "word": "GUARD",
+      "category": "protection",
+      "meaning": "Release what you have been guarding out of habit rather than necessity. Keep only what actually serves you.",
+      "notification_hook": "Keep only what actually serves you.",
+      "evening_prompt": "What are you done guarding that you can let go?"
+    },
+    {
+      "day": 167,
+      "week": 24,
+      "arc": "DEEPENING",
+      "word": "SELECTIVE",
+      "category": "protection",
+      "meaning": "Being selective with your time and energy is not withholding. It is wisdom about what you actually have.",
+      "notification_hook": "Selective is wise, not withholding.",
+      "evening_prompt": "What were you selectively protective of today?"
+    },
+    {
+      "day": 168,
+      "week": 24,
+      "arc": "DEEPENING",
+      "word": "WORTHY",
+      "category": "permission",
+      "meaning": "Worthy of boundaries, worthy of rest, worthy of the care you give to others. That worthiness does not have to be earned before it applies to you.",
+      "notification_hook": "Worthy of all you give to others.",
+      "evening_prompt": "What did you do today that treated yourself as worthy?"
+    },
+    {
+      "day": 169,
+      "week": 25,
+      "arc": "DEEPENING",
+      "word": "SILENCE",
+      "category": "depth",
+      "meaning": "Silence grounds you in what is actually present. Today, before the noise begins, find the quiet first.",
+      "notification_hook": "Find the quiet before the noise.",
+      "evening_prompt": "What did silence tell you today?"
+    },
+    {
+      "day": 170,
+      "week": 25,
+      "arc": "DEEPENING",
+      "word": "LISTEN",
+      "category": "identity",
+      "meaning": "You are listening differently now — to yourself, to what your body asks. That quality of listening changes what you hear.",
+      "notification_hook": "Listen to what quietly persists.",
+      "evening_prompt": "What are you hearing differently now?"
+    },
+    {
+      "day": 171,
+      "week": 25,
+      "arc": "DEEPENING",
+      "word": "STILL",
+      "category": "reframe",
+      "meaning": "Still is a practice. In the stillness, the noise of should and must loses its grip a little.",
+      "notification_hook": "In the still, the grip loosens.",
+      "evening_prompt": "Where did stillness help you today?"
+    },
+    {
+      "day": 172,
+      "week": 25,
+      "arc": "DEEPENING",
+      "word": "PAUSE",
+      "category": "permission",
+      "meaning": "A pause taken intentionally is different from one forced by exhaustion. This one is yours to choose.",
+      "notification_hook": "This pause is intentional. Yours.",
+      "evening_prompt": "What did your intentional pause reveal?"
+    },
+    {
+      "day": 173,
+      "week": 25,
+      "arc": "DEEPENING",
+      "word": "SPACE",
+      "category": "relief",
+      "meaning": "Space is where you process what you could not hold while moving. You can let things settle here.",
+      "notification_hook": "Space is where things settle.",
+      "evening_prompt": "What settled in the space you created today?"
+    },
+    {
+      "day": 174,
+      "week": 25,
+      "arc": "DEEPENING",
+      "word": "INNER",
+      "category": "depth",
+      "meaning": "Your inner life has been talking all along. What it says is worth more than the noise outside.",
+      "notification_hook": "Your inner life is worth listening to.",
+      "evening_prompt": "What did your inner voice say today?"
+    },
+    {
+      "day": 175,
+      "week": 25,
+      "arc": "DEEPENING",
+      "word": "GENTLE",
+      "category": "permission",
+      "meaning": "Still gentle — not because you are fragile, but because you choose it. Gentleness is how you sustain what matters.",
+      "notification_hook": "Gentle is how you sustain it.",
+      "evening_prompt": "Where did gentleness serve you this week?"
+    },
+    {
+      "day": 176,
+      "week": 26,
+      "arc": "DEEPENING",
+      "word": "HALFWAY",
+      "category": "identity",
+      "meaning": "You are halfway through a year that asked everything of you. You are here, and you are different.",
+      "notification_hook": "Halfway. And you are different now.",
+      "evening_prompt": "How are you different at the halfway point?"
+    },
+    {
+      "day": 177,
+      "week": 26,
+      "arc": "DEEPENING",
+      "word": "CHANGED",
+      "category": "identity",
+      "meaning": "Changed is not a failure word. It is what happens when something real has been through something real.",
+      "notification_hook": "Changed is what real looks like.",
+      "evening_prompt": "What change in you do you now recognize as good?"
+    },
+    {
+      "day": 178,
+      "week": 26,
+      "arc": "DEEPENING",
+      "word": "RETURNING",
+      "category": "identity",
+      "meaning": "Six months in, returning looks different. You come back knowing more about why you left.",
+      "notification_hook": "You return knowing more than before.",
+      "evening_prompt": "What are you returning to with new understanding?"
+    },
+    {
+      "day": 179,
+      "week": 26,
+      "arc": "DEEPENING",
+      "word": "ACKNOWLEDGE",
+      "category": "reframe",
+      "meaning": "Acknowledge what you have actually done. Not just what is still left — but what is already done.",
+      "notification_hook": "Acknowledge what is already done.",
+      "evening_prompt": "What did you acknowledge about yourself today?"
+    },
+    {
+      "day": 180,
+      "week": 26,
+      "arc": "DEEPENING",
+      "word": "EXHALE",
+      "category": "relief",
+      "meaning": "Six months of exhales, each one real. You are still breathing — that is the whole halfway mark.",
+      "notification_hook": "Still breathing. That's the whole story.",
+      "evening_prompt": "What are you exhaling at this halfway point?"
+    },
+    {
+      "day": 181,
+      "week": 26,
+      "arc": "DEEPENING",
+      "word": "MARK",
+      "category": "identity",
+      "meaning": "This is a mark on the path — not a destination, not a judgment. Just a record that you were here.",
+      "notification_hook": "You were here. That is the mark.",
+      "evening_prompt": "What mark did today leave on your journey?"
+    },
+    {
+      "day": 182,
+      "week": 26,
+      "arc": "DEEPENING",
+      "word": "FREE",
+      "category": "permission",
+      "meaning": "You are freer than you were six months ago. Not from everything — but from some of what held you.",
+      "notification_hook": "Freer than you were. Notice that.",
+      "evening_prompt": "What are you free from that you weren't before?"
+    },
+    {
+      "day": 183,
+      "week": 27,
+      "arc": "EXPANDING",
+      "word": "OPEN",
+      "category": "opening",
+      "meaning": "You are starting to open where you were once closed. This is not weakness — it is what healing looks like.",
+      "notification_hook": "Something in you is ready to open.",
+      "evening_prompt": "Where did you feel a little more open today?"
+    },
+    {
+      "day": 184,
+      "week": 27,
+      "arc": "EXPANDING",
+      "word": "SOFTEN",
+      "category": "opening",
+      "meaning": "Softening is not giving up — it is choosing a gentler way. You can be softer with yourself and still be strong.",
+      "notification_hook": "Let yourself soften today.",
+      "evening_prompt": "Where did you allow yourself to soften?"
+    },
+    {
+      "day": 185,
+      "week": 27,
+      "arc": "EXPANDING",
+      "word": "REACH",
+      "category": "opening",
+      "meaning": "Reaching out — to people, to ideas, to possibility — is part of opening. You do not have to do this alone.",
+      "notification_hook": "You can reach out today.",
+      "evening_prompt": "What or who did you reach toward today?"
+    },
+    {
+      "day": 186,
+      "week": 27,
+      "arc": "EXPANDING",
+      "word": "UNFOLD",
+      "category": "opening",
+      "meaning": "Things unfold in their own time, including you. You do not have to force the next step — it is already happening.",
+      "notification_hook": "Let today unfold at its own pace.",
+      "evening_prompt": "What unfolded today that you did not expect?"
+    },
+    {
+      "day": 187,
+      "week": 27,
+      "arc": "EXPANDING",
+      "word": "RELEASE",
+      "category": "releasing",
+      "meaning": "Today you can let something go — not because it was wrong, but because you are moving. Releasing is how you make room.",
+      "notification_hook": "What can you release before the weekend?",
+      "evening_prompt": "What did you release today, even slightly?"
+    },
+    {
+      "day": 188,
+      "week": 27,
+      "arc": "EXPANDING",
+      "word": "GENTLY",
+      "category": "opening",
+      "meaning": "Gently is a valid pace. You do not have to rush your opening.",
+      "notification_hook": "Move through today gently.",
+      "evening_prompt": "Where were you gentler with yourself today?"
+    },
+    {
+      "day": 189,
+      "week": 27,
+      "arc": "EXPANDING",
+      "word": "ALLOW",
+      "category": "permission",
+      "meaning": "You are allowed to want things. You are allowed to feel good.",
+      "notification_hook": "You have permission to allow good things.",
+      "evening_prompt": "What did you allow yourself today?"
+    },
+    {
+      "day": 190,
+      "week": 28,
+      "arc": "EXPANDING",
+      "word": "RECEIVE",
+      "category": "receiving",
+      "meaning": "Receiving is a skill, and you are practicing it. When someone offers you something good, you can say yes.",
+      "notification_hook": "Practice receiving something good today.",
+      "evening_prompt": "What did you receive today, and how did it feel?"
+    },
+    {
+      "day": 191,
+      "week": 28,
+      "arc": "EXPANDING",
+      "word": "WELCOME",
+      "category": "receiving",
+      "meaning": "Welcoming does not mean opening the door to everything. It means making space for what is good and right for you.",
+      "notification_hook": "What are you willing to welcome today?",
+      "evening_prompt": "What did you welcome into your day?"
+    },
+    {
+      "day": 192,
+      "week": 28,
+      "arc": "EXPANDING",
+      "word": "GATHER",
+      "category": "receiving",
+      "meaning": "You have been collecting small pieces of yourself for months. Today you gather what is yours and carry it forward.",
+      "notification_hook": "Gather what is already good around you.",
+      "evening_prompt": "What did you gather or collect today?"
+    },
+    {
+      "day": 193,
+      "week": 28,
+      "arc": "EXPANDING",
+      "word": "ACCEPT",
+      "category": "receiving",
+      "meaning": "Accepting is not the same as approving. It means you can hold reality without fighting it in every moment.",
+      "notification_hook": "What can you accept today, just for today?",
+      "evening_prompt": "What did you find easier to accept today?"
+    },
+    {
+      "day": 194,
+      "week": 28,
+      "arc": "EXPANDING",
+      "word": "LET",
+      "category": "releasing",
+      "meaning": "Let it be what it is. You do not have to fix everything today.",
+      "notification_hook": "Let something just be today.",
+      "evening_prompt": "What did you let be, without fixing it?"
+    },
+    {
+      "day": 195,
+      "week": 28,
+      "arc": "EXPANDING",
+      "word": "ABSORB",
+      "category": "receiving",
+      "meaning": "You can absorb good things — not just process them, but really take them in. Something kind happened today. Let it land.",
+      "notification_hook": "Let something good reach you today.",
+      "evening_prompt": "What good thing did you let yourself absorb today?"
+    },
+    {
+      "day": 196,
+      "week": 28,
+      "arc": "EXPANDING",
+      "word": "INVITE",
+      "category": "permission",
+      "meaning": "You are allowed to invite good things rather than wait to see if they arrive. Openness is something you can practice on purpose.",
+      "notification_hook": "What good thing can you invite today?",
+      "evening_prompt": "What did you invite or allow yourself today?"
+    },
+    {
+      "day": 197,
+      "week": 29,
+      "arc": "EXPANDING",
+      "word": "CONNECT",
+      "category": "connection",
+      "meaning": "Connection does not require deep conversation or long history. A small moment of genuine presence counts.",
+      "notification_hook": "Notice a moment of real connection today.",
+      "evening_prompt": "Where did you feel connected today, even briefly?"
+    },
+    {
+      "day": 198,
+      "week": 29,
+      "arc": "EXPANDING",
+      "word": "SHARE",
+      "category": "connection",
+      "meaning": "Sharing a piece of yourself is how you let people know you. You do not have to share everything, but something is enough.",
+      "notification_hook": "Share a piece of yourself today.",
+      "evening_prompt": "What did you share with someone today?"
+    },
+    {
+      "day": 199,
+      "week": 29,
+      "arc": "EXPANDING",
+      "word": "WARM",
+      "category": "connection",
+      "meaning": "Warmth is something you carry and something you can offer. It does not cost much and it goes further than you think.",
+      "notification_hook": "Let your warmth be seen today.",
+      "evening_prompt": "Where did you give or receive warmth today?"
+    },
+    {
+      "day": 200,
+      "week": 29,
+      "arc": "EXPANDING",
+      "word": "LEAN",
+      "category": "connection",
+      "meaning": "You can lean on people without losing your footing. Leaning is not dependence — it is how you share the weight.",
+      "notification_hook": "Is there someone you can lean on today?",
+      "evening_prompt": "Where did you lean on someone, or let them lean on you?"
+    },
+    {
+      "day": 201,
+      "week": 29,
+      "arc": "EXPANDING",
+      "word": "OFFER",
+      "category": "releasing",
+      "meaning": "Offering something — your time, your attention, your honesty — is how you give. What you offer generously comes back in its own way.",
+      "notification_hook": "What can you offer freely today?",
+      "evening_prompt": "What did you offer to someone today?"
+    },
+    {
+      "day": 202,
+      "week": 29,
+      "arc": "EXPANDING",
+      "word": "PRESENCE",
+      "category": "connection",
+      "meaning": "Your presence is something. It does not require doing or fixing. Being there, fully, is one of the most generous things you can give.",
+      "notification_hook": "Your presence matters today.",
+      "evening_prompt": "Where were you truly present today?"
+    },
+    {
+      "day": 203,
+      "week": 29,
+      "arc": "EXPANDING",
+      "word": "MEET",
+      "category": "permission",
+      "meaning": "You are allowed to meet people where they are — and to let them meet you. Real connection starts when two people stop performing and simply show up.",
+      "notification_hook": "Let yourself be met today.",
+      "evening_prompt": "Where did you feel truly met or seen today?"
+    },
+    {
+      "day": 204,
+      "week": 30,
+      "arc": "EXPANDING",
+      "word": "JOY",
+      "category": "joy",
+      "meaning": "Joy is not the same as happiness — it is quieter, softer, more real. You are allowed to feel it without explaining it.",
+      "notification_hook": "Notice one small thing that brings you joy.",
+      "evening_prompt": "Where did you feel even a hint of joy today?"
+    },
+    {
+      "day": 205,
+      "week": 30,
+      "arc": "EXPANDING",
+      "word": "SAVOR",
+      "category": "joy",
+      "meaning": "Savoring is the act of slowing down long enough to taste something good. You do not have to move through it quickly.",
+      "notification_hook": "Slow down and savor something today.",
+      "evening_prompt": "What did you savor today, even briefly?"
+    },
+    {
+      "day": 206,
+      "week": 30,
+      "arc": "EXPANDING",
+      "word": "DELIGHT",
+      "category": "joy",
+      "meaning": "Delight is the feeling that something is exactly what it should be. You are allowed to be delighted — by small things, simple things.",
+      "notification_hook": "Let something delight you today.",
+      "evening_prompt": "What delighted you today?"
+    },
+    {
+      "day": 207,
+      "week": 30,
+      "arc": "EXPANDING",
+      "word": "ENJOY",
+      "category": "joy",
+      "meaning": "Enjoying something is not selfish. It is part of being alive. You do not have to earn the right to enjoy your own life.",
+      "notification_hook": "Let yourself actually enjoy something today.",
+      "evening_prompt": "What did you let yourself enjoy today?"
+    },
+    {
+      "day": 208,
+      "week": 30,
+      "arc": "EXPANDING",
+      "word": "BREATHE",
+      "category": "releasing",
+      "meaning": "A breath is never wasted. It is always doing something. Today you can breathe and let the week settle.",
+      "notification_hook": "Take a real breath before the weekend.",
+      "evening_prompt": "Where did your breath help you today?"
+    },
+    {
+      "day": 209,
+      "week": 30,
+      "arc": "EXPANDING",
+      "word": "SMILE",
+      "category": "joy",
+      "meaning": "Smiling does not require a reason. Small joy is still joy. You are allowed to feel lightness without justifying it.",
+      "notification_hook": "Let your face soften and smile today.",
+      "evening_prompt": "What made you smile today, small or large?"
+    },
+    {
+      "day": 210,
+      "week": 30,
+      "arc": "EXPANDING",
+      "word": "WORTHY",
+      "category": "permission",
+      "meaning": "You are worthy of good things. You do not have to earn them by suffering first. This is something you can choose to believe today.",
+      "notification_hook": "You are worthy of what is good.",
+      "evening_prompt": "Where did you act as though you were worthy today?"
+    },
+    {
+      "day": 211,
+      "week": 31,
+      "arc": "EXPANDING",
+      "word": "CREATE",
+      "category": "creativity",
+      "meaning": "Creating does not require talent or training. It requires a willingness to begin. You can make something today, no matter how small.",
+      "notification_hook": "What can you make or create today?",
+      "evening_prompt": "What did you make or bring into being today?"
+    },
+    {
+      "day": 212,
+      "week": 31,
+      "arc": "EXPANDING",
+      "word": "MAKE",
+      "category": "creativity",
+      "meaning": "Making is one of the most human things you can do. It does not have to be for anyone else — you can make just for the act of it.",
+      "notification_hook": "Make something today, just for you.",
+      "evening_prompt": "What did you make today?"
+    },
+    {
+      "day": 213,
+      "week": 31,
+      "arc": "EXPANDING",
+      "word": "IMAGINE",
+      "category": "creativity",
+      "meaning": "Imagination is what lets you see what does not yet exist. You are allowed to imagine a life that feels right to you.",
+      "notification_hook": "Let yourself imagine something today.",
+      "evening_prompt": "What did you imagine or dream toward today?"
+    },
+    {
+      "day": 214,
+      "week": 31,
+      "arc": "EXPANDING",
+      "word": "BUILD",
+      "category": "creativity",
+      "meaning": "You are already building something, even on the days it does not feel like it. Each small action is part of a structure you cannot always see yet.",
+      "notification_hook": "What are you quietly building today?",
+      "evening_prompt": "What did you build or add to today?"
+    },
+    {
+      "day": 215,
+      "week": 31,
+      "arc": "EXPANDING",
+      "word": "EXPLORE",
+      "category": "releasing",
+      "meaning": "Exploring means you are willing not to know the answer before you begin. Today you can look at something with fresh curiosity.",
+      "notification_hook": "Explore something with curiosity today.",
+      "evening_prompt": "What did you explore or look at differently today?"
+    },
+    {
+      "day": 216,
+      "week": 31,
+      "arc": "EXPANDING",
+      "word": "WONDER",
+      "category": "creativity",
+      "meaning": "Wonder is what happens when you stop needing to understand and start noticing. You can be curious without needing a purpose for your curiosity.",
+      "notification_hook": "Let yourself wonder today.",
+      "evening_prompt": "What made you wonder or feel curious today?"
+    },
+    {
+      "day": 217,
+      "week": 31,
+      "arc": "EXPANDING",
+      "word": "CRAFT",
+      "category": "permission",
+      "meaning": "You are allowed to take care with the things you make. Craft is not perfection — it is attention given freely.",
+      "notification_hook": "Give something careful attention today.",
+      "evening_prompt": "What did you give real attention or craft to today?"
+    },
+    {
+      "day": 218,
+      "week": 32,
+      "arc": "EXPANDING",
+      "word": "PLAY",
+      "category": "play",
+      "meaning": "Play is not something you have to earn. It is a basic need. You can be playful today without justifying it to anyone.",
+      "notification_hook": "Find a moment to simply play today.",
+      "evening_prompt": "Where did you allow yourself to play today?"
+    },
+    {
+      "day": 219,
+      "week": 32,
+      "arc": "EXPANDING",
+      "word": "LIGHT",
+      "category": "play",
+      "meaning": "Lightness is available to you even on heavy days. You can choose a lighter way of moving through something.",
+      "notification_hook": "Move through today a little more lightly.",
+      "evening_prompt": "Where did you feel lighter today?"
+    },
+    {
+      "day": 220,
+      "week": 32,
+      "arc": "EXPANDING",
+      "word": "FLOAT",
+      "category": "play",
+      "meaning": "Some things you can let yourself float through rather than fight through. There is a gentler way to move that still gets you there.",
+      "notification_hook": "What if you floated through this today?",
+      "evening_prompt": "Where did you float rather than fight today?"
+    },
+    {
+      "day": 221,
+      "week": 32,
+      "arc": "EXPANDING",
+      "word": "DRIFT",
+      "category": "play",
+      "meaning": "A little drifting is not wasted time — it is how your mind resets. You do not have to be productive every single moment.",
+      "notification_hook": "Let your mind drift a little today.",
+      "evening_prompt": "Where did you let yourself drift or wander today?"
+    },
+    {
+      "day": 222,
+      "week": 32,
+      "arc": "EXPANDING",
+      "word": "FLOW",
+      "category": "releasing",
+      "meaning": "Flow is what happens when you stop forcing and start letting. Today you can see where things naturally want to go.",
+      "notification_hook": "Let yourself flow rather than force today.",
+      "evening_prompt": "Where did things feel like they were flowing today?"
+    },
+    {
+      "day": 223,
+      "week": 32,
+      "arc": "EXPANDING",
+      "word": "EASE",
+      "category": "play",
+      "meaning": "Ease is not laziness. It is moving through something without extra resistance. You can choose ease and still show up fully.",
+      "notification_hook": "Choose ease over effort today.",
+      "evening_prompt": "Where did you choose ease today?"
+    },
+    {
+      "day": 224,
+      "week": 32,
+      "arc": "EXPANDING",
+      "word": "REST",
+      "category": "permission",
+      "meaning": "Rest is not a reward — it is something you need and are allowed to take. You can rest today without earning it first.",
+      "notification_hook": "Rest is allowed today.",
+      "evening_prompt": "Where did you give yourself real rest today?"
+    },
+    {
+      "day": 225,
+      "week": 33,
+      "arc": "EXPANDING",
+      "word": "WIDE",
+      "category": "expansion",
+      "meaning": "The world is wider than the hardest parts of your experience. You are allowed to let your view of what is possible begin to expand.",
+      "notification_hook": "Let your view expand a little today.",
+      "evening_prompt": "Where did your world feel a little wider today?"
+    },
+    {
+      "day": 226,
+      "week": 33,
+      "arc": "EXPANDING",
+      "word": "BEYOND",
+      "category": "expansion",
+      "meaning": "There is a version of your life that exists beyond where fear draws the boundary. You do not have to go there all at once.",
+      "notification_hook": "Look a little beyond what feels safe today.",
+      "evening_prompt": "Where did you step beyond a boundary today?"
+    },
+    {
+      "day": 227,
+      "week": 33,
+      "arc": "EXPANDING",
+      "word": "HORIZON",
+      "category": "expansion",
+      "meaning": "A horizon is not a destination — it is the reminder that more exists. You can look toward what is ahead without needing to arrive.",
+      "notification_hook": "Look toward the horizon of what is possible.",
+      "evening_prompt": "What did you notice on the horizon of your life today?"
+    },
+    {
+      "day": 228,
+      "week": 33,
+      "arc": "EXPANDING",
+      "word": "VAST",
+      "category": "expansion",
+      "meaning": "You exist in a vast world that is mostly untouched by what has hurt you. There is room for you to take up more space in it.",
+      "notification_hook": "The world is vast and you belong in it.",
+      "evening_prompt": "Where did the world feel bigger than your fear today?"
+    },
+    {
+      "day": 229,
+      "week": 33,
+      "arc": "EXPANDING",
+      "word": "EXPAND",
+      "category": "releasing",
+      "meaning": "Expanding means letting the edges of your life stretch a little further. You do not have to stay the same size you were at your smallest.",
+      "notification_hook": "Let yourself expand a little today.",
+      "evening_prompt": "Where did you expand today, even slightly?"
+    },
+    {
+      "day": 230,
+      "week": 33,
+      "arc": "EXPANDING",
+      "word": "DISCOVER",
+      "category": "expansion",
+      "meaning": "Discovery is not about finding something new — it is about being open to what is there. You can discover something today in the most familiar place.",
+      "notification_hook": "Stay open to discovering something today.",
+      "evening_prompt": "What did you discover today?"
+    },
+    {
+      "day": 231,
+      "week": 33,
+      "arc": "EXPANDING",
+      "word": "WHOLE",
+      "category": "permission",
+      "meaning": "You are more whole than you give yourself credit for. The parts you are still healing do not cancel out the parts that are already here.",
+      "notification_hook": "You are more whole than you think.",
+      "evening_prompt": "Where did you feel whole today, or close to it?"
+    },
+    {
+      "day": 232,
+      "week": 34,
+      "arc": "ROOTING",
+      "word": "BECOME",
+      "category": "identity",
+      "meaning": "You are in the process of becoming someone you can rely on. This is not something that happens all at once — it is already happening.",
+      "notification_hook": "Notice who you are becoming today.",
+      "evening_prompt": "Who are you becoming? What did today show you?"
+    },
+    {
+      "day": 233,
+      "week": 34,
+      "arc": "ROOTING",
+      "word": "FORM",
+      "category": "identity",
+      "meaning": "A form is taking shape in you. It is yours. The practice you have been doing is leaving a mark on who you are.",
+      "notification_hook": "Something is taking form in you today.",
+      "evening_prompt": "What shape did today give to who you are?"
+    },
+    {
+      "day": 234,
+      "week": 34,
+      "arc": "ROOTING",
+      "word": "SHAPE",
+      "category": "identity",
+      "meaning": "You are being shaped by the choices you make each day, including today. The shape you are taking is more solid than it looks.",
+      "notification_hook": "Your choices are shaping you today.",
+      "evening_prompt": "How did today shape who you are becoming?"
+    },
+    {
+      "day": 235,
+      "week": 34,
+      "arc": "ROOTING",
+      "word": "EMERGE",
+      "category": "identity",
+      "meaning": "Emerging is not the same as arriving. It is the motion of coming into yourself. You have been emerging for months. Notice it today.",
+      "notification_hook": "Something in you is emerging today.",
+      "evening_prompt": "What did you see emerge in yourself today?"
+    },
+    {
+      "day": 236,
+      "week": 34,
+      "arc": "ROOTING",
+      "word": "SETTLE",
+      "category": "releasing",
+      "meaning": "Settling is not giving up — it is letting yourself land somewhere and rest. You can let this new version of yourself settle in.",
+      "notification_hook": "Let yourself settle into who you are now.",
+      "evening_prompt": "Where did you settle or land today?"
+    },
+    {
+      "day": 237,
+      "week": 34,
+      "arc": "ROOTING",
+      "word": "BELONG",
+      "category": "identity",
+      "meaning": "You belong here. In your own life, in your own body, in this day. Belonging is not granted — it is something you can claim.",
+      "notification_hook": "You belong in the life you are building.",
+      "evening_prompt": "Where did you feel like you belonged today?"
+    },
+    {
+      "day": 238,
+      "week": 34,
+      "arc": "ROOTING",
+      "word": "CLAIM",
+      "category": "permission",
+      "meaning": "You are allowed to claim who you have become. Not as a performance, but as a quiet acknowledgment that this is you now.",
+      "notification_hook": "Claim who you are becoming today.",
+      "evening_prompt": "What did you claim or own about yourself today?"
+    },
+    {
+      "day": 239,
+      "week": 35,
+      "arc": "ROOTING",
+      "word": "PRACTICE",
+      "category": "practice",
+      "meaning": "You have a practice now. That is something real, something yours. It does not have to be perfect — it just has to continue.",
+      "notification_hook": "Your practice is real and it is working.",
+      "evening_prompt": "Where did your practice show up today?"
+    },
+    {
+      "day": 240,
+      "week": 35,
+      "arc": "ROOTING",
+      "word": "RITUAL",
+      "category": "practice",
+      "meaning": "A ritual is a small act that tells you who you are. The rituals you keep are the skeleton of your days.",
+      "notification_hook": "Honor one of your rituals today.",
+      "evening_prompt": "What ritual held you together today?"
+    },
+    {
+      "day": 241,
+      "week": 35,
+      "arc": "ROOTING",
+      "word": "RETURN",
+      "category": "practice",
+      "meaning": "You will wander from your practice. Returning is part of the practice. Every time you come back, you make the path a little clearer.",
+      "notification_hook": "If you wandered, return today.",
+      "evening_prompt": "Where did you return to yourself today?"
+    },
+    {
+      "day": 242,
+      "week": 35,
+      "arc": "ROOTING",
+      "word": "COMMIT",
+      "category": "practice",
+      "meaning": "Commitment is not a one-time decision — it is renewed every day. Today you renew your commitment, quietly, without fanfare.",
+      "notification_hook": "Quietly recommit to your practice today.",
+      "evening_prompt": "Where did you commit or recommit today?"
+    },
+    {
+      "day": 243,
+      "week": 35,
+      "arc": "ROOTING",
+      "word": "CONTINUE",
+      "category": "releasing",
+      "meaning": "Continuing is the most underrated form of strength. You do not have to do something great today — you just have to continue.",
+      "notification_hook": "Keep going. Continuing is enough.",
+      "evening_prompt": "What did you continue today, even when it was hard?"
+    },
+    {
+      "day": 244,
+      "week": 35,
+      "arc": "ROOTING",
+      "word": "HABIT",
+      "category": "practice",
+      "meaning": "A habit is what a practice becomes when it no longer requires a fight. Your habits are showing you who you are now.",
+      "notification_hook": "Notice the habits that are holding you.",
+      "evening_prompt": "Which habits showed up for you today without effort?"
+    },
+    {
+      "day": 245,
+      "week": 35,
+      "arc": "ROOTING",
+      "word": "STEADY",
+      "category": "permission",
+      "meaning": "You are steadier than you were. You are allowed to notice this. Steadiness is not the absence of difficulty — it is how you move through it.",
+      "notification_hook": "You are steadier than you think you are.",
+      "evening_prompt": "Where were you steady today?"
+    },
+    {
+      "day": 246,
+      "week": 36,
+      "arc": "ROOTING",
+      "word": "TEND",
+      "category": "protection",
+      "meaning": "Tending means giving regular, gentle attention to what matters. You can tend to your practice, your rest, and yourself today.",
+      "notification_hook": "Tend to what matters most today.",
+      "evening_prompt": "What did you tend to today?"
+    },
+    {
+      "day": 247,
+      "week": 36,
+      "arc": "ROOTING",
+      "word": "PROTECT",
+      "category": "protection",
+      "meaning": "Protecting what works is not rigidity — it is wisdom. You have built something real. It is worth protecting.",
+      "notification_hook": "Protect what is working in your life.",
+      "evening_prompt": "What did you protect or preserve today?"
+    },
+    {
+      "day": 248,
+      "week": 36,
+      "arc": "ROOTING",
+      "word": "MAINTAIN",
+      "category": "protection",
+      "meaning": "Maintenance is not glamorous, but it is how good things stay good. You do not always need to build — sometimes maintaining is everything.",
+      "notification_hook": "Maintain what is already working today.",
+      "evening_prompt": "What did you maintain or keep going today?"
+    },
+    {
+      "day": 249,
+      "week": 36,
+      "arc": "ROOTING",
+      "word": "KEEP",
+      "category": "protection",
+      "meaning": "You get to keep what you have built. No one can take that from you. Keeping is also a form of intention.",
+      "notification_hook": "Keep what is good and working today.",
+      "evening_prompt": "What are you choosing to keep today?"
+    },
+    {
+      "day": 250,
+      "week": 36,
+      "arc": "ROOTING",
+      "word": "HOLD",
+      "category": "releasing",
+      "meaning": "Holding can mean keeping something safe, or letting it rest in your hands. Today you hold your life lightly — present, not grasping.",
+      "notification_hook": "Hold today lightly.",
+      "evening_prompt": "What did you hold or let rest today?"
+    },
+    {
+      "day": 251,
+      "week": 36,
+      "arc": "ROOTING",
+      "word": "NURTURE",
+      "category": "protection",
+      "meaning": "Nurturing is how you help something grow without forcing it. You can nurture your habits, your rest, your relationships today.",
+      "notification_hook": "Nurture something you care about today.",
+      "evening_prompt": "What did you nurture today?"
+    },
+    {
+      "day": 252,
+      "week": 36,
+      "arc": "ROOTING",
+      "word": "SUSTAIN",
+      "category": "permission",
+      "meaning": "You are allowed to focus on what sustains you, not just what depletes you. Sustainability is not a limit — it is a long game.",
+      "notification_hook": "Choose what sustains you today.",
+      "evening_prompt": "What sustained you today?"
+    },
+    {
+      "day": 253,
+      "week": 37,
+      "arc": "ROOTING",
+      "word": "DEEP",
+      "category": "depth",
+      "meaning": "Going deep is different from going fast. Both can get you somewhere. Today you choose depth over speed and see what you find.",
+      "notification_hook": "Go deeper rather than faster today.",
+      "evening_prompt": "Where did you go deeper today instead of faster?"
+    },
+    {
+      "day": 254,
+      "week": 37,
+      "arc": "ROOTING",
+      "word": "STILL",
+      "category": "depth",
+      "meaning": "Stillness is not emptiness. It is a kind of listening. In the still moments, you often find what matters most.",
+      "notification_hook": "Find a still moment in today.",
+      "evening_prompt": "Where were you still today?"
+    },
+    {
+      "day": 255,
+      "week": 37,
+      "arc": "ROOTING",
+      "word": "SLOW",
+      "category": "depth",
+      "meaning": "Slow is not behind. Slow is how the deepest things move. You can let yourself move at the pace that is actually yours.",
+      "notification_hook": "Move at your own pace today.",
+      "evening_prompt": "Where did you slow down today and what did you notice?"
+    },
+    {
+      "day": 256,
+      "week": 37,
+      "arc": "ROOTING",
+      "word": "PATIENT",
+      "category": "depth",
+      "meaning": "Patience with yourself is one of the quietest forms of care. You are allowed to take longer than you expected.",
+      "notification_hook": "Be patient with yourself today.",
+      "evening_prompt": "Where did you practice patience with yourself today?"
+    },
+    {
+      "day": 257,
+      "week": 37,
+      "arc": "ROOTING",
+      "word": "WAIT",
+      "category": "releasing",
+      "meaning": "Some things only come in their own time, and waiting for them is not weakness. Today you can wait without feeling like you are failing.",
+      "notification_hook": "Let some things wait and arrive on their own.",
+      "evening_prompt": "What are you waiting for, and can you wait gently?"
+    },
+    {
+      "day": 258,
+      "week": 37,
+      "arc": "ROOTING",
+      "word": "MELLOW",
+      "category": "depth",
+      "meaning": "Mellowness is what happens when urgency starts to quiet. You can be mellow today and still be present, still be here.",
+      "notification_hook": "Let yourself be mellow today.",
+      "evening_prompt": "Where did you feel mellow or unhurried today?"
+    },
+    {
+      "day": 259,
+      "week": 37,
+      "arc": "ROOTING",
+      "word": "QUIET",
+      "category": "permission",
+      "meaning": "You are allowed to move through life with less noise than other people. Quiet is not absence — it is presence without performance.",
+      "notification_hook": "Choose quiet today.",
+      "evening_prompt": "Where did you find or choose quiet today?"
+    },
+    {
+      "day": 260,
+      "week": 38,
+      "arc": "ROOTING",
+      "word": "ENDURE",
+      "category": "endurance",
+      "meaning": "Endurance is not about being unaffected. It is about continuing anyway. You have been enduring, and that deserves to be named.",
+      "notification_hook": "You are enduring. That is something real.",
+      "evening_prompt": "What did you endure today, and how did you do it?"
+    },
+    {
+      "day": 261,
+      "week": 38,
+      "arc": "ROOTING",
+      "word": "PERSIST",
+      "category": "endurance",
+      "meaning": "Persistence is the quiet commitment to keep going when it would be easier not to. You are doing this, one day at a time.",
+      "notification_hook": "Persist today, in whatever way you can.",
+      "evening_prompt": "Where did you persist today?"
+    },
+    {
+      "day": 262,
+      "week": 38,
+      "arc": "ROOTING",
+      "word": "FAITHFUL",
+      "category": "endurance",
+      "meaning": "Being faithful to your practice means returning even when it is hard. You are more faithful than you realize.",
+      "notification_hook": "Be faithful to yourself today.",
+      "evening_prompt": "Where were you faithful to yourself or your practice today?"
+    },
+    {
+      "day": 263,
+      "week": 38,
+      "arc": "ROOTING",
+      "word": "LAST",
+      "category": "endurance",
+      "meaning": "The things that last are not always the loudest or the fastest. What you are building is built to last because you are taking it slowly.",
+      "notification_hook": "Build for what will last, not what is fast.",
+      "evening_prompt": "What did you do today that will last?"
+    },
+    {
+      "day": 264,
+      "week": 38,
+      "arc": "ROOTING",
+      "word": "CARRY",
+      "category": "releasing",
+      "meaning": "You can carry things lightly. Not everything needs to feel heavy. What you carry today does not have to weigh the same as yesterday.",
+      "notification_hook": "Carry today a little more lightly.",
+      "evening_prompt": "What did you carry today, and how did you carry it?"
+    },
+    {
+      "day": 265,
+      "week": 38,
+      "arc": "ROOTING",
+      "word": "ANCHOR",
+      "category": "endurance",
+      "meaning": "An anchor does not hold you back. It gives you something to return to. You have anchors now — things and practices that keep you here.",
+      "notification_hook": "Return to your anchors today.",
+      "evening_prompt": "What anchored you today?"
+    },
+    {
+      "day": 266,
+      "week": 38,
+      "arc": "ROOTING",
+      "word": "ABIDE",
+      "category": "permission",
+      "meaning": "You are allowed to simply abide — to be here, to stay, to exist without performing. Abiding is one of the most honest things you can do.",
+      "notification_hook": "Simply abide today.",
+      "evening_prompt": "Where did you simply abide today?"
+    },
+    {
+      "day": 267,
+      "week": 39,
+      "arc": "ROOTING",
+      "word": "ROOT",
+      "category": "rooting",
+      "meaning": "You have roots now. They are not always visible, but they are there. The roots are what let you stand through what comes next.",
+      "notification_hook": "Feel your roots today.",
+      "evening_prompt": "Where did you feel rooted today?"
+    },
+    {
+      "day": 268,
+      "week": 39,
+      "arc": "ROOTING",
+      "word": "GROUNDED",
+      "category": "rooting",
+      "meaning": "Being grounded means knowing where you stand, even on uncertain ground. You are more grounded than you were when you started.",
+      "notification_hook": "Notice where you feel grounded today.",
+      "evening_prompt": "What kept you grounded today?"
+    },
+    {
+      "day": 269,
+      "week": 39,
+      "arc": "ROOTING",
+      "word": "SOLID",
+      "category": "rooting",
+      "meaning": "Something in you has become solid. It was built day by day. You can trust this solidity — it is not fragile.",
+      "notification_hook": "Notice what is solid in you today.",
+      "evening_prompt": "Where did you feel solid or stable in yourself today?"
+    },
+    {
+      "day": 270,
+      "week": 39,
+      "arc": "ROOTING",
+      "word": "FOUNDATION",
+      "category": "rooting",
+      "meaning": "You have built a foundation. It may not look impressive, but it holds. Everything you do from here rests on what you have already made.",
+      "notification_hook": "Your foundation is real and it holds.",
+      "evening_prompt": "What is your foundation showing you today?"
+    },
+    {
+      "day": 271,
+      "week": 39,
+      "arc": "ROOTING",
+      "word": "YIELD",
+      "category": "releasing",
+      "meaning": "Yielding is how you move with life instead of against it. You can yield today without losing what is most important.",
+      "notification_hook": "Where can you yield rather than resist today?",
+      "evening_prompt": "Where did you yield today, and what happened?"
+    },
+    {
+      "day": 272,
+      "week": 39,
+      "arc": "ROOTING",
+      "word": "STABLE",
+      "category": "rooting",
+      "meaning": "Stability is not the same as stillness. You can be stable and still move. You have stability now. Notice how it feels to stand in it.",
+      "notification_hook": "Stand in your own stability today.",
+      "evening_prompt": "Where did you feel stable today?"
+    },
+    {
+      "day": 273,
+      "week": 39,
+      "arc": "ROOTING",
+      "word": "HOME",
+      "category": "permission",
+      "meaning": "You are allowed to feel at home in your own life. This is not where you were forced to land — this is where you are building.",
+      "notification_hook": "You are allowed to feel at home here.",
+      "evening_prompt": "Where did you feel at home today?"
+    },
+    {
+      "day": 274,
+      "week": 40,
+      "arc": "TRUSTING",
+      "word": "TRUST",
+      "category": "trust",
+      "meaning": "Trust is not blind faith — it is accumulated evidence that you can do this. You have been proving it to yourself for nine months.",
+      "notification_hook": "The evidence is already there. Trust it.",
+      "evening_prompt": "What did you do today that built your trust in yourself?"
+    },
+    {
+      "day": 275,
+      "week": 40,
+      "arc": "TRUSTING",
+      "word": "PROCESS",
+      "category": "trust",
+      "meaning": "The process is not decoration around the outcome — the process is the whole thing. You are in it, and it is working.",
+      "notification_hook": "The process is doing its work today.",
+      "evening_prompt": "Where did you trust the process today?"
+    },
+    {
+      "day": 276,
+      "week": 40,
+      "arc": "TRUSTING",
+      "word": "FORWARD",
+      "category": "trust",
+      "meaning": "Forward does not mean fast. It means you keep moving in the direction you have chosen. You are still moving forward.",
+      "notification_hook": "You are still moving forward today.",
+      "evening_prompt": "What small step forward did you take today?"
+    },
+    {
+      "day": 277,
+      "week": 40,
+      "arc": "TRUSTING",
+      "word": "COURSE",
+      "category": "trust",
+      "meaning": "You are on a course now — shaped by your choices, your returning, your care. Stay on it.",
+      "notification_hook": "You are on your course today.",
+      "evening_prompt": "How did you stay on your course today?"
+    },
+    {
+      "day": 278,
+      "week": 40,
+      "arc": "TRUSTING",
+      "word": "EASE",
+      "category": "releasing",
+      "meaning": "Ease at the end of the week is not laziness. It is how you carry yourself into the next one without depletion.",
+      "notification_hook": "Ease into the weekend with what you have.",
+      "evening_prompt": "Where did you ease today, instead of pushing?"
+    },
+    {
+      "day": 279,
+      "week": 40,
+      "arc": "TRUSTING",
+      "word": "UNFOLD",
+      "category": "trust",
+      "meaning": "Things are still unfolding for you. You do not have to know the full shape yet. Let it keep going.",
+      "notification_hook": "Let your life keep unfolding today.",
+      "evening_prompt": "What are you letting unfold without forcing?"
+    },
+    {
+      "day": 280,
+      "week": 40,
+      "arc": "TRUSTING",
+      "word": "ALLOW",
+      "category": "permission",
+      "meaning": "You are allowed to trust where you are. You do not need to be further along to deserve this day. It is already yours.",
+      "notification_hook": "You are allowed to be exactly here.",
+      "evening_prompt": "What did you allow yourself today?"
+    },
+    {
+      "day": 281,
+      "week": 41,
+      "arc": "TRUSTING",
+      "word": "KNOW",
+      "category": "trust",
+      "meaning": "You know more than you give yourself credit for. That knowing has been built by showing up, day after day.",
+      "notification_hook": "You know more than you think you do.",
+      "evening_prompt": "What did you know today that you could trust?"
+    },
+    {
+      "day": 282,
+      "week": 41,
+      "arc": "TRUSTING",
+      "word": "INSTINCT",
+      "category": "trust",
+      "meaning": "Your instincts have been sharpened by this year. When something feels right or wrong, you can trust that signal now.",
+      "notification_hook": "Your instincts have been earned. Trust them.",
+      "evening_prompt": "Where did you follow your instinct today?"
+    },
+    {
+      "day": 283,
+      "week": 41,
+      "arc": "TRUSTING",
+      "word": "CERTAIN",
+      "category": "trust",
+      "meaning": "There are things you are now certain of about yourself. These are not wishes — they are facts you have lived into.",
+      "notification_hook": "Some things you are certain of now.",
+      "evening_prompt": "What are you certain of about yourself today?"
+    },
+    {
+      "day": 284,
+      "week": 41,
+      "arc": "TRUSTING",
+      "word": "SOUND",
+      "category": "trust",
+      "meaning": "You are sound. The foundation you have built this year is sound. You can trust what you have made.",
+      "notification_hook": "What you have built this year is sound.",
+      "evening_prompt": "Where did you feel sound or solid in yourself today?"
+    },
+    {
+      "day": 285,
+      "week": 41,
+      "arc": "TRUSTING",
+      "word": "LET",
+      "category": "releasing",
+      "meaning": "Today you let go of needing to prove yourself. The proof is already in. You can let that part rest now.",
+      "notification_hook": "You can let the proving rest today.",
+      "evening_prompt": "What did you let go of today without guilt?"
+    },
+    {
+      "day": 286,
+      "week": 41,
+      "arc": "TRUSTING",
+      "word": "INNER",
+      "category": "trust",
+      "meaning": "The voice that has guided you through this year is your own. It has gotten clearer. Keep listening to it.",
+      "notification_hook": "Your inner voice has earned your trust.",
+      "evening_prompt": "Where did you listen to your own voice today?"
+    },
+    {
+      "day": 287,
+      "week": 41,
+      "arc": "TRUSTING",
+      "word": "RELY",
+      "category": "permission",
+      "meaning": "You are allowed to rely on yourself. This is not arrogance — it is the outcome of a year of showing up for yourself.",
+      "notification_hook": "You are allowed to rely on yourself now.",
+      "evening_prompt": "Where did you rely on yourself today?"
+    },
+    {
+      "day": 288,
+      "week": 42,
+      "arc": "TRUSTING",
+      "word": "EXTEND",
+      "category": "trust",
+      "meaning": "Extending trust to others does not require certainty. It requires a willingness to begin again, carefully.",
+      "notification_hook": "You can extend trust today, step by step.",
+      "evening_prompt": "Where did you extend trust to someone today?"
+    },
+    {
+      "day": 289,
+      "week": 42,
+      "arc": "TRUSTING",
+      "word": "RISK",
+      "category": "trust",
+      "meaning": "Every time you let someone in, you take a small risk. This year has taught you that some risks are worth taking.",
+      "notification_hook": "Some risks are worth taking today.",
+      "evening_prompt": "Where did you take a small risk today?"
+    },
+    {
+      "day": 290,
+      "week": 42,
+      "arc": "TRUSTING",
+      "word": "LEAN",
+      "category": "trust",
+      "meaning": "You have learned that leaning does not mean falling. You can lean on someone today without losing your ground.",
+      "notification_hook": "You can lean without losing your ground.",
+      "evening_prompt": "Where did you lean on someone today?"
+    },
+    {
+      "day": 291,
+      "week": 42,
+      "arc": "TRUSTING",
+      "word": "SAFE",
+      "category": "trust",
+      "meaning": "Safety is not the absence of all risk. It is the presence of enough trust to move forward anyway.",
+      "notification_hook": "You know what feels safe now.",
+      "evening_prompt": "Where did you feel safe enough today?"
+    },
+    {
+      "day": 292,
+      "week": 42,
+      "arc": "TRUSTING",
+      "word": "GIVE",
+      "category": "releasing",
+      "meaning": "Giving again means you have recovered enough to have something to offer. That is significant.",
+      "notification_hook": "You have something to give again today.",
+      "evening_prompt": "What did you give today that you couldn't a year ago?"
+    },
+    {
+      "day": 293,
+      "week": 42,
+      "arc": "TRUSTING",
+      "word": "CLOSE",
+      "category": "trust",
+      "meaning": "Closeness with others is something you can come back to. Not all at once, but gradually, on your own terms.",
+      "notification_hook": "You can let yourself be close today.",
+      "evening_prompt": "Where did you allow closeness today?"
+    },
+    {
+      "day": 294,
+      "week": 42,
+      "arc": "TRUSTING",
+      "word": "OPEN",
+      "category": "permission",
+      "meaning": "You are allowed to open up again. The openness you choose now is wiser than the openness you had before.",
+      "notification_hook": "You are allowed to open up again.",
+      "evening_prompt": "Where did you open yourself today?"
+    },
+    {
+      "day": 295,
+      "week": 43,
+      "arc": "TRUSTING",
+      "word": "BODY",
+      "category": "trust",
+      "meaning": "Your body has been carrying you through this year and it knows things. Today you can listen to what it tells you.",
+      "notification_hook": "Your body knows things today. Listen.",
+      "evening_prompt": "What did your body tell you today?"
+    },
+    {
+      "day": 296,
+      "week": 43,
+      "arc": "TRUSTING",
+      "word": "NOTICE",
+      "category": "trust",
+      "meaning": "Noticing is a form of trust — you have to believe what you observe. Today you trust your own observations.",
+      "notification_hook": "Notice what is actually true today.",
+      "evening_prompt": "What did you notice today that you trusted?"
+    },
+    {
+      "day": 297,
+      "week": 43,
+      "arc": "TRUSTING",
+      "word": "SENSE",
+      "category": "trust",
+      "meaning": "You have developed a sense for what is right for you. This sense is not perfect, but it is reliable.",
+      "notification_hook": "Trust your sense of what is right for you.",
+      "evening_prompt": "Where did your sense of things guide you today?"
+    },
+    {
+      "day": 298,
+      "week": 43,
+      "arc": "TRUSTING",
+      "word": "RESPOND",
+      "category": "trust",
+      "meaning": "Responding rather than reacting takes practice. You have been practicing, and it shows in how you move through things now.",
+      "notification_hook": "Notice how you respond today, not just react.",
+      "evening_prompt": "Where did you respond thoughtfully today?"
+    },
+    {
+      "day": 299,
+      "week": 43,
+      "arc": "TRUSTING",
+      "word": "SOFTEN",
+      "category": "releasing",
+      "meaning": "Softening at the end of the week means releasing the tension you have been holding. Your body can soften now.",
+      "notification_hook": "Let your body soften before the weekend.",
+      "evening_prompt": "Where did you soften today, in body or mind?"
+    },
+    {
+      "day": 300,
+      "week": 43,
+      "arc": "TRUSTING",
+      "word": "LAND",
+      "category": "trust",
+      "meaning": "Some days you just need to land — to stop moving and let yourself settle. Today is one of those days.",
+      "notification_hook": "Let yourself land today.",
+      "evening_prompt": "Where did you land today?"
+    },
+    {
+      "day": 301,
+      "week": 43,
+      "arc": "TRUSTING",
+      "word": "LISTEN",
+      "category": "permission",
+      "meaning": "You are allowed to listen to yourself above the noise of what you think you should be. Your own voice matters.",
+      "notification_hook": "Listen to yourself above the noise today.",
+      "evening_prompt": "What did you hear when you listened to yourself today?"
+    },
+    {
+      "day": 302,
+      "week": 44,
+      "arc": "TRUSTING",
+      "word": "REST",
+      "category": "trust",
+      "meaning": "Rest is not something you fall into when you are empty. It is something you choose before you reach that point.",
+      "notification_hook": "Choose rest before you need to collapse.",
+      "evening_prompt": "Where did you choose rest today?"
+    },
+    {
+      "day": 303,
+      "week": 44,
+      "arc": "TRUSTING",
+      "word": "RESTORE",
+      "category": "trust",
+      "meaning": "Restoration is what happens when you give yourself what you actually need. You know what that is today.",
+      "notification_hook": "Give yourself what restores you today.",
+      "evening_prompt": "What restored you today?"
+    },
+    {
+      "day": 304,
+      "week": 44,
+      "arc": "TRUSTING",
+      "word": "REPLENISH",
+      "category": "trust",
+      "meaning": "You have given a lot this year — to your practice, to yourself, to others. Today you replenish what has been spent.",
+      "notification_hook": "Replenish yourself today.",
+      "evening_prompt": "What did you do to replenish yourself today?"
+    },
+    {
+      "day": 305,
+      "week": 44,
+      "arc": "TRUSTING",
+      "word": "RECOVER",
+      "category": "trust",
+      "meaning": "Recovery is not a sign of weakness — it is what allows you to keep going. You can recover and still be strong.",
+      "notification_hook": "Recovery is part of the practice today.",
+      "evening_prompt": "Where did you recover or restore yourself today?"
+    },
+    {
+      "day": 306,
+      "week": 44,
+      "arc": "TRUSTING",
+      "word": "RELEASE",
+      "category": "releasing",
+      "meaning": "Releasing what you have been carrying this week is not giving up. It is how you show up for what comes next.",
+      "notification_hook": "Set down what you've been carrying today.",
+      "evening_prompt": "What did you release before the week ended?"
+    },
+    {
+      "day": 307,
+      "week": 44,
+      "arc": "TRUSTING",
+      "word": "RENEW",
+      "category": "trust",
+      "meaning": "Renewal does not require a dramatic change. It can be as small as an afternoon of nothing, a walk, a rest.",
+      "notification_hook": "Let yourself renew today in a small way.",
+      "evening_prompt": "What renewed you today?"
+    },
+    {
+      "day": 308,
+      "week": 44,
+      "arc": "TRUSTING",
+      "word": "PERMIT",
+      "category": "permission",
+      "meaning": "You are permitted to rest without guilt. You will be better for having rested, and nothing important will be lost.",
+      "notification_hook": "You are permitted to rest fully today.",
+      "evening_prompt": "What did you permit yourself today?"
+    },
+    {
+      "day": 309,
+      "week": 45,
+      "arc": "TRUSTING",
+      "word": "IMPERFECT",
+      "category": "trust",
+      "meaning": "You are imperfect, and you have kept going anyway. That combination is more powerful than perfection ever could be.",
+      "notification_hook": "Imperfect and still going. That is the work.",
+      "evening_prompt": "Where did you keep going despite being imperfect today?"
+    },
+    {
+      "day": 310,
+      "week": 45,
+      "arc": "TRUSTING",
+      "word": "ENOUGH",
+      "category": "trust",
+      "meaning": "What you have done today is enough, even if it does not feel that way. Being enough is not an achievement — it is a baseline.",
+      "notification_hook": "What you have today is enough.",
+      "evening_prompt": "Where did you feel like enough today?"
+    },
+    {
+      "day": 311,
+      "week": 45,
+      "arc": "TRUSTING",
+      "word": "FLAWED",
+      "category": "trust",
+      "meaning": "Your flaws did not stop you. They are part of the picture of someone who chose to keep showing up.",
+      "notification_hook": "Flawed and still here. That is something.",
+      "evening_prompt": "Where did your flaws not stop you today?"
+    },
+    {
+      "day": 312,
+      "week": 45,
+      "arc": "TRUSTING",
+      "word": "HUMAN",
+      "category": "trust",
+      "meaning": "You are human — which means messy, inconsistent, and still trying. This year has been a full demonstration of that, and you showed up anyway.",
+      "notification_hook": "You are human. That is the whole point.",
+      "evening_prompt": "Where did your humanness show up today?"
+    },
+    {
+      "day": 313,
+      "week": 45,
+      "arc": "TRUSTING",
+      "word": "FORGIVE",
+      "category": "releasing",
+      "meaning": "Forgiving yourself for what you did not do perfectly this week is not weakness. It is how you close the week cleanly.",
+      "notification_hook": "Forgive yourself before the week closes.",
+      "evening_prompt": "What did you forgive yourself for today?"
+    },
+    {
+      "day": 314,
+      "week": 45,
+      "arc": "TRUSTING",
+      "word": "GRACE",
+      "category": "trust",
+      "meaning": "Grace is what you extend to yourself when perfection falls short. You can be graceful with your own limitations today.",
+      "notification_hook": "Extend a little grace to yourself today.",
+      "evening_prompt": "Where did you extend grace to yourself today?"
+    },
+    {
+      "day": 315,
+      "week": 45,
+      "arc": "TRUSTING",
+      "word": "WORTH",
+      "category": "permission",
+      "meaning": "You are worth the care you have been giving yourself this year. You do not need more proof than this year already provides.",
+      "notification_hook": "You are worth the care you give yourself.",
+      "evening_prompt": "Where did you treat yourself as worth caring for today?"
+    },
+    {
+      "day": 316,
+      "week": 46,
+      "arc": "TRUSTING",
+      "word": "NEAR",
+      "category": "trust",
+      "meaning": "You are near the end of this year. Not finished — near. The nearness is something to notice and acknowledge.",
+      "notification_hook": "You are near. That is real today.",
+      "evening_prompt": "What does being near the end of this year feel like today?"
+    },
+    {
+      "day": 317,
+      "week": 46,
+      "arc": "TRUSTING",
+      "word": "ALMOST",
+      "category": "trust",
+      "meaning": "Almost is not failure. It is the last stretch before something you have been building becomes fully real.",
+      "notification_hook": "You are almost there. Keep going.",
+      "evening_prompt": "What are you almost through today?"
+    },
+    {
+      "day": 318,
+      "week": 46,
+      "arc": "TRUSTING",
+      "word": "GATHER",
+      "category": "trust",
+      "meaning": "Before the end of anything, you gather what you have learned. You are gathering now, whether you realize it or not.",
+      "notification_hook": "Gather what you have learned so far.",
+      "evening_prompt": "What have you gathered over this year?"
+    },
+    {
+      "day": 319,
+      "week": 46,
+      "arc": "TRUSTING",
+      "word": "CLOSING",
+      "category": "trust",
+      "meaning": "This arc is closing, and another is beginning. You do not have to feel fully ready — the closing is already in motion.",
+      "notification_hook": "Something is closing. That is okay.",
+      "evening_prompt": "What feels like it is closing or completing today?"
+    },
+    {
+      "day": 320,
+      "week": 46,
+      "arc": "TRUSTING",
+      "word": "SHED",
+      "category": "releasing",
+      "meaning": "Before the next arc begins, you shed what you no longer need. Not everything from this year needs to travel forward with you.",
+      "notification_hook": "Shed what you no longer need before moving on.",
+      "evening_prompt": "What are you ready to shed before the next chapter?"
+    },
+    {
+      "day": 321,
+      "week": 46,
+      "arc": "TRUSTING",
+      "word": "CLEAR",
+      "category": "trust",
+      "meaning": "Things are becoming clearer now — about who you are and what you need. Trust that clarity. It has been earned.",
+      "notification_hook": "Notice what is becoming clear to you.",
+      "evening_prompt": "What became clearer to you today?"
+    },
+    {
+      "day": 322,
+      "week": 46,
+      "arc": "TRUSTING",
+      "word": "READY",
+      "category": "permission",
+      "meaning": "You are more ready than you feel. Readiness rarely announces itself — it arrives as the action you have already been taking.",
+      "notification_hook": "You are more ready than you feel today.",
+      "evening_prompt": "What are you ready for that you weren't before?"
+    },
+    {
+      "day": 323,
+      "week": 47,
+      "arc": "BECOMING",
+      "word": "CHANGED",
+      "category": "identity",
+      "meaning": "You have changed this year, not because you forced it, but because you kept showing up. The change is quiet and real and yours.",
+      "notification_hook": "You are not who you were a year ago.",
+      "evening_prompt": "Where do you see how you have changed today?"
+    },
+    {
+      "day": 324,
+      "week": 47,
+      "arc": "BECOMING",
+      "word": "SHIFT",
+      "category": "identity",
+      "meaning": "A shift has happened in you. It did not announce itself. You probably noticed it sideways, in a moment of reaction or rest.",
+      "notification_hook": "Something has shifted in you this year.",
+      "evening_prompt": "Where did you notice a shift in yourself today?"
+    },
+    {
+      "day": 325,
+      "week": 47,
+      "arc": "BECOMING",
+      "word": "DIFFERENT",
+      "category": "identity",
+      "meaning": "You are different now. You see differently, move differently, respond differently. This is not a crisis — it is a fact.",
+      "notification_hook": "You are different now. Notice how.",
+      "evening_prompt": "How are you different today than you were a year ago?"
+    },
+    {
+      "day": 326,
+      "week": 47,
+      "arc": "BECOMING",
+      "word": "GROWN",
+      "category": "identity",
+      "meaning": "You have grown, and not in the loud, visible way. It is the kind of growth that shows up quietly when you need it.",
+      "notification_hook": "You have grown more than you know.",
+      "evening_prompt": "Where did your growth show up for you today?"
+    },
+    {
+      "day": 327,
+      "week": 47,
+      "arc": "BECOMING",
+      "word": "LEAVE",
+      "category": "releasing",
+      "meaning": "You can leave behind who you had to be to survive. That version of you served its purpose. You do not need to carry it forward.",
+      "notification_hook": "You can leave the old version behind today.",
+      "evening_prompt": "What are you leaving behind as you move forward?"
+    },
+    {
+      "day": 328,
+      "week": 47,
+      "arc": "BECOMING",
+      "word": "NEW",
+      "category": "identity",
+      "meaning": "Something new is present in you now. It was grown from something difficult, which makes it more durable than you think.",
+      "notification_hook": "Something new has taken root in you.",
+      "evening_prompt": "What is new in you that wasn't there a year ago?"
+    },
+    {
+      "day": 329,
+      "week": 47,
+      "arc": "BECOMING",
+      "word": "WITNESS",
+      "category": "permission",
+      "meaning": "You are allowed to witness your own transformation. You do not have to minimize it or explain it to anyone.",
+      "notification_hook": "Be a witness to who you have become.",
+      "evening_prompt": "What did you witness in yourself today?"
+    },
+    {
+      "day": 330,
+      "week": 48,
+      "arc": "BECOMING",
+      "word": "INTEGRATE",
+      "category": "identity",
+      "meaning": "Integration is the quiet work of bringing your old and new selves into the same life. You are doing this work now, and it shows.",
+      "notification_hook": "You are integrating. That is the work.",
+      "evening_prompt": "Where did you integrate old and new today?"
+    },
+    {
+      "day": 331,
+      "week": 48,
+      "arc": "BECOMING",
+      "word": "WEAVE",
+      "category": "identity",
+      "meaning": "You are weaving together who you were and who you are becoming. The weave is stronger for having both.",
+      "notification_hook": "Weave together what was and what is.",
+      "evening_prompt": "What did you weave or bring together today?"
+    },
+    {
+      "day": 332,
+      "week": 48,
+      "arc": "BECOMING",
+      "word": "BLEND",
+      "category": "identity",
+      "meaning": "The difficult year and the healing year are blending into a single life. That life is yours — complex, real, and more whole than it looks.",
+      "notification_hook": "Let the difficult and good blend today.",
+      "evening_prompt": "Where did different parts of you blend today?"
+    },
+    {
+      "day": 333,
+      "week": 48,
+      "arc": "BECOMING",
+      "word": "BOTH",
+      "category": "identity",
+      "meaning": "You are allowed to be both — the one who struggled and the one who healed. Both are part of your whole story, and neither cancels the other.",
+      "notification_hook": "You can hold both truths today.",
+      "evening_prompt": "Where did you hold two things as true today?"
+    },
+    {
+      "day": 334,
+      "week": 48,
+      "arc": "BECOMING",
+      "word": "HONOR",
+      "category": "releasing",
+      "meaning": "Today you honor what this year has cost you and what it has given you. Both deserve to be seen before you move on.",
+      "notification_hook": "Honor what this year has been today.",
+      "evening_prompt": "What did you honor about this year today?"
+    },
+    {
+      "day": 335,
+      "week": 48,
+      "arc": "BECOMING",
+      "word": "COMPLETE",
+      "category": "identity",
+      "meaning": "Something that was incomplete at the start of this year is now more complete. You can feel the difference, even if you cannot yet fully name it.",
+      "notification_hook": "Something in you is more complete now.",
+      "evening_prompt": "What feels more complete in you today?"
+    },
+    {
+      "day": 336,
+      "week": 48,
+      "arc": "BECOMING",
+      "word": "WHOLE",
+      "category": "permission",
+      "meaning": "You are allowed to feel more whole than you did. You do not have to wait for perfect healing to claim a sense of wholeness.",
+      "notification_hook": "You are more whole than you were before.",
+      "evening_prompt": "Where did you feel whole or more complete today?"
+    },
+    {
+      "day": 337,
+      "week": 49,
+      "arc": "BECOMING",
+      "word": "NORMAL",
+      "category": "identity",
+      "meaning": "The new normal is quieter than you expected. It is made of small things you now do without thinking — that is the goal.",
+      "notification_hook": "Your new normal is taking shape today.",
+      "evening_prompt": "What feels normal now that didn't before?"
+    },
+    {
+      "day": 338,
+      "week": 49,
+      "arc": "BECOMING",
+      "word": "FAMILIAR",
+      "category": "identity",
+      "meaning": "The person you have become is becoming familiar to you. You recognize yourself in ways you did not a year ago.",
+      "notification_hook": "You are becoming familiar to yourself.",
+      "evening_prompt": "Where did you recognize yourself today?"
+    },
+    {
+      "day": 339,
+      "week": 49,
+      "arc": "BECOMING",
+      "word": "NATURAL",
+      "category": "identity",
+      "meaning": "What once required real effort is beginning to feel natural. That is what practice looks like when it has fully taken hold.",
+      "notification_hook": "Notice what feels natural now.",
+      "evening_prompt": "What felt natural today that once took effort?"
+    },
+    {
+      "day": 340,
+      "week": 49,
+      "arc": "BECOMING",
+      "word": "EVERYDAY",
+      "category": "identity",
+      "meaning": "The everyday is where the real work lives. Not in the dramatic moments — in the ordinary ones you keep showing up for.",
+      "notification_hook": "The everyday is where it all happens.",
+      "evening_prompt": "What ordinary thing mattered today?"
+    },
+    {
+      "day": 341,
+      "week": 49,
+      "arc": "BECOMING",
+      "word": "RELEASE",
+      "category": "releasing",
+      "meaning": "Releasing old patterns that kept you small is ongoing work. Today you release one more thread of who you used to have to be.",
+      "notification_hook": "Release one more thread of the old today.",
+      "evening_prompt": "What did you release of your old self today?"
+    },
+    {
+      "day": 342,
+      "week": 49,
+      "arc": "BECOMING",
+      "word": "SETTLED",
+      "category": "identity",
+      "meaning": "You are more settled now than you have been in a long time. This is not resignation — it is the feeling of having found your footing.",
+      "notification_hook": "Notice how settled you feel today.",
+      "evening_prompt": "Where did you feel settled or at ease today?"
+    },
+    {
+      "day": 343,
+      "week": 49,
+      "arc": "BECOMING",
+      "word": "CLAIM",
+      "category": "permission",
+      "meaning": "You are allowed to claim this new normal as yours. You built it, and it is not temporary — it belongs to you.",
+      "notification_hook": "Claim your new normal today.",
+      "evening_prompt": "What of your new self did you claim today?"
+    },
+    {
+      "day": 344,
+      "week": 50,
+      "arc": "BECOMING",
+      "word": "REFLECT",
+      "category": "identity",
+      "meaning": "Looking back is not going back. Reflecting on where you have come from is part of knowing where you are now.",
+      "notification_hook": "Reflect on how far you have come today.",
+      "evening_prompt": "What did you see when you reflected today?"
+    },
+    {
+      "day": 345,
+      "week": 50,
+      "arc": "BECOMING",
+      "word": "KIND",
+      "category": "identity",
+      "meaning": "Kindness toward who you were a year ago takes practice. That person was doing the best they could with what they had.",
+      "notification_hook": "Be kind to who you were a year ago.",
+      "evening_prompt": "Where did you extend kindness to your past self today?"
+    },
+    {
+      "day": 346,
+      "week": 50,
+      "arc": "BECOMING",
+      "word": "GENTLE",
+      "category": "identity",
+      "meaning": "Looking back gently means you do not use the past to punish the present. You can see it clearly without cruelty.",
+      "notification_hook": "Look back gently on where you have been.",
+      "evening_prompt": "Where were you gentle with your past today?"
+    },
+    {
+      "day": 347,
+      "week": 50,
+      "arc": "BECOMING",
+      "word": "SOFTEN",
+      "category": "identity",
+      "meaning": "You can soften the story you tell about what you went through. It happened, it shaped you, and it does not have to define you.",
+      "notification_hook": "Soften the story of where you have been.",
+      "evening_prompt": "Where did you soften your story today?"
+    },
+    {
+      "day": 348,
+      "week": 50,
+      "arc": "BECOMING",
+      "word": "LET",
+      "category": "releasing",
+      "meaning": "You can let the hardest parts of this year be what they were. They do not need to be larger than they already were.",
+      "notification_hook": "Let the hard parts be small today.",
+      "evening_prompt": "What did you let be smaller today?"
+    },
+    {
+      "day": 349,
+      "week": 50,
+      "arc": "BECOMING",
+      "word": "TENDER",
+      "category": "identity",
+      "meaning": "Tenderness toward yourself is not weakness. It is the natural result of having been through something hard and kept going.",
+      "notification_hook": "Be tender with yourself today.",
+      "evening_prompt": "Where were you tender with yourself today?"
+    },
+    {
+      "day": 350,
+      "week": 50,
+      "arc": "BECOMING",
+      "word": "RECEIVE",
+      "category": "permission",
+      "meaning": "You are allowed to receive the kindness of looking back and seeing that you did okay. You did more than okay.",
+      "notification_hook": "Receive the kindness of your own looking back.",
+      "evening_prompt": "What kindness did you receive from looking back today?"
+    },
+    {
+      "day": 351,
+      "week": 51,
+      "arc": "BECOMING",
+      "word": "GRATEFUL",
+      "category": "identity",
+      "meaning": "Gratitude this late in the year is not performance. It is the quiet acknowledgment that something real happened here.",
+      "notification_hook": "Notice what you are genuinely grateful for.",
+      "evening_prompt": "What are you genuinely grateful for today?"
+    },
+    {
+      "day": 352,
+      "week": 51,
+      "arc": "BECOMING",
+      "word": "NOTICE",
+      "category": "identity",
+      "meaning": "Noticing what is good is not the same as pretending nothing is hard. You can choose to see both, and that choice is honest.",
+      "notification_hook": "Notice what is actually good today.",
+      "evening_prompt": "What did you genuinely notice and appreciate today?"
+    },
+    {
+      "day": 353,
+      "week": 51,
+      "arc": "BECOMING",
+      "word": "SEE",
+      "category": "identity",
+      "meaning": "To see something clearly is its own form of gratitude. You can see what this year has been, clearly and without flinching.",
+      "notification_hook": "See what is real today.",
+      "evening_prompt": "What did you see clearly today?"
+    },
+    {
+      "day": 354,
+      "week": 51,
+      "arc": "BECOMING",
+      "word": "RECOGNIZE",
+      "category": "identity",
+      "meaning": "You recognize what has shifted in you over this year. That recognition is its own reward — no performance required.",
+      "notification_hook": "Recognize what you have built today.",
+      "evening_prompt": "What did you recognize in yourself today?"
+    },
+    {
+      "day": 355,
+      "week": 51,
+      "arc": "BECOMING",
+      "word": "SHED",
+      "category": "releasing",
+      "meaning": "You can shed the gratitude that feels performative or obligated. Real gratitude is simpler and quieter than that.",
+      "notification_hook": "Shed gratitude that feels forced today.",
+      "evening_prompt": "What gratitude felt real today, not forced?"
+    },
+    {
+      "day": 356,
+      "week": 51,
+      "arc": "BECOMING",
+      "word": "ACKNOWLEDGE",
+      "category": "identity",
+      "meaning": "Acknowledging what you have done this year is not boasting — it is accuracy. You can be accurate about what you have built.",
+      "notification_hook": "Acknowledge what you have built today.",
+      "evening_prompt": "What did you acknowledge about your year today?"
+    },
+    {
+      "day": 357,
+      "week": 51,
+      "arc": "BECOMING",
+      "word": "ENOUGH",
+      "category": "permission",
+      "meaning": "You are allowed to feel that this year was enough. Not perfect — enough. There is real dignity in that.",
+      "notification_hook": "This year was enough. You were enough.",
+      "evening_prompt": "Where did you let enough actually be enough today?"
+    },
+    {
+      "day": 358,
+      "week": 52,
+      "arc": "BECOMING",
+      "word": "CLOSE",
+      "category": "identity",
+      "meaning": "The year is closing, and you can feel it. Let yourself feel it without rushing toward or away from what comes next.",
+      "notification_hook": "The year is closing. Let that land.",
+      "evening_prompt": "What does the closing of this year feel like today?"
+    },
+    {
+      "day": 359,
+      "week": 52,
+      "arc": "BECOMING",
+      "word": "GATHER",
+      "category": "identity",
+      "meaning": "You are gathering the year as it closes — all of it, the hard and the good. This is yours to carry forward into what comes next.",
+      "notification_hook": "Gather this year as it closes.",
+      "evening_prompt": "What are you gathering from this year?"
+    },
+    {
+      "day": 360,
+      "week": 52,
+      "arc": "BECOMING",
+      "word": "BRING",
+      "category": "identity",
+      "meaning": "What you bring into the next year is not the same as what you brought into this one. You are different now, and what you carry reflects that.",
+      "notification_hook": "What will you bring into what comes next?",
+      "evening_prompt": "What are you bringing forward from this year?"
+    },
+    {
+      "day": 361,
+      "week": 52,
+      "arc": "BECOMING",
+      "word": "REMEMBER",
+      "category": "identity",
+      "meaning": "You will remember this year — not just for the hard parts, but for the turning. The moment things started to shift is worth carrying.",
+      "notification_hook": "Remember what shifted this year.",
+      "evening_prompt": "What from this year do you want to remember?"
+    },
+    {
+      "day": 362,
+      "week": 52,
+      "arc": "BECOMING",
+      "word": "LEAVE",
+      "category": "releasing",
+      "meaning": "You can leave this year with integrity — not perfection, but the real thing. You stayed. That is what integrity looks like.",
+      "notification_hook": "You can leave this year with integrity.",
+      "evening_prompt": "What are you leaving behind as this year closes?"
+    },
+    {
+      "day": 363,
+      "week": 52,
+      "arc": "BECOMING",
+      "word": "FULL",
+      "category": "identity",
+      "meaning": "This year has been full — of difficulty, of effort, of small victories, of returning. Full is not easy, but it is real.",
+      "notification_hook": "This year has been full. Let that be.",
+      "evening_prompt": "What made this year feel full, in any sense?"
+    },
+    {
+      "day": 364,
+      "week": 52,
+      "arc": "BECOMING",
+      "word": "OPEN",
+      "category": "permission",
+      "meaning": "You are allowed to arrive at the end of this year open. Open to what it has meant, and open to what is coming next.",
+      "notification_hook": "You are allowed to be open at the end.",
+      "evening_prompt": "What are you open to as this year closes?"
+    },
+    {
+      "day": 365,
+      "week": 53,
+      "arc": "ARRIVAL",
+      "word": "ARRIVED",
+      "category": "identity",
+      "meaning": "You opened this app 365 days ago and kept coming back — not perfectly, but you came back. That is the whole of it, and it is enough.",
+      "notification_hook": "You kept coming back. That is the whole thing.",
+      "evening_prompt": "You are still here. What does that mean to you?"
+    }
+  ]
+}

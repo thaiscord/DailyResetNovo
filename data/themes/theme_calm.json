@@ -1,0 +1,643 @@
+{
+  "theme": "Calm",
+  "user_state": "Anxious. Nervous system dysregulated. Heart racing before the day begins. Dreading something. Physical tightness in chest or shoulders.",
+  "core_need": "To feel safe in their own body.",
+  "emotional_tone": "Soft. Slow. Spacious.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "calm_arr_1",
+        "heading": "The breath is already here.",
+        "subheading": "It arrived before the anxiety. It will stay after."
+      },
+      {
+        "id": "calm_arr_2",
+        "heading": "Your body is not the problem.",
+        "subheading": "It is doing what it does when things feel big. That is allowed."
+      },
+      {
+        "id": "calm_arr_3",
+        "heading": "You don't have to feel better yet.",
+        "subheading": "You just have to be here. That is the whole instruction."
+      },
+      {
+        "id": "calm_arr_4",
+        "heading": "The tightness in your chest is real.",
+        "subheading": "So is this moment. So is the breath moving through you right now."
+      },
+      {
+        "id": "calm_arr_5",
+        "heading": "Slow is not weak.",
+        "subheading": "Slow is how the nervous system finds its way back."
+      },
+      {
+        "id": "calm_arr_6",
+        "heading": "You are safe right now.",
+        "subheading": "Not eventually. Right now. This breath. This moment."
+      },
+      {
+        "id": "calm_arr_7",
+        "heading": "The anxiety does not decide what happens next.",
+        "subheading": "You do. And right now, you have decided to be here."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "calm_rel_1",
+        "heading": "What is your body holding?",
+        "subheading": "Name the physical sensation. Not the story. Just where you feel it.",
+        "field_placeholder": "Where in your body does the anxiety live right now..."
+      },
+      {
+        "id": "calm_rel_2",
+        "heading": "What are you dreading?",
+        "subheading": "Write it down. Outside your body, it has less power.",
+        "field_placeholder": "What is the thing your nervous system keeps circling..."
+      },
+      {
+        "id": "calm_rel_3",
+        "heading": "The weight you brought in.",
+        "subheading": "Set it here before you begin. You can pick it back up if you need to.",
+        "field_placeholder": "What are you carrying into this moment that doesn't belong here..."
+      },
+      {
+        "id": "calm_rel_4",
+        "heading": "What does the worry say?",
+        "subheading": "Write it exactly as it sounds in your head. Then notice it is not the truth.",
+        "field_placeholder": "What is the anxious voice saying right now..."
+      },
+      {
+        "id": "calm_rel_5",
+        "heading": "What needs to leave the body?",
+        "subheading": "Tension has words. Let it use them here.",
+        "field_placeholder": "What are you holding in your shoulders, chest, or jaw right now..."
+      },
+      {
+        "id": "calm_rel_6",
+        "heading": "The thing you can't stop thinking about.",
+        "subheading": "Give it a container. This page. Here.",
+        "field_placeholder": "What is looping in your mind that your body is responding to..."
+      },
+      {
+        "id": "calm_rel_7",
+        "heading": "What does your nervous system need to hear?",
+        "subheading": "Write it. Even if it doesn't feel true yet.",
+        "field_placeholder": "What would you say to yourself if you knew it was going to be okay..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "calm_br_1",
+        "heading": "Slow the exhale.",
+        "instruction": "Breathe in for four. Out for eight. The long exhale activates the calm system. Do this three times."
+      },
+      {
+        "id": "calm_br_2",
+        "heading": "Let the shoulders drop.",
+        "instruction": "Inhale gently. As you exhale, let your shoulders fall. They were higher than you realized."
+      },
+      {
+        "id": "calm_br_3",
+        "heading": "Breathe into the chest.",
+        "instruction": "Place a hand on your chest. Breathe toward it. Feel it rise and fall. Four breaths. No hurry."
+      },
+      {
+        "id": "calm_br_4",
+        "heading": "The box breath.",
+        "instruction": "Inhale four counts. Hold four. Out four. Hold four. Repeat. Each cycle tells the body: safe."
+      },
+      {
+        "id": "calm_br_5",
+        "heading": "Soften the jaw.",
+        "instruction": "Breathe in slowly. As you breathe out, unclench your jaw. Then your hands. Then your forehead."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "calm_mom_1",
+        "heading": "What does your body need right now?"
+      },
+      {
+        "id": "calm_mom_2",
+        "heading": "Name one thing your nervous system can release."
+      },
+      {
+        "id": "calm_mom_3",
+        "heading": "What does safe feel like in your body today?"
+      },
+      {
+        "id": "calm_mom_4",
+        "heading": "Where are you carrying tension right now?"
+      },
+      {
+        "id": "calm_mom_5",
+        "heading": "What would help your body feel a little less tight?"
+      },
+      {
+        "id": "calm_mom_6",
+        "heading": "What is one small thing your body is asking for?"
+      },
+      {
+        "id": "calm_mom_7",
+        "heading": "What would it feel like to let your shoulders drop?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "calm_comp_1",
+        "heading": "You came back to yourself.",
+        "subheading": "The anxiety was loud. You stayed anyway."
+      },
+      {
+        "id": "calm_comp_2",
+        "heading": "The breath worked.",
+        "subheading": "It always does. Even when you can't feel it happening."
+      },
+      {
+        "id": "calm_comp_3",
+        "heading": "You showed up for your own body.",
+        "subheading": "That matters. More than you know right now."
+      },
+      {
+        "id": "calm_comp_4",
+        "heading": "The tightness can soften.",
+        "subheading": "Not all at once. But you gave it space to begin."
+      },
+      {
+        "id": "calm_comp_5",
+        "heading": "You were here.",
+        "subheading": "Fully. Even in the discomfort. That is enough."
+      },
+      {
+        "id": "calm_comp_6",
+        "heading": "The nervous system remembers this.",
+        "subheading": "Every time you return to calm, it gets slightly easier to find."
+      },
+      {
+        "id": "calm_comp_7",
+        "heading": "You didn't run from it.",
+        "subheading": "You stayed, breathed, and let it pass through. That is the whole practice."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "calm_hc_1",
+      "headline": "The anxiety is not in charge.",
+      "subheadline": "It is loud. It is not the decision-maker."
+    },
+    {
+      "id": "calm_hc_2",
+      "headline": "Your shoulders are allowed to drop.",
+      "subheadline": "Right now. No reason needed."
+    },
+    {
+      "id": "calm_hc_3",
+      "headline": "The breath is always available.",
+      "subheadline": "Before everything else, there is always the breath."
+    },
+    {
+      "id": "calm_hc_4",
+      "headline": "You don't have to feel better yet.",
+      "subheadline": "Just being here is the practice."
+    },
+    {
+      "id": "calm_hc_5",
+      "headline": "The body knows how to come back.",
+      "subheadline": "You just have to let it."
+    },
+    {
+      "id": "calm_hc_6",
+      "headline": "Slow is the right speed right now.",
+      "subheadline": "Not forever. Just for this moment."
+    },
+    {
+      "id": "calm_hc_7",
+      "headline": "The tightness will pass.",
+      "subheadline": "It always has before. This time is no different."
+    },
+    {
+      "id": "calm_hc_8",
+      "headline": "Safe right now.",
+      "subheadline": "Not eventually. Not when things settle. Right now."
+    },
+    {
+      "id": "calm_hc_9",
+      "headline": "The nervous system is not broken.",
+      "subheadline": "It is responding to what feels big. That is what it does."
+    },
+    {
+      "id": "calm_hc_10",
+      "headline": "One breath changes something.",
+      "subheadline": "Not everything. Something. Start there."
+    },
+    {
+      "id": "calm_hc_11",
+      "headline": "You can be anxious and still move through the day.",
+      "subheadline": "Both things are true at once."
+    },
+    {
+      "id": "calm_hc_12",
+      "headline": "The body holds what the mind won't say.",
+      "subheadline": "What is it holding for you today?"
+    },
+    {
+      "id": "calm_hc_13",
+      "headline": "Spacious.",
+      "subheadline": "That is what calm feels like. There is room. Even here."
+    },
+    {
+      "id": "calm_hc_14",
+      "headline": "This moment is survivable.",
+      "subheadline": "You have survived every moment so far. This one too."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "calm_act_1",
+      "content": "Place one hand on your chest. Breathe toward it for four slow breaths.",
+      "why": "Physical contact with your own body activates the calm response faster than breath alone."
+    },
+    {
+      "id": "calm_act_2",
+      "content": "Find the tension in your shoulders. Lift them to your ears on an inhale. Release on the exhale.",
+      "why": "Intentional muscle contraction followed by release physically loosens chronic tension."
+    },
+    {
+      "id": "calm_act_3",
+      "content": "Drink a full glass of water slowly. Taste it. Notice the temperature.",
+      "why": "Cold water activates the vagus nerve. Slow drinking grounds you in physical sensation."
+    },
+    {
+      "id": "calm_act_4",
+      "content": "Name five things you can see right now. Say each one quietly.",
+      "why": "Grounding in physical reality interrupts the anxious loop in the mind."
+    },
+    {
+      "id": "calm_act_5",
+      "content": "Step outside for two minutes. Stand still. Let air touch your face.",
+      "why": "External temperature and fresh air reset the nervous system through sensory contrast."
+    },
+    {
+      "id": "calm_act_6",
+      "content": "Write the anxious thought exactly as it sounds. Then write: 'This is a thought, not a fact.'",
+      "why": "Externalizing and labeling reduces the power of a thought without requiring you to dismiss it."
+    },
+    {
+      "id": "calm_act_7",
+      "content": "Stretch your arms overhead. Hold for five breaths. Let your ribs expand.",
+      "why": "The chest and rib area holds anxiety physically. Expansion creates physical spaciousness."
+    },
+    {
+      "id": "calm_act_8",
+      "content": "Unclench your jaw. Unclench your hands. Notice what else you are holding.",
+      "why": "The body holds anxiety in predictable places. Releasing one area signals safety."
+    },
+    {
+      "id": "calm_act_9",
+      "content": "Splash cold water on your wrists or face.",
+      "why": "Cold water triggers the dive reflex, which slows heart rate within seconds."
+    },
+    {
+      "id": "calm_act_10",
+      "content": "Sit with your feet flat on the floor. Press them down gently. Notice the sensation.",
+      "why": "Grounding through the feet activates the sense of physical safety."
+    },
+    {
+      "id": "calm_act_11",
+      "content": "Breathe out longer than you breathe in. Try a 4-count inhale and 8-count exhale.",
+      "why": "The extended exhale activates the parasympathetic nervous system directly."
+    },
+    {
+      "id": "calm_act_12",
+      "content": "Name the emotion you are feeling. Not the story. Just the name.",
+      "why": "Labeling an emotion reduces its intensity. Naming is a form of regulation."
+    },
+    {
+      "id": "calm_act_13",
+      "content": "Move to a quieter room or corner for five minutes. Sit without a screen.",
+      "why": "Reducing sensory input gives the nervous system space to regulate itself."
+    },
+    {
+      "id": "calm_act_14",
+      "content": "Make a warm drink slowly. Hold the cup with both hands. Sip without looking at a screen.",
+      "why": "Warmth, ritual, and absence of stimulation create a physical anchor."
+    },
+    {
+      "id": "calm_act_15",
+      "content": "Lie on the floor for three minutes. Just the floor, your back, the ceiling.",
+      "why": "Physical lowering of the body can lower the felt sense of threat."
+    },
+    {
+      "id": "calm_act_16",
+      "content": "Hum softly for one minute. Any sound. Just let it vibrate in your chest.",
+      "why": "Humming activates the vagus nerve, the primary calming pathway in the body."
+    },
+    {
+      "id": "calm_act_17",
+      "content": "Write a list of things that are true and safe right now. Not reassurances. True things.",
+      "why": "The anxious brain magnifies threat. Concrete true things provide counterweight."
+    },
+    {
+      "id": "calm_act_18",
+      "content": "Take a slow walk around the room. No destination. Just movement.",
+      "why": "Gentle movement metabolizes the stress hormones that anxiety produces."
+    },
+    {
+      "id": "calm_act_19",
+      "content": "Close your eyes. Notice three sounds in the room. Don't judge them. Just hear them.",
+      "why": "Passive sound attention moves the mind away from internal loops."
+    },
+    {
+      "id": "calm_act_20",
+      "content": "Hold something cold or textured in your hands for thirty seconds.",
+      "why": "Sensory interruption pulls the nervous system into the present moment."
+    },
+    {
+      "id": "calm_act_21",
+      "content": "Write to the anxiety as if it were a person. Tell it you see it.",
+      "why": "Externalizing the anxiety reduces fusion with it. It becomes something to speak to."
+    },
+    {
+      "id": "calm_act_22",
+      "content": "Breathe in through the nose slowly. Breathe out through slightly pursed lips.",
+      "why": "Pursed-lip breathing slows exhalation and regulates CO2, reducing panic symptoms."
+    },
+    {
+      "id": "calm_act_23",
+      "content": "Loosen clothing. Take off shoes if you can. Let the body have more space.",
+      "why": "Physical constriction amplifies anxiety. Physical loosening has a parallel effect."
+    },
+    {
+      "id": "calm_act_24",
+      "content": "Say aloud: 'I am safe right now.' Say it slowly. Notice what happens.",
+      "why": "The body responds to spoken words differently than to thought. Safety stated is slightly more felt."
+    },
+    {
+      "id": "calm_act_25",
+      "content": "Reduce one thing causing sensory overload right now: lower a volume, close a screen, dim a light.",
+      "why": "Overstimulation fuels anxiety. Small reductions create measurable relief."
+    },
+    {
+      "id": "calm_act_26",
+      "content": "Put your phone face-down for twenty minutes. No checking.",
+      "why": "The phone's availability creates background vigilance. Removing it creates genuine rest."
+    },
+    {
+      "id": "calm_act_27",
+      "content": "Write one kind sentence to yourself about today. One sentence.",
+      "why": "Self-criticism amplifies anxiety. Self-compassion, even small, interrupts it."
+    },
+    {
+      "id": "calm_act_28",
+      "content": "Massage your hands for two minutes. Slow. Notice each finger.",
+      "why": "Slow self-touch activates the calming nervous system and grounds awareness in the body."
+    },
+    {
+      "id": "calm_act_29",
+      "content": "Ask yourself: 'What does my body need right now?' Then do the first thing that comes.",
+      "why": "The body often knows before the mind does. Asking is the beginning of listening."
+    },
+    {
+      "id": "calm_act_30",
+      "content": "Lower your voice when you speak today. Slow your sentences.",
+      "why": "Vocal pacing affects nervous system state. Speaking slowly creates internal quiet."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "calm_ref_1",
+      "content": "Where in your body is the anxiety sitting right now? Can you describe it?"
+    },
+    {
+      "id": "calm_ref_2",
+      "content": "When did you last feel physically calm? What was different about that time?"
+    },
+    {
+      "id": "calm_ref_3",
+      "content": "What does your nervous system do when it is trying to protect you?"
+    },
+    {
+      "id": "calm_ref_4",
+      "content": "What is the anxious voice saying that your wiser self does not believe?"
+    },
+    {
+      "id": "calm_ref_5",
+      "content": "What does your body ask for when the anxiety is loudest?"
+    },
+    {
+      "id": "calm_ref_6",
+      "content": "What has helped you feel safer in your own body before?"
+    },
+    {
+      "id": "calm_ref_7",
+      "content": "What are you dreading today, and how much of it is happening right now?"
+    },
+    {
+      "id": "calm_ref_8",
+      "content": "What would you say to a friend whose chest was tight with anxiety right now?"
+    },
+    {
+      "id": "calm_ref_9",
+      "content": "When the anxiety passes — and it always has — what do you notice first?"
+    },
+    {
+      "id": "calm_ref_10",
+      "content": "What is your body trying to tell you that your mind is too loud to hear?"
+    },
+    {
+      "id": "calm_ref_11",
+      "content": "What does safe feel like for you? Can you name a place, a time, a feeling?"
+    },
+    {
+      "id": "calm_ref_12",
+      "content": "What are you telling yourself is happening right now versus what is actually happening?"
+    },
+    {
+      "id": "calm_ref_13",
+      "content": "What part of today are you most afraid of? Is that fear already here, or still ahead?"
+    },
+    {
+      "id": "calm_ref_14",
+      "content": "What does slow feel like when you allow it? What comes up?"
+    },
+    {
+      "id": "calm_ref_15",
+      "content": "What would help your shoulders drop right now?"
+    },
+    {
+      "id": "calm_ref_16",
+      "content": "What has the anxiety kept you from doing that you actually wanted to do?"
+    },
+    {
+      "id": "calm_ref_17",
+      "content": "What are three things that are physically true and safe right now?"
+    },
+    {
+      "id": "calm_ref_18",
+      "content": "When did your body last feel spacious? Not good necessarily. Just spacious."
+    },
+    {
+      "id": "calm_ref_19",
+      "content": "What would it feel like to stop fighting the anxiety for just five minutes?"
+    },
+    {
+      "id": "calm_ref_20",
+      "content": "What is the softest version of what you need to say to yourself today?"
+    },
+    {
+      "id": "calm_ref_21",
+      "content": "What does your chest feel like right now? What would it feel like if it opened slightly?"
+    },
+    {
+      "id": "calm_ref_22",
+      "content": "Is the anxiety familiar? When have you felt it before, and what happened?"
+    },
+    {
+      "id": "calm_ref_23",
+      "content": "What are you trying to control right now that is not actually controllable?"
+    },
+    {
+      "id": "calm_ref_24",
+      "content": "What would rest look like for your nervous system today? Not sleep. Rest."
+    },
+    {
+      "id": "calm_ref_25",
+      "content": "What is one thing you can stop monitoring for a few hours today?"
+    },
+    {
+      "id": "calm_ref_26",
+      "content": "What does your body need to hear from you that it hasn't heard recently?"
+    },
+    {
+      "id": "calm_ref_27",
+      "content": "How many times did you come back to the breath today when the anxiety spiked?"
+    },
+    {
+      "id": "calm_ref_28",
+      "content": "What are you allowing to feel big that might be smaller than it looks?"
+    },
+    {
+      "id": "calm_ref_29",
+      "content": "What does calm feel like in your body, not your mind?"
+    },
+    {
+      "id": "calm_ref_30",
+      "content": "What did you carry today that was not yours to carry?"
+    }
+  ],
+
+  "words": [
+    { "id": "calm_w_1",  "word": "BREATHE",  "meaning": "Not deeply. Just fully. The lungs know what to do." },
+    { "id": "calm_w_2",  "word": "SOFT",     "meaning": "The body is allowed to be soft. Even today." },
+    { "id": "calm_w_3",  "word": "SLOW",     "meaning": "This is the right speed for a nervous system that needs rest." },
+    { "id": "calm_w_4",  "word": "OPEN",     "meaning": "Open chest. Open jaw. Open hands. Anxiety contracts." },
+    { "id": "calm_w_5",  "word": "EASE",     "meaning": "Not fixed. Not resolved. Just eased." },
+    { "id": "calm_w_6",  "word": "HERE",     "meaning": "This room. This breath. This moment. Not the one you're dreading." },
+    { "id": "calm_w_7",  "word": "GROUND",   "meaning": "Feet on floor. Body in space. Present in the physical world." },
+    { "id": "calm_w_8",  "word": "SAFE",     "meaning": "Right now. Not in general. Right now." },
+    { "id": "calm_w_9",  "word": "STILL",    "meaning": "The nervous system does not need more stimulus. It needs stillness." },
+    { "id": "calm_w_10", "word": "SPACE",    "meaning": "Room to breathe. Room to feel. Room to be without performing." },
+    { "id": "calm_w_11", "word": "GENTLE",   "meaning": "The opposite of what anxiety demands. Choose gentle." },
+    { "id": "calm_w_12", "word": "RELEASE",  "meaning": "What the shoulders have been waiting to do." },
+    { "id": "calm_w_13", "word": "RECEIVE",  "meaning": "You have been giving. Receive something today. Even a breath." },
+    { "id": "calm_w_14", "word": "QUIET",    "meaning": "Not silence. The quality of a room before everything begins." },
+    { "id": "calm_w_15", "word": "BODY",     "meaning": "It is not the enemy. It is the first signal." },
+    { "id": "calm_w_16", "word": "ALLOW",    "meaning": "Allow the feeling. Fighting it costs more than feeling it." },
+    { "id": "calm_w_17", "word": "SINK",     "meaning": "Into the chair. Into the floor. Let gravity hold you." },
+    { "id": "calm_w_18", "word": "WARM",     "meaning": "Warmth signals safety to the nervous system. Seek it." },
+    { "id": "calm_w_19", "word": "FEEL",     "meaning": "Not to fix. Not to analyze. Just feel it and let it move." },
+    { "id": "calm_w_20", "word": "PAUSE",    "meaning": "Before the next thing. Before the next response. Pause." },
+    { "id": "calm_w_21", "word": "WITNESS",  "meaning": "Watch the anxiety like weather. You are not the weather." },
+    { "id": "calm_w_22", "word": "HOLD",     "meaning": "Hold yourself the way you would hold someone else in pain." },
+    { "id": "calm_w_23", "word": "TRUST",    "meaning": "The nervous system knows how to regulate. Trust it." },
+    { "id": "calm_w_24", "word": "EXHALE",   "meaning": "The exhale activates calm. Let it be longer than the inhale." },
+    { "id": "calm_w_25", "word": "RETURN",   "meaning": "To the body. To the breath. To right now." },
+    { "id": "calm_w_26", "word": "SETTLE",   "meaning": "Like sediment in water. Given time and stillness, it settles." },
+    { "id": "calm_w_27", "word": "SOFTEN",   "meaning": "The jaw. The hands. The belief that this cannot pass." },
+    { "id": "calm_w_28", "word": "PRESENT",  "meaning": "The only place where the anxiety does not live." },
+    { "id": "calm_w_29", "word": "LISTEN",   "meaning": "To what the body is saying before the mind overwrites it." },
+    { "id": "calm_w_30", "word": "LIGHT",    "meaning": "Small and bright. The quality of the moment after a long exhale." },
+    { "id": "calm_w_31", "word": "UNCLENCH", "meaning": "Find where you are clenching. Release it. Find the next place." },
+    { "id": "calm_w_32", "word": "NOTICE",   "meaning": "Notice without labeling as bad. Just notice." },
+    { "id": "calm_w_33", "word": "PASS",     "meaning": "It always does. The anxiety always passes. That is true." },
+    { "id": "calm_w_34", "word": "ANCHOR",   "meaning": "The breath is the anchor. It is always available." },
+    { "id": "calm_w_35", "word": "YIELD",    "meaning": "Yield to the slowness. The body knows when to stop resisting." },
+    { "id": "calm_w_36", "word": "SMALL",    "meaning": "Small breath. Small action. Small relief. Enough." },
+    { "id": "calm_w_37", "word": "TENDER",   "meaning": "Be tender with the part of you that is afraid right now." },
+    { "id": "calm_w_38", "word": "INHALE",   "meaning": "The first half. The gathering. Space before the release." },
+    { "id": "calm_w_39", "word": "FLOOR",    "meaning": "It is holding you. You do not have to hold yourself today." },
+    { "id": "calm_w_40", "word": "EXPAND",   "meaning": "What the chest wants to do when it is allowed." },
+    { "id": "calm_w_41", "word": "SIMPLE",   "meaning": "Right now, only one thing. Breathe." },
+    { "id": "calm_w_42", "word": "RESTORE",  "meaning": "The nervous system restores itself when you stop fighting." },
+    { "id": "calm_w_43", "word": "KNOWN",    "meaning": "You know this feeling. You have left it before. You will again." },
+    { "id": "calm_w_44", "word": "LOWER",    "meaning": "Lower the voice. Lower the pace. Lower the demand." },
+    { "id": "calm_w_45", "word": "REST",     "meaning": "Not sleep. The quality of a moment with no urgency." },
+    { "id": "calm_w_46", "word": "WAVE",     "meaning": "Anxiety is a wave. You don't have to stop it. You can ride it." },
+    { "id": "calm_w_47", "word": "CARRY",    "meaning": "You are carrying more than you say. What can be set down?" },
+    { "id": "calm_w_48", "word": "NOW",      "meaning": "Just this moment. Not the next one. Just now." },
+    { "id": "calm_w_49", "word": "BREATH",   "meaning": "The one thing that was here before the anxiety. Still here." },
+    { "id": "calm_w_50", "word": "WIDE",     "meaning": "Open the chest wide. Give the lungs room. Wide is calm." },
+    { "id": "calm_w_51", "word": "TRUE",     "meaning": "What is actually true right now, separate from what feels true." },
+    { "id": "calm_w_52", "word": "THROUGH",  "meaning": "You will move through this. Not over it. Through." }
+  ],
+
+  "notification_pool": [
+    { "id": "calm_n_1",  "copy": "Your shoulders are allowed to drop right now.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_2",  "copy": "The breath is still here. Use it.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_3",  "copy": "You don't have to feel better yet. Just breathe.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_4",  "copy": "The anxiety is loud. It is not in charge.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_5",  "copy": "Slow down. The body is asking.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_6",  "copy": "What does your chest need right now?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_7",  "copy": "One slow breath changes something.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_8",  "copy": "Safe right now. Not eventually. Now.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_9",  "copy": "Unclench your jaw. Take one breath.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_10", "copy": "The tightness always passes. Always.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_11", "copy": "Ground your feet. Breathe. You're here.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_12", "copy": "Let your exhale be longer than your inhale.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_13", "copy": "Your body knows how to calm itself.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_14", "copy": "You've felt this before. It passed.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_15", "copy": "Nothing requires your tension right now.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_16", "copy": "Soften one thing. Just one.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_17", "copy": "The nervous system is doing its job.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_18", "copy": "Anxiety is weather. You are not the weather.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_19", "copy": "Five minutes of slow is enough to shift.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_20", "copy": "Breathe out longer than you breathe in.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_21", "copy": "What would calm feel like today? Start there.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_22", "copy": "You are allowed to slow down.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_23", "copy": "The body relaxes when it feels seen.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_24", "copy": "Three breaths. No judgment. Just three.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_25", "copy": "The worry is not the reality. Not yet.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_26", "copy": "Check in with your body. What does it need?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_27", "copy": "The calm is still in you. It is always in you.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_28", "copy": "One breath. Then the next. That's the whole plan.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "calm_ev_1",  "content": "Where did the anxiety show up in your body today? What did it need?" },
+    { "id": "calm_ev_2",  "content": "What helped your nervous system, even a little, today?" },
+    { "id": "calm_ev_3",  "content": "When did you feel most physically safe today? What created that?" },
+    { "id": "calm_ev_4",  "content": "What did you carry today that was heavier than it needed to be?" },
+    { "id": "calm_ev_5",  "content": "Did the thing you were dreading this morning happen? What actually occurred?" },
+    { "id": "calm_ev_6",  "content": "What did your body ask for today that you actually listened to?" },
+    { "id": "calm_ev_7",  "content": "When did you breathe today and feel it change something?" },
+    { "id": "calm_ev_8",  "content": "What would you do differently tomorrow to give your nervous system more support?" },
+    { "id": "calm_ev_9",  "content": "What were you holding in your body at the start of the day? Is it still there?" },
+    { "id": "calm_ev_10", "content": "Where did you feel calm, even briefly, today?" },
+    { "id": "calm_ev_11", "content": "What did the anxiety protect you from today? Was that protection useful?" },
+    { "id": "calm_ev_12", "content": "What softened today? In you, in the situation, in how you held yourself?" },
+    { "id": "calm_ev_13", "content": "What is your body asking for before sleep tonight?" },
+    { "id": "calm_ev_14", "content": "What were you gentle with today? Did that include yourself?" }
+  ]
+
+}

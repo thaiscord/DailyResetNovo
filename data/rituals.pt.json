@@ -1,0 +1,58 @@
+[
+  {
+    "day": 1,
+    "title": "Toda jornada começa aqui.",
+    "home_card_headline": "Hoje não precisa ser perfeito. Só precisa ser seu.",
+    "today_action_content": "Escreva 3 coisas que estão pedindo sua atenção agora. Risque as duas menos importantes. A que sobrar — essa é a sua para hoje.",
+    "why_it_matters_content": "A clareza também é autocuidado. Você não precisa resolver tudo hoje.",
+    "reflection_content": "O que tem sido mais difícil de começar?"
+  },
+  {
+    "day": 2,
+    "title": "Você voltou.",
+    "home_card_headline": "Você voltou. Isso já é algo real.",
+    "today_action_content": "Antes de pegar o celular, escreva uma frase sobre algo que você está esperando — mesmo algo pequeno. Uma frase já é suficiente.",
+    "why_it_matters_content": "Começar o dia com ao menos um pensamento voltado ao futuro muda o sistema nervoso. É pequeno, e é real.",
+    "reflection_content": "O que fez você voltar hoje?"
+  },
+  {
+    "day": 3,
+    "title": "Uma respiração muda mais do que você pensa.",
+    "home_card_headline": "Uma respiração muda mais do que você pensa. Venha descobrir.",
+    "today_action_content": "Programe um timer de 2 minutos. Respire devagar. Quando os pensamentos chegarem, deixe-os passar. Você não está resolvendo nada — só respirando.",
+    "why_it_matters_content": "A respiração lenta ativa a resposta de calma do corpo. Dois minutos são suficientes para mudar seu estado. Você não precisa acreditar — só tente uma vez.",
+    "reflection_content": "Em que momento do dia sua respiração fica curta sem você perceber?"
+  },
+  {
+    "day": 4,
+    "title": "Você não precisa carregar tudo.",
+    "home_card_headline": "Você não precisa carregar tudo hoje. Algo pode esperar.",
+    "today_action_content": "Escreva uma coisa que te preocupa e que você não pode controlar. Dobre o papel ou feche a nota. Coloque de lado. Ela ainda vai estar lá depois — mas você não precisa carregá-la agora.",
+    "why_it_matters_content": "Nomear o que você não pode controlar — e fisicamente colocá-lo de lado — interrompe o ciclo da preocupação. Não vai resolver o problema. Mas dá ao seu sistema nervoso um descanso.",
+    "reflection_content": "O que você está carregando agora que nunca concordou em levar?"
+  },
+  {
+    "day": 5,
+    "title": "Seu corpo está te dizendo algo.",
+    "home_card_headline": "Seu corpo está tentando dizer algo. Hoje, escute.",
+    "today_action_content": "Em algum momento hoje, pare e faça uma varredura lenta pelo seu corpo, da cabeça aos pés. Nomeie três sensações que você percebe — sem tentar consertá-las.",
+    "why_it_matters_content": "A maioria do esgotamento vive no corpo muito antes de a mente reconhecer. Perceber sem consertar é o primeiro passo para entender o que você realmente precisa.",
+    "reflection_content": "Que sensação física você continua ignorando?"
+  },
+  {
+    "day": 6,
+    "title": "Você é suficiente para hoje.",
+    "home_card_headline": "Você é suficiente para hoje. Isso não é pouca coisa.",
+    "today_action_content": "Diga em voz alta ou escreva: 'Estou fazendo o suficiente para onde estou agora.' Perceba como isso cai — sem discutir com isso.",
+    "why_it_matters_content": "O crítico interno é mais alto quando você já está exausta. Nomear sua suficiência — mesmo com relutância — interrompe o ciclo de esgotamento.",
+    "reflection_content": "Quem te disse que você precisava ser mais do que é?"
+  },
+  {
+    "day": 7,
+    "title": "Algo mudou quietamente.",
+    "home_card_headline": "Uma semana. Algo quieto já mudou.",
+    "today_action_content": "Olhe para os últimos 7 dias. Escreva uma coisa que te surpreendeu sobre você mesma — uma coisa que fez e não tinha certeza que faria.",
+    "why_it_matters_content": "Sete dias voltando é mais do que a maioria consegue. Perceber o que mudou — mesmo que pouco — reforça por que vale continuar na segunda semana.",
+    "reflection_content": "O que você sabe sobre si mesma agora que não sabia sete dias atrás?"
+  }
+]

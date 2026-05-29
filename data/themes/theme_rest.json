@@ -1,0 +1,643 @@
+{
+  "theme": "Rest",
+  "user_state": "Depleted. Running on empty. Guilt about needing to stop. Confusing rest with laziness.",
+  "core_need": "Permission to stop without guilt.",
+  "emotional_tone": "Gentle. Slow. Permission-giving.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "rest_arr_1",
+        "heading": "You have permission to stop.",
+        "subheading": "Not eventually. Right now. Before you have earned it. Because rest is not earned."
+      },
+      {
+        "id": "rest_arr_2",
+        "heading": "Rest is not laziness.",
+        "subheading": "It is how the body rebuilds what depletion takes."
+      },
+      {
+        "id": "rest_arr_3",
+        "heading": "You are running on empty.",
+        "subheading": "That is not a character flaw. That is the honest state of a person who has been doing too much."
+      },
+      {
+        "id": "rest_arr_4",
+        "heading": "Stopping is not giving up.",
+        "subheading": "It is what makes continuing possible."
+      },
+      {
+        "id": "rest_arr_5",
+        "heading": "The guilt about resting is not the truth.",
+        "subheading": "It is a story from a culture that confused exhaustion with virtue."
+      },
+      {
+        "id": "rest_arr_6",
+        "heading": "You don't have to earn this.",
+        "subheading": "Rest is not a reward. It is a requirement."
+      },
+      {
+        "id": "rest_arr_7",
+        "heading": "The body is telling you something.",
+        "subheading": "You have been overriding the signal. Today, you can listen."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "rest_rel_1",
+        "heading": "What is the guilt saying?",
+        "subheading": "Write it down exactly. Then we'll look at whether it's true.",
+        "field_placeholder": "What does the part of you that feels guilty about resting say..."
+      },
+      {
+        "id": "rest_rel_2",
+        "heading": "What are you carrying that is not yours?",
+        "subheading": "Responsibility has a limit. What are you holding beyond yours?",
+        "field_placeholder": "What obligations or worries are you carrying that belong to someone or something else..."
+      },
+      {
+        "id": "rest_rel_3",
+        "heading": "What have you been doing instead of resting?",
+        "subheading": "Name the substitutes. The scrolling, the overworking, the busy-making.",
+        "field_placeholder": "What have you been doing instead of actually stopping..."
+      },
+      {
+        "id": "rest_rel_4",
+        "heading": "How long have you been depleted?",
+        "subheading": "Say it honestly. The number is important.",
+        "field_placeholder": "When did you last feel genuinely rested..."
+      },
+      {
+        "id": "rest_rel_5",
+        "heading": "What would you need to set down to actually rest?",
+        "subheading": "Not forever. Just for today.",
+        "field_placeholder": "What would you need to let go of to allow yourself to stop..."
+      },
+      {
+        "id": "rest_rel_6",
+        "heading": "What does the exhaustion feel like?",
+        "subheading": "In the body, not just the mind. Describe it.",
+        "field_placeholder": "Where does the depletion live in your body right now..."
+      },
+      {
+        "id": "rest_rel_7",
+        "heading": "What are you afraid will happen if you stop?",
+        "subheading": "The list is usually shorter than the fear suggests.",
+        "field_placeholder": "What do you think will fall apart if you rest today..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "rest_br_1",
+        "heading": "A breath that asks nothing.",
+        "instruction": "Breathe in slowly. Breathe out with a quiet sigh. No effort. No goal. Just this breath."
+      },
+      {
+        "id": "rest_br_2",
+        "heading": "Let the body exhale everything.",
+        "instruction": "Breathe in gently. On the exhale, let everything drop. Shoulders, jaw, hands. All of it."
+      },
+      {
+        "id": "rest_br_3",
+        "heading": "The breath of someone who has stopped.",
+        "instruction": "Slow. Wide. No hurry. Breathe like the day has no demands. Just for this moment."
+      },
+      {
+        "id": "rest_br_4",
+        "heading": "Rest in the breath.",
+        "instruction": "Four counts in. Six counts out. Twice. Feel the body getting heavier and quieter."
+      },
+      {
+        "id": "rest_br_5",
+        "heading": "Soften completely.",
+        "instruction": "Inhale and let everything rise. Exhale and let everything fall. No holding. Just release."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "rest_mom_1",
+        "heading": "What does your body need most right now?"
+      },
+      {
+        "id": "rest_mom_2",
+        "heading": "What would genuine rest feel like for you today?"
+      },
+      {
+        "id": "rest_mom_3",
+        "heading": "What can you put down without it falling apart?"
+      },
+      {
+        "id": "rest_mom_4",
+        "heading": "What does stopping look like for you, specifically?"
+      },
+      {
+        "id": "rest_mom_5",
+        "heading": "What has been depleting you that you haven't named yet?"
+      },
+      {
+        "id": "rest_mom_6",
+        "heading": "What would one fully rested version of you be able to do?"
+      },
+      {
+        "id": "rest_mom_7",
+        "heading": "What is the most restoring thing you could do in the next hour?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "rest_comp_1",
+        "heading": "You stopped.",
+        "subheading": "That is the practice. Not the plan. The actual stopping."
+      },
+      {
+        "id": "rest_comp_2",
+        "heading": "Rest happened.",
+        "subheading": "The guilt did not win today. Notice that."
+      },
+      {
+        "id": "rest_comp_3",
+        "heading": "You gave your body what it asked for.",
+        "subheading": "That is not indulgence. That is care."
+      },
+      {
+        "id": "rest_comp_4",
+        "heading": "The world did not fall apart.",
+        "subheading": "It rarely does. Rest is usually safer than the fear says."
+      },
+      {
+        "id": "rest_comp_5",
+        "heading": "You listened.",
+        "subheading": "To the part of you that has been asking to stop. Today, you heard it."
+      },
+      {
+        "id": "rest_comp_6",
+        "heading": "Recovery is happening.",
+        "subheading": "Slowly. Below the surface. You gave it the conditions it needed."
+      },
+      {
+        "id": "rest_comp_7",
+        "heading": "You chose rest.",
+        "subheading": "Over guilt. Over productivity. Over what you think you should be doing. That was a real choice."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "rest_hc_1",
+      "headline": "Rest is not earned. It is required.",
+      "subheadline": "You don't have to deserve it first."
+    },
+    {
+      "id": "rest_hc_2",
+      "headline": "The guilt is not telling you the truth.",
+      "subheadline": "It is repeating a story you were taught. That story is not yours."
+    },
+    {
+      "id": "rest_hc_3",
+      "headline": "Depleted is not a moral failure.",
+      "subheadline": "It is what happens when you give more than you restore."
+    },
+    {
+      "id": "rest_hc_4",
+      "headline": "Stopping is what makes continuing possible.",
+      "subheadline": "That is not weakness. That is how the system works."
+    },
+    {
+      "id": "rest_hc_5",
+      "headline": "Your body has been asking.",
+      "subheadline": "You have been overriding it. Today, you don't have to."
+    },
+    {
+      "id": "rest_hc_6",
+      "headline": "Rest is productive.",
+      "subheadline": "The research is clear. The culture is wrong."
+    },
+    {
+      "id": "rest_hc_7",
+      "headline": "You are allowed to stop before you collapse.",
+      "subheadline": "Prevention does not require a crisis."
+    },
+    {
+      "id": "rest_hc_8",
+      "headline": "Exhaustion confused with virtue is still exhaustion.",
+      "subheadline": "Calling it dedication doesn't make it sustainable."
+    },
+    {
+      "id": "rest_hc_9",
+      "headline": "What you are calling laziness is recovery.",
+      "subheadline": "Those are not the same thing."
+    },
+    {
+      "id": "rest_hc_10",
+      "headline": "You cannot pour from an empty vessel.",
+      "subheadline": "You have heard this. Now believe it."
+    },
+    {
+      "id": "rest_hc_11",
+      "headline": "The body rebuilds during rest.",
+      "subheadline": "Not during work. During rest. Let it do its job."
+    },
+    {
+      "id": "rest_hc_12",
+      "headline": "Slow down before the slowdown is chosen for you.",
+      "subheadline": "Illness, burnout, and collapse are also forms of stopping."
+    },
+    {
+      "id": "rest_hc_13",
+      "headline": "You are not behind.",
+      "subheadline": "You are depleted. That is a different problem with a different solution."
+    },
+    {
+      "id": "rest_hc_14",
+      "headline": "Permission granted.",
+      "subheadline": "To stop. To rest. To do less than you think you should. Today."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "rest_act_1",
+      "content": "Lie down for twenty minutes. No phone. No sleep required. Just horizontal.",
+      "why": "The horizontal position alone activates the parasympathetic nervous system."
+    },
+    {
+      "id": "rest_act_2",
+      "content": "Remove one obligation from today's list that is not actually necessary.",
+      "why": "Depletion is often sustained by doing more than the situation requires."
+    },
+    {
+      "id": "rest_act_3",
+      "content": "Eat something slowly. Sit down. No screens. Taste it.",
+      "why": "Eating while distracted or rushing is a signal of ongoing depletion. Slow eating signals safety."
+    },
+    {
+      "id": "rest_act_4",
+      "content": "Tell one person that you are tired and need support today.",
+      "why": "Naming depletion to another person begins the social permission to actually rest."
+    },
+    {
+      "id": "rest_act_5",
+      "content": "Sleep earlier tonight by 30 minutes. Make that plan now.",
+      "why": "Deciding in advance removes the nightly negotiation with yourself."
+    },
+    {
+      "id": "rest_act_6",
+      "content": "Take a slow walk. No headphones. No podcast. Just walk.",
+      "why": "Movement without stimulation allows the mind to genuinely rest while the body moves."
+    },
+    {
+      "id": "rest_act_7",
+      "content": "Take a bath or shower without rushing. Let the water be the only thing.",
+      "why": "Water and warmth are among the most effective physical reset mechanisms available."
+    },
+    {
+      "id": "rest_act_8",
+      "content": "Cancel something optional today. Give yourself the time back.",
+      "why": "Rest requires cleared time. Clearing time requires the permission to cancel."
+    },
+    {
+      "id": "rest_act_9",
+      "content": "Sit outside for ten minutes. Do nothing productive.",
+      "why": "Nature without task reduces cortisol measurably within ten minutes."
+    },
+    {
+      "id": "rest_act_10",
+      "content": "Read something for pleasure. Not information. Not productivity. Pleasure.",
+      "why": "The exhausted mind often forgets that enjoyment is a form of recovery."
+    },
+    {
+      "id": "rest_act_11",
+      "content": "Say no to a request that you want to say no to.",
+      "why": "Overextension is a primary driver of depletion. Saying no restores energy."
+    },
+    {
+      "id": "rest_act_12",
+      "content": "Sit quietly for five minutes. No stimulus. Just quiet.",
+      "why": "The chronically depleted nervous system rarely gets silence. This is direct restoration."
+    },
+    {
+      "id": "rest_act_13",
+      "content": "Delegate one task you have been doing because you don't trust others to do it.",
+      "why": "Control and depletion are often the same problem."
+    },
+    {
+      "id": "rest_act_14",
+      "content": "Let dishes, laundry, or a minor task wait until tomorrow. Consciously.",
+      "why": "Choosing to let something go is different from neglect. It is an act of self-care."
+    },
+    {
+      "id": "rest_act_15",
+      "content": "Nap if you can. Even 20 minutes changes neurological recovery.",
+      "why": "A 20-minute nap provides cognitive restoration similar to a full night's additional sleep."
+    },
+    {
+      "id": "rest_act_16",
+      "content": "Turn off the news and social media for the rest of the day.",
+      "why": "Chronic information consumption is a hidden source of depletion."
+    },
+    {
+      "id": "rest_act_17",
+      "content": "Write down everything you are trying to hold in your head. Then close the list.",
+      "why": "Mental load is exhausting. Externalizing it creates genuine cognitive rest."
+    },
+    {
+      "id": "rest_act_18",
+      "content": "Do one thing that is entirely for your own enjoyment today. One thing.",
+      "why": "Depletion deepens when pleasure is always deferred. This is a restoration mechanism."
+    },
+    {
+      "id": "rest_act_19",
+      "content": "Ask someone else to handle something you usually handle alone.",
+      "why": "Independence and depletion are often the same choice."
+    },
+    {
+      "id": "rest_act_20",
+      "content": "Give yourself an hour with no agenda. Not even rest as a goal. Just free.",
+      "why": "Scheduled rest with goals is not full rest. True free time is its own category."
+    },
+    {
+      "id": "rest_act_21",
+      "content": "Eat a meal that requires minimal effort. Give yourself that today.",
+      "why": "Food labor depletes energy. Reducing it is not laziness. It is efficiency."
+    },
+    {
+      "id": "rest_act_22",
+      "content": "Lower the lights. Soften the environment. Let the body know the pace is changing.",
+      "why": "Environmental cues signal the nervous system. Soft light says slow down."
+    },
+    {
+      "id": "rest_act_23",
+      "content": "Ask yourself: 'What is the minimum I can do today and still be okay?' Do that.",
+      "why": "Minimum viable output is not failure. It is sustainable operation."
+    },
+    {
+      "id": "rest_act_24",
+      "content": "Watch something light and easy. Without guilt.",
+      "why": "Entertainment is a legitimate form of rest. The guilt costs more energy than the show."
+    },
+    {
+      "id": "rest_act_25",
+      "content": "Write a list of what you have done this week. Not what remains. What is done.",
+      "why": "The exhausted mind focuses on what's incomplete. Evidence of completion restores proportion."
+    },
+    {
+      "id": "rest_act_26",
+      "content": "Spend twenty minutes in conversation with someone who restores you.",
+      "why": "The right social contact is restorative, not depleting. Choose accordingly."
+    },
+    {
+      "id": "rest_act_27",
+      "content": "Wear comfortable clothing today. Make that a real priority.",
+      "why": "Physical comfort is a signal to the nervous system that the threat level is low."
+    },
+    {
+      "id": "rest_act_28",
+      "content": "Say 'I need to rest today' out loud. To yourself, or to someone.",
+      "why": "Naming a need is the first step toward meeting it."
+    },
+    {
+      "id": "rest_act_29",
+      "content": "Close your eyes for five minutes. Wherever you are. Just close them.",
+      "why": "Removing visual stimulus alone reduces cognitive load measurably."
+    },
+    {
+      "id": "rest_act_30",
+      "content": "Write down what rest has given you in the past. What became possible after stopping.",
+      "why": "Evidence of rest's value is the most useful argument against the guilt."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "rest_ref_1",
+      "content": "When did you last feel genuinely rested? What was different about that time?"
+    },
+    {
+      "id": "rest_ref_2",
+      "content": "What story do you tell yourself about people who rest without guilt?"
+    },
+    {
+      "id": "rest_ref_3",
+      "content": "What has pushing past your limits actually produced for you?"
+    },
+    {
+      "id": "rest_ref_4",
+      "content": "What would you allow yourself to stop doing if you believed rest was legitimate?"
+    },
+    {
+      "id": "rest_ref_5",
+      "content": "What does your body feel like right now? How long has it felt this way?"
+    },
+    {
+      "id": "rest_ref_6",
+      "content": "Where did you learn that rest had to be earned?"
+    },
+    {
+      "id": "rest_ref_7",
+      "content": "What are you afraid will fall apart if you slow down?"
+    },
+    {
+      "id": "rest_ref_8",
+      "content": "What have you been doing instead of resting? Is it working?"
+    },
+    {
+      "id": "rest_ref_9",
+      "content": "What would it mean about you if you chose rest today?"
+    },
+    {
+      "id": "rest_ref_10",
+      "content": "What does the exhaustion feel like in your body, not your mind?"
+    },
+    {
+      "id": "rest_ref_11",
+      "content": "Who else in your life treats rest as legitimate? What do you notice about them?"
+    },
+    {
+      "id": "rest_ref_12",
+      "content": "What would you tell someone you love who was this depleted?"
+    },
+    {
+      "id": "rest_ref_13",
+      "content": "What is one thing you have been doing out of obligation that you could stop?"
+    },
+    {
+      "id": "rest_ref_14",
+      "content": "What does your body do when it is allowed to be still? What does it release?"
+    },
+    {
+      "id": "rest_ref_15",
+      "content": "What is the difference between laziness and depletion? Which one is this?"
+    },
+    {
+      "id": "rest_ref_16",
+      "content": "What have you been overriding to keep going?"
+    },
+    {
+      "id": "rest_ref_17",
+      "content": "What does a full tank feel like for you? Do you remember?"
+    },
+    {
+      "id": "rest_ref_18",
+      "content": "What would be different about your work, relationships, or thinking if you were actually rested?"
+    },
+    {
+      "id": "rest_ref_19",
+      "content": "What is the most honest description of how long you have been running on empty?"
+    },
+    {
+      "id": "rest_ref_20",
+      "content": "What are you avoiding feeling by staying busy?"
+    },
+    {
+      "id": "rest_ref_21",
+      "content": "What has rest made possible for you in the past, that you have forgotten?"
+    },
+    {
+      "id": "rest_ref_22",
+      "content": "What do you need to stop doing in order to actually recover?"
+    },
+    {
+      "id": "rest_ref_23",
+      "content": "What does restoration mean to you, specifically? What activities, environments, or conditions?"
+    },
+    {
+      "id": "rest_ref_24",
+      "content": "What are you sacrificing by not resting? Is that trade-off worth it?"
+    },
+    {
+      "id": "rest_ref_25",
+      "content": "What would life look like if you protected rest the way you protect your obligations?"
+    },
+    {
+      "id": "rest_ref_26",
+      "content": "What is the voice that says you don't deserve rest? Where did it come from?"
+    },
+    {
+      "id": "rest_ref_27",
+      "content": "What is the minimum you need to do today to be okay? Just the minimum."
+    },
+    {
+      "id": "rest_ref_28",
+      "content": "What would change if you accepted that rest is not a reward but a requirement?"
+    },
+    {
+      "id": "rest_ref_29",
+      "content": "When did rest last feel possible without guilt?"
+    },
+    {
+      "id": "rest_ref_30",
+      "content": "What would you protect first if you decided your recovery mattered as much as your output?"
+    }
+  ],
+
+  "words": [
+    { "id": "rest_w_1",  "word": "STOP",     "meaning": "Not failing. Not quitting. Stopping. On purpose." },
+    { "id": "rest_w_2",  "word": "RESTORE",  "meaning": "What happens when you give the body what depletion took." },
+    { "id": "rest_w_3",  "word": "ALLOW",    "meaning": "Allow the stopping. Allow the rest. Allow the need." },
+    { "id": "rest_w_4",  "word": "SLOW",     "meaning": "The pace your body has been asking for." },
+    { "id": "rest_w_5",  "word": "RECEIVE",  "meaning": "You have been giving. Today, receive something." },
+    { "id": "rest_w_6",  "word": "ENOUGH",   "meaning": "You have done enough to deserve rest. You always have." },
+    { "id": "rest_w_7",  "word": "RELEASE",  "meaning": "What the body has been waiting to do." },
+    { "id": "rest_w_8",  "word": "QUIET",    "meaning": "Without demand. Without agenda. Just quiet." },
+    { "id": "rest_w_9",  "word": "SOFT",     "meaning": "Soften the pace. Soften the standard. Soften the expectation." },
+    { "id": "rest_w_10", "word": "DEEP",     "meaning": "The kind of rest that goes below the surface." },
+    { "id": "rest_w_11", "word": "HEAVY",    "meaning": "When the body gets heavy, it is telling you something." },
+    { "id": "rest_w_12", "word": "SINK",     "meaning": "Sink into the rest. You don't have to earn it first." },
+    { "id": "rest_w_13", "word": "HEAL",     "meaning": "What the body does when you give it permission to stop." },
+    { "id": "rest_w_14", "word": "RETURN",   "meaning": "Return to yourself. From the endless giving outward." },
+    { "id": "rest_w_15", "word": "REBUILD",  "meaning": "What rest makes possible that effort alone cannot." },
+    { "id": "rest_w_16", "word": "DOWN",     "meaning": "Slow down. Lie down. Breathe down. Let things settle." },
+    { "id": "rest_w_17", "word": "FULL",     "meaning": "The goal is full. Not empty and functioning. Full." },
+    { "id": "rest_w_18", "word": "REFILL",   "meaning": "What you must do to have anything left to give." },
+    { "id": "rest_w_19", "word": "STILL",    "meaning": "Be still for a moment. The world will wait." },
+    { "id": "rest_w_20", "word": "EASE",     "meaning": "Ease into stopping. It does not have to be abrupt." },
+    { "id": "rest_w_21", "word": "TEND",     "meaning": "Tend to yourself the way you tend to everything else." },
+    { "id": "rest_w_22", "word": "PAUSE",    "meaning": "Before the next thing. The pause is where recovery begins." },
+    { "id": "rest_w_23", "word": "WIDE",     "meaning": "The breath gets wider when the body feels it can stop." },
+    { "id": "rest_w_24", "word": "GENTLE",   "meaning": "Be gentle with the part of you that is depleted." },
+    { "id": "rest_w_25", "word": "SPACE",    "meaning": "Give yourself space. Not time to be productive. Space." },
+    { "id": "rest_w_26", "word": "LISTEN",   "meaning": "Your body has been asking. Today, listen." },
+    { "id": "rest_w_27", "word": "WAIT",     "meaning": "The tasks can wait. The body cannot, not much longer." },
+    { "id": "rest_w_28", "word": "OPEN",     "meaning": "Open to receiving. Open to slowing. Open to rest." },
+    { "id": "rest_w_29", "word": "PERMIT",   "meaning": "You must permit it. Rest is not automatic. You choose it." },
+    { "id": "rest_w_30", "word": "SMALL",    "meaning": "Small rest is still rest. Ten minutes counts." },
+    { "id": "rest_w_31", "word": "SAFE",     "meaning": "You are safe enough to stop. For now. For today." },
+    { "id": "rest_w_32", "word": "SETTLE",   "meaning": "Let the body settle. Into the chair. Into the floor." },
+    { "id": "rest_w_33", "word": "GRANT",    "meaning": "Grant yourself this. The permission is yours to give." },
+    { "id": "rest_w_34", "word": "ANCHOR",   "meaning": "Rest is an anchor. It keeps you from drifting past your limits." },
+    { "id": "rest_w_35", "word": "BARE",     "meaning": "The bare minimum today. That is enough." },
+    { "id": "rest_w_36", "word": "CLAIM",    "meaning": "Claim the rest. It belongs to you." },
+    { "id": "rest_w_37", "word": "COOL",     "meaning": "The cool of stopping. The temperature drop when effort ends." },
+    { "id": "rest_w_38", "word": "UNWIND",   "meaning": "Let the tension of effort slowly leave the body." },
+    { "id": "rest_w_39", "word": "SOOTHE",   "meaning": "Soothe the part of you that has been running too long." },
+    { "id": "rest_w_40", "word": "FLOOR",    "meaning": "The floor holds you. You do not have to hold yourself." },
+    { "id": "rest_w_41", "word": "GRACE",    "meaning": "Rest with grace. Without the explanation. Without the apology." },
+    { "id": "rest_w_42", "word": "HOLD",     "meaning": "Let yourself be held. By the chair. The bed. The ground." },
+    { "id": "rest_w_43", "word": "INHALE",   "meaning": "Inhale slowly. The body remembers how to recover." },
+    { "id": "rest_w_44", "word": "JOIN",     "meaning": "Join the part of you that already knows it needs to stop." },
+    { "id": "rest_w_45", "word": "KEEP",     "meaning": "Keep something for yourself today. Not everything goes out." },
+    { "id": "rest_w_46", "word": "LESS",     "meaning": "Less is enough right now. Less is healing." },
+    { "id": "rest_w_47", "word": "MEND",     "meaning": "The body mends when you stop tearing." },
+    { "id": "rest_w_48", "word": "NEUTRAL",  "meaning": "Neutral is a valid state. Not depleted. Not performing. Neutral." },
+    { "id": "rest_w_49", "word": "OFFER",    "meaning": "Offer yourself the rest you have given to everything else." },
+    { "id": "rest_w_50", "word": "PACE",     "meaning": "Find a pace the body can sustain. Not the current one." },
+    { "id": "rest_w_51", "word": "HUSH",     "meaning": "A softer version of quiet. The hush of a room where rest is finally possible." },
+    { "id": "rest_w_52", "word": "WHOLE",    "meaning": "Rested is the direction of whole. That is the reason." }
+  ],
+
+  "notification_pool": [
+    { "id": "rest_n_1",  "copy": "Rest is not earned. It is required.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_2",  "copy": "You have permission to stop today.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_3",  "copy": "The guilt is not telling you the truth.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_4",  "copy": "Your body has been asking. Today, listen.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_5",  "copy": "Depleted is not a moral failure.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_6",  "copy": "Stopping is what makes continuing possible.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_7",  "copy": "What you need to recover today is rest.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_8",  "copy": "The minimum is enough today.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_9",  "copy": "Give yourself back some time today.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_10", "copy": "What you're calling laziness is recovery.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_11", "copy": "Say no to one thing today. Just one.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_12", "copy": "You don't have to earn the rest.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_13", "copy": "Slow down before the slowdown is forced.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_14", "copy": "One hour with no agenda. That's enough.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_15", "copy": "Rest is what the body does to rebuild.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_16", "copy": "What can you let go of today?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_17", "copy": "Cancel something optional today.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_18", "copy": "You are not behind. You are depleted.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_19", "copy": "Permission granted to do less today.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_20", "copy": "Twenty minutes lying down changes things.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_21", "copy": "The world doesn't require your exhaustion.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_22", "copy": "Rest today. Function better tomorrow.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rest_n_23", "copy": "Close your eyes for five minutes right now.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_24", "copy": "You've been running on empty. Refill.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_25", "copy": "What your body needs most today is rest.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_26", "copy": "Receive something today. You've been giving.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_27", "copy": "Rested is the direction of whole.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_28", "copy": "Stop before you have to. That's the choice.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "rest_ev_1",  "content": "Did you rest today? If not, what got in the way?" },
+    { "id": "rest_ev_2",  "content": "What did your body need most today that you gave it or didn't?" },
+    { "id": "rest_ev_3",  "content": "What guilt came up about resting today? Where does that guilt come from?" },
+    { "id": "rest_ev_4",  "content": "What did you let go of today that you expected to need?" },
+    { "id": "rest_ev_5",  "content": "What would tomorrow look like if you protected eight hours of sleep tonight?" },
+    { "id": "rest_ev_6",  "content": "What were you most depleted by today? Is there anything changeable there?" },
+    { "id": "rest_ev_7",  "content": "What did you do for restoration today, even something small?" },
+    { "id": "rest_ev_8",  "content": "What would you tell yourself tonight that would make sleep easier?" },
+    { "id": "rest_ev_9",  "content": "What do you need to set down before sleep? What is not worth carrying through the night?" },
+    { "id": "rest_ev_10", "content": "Did stopping feel possible today? What made it easier or harder?" },
+    { "id": "rest_ev_11", "content": "What is the most restorative thing that happened today, even briefly?" },
+    { "id": "rest_ev_12", "content": "What would a well-rested version of tomorrow look like?" },
+    { "id": "rest_ev_13", "content": "Is there anything you said yes to today that deserved a no?" },
+    { "id": "rest_ev_14", "content": "What would you do differently tomorrow to protect more recovery time?" }
+  ]
+
+}

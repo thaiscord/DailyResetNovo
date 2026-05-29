@@ -1,0 +1,643 @@
+{
+  "theme": "Momentum",
+  "user_state": "Stalled. Knows what to do but not moving. Has started before and stopped. Doubts their own ability to follow through. Needs a small win.",
+  "core_need": "Proof that they can start again.",
+  "emotional_tone": "Gentle energy. Forward. Grounded.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "momentum_arr_1",
+        "heading": "The smallest step still counts.",
+        "subheading": "You don't have to return with momentum. You can return with one action."
+      },
+      {
+        "id": "momentum_arr_2",
+        "heading": "You have started before.",
+        "subheading": "The ability is not gone. The starting is available again right now."
+      },
+      {
+        "id": "momentum_arr_3",
+        "heading": "Stalled is not stopped.",
+        "subheading": "Stalled means you still want to move. That is something."
+      },
+      {
+        "id": "momentum_arr_4",
+        "heading": "One action creates the next.",
+        "subheading": "You don't need the full sequence. You need the first one."
+      },
+      {
+        "id": "momentum_arr_5",
+        "heading": "The gap between knowing and doing.",
+        "subheading": "You are standing in it. Moving closes it. Thinking about it does not."
+      },
+      {
+        "id": "momentum_arr_6",
+        "heading": "Small wins are still wins.",
+        "subheading": "The body does not distinguish small from large. It registers done."
+      },
+      {
+        "id": "momentum_arr_7",
+        "heading": "Start before you're ready.",
+        "subheading": "The readiness follows the starting. It has always been that way."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "momentum_rel_1",
+        "heading": "What has kept you stalled?",
+        "subheading": "Name it without judgment. Not blame. Just clarity.",
+        "field_placeholder": "What has been getting in the way of moving forward..."
+      },
+      {
+        "id": "momentum_rel_2",
+        "heading": "What story are you telling about why you can't?",
+        "subheading": "Write the exact story. Then look at whether it is really true.",
+        "field_placeholder": "The story you've been telling yourself about your ability to follow through..."
+      },
+      {
+        "id": "momentum_rel_3",
+        "heading": "What have you been waiting for?",
+        "subheading": "Name it. Sometimes naming it reveals it was never coming.",
+        "field_placeholder": "What are you waiting for before you can start..."
+      },
+      {
+        "id": "momentum_rel_4",
+        "heading": "What are you carrying from the last time you stopped?",
+        "subheading": "Shame about stopping is often heavier than the work itself.",
+        "field_placeholder": "What feelings about past stops are you bringing into this moment..."
+      },
+      {
+        "id": "momentum_rel_5",
+        "heading": "What is the smallest possible start?",
+        "subheading": "Write the tiniest action that would still count.",
+        "field_placeholder": "The smallest version of beginning that still moves things forward..."
+      },
+      {
+        "id": "momentum_rel_6",
+        "heading": "What have you already done?",
+        "subheading": "Not what remains. What you have already done. Write it.",
+        "field_placeholder": "List what you have already completed, already tried, already done..."
+      },
+      {
+        "id": "momentum_rel_7",
+        "heading": "What does forward mean to you today?",
+        "subheading": "Not eventually. Today. What would forward look like right now?",
+        "field_placeholder": "Describe what moving forward would look like today specifically..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "momentum_br_1",
+        "heading": "Breathe toward movement.",
+        "instruction": "Inhale slowly, building. Exhale with energy — longer and fuller than the inhale. The body prepares."
+      },
+      {
+        "id": "momentum_br_2",
+        "heading": "The breath before starting.",
+        "instruction": "One deliberate breath. In for four. Out for four. Then the first action. Right after the exhale."
+      },
+      {
+        "id": "momentum_br_3",
+        "heading": "Steady breathing for steady movement.",
+        "instruction": "Not fast. Even and slow. The kind of breathing that says: this is sustainable."
+      },
+      {
+        "id": "momentum_br_4",
+        "heading": "Reset with the breath.",
+        "instruction": "Three breaths. With each exhale, let go of the last time you stopped. You are starting now."
+      },
+      {
+        "id": "momentum_br_5",
+        "heading": "Build gently.",
+        "instruction": "In for three. Out for three. In for four. Out for four. The momentum builds slowly."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "momentum_mom_1",
+        "heading": "What is the smallest possible action you can take right now?"
+      },
+      {
+        "id": "momentum_mom_2",
+        "heading": "What one thing would make you feel like you moved forward today?"
+      },
+      {
+        "id": "momentum_mom_3",
+        "heading": "What is the very first step — not the plan, just the first step?"
+      },
+      {
+        "id": "momentum_mom_4",
+        "heading": "What would done feel like today, even a small version of done?"
+      },
+      {
+        "id": "momentum_mom_5",
+        "heading": "Name one action you have been postponing. Just the name."
+      },
+      {
+        "id": "momentum_mom_6",
+        "heading": "What would you start if you knew imperfect was acceptable?"
+      },
+      {
+        "id": "momentum_mom_7",
+        "heading": "What has been waiting for you to return to it?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "momentum_comp_1",
+        "heading": "You started again.",
+        "subheading": "That is the whole victory today. You started."
+      },
+      {
+        "id": "momentum_comp_2",
+        "heading": "Something moved.",
+        "subheading": "It doesn't have to be far. It moved. That is what momentum begins with."
+      },
+      {
+        "id": "momentum_comp_3",
+        "heading": "You proved something today.",
+        "subheading": "The ability to begin is still in you. You just demonstrated it."
+      },
+      {
+        "id": "momentum_comp_4",
+        "heading": "Small win. Real win.",
+        "subheading": "The size doesn't determine whether it counts. It counts."
+      },
+      {
+        "id": "momentum_comp_5",
+        "heading": "You closed the gap.",
+        "subheading": "Between knowing and doing. Even slightly. That is what today was."
+      },
+      {
+        "id": "momentum_comp_6",
+        "heading": "One step is all it takes to stop being stalled.",
+        "subheading": "You took it. The next step is easier than this one was."
+      },
+      {
+        "id": "momentum_comp_7",
+        "heading": "The body remembers how to move.",
+        "subheading": "You gave it the chance to remember. Tomorrow it will ask again."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "momentum_hc_1",
+      "headline": "The smallest step is still movement.",
+      "subheadline": "Direction matters more than distance right now."
+    },
+    {
+      "id": "momentum_hc_2",
+      "headline": "You have started before.",
+      "subheadline": "The ability is intact. The permission is the only missing piece."
+    },
+    {
+      "id": "momentum_hc_3",
+      "headline": "Stalled is not the same as stopped.",
+      "subheadline": "You still want to move. That is the evidence you need."
+    },
+    {
+      "id": "momentum_hc_4",
+      "headline": "One action creates the next.",
+      "subheadline": "The second step is easier than the first. Start anywhere."
+    },
+    {
+      "id": "momentum_hc_5",
+      "headline": "Knowing is not doing.",
+      "subheadline": "You know what to do. The gap between knowing and doing closes with action."
+    },
+    {
+      "id": "momentum_hc_6",
+      "headline": "A small win changes the story you tell about yourself.",
+      "subheadline": "That is why it matters. Not for the output. For the evidence."
+    },
+    {
+      "id": "momentum_hc_7",
+      "headline": "You are not behind.",
+      "subheadline": "You are starting from where you are. That is the only place anyone starts."
+    },
+    {
+      "id": "momentum_hc_8",
+      "headline": "The shame about stopping is heavier than the work.",
+      "subheadline": "Set the shame down first. Then begin."
+    },
+    {
+      "id": "momentum_hc_9",
+      "headline": "Readiness is a myth.",
+      "subheadline": "You will feel ready approximately thirty seconds after you start."
+    },
+    {
+      "id": "momentum_hc_10",
+      "headline": "The last time you stopped doesn't determine this time.",
+      "subheadline": "Each start is its own event."
+    },
+    {
+      "id": "momentum_hc_11",
+      "headline": "Movement at any speed is still movement.",
+      "subheadline": "Slow counts. Imperfect counts. Starting counts."
+    },
+    {
+      "id": "momentum_hc_12",
+      "headline": "The smallest version of the task is a valid version.",
+      "subheadline": "Minimum viable effort still builds the habit."
+    },
+    {
+      "id": "momentum_hc_13",
+      "headline": "Today does not need to make up for yesterday.",
+      "subheadline": "Today just needs to be today."
+    },
+    {
+      "id": "momentum_hc_14",
+      "headline": "The first action is the only one that costs this much.",
+      "subheadline": "Every subsequent one is easier. This is the hardest step."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "momentum_act_1",
+      "content": "Do the first two minutes of the task you've been avoiding. Set a timer.",
+      "why": "Starting is the barrier. Two minutes proves you can. Often, you continue past two."
+    },
+    {
+      "id": "momentum_act_2",
+      "content": "Write down three things you have already done this week. Not what remains. What is done.",
+      "why": "The stalled mind focuses on the gap. Evidence of completion restores proportion."
+    },
+    {
+      "id": "momentum_act_3",
+      "content": "Complete one small, satisfying task right now. Even if it's not the important one.",
+      "why": "A small done creates the neurological reward of completion. Use that."
+    },
+    {
+      "id": "momentum_act_4",
+      "content": "Send the email, make the call, or write the message that has been waiting.",
+      "why": "Clearing a stuck communication item relieves background drag."
+    },
+    {
+      "id": "momentum_act_5",
+      "content": "Write a plan for the next 48 hours. Three items per day. Only three.",
+      "why": "A short, realistic plan is more likely to be started than a comprehensive one."
+    },
+    {
+      "id": "momentum_act_6",
+      "content": "Announce your intention to one person. 'I am going to do ___ today.'",
+      "why": "Social commitment creates accountability that internal commitment does not."
+    },
+    {
+      "id": "momentum_act_7",
+      "content": "Open the document, application, or workspace for the stalled project. Just open it.",
+      "why": "Physical or digital presence often initiates action that mental preparation does not."
+    },
+    {
+      "id": "momentum_act_8",
+      "content": "Set a timer for 10 minutes. Work on the task until it rings. Then decide if you continue.",
+      "why": "Ten minutes is small enough to commit to when motivation is low."
+    },
+    {
+      "id": "momentum_act_9",
+      "content": "Organize your physical space before beginning. Clear the desk. Make it ready.",
+      "why": "A prepared environment creates the psychological signal that action is imminent."
+    },
+    {
+      "id": "momentum_act_10",
+      "content": "Write one sentence about what done will look like. Then begin moving toward it.",
+      "why": "An undefined finish line is hard to run toward. Defining it makes starting possible."
+    },
+    {
+      "id": "momentum_act_11",
+      "content": "Identify the one task that, if done, would move several others forward. Do that one.",
+      "why": "Leverage points exist in every list. The right one move creates cascading progress."
+    },
+    {
+      "id": "momentum_act_12",
+      "content": "Remove one item from your list by doing it right now. The fastest one.",
+      "why": "Quick completions create the feeling of momentum. Real momentum follows."
+    },
+    {
+      "id": "momentum_act_13",
+      "content": "Make a 'done list' alongside your to-do list. Write everything you complete.",
+      "why": "Tracking what is done creates visible evidence of movement that the to-do list hides."
+    },
+    {
+      "id": "momentum_act_14",
+      "content": "Work in a new location today. Coffee shop, library, different room.",
+      "why": "Novelty in environment increases activation and breaks the stalled pattern."
+    },
+    {
+      "id": "momentum_act_15",
+      "content": "Break the next task into five steps. Do only the first step today.",
+      "why": "Large tasks stall because the mind sees the whole thing. Steps are startable."
+    },
+    {
+      "id": "momentum_act_16",
+      "content": "Set a reward for completing the task. Something specific. Something today.",
+      "why": "Immediate reward is more motivating than future reward. Use it deliberately."
+    },
+    {
+      "id": "momentum_act_17",
+      "content": "Write why the task matters to you. Not why you should do it. Why it actually matters.",
+      "why": "Intrinsic motivation sustains effort. Obligation depletes it."
+    },
+    {
+      "id": "momentum_act_18",
+      "content": "Ask someone to work alongside you in silence for one hour.",
+      "why": "Body doubling — presence of another person — significantly increases task initiation."
+    },
+    {
+      "id": "momentum_act_19",
+      "content": "Put on music you associate with working well. Let it cue the action state.",
+      "why": "Associated music activates the state it has been linked to. Use the association."
+    },
+    {
+      "id": "momentum_act_20",
+      "content": "Write: 'The smallest version of this task that still counts is ___.' Do that.",
+      "why": "Minimum viable action is still action. Starting with the minimum is not failure."
+    },
+    {
+      "id": "momentum_act_21",
+      "content": "Review what you accomplished last week. Even one thing. Let that be the evidence.",
+      "why": "Stalled often means forgetting the progress that preceded the stall."
+    },
+    {
+      "id": "momentum_act_22",
+      "content": "Schedule tomorrow's first task tonight. Write the exact time.",
+      "why": "Pre-commitment reduces the decision cost of starting. Removing that cost matters."
+    },
+    {
+      "id": "momentum_act_23",
+      "content": "Write 'I will do ___ even though I don't feel like it, because ___.'",
+      "why": "Naming the ambivalence and the reason together activates intentional action."
+    },
+    {
+      "id": "momentum_act_24",
+      "content": "Track today. Write down every small task completed, no matter how small.",
+      "why": "Evidence of movement, even small movement, changes the internal narrative about stalling."
+    },
+    {
+      "id": "momentum_act_25",
+      "content": "Move your body for five minutes before beginning. Walk, stretch, or stand.",
+      "why": "Physical movement primes the system for psychological movement."
+    },
+    {
+      "id": "momentum_act_26",
+      "content": "Identify what stopped you last time. Write one thing that would prevent it this time.",
+      "why": "Understanding the last stop is protective intelligence for this start."
+    },
+    {
+      "id": "momentum_act_27",
+      "content": "Lower the standard. Allow good enough. Begin at good enough.",
+      "why": "Perfectionism is often the hidden reason behind stalling. Good enough removes it."
+    },
+    {
+      "id": "momentum_act_28",
+      "content": "Write down what the cost of one more day of stalling is. Make it concrete.",
+      "why": "The cost of not acting is usually underestimated. Making it visible raises its weight."
+    },
+    {
+      "id": "momentum_act_29",
+      "content": "Tell yourself: 'This is the moment I start again.' And then start.",
+      "why": "Naming a moment as the turning point makes it one. Language shapes action."
+    },
+    {
+      "id": "momentum_act_30",
+      "content": "Count down from five. Then begin. No further thought after zero.",
+      "why": "The countdown interrupts the hesitation loop before it restarts."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "momentum_ref_1",
+      "content": "What has been keeping you stalled? Can you name it honestly?"
+    },
+    {
+      "id": "momentum_ref_2",
+      "content": "What does starting feel like in your body? What happens right before you stop yourself?"
+    },
+    {
+      "id": "momentum_ref_3",
+      "content": "What would a small win look like today? What would it prove about you?"
+    },
+    {
+      "id": "momentum_ref_4",
+      "content": "When have you started after a long stall before? What got you moving?"
+    },
+    {
+      "id": "momentum_ref_5",
+      "content": "What story are you telling about your ability to follow through?"
+    },
+    {
+      "id": "momentum_ref_6",
+      "content": "What would be different in your life if you moved forward today?"
+    },
+    {
+      "id": "momentum_ref_7",
+      "content": "What are you waiting for that might not be coming?"
+    },
+    {
+      "id": "momentum_ref_8",
+      "content": "What would the smallest version of progress look like right now?"
+    },
+    {
+      "id": "momentum_ref_9",
+      "content": "What shame from past stops are you carrying into this attempt?"
+    },
+    {
+      "id": "momentum_ref_10",
+      "content": "What is the gap between what you know and what you are doing?"
+    },
+    {
+      "id": "momentum_ref_11",
+      "content": "What does done feel like to you? When have you felt it?"
+    },
+    {
+      "id": "momentum_ref_12",
+      "content": "What would you need to believe about yourself to start today?"
+    },
+    {
+      "id": "momentum_ref_13",
+      "content": "What has the stalling been protecting you from feeling?"
+    },
+    {
+      "id": "momentum_ref_14",
+      "content": "What is the honest reason this keeps not happening?"
+    },
+    {
+      "id": "momentum_ref_15",
+      "content": "What is one action that would make tomorrow slightly easier than today?"
+    },
+    {
+      "id": "momentum_ref_16",
+      "content": "What does good enough look like for this task? Can you aim at that instead?"
+    },
+    {
+      "id": "momentum_ref_17",
+      "content": "What would you tell someone who had been stalled exactly as long as you have?"
+    },
+    {
+      "id": "momentum_ref_18",
+      "content": "What evidence exists that you can follow through, even if you've stopped before?"
+    },
+    {
+      "id": "momentum_ref_19",
+      "content": "What does movement feel like when you find it? What is the quality of that feeling?"
+    },
+    {
+      "id": "momentum_ref_20",
+      "content": "What has the cost of waiting been? Not in output. In how you feel about yourself."
+    },
+    {
+      "id": "momentum_ref_21",
+      "content": "What is one thing you could do today that would make you feel like yourself again?"
+    },
+    {
+      "id": "momentum_ref_22",
+      "content": "What is the difference between the version of you that moves and the one that stalls?"
+    },
+    {
+      "id": "momentum_ref_23",
+      "content": "What part of the task do you actually want to do? Start there."
+    },
+    {
+      "id": "momentum_ref_24",
+      "content": "What would make tomorrow's start easier than today's?"
+    },
+    {
+      "id": "momentum_ref_25",
+      "content": "What does forward feel like? Not the destination. The feeling of moving."
+    },
+    {
+      "id": "momentum_ref_26",
+      "content": "What are you most afraid of finding out if you start?"
+    },
+    {
+      "id": "momentum_ref_27",
+      "content": "What would the version of you who started look like one month from now?"
+    },
+    {
+      "id": "momentum_ref_28",
+      "content": "What is one thing you finished recently that you didn't expect to finish?"
+    },
+    {
+      "id": "momentum_ref_29",
+      "content": "What would make this task genuinely worth starting, to you specifically?"
+    },
+    {
+      "id": "momentum_ref_30",
+      "content": "What would starting feel like if the outcome didn't matter?"
+    }
+  ],
+
+  "words": [
+    { "id": "momentum_w_1",  "word": "FORWARD", "meaning": "Not fast. Not far. Forward. In the right direction." },
+    { "id": "momentum_w_2",  "word": "BEGIN",   "meaning": "The word that ends all stalling. Say it. Mean it." },
+    { "id": "momentum_w_3",  "word": "START",   "meaning": "Not finish. Not perfect. Start." },
+    { "id": "momentum_w_4",  "word": "MOVE",    "meaning": "Movement in any direction builds the capacity for more." },
+    { "id": "momentum_w_5",  "word": "SMALL",   "meaning": "Small is not less. Small is how momentum starts." },
+    { "id": "momentum_w_6",  "word": "NOW",     "meaning": "Not later. Not when you feel ready. Now." },
+    { "id": "momentum_w_7",  "word": "BUILD",   "meaning": "Momentum builds. It is not arrived at. It is built." },
+    { "id": "momentum_w_8",  "word": "STEP",    "meaning": "One step. The next step appears after you take this one." },
+    { "id": "momentum_w_9",  "word": "DONE",    "meaning": "Done beats perfect. Always. At every scale." },
+    { "id": "momentum_w_10", "word": "AGAIN",   "meaning": "You can begin again. The ability does not expire." },
+    { "id": "momentum_w_11", "word": "JUST",    "meaning": "Just start. Just one task. Just today." },
+    { "id": "momentum_w_12", "word": "PROOF",   "meaning": "The only proof you can start is to start. That is the evidence." },
+    { "id": "momentum_w_13", "word": "ROLL",    "meaning": "Once rolling, staying in motion is easier than beginning." },
+    { "id": "momentum_w_14", "word": "PUSH",    "meaning": "Not hard. Not fast. One gentle push to get rolling." },
+    { "id": "momentum_w_15", "word": "CARRY",   "meaning": "Carry the small win forward. Let it weigh more than the stall." },
+    { "id": "momentum_w_16", "word": "SHOW",    "meaning": "Show up. That is the beginning of all other showing up." },
+    { "id": "momentum_w_17", "word": "ACT",     "meaning": "Action changes state. Thinking about action does not." },
+    { "id": "momentum_w_18", "word": "CLOSE",   "meaning": "Close the gap. Between knowing and doing. Today." },
+    { "id": "momentum_w_19", "word": "FIRST",   "meaning": "The first action is the whole gate. Once through, the rest opens." },
+    { "id": "momentum_w_20", "word": "WIN",     "meaning": "Small win. Real win. Both are wins." },
+    { "id": "momentum_w_21", "word": "ENOUGH",  "meaning": "Enough to start. Enough to try. Enough right now." },
+    { "id": "momentum_w_22", "word": "RETURN",  "meaning": "Return to the thing. The thing is still there. You can return." },
+    { "id": "momentum_w_23", "word": "RISE",    "meaning": "Rise out of the stall. Even slightly. Even today." },
+    { "id": "momentum_w_24", "word": "COMMIT",  "meaning": "Commit to the step. Not the whole thing. Just the step." },
+    { "id": "momentum_w_25", "word": "OPEN",    "meaning": "Open the document. Open the door. Open is a start." },
+    { "id": "momentum_w_26", "word": "TRY",     "meaning": "Trying is not failing. Trying is the first form of doing." },
+    { "id": "momentum_w_27", "word": "GAIN",    "meaning": "Gain ground. Even a step is territory gained." },
+    { "id": "momentum_w_28", "word": "PRESS",   "meaning": "Press through the first resistance. The resistance eases." },
+    { "id": "momentum_w_29", "word": "REACH",   "meaning": "Reach for the next thing. Even before you're sure." },
+    { "id": "momentum_w_30", "word": "SPARK",   "meaning": "The first action is the spark. Everything follows from it." },
+    { "id": "momentum_w_31", "word": "TRUST",   "meaning": "Trust that starting will feel better than not starting." },
+    { "id": "momentum_w_32", "word": "NEXT",    "meaning": "What is the next thing? Not all things. Just next." },
+    { "id": "momentum_w_33", "word": "INCH",    "meaning": "Inch forward. Inches become feet. Feet become distance." },
+    { "id": "momentum_w_34", "word": "LAUNCH",  "meaning": "Launch the effort. Get it airborne. That is the first act." },
+    { "id": "momentum_w_35", "word": "STEADY",  "meaning": "Steady pace beats starting and stopping. Steady." },
+    { "id": "momentum_w_36", "word": "DECIDE",  "meaning": "Decide to start. That decision is most of the work." },
+    { "id": "momentum_w_37", "word": "YES",     "meaning": "The yes that ends the stall. Say it once." },
+    { "id": "momentum_w_38", "word": "INITIATE", "meaning": "To initiate is to accept that imperfect action beats perfect inaction." },
+    { "id": "momentum_w_39", "word": "DIRECT",  "meaning": "Direct action is always shorter than the detour around it." },
+    { "id": "momentum_w_40", "word": "EARN",    "meaning": "Earn the evidence. Show yourself you can. One action." },
+    { "id": "momentum_w_41", "word": "FLOW",    "meaning": "Flow follows starting. Not the other way around." },
+    { "id": "momentum_w_42", "word": "GROUND",  "meaning": "Grounded momentum. Not frantic. Sustainable and grounded." },
+    { "id": "momentum_w_43", "word": "HOLD",    "meaning": "Hold the intention. Then act on it." },
+    { "id": "momentum_w_44", "word": "IMPACT",  "meaning": "Even small impact is impact. Don't wait for big." },
+    { "id": "momentum_w_45", "word": "KEEP",    "meaning": "Keep going after you've started. Even slowly." },
+    { "id": "momentum_w_46", "word": "LIFT",    "meaning": "Lift the first weight. The second is lighter." },
+    { "id": "momentum_w_47", "word": "MATTER",  "meaning": "The small start matters. More than it looks like it does." },
+    { "id": "momentum_w_48", "word": "ONE",     "meaning": "One action. One task. One start. One." },
+    { "id": "momentum_w_49", "word": "PLACE",   "meaning": "Place yourself in front of the work. Then begin." },
+    { "id": "momentum_w_50", "word": "QUICK",   "meaning": "Quick start. Then slow and steady. But start quick." },
+    { "id": "momentum_w_51", "word": "REAL",    "meaning": "Real movement. Even small. Real." },
+    { "id": "momentum_w_52", "word": "WORK",    "meaning": "The work starts with beginning. Not with planning to begin." }
+  ],
+
+  "notification_pool": [
+    { "id": "momentum_n_1",  "copy": "The smallest step still counts. Take it.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_2",  "copy": "You've started before. The ability is intact.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_3",  "copy": "Two minutes on the stalled task. Just two.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_4",  "copy": "Stalled is not stopped. You still want to move.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_5",  "copy": "One action creates the next. Start somewhere.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_6",  "copy": "The readiness comes after starting. Not before.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_7",  "copy": "Small win today. That's the whole goal.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_8",  "copy": "Open the thing. Just open it. That's step one.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_9",  "copy": "You are not behind. You are starting from here.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_10", "copy": "What's the smallest version of starting?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_11", "copy": "Done beats perfect. At every size.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_12", "copy": "Name one thing you can finish today.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_13", "copy": "The last stop doesn't determine this start.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_14", "copy": "Imperfect movement still moves you forward.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_15", "copy": "Count to five. Then begin.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_16", "copy": "What would prove to you that you can do this?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_17", "copy": "Today does not need to make up for yesterday.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_18", "copy": "Movement at any speed still counts.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_19", "copy": "Set a 10-minute timer. Work until it rings.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_20", "copy": "The shame about stopping is not the truth.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_21", "copy": "One small thing done changes the feeling.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_22", "copy": "You know what to do. Now do part of it.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_23", "copy": "Good enough to start is good enough.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_24", "copy": "Forward, not perfect. That's today's goal.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_25", "copy": "What would make you feel like yourself again today?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_26", "copy": "The first step closes the gap. Take it.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_27", "copy": "Announce your intention. Then follow it.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_28", "copy": "This is the moment you start again.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "momentum_ev_1",  "content": "What did you move forward today, even slightly?" },
+    { "id": "momentum_ev_2",  "content": "What small win happened today that you might be underselling?" },
+    { "id": "momentum_ev_3",  "content": "What got in the way of starting today? Was it external or internal?" },
+    { "id": "momentum_ev_4",  "content": "What would make tomorrow's start easier than today's?" },
+    { "id": "momentum_ev_5",  "content": "Did you prove anything to yourself today about your ability to begin?" },
+    { "id": "momentum_ev_6",  "content": "What would the next small step tomorrow look like?" },
+    { "id": "momentum_ev_7",  "content": "Where did momentum feel possible today, even briefly?" },
+    { "id": "momentum_ev_8",  "content": "What is the honest reason the stall is continuing?" },
+    { "id": "momentum_ev_9",  "content": "What does the version of you that's moving feel like?" },
+    { "id": "momentum_ev_10", "content": "What did you complete today that deserves recognition?" },
+    { "id": "momentum_ev_11", "content": "What would you start tomorrow if starting was easy?" },
+    { "id": "momentum_ev_12", "content": "What has the stalling been protecting you from facing?" },
+    { "id": "momentum_ev_13", "content": "What is one thing you're glad you did today?" },
+    { "id": "momentum_ev_14", "content": "What is the first action you'll take tomorrow to build on today?" }
+  ]
+
+}

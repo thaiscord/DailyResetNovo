@@ -1,0 +1,643 @@
+{
+  "theme": "Focus",
+  "user_state": "Scattered. Distracted. Overwhelmed by the volume of things demanding attention. Can't start because everything feels equally urgent.",
+  "core_need": "Permission to do one thing.",
+  "emotional_tone": "Grounding. Narrowing. Protective.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "focus_arr_1",
+        "heading": "One thing.",
+        "subheading": "Not all of it. Just one thing. That is the whole plan."
+      },
+      {
+        "id": "focus_arr_2",
+        "heading": "Your attention is finite.",
+        "subheading": "Today you protect it. One thing at a time."
+      },
+      {
+        "id": "focus_arr_3",
+        "heading": "The noise is real.",
+        "subheading": "You don't have to silence it. You just have to choose through it."
+      },
+      {
+        "id": "focus_arr_4",
+        "heading": "Everything can wait.",
+        "subheading": "Almost everything. Pick the one that cannot."
+      },
+      {
+        "id": "focus_arr_5",
+        "heading": "You are here.",
+        "subheading": "This moment. This task. Nothing else has to exist right now."
+      },
+      {
+        "id": "focus_arr_6",
+        "heading": "Narrow the field.",
+        "subheading": "You can't hold all of it. You were never supposed to."
+      },
+      {
+        "id": "focus_arr_7",
+        "heading": "Single point.",
+        "subheading": "Everything becomes clearer when you stop trying to see all of it at once."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "focus_rel_1",
+        "heading": "What is taking up space?",
+        "subheading": "Name it. Set it down. You can pick it up later.",
+        "field_placeholder": "Name what is competing for your attention right now..."
+      },
+      {
+        "id": "focus_rel_2",
+        "heading": "The list in your head.",
+        "subheading": "Write one thing down. Watch the rest get quieter.",
+        "field_placeholder": "What keeps pulling you away from what matters..."
+      },
+      {
+        "id": "focus_rel_3",
+        "heading": "What won't let you start?",
+        "subheading": "Name it. It loses some of its hold when you do.",
+        "field_placeholder": "What are you circling around instead of beginning..."
+      },
+      {
+        "id": "focus_rel_4",
+        "heading": "The weight of everything.",
+        "subheading": "You don't have to solve it all. Just see it clearly.",
+        "field_placeholder": "What feels too large to approach right now..."
+      },
+      {
+        "id": "focus_rel_5",
+        "heading": "Write down the noise.",
+        "subheading": "It belongs on paper. Not in your head while you work.",
+        "field_placeholder": "Empty your mental queue here..."
+      },
+      {
+        "id": "focus_rel_6",
+        "heading": "What needs to leave your mind?",
+        "subheading": "Set it here so it stops interrupting.",
+        "field_placeholder": "What are you holding that is not actually your job right now..."
+      },
+      {
+        "id": "focus_rel_7",
+        "heading": "Competing voices.",
+        "subheading": "None of them are the work. Name them, then step past.",
+        "field_placeholder": "What is demanding your attention that is not actually urgent..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "focus_br_1",
+        "heading": "Breathe once, deliberately.",
+        "instruction": "Inhale for four counts. Hold for two. Exhale for six. Repeat twice. Then begin."
+      },
+      {
+        "id": "focus_br_2",
+        "heading": "One breath for focus.",
+        "instruction": "Slow exhale. Longer than the inhale. Let the body settle before the mind follows."
+      },
+      {
+        "id": "focus_br_3",
+        "heading": "Ground yourself here.",
+        "instruction": "Breathe in until the chest is full. Exhale slowly. Feel both feet on the floor."
+      },
+      {
+        "id": "focus_br_4",
+        "heading": "The breath before starting.",
+        "instruction": "Three slow breaths. Each a little longer than the last. Then begin the one thing."
+      },
+      {
+        "id": "focus_br_5",
+        "heading": "Reset.",
+        "instruction": "In through the nose, four counts. Out through the mouth, eight. Shoulders drop. Start."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "focus_mom_1",
+        "heading": "What is the one thing?"
+      },
+      {
+        "id": "focus_mom_2",
+        "heading": "Name your single priority for today."
+      },
+      {
+        "id": "focus_mom_3",
+        "heading": "What gets your full attention right now?"
+      },
+      {
+        "id": "focus_mom_4",
+        "heading": "If you finish one thing today, what is it?"
+      },
+      {
+        "id": "focus_mom_5",
+        "heading": "What task cannot wait another day?"
+      },
+      {
+        "id": "focus_mom_6",
+        "heading": "What matters most right now?"
+      },
+      {
+        "id": "focus_mom_7",
+        "heading": "Pick the one thing. Everything else is secondary."
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "focus_comp_1",
+        "heading": "You held the line.",
+        "subheading": "Focus is a practice, not a state. Today you practiced."
+      },
+      {
+        "id": "focus_comp_2",
+        "heading": "One thing done.",
+        "subheading": "That is not small. In a scattered world, it is enough."
+      },
+      {
+        "id": "focus_comp_3",
+        "heading": "You protected your attention.",
+        "subheading": "That is harder than it sounds. You did it."
+      },
+      {
+        "id": "focus_comp_4",
+        "heading": "You narrowed it.",
+        "subheading": "And something got done because of that. Notice it."
+      },
+      {
+        "id": "focus_comp_5",
+        "heading": "Present for one thing.",
+        "subheading": "In a world built to scatter you. Today, you didn't scatter."
+      },
+      {
+        "id": "focus_comp_6",
+        "heading": "You came back to it.",
+        "subheading": "More than once, probably. That returning is the whole practice."
+      },
+      {
+        "id": "focus_comp_7",
+        "heading": "The single thing.",
+        "subheading": "You stayed with it. That takes more than people realize."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "focus_hc_1",
+      "headline": "One thing is enough.",
+      "subheadline": "Not all of it. Just this. Just today."
+    },
+    {
+      "id": "focus_hc_2",
+      "headline": "Protect your attention.",
+      "subheadline": "It is the only resource that cannot be replaced."
+    },
+    {
+      "id": "focus_hc_3",
+      "headline": "Scattered is not broken.",
+      "subheadline": "It means you care about too many things. Start with one."
+    },
+    {
+      "id": "focus_hc_4",
+      "headline": "You don't have to do all of it.",
+      "subheadline": "You have to do this. Just this."
+    },
+    {
+      "id": "focus_hc_5",
+      "headline": "Narrow is not small.",
+      "subheadline": "It's focused. There's a significant difference."
+    },
+    {
+      "id": "focus_hc_6",
+      "headline": "The noise isn't going anywhere.",
+      "subheadline": "You don't have to listen to all of it at once."
+    },
+    {
+      "id": "focus_hc_7",
+      "headline": "Your attention is finite.",
+      "subheadline": "That is not a flaw. Spend it on what matters."
+    },
+    {
+      "id": "focus_hc_8",
+      "headline": "Overwhelm is not the enemy.",
+      "subheadline": "Unclear priority is. Pick one."
+    },
+    {
+      "id": "focus_hc_9",
+      "headline": "One clear thing.",
+      "subheadline": "That is the whole plan. That is enough."
+    },
+    {
+      "id": "focus_hc_10",
+      "headline": "You can't focus on everything.",
+      "subheadline": "That is not a flaw. It's physics. Choose wisely."
+    },
+    {
+      "id": "focus_hc_11",
+      "headline": "The world will still need things from you.",
+      "subheadline": "After you finish this one thing. Not before."
+    },
+    {
+      "id": "focus_hc_12",
+      "headline": "Single point of entry.",
+      "subheadline": "Start here. Everything else finds its place later."
+    },
+    {
+      "id": "focus_hc_13",
+      "headline": "The task is still waiting.",
+      "subheadline": "It always was. Now you have this moment to start."
+    },
+    {
+      "id": "focus_hc_14",
+      "headline": "You've started harder things.",
+      "subheadline": "This is one task. You can hold one task."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "focus_act_1",
+      "content": "Write down the one task that matters most today. Just one.",
+      "why": "When you name it, you commit to it. The rest becomes background."
+    },
+    {
+      "id": "focus_act_2",
+      "content": "Close every browser tab not related to what you're working on right now.",
+      "why": "Visual noise is cognitive noise. Clear the screen, clear the approach."
+    },
+    {
+      "id": "focus_act_3",
+      "content": "Set a timer for 25 minutes. Work on one thing only until it rings.",
+      "why": "Finite time makes starting easier. Your brain can hold 25 minutes."
+    },
+    {
+      "id": "focus_act_4",
+      "content": "Turn off all notifications for the next hour.",
+      "why": "Interruptions cost more than they appear to. Guard this time."
+    },
+    {
+      "id": "focus_act_5",
+      "content": "Write your task list. Circle the one item that would make today feel complete.",
+      "why": "Most lists are noise. One circled item is a decision."
+    },
+    {
+      "id": "focus_act_6",
+      "content": "Clear your desk surface before you begin.",
+      "why": "The state of your physical space affects the state of your mind."
+    },
+    {
+      "id": "focus_act_7",
+      "content": "At the top of a blank page, write: 'Today I am working on ___.' Fill it in.",
+      "why": "Declaration creates direction. Your attention follows where you point it."
+    },
+    {
+      "id": "focus_act_8",
+      "content": "Identify the smallest possible start on your main task. Do just that.",
+      "why": "Starting is the hardest part. Making it tiny removes the barrier."
+    },
+    {
+      "id": "focus_act_9",
+      "content": "Put your phone in another room for one hour.",
+      "why": "Even the presence of a phone reduces focus. Distance is the intervention."
+    },
+    {
+      "id": "focus_act_10",
+      "content": "Write a two-sentence description of what you are actually working on today.",
+      "why": "Vague is hard to start. Specific is possible."
+    },
+    {
+      "id": "focus_act_11",
+      "content": "Say aloud: 'The one thing I am doing right now is ___.' Then do it.",
+      "why": "Speaking a commitment activates it differently than only thinking it."
+    },
+    {
+      "id": "focus_act_12",
+      "content": "Archive or delete three unread emails before starting work.",
+      "why": "Clearing small things frees mental space for the large one."
+    },
+    {
+      "id": "focus_act_13",
+      "content": "Write everything competing for your attention. Then close the list.",
+      "why": "The list moves it out of your head. You can return to it later."
+    },
+    {
+      "id": "focus_act_14",
+      "content": "Choose one object on your desk. Focus on it for ten seconds. Then begin.",
+      "why": "A single point of focus trains the attention before you use it."
+    },
+    {
+      "id": "focus_act_15",
+      "content": "Block a 90-minute window in your calendar for deep work today.",
+      "why": "Unscheduled focus time gets filled. Protected time gets used."
+    },
+    {
+      "id": "focus_act_16",
+      "content": "Write the first sentence of the task you have been avoiding.",
+      "why": "The first sentence breaks the block. What follows is easier."
+    },
+    {
+      "id": "focus_act_17",
+      "content": "Identify one meeting or task to decline or defer today.",
+      "why": "Saying no to something creates space for the one thing that matters."
+    },
+    {
+      "id": "focus_act_18",
+      "content": "Write down three things you will NOT do today. Commit to that boundary.",
+      "why": "Limits on output protect the single task that deserves your focus."
+    },
+    {
+      "id": "focus_act_19",
+      "content": "Put on music you work well to. Let it signal the focused state.",
+      "why": "Repeated rituals cue the brain that focus is coming."
+    },
+    {
+      "id": "focus_act_20",
+      "content": "Read only the first part of the task description. Then begin.",
+      "why": "Over-reading is a delay tactic. Enough information to start is enough."
+    },
+    {
+      "id": "focus_act_21",
+      "content": "Set your phone to Do Not Disturb. Leave it face-down.",
+      "why": "Passive distraction is still distraction. Remove the invitation."
+    },
+    {
+      "id": "focus_act_22",
+      "content": "Ask yourself: 'What is the smallest version of this that still matters?' Start there.",
+      "why": "Scaling down reduces resistance. Progress still accumulates."
+    },
+    {
+      "id": "focus_act_23",
+      "content": "Rewrite your task in the simplest possible words.",
+      "why": "Complexity is often procrastination with good vocabulary."
+    },
+    {
+      "id": "focus_act_24",
+      "content": "Sort your task list by importance, not by urgency. Spend three minutes on this.",
+      "why": "Urgency feels loud. Importance is what actually moves you forward."
+    },
+    {
+      "id": "focus_act_25",
+      "content": "Write a note: 'The distraction can wait. This cannot.' Leave it visible.",
+      "why": "External reminders interrupt the automatic reach toward distraction."
+    },
+    {
+      "id": "focus_act_26",
+      "content": "Take three slow breaths before opening your inbox.",
+      "why": "A moment of intention before reactive space changes how you move through it."
+    },
+    {
+      "id": "focus_act_27",
+      "content": "Commit to working on one thing until the next natural break. Only one.",
+      "why": "Task-switching costs more than it saves. Single-tasking builds over time."
+    },
+    {
+      "id": "focus_act_28",
+      "content": "Move to a different chair or location for a focused work session.",
+      "why": "A change in physical context can interrupt a distracted pattern."
+    },
+    {
+      "id": "focus_act_29",
+      "content": "Write what 'done' looks like for today's main task. Specific and small.",
+      "why": "You can't aim at vague. Define the finish line before you run."
+    },
+    {
+      "id": "focus_act_30",
+      "content": "Before checking any messages, spend five minutes on the one thing.",
+      "why": "What you do first shapes what you do next. Start with what matters."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "focus_ref_1",
+      "content": "What has been pulling your attention away from what actually matters?"
+    },
+    {
+      "id": "focus_ref_2",
+      "content": "What would you finish today if you believed one focused hour was enough?"
+    },
+    {
+      "id": "focus_ref_3",
+      "content": "What is the real task behind the task you keep avoiding?"
+    },
+    {
+      "id": "focus_ref_4",
+      "content": "When did you last feel truly present in your work? What made that possible?"
+    },
+    {
+      "id": "focus_ref_5",
+      "content": "What is on your list that you could remove without real consequence?"
+    },
+    {
+      "id": "focus_ref_6",
+      "content": "What does scatter feel like in your body right now? Where do you hold it?"
+    },
+    {
+      "id": "focus_ref_7",
+      "content": "What would change if you let yourself focus on only one thing today?"
+    },
+    {
+      "id": "focus_ref_8",
+      "content": "What are you using distraction to avoid feeling right now?"
+    },
+    {
+      "id": "focus_ref_9",
+      "content": "How do you know when you are truly focused? What does that actually feel like?"
+    },
+    {
+      "id": "focus_ref_10",
+      "content": "What has been waiting the longest for your full attention?"
+    },
+    {
+      "id": "focus_ref_11",
+      "content": "What keeps interrupting you? Is any of it as urgent as it feels?"
+    },
+    {
+      "id": "focus_ref_12",
+      "content": "What would you say to yourself if you finished just one important thing today?"
+    },
+    {
+      "id": "focus_ref_13",
+      "content": "When everything feels equally urgent, what do you actually want to work on?"
+    },
+    {
+      "id": "focus_ref_14",
+      "content": "What is the cost of staying scattered today? What is the cost of focusing?"
+    },
+    {
+      "id": "focus_ref_15",
+      "content": "If you could only accomplish one thing this week, what would it be?"
+    },
+    {
+      "id": "focus_ref_16",
+      "content": "What does 'done enough' look like for today? Just today."
+    },
+    {
+      "id": "focus_ref_17",
+      "content": "What has been half-finished the longest? What would it take to complete it?"
+    },
+    {
+      "id": "focus_ref_18",
+      "content": "Is the thing you're avoiding actually hard, or does it just feel that way?"
+    },
+    {
+      "id": "focus_ref_19",
+      "content": "What would it feel like to finish the day having done one important thing?"
+    },
+    {
+      "id": "focus_ref_20",
+      "content": "What part of today's work do you genuinely want to do?"
+    },
+    {
+      "id": "focus_ref_21",
+      "content": "What story are you telling yourself about why you can't start?"
+    },
+    {
+      "id": "focus_ref_22",
+      "content": "When you lose focus, what are you usually thinking about instead?"
+    },
+    {
+      "id": "focus_ref_23",
+      "content": "What would be easier tomorrow if you focused on one thing today?"
+    },
+    {
+      "id": "focus_ref_24",
+      "content": "What does your best work actually require from you?"
+    },
+    {
+      "id": "focus_ref_25",
+      "content": "What would you protect first if your available time were cut in half today?"
+    },
+    {
+      "id": "focus_ref_26",
+      "content": "What has been distracting you that is not actually your responsibility?"
+    },
+    {
+      "id": "focus_ref_27",
+      "content": "When does your focus feel natural? What conditions create that?"
+    },
+    {
+      "id": "focus_ref_28",
+      "content": "What are you afraid will happen if you focus fully on this one thing?"
+    },
+    {
+      "id": "focus_ref_29",
+      "content": "What does the noise in your head sound like right now? Can you name it?"
+    },
+    {
+      "id": "focus_ref_30",
+      "content": "What would you stop doing if you gave yourself permission to do less?"
+    }
+  ],
+
+  "words": [
+    { "id": "focus_w_1",  "word": "SINGLE",  "meaning": "Doing one thing is not a limitation. It is a decision." },
+    { "id": "focus_w_2",  "word": "NARROW",  "meaning": "The field gets smaller. The work gets clearer." },
+    { "id": "focus_w_3",  "word": "PROTECT", "meaning": "Your attention belongs to you. Guard it accordingly." },
+    { "id": "focus_w_4",  "word": "CLEAR",   "meaning": "Not empty. Uncluttered. There is a difference." },
+    { "id": "focus_w_5",  "word": "PRESENT", "meaning": "Here, and only here. That is enough." },
+    { "id": "focus_w_6",  "word": "ONE",     "meaning": "The number that makes everything possible." },
+    { "id": "focus_w_7",  "word": "SHARP",   "meaning": "Precision over volume. Quality over quantity." },
+    { "id": "focus_w_8",  "word": "DIRECT",  "meaning": "No detours. The most useful path through." },
+    { "id": "focus_w_9",  "word": "STILL",   "meaning": "Quiet enough to hear what actually matters." },
+    { "id": "focus_w_10", "word": "ANCHOR",  "meaning": "Something to return to when you drift." },
+    { "id": "focus_w_11", "word": "FIRM",    "meaning": "Decided. Not rigid. Chosen." },
+    { "id": "focus_w_12", "word": "CLOSE",   "meaning": "Bring it near. See it clearly. Work there." },
+    { "id": "focus_w_13", "word": "HOLD",    "meaning": "Stay with it. Don't let go yet." },
+    { "id": "focus_w_14", "word": "QUIET",   "meaning": "Not silence. Just less noise than before." },
+    { "id": "focus_w_15", "word": "SELECT",  "meaning": "To choose is to protect. Choose carefully." },
+    { "id": "focus_w_16", "word": "LEAN",    "meaning": "Toward the thing that matters. Only that." },
+    { "id": "focus_w_17", "word": "RETURN",  "meaning": "You drifted. Come back. No penalty for drifting." },
+    { "id": "focus_w_18", "word": "DEEP",    "meaning": "Below the surface is where the real work lives." },
+    { "id": "focus_w_19", "word": "SLOW",    "meaning": "Speed is not the goal. Progress is." },
+    { "id": "focus_w_20", "word": "SETTLE",  "meaning": "Let the rest of it settle. Work on this." },
+    { "id": "focus_w_21", "word": "COMMIT",  "meaning": "Not forever. Just for this hour." },
+    { "id": "focus_w_22", "word": "LIMIT",   "meaning": "A chosen limit is not a wall. It is a direction." },
+    { "id": "focus_w_23", "word": "WATCH",   "meaning": "Observe the distraction. Don't follow it." },
+    { "id": "focus_w_24", "word": "PAUSE",   "meaning": "Before you switch tasks. Just pause." },
+    { "id": "focus_w_25", "word": "CUT",     "meaning": "Remove what is not necessary. Trust what remains." },
+    { "id": "focus_w_26", "word": "TRACE",   "meaning": "Follow the thread back to what matters." },
+    { "id": "focus_w_27", "word": "DEFINE",  "meaning": "When the task is vague, define it. Then begin." },
+    { "id": "focus_w_28", "word": "REDUCE",  "meaning": "Less is not less. It is more of what matters." },
+    { "id": "focus_w_29", "word": "WAIT",    "meaning": "The distraction can wait. This one thing cannot." },
+    { "id": "focus_w_30", "word": "SEE",     "meaning": "When you focus, you see what others miss." },
+    { "id": "focus_w_31", "word": "BUILD",   "meaning": "One focused hour builds more than five scattered ones." },
+    { "id": "focus_w_32", "word": "PLACE",   "meaning": "Put everything in its place. Work in yours." },
+    { "id": "focus_w_33", "word": "STEP",    "meaning": "One step into it. The rest becomes clearer." },
+    { "id": "focus_w_34", "word": "GATHER",  "meaning": "Your attention has scattered. Gather it now." },
+    { "id": "focus_w_35", "word": "SAVE",    "meaning": "Save your focus for what costs the most to do." },
+    { "id": "focus_w_36", "word": "AIM",     "meaning": "An unfocused effort hits everything and nothing." },
+    { "id": "focus_w_37", "word": "CORE",    "meaning": "Strip everything back to the core. Start there." },
+    { "id": "focus_w_38", "word": "DRAW",    "meaning": "Draw a line around the thing that matters." },
+    { "id": "focus_w_39", "word": "EARN",    "meaning": "Focus is not a gift. It is built in small moments." },
+    { "id": "focus_w_40", "word": "FACE",    "meaning": "Face the task before you check anything else." },
+    { "id": "focus_w_41", "word": "GATE",    "meaning": "A gate keeps things in and things out. Be selective." },
+    { "id": "focus_w_42", "word": "INTENT",  "meaning": "Clear intention is where focus begins." },
+    { "id": "focus_w_43", "word": "KEY",     "meaning": "Find the thing that unlocks the rest. Start there." },
+    { "id": "focus_w_44", "word": "MARK",    "meaning": "The thing you return to. Keep it visible." },
+    { "id": "focus_w_45", "word": "FIND",    "meaning": "The answer lives inside the work. Not around it." },
+    { "id": "focus_w_46", "word": "POINT",   "meaning": "A single point of focus is a form of power." },
+    { "id": "focus_w_47", "word": "PURE",    "meaning": "One task. Nothing mixed in. Nothing competing." },
+    { "id": "focus_w_48", "word": "PRECISE",  "meaning": "Precision over breadth. One clear target, cleanly hit." },
+    { "id": "focus_w_49", "word": "TRIM",    "meaning": "What you cut away creates space for what matters." },
+    { "id": "focus_w_50", "word": "ZONE",    "meaning": "The focused state. You can return to it." },
+    { "id": "focus_w_51", "word": "BRIDGE",  "meaning": "Focus is the bridge between intention and result." },
+    { "id": "focus_w_52", "word": "PRESS",   "meaning": "Press through the first resistance. It eases after." }
+  ],
+
+  "notification_pool": [
+    { "id": "focus_n_1",  "copy": "One thing is enough for today.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_2",  "copy": "What's the single most important thing right now?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_3",  "copy": "The list will still be there. Start with one.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_4",  "copy": "You don't have to do all of it right now.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_5",  "copy": "Narrow your focus. One task at a time.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_6",  "copy": "Protect your attention for one hour.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_7",  "copy": "The noise is loud. Start anyway.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_8",  "copy": "One hour of focus is waiting for you.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_9",  "copy": "Pick the one thing. Everything else waits.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_10", "copy": "Small steps still move you forward.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_11", "copy": "Today needs one thing from you. Just one.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_12", "copy": "Scattered doesn't mean broken. Start small.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_13", "copy": "What would focused look like for 20 minutes?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_14", "copy": "The task is waiting. So is your focus.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_15", "copy": "Begin. The rest sorts itself after that.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_16", "copy": "You can be scattered and still start.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_17", "copy": "One complete task beats ten half-started.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_18", "copy": "Your attention doesn't have to be perfect.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_19", "copy": "What's the smallest version of starting?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_20", "copy": "You don't have to fix the scatter. Just begin.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "focus_n_21", "copy": "The distraction can wait. This one thing.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_22", "copy": "Focus for one session. Then rest.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_23", "copy": "The only task: begin.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_24", "copy": "Everything can wait. This one cannot.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_25", "copy": "Your work is waiting. One step in.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "focus_n_26", "copy": "Name the one task. Then start it.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_27", "copy": "You don't need more time. You need one task.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "focus_n_28", "copy": "The scattered feeling is not a stop sign.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "focus_ev_1",  "content": "What did you actually focus on today, and was it worth your attention?" },
+    { "id": "focus_ev_2",  "content": "What pulled you away most today? Does it matter as much as it felt?" },
+    { "id": "focus_ev_3",  "content": "Did you finish the one thing? If not, what got in the way?" },
+    { "id": "focus_ev_4",  "content": "What would tomorrow look like if you protected one hour for the task that matters?" },
+    { "id": "focus_ev_5",  "content": "What did you learn about your own attention today?" },
+    { "id": "focus_ev_6",  "content": "What did focused feel like, even briefly, today?" },
+    { "id": "focus_ev_7",  "content": "What would you do differently with your attention tomorrow?" },
+    { "id": "focus_ev_8",  "content": "Was what you worried about today actually as urgent as it felt?" },
+    { "id": "focus_ev_9",  "content": "What are you leaving unfinished that deserves your attention tomorrow?" },
+    { "id": "focus_ev_10", "content": "Where did your focus feel effortless today? Where did it feel like a fight?" },
+    { "id": "focus_ev_11", "content": "What distracted you most today, and how much of it was within your control?" },
+    { "id": "focus_ev_12", "content": "What did you protect your attention from today? What do you wish you had?" },
+    { "id": "focus_ev_13", "content": "If you had one more clear hour, what would you use it for?" },
+    { "id": "focus_ev_14", "content": "What is one thing from today's work you are glad you did?" }
+  ]
+
+}

@@ -1,0 +1,377 @@
+{
+  "theme": "Rhythm",
+  "user_state": "Inconsistent. Good days and bad days. Feels like always starting over. Progress feels invisible and the gaps feel larger than the returns.",
+  "core_need": "Trust in the small daily return. To believe that coming back is the whole practice, not proof of failure.",
+  "emotional_tone": "Steady. Patient. Long-view.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "rhythm_arr_1",
+        "heading": "You came back.",
+        "subheading": "That is the whole thing. Not perfection. Not the streak. The return."
+      },
+      {
+        "id": "rhythm_arr_2",
+        "heading": "Inconsistency is not failure.",
+        "subheading": "It is how most humans actually live. You are in good company."
+      },
+      {
+        "id": "rhythm_arr_3",
+        "heading": "You are not starting over.",
+        "subheading": "You are continuing with a gap in between. There is a difference."
+      },
+      {
+        "id": "rhythm_arr_4",
+        "heading": "Some days work. Some don't.",
+        "subheading": "Both count. You showed up today. Today counts."
+      },
+      {
+        "id": "rhythm_arr_5",
+        "heading": "The rhythm is patient.",
+        "subheading": "It waits for you. It is not bothered by the gap."
+      },
+      {
+        "id": "rhythm_arr_6",
+        "heading": "Day by day.",
+        "subheading": "Not streak by streak. Day by day is how this actually works."
+      },
+      {
+        "id": "rhythm_arr_7",
+        "heading": "You did not lose it.",
+        "subheading": "You paused. There is a difference between a pause and an ending."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "rhythm_rel_1",
+        "heading": "The guilt of starting over.",
+        "subheading": "You don't have to earn your way back. You just come back.",
+        "field_placeholder": "What are you judging yourself for right now..."
+      },
+      {
+        "id": "rhythm_rel_2",
+        "heading": "The gap.",
+        "subheading": "How long were you away? It matters less than you think.",
+        "field_placeholder": "How long since you last showed up for yourself..."
+      },
+      {
+        "id": "rhythm_rel_3",
+        "heading": "The worry about lost progress.",
+        "subheading": "Rhythm is not about streaks. It is about the return.",
+        "field_placeholder": "What do you feel you have lost or reset..."
+      },
+      {
+        "id": "rhythm_rel_4",
+        "heading": "The hard stretch behind you.",
+        "subheading": "Set it down here. You do not have to carry it forward.",
+        "field_placeholder": "What from the last few days needs to be released..."
+      },
+      {
+        "id": "rhythm_rel_5",
+        "heading": "The story you tell yourself.",
+        "subheading": "About what kind of person keeps or breaks habits. What is it?",
+        "field_placeholder": "What narrative are you running about your consistency..."
+      },
+      {
+        "id": "rhythm_rel_6",
+        "heading": "What made it hard.",
+        "subheading": "Name the obstacle. It helps you understand the gap clearly.",
+        "field_placeholder": "What got in the way of showing up recently..."
+      },
+      {
+        "id": "rhythm_rel_7",
+        "heading": "The expectation.",
+        "subheading": "The one you had for yourself. Is it still a fair one?",
+        "field_placeholder": "What were you expecting of yourself that felt out of reach..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "rhythm_br_1",
+        "heading": "One breath back.",
+        "instruction": "Slow inhale. Slow exhale. This is the return. Let it be this gentle."
+      },
+      {
+        "id": "rhythm_br_2",
+        "heading": "No rush back.",
+        "instruction": "Breathe in for four counts. Out for six. The body does not judge the gap."
+      },
+      {
+        "id": "rhythm_br_3",
+        "heading": "Present now.",
+        "instruction": "Breathe in. Feel both feet on the floor. You are here. That is what matters."
+      },
+      {
+        "id": "rhythm_br_4",
+        "heading": "Steady.",
+        "instruction": "Three slow breaths. One for the past. One for today. One for beginning again."
+      },
+      {
+        "id": "rhythm_br_5",
+        "heading": "The return breath.",
+        "instruction": "In through the nose. Out slowly. You came back. Let the breath acknowledge it."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "rhythm_mom_1",
+        "heading": "What is the small thing you can do today?"
+      },
+      {
+        "id": "rhythm_mom_2",
+        "heading": "You came back. What does that feel like right now?"
+      },
+      {
+        "id": "rhythm_mom_3",
+        "heading": "What do you want today to be, even a little bit?"
+      },
+      {
+        "id": "rhythm_mom_4",
+        "heading": "What does one small step forward look like today?"
+      },
+      {
+        "id": "rhythm_mom_5",
+        "heading": "What would coming back feel like if it felt easy?"
+      },
+      {
+        "id": "rhythm_mom_6",
+        "heading": "What does today ask of you? Just today."
+      },
+      {
+        "id": "rhythm_mom_7",
+        "heading": "If today had one small win, what would it be?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "rhythm_comp_1",
+        "heading": "You showed up.",
+        "subheading": "That was the whole task. And you did it."
+      },
+      {
+        "id": "rhythm_comp_2",
+        "heading": "One day back.",
+        "subheading": "Tomorrow, one more. Day by day is how this is built."
+      },
+      {
+        "id": "rhythm_comp_3",
+        "heading": "The return counts.",
+        "subheading": "Not the streak. Not the history. This return. Right here."
+      },
+      {
+        "id": "rhythm_comp_4",
+        "heading": "The rhythm holds.",
+        "subheading": "Even when you step away, it holds a place for you to return to."
+      },
+      {
+        "id": "rhythm_comp_5",
+        "heading": "You did not have to be perfect.",
+        "subheading": "You just had to show up. You did."
+      },
+      {
+        "id": "rhythm_comp_6",
+        "heading": "Small is not small.",
+        "subheading": "A return is not a small thing. It is the entire practice."
+      },
+      {
+        "id": "rhythm_comp_7",
+        "heading": "Day by day.",
+        "subheading": "That is how rhythm is built. You did today. That is enough."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    { "id": "rhythm_hc_1",  "headline": "You came back.",                         "subheadline": "That is not small. It is the whole practice." },
+    { "id": "rhythm_hc_2",  "headline": "Good days and bad days.",                "subheadline": "Both are part of the rhythm. Both count." },
+    { "id": "rhythm_hc_3",  "headline": "You are not starting over.",             "subheadline": "You are continuing. With a gap in between." },
+    { "id": "rhythm_hc_4",  "headline": "Rhythm is patient.",                     "subheadline": "It waits for you. No judgment. No penalty." },
+    { "id": "rhythm_hc_5",  "headline": "The return is the practice.",            "subheadline": "Not the streak. Not the perfection. The return." },
+    { "id": "rhythm_hc_6",  "headline": "Day by day.",                            "subheadline": "That is the pace. That has always been the pace." },
+    { "id": "rhythm_hc_7",  "headline": "Missing days is not failure.",           "subheadline": "Returning is. And you returned." },
+    { "id": "rhythm_hc_8",  "headline": "Small and steady.",                      "subheadline": "Builds more than intense and inconsistent." },
+    { "id": "rhythm_hc_9",  "headline": "You are allowed to have off days.",      "subheadline": "Everyone does. What matters is what comes after." },
+    { "id": "rhythm_hc_10", "headline": "The gap does not reset you.",            "subheadline": "You carry everything you built. The gap is just a gap." },
+    { "id": "rhythm_hc_11", "headline": "Progress is slower than it looks.",      "subheadline": "And more real than it feels. Keep going." },
+    { "id": "rhythm_hc_12", "headline": "Trust the return.",                      "subheadline": "Not every day is visible progress. The return still counts." },
+    { "id": "rhythm_hc_13", "headline": "One day at a time.",                     "subheadline": "Not one week. Not one month. Today." },
+    { "id": "rhythm_hc_14", "headline": "The hardest step is the return.",        "subheadline": "You are already here. The hardest part is done." }
+  ],
+
+  "actions": [
+    { "id": "rhythm_act_1",  "content": "Do one thing from your usual routine, even if it's smaller than normal.", "why": "Returning to routine, even partially, signals continuity to the mind." },
+    { "id": "rhythm_act_2",  "content": "Set a time for tomorrow's check-in now.", "why": "Scheduling the next return makes it easier to follow through." },
+    { "id": "rhythm_act_3",  "content": "Write one sentence about how it feels to be back.", "why": "Naming the feeling of return helps normalize it over time." },
+    { "id": "rhythm_act_4",  "content": "Do five minutes of something you care about, then stop if needed.", "why": "Five minutes is real. It is not nothing. The return counts." },
+    { "id": "rhythm_act_5",  "content": "Drink a full glass of water before anything else.", "why": "Small physical acts anchor the return in the body, not just the mind." },
+    { "id": "rhythm_act_6",  "content": "Name one thing you want to do consistently this week.", "why": "One thing is enough. More than that is too much to track right now." },
+    { "id": "rhythm_act_7",  "content": "Do your usual ritual, even if it's shorter than normal.", "why": "A shortened version still counts. The return matters, not the duration." },
+    { "id": "rhythm_act_8",  "content": "Name three days this week you intend to show up.", "why": "Intention written down becomes more likely to become action." },
+    { "id": "rhythm_act_9",  "content": "Move your body for two minutes.", "why": "Momentum starts in the body. Any movement counts as a return." },
+    { "id": "rhythm_act_10", "content": "Read one page of something you actually enjoy.", "why": "A small pleasurable act reconnects you with the practice of showing up." },
+    { "id": "rhythm_act_11", "content": "Make your bed, or a simple version of it.", "why": "Order in a small space creates a sense of forward motion." },
+    { "id": "rhythm_act_12", "content": "Write down the time you will begin tomorrow.", "why": "A written start time increases follow-through significantly." },
+    { "id": "rhythm_act_13", "content": "Put your phone in another room for thirty minutes.", "why": "Removing the main distraction makes the return easier to sustain." },
+    { "id": "rhythm_act_14", "content": "Sit somewhere comfortable and breathe for three minutes.", "why": "The body needs to settle before a new rhythm can take hold." },
+    { "id": "rhythm_act_15", "content": "Reach out to one person you have not contacted in a while.", "why": "Connection reactivates. Rhythms exist in relationships too." },
+    { "id": "rhythm_act_16", "content": "Do one task you have been avoiding for three days.", "why": "Avoidance builds resistance. One action quietly breaks it." },
+    { "id": "rhythm_act_17", "content": "Write what went well last week, however small.", "why": "Looking for the good shifts the story from failure to continuity." },
+    { "id": "rhythm_act_18", "content": "Set a consistent sleep time for this week.", "why": "Sleep is where rhythm begins. Everything else follows from it." },
+    { "id": "rhythm_act_19", "content": "Spend five minutes outside.", "why": "Natural light helps reset the body's internal timing." },
+    { "id": "rhythm_act_20", "content": "Clear one surface in your space.", "why": "A cleaner environment makes returning to work feel easier." },
+    { "id": "rhythm_act_21", "content": "Write down what consistency means to you, personally.", "why": "Your definition matters more than anyone else's version of it." },
+    { "id": "rhythm_act_22", "content": "Do one thing early in the day, before anything else.", "why": "Early wins create forward motion for the rest of the day." },
+    { "id": "rhythm_act_23", "content": "Close open tabs or tasks you will not actually do today.", "why": "Incomplete loops take attention. Closing them frees focus for the return." },
+    { "id": "rhythm_act_24", "content": "Tell one person you are back on track.", "why": "Saying it out loud adds accountability and makes the return real." },
+    { "id": "rhythm_act_25", "content": "Notice one moment today that felt like you.", "why": "Reconnecting with yourself is part of returning to rhythm." },
+    { "id": "rhythm_act_26", "content": "Write one sentence about what you want to build, long-term.", "why": "Long-view thinking makes short-term inconsistency feel less catastrophic." },
+    { "id": "rhythm_act_27", "content": "Do something kind for your body today.", "why": "The body is part of the rhythm. Treat it like it is." },
+    { "id": "rhythm_act_28", "content": "At the end of today, write one line: I showed up.", "why": "The record of return matters. Over time, it becomes the evidence." },
+    { "id": "rhythm_act_29", "content": "Write one word that describes how today's return felt.", "why": "A single word holds more than a paragraph sometimes. Find yours." },
+    { "id": "rhythm_act_30", "content": "Set your phone to do not disturb for the next ten minutes.", "why": "Small protected windows make showing up feel more possible." }
+  ],
+
+  "reflections": [
+    { "id": "rhythm_ref_1",  "content": "What does coming back feel like, honestly?" },
+    { "id": "rhythm_ref_2",  "content": "What made it hard to show up recently?" },
+    { "id": "rhythm_ref_3",  "content": "What does consistency look like for you, specifically?" },
+    { "id": "rhythm_ref_4",  "content": "What does a good day look like, when it happens?" },
+    { "id": "rhythm_ref_5",  "content": "What do you want to feel at the end of this week?" },
+    { "id": "rhythm_ref_6",  "content": "Is there a rhythm from before that you want to rebuild?" },
+    { "id": "rhythm_ref_7",  "content": "What is the smallest version of this practice that still counts?" },
+    { "id": "rhythm_ref_8",  "content": "What would make tomorrow easier than today?" },
+    { "id": "rhythm_ref_9",  "content": "What did you let go of when you stepped away?" },
+    { "id": "rhythm_ref_10", "content": "Is there something the gap was protecting you from?" },
+    { "id": "rhythm_ref_11", "content": "What do you need to believe about yourself to keep going?" },
+    { "id": "rhythm_ref_12", "content": "What do you notice about your energy right now?" },
+    { "id": "rhythm_ref_13", "content": "What has changed since you last felt steady?" },
+    { "id": "rhythm_ref_14", "content": "What would you say to yourself about the gap, if you were kind?" },
+    { "id": "rhythm_ref_15", "content": "Where did your rhythm go, and why?" },
+    { "id": "rhythm_ref_16", "content": "What would a patient version of you do this week?" },
+    { "id": "rhythm_ref_17", "content": "What do you actually want out of this practice?" },
+    { "id": "rhythm_ref_18", "content": "What does long-term mean to you, in your own words?" },
+    { "id": "rhythm_ref_19", "content": "What is one thing that never fully disappears, even in hard weeks?" },
+    { "id": "rhythm_ref_20", "content": "What does the best version of this week look like?" },
+    { "id": "rhythm_ref_21", "content": "What would you build if you trusted that slow was enough?" },
+    { "id": "rhythm_ref_22", "content": "What does showing up look like when it is imperfect?" },
+    { "id": "rhythm_ref_23", "content": "What does this practice give you, even on the quiet days?" },
+    { "id": "rhythm_ref_24", "content": "How do you know when you are back on track?" },
+    { "id": "rhythm_ref_25", "content": "What is the version of rhythm that works for your actual life?" },
+    { "id": "rhythm_ref_26", "content": "What is the most honest thing you can say about your consistency right now?" },
+    { "id": "rhythm_ref_27", "content": "What do you want to remember about this return?" },
+    { "id": "rhythm_ref_28", "content": "What would you tell someone else who felt like they kept starting over?" },
+    { "id": "rhythm_ref_29", "content": "What does returning feel like compared to the last time you came back?" },
+    { "id": "rhythm_ref_30", "content": "What would you want your future self to remember about this period?" }
+  ],
+
+  "words": [
+    { "id": "rhythm_w_1",  "word": "RETURN",   "meaning": "The act of coming back. That is what rhythm is built from." },
+    { "id": "rhythm_w_2",  "word": "STEADY",   "meaning": "Not every day, not perfectly. Steady is the goal." },
+    { "id": "rhythm_w_3",  "word": "PATIENT",  "meaning": "Rhythm does not reward the urgent. It rewards the patient." },
+    { "id": "rhythm_w_4",  "word": "DAILY",    "meaning": "The smallest unit. The one that accumulates over time." },
+    { "id": "rhythm_w_5",  "word": "RHYTHM",   "meaning": "The pattern that lives underneath the good and bad days." },
+    { "id": "rhythm_w_6",  "word": "AGAIN",    "meaning": "One word. The whole instruction. You do it again." },
+    { "id": "rhythm_w_7",  "word": "PRACTICE", "meaning": "Not something you achieve. Something you return to." },
+    { "id": "rhythm_w_8",  "word": "SMALL",    "meaning": "Small is not behind. Small is sustainable." },
+    { "id": "rhythm_w_9",  "word": "LONG",     "meaning": "The view that makes inconsistency make sense over time." },
+    { "id": "rhythm_w_10", "word": "CONTINUE", "meaning": "You are not starting over. You are continuing with a gap." },
+    { "id": "rhythm_w_11", "word": "ANCHOR",   "meaning": "What keeps the pattern stable through disruption." },
+    { "id": "rhythm_w_12", "word": "GROUND",   "meaning": "The foundation is still there. The gap did not remove it." },
+    { "id": "rhythm_w_13", "word": "BUILD",    "meaning": "What small daily returns do quietly, over time." },
+    { "id": "rhythm_w_14", "word": "TRUST",    "meaning": "You cannot see the progress yet. Trust it anyway." },
+    { "id": "rhythm_w_15", "word": "SLOW",     "meaning": "Slow and sustained beats fast and abandoned every time." },
+    { "id": "rhythm_w_16", "word": "STEP",     "meaning": "The next step. Not all of them. Just the next one." },
+    { "id": "rhythm_w_17", "word": "BACK",     "meaning": "You came back. That single act changes everything." },
+    { "id": "rhythm_w_18", "word": "DAY",      "meaning": "Today. Not the week. Not the month. This day." },
+    { "id": "rhythm_w_19", "word": "HOLD",     "meaning": "Hold the thread even when it feels thin." },
+    { "id": "rhythm_w_20", "word": "PERSIST",  "meaning": "Persist means restart, not never stop." },
+    { "id": "rhythm_w_21", "word": "RENEW",    "meaning": "Each return renews the intention. Not from zero. From here." },
+    { "id": "rhythm_w_22", "word": "CYCLE",    "meaning": "High, low, return. That is the cycle. All of it counts." },
+    { "id": "rhythm_w_23", "word": "REPEAT",   "meaning": "The willingness to repeat is the skill that builds rhythm." },
+    { "id": "rhythm_w_24", "word": "SETTLE",   "meaning": "Settle back in gently. No urgency required." },
+    { "id": "rhythm_w_25", "word": "STAY",     "meaning": "Stay a little past when it gets uncomfortable. Just a little." },
+    { "id": "rhythm_w_26", "word": "KEEP",     "meaning": "Keep returning. That is the single rule of rhythm." },
+    { "id": "rhythm_w_27", "word": "TEND",     "meaning": "Tend to the practice the way you tend to something living." },
+    { "id": "rhythm_w_28", "word": "GROW",     "meaning": "Growth through rhythm is slow. That is why it lasts." },
+    { "id": "rhythm_w_29", "word": "SUSTAIN",  "meaning": "The question is always: what can you actually sustain." },
+    { "id": "rhythm_w_30", "word": "WALK",     "meaning": "Walk back to the practice. You do not have to run." },
+    { "id": "rhythm_w_31", "word": "PACE",     "meaning": "Find the pace that belongs to your actual life." },
+    { "id": "rhythm_w_32", "word": "TRACE",    "meaning": "The pattern is traceable. The thread is still there." },
+    { "id": "rhythm_w_33", "word": "ROOT",     "meaning": "The root holds even when you step away for a while." },
+    { "id": "rhythm_w_34", "word": "MARK",     "meaning": "Mark the return. It deserves acknowledgment." },
+    { "id": "rhythm_w_35", "word": "PLACE",    "meaning": "Your place in the practice held your shape while you were gone." },
+    { "id": "rhythm_w_36", "word": "BEGIN",    "meaning": "Beginning again is not failure. It is the whole feature." },
+    { "id": "rhythm_w_37", "word": "WITNESS",  "meaning": "Witness your own return without judgment or commentary." },
+    { "id": "rhythm_w_38", "word": "MEND",     "meaning": "What breaks can mend when you come back to it." },
+    { "id": "rhythm_w_39", "word": "WEAVE",    "meaning": "You weave the rhythm day by day, return by return." },
+    { "id": "rhythm_w_40", "word": "CARRY",    "meaning": "You carry everything you built. The gap erased nothing." },
+    { "id": "rhythm_w_41", "word": "REMEMBER", "meaning": "Remember what rhythm felt like. That memory is a map." },
+    { "id": "rhythm_w_42", "word": "LAND",     "meaning": "Come back and land here. You do not have to arrive perfectly." },
+    { "id": "rhythm_w_43", "word": "KNOW",     "meaning": "You already know how to do this. You have done it before." },
+    { "id": "rhythm_w_44", "word": "EVEN",     "meaning": "Even the difficult weeks are part of the long pattern." },
+    { "id": "rhythm_w_45", "word": "NOW",      "meaning": "The return is always now. Not tomorrow. Now." },
+    { "id": "rhythm_w_46", "word": "HERE",     "meaning": "Rhythm lives here, in the present, where you just arrived." },
+    { "id": "rhythm_w_47", "word": "WHOLE",    "meaning": "What accumulates day by day eventually becomes whole." },
+    { "id": "rhythm_w_48", "word": "THREAD",   "meaning": "Keep holding the thread, even loosely. It does not break." },
+    { "id": "rhythm_w_49", "word": "EARN",     "meaning": "You earn nothing by returning. You simply return." },
+    { "id": "rhythm_w_50", "word": "GIVE",     "meaning": "Give yourself the return without conditions attached." },
+    { "id": "rhythm_w_51", "word": "REST",     "meaning": "Rest is not outside the rhythm. It is part of it." },
+    { "id": "rhythm_w_52", "word": "FORWARD",  "meaning": "Not fast. Not clean. But forward. That is enough." }
+  ],
+
+  "notification_pool": [
+    { "id": "rhythm_notif_1",  "copy": "You don't have to catch up. Just show up.",         "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_2",  "copy": "Coming back is not failure. It is the practice.",   "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_3",  "copy": "The gap was allowed. This moment is too.",          "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_4",  "copy": "You can start from exactly where you are.",         "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_5",  "copy": "No need to explain the time away.",                 "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_6",  "copy": "The return is always available. Always.",           "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_7",  "copy": "You can come back slowly. That still counts.",      "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_8",  "copy": "However small today is, it is a day.",             "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_9",  "copy": "No judgment on where you have been.",              "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_10", "copy": "You are not behind. You are returning.",            "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rhythm_notif_11", "copy": "Small and steady is how rhythm builds.",            "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_12", "copy": "One day at a time. That has always been true.",     "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_13", "copy": "You returned. What you do now counts.",             "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_14", "copy": "The practice waits. It is patient.",               "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_15", "copy": "Day by day. That is the pace.",                    "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_16", "copy": "Show up today. The rest follows from here.",        "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_17", "copy": "The rhythm is still here. So are you.",            "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_18", "copy": "Small days accumulate. They always do.",           "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rhythm_notif_19", "copy": "You are building something. Today counts.",         "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_20", "copy": "The return is the strongest move you can make.",   "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_21", "copy": "Today goes in the column of showed up.",           "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_22", "copy": "Every return compounds. Today is one more.",        "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_23", "copy": "You came back. Now build from here.",              "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_24", "copy": "Small and steady beats intense and gone.",          "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_25", "copy": "Trust what you cannot see yet. It is building.",   "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_26", "copy": "One more day on the long road. It matters.",       "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "rhythm_notif_27", "copy": "Today is part of the pattern.",                    "mood_weight": { "dark": 0.34, "half": 0.33, "full": 0.33 } },
+    { "id": "rhythm_notif_28", "copy": "The practice holds. You hold it.",                 "mood_weight": { "dark": 0.34, "half": 0.33, "full": 0.33 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "rhythm_eve_1",  "content": "Did you show up today, even partly?" },
+    { "id": "rhythm_eve_2",  "content": "What was the hardest thing about today?" },
+    { "id": "rhythm_eve_3",  "content": "What would you do differently tomorrow?" },
+    { "id": "rhythm_eve_4",  "content": "Did you keep a promise to yourself today?" },
+    { "id": "rhythm_eve_5",  "content": "What does today add to the longer pattern?" },
+    { "id": "rhythm_eve_6",  "content": "What felt like progress today, even if it was small?" },
+    { "id": "rhythm_eve_7",  "content": "What do you want to carry forward from today?" },
+    { "id": "rhythm_eve_8",  "content": "What would you let go of before sleeping?" },
+    { "id": "rhythm_eve_9",  "content": "What did today's return feel like?" },
+    { "id": "rhythm_eve_10", "content": "What did you learn about your rhythm today?" },
+    { "id": "rhythm_eve_11", "content": "What is one thing today that you can mark as done?" },
+    { "id": "rhythm_eve_12", "content": "Is tomorrow's first step clear in your mind?" },
+    { "id": "rhythm_eve_13", "content": "What small thing today fits the longer pattern you are building?" },
+    { "id": "rhythm_eve_14", "content": "Did you treat yourself the way you would treat someone who is trying to return?" }
+  ]
+
+}

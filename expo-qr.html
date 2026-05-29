@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Daily Reset — Expo QR</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #FEF9EC;
+      font-family: -apple-system, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 24px;
+    }
+    .logo { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #C9A84C; }
+    h1 { font-size: 24px; font-weight: 900; color: #1C1C1C; letter-spacing: -0.5px; }
+    .qr {
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(28,28,28,0.12);
+      overflow: hidden;
+    }
+    .qr img { display: block; }
+    p { font-size: 13px; color: #6B6B6B; text-align: center; line-height: 20px; }
+    code {
+      background: #fff;
+      border: 1px solid rgba(28,28,28,0.08);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 13px;
+      color: #1C1C1C;
+      font-weight: 600;
+    }
+    .step { font-size: 11px; color: #A8A8A8; letter-spacing: 0.5px; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <p class='logo'>DAILY RESET</p>
+  <h1>Abrir no Expo Go</h1>
+  <div class='qr'><img src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQCAYAAACAvzbMAAAAAklEQVR4AewaftIAAAlESURBVO3BsY0sNhIFwKfGxkGHCTD/KJgAHdpKQI7uYmADGgz2V9Vf//7z9/8CAI8qANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaPjJFxtzhc+4Z+e/NubKb3LPzqsxV17ds/NqzJVX9+y8GHOFz7hn5xtVAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAw09+mXt2/nRjrvzXxlz5hHt2Xo258gljrry6Z+fVmCuv7tn5Rvfs/OnGXPktKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoOEnZMyVb3XPzje6Z+fVmCuvxlx5dc/Ob3LPzp9szJVvdc/On6wCAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAafgIfcs/OJ4y58q3u2Xk15sqre3bgv1YBgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANP4GGMVc+4Z6db3XPzqsxV17dswPfqAIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABp+Qu7Z4c09O6/GXHk15sqre3ZejbnyasyVV/fsfMKYK6/u2flG9+zwnSoA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKDhJ7/MmCv898ZceXXPzqsxV77VPTuvxlx5dc/ObzHmCr9HBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANPz17z9//y/wAWOu/Cb37HyrMVde3bMDLyoA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADT85IuNufLqnp1XY668umfn1Zgrr+7ZeTXmyqt7dv5r9+x8wpgrr+7Z+YQxVz7hnp3fYsyVV/fsfMKYK6/u2fktKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoOGvf//5+3/5RcZc+Vb37Lwac+XVPTu/xZgrr+7Z+YQxV17ds/NqzJVX9+z818Zc+U3u2fmEMVde3bPzjSoA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKDhJ7/MPTuvxlz5hDFXPmHMlVf37LwYc+UT7tn5hDFXXt2z82rMFd7cs/MJY67wpgIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABp+8suMufLqnp1XY668umfnt7hn50835sqre3Zejbnyje7Z+YQxVz7hnp1XY668umfnt6gAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGn/wy9+y8GnPlNxlz5dU9O/+1MVde3bPzasyVV/fsfMKYK6/u2Xk15sqre3b+a2OufMI9O59wz86frAIADRUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABp+wseMufIJ9+zwne7ZeTXmym9xz84njLny6p6dTxhz5dU9O9+oAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAQwUAGn7yxcZceXXPzp9uzJVX9+y8GHPlE8ZceXXPzieMufLqnp3fYsyVV/fsfMI9O6/GXOFNBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANPz17z9//y+/yJgrr+7Z+YQxV17ds/ONxlx5dc/OqzFXPuGeHX6PMVc+4Z6dP1kFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0/OSLjbny6p6dTxhz5RPGXPmT3bPzCWOuvLpn51uNufInu2fnE8Zc+YR7dr5RBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANPz17z9//y/waMyVT7hn59WYK9/qnp1XY658wj0732jMlVf37Lwac+Vb3bPzjSoA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADT85IuNucJn3LPz4p6dP909O6/GXHl1z86rMVf+a2OuvLpn5xPGXHl1z86rMVf+ZBUAaKgAQEMFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANDwk1/mnp0/3Zgrf7J7dl6NufJqzJU/2T073+qenVdjrry6Z+fVmCu/RQUAGioA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADT8hIy58q3u2flGY668umfn1Zgrn3DPzieMufKtxlz5k92zw5sKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBo+Ak03LPzasyVV/fsvBpz5TcZc+UT7tn5r4258uqenW815sqre3Z+iwoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANFQAoKECAA0VAGj4CTSMufKt7tn5hDFXXt2z82rMld/inp1XY658wj07r+7ZeTXmyqt7dr5RBQAaKgDQUAGAhgoANFQAoKECAA0VAGioAEBDBQAaKgDQUAGAhgoANPyE3LPDm3t2PmHMlU+4Z+fVPTvf6p6d/9qYK9/qnp1XY658wj07v0UFABoqANBQAYCGCgA0VACgoQIADRUAaKgAQEMFABoqANBQAYCGCgA0/OSXGXOF/96YK6/u2fmEe3Zejbny6p6dP9k9O58w5sqrMVde3bPzasyVV2OuvLpn5xtVAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAw1///vP3/wIAjyoA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgANFQBoqABAQwUAGioA0FABgIYKADRUAKChAgAN/wchwKfcmYPf+gAAAABJRU5ErkJggg==' width='300' height='300'/></div>
+  <div style='display:flex;flex-direction:column;align-items:center;gap:8px'>
+    <p class='step'>Ou digite manualmente no Expo Go</p>
+    <code>exp://192.168.15.16:8081</code>
+  </div>
+  <p style='max-width:280px'>Abra o <strong>Expo Go</strong> no celular<br>e escaneie o QR code acima</p>
+</body>
+</html>

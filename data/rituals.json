@@ -1,0 +1,2184 @@
+{
+  "version": "1.0.0",
+  "total_days": 30,
+  "arcs": {
+    "returning": {
+      "days": "1-7",
+      "theme": "Coming back to yourself"
+    },
+    "steadying": {
+      "days": "8-14",
+      "theme": "Finding rhythm in the chaos"
+    },
+    "rebuilding": {
+      "days": "15-21",
+      "theme": "Rebuilding trust with yourself"
+    },
+    "rooting": {
+      "days": "22-30",
+      "theme": "This is becoming who you are"
+    }
+  },
+  "rituals": [
+    {
+      "id": "ritual_day_01",
+      "day": 1,
+      "theme": "Focus",
+      "arc": "RETURNING",
+      "title": "Every journey begins here.",
+      "subtitle": "Today is the only day you need.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You are allowed\nto pause.",
+          "subheading": "Before the day begins — one breath."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "Not everything deserves\nyour attention right now.",
+          "subheading": "What you protect grows.",
+          "field_placeholder": "Leave something here. It won't follow you."
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "One slow breath\nchanges the room.",
+          "instruction": "Follow the circle. Nothing else.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What matters most\nright now?",
+          "subheading": "Choose one.",
+          "suggested": "Focus"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What small thing feels\npossible for you today?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Your attention\nbelongs to you.",
+          "subheading": "Focus continues from here.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 1",
+        "theme_tag": "Focus",
+        "headline": "Every journey begins here. Today is yours.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write down 3 things asking for your attention right now. Cross out the two least important. The one that remains — that is yours for today."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Clarity is the first act of self-care. Writing it down makes it real. You don't need to fix anything yet — seeing it clearly is enough for today."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What has been hardest to begin?"
+      },
+      "word_of_day": "ENOUGH",
+      "notification_copy": "Every journey begins somewhere. Today is your somewhere.",
+      "evening_reflection": "What did today ask of you that you didn't expect?",
+      "completion_message": {
+        "day_label": "DAY 1",
+        "heading": "You came back\nto yourself today.",
+        "subheading": "A quiet beginning still matters.",
+        "whats_ahead": "Tomorrow: something shifts when you show up twice in a row."
+      }
+    },
+    {
+      "id": "ritual_day_02",
+      "day": 2,
+      "theme": "Momentum",
+      "arc": "RETURNING",
+      "title": "You came back.",
+      "subtitle": "That is already more than yesterday.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You returned.\nThat matters.",
+          "subheading": "Coming back is the whole practice."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "Yesterday doesn't need\nto follow you here.",
+          "subheading": "Today is separate.",
+          "field_placeholder": "What did yesterday leave with you?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "One breath.\nJust one.",
+          "instruction": "Follow the circle. Nothing else.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What does showing up\nmean for you today?",
+          "subheading": "One small step.",
+          "suggested": "Momentum"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What does coming back\nagain and again\ntell you about yourself?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "You came back.\nThat counts.",
+          "subheading": "Momentum starts with returning.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 2",
+        "theme_tag": "Momentum",
+        "headline": "You came back. That is already something real.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Before checking your phone, write one sentence about something you're looking forward to — even something small. One sentence is enough."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Starting the day with even one forward-facing thought shifts the nervous system out of threat mode. It is small, and it is real."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What made you come back today?"
+      },
+      "word_of_day": "RETURN",
+      "notification_copy": "Yesterday you showed up. Today is waiting.",
+      "evening_reflection": "What felt different about today because you showed up?",
+      "completion_message": {
+        "day_label": "DAY 2",
+        "heading": "Two days.\nThat is momentum.",
+        "subheading": "It builds quietly from here.",
+        "whats_ahead": "Tomorrow: the breath changes things. Day 3 is about what one slow breath actually does."
+      }
+    },
+    {
+      "id": "ritual_day_03",
+      "day": 3,
+      "theme": "Calm",
+      "arc": "RETURNING",
+      "title": "One breath changes the room.",
+      "subtitle": "You don't need to do more.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The room is quieter\nthan you think.",
+          "subheading": "You are here. That is enough for now."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "You don't have to\ncarry this alone.",
+          "subheading": "You can set it down.",
+          "field_placeholder": "What feels too heavy right now?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Your breath\nis always here.",
+          "instruction": "Follow the circle. Let your shoulders drop.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What would feel like\na relief today?",
+          "subheading": "Name one thing.",
+          "suggested": "Calm"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "Where in your body\ndo you feel the tension\nmost right now?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Calmer\nthan before.",
+          "subheading": "One breath was enough.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 3",
+        "theme_tag": "Calm",
+        "headline": "One breath changes more than you think. Come find out.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Set a timer for 2 minutes. Breathe slowly. When thoughts arrive, let them pass. You are not solving anything — just breathing."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Slow breathing activates your body's calm response. Two minutes is enough to change your state. You don't have to believe it — just try it once."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "When during the day does your breathing tighten without you noticing?"
+      },
+      "word_of_day": "BREATHE",
+      "notification_copy": "The chaos is still there. So is this breath.",
+      "evening_reflection": "Where did you find a moment of stillness today, even a small one?",
+      "completion_message": {
+        "day_label": "DAY 3",
+        "heading": "The breath\nalways helps.",
+        "subheading": "Calm lives inside the pause.",
+        "whats_ahead": "Tomorrow: on letting go of what you cannot hold. Day 4 is about setting things down."
+      }
+    },
+    {
+      "id": "ritual_day_04",
+      "day": 4,
+      "theme": "Rest",
+      "arc": "RETURNING",
+      "title": "You don't have to hold it all.",
+      "subtitle": "Some things can wait.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You can put things\ndown here.",
+          "subheading": "This space asks nothing of you."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What have you been\ngripping too tightly?",
+          "subheading": "It can rest here.",
+          "field_placeholder": "What are you afraid to let go of?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe out\nwhat you can't control.",
+          "instruction": "Follow the circle. Release on the exhale.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What can you actually\ndo today — nothing more?",
+          "subheading": "Just today. That is enough.",
+          "suggested": "Rest"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would today feel like\nif you carried\na little less of it?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "A little lighter\nthan before.",
+          "subheading": "Rest is not giving up.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 4",
+        "theme_tag": "Rest",
+        "headline": "You don't have to hold it all today. Something can wait.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write down one thing you're worrying about that you cannot control. Fold the paper or close the note. Set it aside. It will still be there later — but you don't have to hold it right now."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Naming what you cannot control and physically setting it aside interrupts the worry loop. It won't solve the problem. But it gives your nervous system a rest."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What are you holding right now that you never agreed to carry?"
+      },
+      "word_of_day": "SLOW",
+      "notification_copy": "Some things can wait today. This can't.",
+      "evening_reflection": "What felt lighter by the end of today?",
+      "completion_message": {
+        "day_label": "DAY 4",
+        "heading": "You carried enough\ntoday.",
+        "subheading": "Letting go is its own kind of strength.",
+        "whats_ahead": "Tomorrow: what your body has been trying to tell you. Day 5 is about listening."
+      }
+    },
+    {
+      "id": "ritual_day_05",
+      "day": 5,
+      "theme": "Clarity",
+      "arc": "RETURNING",
+      "title": "Your body is telling you something.",
+      "subtitle": "It has been for a while.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Your body\ncame here too.",
+          "subheading": "It has been working hard."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What does your body\nneed to release right now?",
+          "subheading": "It knows.",
+          "field_placeholder": "Tension, exhaustion, numbness — anything."
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Let your body\nlead this breath.",
+          "instruction": "Follow the circle. Breathe into your belly, not your chest.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What does your body\nneed most today?",
+          "subheading": "One thing. That is enough.",
+          "suggested": "Clarity"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "If your body could speak,\nwhat would it say\nit needs from you?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Your body\nwas heard.",
+          "subheading": "Clarity starts with listening.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 5",
+        "theme_tag": "Clarity",
+        "headline": "Your body has been telling you something. Today, listen.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "At some point today, stop and scan your body slowly from head to feet. Name three sensations you notice — without trying to fix them."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Most burnout lives in the body long before the mind acknowledges it. Noticing without fixing is the first step toward understanding what you actually need."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What physical sensation do you keep ignoring?"
+      },
+      "word_of_day": "HONEST",
+      "notification_copy": "Your body has been sending signals. Today, receive them.",
+      "evening_reflection": "What did your body need today that you gave it — or didn't?",
+      "completion_message": {
+        "day_label": "DAY 5",
+        "heading": "You listened\nto yourself today.",
+        "subheading": "That is a rare and important thing.",
+        "whats_ahead": "Tomorrow: on being enough, exactly as you are. Day 6 is about enoughness."
+      }
+    },
+    {
+      "id": "ritual_day_06",
+      "day": 6,
+      "theme": "Courage",
+      "arc": "RETURNING",
+      "title": "You are enough for today.",
+      "subtitle": "Not tomorrow. Not perfectly. Just today.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You are not\ntoo much or too little.",
+          "subheading": "You are what today needs."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What expectation of yourself\nare you ready to release?",
+          "subheading": "Not permanently. Just today.",
+          "field_placeholder": "What are you expecting of yourself that isn't fair right now?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe in\nwhat is true.",
+          "instruction": "Follow the circle. You are enough in this breath.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What can you accept\nabout today as it is?",
+          "subheading": "One honest thing.",
+          "suggested": "Courage"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What does being enough\nactually look like\nfor you today?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Enough\nwas always true.",
+          "subheading": "Courage is accepting where you are.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 6",
+        "theme_tag": "Courage",
+        "headline": "You are enough for today. That is not a small thing.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Say this out loud or write it: 'I am doing enough for where I am right now.' Notice how that lands — without arguing with it."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "The inner critic is loudest when you are already exhausted. Naming your enoughness — even reluctantly — interrupts the depletion cycle."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "Who told you that you needed to be more than you are?"
+      },
+      "word_of_day": "STEADY",
+      "notification_copy": "You are enough for today. Just today.",
+      "evening_reflection": "Where did you push too hard today because you didn't believe you were enough?",
+      "completion_message": {
+        "day_label": "DAY 6",
+        "heading": "You showed up\nas yourself.",
+        "subheading": "That took more courage than you know.",
+        "whats_ahead": "Tomorrow: one week. Something has already shifted — come see what it is."
+      }
+    },
+    {
+      "id": "ritual_day_07",
+      "day": 7,
+      "theme": "Discipline",
+      "arc": "RETURNING",
+      "title": "Something has quietly shifted.",
+      "subtitle": "One week. It matters more than it looks.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Seven days.\nYou came back.",
+          "subheading": "That is already something real."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What from this week\ndo you want to release?",
+          "subheading": "You don't need to carry it into week two.",
+          "field_placeholder": "What are you leaving here from the past seven days?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Seven breaths.\nOne for each day.",
+          "instruction": "Follow the circle. Let each breath mark a day you showed up.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What do you want to\nprotect in week two?",
+          "subheading": "Name it.",
+          "suggested": null
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What has been different\nabout this week,\neven subtly?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "One week\ncomplete.",
+          "subheading": "Discipline lives in the small returns.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 7",
+        "theme_tag": "Discipline",
+        "headline": "One week in. Something quiet has already changed.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Look back at the past 7 days. Write one thing that surprised you about yourself — one thing you did that you weren't sure you would."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Seven days of returning is more than most people manage. Noticing what changed — even slightly — reinforces why it is worth continuing into week two."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What do you know about yourself now that you didn't know seven days ago?"
+      },
+      "word_of_day": "PRESENT",
+      "notification_copy": "Seven days. What does that say about you? Come find out.",
+      "evening_reflection": "What feels different this evening compared to the evening seven days ago?",
+      "completion_message": {
+        "day_label": "DAY 7",
+        "heading": "One full week.\nYou stayed.",
+        "subheading": "The second week begins from a different place.",
+        "whats_ahead": "Tomorrow: a new arc begins. Finding your rhythm in the chaos."
+      }
+    },
+    {
+      "id": "ritual_day_08",
+      "day": 8,
+      "theme": "Calm",
+      "arc": "STEADYING",
+      "title": "Your attention is worth protecting.",
+      "subtitle": "Calm is not passive. It is chosen.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The second week\nbegins here.",
+          "subheading": "Steadier than before."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What is pulling at your\nattention right now?",
+          "subheading": "You don't have to follow it.",
+          "field_placeholder": "What keeps interrupting your focus?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Your attention\nbelongs to you.",
+          "instruction": "Follow the circle. Let other thoughts wait.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What deserves your\nfull attention today?",
+          "subheading": "One thing. Guard it.",
+          "suggested": "Calm"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would today look like\nif your attention\nwas truly yours?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Attention\nreclaimed.",
+          "subheading": "Calm is a form of protection.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 8",
+        "theme_tag": "Calm",
+        "headline": "Your attention is your most valuable resource. Protect it.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Pick one 5-minute window today. Close every tab except what you are working on. No notifications. Nothing else for those 5 minutes."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Every notification costs more than the time it takes to read — it fractures the focus that takes minutes to rebuild. One protected window changes how the day feels."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What steals your attention most often without your permission?"
+      },
+      "word_of_day": "QUIET",
+      "notification_copy": "Before the noise takes over — one quiet moment.",
+      "evening_reflection": "When did you lose your attention today? When did you reclaim it?",
+      "completion_message": {
+        "day_label": "DAY 8",
+        "heading": "You protected\nyour attention today.",
+        "subheading": "That is a quiet form of discipline.",
+        "whats_ahead": "Tomorrow: on the power of one thing at a time."
+      }
+    },
+    {
+      "id": "ritual_day_09",
+      "day": 9,
+      "theme": "Focus",
+      "arc": "STEADYING",
+      "title": "One thing. That's all.",
+      "subtitle": "Overwhelm shrinks when you name one thing.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The list is long.\nYou need one thing.",
+          "subheading": "Just one. That is enough."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What are you trying\nto do too many of?",
+          "subheading": "Name the noise.",
+          "field_placeholder": "Everything pulling at you right now."
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "One breath.\nOne step.",
+          "instruction": "Follow the circle. Focus narrows as you breathe.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What is the one thing\nthat matters most today?",
+          "subheading": "Just one. Protect it.",
+          "suggested": "Focus"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "If you could only do\none thing today,\nwhat would it be?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "One thing\nnamed.",
+          "subheading": "That is enough to begin.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 9",
+        "theme_tag": "Focus",
+        "headline": "Overwhelm shrinks when you name one thing. Just one.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write your one most important task on a piece of paper. Put it somewhere visible. Do that before anything else today."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "The brain holds one clear intention well. When you add more, it fragments. One named priority changes not just what gets done — but how you feel doing it."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What do you tell yourself to justify taking on too many things at once?"
+      },
+      "word_of_day": "SMALL",
+      "notification_copy": "One thing. Name it. Start there.",
+      "evening_reflection": "Did you protect the one thing today? What got in the way?",
+      "completion_message": {
+        "day_label": "DAY 9",
+        "heading": "You focused\ntoday.",
+        "subheading": "One thing done is not small.",
+        "whats_ahead": "Tomorrow: on finding rhythm when the noise doesn't stop."
+      }
+    },
+    {
+      "id": "ritual_day_10",
+      "day": 10,
+      "theme": "Momentum",
+      "arc": "STEADYING",
+      "title": "The noise will always be there.",
+      "subtitle": "So will this moment.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The noise outside\nhadn't changed.",
+          "subheading": "This space still holds."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What external noise\nare you letting in today?",
+          "subheading": "Name it. Reduce its power.",
+          "field_placeholder": "What is making the most noise in your life right now?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe through\nthe noise.",
+          "instruction": "Follow the circle. The noise is still there — so is your breath.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What can you do\ndespite the noise today?",
+          "subheading": "One small step forward.",
+          "suggested": "Momentum"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would you do\nif you stopped waiting\nfor things to quiet down?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Through the noise,\nyou moved.",
+          "subheading": "Momentum doesn't wait for silence.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 10",
+        "theme_tag": "Momentum",
+        "headline": "The noise isn't going away. Neither are you.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Do one thing toward something that matters to you — something that takes less than 5 minutes. Not because the conditions are right. Just because you can."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Waiting for perfect conditions is a quiet form of avoidance. Small action in imperfect conditions builds a different kind of confidence."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What noise have you been using as a reason to wait?"
+      },
+      "word_of_day": "FORWARD",
+      "notification_copy": "The noise is still here. Something in you is still here too.",
+      "evening_reflection": "What did you move forward today, even slightly?",
+      "completion_message": {
+        "day_label": "DAY 10",
+        "heading": "You kept moving\nanyway.",
+        "subheading": "That is what momentum is built from.",
+        "whats_ahead": "Tomorrow: on rest as rhythm — not as giving up, but as part of the practice."
+      }
+    },
+    {
+      "id": "ritual_day_11",
+      "day": 11,
+      "theme": "Rest",
+      "arc": "STEADYING",
+      "title": "Small rhythms become lifelines.",
+      "subtitle": "You are allowed to not be in motion.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You are allowed\nto stop here.",
+          "subheading": "Moving isn't always the answer."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What pace are you\ntrying to keep up with?",
+          "subheading": "Is it yours, or someone else's?",
+          "field_placeholder": "Whose pace are you running at right now?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Slow down\nthe breath first.",
+          "instruction": "Follow the circle. Slower than yesterday.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "Where can you create\none small pause today?",
+          "subheading": "Name the moment.",
+          "suggested": "Rest"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What rhythm would feel\nright for you today —\nnot for what is expected?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Rhythm\nrestored.",
+          "subheading": "Rest is part of the practice.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 11",
+        "theme_tag": "Rest",
+        "headline": "Small rhythms matter. You are allowed to slow down.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Find one 5-minute pause today. Sit somewhere different than usual, look out a window, or lie down. Do nothing useful during those 5 minutes."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "The nervous system doesn't regenerate mid-sprint — it regenerates in the pauses. Even 5 minutes of true stillness has a measurable effect on how you function for the rest of the day."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "When did rest start feeling like something you had to earn?"
+      },
+      "word_of_day": "ALLOW",
+      "notification_copy": "What happens when you stop for one moment? Find out today.",
+      "evening_reflection": "Did you find a pause today? How did it feel to take it?",
+      "completion_message": {
+        "day_label": "DAY 11",
+        "heading": "You slowed down\ntoday.",
+        "subheading": "That takes more courage than speeding up.",
+        "whats_ahead": "Tomorrow: on calm — not as a destination, but as a state you carry."
+      }
+    },
+    {
+      "id": "ritual_day_12",
+      "day": 12,
+      "theme": "Calm",
+      "arc": "STEADYING",
+      "title": "Rest is not retreat.",
+      "subtitle": "It is how you keep going.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You can be calm\nhere.",
+          "subheading": "This is not a test."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What has been\nexhausting you most?",
+          "subheading": "Name it without judgment.",
+          "field_placeholder": "What is draining you that you haven't fully admitted?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Rest in\nthe exhale.",
+          "instruction": "Follow the circle. The exhale is where rest lives.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "How can you be gentle\nwith yourself today?",
+          "subheading": "Just one way.",
+          "suggested": "Calm"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would a gentle\nday look like\nfor you right now?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "A gentle\nday was enough.",
+          "subheading": "Calm continues from here.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 12",
+        "theme_tag": "Calm",
+        "headline": "Rest is not retreat. It is how you continue.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "At the end of the day, before sleep, spend 3 minutes doing nothing. No phone. No recap. Just rest in the quiet."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "The transition from active to rest is where many people stay stuck — scrolling instead of recovering. Three minutes of true stillness bridges that gap and tells your body it is safe."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What do you tell yourself rest should look like? Is that actually true?"
+      },
+      "word_of_day": "GENTLE",
+      "notification_copy": "Something is waiting in the quiet. Today you reach it.",
+      "evening_reflection": "Where did you find calm today, even briefly?",
+      "completion_message": {
+        "day_label": "DAY 12",
+        "heading": "You rested\nwithout guilt today.",
+        "subheading": "That is harder than it sounds.",
+        "whats_ahead": "Tomorrow: on trusting what you cannot see yet."
+      }
+    },
+    {
+      "id": "ritual_day_13",
+      "day": 13,
+      "theme": "Clarity",
+      "arc": "STEADYING",
+      "title": "You can trust the small steps.",
+      "subtitle": "Even when you can't see the whole path.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You don't need\nto see the whole path.",
+          "subheading": "The next step is enough."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What uncertainty are you\ntrying to resolve right now?",
+          "subheading": "You can release the need to know.",
+          "field_placeholder": "What don't you know that you wish you did?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Trust\nthe breath.",
+          "instruction": "Follow the circle. You don't control the next inhale — it comes anyway.",
+          "cycles": 1,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What small step do you\ntrust yourself to take today?",
+          "subheading": "Name it.",
+          "suggested": "Clarity"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would you do today\nif you trusted yourself\na little more?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "One small step\ntaken.",
+          "subheading": "Trust builds from here.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 13",
+        "theme_tag": "Clarity",
+        "headline": "You don't need the whole path. Just the next step.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write down one thing you have been postponing because you are not sure it will work. Then take one small action on it — not the whole thing. Just one step."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Clarity rarely arrives before the step — it arrives after. The act of moving is what makes the path visible."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What would you do differently if you trusted the process a little more?"
+      },
+      "word_of_day": "CLEAR",
+      "notification_copy": "What if the next step is already clear? Open to find out.",
+      "evening_reflection": "What became clearer today after you took a step?",
+      "completion_message": {
+        "day_label": "DAY 13",
+        "heading": "You trusted\nthe step today.",
+        "subheading": "Clarity follows action.",
+        "whats_ahead": "Tomorrow: two weeks. Something has already been built."
+      }
+    },
+    {
+      "id": "ritual_day_14",
+      "day": 14,
+      "theme": "Discipline",
+      "arc": "STEADYING",
+      "title": "You've been steadier than you know.",
+      "subtitle": "Two weeks. That is not nothing.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Fourteen days.\nYou returned.",
+          "subheading": "Each one a choice."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What story about yourself\nare you ready to release?",
+          "subheading": "The one that says this isn't working.",
+          "field_placeholder": "What doubt have you been carrying about this?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe into\nwhat you've built.",
+          "instruction": "Follow the circle. Two weeks of breath. It adds up.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What do you want\nto protect in week three?",
+          "subheading": "Name what matters.",
+          "suggested": null
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What evidence do you have\nthat you are more capable\nthan you thought?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Two weeks.\nYou stayed.",
+          "subheading": "Discipline is just returning. Again and again.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 14",
+        "theme_tag": "Discipline",
+        "headline": "Two weeks of returning. That is real discipline.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write a brief note to yourself: what you have noticed, what has changed, what you are quietly proud of — even if the pride feels small."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Acknowledging what you have built is not vanity — it is data. It shows your brain that the effort is creating something real. That makes continuing feel less abstract."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What have you learned about yourself in the past two weeks?"
+      },
+      "word_of_day": "TRUST",
+      "notification_copy": "Two weeks in. There is something you have not noticed yet.",
+      "evening_reflection": "What is different about tonight compared to two weeks ago?",
+      "completion_message": {
+        "day_label": "DAY 14",
+        "heading": "Two weeks complete.\nYou are building something.",
+        "subheading": "The third week changes things.",
+        "whats_ahead": "Tomorrow: a new arc begins. Rebuilding trust with yourself."
+      }
+    },
+    {
+      "id": "ritual_day_15",
+      "day": 15,
+      "theme": "Focus",
+      "arc": "REBUILDING",
+      "title": "You are becoming someone.",
+      "subtitle": "Not suddenly. Quietly.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The third arc\nbegins here.",
+          "subheading": "You are rebuilding."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What old version of yourself\nare you ready to let go of?",
+          "subheading": "Just a little. That is enough.",
+          "field_placeholder": "Who are you becoming that you haven't fully admitted yet?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe into\nwho you're becoming.",
+          "instruction": "Follow the circle. Inhale what is growing. Exhale what is passing.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "Who do you want to be\nby the end of today?",
+          "subheading": "One quality. Protect it.",
+          "suggested": "Focus"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What is one thing the new\nversion of you\nwould do today?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Becoming\nhappens quietly.",
+          "subheading": "You are already different.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 15",
+        "theme_tag": "Focus",
+        "headline": "You are becoming someone. Not suddenly. Quietly.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write the name of one person you respect. Write one quality they have. Write one small way you can practice that quality today."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Identity doesn't change through insight — it changes through action. Practicing one quality, even imperfectly, creates new patterns for who you are becoming."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "Who are you becoming that you haven't yet given yourself permission to be?"
+      },
+      "word_of_day": "HERE",
+      "notification_copy": "You are not the same person who started. Look closer.",
+      "evening_reflection": "What moment today felt most like who you are becoming?",
+      "completion_message": {
+        "day_label": "DAY 15",
+        "heading": "You moved\ntoward yourself today.",
+        "subheading": "Identity is built in moments like this.",
+        "whats_ahead": "Tomorrow: on courage — what it actually means to show up when it's hard."
+      }
+    },
+    {
+      "id": "ritual_day_16",
+      "day": 16,
+      "theme": "Courage",
+      "arc": "REBUILDING",
+      "title": "Showing up is courage.",
+      "subtitle": "Even when no one sees it.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Courage today\nlooks like this:",
+          "subheading": "Opening this."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What fear have you been\ncarrying in silence?",
+          "subheading": "You can name it here.",
+          "field_placeholder": "What are you afraid to admit you're afraid of?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Courage begins\nwith one breath.",
+          "instruction": "Follow the circle. Brave people breathe slowly.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What courageous small act\ncan you do today?",
+          "subheading": "Small counts.",
+          "suggested": "Courage"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would you do today\nif you were just\n10% less afraid?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "You showed\nup today.",
+          "subheading": "That was the courageous act.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 16",
+        "theme_tag": "Courage",
+        "headline": "Showing up is the courageous act. Even when it's hard.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Do one thing today that makes you slightly uncomfortable. Not reckless — just slightly outside your comfort zone. Name it before you do it."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Courage is not the absence of fear — it is the decision to move despite it. Each small act of courage rewires your relationship with discomfort over time."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What are you avoiding out of fear that you're calling something else?"
+      },
+      "word_of_day": "HOLD",
+      "notification_copy": "Showing up today is a courageous act. Even this.",
+      "evening_reflection": "Where did courage show up for you today, even in small form?",
+      "completion_message": {
+        "day_label": "DAY 16",
+        "heading": "You were brave\ntoday.",
+        "subheading": "In the small ways that matter most.",
+        "whats_ahead": "Tomorrow: on the gap — between who you are and who you are becoming."
+      }
+    },
+    {
+      "id": "ritual_day_17",
+      "day": 17,
+      "theme": "Rest",
+      "arc": "REBUILDING",
+      "title": "The gap between then and now.",
+      "subtitle": "You have already changed more than you see.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The distance between\nthen and now is real.",
+          "subheading": "You don't have to cover it all today."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What gap in yourself\nare you judging right now?",
+          "subheading": "You can set that down.",
+          "field_placeholder": "Where do you feel behind?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Rest in\nthe progress.",
+          "instruction": "Follow the circle. You have come further than you think.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What progress can you\nacknowledge today?",
+          "subheading": "One thing. Just one.",
+          "suggested": "Rest"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What did your past self need\nthat your present self\nis slowly becoming?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Further along\nthan before.",
+          "subheading": "Rest before the next stretch.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 17",
+        "theme_tag": "Rest",
+        "headline": "The gap is smaller than it looks. You are already across it.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write one thing you could not do 30 days ago that you can do today — even something that seems small. Write it plainly."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Progress is rarely visible while it is happening. Actively naming it closes the gap between effort and belief — and makes continuing feel worth it."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What change in yourself are you not yet giving yourself credit for?"
+      },
+      "word_of_day": "REST",
+      "notification_copy": "The gap is smaller than it looks from the inside.",
+      "evening_reflection": "What progress did you witness in yourself today, even a trace of it?",
+      "completion_message": {
+        "day_label": "DAY 17",
+        "heading": "You are further\nthan you know.",
+        "subheading": "Rest before the next stretch.",
+        "whats_ahead": "Tomorrow: on trusting what you already know."
+      }
+    },
+    {
+      "id": "ritual_day_18",
+      "day": 18,
+      "theme": "Clarity",
+      "arc": "REBUILDING",
+      "title": "You know more than you think.",
+      "subtitle": "The clarity was always there.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You already know\nmore than you admit.",
+          "subheading": "This space helps you hear it."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What do you know to be true\nthat you've been ignoring?",
+          "subheading": "Name it.",
+          "field_placeholder": "The thing you already know but haven't said yet."
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Clarity comes\nafter stillness.",
+          "instruction": "Follow the circle. Let the breath quiet the noise.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What does your gut\ntell you to do today?",
+          "subheading": "Trust it. Name it.",
+          "suggested": "Clarity"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What do you already know\nabout yourself that you\nhaven't yet acted on?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "You knew\nall along.",
+          "subheading": "Clarity was always yours.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 18",
+        "theme_tag": "Clarity",
+        "headline": "You already know the answer. Today is for trusting it.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Ask yourself: 'What do I know I should do that I keep not doing?' Write the answer. Then take one small step toward it — just one."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Most people don't lack clarity — they resist it because acting on it requires change. Naming what you know converts insight into action."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What have you known for a long time that you keep postponing?"
+      },
+      "word_of_day": "OPEN",
+      "notification_copy": "You already know. Today is for trusting that.",
+      "evening_reflection": "Did you trust what you already knew today? What happened?",
+      "completion_message": {
+        "day_label": "DAY 18",
+        "heading": "You listened\nto yourself today.",
+        "subheading": "That is self-trust in action.",
+        "whats_ahead": "Tomorrow: on staying focused in the middle of noise."
+      }
+    },
+    {
+      "id": "ritual_day_19",
+      "day": 19,
+      "theme": "Focus",
+      "arc": "REBUILDING",
+      "title": "Clarity comes after the chaos.",
+      "subtitle": "Not instead of it.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The chaos is still there.\nSo is this.",
+          "subheading": "Both can be true."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What mental fog\nhave you been living inside?",
+          "subheading": "Name it. Begin to see through it.",
+          "field_placeholder": "What feels most unclear right now?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe through\nthe fog.",
+          "instruction": "Follow the circle. Clarity waits on the other side of this breath.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What is one thing\nyou can see clearly today?",
+          "subheading": "Hold onto that.",
+          "suggested": "Focus"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would you focus on\nif the fog were just\nslightly less thick?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "A little clearer\nthan before.",
+          "subheading": "Clarity is cumulative.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 19",
+        "theme_tag": "Focus",
+        "headline": "Clarity doesn't replace the chaos. It lives alongside it.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write 3 things you are currently confused about. Then circle the one that actually matters most. Start there — even one small step."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Overwhelm thrives in vagueness. Naming what is unclear and prioritizing within it reduces the cognitive load. You don't solve everything — you know what matters first."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What would become clearer if you stopped trying to hold everything at once?"
+      },
+      "word_of_day": "PACE",
+      "notification_copy": "Clarity doesn't come before the chaos. It comes after.",
+      "evening_reflection": "What became clearer today? What is still foggy — and is that okay?",
+      "completion_message": {
+        "day_label": "DAY 19",
+        "heading": "You saw through\nthe fog today.",
+        "subheading": "Clarity grows from here.",
+        "whats_ahead": "Tomorrow: on quiet momentum and what is slowly building in you."
+      }
+    },
+    {
+      "id": "ritual_day_20",
+      "day": 20,
+      "theme": "Calm",
+      "arc": "REBUILDING",
+      "title": "Small acts compound quietly.",
+      "subtitle": "You are further along than the noise suggests.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Quiet progress\nis still progress.",
+          "subheading": "You have been building."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What are you comparing\nyour progress to?",
+          "subheading": "Is that comparison fair?",
+          "field_placeholder": "Whose measure are you using for yourself?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe into\nthe quiet.",
+          "instruction": "Follow the circle. What is building cannot always be seen.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What small act today\nwould make tomorrow easier?",
+          "subheading": "Just one.",
+          "suggested": "Calm"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What is building in you\nthat you haven't yet been\nwilling to acknowledge?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Quietly\nbuilding.",
+          "subheading": "Calm creates space for compound progress.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 20",
+        "theme_tag": "Calm",
+        "headline": "Small acts compound. You are further along than you see.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Think of one habit you have built in the past 20 days — even a small one. Write down what that habit might quietly become in a year."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Compound growth is invisible in the short term and undeniable in the long term. Naming what is building activates your brain's reward system and makes continuing feel worthwhile."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What quiet progress have you been too busy to notice?"
+      },
+      "word_of_day": "LIGHT",
+      "notification_copy": "Small things compound. What you're building is real.",
+      "evening_reflection": "What small act from today might matter more later than it seems right now?",
+      "completion_message": {
+        "day_label": "DAY 20",
+        "heading": "Twenty days\nof quiet building.",
+        "subheading": "The momentum is real.",
+        "whats_ahead": "Tomorrow: three weeks. You are different now."
+      }
+    },
+    {
+      "id": "ritual_day_21",
+      "day": 21,
+      "theme": "Momentum",
+      "arc": "REBUILDING",
+      "title": "21 days. You're different now.",
+      "subtitle": "Not loudly. But really.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Three weeks.\nYou came back every time.",
+          "subheading": "You are not the same."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What old pattern\nare you ready to release now?",
+          "subheading": "You have earned the right to let it go.",
+          "field_placeholder": "What habit or thought is finally ready to leave?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Three weeks\nof breath.",
+          "instruction": "Follow the circle. Each breath marks a day you chose yourself.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What identity are you\nstepping into today?",
+          "subheading": "Name who you are becoming.",
+          "suggested": "Momentum"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What is the most significant\nthing that has\nchanged in you?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Three weeks.\nSomething shifted.",
+          "subheading": "You carry it now.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 21",
+        "theme_tag": "Momentum",
+        "headline": "21 days. You are not the same person who started.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write a message to yourself from the perspective of Day 1. What would that person think of where you are right now?"
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Perspective letters show you the distance you have traveled — distance that is invisible from where you are currently standing."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "Who have you been becoming these past three weeks?"
+      },
+      "word_of_day": "PERSIST",
+      "notification_copy": "21 days. Something in you has already shifted.",
+      "evening_reflection": "What is the most significant thing different about you compared to three weeks ago?",
+      "completion_message": {
+        "day_label": "DAY 21",
+        "heading": "Three weeks complete.\nYou persisted.",
+        "subheading": "The final arc begins.",
+        "whats_ahead": "Tomorrow: a new arc. This is becoming who you are."
+      }
+    },
+    {
+      "id": "ritual_day_22",
+      "day": 22,
+      "theme": "Courage",
+      "arc": "ROOTING",
+      "title": "Protect what is working.",
+      "subtitle": "You've built something worth guarding.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The final arc\nbegins here.",
+          "subheading": "What you have built is worth protecting."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What threatens\nwhat you've built?",
+          "subheading": "Name it. Protect yourself from it.",
+          "field_placeholder": "What is the biggest risk to what you have created?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Root into\nwhat you've built.",
+          "instruction": "Follow the circle. Feel the ground beneath what you have built.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What will you\nprotect first today?",
+          "subheading": "Guard it actively.",
+          "suggested": "Courage"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What have you built\nin the past 22 days\nthat deserves protection?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Protected.\nRooted.",
+          "subheading": "Courage means guarding what is working.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 22",
+        "theme_tag": "Courage",
+        "headline": "You've built something worth protecting. Guard it today.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Identify one habit or practice from the past 22 days that is working. Write one specific thing you will do to protect it this week."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Growth requires not just building, but protecting. Most good habits die not from lack of effort but from unprotected exposure to the same conditions that created the problem."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What is working in your life right now that you haven't fully acknowledged?"
+      },
+      "word_of_day": "SAFE",
+      "notification_copy": "You've built something worth protecting. Guard it today.",
+      "evening_reflection": "What did you protect today? What threatened what you have built?",
+      "completion_message": {
+        "day_label": "DAY 22",
+        "heading": "You are rooting\ninto something real.",
+        "subheading": "Protection is an act of courage.",
+        "whats_ahead": "Tomorrow: on depth — and why going slow matters more than going fast."
+      }
+    },
+    {
+      "id": "ritual_day_23",
+      "day": 23,
+      "theme": "Focus",
+      "arc": "ROOTING",
+      "title": "Depth over speed.",
+      "subtitle": "The ones who go deep go further.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "There is nowhere\nto rush to.",
+          "subheading": "Depth lives here."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What are you trying\nto rush through right now?",
+          "subheading": "Slow down on purpose.",
+          "field_placeholder": "What are you speeding through that deserves more of you?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe slowly\nand deeply.",
+          "instruction": "Follow the circle. Depth comes from the long exhale.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "Where can you go\ndeeper today?",
+          "subheading": "One area. Not everywhere.",
+          "suggested": "Focus"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would change if you traded\nspeed for depth —\neven for one hour?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Deeper\nthan yesterday.",
+          "subheading": "Depth is the goal now.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 23",
+        "theme_tag": "Focus",
+        "headline": "The ones who go deep go further. Depth over speed.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Choose one task today and spend 5 extra minutes on it. Not to perfect it — to understand it more fully than you normally would."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Speed creates output. Depth creates understanding. In burnout recovery, depth is also a form of rest — it asks you to slow down and be present with what you are doing."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "Where in your life has speed been costing you more than you have admitted?"
+      },
+      "word_of_day": "SEEN",
+      "notification_copy": "Depth over speed today. Go further by going slower.",
+      "evening_reflection": "Where did you go deeper today? How did it feel compared to rushing?",
+      "completion_message": {
+        "day_label": "DAY 23",
+        "heading": "You went deeper\ntoday.",
+        "subheading": "That is a different kind of progress.",
+        "whats_ahead": "Tomorrow: on stillness — and what quiet builds in you."
+      }
+    },
+    {
+      "id": "ritual_day_24",
+      "day": 24,
+      "theme": "Rest",
+      "arc": "ROOTING",
+      "title": "The quiet ones go the furthest.",
+      "subtitle": "Stillness is not absence. It is presence.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "The quiet\nis safe here.",
+          "subheading": "Stillness is its own form of strength."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What noise are you\nready to let go of?",
+          "subheading": "For now. Not forever. Just now.",
+          "field_placeholder": "What noise are you tired of carrying?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Let the quiet\nin.",
+          "instruction": "Follow the circle. This is what stillness sounds like.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "Where can you bring\nquiet today?",
+          "subheading": "One place. One moment.",
+          "suggested": "Rest"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What does stillness feel like\nfor you when you\nactually allow it?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Quiet\nand steady.",
+          "subheading": "Stillness is a form of strength.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 24",
+        "theme_tag": "Rest",
+        "headline": "The quiet ones go the furthest. Let yourself be still.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Find 5 minutes of complete silence today — no music, no podcast, no background noise. Just sit and be. Nothing to accomplish."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Chronic noise keeps the nervous system in low-grade alert. Five minutes of deliberate silence is physiologically different from distracted quiet. Your brain needs this."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "When is the last time you sat in true silence without feeling like you should be doing something?"
+      },
+      "word_of_day": "SOFT",
+      "notification_copy": "Quiet is not empty. It is where you find yourself.",
+      "evening_reflection": "Where did you find stillness today? How did it feel in your body?",
+      "completion_message": {
+        "day_label": "DAY 24",
+        "heading": "You found stillness\ntoday.",
+        "subheading": "That is harder than it looks.",
+        "whats_ahead": "Tomorrow: on enough — returning to where you began."
+      }
+    },
+    {
+      "id": "ritual_day_25",
+      "day": 25,
+      "theme": "Calm",
+      "arc": "ROOTING",
+      "title": "Still enough. Always enough.",
+      "subtitle": "Coming back to where you started.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You are still enough.\nYou were always enough.",
+          "subheading": "This hasn't changed."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What 'not enough' story\nkeeps coming back?",
+          "subheading": "Set it down. You already are.",
+          "field_placeholder": "What doubt about your enoughness is still visiting?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe in\nenoughness.",
+          "instruction": "Follow the circle. Enough is not a destination — it is where you already are.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What is one way you are\nalready enough for today?",
+          "subheading": "Name it honestly.",
+          "suggested": "Calm"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would you stop worrying\nabout if you truly believed\nyou were enough?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Enough.\nAlways was.",
+          "subheading": "Calm lives in knowing this.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 25",
+        "theme_tag": "Calm",
+        "headline": "Still enough. Always enough. You haven't changed that.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write: 'I am enough for today because ___.' Complete it with something true — even something small. Don't argue with what you write."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Enoughness is not a feeling that comes naturally under stress — it requires active acknowledgment. Writing it down anchors the belief in a way that thinking about it rarely can."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "Where did the idea that you weren't enough first come from?"
+      },
+      "word_of_day": "WHOLE",
+      "notification_copy": "Still enough. Always were. Always will be.",
+      "evening_reflection": "At what point today did you forget you were enough? What happened?",
+      "completion_message": {
+        "day_label": "DAY 25",
+        "heading": "You remembered\nyou were enough.",
+        "subheading": "That is the whole practice.",
+        "whats_ahead": "Tomorrow: on return — and what it means to come back."
+      }
+    },
+    {
+      "id": "ritual_day_26",
+      "day": 26,
+      "theme": "Clarity",
+      "arc": "ROOTING",
+      "title": "Every return is a beginning.",
+      "subtitle": "Even this one. Especially this one.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "You are back.\nAgain.",
+          "subheading": "Every return is its own beginning."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What shame about returning\nhave you been carrying?",
+          "subheading": "You can release it here.",
+          "field_placeholder": "What makes returning feel hard?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Return\nto the breath.",
+          "instruction": "Follow the circle. Returning is the whole practice.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What are you returning\nto today — in yourself?",
+          "subheading": "Name it.",
+          "suggested": "Clarity"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What becomes possible\nwhen you stop judging yourself\nfor needing to return?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "You returned.\nAgain.",
+          "subheading": "That is always a beginning.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 26",
+        "theme_tag": "Clarity",
+        "headline": "Every return is a beginning. This one counts too.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Think of something you have returned to after stopping — a habit, a relationship with yourself, an intention. Write what coming back taught you."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Return is not failure — it is the practice itself. The gap between leaving and returning is where most of the growth lives. Understanding that changes how you see setbacks."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What do you always come back to, no matter how many times you leave?"
+      },
+      "word_of_day": "CHOICE",
+      "notification_copy": "Every return brings something new. What is yours today?",
+      "evening_reflection": "What did returning feel like today? What did it teach you?",
+      "completion_message": {
+        "day_label": "DAY 26",
+        "heading": "You returned\nto yourself again.",
+        "subheading": "Clarity comes from this practice.",
+        "whats_ahead": "Tomorrow: on practice — and what it means that this has become yours."
+      }
+    },
+    {
+      "id": "ritual_day_27",
+      "day": 27,
+      "theme": "Focus",
+      "arc": "ROOTING",
+      "title": "This is the practice now.",
+      "subtitle": "Not something you're building. Something you are.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "This is not\nsomething you're doing.",
+          "subheading": "This is becoming who you are."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What old version of yourself\nhas the practice replaced?",
+          "subheading": "Let it go fully now.",
+          "field_placeholder": "What is this practice replacing in you?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "This breath\nis the practice.",
+          "instruction": "Follow the circle. This is not preparation. This is it.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What does showing up\nmean to who you are now?",
+          "subheading": "Not to who you were.",
+          "suggested": "Focus"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "If this is now\npart of who you are,\nwhat else becomes possible?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "The practice\nis yours.",
+          "subheading": "This is who you are now.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 27",
+        "theme_tag": "Focus",
+        "headline": "This is not something you're building anymore. This is who you are.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write: 'I am someone who ___.' Complete it with one habit or quality that is now genuinely true of you — not what you want to be, what you already are."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Identity-based language creates the most durable behavioral change. 'I am someone who...' attaches behavior to self-concept in a way that goals and resolutions cannot."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What is now true about you that wasn't true 27 days ago?"
+      },
+      "word_of_day": "WORTH",
+      "notification_copy": "Not building anymore. This is who you are now.",
+      "evening_reflection": "In what moment today did this feel like something you are — not something you're doing?",
+      "completion_message": {
+        "day_label": "DAY 27",
+        "heading": "The practice\nis part of you.",
+        "subheading": "That is what 27 days builds.",
+        "whats_ahead": "Tomorrow: almost there. Let yourself feel what that means."
+      }
+    },
+    {
+      "id": "ritual_day_28",
+      "day": 28,
+      "theme": "Courage",
+      "arc": "ROOTING",
+      "title": "Almost a month. Feel that.",
+      "subtitle": "What you've done here is not small.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Almost thirty days.\nYou stayed.",
+          "subheading": "What you have done here is real."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What do you want to release\nbefore the final two days?",
+          "subheading": "Make space for what is coming.",
+          "field_placeholder": "What do you want to leave behind before month one closes?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Breathe into\nwhat you've built.",
+          "instruction": "Follow the circle. Almost a month of this. Let it land.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What do you want\nto carry into month two?",
+          "subheading": "Name what matters.",
+          "suggested": "Courage"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What does almost a month\nof choosing yourself\nactually mean to you?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Almost there.\nAlready arrived.",
+          "subheading": "Courage shows up in consistency.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 28",
+        "theme_tag": "Courage",
+        "headline": "Almost a month of choosing yourself. That is not small.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write down one thing you are proud of from the past 28 days. Do not minimize it. Write it plainly and let it be true."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Pride is not arrogance — it is accurate acknowledgment. Stating what you are proud of, without immediately qualifying it, is a difficult but important act of self-recognition."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What does 28 days of showing up say about who you are?"
+      },
+      "word_of_day": "GROUNDED",
+      "notification_copy": "Almost a month. You have done what most people never do.",
+      "evening_reflection": "What does it feel like to be this close to one month?",
+      "completion_message": {
+        "day_label": "DAY 28",
+        "heading": "Almost there.\nAlready more than most.",
+        "subheading": "Two days remain.",
+        "whats_ahead": "Tomorrow: one day before the end of month one."
+      }
+    },
+    {
+      "id": "ritual_day_29",
+      "day": 29,
+      "theme": "Momentum",
+      "arc": "ROOTING",
+      "title": "Tomorrow you'll have done this.",
+      "subtitle": "And that changes everything.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Tomorrow you will have\ncompleted a month.",
+          "subheading": "Today, one more step."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What are you most relieved\nto have let go of this month?",
+          "subheading": "Name it. It deserves to be named.",
+          "field_placeholder": "What heaviness has this month lifted?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "One day left.\nOne breath.",
+          "instruction": "Follow the circle. Tomorrow this breath will have become a month.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What do you want\nto feel tomorrow?",
+          "subheading": "Name the feeling. Begin it today.",
+          "suggested": "Momentum"
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "What would it mean to yourself\nto finish\nwhat you started?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "One more day.\nYou will finish.",
+          "subheading": "Momentum carries you across.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 29",
+        "theme_tag": "Momentum",
+        "headline": "Tomorrow you'll have done this. Today is the step that gets you there.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write one message to the person you will be tomorrow — after completing 30 days. What do you want them to know?"
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Writing to your future self generates forward momentum and creates psychological commitment. You are not just continuing a habit — you are delivering on a promise to yourself."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "What does it feel like to be one day away from completing something you started?"
+      },
+      "word_of_day": "ARRIVING",
+      "notification_copy": "One day left. What will tomorrow feel like?",
+      "evening_reflection": "How does tonight feel different from the night you started?",
+      "completion_message": {
+        "day_label": "DAY 29",
+        "heading": "One more step\ntomorrow.",
+        "subheading": "You are already what it takes.",
+        "whats_ahead": "Tomorrow: Day 30. One month complete."
+      }
+    },
+    {
+      "id": "ritual_day_30",
+      "day": 30,
+      "theme": "Discipline",
+      "arc": "ROOTING",
+      "title": "Thirty days of choosing yourself.",
+      "subtitle": "This is permanent now.",
+      "screens": {
+        "arrival": {
+          "label": "RESET RITUAL",
+          "heading": "Thirty days.\nYou finished.",
+          "subheading": "Or rather — you began."
+        },
+        "release": {
+          "label": "RELEASE",
+          "heading": "What does the old version\nof you need to release?",
+          "subheading": "You don't live there anymore.",
+          "field_placeholder": "What has this month changed that you can finally let go of?"
+        },
+        "breath": {
+          "label": "BREATHE",
+          "heading": "Thirty days\nof this breath.",
+          "instruction": "Follow the circle. This is what thirty days of returning looks like.",
+          "cycles": 2,
+          "skip_label": "Skip breathing"
+        },
+        "intention": {
+          "label": "ONE INTENTION",
+          "heading": "What do you want to carry\ninto month two?",
+          "subheading": "From here, everything.",
+          "suggested": null
+        },
+        "moment": {
+          "label": "A MOMENT",
+          "heading": "Who are you now\nthat you weren't when\nyou first opened this?",
+          "subheading": "There is no right answer."
+        },
+        "completion": {
+          "label": "RESET COMPLETE",
+          "heading": "Thirty days.\nComplete.",
+          "subheading": "This is who you are now.",
+          "button": "Return to your day"
+        }
+      },
+      "home_card": {
+        "day_label": "DAY 30",
+        "theme_tag": "Discipline",
+        "headline": "Thirty days of choosing yourself. That is something permanent.",
+        "duration": "~2 min"
+      },
+      "today_action": {
+        "title": "Today's Action",
+        "content": "Write a short note to the person who will start Day 1 next month. Tell them one thing they need to know — from someone who has been where they are starting."
+      },
+      "why_it_matters": {
+        "title": "Why it matters",
+        "content": "Teaching others is how we consolidate what we have learned. Writing this note clarifies your own journey — and creates something generous out of what you have built."
+      },
+      "reflection": {
+        "title": "Reflection",
+        "content": "Who are you now that you weren't 30 days ago?"
+      },
+      "word_of_day": "ENOUGH",
+      "notification_copy": "Thirty days. What has changed in you? Open to see.",
+      "evening_reflection": "What does it feel like to have arrived here? What is next?",
+      "completion_message": {
+        "day_label": "DAY 30",
+        "heading": "One month complete.\nYou rebuilt something.",
+        "subheading": "This is not the end. It is the beginning of the person you now know you can be.",
+        "whats_ahead": "Month two begins when you are ready. You know how to return now."
+      }
+    }
+  ]
+}
