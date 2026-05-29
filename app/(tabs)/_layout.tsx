@@ -1,7 +1,7 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 import { Animated, TouchableOpacity, Text, Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Tabs } from 'expo-router';
+import { Tabs, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useLanguage } from '../../hooks/useLanguage';
@@ -36,6 +36,43 @@ const MUTED      = '#A89F94';
 const NAV_BG     = '#FAF6EF';
 const NAV_BORDER = 'rgba(201, 151, 58, 0.12)';
 
+// ─── Tab bar button ────────────────────────────────────────────────────────────
+// On web, React Navigation passes an `href` prop to the tab button which React
+// Native Web renders as an <a href> element. Clicking it causes a real browser
+// navigation (page reload) instead of client-side routing.
+//
+// Fix: extract `href` from the spread so it is never passed to TouchableOpacity
+// (preventing the <a> from being rendered), then use router.navigate() to drive
+// client-side navigation on web. Native behaviour is unchanged.
+function TabBarButton({ href, onPress, children, ...rest }: any) {
+  const router = useRouter();
+
+  const handlePress = (e: any) => {
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    if (Platform.OS === 'web' && href) {
+      // Stop the browser from following the link as a real page load
+      if (e?.preventDefault) e.preventDefault();
+      // Client-side navigation — no page reload, no component remount
+      router.navigate(href as any);
+    } else {
+      // Native: let React Navigation handle it as usual
+      onPress?.(e);
+    }
+  };
+
+  return (
+    <TouchableOpacity
+      {...rest}
+      // href is intentionally excluded from the spread above so that
+      // TouchableOpacity renders as a <div> on web, not <a href>.
+      onPress={handlePress}
+      activeOpacity={1}
+    >
+      {children}
+    </TouchableOpacity>
+  );
+}
+
 // ─── Tab icon with spring animation ──────────────────────────────────────────
 function TabIcon({ iconName, focused }: { iconName: string; focused: boolean }) {
   const scale = useRef(new Animated.Value(1)).current;
@@ -66,50 +103,36 @@ export default function TabsLayout() {
   const insets = useSafeAreaInsets();
 
   // Web/PWA: respect iPhone home-indicator safe area.
-  // viewport-fit=cover (app/+html.tsx) makes env(safe-area-inset-bottom) non-zero
-  // in standalone PWA mode; useSafeAreaInsets() reads that value on web.
-  // Minimum 12px so the bar never sits flush against the bottom on any device.
-  const webBottomInset = Math.max(insets.bottom, 12);
-
+  const webBottomInset    = Math.max(insets.bottom, 12);
   const tabBarHeight      = Platform.OS === 'ios' ? 84  : Platform.OS === 'web' ? 56 + webBottomInset : 64;
   const tabBarPaddingBottom = Platform.OS === 'ios' ? 26  : Platform.OS === 'web' ? webBottomInset     : 8;
 
+  const screenOptions = useMemo(() => ({
+    headerShown: false,
+    contentStyle: { backgroundColor: '#FEF9EC' },
+    freezeOnBlur: Platform.OS === 'web',
+    tabBarActiveTintColor: GOLD,
+    tabBarInactiveTintColor: MUTED,
+    tabBarButton: TabBarButton,
+    tabBarStyle: {
+      backgroundColor: NAV_BG,
+      borderTopColor: NAV_BORDER,
+      borderTopWidth: 1,
+      height: tabBarHeight,
+      paddingBottom: tabBarPaddingBottom,
+      paddingTop: 10,
+      shadowColor: '#C9973A',
+      shadowOffset: { width: 0, height: -2 },
+      shadowOpacity: 0.06,
+      shadowRadius: 16,
+      elevation: 6,
+    },
+  }), [tabBarHeight, tabBarPaddingBottom]);
+
   return (
     <Tabs
-      // Pre-render all tabs on web so switching never shows a blank screen.
-      // On native the default lazy:true is kept for faster initial load.
       lazy={Platform.OS !== 'web'}
-      screenOptions={{
-        headerShown: false,
-        // Pin every tab's content area to the app background so no white bleeds
-        // through between renders. contentStyle is the correct Bottom Tab prop.
-        contentStyle: { backgroundColor: '#FEF9EC' },
-        tabBarStyle: {
-          backgroundColor: NAV_BG,
-          borderTopColor: NAV_BORDER,
-          borderTopWidth: 1,
-          height: tabBarHeight,
-          paddingBottom: tabBarPaddingBottom,
-          paddingTop: 10,
-          shadowColor: '#C9973A',
-          shadowOffset: { width: 0, height: -2 },
-          shadowOpacity: 0.06,
-          shadowRadius: 16,
-          elevation: 6,
-        },
-        tabBarActiveTintColor: GOLD,
-        tabBarInactiveTintColor: MUTED,
-        tabBarButton: (props) => (
-          <TouchableOpacity
-            {...(props as any)}
-            onPress={(e: any) => {
-              Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-              (props as any).onPress?.(e);
-            }}
-            activeOpacity={1}
-          />
-        ),
-      }}
+      screenOptions={screenOptions}
     >
       {TABS.map(tab => (
         <Tabs.Screen

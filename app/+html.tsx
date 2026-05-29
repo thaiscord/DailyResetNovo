@@ -20,6 +20,13 @@ export default function Root({ children }: { children: React.ReactNode }) {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
         <ScrollViewStyleReset />
+
+        {/* Keep the page background matching the app cream so any brief rendering
+            gap never shows a white flash — this is the single most reliable
+            anti-flicker measure on web. */}
+        <style>{`
+          html, body { background-color: #FEF9EC; margin: 0; padding: 0; }
+        `}</style>
       </head>
       <body>{children}</body>
     </html>

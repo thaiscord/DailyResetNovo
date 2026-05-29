@@ -107,7 +107,6 @@ function getGreetingKey(): 'greeting.morning' | 'greeting.afternoon' | 'greeting
 }
 
 export default function TodayScreen() {
-  useEffect(() => { console.log('MOUNT TODAY'); }, []);
   const router = useRouter();
   const { progress, completeDay, weeklyScore, loading, reload, comebackCount } = useProgress();
   const { hasSeen } = useMilestones();

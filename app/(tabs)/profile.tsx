@@ -609,7 +609,6 @@ function SettingsRowAnimated({ index, icon, label, value, isDanger, onPress }: {
 
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function ProfileScreen() {
-  useEffect(() => { console.log('MOUNT PROFILE'); }, []);
   const router = useRouter();
   const { progress, weeklyScore } = useProgress();
   const { profile, setProfile } = useEmotionalProfile();

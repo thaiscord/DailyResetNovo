@@ -65,7 +65,6 @@ function getDateLocale(lang: string): string {
 }
 
 export default function JournalScreen() {
-  useEffect(() => { console.log('MOUNT JOURNAL'); }, []);
   const insets = useSafeAreaInsets();
   const { t } = useLanguage();
   const [entries, setEntries] = useState<DailyEntry[]>([]);
