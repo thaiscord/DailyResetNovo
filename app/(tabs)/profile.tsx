@@ -704,16 +704,16 @@ export default function ProfileScreen() {
   const saveName = async () => { await setItem(StorageKeys.USER_NAME, name); setEditing(false); };
 
   const handleReset = () => {
+    console.log('REAL RESET BUTTON PRESSED');
     Alert.alert(t('profile.reset.title'), t('profile.reset.msg'), [
       { text: t('profile.reset.cancel'), style: 'cancel' },
       {
         text: t('profile.reset.confirm'), style: 'destructive', onPress: async () => {
+          console.log('REAL CONFIRM RESET PRESSED');
           await clearAllUserData();
           if (Platform.OS !== 'web') {
             router.replace('/splash');
           }
-          // web: clearAllUserData() logs "FORCE HARD RESET CLICKED" and calls
-          // window.location.replace("/?reset=" + Date.now()) internally
         },
       },
     ]);
