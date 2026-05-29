@@ -22,11 +22,34 @@ const EMOTIONAL_KEYS = [
   'content_engine_notif_used_v1',
 ];
 
+async function clearAllIndexedDB(): Promise<void> {
+  try {
+    if (!window.indexedDB) return;
+    const dbs: IDBDatabaseInfo[] = window.indexedDB.databases
+      ? await window.indexedDB.databases()
+      : [];
+    await Promise.all(
+      dbs.map(db =>
+        db.name
+          ? new Promise<void>(resolve => {
+              const req = window.indexedDB.deleteDatabase(db.name!);
+              req.onsuccess = () => resolve();
+              req.onerror = () => resolve();
+              req.onblocked = () => resolve();
+            })
+          : Promise.resolve()
+      )
+    );
+  } catch {
+    // best-effort
+  }
+}
+
 /**
  * Full nuclear reset — clears every persisted key including language and
- * notification settings. On web it also clears localStorage + sessionStorage
- * and hard-reloads so React state is fully re-initialized.
- * Use this from the "Clear my data" button in Profile.
+ * notification settings. On web it clears localStorage, sessionStorage,
+ * AsyncStorage, IndexedDB, and cookies so React state is fully re-initialized
+ * after a hard reload. Use this from the "Clear my data" button in Profile.
  */
 export async function clearAllUserData(): Promise<void> {
   try {
@@ -37,34 +60,47 @@ export async function clearAllUserData(): Promise<void> {
     try { keysBefore = await AsyncStorage.getAllKeys(); } catch { /* ignore */ }
     console.log('[RESET] Keys before:', keysBefore);
 
-    // ── 1. Named StorageKeys + extra emotional/mindset keys ───────────────
-    const allNamedKeys = Object.values(StorageKeys);
-    await Promise.all([
-      ...allNamedKeys.map(k => AsyncStorage.removeItem(k)),
-      ...EMOTIONAL_KEYS.map(k => AsyncStorage.removeItem(k)),
-    ]);
-
-    // ── 2. Dynamic date-keyed entries ──────────────────────────────────────
-    const allKeys = await AsyncStorage.getAllKeys();
-    const dynamicKeys = allKeys.filter(k => DYNAMIC_PREFIXES.some(p => k.startsWith(p)));
-    if (dynamicKeys.length > 0) {
-      await AsyncStorage.multiRemove(dynamicKeys);
-    }
-
-    // ── 3. Daily entries (daily_entry_*, mood_checkin_*, daily_mood_v1_*) ─
-    await clearAllDailyEntries();
-
-    // ── 4. Web-specific storage ────────────────────────────────────────────
     if (Platform.OS === 'web') {
+      // ── web: nuclear wipe of every storage layer ───────────────────────
+      console.log('[RESET] CLEARING LOCAL STORAGE');
       try { window.localStorage.clear(); } catch { /* ignore */ }
+
+      console.log('[RESET] CLEARING SESSION STORAGE');
       try { window.sessionStorage.clear(); } catch { /* ignore */ }
+
+      console.log('[RESET] CLEARING ASYNC STORAGE');
+      try { await AsyncStorage.clear(); } catch { /* ignore */ }
+
+      console.log('[RESET] CLEARING INDEXEDDB');
+      await clearAllIndexedDB();
+
+      // cookies
+      try {
+        document.cookie.split(';').forEach(c => {
+          const name = c.split('=')[0].trim();
+          document.cookie = `${name}=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/`;
+        });
+      } catch { /* ignore */ }
+    } else {
+      // ── native: remove all named + dynamic keys ───────────────────────
+      const allNamedKeys = Object.values(StorageKeys);
+      await Promise.all([
+        ...allNamedKeys.map(k => AsyncStorage.removeItem(k)),
+        ...EMOTIONAL_KEYS.map(k => AsyncStorage.removeItem(k)),
+      ]);
+
+      const remaining = await AsyncStorage.getAllKeys();
+      const dynamicKeys = remaining.filter(k => DYNAMIC_PREFIXES.some(p => k.startsWith(p)));
+      if (dynamicKeys.length > 0) await AsyncStorage.multiRemove(dynamicKeys);
+
+      await clearAllDailyEntries();
     }
 
     // ── snapshot keys after wipe ──────────────────────────────────────────
     let keysAfter: readonly string[] = [];
     try { keysAfter = await AsyncStorage.getAllKeys(); } catch { /* ignore */ }
     console.log('[RESET] Keys after:', keysAfter);
-    console.log('[RESET] RESET COMPLETED');
+    console.log('[RESET] RESET FINISHED');
   } catch (err) {
     console.error('[RESET] Error during reset:', err);
   }
