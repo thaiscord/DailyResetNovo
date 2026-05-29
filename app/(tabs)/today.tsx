@@ -272,11 +272,6 @@ export default function TodayScreen() {
     const streak = progress.streak;
     async function checkRetentionRouting() {
       const todayStr = getLocalDateKey();
-      // Notification permission: after first ritual completion
-      if (progress.completedDays.length === 1) {
-        const asked = await getItem<boolean>(StorageKeys.NOTIF_PERMISSION_ASKED, false);
-        if (!asked) { router.push('/notification-permission'); return; }
-      }
       // System 7: mantra selection after Day 3
       if (streak >= 3) {
         const shown = await getItem<boolean>(StorageKeys.MANTRA_SHOWN, false);
