@@ -12,8 +12,11 @@ import {
   toExactTimeString,
   parseExactTime,
 } from '../utils/notifications';
+import { shouldShowWebPushWarning } from '../utils/webPushDetect';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
 import { useLanguage } from '../hooks/useLanguage';
+
+const webPushUnavailable = shouldShowWebPushWarning();
 
 type Period = 'morning' | 'afternoon' | 'evening';
 
@@ -259,6 +262,14 @@ export default function NotificationSettings() {
         style={{ opacity: fadeAnim, transform: [{ translateY: slideAnim }] }}
       >
         <Text style={styles.subtitle}>{t('notif.settings.sub')}</Text>
+
+        {/* Web push unavailable banner — shown on iOS PWA or unsupported web environments */}
+        {webPushUnavailable && (
+          <View style={styles.webWarning}>
+            <Ionicons name="information-circle-outline" size={15} color={Colors.gold} style={{ marginTop: 1 }} />
+            <Text style={styles.webWarningText}>{t('notif.web.unavailable')}</Text>
+          </View>
+        )}
 
         {/* Period Selector */}
         <Text style={styles.sectionLabel}>{t('notif.period.label')}</Text>
@@ -518,6 +529,25 @@ const styles = StyleSheet.create({
     marginTop: Spacing.lg,
     marginBottom: Spacing.xl,
     letterSpacing: 0.1,
+  },
+
+  // ── Web push unavailable banner ────────────────────────────────────────────────
+  webWarning: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: Spacing.sm,
+    backgroundColor: 'rgba(239,201,76,0.08)',
+    borderRadius: Radii.lg,
+    padding: Spacing.md,
+    marginBottom: Spacing.xl,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: 'rgba(239,201,76,0.28)',
+  },
+  webWarningText: {
+    flex: 1,
+    fontSize: Typography.sizes.xs,
+    color: '#6B6B6B',
+    lineHeight: 18,
   },
 
   // ── Section label ──────────────────────────────────────────────────────────────

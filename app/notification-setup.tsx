@@ -9,6 +9,7 @@ import {
   scheduleAllNotifications,
   toExactTimeString,
 } from '../utils/notifications';
+import { shouldShowWebPushWarning } from '../utils/webPushDetect';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
 
 const OPTION_KEYS = [
@@ -16,6 +17,10 @@ const OPTION_KEYS = [
   { id: 'afternoon', labelKey: 'notif.afternoon', sublabelKey: 'notif.afternoon.sublabel', icon: 'partly-sunny' },
   { id: 'evening',   labelKey: 'notif.evening',   sublabelKey: 'notif.evening.sublabel',   icon: 'moon' },
 ];
+
+// Computed once at render time — safe because Platform.OS and browser APIs
+// don't change during a session.
+const webPushUnavailable = shouldShowWebPushWarning();
 
 export default function NotificationSetup() {
   const router = useRouter();
@@ -33,35 +38,42 @@ export default function NotificationSetup() {
     const [hour, minute] = defaults[selected] ?? [7, 0];
     const exactTime = toExactTimeString(hour, minute);
 
+    // Always save the time preference — it applies when the user opens the native app.
     await Promise.all([
       setItem(StorageKeys.NOTIFICATION_TIME, selected),
       setItem(StorageKeys.NOTIFICATION_EXACT_TIME, exactTime),
       setItem(StorageKeys.ONBOARDING_DONE, true),
     ]);
 
-    // Request permission and schedule all notifications with fresh-user defaults
-    const granted = await requestNotificationPermissions();
-    console.log('NOTIFICATION PERMISSION STATUS', granted ? 'granted' : 'denied-or-web');
-    if (granted) {
-      console.log('SCHEDULING DAILY REMINDER', toExactTimeString(hour, minute));
-      await scheduleAllNotifications({
-        ritualHour: hour,
-        ritualMinute: minute,
-        ritualPeriod: selected as 'morning' | 'afternoon' | 'evening',
-        streak: 0,
-        daysMissed: 0,
-        totalDays: 1,
-        currentDay: 1,
-        lastMood: null,
-        eveningEnabled: false,
-        eveningHour: 21,
-        eveningMinute: 0,
-        wordEnabled: true,
-        milestoneEnabled: true,
-        quietDays: [],
-        ritualDoneToday: false,
-        seed: new Date().getDate(),
-      });
+    if (webPushUnavailable) {
+      // On iOS PWA or unsupported web environments: skip permission request —
+      // it would either fail silently or show a confusing dialog.
+      console.log('NOTIFICATION PERMISSION STATUS', 'web-push-unavailable');
+    } else {
+      // Request permission and schedule all notifications with fresh-user defaults.
+      const granted = await requestNotificationPermissions();
+      console.log('NOTIFICATION PERMISSION STATUS', granted ? 'granted' : 'denied-or-web');
+      if (granted) {
+        console.log('SCHEDULING DAILY REMINDER', exactTime);
+        await scheduleAllNotifications({
+          ritualHour: hour,
+          ritualMinute: minute,
+          ritualPeriod: selected as 'morning' | 'afternoon' | 'evening',
+          streak: 0,
+          daysMissed: 0,
+          totalDays: 1,
+          currentDay: 1,
+          lastMood: null,
+          eveningEnabled: false,
+          eveningHour: 21,
+          eveningMinute: 0,
+          wordEnabled: true,
+          milestoneEnabled: true,
+          quietDays: [],
+          ritualDoneToday: false,
+          seed: new Date().getDate(),
+        });
+      }
     }
 
     router.replace('/(tabs)/today');
@@ -75,17 +87,24 @@ export default function NotificationSetup() {
         <Text style={styles.subtitle}>{t('notif.subtitle')}</Text>
         <Text style={styles.bridge}>{t('notif.bridge') || 'Consistency begins with timing.'}</Text>
 
+        {/* Gentle info card for environments where push is unavailable */}
+        {webPushUnavailable && (
+          <View style={styles.webWarning}>
+            <Ionicons name="information-circle-outline" size={16} color={Colors.gold} style={styles.webWarningIcon} />
+            <Text style={styles.webWarningText}>{t('notif.web.unavailable')}</Text>
+          </View>
+        )}
+
         <View style={styles.options}>
           {options.map(opt => {
             const sel = selected === opt.id;
             return (
               <TouchableOpacity
                 key={opt.id}
-                style={[styles.option, sel && styles.optionSelected]}
+                style={[styles.option, sel && styles.optionSelected, webPushUnavailable && styles.optionDimmed]}
                 onPress={() => setSelected(opt.id)}
                 activeOpacity={0.82}
               >
-                {/* Ícone — pill amarelo quando selecionado (Imagem 1) */}
                 <View style={[styles.iconPill, sel && styles.iconPillSelected]}>
                   <Ionicons
                     name={opt.icon as any}
@@ -99,7 +118,6 @@ export default function NotificationSetup() {
                   <Text style={styles.optSublabel}>{opt.sublabel}</Text>
                 </View>
 
-                {/* Radio circular */}
                 <View style={[styles.radio, sel && styles.radioSelected]}>
                   {sel && <View style={styles.radioDot} />}
                 </View>
@@ -145,8 +163,27 @@ const styles = StyleSheet.create({
     fontSize: Typography.sizes.xs,
     color: Colors.textMuted,
     fontStyle: 'italic',
-    marginBottom: Spacing.xl,
+    marginBottom: Spacing.lg,
     letterSpacing: 0.2,
+  },
+
+  webWarning: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: Spacing.sm,
+    backgroundColor: 'rgba(239,201,76,0.10)',
+    borderRadius: Radii.lg,
+    padding: Spacing.md,
+    marginBottom: Spacing.lg,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: 'rgba(239,201,76,0.30)',
+  },
+  webWarningIcon: { marginTop: 1 },
+  webWarningText: {
+    flex: 1,
+    fontSize: Typography.sizes.xs,
+    color: Colors.textSecondary,
+    lineHeight: 18,
   },
 
   options: { gap: Spacing.md },
@@ -162,6 +199,7 @@ const styles = StyleSheet.create({
     ...Shadows.card,
   },
   optionSelected: { borderColor: Colors.accent },
+  optionDimmed: { opacity: 0.6 },
 
   iconPill: {
     width: 52,

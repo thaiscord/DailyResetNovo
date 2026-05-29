@@ -10,6 +10,9 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { getItem, setItem, getLocalDateKey, StorageKeys } from '../../hooks/useStorage';
 import { getStateCategory, type DailyState } from '../../utils/dailyState';
+import {
+  PressureIcon, FoggyIcon, MentalWeightIcon, LowEnergyIcon, InnerNoiseIcon,
+} from '../../components/EmotionIcons';
 
 // ─── Access tiers ─────────────────────────────────────────────────────────────
 const ACCESS_RULES = {
@@ -128,12 +131,12 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 
 // Emoções diárias → categoria recomendada
 const EMOTIONS = [
-  { key: 'overwhelmed', emoji: '😮‍💨', label: 'Pressure',      cat: 'Calm',   subtitle: 'For when everything feels like too much.' },
-  { key: 'numb',        emoji: '🌫️',  label: 'Foggy',         cat: 'Rhythm', subtitle: 'For when the mind goes quiet.' },
-  { key: 'frustrated',  emoji: '🪨',   label: 'Mental weight', cat: 'Rhythm', subtitle: 'For when the weight is hard to carry.' },
-  { key: 'low_energy',  emoji: '😔',   label: 'Low energy',    cat: 'Calm',   subtitle: 'For when the pace has slowed.' },
-  { key: 'anxious',     emoji: '😰',   label: 'Inner noise',   cat: 'Calm',   subtitle: "For when the noise doesn't stop." },
-] as const;
+  { key: 'overwhelmed' as const, Icon: PressureIcon,    label: 'Pressure',      cat: 'Calm',   subtitle: 'For when everything feels like too much.' },
+  { key: 'numb'        as const, Icon: FoggyIcon,        label: 'Foggy',         cat: 'Rhythm', subtitle: 'For when the mind goes quiet.' },
+  { key: 'frustrated'  as const, Icon: MentalWeightIcon, label: 'Mental weight', cat: 'Rhythm', subtitle: 'For when the weight is hard to carry.' },
+  { key: 'low_energy'  as const, Icon: LowEnergyIcon,    label: 'Low energy',    cat: 'Calm',   subtitle: 'For when the pace has slowed.' },
+  { key: 'anxious'     as const, Icon: InnerNoiseIcon,   label: 'Inner noise',   cat: 'Calm',   subtitle: "For when the noise doesn't stop." },
+];
 type EmotionKey = typeof EMOTIONS[number]['key'];
 
 // ─── Adaptive emotional copy per emotion state ────────────────────────────────
@@ -805,27 +808,33 @@ export default function MindsetScreen() {
                   {EMOTIONS.map((emotion, idx) => {
                     const emoRadius = [20, 18, 19, 18, 20][idx] ?? 18;
                     const emoPad    = [17, 16, 16, 17, 16][idx] ?? 16;
+                    const isActive  = selectedEmotion === emotion.key;
                     return (
                       <TouchableOpacity
                         key={emotion.key}
                         style={{
                           width: '47%',
-                          backgroundColor: '#F9F6F0',
+                          backgroundColor: isActive ? '#F6F2E8' : '#F9F6F0',
                           borderRadius: emoRadius,
                           padding: emoPad,
                           alignItems: 'center',
                           shadowColor: '#C9A84C',
                           shadowOffset: { width: 0, height: 3 },
-                          shadowOpacity: 0.09,
+                          shadowOpacity: isActive ? 0.18 : 0.09,
                           shadowRadius: 14,
-                          elevation: 2,
+                          elevation: isActive ? 4 : 2,
                           borderWidth: 1,
-                          borderColor: 'rgba(201,168,76,0.14)',
+                          borderColor: isActive ? 'rgba(201,168,76,0.38)' : 'rgba(201,168,76,0.14)',
                         }}
                         onPress={() => handleSelectEmotion(emotion.key)}
                         activeOpacity={0.88}
                       >
-                        <Text style={{ fontSize: 20, marginBottom: 6, opacity: 0.88 }}>{emotion.emoji}</Text>
+                        <View style={{ marginBottom: 6 }}>
+                          <emotion.Icon
+                            size={20}
+                            color={isActive ? '#C9A84C' : '#8A7A72'}
+                          />
+                        </View>
                         <Text style={{ fontSize: 13, fontWeight: '500', color: '#4A4440', letterSpacing: 0.1 }}>{t('mindset.emotion.' + emotion.key)}</Text>
                       </TouchableOpacity>
                     );
