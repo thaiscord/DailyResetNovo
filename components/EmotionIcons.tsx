@@ -5,99 +5,105 @@
  *   • 20 × 20 viewBox
  *   • strokeWidth 1.5
  *   • strokeLinecap / strokeLinejoin "round"
- *   • fill "none" (pure line icons)
- *   • single color prop — caller controls active/inactive palette
+ *   • monochromatic — single color prop, caller controls active/inactive
  *
- * Design inspiration: Apple Health, SF Symbols, Headspace, Stoic.
+ * Design reference: Apple Health · SF Symbols · Headspace · Stoic.
  */
 import React from 'react';
-import Svg, { Path, Rect } from 'react-native-svg';
+import Svg, { Path, Rect, Circle } from 'react-native-svg';
 
 export interface EmotionIconProps {
   size?: number;
   color?: string;
 }
 
-const SW = 1.5;
+const SW  = 1.5;
 const CAP = 'round' as const;
-const JOIN = 'round' as const;
+const JN  = 'round' as const;
 
-// Shared stroke props spread onto every Path
-function s(color: string) {
+/** Shared stroke props for Path/Rect/Circle elements. */
+function sp(color: string) {
   return {
     stroke: color,
     strokeWidth: SW,
     strokeLinecap: CAP,
-    strokeLinejoin: JOIN,
+    strokeLinejoin: JN,
     fill: 'none' as const,
   };
 }
 
-// ─── Pressure ────────────────────────────────────────────────────────────────
+// ─── Pressure ─────────────────────────────────────────────────────────────────
 //
-// Two solid horizontal bars (the "clamp") with opposing arrows in the gap
-// between them — top arrow pointing down, bottom arrow pointing up — both
-// converging toward the center.  Communicates compression / overwhelm.
+// A circle gently held between two horizontal bars.
+// The bars act as "press plates" — closer to the circle than comfortable,
+// creating a quiet visual tension without dramatism.
+// The circle is intact but clearly constrained, not crushed.
+//
+// Communicates: overwhelm, being held too tight, pressure that hasn't
+// broken anything yet — but is present.
 
 export function PressureIcon({ size = 20, color = '#7A6E68' }: EmotionIconProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
-      {/* Top bar */}
-      <Path d="M2,4.5 H18" {...s(color)} />
-      {/* Downward arrow shaft */}
-      <Path d="M10,6.5 V9" {...s(color)} />
-      {/* Downward arrowhead  (wings at y=8, tip at y=10.5) */}
-      <Path d="M7.5,8 L10,10.5 L12.5,8" {...s(color)} />
-      {/* Upward arrow shaft */}
-      <Path d="M10,13.5 V11" {...s(color)} />
-      {/* Upward arrowhead  (wings at y=12, tip at y=9.5) */}
-      <Path d="M7.5,12 L10,9.5 L12.5,12" {...s(color)} />
-      {/* Bottom bar */}
-      <Path d="M2,15.5 H18" {...s(color)} />
+      {/* Upper press plate */}
+      <Path d="M3,5 H17" {...sp(color)} />
+      {/* The circle under pressure — centered, intact, constrained */}
+      <Circle cx="10" cy="10" r="3" {...sp(color)} />
+      {/* Lower press plate */}
+      <Path d="M3,15 H17" {...sp(color)} />
     </Svg>
   );
 }
 
-// ─── Foggy ───────────────────────────────────────────────────────────────────
+// ─── Foggy ────────────────────────────────────────────────────────────────────
 //
-// Three horizontal mist lines of decreasing width, evenly spaced.
-// The progressive narrowing suggests atmospheric fade — fog dissolving
-// into the distance.  Communicates numbness and mental cloudiness.
+// Three horizontal mist lines with a slightly organic spacing variation —
+// not a perfect arithmetic sequence but a gentle irregular fade, like real
+// fog dissolving layer by layer.
+//
+// Communicates: numbness, lack of clarity, mental cloudiness, the feeling
+// of not quite arriving at a thought.
 
 export function FoggyIcon({ size = 20, color = '#7A6E68' }: EmotionIconProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
-      <Path d="M2,7 H18" {...s(color)} />
-      <Path d="M4,11 H16" {...s(color)} />
-      <Path d="M6,15 H14" {...s(color)} />
+      {/* Long — full mist layer */}
+      <Path d="M2,7 H18" {...sp(color)} />
+      {/* Medium — mid-distance fade (slightly asymmetric start) */}
+      <Path d="M4,10.5 H16" {...sp(color)} />
+      {/* Short — distant layer almost dissolved */}
+      <Path d="M7,14 H14" {...sp(color)} />
     </Svg>
   );
 }
 
-// ─── Mental Weight ───────────────────────────────────────────────────────────
+// ─── Mental Weight ────────────────────────────────────────────────────────────
 //
-// A downward arrow whose tip lands on a grounded horizontal baseline.
-// The arrow = the pull of mental load; the baseline = the weight resting,
-// unable to rise.  Communicates heaviness and inner burden.
+// A circle (the mental space) with a small filled dot settled into the
+// lower portion by gravity.  The dot is NOT at the center — it has
+// drifted downward, pulled by its own heaviness, and come to rest.
+//
+// Communicates: heaviness, cognitive load, the feeling of something
+// heavy occupying your inner space — static, not moving, just there.
+// Deliberately NOT directional.
 
 export function MentalWeightIcon({ size = 20, color = '#7A6E68' }: EmotionIconProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
-      {/* Vertical shaft */}
-      <Path d="M10,3.5 V11" {...s(color)} />
-      {/* Downward arrowhead  (wings at y=9, tip at y=12) */}
-      <Path d="M7,9 L10,12 L13,9" {...s(color)} />
-      {/* Ground line */}
-      <Path d="M5.5,13 H14.5" {...s(color)} />
+      {/* Outer circle — the mental container */}
+      <Circle cx="10" cy="9.5" r="5" {...sp(color)} />
+      {/* Inner dot — the weight that has settled at the bottom */}
+      <Circle cx="10" cy="12" r="1.5" fill={color} stroke="none" />
     </Svg>
   );
 }
 
-// ─── Low Energy ──────────────────────────────────────────────────────────────
+// ─── Low Energy ───────────────────────────────────────────────────────────────
 //
-// Classic battery outline with a minimal charge bar at the left end.
-// The charge bar is deliberately small — visible, but barely — to read
-// as near-empty without requiring any text label.
+// Battery outline with a small filled charge bar — deliberately narrow,
+// just enough to register as "almost nothing left."
+// Charge indicator is slightly larger than v1 for better legibility
+// on small-screen devices without breaking the minimal silhouette.
 
 export function LowEnergyIcon({ size = 20, color = '#7A6E68' }: EmotionIconProps) {
   return (
@@ -109,10 +115,10 @@ export function LowEnergyIcon({ size = 20, color = '#7A6E68' }: EmotionIconProps
         stroke={color} strokeWidth={SW} fill="none"
       />
       {/* Positive terminal nub */}
-      <Path d="M15.5,9 H17.5 V11 H15.5" {...s(color)} />
-      {/* Low-charge indicator — small filled bar, ~15 % capacity */}
+      <Path d="M15.5,9 H17.5 V11 H15.5" {...sp(color)} />
+      {/* Low-charge indicator — ~18 % capacity, slightly more visible than v1 */}
       <Rect
-        x="3" y="8.5" width="2.5" height="3"
+        x="3" y="8.5" width="3" height="3"
         rx="0.5" ry="0.5"
         fill={color} stroke="none"
       />
@@ -120,30 +126,34 @@ export function LowEnergyIcon({ size = 20, color = '#7A6E68' }: EmotionIconProps
   );
 }
 
-// ─── Inner Noise ─────────────────────────────────────────────────────────────
+// ─── Inner Noise ──────────────────────────────────────────────────────────────
 //
-// Three sinusoidal wave lines of varying amplitude and length — each row
-// at a different vertical position.  The irregular rhythm (vs. the even
-// horizontal lines of FoggyIcon) signals disruption, mental static,
-// and anxiety rather than stillness.
+// Three organic sinusoidal wave lines at different vertical positions.
+// Each wave has a distinct cycle count and amplitude, creating an irregular
+// rhythm that reads as disruption — mental static rather than sound.
+// Contrast with FoggyIcon (straight, still) makes recognition immediate.
+//
+// v2: top wave reduced from 2.5 to 2 full cycles for cleaner legibility
+// at 20 px; all three waves have slightly adjusted control points for
+// a more organic, less mechanical curvature.
 
 export function InnerNoiseIcon({ size = 20, color = '#7A6E68' }: EmotionIconProps) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
-      {/* Top wave — 2.5 cycles, tightest amplitude */}
+      {/* Top wave — 2 cycles, tight amplitude */}
       <Path
-        d="M2,7.5 C4.5,5.5 5.5,9.5 8,7.5 C10.5,5.5 11.5,9.5 14,7.5 C15.5,6.5 17,8.5 18,7.5"
-        {...s(color)}
+        d="M2,7.5 C5,5.5 7,9.5 10,7.5 C13,5.5 15,9.5 18,7.5"
+        {...sp(color)}
       />
-      {/* Middle wave — 1.5 cycles, medium amplitude */}
+      {/* Middle wave — 1.5 cycles, moderate amplitude */}
       <Path
-        d="M2,11 C4,9 6,13 9,11 C12,9 14,13 17,11"
-        {...s(color)}
+        d="M2,11 C4.5,9 7,13 10,11 C12.5,9 15.5,13 18,11"
+        {...sp(color)}
       />
-      {/* Bottom wave — 1 cycle, wider amplitude, shorter span */}
+      {/* Bottom wave — 1 cycle, wider amplitude, shorter reach */}
       <Path
-        d="M3,14.5 C5.5,12.5 7.5,16.5 10.5,14.5 C13,12.5 15,15.5 17,14.5"
-        {...s(color)}
+        d="M3,14.5 C5.5,12 8,17 11,14.5 C14,12 16.5,16 17.5,14.5"
+        {...sp(color)}
       />
     </Svg>
   );
