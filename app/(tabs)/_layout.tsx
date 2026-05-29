@@ -81,8 +81,9 @@ export default function TabsLayout() {
       lazy={Platform.OS !== 'web'}
       screenOptions={{
         headerShown: false,
-        // Prevent the white background bleeding through during tab transitions.
-        sceneStyle: { backgroundColor: '#FEF9EC' },
+        // Pin every tab's content area to the app background so no white bleeds
+        // through between renders. contentStyle is the correct Bottom Tab prop.
+        contentStyle: { backgroundColor: '#FEF9EC' },
         tabBarStyle: {
           backgroundColor: NAV_BG,
           borderTopColor: NAV_BORDER,

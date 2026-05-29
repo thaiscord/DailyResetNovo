@@ -425,6 +425,7 @@ const PROFILE_ALL_HEADERS: Record<string, { pt: string; en: string; es: string; 
 
 // ─── Componente principal ─────────────────────────────────────────────────────
 export default function MindsetScreen() {
+  useEffect(() => { console.log('MOUNT MINDSET'); }, []);
   const router = useRouter();
   const { progress } = useProgress();
   const { t, lang } = useLanguage();

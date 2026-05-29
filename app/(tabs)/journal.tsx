@@ -65,17 +65,24 @@ function getDateLocale(lang: string): string {
 }
 
 export default function JournalScreen() {
+  useEffect(() => { console.log('MOUNT JOURNAL'); }, []);
   const insets = useSafeAreaInsets();
   const { t } = useLanguage();
   const [entries, setEntries] = useState<DailyEntry[]>([]);
   const [selected, setSelected] = useState<DailyEntry | null>(null);
-  const [loading, setLoading] = useState(true);
+  // Start as false — data loads immediately on mount via useEffect below.
+  // Avoids blank→content flash when switching to this tab for the first time.
+  const [loading, setLoading] = useState(false);
 
+  // Load immediately on mount so data is ready before the user first visits.
+  // With lazy:false the screen mounts at app start, so this runs upfront.
+  useEffect(() => {
+    getAllDailyEntries().then(e => setEntries(e));
+  }, []);
+
+  // Refresh on every focus so new entries written in other tabs appear instantly.
   useFocusEffect(useCallback(() => {
-    getAllDailyEntries().then(e => {
-      setEntries(e);
-      setLoading(false);
-    });
+    getAllDailyEntries().then(e => setEntries(e));
   }, []));
 
   return (

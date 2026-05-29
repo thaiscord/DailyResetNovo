@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Platform } from 'react-native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import * as SplashScreen from 'expo-splash-screen';
@@ -33,7 +34,10 @@ export default function RootLayout() {
       <Stack
         screenOptions={{
           headerShown: false,
-          animation: 'fade',
+          // On web, Expo Router processes every tab-switch as a URL change and
+          // the Stack applies this transition to the entire (tabs) content —
+          // causing the full-screen blink. Disable on web; keep fade on native.
+          animation: Platform.OS === 'web' ? 'none' : 'fade',
           contentStyle: { backgroundColor: Colors.background },
         }}
       >

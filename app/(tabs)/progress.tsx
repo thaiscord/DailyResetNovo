@@ -681,6 +681,7 @@ function YourHistorySection({
 // ─── Main Screen ──────────────────────────────────────────────────────────────
 
 export default function ProgressScreen() {
+  useEffect(() => { console.log('MOUNT PROGRESS'); }, []);
   const { progress, weeklyScore, comebackCount } = useProgress();
   const { totalEntries, saveEntry } = useSpaceReflections();
 
