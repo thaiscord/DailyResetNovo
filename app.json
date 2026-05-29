@@ -20,7 +20,16 @@
     },
     "web": {
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/images/favicon.png",
+      "icon": "./assets/images/icon.png",
+      "name": "Daily Reset",
+      "shortName": "Daily Reset",
+      "description": "Reset daily. Stay grounded.",
+      "backgroundColor": "#FEF9EC",
+      "themeColor": "#C9A84C",
+      "display": "standalone",
+      "orientation": "portrait",
+      "lang": "en"
     },
     "plugins": [
       "expo-router",
