@@ -710,7 +710,7 @@ export default function ProfileScreen() {
         text: t('profile.reset.confirm'), style: 'destructive', onPress: async () => {
           await clearAllUserData();
           if (Platform.OS === 'web') {
-            window.location.href = '/';
+            window.location.replace('/');
           } else {
             router.replace('/splash');
           }

@@ -24,31 +24,49 @@ const EMOTIONAL_KEYS = [
 
 /**
  * Full nuclear reset — clears every persisted key including language and
- * notification settings. On web it also calls localStorage.clear() and
- * reloads the page so React state is fully re-initialized.
+ * notification settings. On web it also clears localStorage + sessionStorage
+ * and hard-reloads so React state is fully re-initialized.
  * Use this from the "Clear my data" button in Profile.
  */
 export async function clearAllUserData(): Promise<void> {
   try {
+    console.log('[RESET] RESET STARTED');
+
+    // ── snapshot keys before wipe ──────────────────────────────────────────
+    let keysBefore: readonly string[] = [];
+    try { keysBefore = await AsyncStorage.getAllKeys(); } catch { /* ignore */ }
+    console.log('[RESET] Keys before:', keysBefore);
+
+    // ── 1. Named StorageKeys + extra emotional/mindset keys ───────────────
     const allNamedKeys = Object.values(StorageKeys);
     await Promise.all([
       ...allNamedKeys.map(k => AsyncStorage.removeItem(k)),
       ...EMOTIONAL_KEYS.map(k => AsyncStorage.removeItem(k)),
     ]);
 
+    // ── 2. Dynamic date-keyed entries ──────────────────────────────────────
     const allKeys = await AsyncStorage.getAllKeys();
     const dynamicKeys = allKeys.filter(k => DYNAMIC_PREFIXES.some(p => k.startsWith(p)));
     if (dynamicKeys.length > 0) {
       await AsyncStorage.multiRemove(dynamicKeys);
     }
 
+    // ── 3. Daily entries (daily_entry_*, mood_checkin_*, daily_mood_v1_*) ─
     await clearAllDailyEntries();
 
+    // ── 4. Web-specific storage ────────────────────────────────────────────
     if (Platform.OS === 'web') {
       try { window.localStorage.clear(); } catch { /* ignore */ }
+      try { window.sessionStorage.clear(); } catch { /* ignore */ }
     }
-  } catch {
-    // best-effort
+
+    // ── snapshot keys after wipe ──────────────────────────────────────────
+    let keysAfter: readonly string[] = [];
+    try { keysAfter = await AsyncStorage.getAllKeys(); } catch { /* ignore */ }
+    console.log('[RESET] Keys after:', keysAfter);
+    console.log('[RESET] RESET COMPLETED');
+  } catch (err) {
+    console.error('[RESET] Error during reset:', err);
   }
 }
 
