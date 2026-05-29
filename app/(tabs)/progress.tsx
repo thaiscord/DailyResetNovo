@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   TextInput,
   AccessibilityInfo,
+  Platform,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
@@ -683,14 +684,16 @@ export default function ProgressScreen() {
   const { progress, weeklyScore, comebackCount } = useProgress();
   const { totalEntries, saveEntry } = useSpaceReflections();
 
-  const heroFade     = useRef(new Animated.Value(0)).current;
-  const spaceFade    = useRef(new Animated.Value(0)).current;
-  const rhythmFade   = useRef(new Animated.Value(0)).current;
-  const historyFade  = useRef(new Animated.Value(0)).current;
-  const signalsFade  = useRef(new Animated.Value(0)).current;
-  const patternsFade = useRef(new Animated.Value(0)).current;
-  const timelineFade = useRef(new Animated.Value(0)).current;
-  const summaryFade  = useRef(new Animated.Value(0)).current;
+  // On web, start at 1 (fully visible) so there's no staggered pop-in on tab switch.
+  const FADE_INIT = Platform.OS === 'web' ? 1 : 0;
+  const heroFade     = useRef(new Animated.Value(FADE_INIT)).current;
+  const spaceFade    = useRef(new Animated.Value(FADE_INIT)).current;
+  const rhythmFade   = useRef(new Animated.Value(FADE_INIT)).current;
+  const historyFade  = useRef(new Animated.Value(FADE_INIT)).current;
+  const signalsFade  = useRef(new Animated.Value(FADE_INIT)).current;
+  const patternsFade = useRef(new Animated.Value(FADE_INIT)).current;
+  const timelineFade = useRef(new Animated.Value(FADE_INIT)).current;
+  const summaryFade  = useRef(new Animated.Value(FADE_INIT)).current;
 
   const runEntranceAnimations = useCallback(() => {
     [heroFade, rhythmFade, signalsFade, patternsFade, timelineFade, summaryFade, spaceFade, historyFade].forEach(a => a.setValue(0));
@@ -706,7 +709,11 @@ export default function ProgressScreen() {
     ]).start();
   }, []);
 
-  useFocusEffect(useCallback(() => { runEntranceAnimations(); }, [runEntranceAnimations]));
+  useFocusEffect(useCallback(() => {
+    // On web, sections start at opacity 1 (FADE_INIT above). Replaying the
+    // staggered entrance on every tab switch causes visible flicker — skip it.
+    if (Platform.OS !== 'web') { runEntranceAnimations(); }
+  }, [runEntranceAnimations]));
 
   const totalDays = progress.completedDays.length;
   const hasData   = totalDays >= 1;

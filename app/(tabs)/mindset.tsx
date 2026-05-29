@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, Animated, Easing, FlatList, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, Animated, Easing, FlatList, Dimensions, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter, useFocusEffect } from 'expo-router';
 import * as Haptics from 'expo-haptics';
@@ -453,7 +453,10 @@ export default function MindsetScreen() {
   }, []);
 
   useFocusEffect(useCallback(() => {
-    setFocusVersion(v => v + 1);
+    // On web, incrementing focusVersion remounts every FadeInCard with its delay
+    // animation, causing visible flicker on every tab switch. Cards stay mounted
+    // between tabs (lazy:false in _layout), so no remount is needed.
+    if (Platform.OS !== 'web') { setFocusVersion(v => v + 1); }
     getItem<string[]>('mindset_read_cards', []).then(ids => setReadCardIds(new Set(ids ?? [])));
     const today = getLocalDateKey();
     // Auto-set category from today's emotional state (only if user hasn't manually changed it)

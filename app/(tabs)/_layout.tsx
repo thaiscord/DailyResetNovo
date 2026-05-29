@@ -76,8 +76,13 @@ export default function TabsLayout() {
 
   return (
     <Tabs
+      // Pre-render all tabs on web so switching never shows a blank screen.
+      // On native the default lazy:true is kept for faster initial load.
+      lazy={Platform.OS !== 'web'}
       screenOptions={{
         headerShown: false,
+        // Prevent the white background bleeding through during tab transitions.
+        sceneStyle: { backgroundColor: '#FEF9EC' },
         tabBarStyle: {
           backgroundColor: NAV_BG,
           borderTopColor: NAV_BORDER,
