@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { setItem, StorageKeys } from '../hooks/useStorage';
 import {
   requestNotificationPermissions,
-  scheduleDailyNotification,
+  scheduleAllNotifications,
   toExactTimeString,
 } from '../utils/notifications';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
@@ -39,10 +39,29 @@ export default function NotificationSetup() {
       setItem(StorageKeys.ONBOARDING_DONE, true),
     ]);
 
-    // Agenda a notificação (solicita permissão se necessário)
+    // Request permission and schedule all notifications with fresh-user defaults
     const granted = await requestNotificationPermissions();
+    console.log('NOTIFICATION PERMISSION STATUS', granted ? 'granted' : 'denied-or-web');
     if (granted) {
-      await scheduleDailyNotification(selected as any);
+      console.log('SCHEDULING DAILY REMINDER', toExactTimeString(hour, minute));
+      await scheduleAllNotifications({
+        ritualHour: hour,
+        ritualMinute: minute,
+        ritualPeriod: selected as 'morning' | 'afternoon' | 'evening',
+        streak: 0,
+        daysMissed: 0,
+        totalDays: 1,
+        currentDay: 1,
+        lastMood: null,
+        eveningEnabled: false,
+        eveningHour: 21,
+        eveningMinute: 0,
+        wordEnabled: true,
+        milestoneEnabled: true,
+        quietDays: [],
+        ritualDoneToday: false,
+        seed: new Date().getDate(),
+      });
     }
 
     router.replace('/(tabs)/today');

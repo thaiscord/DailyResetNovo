@@ -34,15 +34,19 @@ import { getDayWord } from './homeGreeting';
 import { getItem, setItem, StorageKeys } from '../hooks/useStorage';
 import { isEs, isPt, getActiveLang } from './langStore';
 
-Notifications.setNotificationHandler({
-  handleNotification: async () => ({
-    shouldShowAlert: true,
-    shouldShowBanner: true,
-    shouldShowList: true,
-    shouldPlaySound: false,
-    shouldSetBadge: false,
-  }),
-});
+// expo-notifications scheduling is not supported on web — guard all module-level
+// calls to prevent import-time errors on PWA/browser environments.
+if (Platform.OS !== 'web') {
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldShowBanner: true,
+      shouldShowList: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    }),
+  });
+}
 
 // ── Fixed notification identifiers ────────────────────────────────────────────
 export const NOTIF_IDS = {
@@ -87,6 +91,7 @@ async function ensureAndroidChannel(): Promise<void> {
 
 // ── Cancel all Daily Reset notifications (new + legacy) ───────────────────────
 export async function cancelAllDailyResetNotifications(): Promise<void> {
+  if (Platform.OS === 'web') return;
   const allIds = [
     ...Object.values(NOTIF_IDS),
     ...LEGACY_IDS,
@@ -101,14 +106,20 @@ export async function cancelAllDailyResetNotifications(): Promise<void> {
 
 // ── Permission ────────────────────────────────────────────────────────────────
 export async function requestNotificationPermissions(): Promise<boolean> {
+  // expo-notifications scheduling does not work on web — return false safely.
+  if (Platform.OS === 'web') {
+    console.log('NOTIFICATION PERMISSION STATUS', 'web-not-supported');
+    return false;
+  }
   try {
     const { status: current } = await Notifications.getPermissionsAsync();
-    console.log('[notif] current permission status:', current);
+    console.log('NOTIFICATION PERMISSION STATUS', current);
     if (current === 'granted') return true;
     const { status: requested } = await Notifications.requestPermissionsAsync();
-    console.log('[notif] requested permission status:', requested);
+    console.log('NOTIFICATION PERMISSION STATUS', requested);
     return requested === 'granted';
   } catch {
+    console.log('NOTIFICATION PERMISSION STATUS', 'error');
     return false;
   }
 }
@@ -183,6 +194,7 @@ export async function scheduleContextualDailyNotification(
 export async function scheduleInactivityNotifications(
   ctx: Pick<NotifContext, 'streak' | 'totalDays' | 'goals' | 'seed'>,
 ): Promise<void> {
+  if (Platform.OS === 'web') return;
   const short = selectContextualNotification({
     ...ctx, period: 'morning', daysMissed: 2, weeklyScore: 0,
   });
@@ -200,6 +212,7 @@ export async function scheduleInactivityNotifications(
 }
 
 export async function cancelInactivityNotifications(): Promise<void> {
+  if (Platform.OS === 'web') return;
   await Promise.all([
     Notifications.cancelScheduledNotificationAsync(NOTIF_IDS.INACTIVITY_2).catch(() => null),
     Notifications.cancelScheduledNotificationAsync(NOTIF_IDS.INACTIVITY_3).catch(() => null),
@@ -221,6 +234,7 @@ const COMEBACK_IDS = [
 ] as const;
 
 export async function cancelComebackReminders(): Promise<void> {
+  if (Platform.OS === 'web') return;
   await Promise.all([
     ...COMEBACK_IDS.map(id =>
       Notifications.cancelScheduledNotificationAsync(id).catch(() => null)
@@ -235,6 +249,7 @@ export async function cancelComebackReminders(): Promise<void> {
 }
 
 export async function scheduleComebackReminders(seed: number): Promise<void> {
+  if (Platform.OS === 'web') return;
   try {
     const exactTime = await getItem<string | null>(StorageKeys.NOTIFICATION_EXACT_TIME, null);
     if (!exactTime) return;
@@ -274,6 +289,7 @@ export async function scheduleComebackReminders(seed: number): Promise<void> {
 // ─── Milestone notifications (fixed IDs) ─────────────────────────────────────
 
 export async function sendMilestoneNotification(streak: number): Promise<void> {
+  if (Platform.OS === 'web') return;
   try {
     await ensureAndroidChannel();
     const message = selectMilestoneNotification(streak);
@@ -426,6 +442,7 @@ export async function scheduleEveningAnchorNotification(
 const GAP_IDS = ['gap-2d', 'gap-5d', 'gap-14d', 'gap-30d'];
 
 export async function cancelGapNudges(): Promise<void> {
+  if (Platform.OS === 'web') return;
   await Promise.all(GAP_IDS.map(id =>
     Notifications.cancelScheduledNotificationAsync(id).catch(() => null)
   ));
@@ -436,6 +453,7 @@ export async function scheduleGapNudges(
   usualMinute: number,
   seed: number,
 ): Promise<void> {
+  if (Platform.OS === 'web') return;
   try {
     await ensureAndroidChannel();
     const [lastSentStr, quietDays] = await Promise.all([
@@ -475,6 +493,7 @@ export async function scheduleGapNudges(
 // ─── Type 4: Milestone Delivery ───────────────────────────────────────────────
 
 export async function scheduleMilestoneDeliveryNotification(streak: number): Promise<void> {
+  if (Platform.OS === 'web') return;
   try {
     const message = selectMilestoneDelivery(streak);
     if (!message) return;
@@ -536,6 +555,13 @@ export async function scheduleWordOfDayNotification(
 // ─── Master Orchestrator ──────────────────────────────────────────────────────
 
 export async function scheduleAllNotifications(ctx: NotifAllContext): Promise<void> {
+  // expo-notifications push scheduling is not supported on web. Preferences are
+  // still persisted so they apply when the user opens the native app build.
+  if (Platform.OS === 'web') {
+    console.log('[notif] web — push notification scheduling not supported, skipping');
+    return;
+  }
+
   const {
     ritualHour, ritualMinute, ritualPeriod,
     streak, daysMissed, currentDay,
@@ -546,20 +572,22 @@ export async function scheduleAllNotifications(ctx: NotifAllContext): Promise<vo
     ritualDoneToday, seed,
   } = ctx;
 
+  const ritualTime = `${ritualHour}:${ritualMinute.toString().padStart(2, '0')}`;
+  const eveningTime = `${eveningHour}:${eveningMinute.toString().padStart(2, '0')}`;
+
   console.log('[notif] scheduleAllNotifications — lang:', getActiveLang());
   console.log('[notif] toggles → evening:', eveningEnabled, '| word:', wordEnabled, '| milestone:', milestoneEnabled);
-  console.log('[notif] ritual time:', `${ritualHour}:${ritualMinute.toString().padStart(2, '0')}`, '| period:', ritualPeriod);
-  console.log('[notif] evening time:', `${eveningHour}:${eveningMinute.toString().padStart(2, '0')}`);
+  console.log('[notif] ritual time:', ritualTime, '| period:', ritualPeriod);
   console.log('[notif] state → streak:', streak, '| daysMissed:', daysMissed, '| ritualDoneToday:', ritualDoneToday, '| quietDays:', quietDays);
 
   // Check + request permission
   let permStatus = (await Notifications.getPermissionsAsync()).status;
-  console.log('[notif] permission status:', permStatus);
+  console.log('NOTIFICATION PERMISSION STATUS', permStatus);
   if (permStatus !== 'granted') {
     if (permStatus === 'undetermined') {
       const { status: requested } = await Notifications.requestPermissionsAsync();
       permStatus = requested;
-      console.log('[notif] requested permission:', permStatus);
+      console.log('NOTIFICATION PERMISSION STATUS', permStatus);
     }
     if (permStatus !== 'granted') {
       console.log('[notif] no permission — skipping scheduling');
@@ -572,6 +600,7 @@ export async function scheduleAllNotifications(ctx: NotifAllContext): Promise<vo
 
   // --- TYPE 1: Daily ritual reminder ---
   if (!isQuietToday && !ritualDoneToday) {
+    console.log('SCHEDULING DAILY REMINDER', ritualTime);
     const message = selectIntelligentDailyNotification({
       period: ritualPeriod,
       streak,
@@ -583,12 +612,13 @@ export async function scheduleAllNotifications(ctx: NotifAllContext): Promise<vo
     await scheduleDailyAt(NOTIF_IDS.DAILY, ritualHour, ritualMinute, message);
   } else {
     await Notifications.cancelScheduledNotificationAsync(NOTIF_IDS.DAILY).catch(() => null);
-    await Notifications.cancelScheduledNotificationAsync('daily-main').catch(() => null); // legacy
+    await Notifications.cancelScheduledNotificationAsync('daily-main').catch(() => null);
     console.log('[notif] cancelled daily reminder (done today or quiet day)');
   }
 
   // --- TYPE 2: Evening / night check-in ---
   if (eveningEnabled && !isQuietToday) {
+    console.log('SCHEDULING EVENING CHECKIN', eveningTime);
     await scheduleEveningAnchorNotification(eveningHour, eveningMinute, {
       ritualDone: ritualDoneToday,
       lastMood,
@@ -596,21 +626,23 @@ export async function scheduleAllNotifications(ctx: NotifAllContext): Promise<vo
     });
   } else {
     await Notifications.cancelScheduledNotificationAsync(NOTIF_IDS.EVENING).catch(() => null);
-    await Notifications.cancelScheduledNotificationAsync('evening-anchor').catch(() => null); // legacy
+    await Notifications.cancelScheduledNotificationAsync('evening-anchor').catch(() => null);
     console.log('[notif] cancelled evening check-in (disabled or quiet day)');
   }
 
   // --- TYPE 5: Word of the day ---
   if (wordEnabled && !ritualDoneToday) {
+    const wordTime = `${ritualHour}:${(ritualMinute - 30 + 60) % 60}`.padStart(5, '0');
+    console.log('SCHEDULING WORD OF DAY', wordTime, '(30 min before ritual)');
     await scheduleWordOfDayNotification(ritualHour, ritualMinute, currentDay);
   } else {
     await Notifications.cancelScheduledNotificationAsync(NOTIF_IDS.WORD).catch(() => null);
-    await Notifications.cancelScheduledNotificationAsync('word-of-day').catch(() => null); // legacy
+    await Notifications.cancelScheduledNotificationAsync('word-of-day').catch(() => null);
     console.log('[notif] cancelled word of day (disabled or ritual done)');
   }
 
   // --- TYPE 4: Milestone ---
-  // If toggle is off, cancel any pending milestone notifications
+  console.log('SCHEDULING MILESTONE', milestoneEnabled);
   if (!milestoneEnabled) {
     await Promise.all(
       Object.values(MILESTONE_ID_MAP).map(id =>
@@ -625,7 +657,7 @@ export async function scheduleAllNotifications(ctx: NotifAllContext): Promise<vo
   // Log final pending list
   try {
     const pending = await Notifications.getAllScheduledNotificationsAsync();
-    console.log('[notif] scheduled:', pending.map(n => n.identifier));
+    console.log('SCHEDULED NOTIFICATIONS', pending.map(n => n.identifier));
   } catch {
     // ignore
   }
@@ -634,6 +666,7 @@ export async function scheduleAllNotifications(ctx: NotifAllContext): Promise<vo
 // ─── Language change reschedule ───────────────────────────────────────────────
 
 export async function cancelNotificationsForLanguageChange(): Promise<void> {
+  if (Platform.OS === 'web') return;
   try {
     await Notifications.cancelAllScheduledNotificationsAsync().catch(() => null);
     await setItem(StorageKeys.NOTIF_SHUFFLE_QUEUE, []);
@@ -646,6 +679,7 @@ export async function cancelNotificationsForLanguageChange(): Promise<void> {
 export async function rescheduleNotificationsForLanguageChange(
   ctx: NotifAllContext,
 ): Promise<void> {
+  if (Platform.OS === 'web') return;
   try {
     await Notifications.cancelAllScheduledNotificationsAsync().catch(() => null);
     await setItem(StorageKeys.NOTIF_SHUFFLE_QUEUE, []);

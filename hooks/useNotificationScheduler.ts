@@ -1,4 +1,5 @@
 import { useRef, useCallback } from 'react';
+import { Platform } from 'react-native';
 import { useFocusEffect } from 'expo-router';
 import { getItem, StorageKeys, getLocalDateKey } from './useStorage';
 import {
@@ -28,9 +29,18 @@ export function useNotificationScheduler(
     if (lastScheduledDate.current === today) return;
 
     async function schedule() {
+      // expo-notifications scheduling is not supported on web
+      if (Platform.OS === 'web') {
+        console.log('[notif] useNotificationScheduler — web, skipping');
+        return;
+      }
       try {
         const exactTime = await getItem<string | null>(StorageKeys.NOTIFICATION_EXACT_TIME, null);
-        if (!exactTime) return; // user hasn't configured notifications yet
+        if (!exactTime) {
+          console.log('[notif] useNotificationScheduler — no NOTIFICATION_EXACT_TIME, skipping');
+          return;
+        }
+        console.log('[notif] useNotificationScheduler — scheduling for date', today);
 
         const { hour, minute } = parseExactTime(exactTime);
         const comeback = detectComebackState(progress.completedByDate, progress.completedDays.length);
