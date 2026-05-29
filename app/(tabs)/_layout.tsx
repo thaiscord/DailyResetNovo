@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react';
 import { Animated, TouchableOpacity, Text, Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
@@ -62,6 +63,16 @@ function TabIcon({ iconName, focused }: { iconName: string; focused: boolean }) 
 // ─── Layout ───────────────────────────────────────────────────────────────────
 export default function TabsLayout() {
   const { lang } = useLanguage();
+  const insets = useSafeAreaInsets();
+
+  // Web/PWA: respect iPhone home-indicator safe area.
+  // viewport-fit=cover (app/+html.tsx) makes env(safe-area-inset-bottom) non-zero
+  // in standalone PWA mode; useSafeAreaInsets() reads that value on web.
+  // Minimum 12px so the bar never sits flush against the bottom on any device.
+  const webBottomInset = Math.max(insets.bottom, 12);
+
+  const tabBarHeight      = Platform.OS === 'ios' ? 84  : Platform.OS === 'web' ? 56 + webBottomInset : 64;
+  const tabBarPaddingBottom = Platform.OS === 'ios' ? 26  : Platform.OS === 'web' ? webBottomInset     : 8;
 
   return (
     <Tabs
@@ -71,8 +82,8 @@ export default function TabsLayout() {
           backgroundColor: NAV_BG,
           borderTopColor: NAV_BORDER,
           borderTopWidth: 1,
-          height: Platform.OS === 'ios' ? 84 : 64,
-          paddingBottom: Platform.OS === 'ios' ? 26 : 8,
+          height: tabBarHeight,
+          paddingBottom: tabBarPaddingBottom,
           paddingTop: 10,
           shadowColor: '#C9973A',
           shadowOffset: { width: 0, height: -2 },
