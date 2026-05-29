@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Alert, TextInput, Modal, Animated,
+  Alert, TextInput, Modal, Animated, Platform,
 } from 'react-native';
 import { DailyResetLogo } from '../../components/DailyResetLogo';
 import * as Haptics from 'expo-haptics';
@@ -9,7 +9,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import { getItem, setItem, removeItem, StorageKeys } from '../../hooks/useStorage';
 import { clearAllDailyEntries } from '../../utils/dailyEntries';
-import { resetEmotionalState } from '../../utils/resetEmotionalState';
+import { clearAllUserData } from '../../utils/resetEmotionalState';
 // DEV-only time travel — functions are no-ops in production builds
 import {
   advanceDays    as devAdvanceDays,
@@ -708,8 +708,12 @@ export default function ProfileScreen() {
       { text: t('profile.reset.cancel'), style: 'cancel' },
       {
         text: t('profile.reset.confirm'), style: 'destructive', onPress: async () => {
-          await resetEmotionalState();
-          router.replace('/splash');
+          await clearAllUserData();
+          if (Platform.OS === 'web') {
+            window.location.href = '/';
+          } else {
+            router.replace('/splash');
+          }
         },
       },
     ]);

@@ -1,6 +1,56 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Platform } from 'react-native';
 import { StorageKeys } from '../hooks/useStorage';
 import { clearAllDailyEntries } from './dailyEntries';
+
+const DYNAMIC_PREFIXES = [
+  'daily_entry_',
+  'mood_checkin_',
+  'daily_mood_v1_',
+  'daily_state_v1_',
+  'action_response_day_',
+  'reflection_response_day_',
+  'evening_anchor_',
+];
+
+const EMOTIONAL_KEYS = [
+  'mindset_recommendation_date',
+  'mindset_recommendation_mood',
+  'mindset_read_cards',
+  'clear_mind_entries',
+  'content_memory_v1',
+  'content_engine_notif_used_v1',
+];
+
+/**
+ * Full nuclear reset — clears every persisted key including language and
+ * notification settings. On web it also calls localStorage.clear() and
+ * reloads the page so React state is fully re-initialized.
+ * Use this from the "Clear my data" button in Profile.
+ */
+export async function clearAllUserData(): Promise<void> {
+  try {
+    const allNamedKeys = Object.values(StorageKeys);
+    await Promise.all([
+      ...allNamedKeys.map(k => AsyncStorage.removeItem(k)),
+      ...EMOTIONAL_KEYS.map(k => AsyncStorage.removeItem(k)),
+    ]);
+
+    const allKeys = await AsyncStorage.getAllKeys();
+    const dynamicKeys = allKeys.filter(k => DYNAMIC_PREFIXES.some(p => k.startsWith(p)));
+    if (dynamicKeys.length > 0) {
+      await AsyncStorage.multiRemove(dynamicKeys);
+    }
+
+    await clearAllDailyEntries();
+
+    if (Platform.OS === 'web') {
+      try { window.localStorage.clear(); } catch { /* ignore */ }
+    }
+  } catch {
+    // best-effort
+  }
+}
 
 /**
  * Clears all user progress and emotional state from AsyncStorage.
@@ -69,15 +119,6 @@ export async function resetEmotionalState(): Promise<void> {
 
     // ── 3. Dynamic keys — scan by prefix ─────────────────────────────────
     const allKeys = await AsyncStorage.getAllKeys();
-    const DYNAMIC_PREFIXES = [
-      'daily_entry_',
-      'mood_checkin_',
-      'daily_mood_v1_',
-      'daily_state_v1_',        // date-keyed emotional state (daily_state_v1_YYYY-MM-DD)
-      'action_response_day_',
-      'reflection_response_day_',
-      'evening_anchor_',
-    ];
     const dynamicKeys = allKeys.filter(k =>
       DYNAMIC_PREFIXES.some(p => k.startsWith(p))
     );
