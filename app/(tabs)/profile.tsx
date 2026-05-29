@@ -708,7 +708,7 @@ export default function ProfileScreen() {
       { text: t('profile.reset.cancel'), style: 'cancel' },
       {
         text: t('profile.reset.confirm'), style: 'destructive', onPress: async () => {
-          console.log('[RESET] RESET BUTTON CLICKED');
+          console.log('DELETE DATA BUTTON CLICKED - REAL BUTTON');
           await clearAllUserData();
           if (Platform.OS === 'web') {
             window.location.replace('/');
