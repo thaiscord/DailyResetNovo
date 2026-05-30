@@ -289,7 +289,7 @@ export default function PaywallScreen() {
               { quoteKey: 'paywall.t3.quote', nameKey: 'paywall.t3.name' },
             ]).map((item, i) => (
               <View key={i} style={styles.testimonialRow}>
-                <Text style={styles.testimonialQuote}>"{t(item.quoteKey)}"</Text>
+                <Text style={styles.testimonialQuote}>{`"${t(item.quoteKey)}"`}</Text>
                 <Text style={styles.testimonialName}>— {t(item.nameKey)}</Text>
               </View>
             ))}

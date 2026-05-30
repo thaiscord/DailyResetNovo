@@ -1,51 +1,41 @@
-BUG CRÍTICO — Resetar meus dados não apaga dados no Web/Vercel
+Update the Day 2 reset content.
 
-O botão "Resetar meus dados" continua sem apagar os dados no navegador/Vercel.
+Current instruction:
 
-Agora investigue especificamente armazenamento WEB.
+"Antes de pegar o celular, escreva uma frase sobre algo que você está esperando — mesmo algo pequeno. Uma frase já é suficiente."
 
-Corrija o reset para limpar TUDO:
+Replace it with:
 
-1. localStorage.clear()
-2. sessionStorage.clear()
-3. AsyncStorage.clear()
-4. IndexedDB:
-   - listar todos os bancos com indexedDB.databases()
-   - deletar todos os bancos relacionados ao app
-   - especialmente qualquer banco usado por AsyncStorage, Expo, React Native Web ou Daily Reset
+"Escreva uma frase sobre algo que você está esperando — mesmo algo pequeno. Às vezes, lembrar do que ainda pode acontecer já muda a direção do dia."
 
-5. Cookies do domínio, se existirem.
-6. Qualquer storage customizado usado por:
-   - onboarding
-   - idioma
-   - progresso
-   - diário
-   - reset do dia
-   - mindset
-   - streak
-   - recovery path
-   - notificações
-   - rituais
+Requirements:
 
-Depois da limpeza:
-- chamar window.location.href = "/"
-- ou window.location.replace("/")
-- ou window.location.reload()
-Mas precisa voltar para a primeira tela do app como usuário novo.
+- Update all language files (i18n).
+- Keep the emotional tone calm, human and reflective.
+- Do not make the text motivational, coaching-oriented or exaggerated.
+- Preserve the existing meaning of the exercise.
+- Ensure native-sounding translations for:
+  - Portuguese
+  - English
+  - Spanish
+  - French
+  - German
 
-Importante:
-Não crie apenas uma função nova.
-Encontre o botão real "Resetar meus dados" / "Apagar meus dados" na aba Você/Profile e conecte esse botão diretamente à função definitiva.
+Translation intent:
 
-Adicionar logs no console:
-- RESET BUTTON CLICKED
-- CLEARING LOCAL STORAGE
-- CLEARING SESSION STORAGE
-- CLEARING ASYNC STORAGE
-- CLEARING INDEXEDDB
-- RESET FINISHED
+PT:
+"Escreva uma frase sobre algo que você está esperando — mesmo algo pequeno. Às vezes, lembrar do que ainda pode acontecer já muda a direção do dia."
 
-Também revisar se existe algum estado padrão que recria os dados após apagar.
+EN:
+"Write one sentence about something you're looking forward to — even if it's something small. Sometimes remembering what could still happen can gently change the direction of your day."
 
-Não alterar layout, design ou fluxo visual.
-Apenas corrigir o reset de dados no web.
+ES:
+"Escribe una frase sobre algo que estás esperando, aunque sea algo pequeño. A veces, recordar lo que todavía puede suceder cambia suavemente el rumbo del día."
+
+FR:
+"Écrivez une phrase sur quelque chose que vous attendez avec impatience, même si c'est quelque chose de simple. Parfois, se rappeler ce qui peut encore arriver suffit à changer doucement la direction de la journée."
+
+DE:
+"Schreibe einen Satz über etwas, worauf du dich freust – selbst wenn es nur eine Kleinigkeit ist. Manchmal kann die Erinnerung daran, was noch passieren könnte, die Richtung des Tages sanft verändern."
+
+Verify that all languages render correctly and that no fallback keys remain visible.

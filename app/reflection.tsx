@@ -141,7 +141,7 @@ export default function ReflectionScreen() {
           <View style={styles.accentLine} />
 
           {/* Prompt */}
-          <Text style={styles.prompt}>"{prompt}"</Text>
+          <Text style={styles.prompt}>{`"${prompt}"`}</Text>
 
           {/* Microcopy */}
           <Text style={styles.microcopy}>{t('reflect.microcopy')}</Text>

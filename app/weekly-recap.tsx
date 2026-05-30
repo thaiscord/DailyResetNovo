@@ -356,12 +356,12 @@ export default function WeeklyRecapScreen() {
                     )}
                     {!!entry.action_response && (
                       <Text numberOfLines={2} style={{ fontSize: 13, color: Colors.textSecondary, marginTop: 6, fontStyle: 'italic' }}>
-                        "{entry.action_response}"
+                        {`"${entry.action_response}"`}
                       </Text>
                     )}
                     {!!entry.reflection_response && (
                       <Text numberOfLines={2} style={{ fontSize: 13, color: Colors.textSecondary, marginTop: 4, fontStyle: 'italic' }}>
-                        "{entry.reflection_response}"
+                        {`"${entry.reflection_response}"`}
                       </Text>
                     )}
                   </View>
@@ -395,7 +395,7 @@ export default function WeeklyRecapScreen() {
                     )}
                     {bestReflection && (
                       <Text numberOfLines={3} style={{ fontSize: Typography.sizes.sm, color: Colors.textSecondary, fontStyle: 'italic', marginTop: 4 }}>
-                        {lang === 'es' ? 'Un momento para reflexionar:' : lang === 'pt' ? 'Um momento para refletir:' : lang === 'de' ? 'Ein Moment zum Reflektieren:' : 'A moment to reflect:'} "{bestReflection}"
+                        {`${lang === 'es' ? 'Un momento para reflexionar:' : lang === 'pt' ? 'Um momento para refletir:' : lang === 'de' ? 'Ein Moment zum Reflektieren:' : 'A moment to reflect:'} "${bestReflection}"`}
                       </Text>
                     )}
                   </View>

@@ -19,7 +19,6 @@ import { Ionicons } from '@expo/vector-icons';
 import { useProgress } from '../../hooks/useProgress';
 import { useSpaceReflections, type ReflectionEntry } from '../../hooks/useSpaceReflections';
 import { useLanguage } from '../../hooks/useLanguage';
-import { getLocalDateKey } from '../../hooks/useStorage';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { selectPrivateSpacePrompt } from '../../utils/privateSpacePrompts';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../../theme';
@@ -40,6 +39,7 @@ function RingProgress({ percent, size = 100, strokeWidth = 7 }: { percent: numbe
       duration: 1200,
       useNativeDriver: false,
     }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [percent]);
 
   useEffect(() => {
@@ -52,6 +52,7 @@ function RingProgress({ percent, size = 100, strokeWidth = 7 }: { percent: numbe
         ])
       ).start();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const strokeDashoffset = anim.interpolate({
@@ -113,6 +114,7 @@ function ProgressHero({ fadeAnim, seed }: { fadeAnim: Animated.Value; seed: numb
         ])
       ).start();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -129,7 +131,7 @@ function ProgressHero({ fadeAnim, seed }: { fadeAnim: Animated.Value; seed: numb
 
 function WeeklyRhythmCard({
   percent,
-  totalDays,
+  totalDays: _totalDays,
   hasData,
   fadeAnim,
 }: {
@@ -166,6 +168,7 @@ function WeeklyRhythmCard({
         ])
       ).start();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -207,6 +210,7 @@ function SignalCard({ title, text, index }: { title: string; text: string; index
       Animated.timing(slideAnim, { toValue: 0, duration: 600, delay: index * 120, useNativeDriver: true }),
       Animated.timing(opacAnim, { toValue: 1, duration: 600, delay: index * 120, useNativeDriver: true }),
     ]).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -309,6 +313,7 @@ function MilestoneDot({ reached, isNext, isFar, isLatest }: { reached: boolean; 
         ])
       ).start();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reached]);
 
   useEffect(() => {
@@ -322,6 +327,7 @@ function MilestoneDot({ reached, isNext, isFar, isLatest }: { reached: boolean; 
         ])
       ).start();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLatest]);
 
   if (!reached) {
@@ -422,6 +428,7 @@ function SilentReward({ totalDays, fadeAnim }: { totalDays: number; fadeAnim: An
         ])
       ).start();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [milestone]);
 
   if (!milestone) return null;
@@ -523,6 +530,7 @@ function PrivateSpaceCard({
       toValue: isFocused ? 1 : 0, duration: 300,
       easing: Easing.out(Easing.cubic), useNativeDriver: false,
     }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isFocused]);
 
   const showFeedback = useCallback((key: 'kept' | 'released') => {
@@ -707,6 +715,7 @@ export default function ProgressScreen() {
       Animated.timing(spaceFade,    { toValue: 1, duration: 600, useNativeDriver: true }),
       Animated.timing(historyFade,  { toValue: 1, duration: 600, useNativeDriver: true }),
     ]).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useFocusEffect(useCallback(() => {

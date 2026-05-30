@@ -242,13 +242,13 @@ export default function EveningAnchorScreen() {
       <Animated.View style={[styles.center, { opacity: fadeAnim, transform: [{ translateY: slideAnim }] }]}>
         {q3Text.trim() ? (
           <>
-            <Text style={styles.closeSaved}>"{q3Text.trim()}"</Text>
-            <Text style={styles.closeBody}>— that's yours.</Text>
+            <Text style={styles.closeSaved}>{`"${q3Text.trim()}"`}</Text>
+            <Text style={styles.closeBody}>{"— that's yours."}</Text>
             <Text style={styles.closeCarry}>Carry that into tomorrow.</Text>
           </>
         ) : (
           <>
-            <Text style={styles.closeBody}>That's okay.</Text>
+            <Text style={styles.closeBody}>{"That's okay."}</Text>
             <Text style={styles.closeCarry}>Rest is enough.</Text>
           </>
         )}

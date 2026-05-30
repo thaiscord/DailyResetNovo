@@ -31,7 +31,7 @@
         "arrival": {
           "label": "RESET RITUAL",
           "heading": "You are allowed\nto pause.",
-          "subheading": "Before the day begins — one breath."
+          "subheading": "One breath. Right here, right now."
         },
         "release": {
           "label": "RELEASE",
@@ -144,7 +144,7 @@
       },
       "today_action": {
         "title": "Today's Action",
-        "content": "Before checking your phone, write one sentence about something you're looking forward to — even something small. One sentence is enough."
+        "content": "Write one sentence about something you're looking forward to — even if it's something small. Sometimes remembering what could still happen can gently change the direction of your day."
       },
       "why_it_matters": {
         "title": "Why it matters",
@@ -516,7 +516,7 @@
       },
       "word_of_day": "PRESENT",
       "notification_copy": "Seven days. What does that say about you? Come find out.",
-      "evening_reflection": "What feels different this evening compared to the evening seven days ago?",
+      "evening_reflection": "What feels different now compared to seven days ago?",
       "completion_message": {
         "day_label": "DAY 7",
         "heading": "One full week.\nYou stayed.",
@@ -587,7 +587,7 @@
         "content": "What steals your attention most often without your permission?"
       },
       "word_of_day": "QUIET",
-      "notification_copy": "Before the noise takes over — one quiet moment.",
+      "notification_copy": "One quiet moment. Just for you.",
       "evening_reflection": "When did you lose your attention today? When did you reclaim it?",
       "completion_message": {
         "day_label": "DAY 8",
@@ -648,7 +648,7 @@
       },
       "today_action": {
         "title": "Today's Action",
-        "content": "Write your one most important task on a piece of paper. Put it somewhere visible. Do that before anything else today."
+        "content": "Write your one most important task on a piece of paper. Put it somewhere visible. Start there."
       },
       "why_it_matters": {
         "title": "Why it matters",
@@ -864,7 +864,7 @@
       },
       "today_action": {
         "title": "Today's Action",
-        "content": "At the end of the day, before sleep, spend 3 minutes doing nothing. No phone. No recap. Just rest in the quiet."
+        "content": "Take 3 minutes to do nothing. No phone. No recap. Just rest in the quiet."
       },
       "why_it_matters": {
         "title": "Why it matters",
@@ -1020,7 +1020,7 @@
       },
       "word_of_day": "TRUST",
       "notification_copy": "Two weeks in. There is something you have not noticed yet.",
-      "evening_reflection": "What is different about tonight compared to two weeks ago?",
+      "evening_reflection": "What is different about now compared to two weeks ago?",
       "completion_message": {
         "day_label": "DAY 14",
         "heading": "Two weeks complete.\nYou are building something.",
@@ -2100,7 +2100,7 @@
       },
       "word_of_day": "ARRIVING",
       "notification_copy": "One day left. What will tomorrow feel like?",
-      "evening_reflection": "How does tonight feel different from the night you started?",
+      "evening_reflection": "How does this feel different from when you first started?",
       "completion_message": {
         "day_label": "DAY 29",
         "heading": "One more step\ntomorrow.",

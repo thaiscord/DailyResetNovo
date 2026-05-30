@@ -1,14 +1,13 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Alert, TextInput, Modal, Animated, Platform,
+  TextInput, Modal, Animated, Platform,
 } from 'react-native';
 import { DailyResetLogo } from '../../components/DailyResetLogo';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter } from 'expo-router';
-import { getItem, setItem, removeItem, StorageKeys } from '../../hooks/useStorage';
-import { clearAllDailyEntries } from '../../utils/dailyEntries';
+import { useRouter, useFocusEffect } from 'expo-router';
+import { getItem, setItem, StorageKeys } from '../../hooks/useStorage';
 import { clearAllUserData } from '../../utils/resetEmotionalState';
 // DEV-only time travel — functions are no-ops in production builds
 import {
@@ -19,7 +18,6 @@ import {
   grantPremium        as devGrantPremium,
 } from '../../utils/devTimeTravel';
 import { getAppDateOffset } from '../../utils/appDate';
-declare const __DEV__: boolean;
 import { useProgress } from '../../hooks/useProgress';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { useLanguage, type Lang } from '../../hooks/useLanguage';
@@ -30,11 +28,12 @@ import { formatNotifDisplay, cancelNotificationsForLanguageChange } from '../../
 import {
   ALL_PROFILES,
   EmotionalProfile,
-  getProfileDescription,
   getProfileDescriptionShort,
   getProfileLabel,
   getProfileSubtitle,
 } from '../../utils/emotionalProfile';
+
+declare const __DEV__: boolean;
 
 // ─── Terms of Service content ────────────────────────────────────────────────
 const TERMS_SECTIONS = [
@@ -576,6 +575,7 @@ function SettingsRowAnimated({ index, icon, label, value, isDanger, onPress }: {
   const opacity    = useRef(new Animated.Value(0)).current;
   const translateX = useRef(new Animated.Value(-6)).current;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     Animated.parallel([
       Animated.timing(opacity,    { toValue: 1, duration: 400, delay: index * 60, useNativeDriver: true }),
@@ -658,12 +658,12 @@ export default function ProfileScreen() {
     setName(n); setNotifTime(t); setNotifExact(exact); setGoals(g); setLangState(l);
     // Inicializa check visível para o idioma carregado
     if (langCheckOpacity[l]) langCheckOpacity[l].setValue(1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => { loadSettings(); }, [loadSettings]);
 
   // Recarrega ao focar na aba (pega mudanças feitas na tela de settings)
-  const { useFocusEffect } = require('expo-router');
   useFocusEffect(useCallback(() => { loadSettings(); }, [loadSettings]));
 
   const handleSelectLang = async (selected: Lang) => {
@@ -996,10 +996,6 @@ export default function ProfileScreen() {
           <Text style={styles.sectionEyebrow}>{t('profile.settings.title')}</Text>
           {rows.map((row, index) => {
             const isDanger = 'danger' in row && row.danger;
-            const opacity    = new Animated.Value(0);
-            const translateX = new Animated.Value(-8);
-            // Note: estas refs são criadas inline apenas para o efeito visual —
-            // o componente usa useRef corretamente no SettingsRowAnimated abaixo.
             return (
               <SettingsRowAnimated
                 key={row.label}

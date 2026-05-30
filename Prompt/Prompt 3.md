@@ -1,58 +1,91 @@
-BUG CRÍTICO — Resetar meus dados ainda não funciona no Web/Vercel
+Perform a complete content audit of all Daily Reset actions, reflections, prompts, exercises, recovery paths, journaling prompts and mindset-related instructions.
 
-A correção anterior não resolveu. Agora preciso de investigação real, não tentativa genérica.
+Objective:
 
-TAREFA:
-1. Encontrar exatamente o botão visível “Resetar meus dados” / “Apagar meus dados” na aba Você/Profile.
-2. Confirmar qual função está conectada ao onPress/onClick desse botão.
-3. Adicionar um console.log diretamente dentro do onPress/onClick do botão:
+Identify and replace any content that depends on an impossible, restrictive or time-sensitive context.
 
-console.log("DELETE DATA BUTTON CLICKED - REAL BUTTON");
+Examples of problematic patterns:
 
-4. Se esse log não aparecer no navegador, significa que o botão certo não está conectado.
+- "Before picking up your phone"
+- "When you wake up"
+- "Before leaving home"
+- "Before going to work"
+- "At lunch time"
+- "Tonight"
+- "This morning"
+- "When you arrive at the office"
+- "Before opening social media"
+- Any instruction that assumes a specific time of day, location, routine or behavior.
 
-5. Criar uma função definitiva resetWebAppData() e chamar diretamente no botão real.
+Why:
 
-A função deve:
-- limpar localStorage
-- limpar sessionStorage
-- limpar AsyncStorage
-- limpar Zustand persist stores, usando os nomes reais das stores
-- limpar IndexedDB
-- desregistrar service workers
-- limpar caches do navegador via caches.keys()
-- depois redirecionar com window.location.replace("/")
+Daily Reset can be opened:
+- at 7 AM
+- at 2 PM
+- at 11 PM
+- during work
+- during vacation
+- at home
+- on a flight
+- while commuting
 
-Adicionar logs para cada etapa:
-console.log("Before reset localStorage", Object.keys(localStorage));
-console.log("Clearing localStorage");
-console.log("Clearing sessionStorage");
-console.log("Clearing AsyncStorage");
-console.log("Clearing IndexedDB");
-console.log("Clearing caches");
-console.log("Unregistering service workers");
-console.log("RESET FINISHED - RELOADING");
+Content should remain meaningful regardless of when or where the user opens the app.
 
-IMPORTANTE:
-Não criar função solta sem uso.
-Conectar diretamente ao botão real visível na interface.
+Audit rules:
 
-Também procurar por:
-- persist()
-- createJSONStorage
-- zustand
-- AsyncStorage
-- MMKV
-- storage keys
-- onboardingCompleted
-- hasCompletedOnboarding
-- dailyReset
-- progress
-- journal
-- mindset
-- recoveryPath
+1. Preserve the original emotional intention of every exercise.
 
-Depois do reset, o app precisa voltar para a primeira tela como usuário novo.
+2. Replace time-dependent instructions with timeless alternatives.
 
-Não alterar design.
-Apenas corrigir o reset real.
+3. Prefer wording such as:
+
+- "Take a moment..."
+- "Pause for a minute..."
+- "Write a sentence about..."
+- "Notice..."
+- "Think about..."
+- "Reflect on..."
+- "Consider..."
+
+4. Avoid:
+
+- coach language
+- productivity guru language
+- hustle culture
+- forced positivity
+- exaggerated motivation
+
+5. Maintain Daily Reset's identity:
+
+- calm
+- premium
+- emotionally intelligent
+- reflective
+- human
+
+6. Ensure all replacements feel natural and realistic.
+
+7. Review every supported language:
+
+- Portuguese
+- English
+- Spanish
+- French
+- German
+
+8. Do not use machine-translated wording.
+
+Each language should sound as if written by a native speaker.
+
+9. Produce a report listing:
+
+- Every content item changed
+- Original text
+- New text
+- Reason for change
+
+10. Apply the approved changes across all i18n translation files.
+
+Goal:
+
+Every Daily Reset exercise, reflection and prompt should make sense at any hour, in any country, and in any life situation without requiring a specific moment of the day or a specific routine.

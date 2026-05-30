@@ -12,15 +12,6 @@ export interface DailyStateOption {
   labelPt: string;
   labelEs: string;
   labelFr: string;
-  icon: string; // Ionicon name
-}
-
-export interface DailyStateOption {
-  key: DailyState & string;
-  label: string;
-  labelPt: string;
-  labelEs: string;
-  labelFr: string;
   labelDe: string;
   icon: string;
 }

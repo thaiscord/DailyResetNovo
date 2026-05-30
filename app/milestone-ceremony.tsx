@@ -407,7 +407,7 @@ export default function MilestoneCeremonyScreen() {
                 : getActiveLang() === 'fr' ? 'UNE QUESTION POUR TOI'
                 : 'A QUESTION FOR YOU'}
             </Text>
-            <Text style={styles.reflectionText}>"{reflection}"</Text>
+            <Text style={styles.reflectionText}>{`"${reflection}"`}</Text>
           </View>
         </FadeUp>
 

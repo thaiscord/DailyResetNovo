@@ -78,7 +78,7 @@ export default function NotificationPermission() {
 
         {/* Body */}
         <Text style={styles.body}>
-          We'll send one gentle reminder each day.{'\n'}
+          {"We'll send one gentle reminder each day."}{'\n'}
           No spam. No guilt.{'\n'}
           Just a moment waiting for you.
         </Text>
@@ -89,7 +89,7 @@ export default function NotificationPermission() {
         </Animated.View>
 
         {/* Promise */}
-        <Text style={styles.promise}>One notification per day, maximum.{'\n'}Never more. That's a promise.</Text>
+        <Text style={styles.promise}>{"One notification per day, maximum."}{'\n'}{"Never more. That's a promise."}</Text>
       </Animated.View>
 
       {/* Footer */}
@@ -101,7 +101,7 @@ export default function NotificationPermission() {
         </TouchableOpacity>
 
         <TouchableOpacity onPress={handleSkip} activeOpacity={0.6} style={styles.skipRow}>
-          <Text style={styles.skipText}>I'll remember on my own</Text>
+          <Text style={styles.skipText}>{"I'll remember on my own"}</Text>
         </TouchableOpacity>
       </View>
     </View>

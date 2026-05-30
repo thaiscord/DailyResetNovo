@@ -1,7 +1,7 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, Animated, Easing, FlatList, Dimensions, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import { useRouter, useFocusEffect } from 'expo-router';
+import { useFocusEffect } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../../theme';
 import { mindsetCards, mindsetCategories, rituals, dailyResetsExtended, type MindsetCard } from '../../data';
@@ -207,116 +207,6 @@ const EMOTION_ADAPTIVE_DE: Record<EmotionKey, { eyebrow: string; hint: string }>
   anxious:     { eyebrow: 'Ein bisschen Ruhe.',                hint: 'Das Rauschen wird leiser. Der Raum bleibt.' },
 };
 
-// ─── Continuity phrases (Problem 3 + 7) ──────────────────────────────────────
-const CONTINUITY_PT = [
-  'Voltar também é progresso.',
-  'Menos ruído. Mais presença.',
-  'Nem todo cansaço precisa virar culpa.',
-  'Você não precisa correr para recomeçar.',
-  'Seu ritmo também merece respeito.',
-  'Há dias que pedem silêncio.',
-  'Pausar não é desaparecer.',
-  'Pequenos retornos contam.',
-  'Seu espaço continua aqui.',
-  'Nem tudo precisa ser resolvido agora.',
-  'Algo está evoluindo silenciosamente.',
-  'Amanhã algo novo chega.',
-];
-const CONTINUITY_EN = [
-  'Returning is also progress.',
-  'Less noise. More presence.',
-  'Not every exhaustion needs to become guilt.',
-  "You don't have to rush to begin again.",
-  'Your rhythm deserves respect too.',
-  'Some days ask for silence.',
-  'Pausing is not disappearing.',
-  'Small returns count.',
-  'Your space is still here.',
-  'Not everything needs to be resolved right now.',
-  'Something is quietly evolving.',
-  'Something new arrives tomorrow.',
-];
-const CONTINUITY_ES = [
-  'Volver también es avanzar.',
-  'Menos ruido. Más presencia.',
-  'No todo cansancio necesita convertirse en culpa.',
-  'No necesitas correr para volver a empezar.',
-  'Tu ritmo también merece respeto.',
-  'Hay días que piden silencio.',
-  'Pausar no es desaparecer.',
-  'Los pequeños regresos cuentan.',
-  'Tu espacio sigue aquí.',
-  'No todo necesita resolverse ahora.',
-  'Algo está evolucionando en silencio.',
-  'Mañana llega algo nuevo.',
-];
-
-const CONTINUITY_FR = [
-  'Revenir, c\'est aussi avancer.',
-  'Moins de bruit. Plus de présence.',
-  'Toute fatigue n\'a pas besoin de devenir culpabilité.',
-  'Tu n\'as pas besoin de te précipiter pour recommencer.',
-  'Ton rythme mérite aussi du respect.',
-  'Certains jours demandent le silence.',
-  'Faire une pause, ce n\'est pas disparaître.',
-  'Les petits retours comptent.',
-  'Ton espace est toujours là.',
-  'Tout n\'a pas besoin d\'être résolu maintenant.',
-  'Quelque chose évolue tranquillement.',
-  'Quelque chose de nouveau arrive demain.',
-];
-const CONTINUITY_DE = [
-  'Zurückkehren ist auch Fortschritt.',
-  'Weniger Rauschen. Mehr Präsenz.',
-  'Nicht jede Erschöpfung muss zu Schuldgefühlen werden.',
-  'Du musst dich nicht beeilen, um neu anzufangen.',
-  'Dein Rhythmus verdient auch Respekt.',
-  'Manche Tage brauchen Stille.',
-  'Pausieren ist kein Verschwinden.',
-  'Kleine Rückkehren zählen.',
-  'Dein Raum ist noch hier.',
-  'Nicht alles muss jetzt gelöst werden.',
-  'Etwas entwickelt sich still.',
-  'Morgen kommt etwas Neues.',
-];
-
-function getContinuityPhrase(day: number, language: string): string {
-  const phrases = language === 'pt' ? CONTINUITY_PT : language === 'es' ? CONTINUITY_ES : language === 'fr' ? CONTINUITY_FR : language === 'de' ? CONTINUITY_DE : CONTINUITY_EN;
-  return phrases[day % phrases.length]!;
-}
-
-// ─── Day-range progressive depth phrases (Corrections 5 + 11) ────────────────
-const DAY_RANGE_PT: Array<[number, number, string]> = [
-  [1,  7,  'Acolhimento. Descompressão. Silêncio.'],
-  [8,  20, 'Clareza começa aqui. Devagar.'],
-  [21, 45, 'Identidade e presença. Algo está se formando.'],
-  [46, Infinity, 'Expansão. O ritmo ganhou forma.'],
-];
-const DAY_RANGE_EN: Array<[number, number, string]> = [
-  [1,  7,  'Welcome. Decompression. Quiet presence.'],
-  [8,  20, 'Clarity begins here. Slowly.'],
-  [21, 45, 'Identity and presence. Something is forming.'],
-  [46, Infinity, 'Expansion. The rhythm has taken shape.'],
-];
-const DAY_RANGE_ES: Array<[number, number, string]> = [
-  [1,  7,  'Acogida. Descompresión. Silencio.'],
-  [8,  20, 'La claridad empieza aquí. Despacio.'],
-  [21, 45, 'Identidad y presencia. Algo está tomando forma.'],
-  [46, Infinity, 'Expansión. El ritmo ya tiene forma.'],
-];
-const DAY_RANGE_FR: Array<[number, number, string]> = [
-  [1,  7,  'Accueil. Décompression. Présence tranquille.'],
-  [8,  20, 'La clarté commence ici. Doucement.'],
-  [21, 45, 'Identité et présence. Quelque chose se forme.'],
-  [46, Infinity, 'Expansion. Le rythme a pris forme.'],
-];
-const DAY_RANGE_DE: Array<[number, number, string]> = [
-  [1,  7,  'Ankommen. Entlasten. Leise präsent sein.'],
-  [8,  20, 'Klarheit beginnt hier. Langsam.'],
-  [21, 45, 'Identität und Präsenz. Etwas nimmt Form an.'],
-  [46, Infinity, 'Entfaltung. Der Rhythmus hat seine Form gefunden.'],
-];
-
 // ─── Emotional pause interludes — every 5 cards (Problem 3) ──────────────────
 const PAUSE_PT = [
   'Pare alguns segundos antes do próximo.',
@@ -383,14 +273,6 @@ const CATEGORY_HEADERS: Record<string, { pt: string; en: string; es: string; fr:
   Momentum:   { pt: 'Um passo de cada vez é o suficiente.', en: 'One step at a time is enough.',                 es: 'Un paso a la vez es suficiente.',               fr: 'Un pas à la fois est suffisant.',              de: 'Eine Sache nach der anderen ist genug.' },
 };
 
-function getDayRangePhrase(day: number, language: string): string {
-  const ranges = language === 'pt' ? DAY_RANGE_PT : language === 'es' ? DAY_RANGE_ES : language === 'fr' ? DAY_RANGE_FR : language === 'de' ? DAY_RANGE_DE : DAY_RANGE_EN;
-  for (const [min, max, phrase] of ranges) {
-    if (day >= min && day <= max) return phrase;
-  }
-  return ranges[ranges.length - 1]![2];
-}
-
 // ─── Scale micro-interaction card (Prompt 7, correction 7) ──────────────────
 function ScaleCard({ children, onPress, cardStyle }: { children: React.ReactNode; onPress: () => void; cardStyle?: any }) {
   const scale   = useRef(new Animated.Value(1)).current;
@@ -440,6 +322,7 @@ function FadeInCard({ children, delay = 0, breathe = false }: { children: React.
       };
       loop();
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -466,7 +349,6 @@ const PROFILE_ALL_HEADERS: Record<string, { pt: string; en: string; es: string; 
 
 // ─── Componente principal ─────────────────────────────────────────────────────
 export default function MindsetScreen() {
-  const router = useRouter();
   const { progress } = useProgress();
   const { t, lang } = useLanguage();
   const { profile } = useEmotionalProfile();
@@ -491,6 +373,7 @@ export default function MindsetScreen() {
     };
     pulse();
     return () => ambientPulse.stopAnimation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useFocusEffect(useCallback(() => {
@@ -525,6 +408,7 @@ export default function MindsetScreen() {
         recFadeAnim.setValue(1);
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []));
 
   const currentDay = progress.currentDay;

@@ -71,7 +71,7 @@ export default function JournalScreen() {
   const [selected, setSelected] = useState<DailyEntry | null>(null);
   // Start as false — data loads immediately on mount via useEffect below.
   // Avoids blank→content flash when switching to this tab for the first time.
-  const [loading, setLoading] = useState(false);
+  const [loading, _setLoading] = useState(false);
 
   // Load immediately on mount so data is ready before the user first visits.
   // With lazy:false the screen mounts at app start, so this runs upfront.
@@ -137,6 +137,7 @@ function RevealCard({ delay = 0, children }: { delay?: number; children: React.R
   const translateY = useRef(new Animated.Value(10)).current;
   useEffect(() => {
     softCardReveal(opacity, translateY, delay).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <Animated.View style={{ opacity, transform: [{ translateY }] }}>
@@ -149,7 +150,7 @@ function RevealCard({ delay = 0, children }: { delay?: number; children: React.R
 
 function EntryCard({ entry, onPress }: { entry: DailyEntry; onPress: () => void }) {
   const { t, lang } = useLanguage();
-  const locale = getDateLocale(lang);
+  const _locale = getDateLocale(lang);
   const dateObj = new Date(entry.date + 'T12:00:00');
   const dateShort = lang === 'pt'
     ? dateObj.toLocaleDateString('pt-BR', { day: 'numeric', month: 'long' })
@@ -256,6 +257,7 @@ function EntryModal({ entry, onClose }: { entry: DailyEntry; onClose: () => void
         setAfterResetPrompt(entry.momentPrompt?.trim() || null);
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [entry.date]);
 
   return (
@@ -305,7 +307,7 @@ function EntryModal({ entry, onClose }: { entry: DailyEntry; onClose: () => void
           <View style={styles.modalSection}>
             <Text style={styles.modalLabel}>{t('journal.modal.label.action')}</Text>
             {entry.actionPrompt ? (
-              <Text style={styles.modalPrompt}>"{entry.actionPrompt}"</Text>
+              <Text style={styles.modalPrompt}>{`"${entry.actionPrompt}"`}</Text>
             ) : null}
             {entry.action_response ? (
               <Text style={styles.modalContent}>{entry.action_response}</Text>

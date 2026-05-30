@@ -93,7 +93,7 @@ function EntryCard({
 
       {/* Content */}
       <TouchableOpacity onPress={() => { setExpanded(x => !x); setMenuOpen(false); }} activeOpacity={0.82}>
-        <Text style={styles.cardPrompt}>"{entry.prompt}"</Text>
+        <Text style={styles.cardPrompt}>{`"${entry.prompt}"`}</Text>
         <Text style={styles.cardText} numberOfLines={expanded ? undefined : 3}>{entry.text}</Text>
         {!expanded && entry.text.length > 100 && (
           <Text style={styles.cardMore}>{t('reflection.action.readmore')}</Text>
@@ -132,7 +132,7 @@ function EditModal({ entry, onSave, onCancel }: {
         </View>
         <View style={styles.modalPromptRow}>
           <View style={styles.modalAccent} />
-          <Text style={styles.modalPromptText}>"{entry.prompt}"</Text>
+          <Text style={styles.modalPromptText}>{`"${entry.prompt}"`}</Text>
         </View>
         <ScrollView style={{ flex: 1 }} keyboardShouldPersistTaps="handled">
           <TextInput

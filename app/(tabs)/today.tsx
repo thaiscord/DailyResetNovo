@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Animated, Easing, Image, AppState, AppStateStatus, TextInput,
+  Animated, Easing, AppState, AppStateStatus, TextInput,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter, useFocusEffect } from 'expo-router';
@@ -13,21 +13,14 @@ import { useWeeklyRecap } from '../../hooks/useWeeklyRecap';
 import { getItem, setItem, StorageKeys, getLocalDateKey } from '../../hooks/useStorage';
 import { saveDailyEntry, getDailyEntry, type DailyEntry } from '../../utils/dailyEntries';
 import { DAILY_STATE_OPTIONS, getDailyStateBanner, getAdaptiveWord, getAdaptiveDepth, getStateCategory, type DailyState } from '../../utils/dailyState';
-import { getCurrentChapterName } from '../../utils/milestoneSystem';
+import { getCurrentChapterName, CEREMONY_MILESTONES } from '../../utils/milestoneSystem';
 import { getActionPlaceholder } from '../../utils/writingPlaceholders';
-import FocusTimerModal from '../../components/FocusTimer';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../../theme';
 import {
   getStreakPhrase,
   getCompletionMessage,
-  getDailySubheadline,
-  getDailyNarrative,
-  getMomentumNarrative,
-  getComebackNarrative,
-  getFutureSelfNarrative,
   getIdentityLabel,
   getStreakBadgeLabel,
-  getStreakTier,
   getTomorrowAnticipateCopy,
   getDynamicHeadline,
   getPreCompletionBanner,
@@ -37,22 +30,12 @@ import {
   type EmotionalState,
 } from '../../utils/streakCopy';
 
-const SUBHEADLINE_KEYS = [
-  'today.subheadline.0',
-  'today.subheadline.1',
-  'today.subheadline.2',
-  'today.subheadline.3',
-  'today.subheadline.4',
-  'today.subheadline.5',
-  'today.subheadline.6',
-];
-import { didReturnAfterAbsence } from '../../utils/progressionEngine';
+import { didReturnAfterAbsence, getContinuityPhrase } from '../../utils/progressionEngine';
 import { getAppNow } from '../../utils/appDate';
 import ComebackCard from '../../components/ComebackCard';
 import { useContentMemory } from '../../hooks/useContentMemory';
 import { getReflectionWithId } from '../../utils/contentSystem';
 import { getInsightForContext, shouldShowCompletionInsight } from '../../utils/socialProof';
-import CommunityInsightCard from '../../components/CommunityInsightCard';
 import { detectComebackState } from '../../utils/comebackSystem';
 import {
   cancelInactivityNotifications,
@@ -62,19 +45,16 @@ import {
   scheduleMilestoneDeliveryNotification,
 } from '../../utils/notifications';
 import { track } from '../../utils/analytics';
-import { getTimeGreeting, getDayWord, getMoodAwareGreeting } from '../../utils/homeGreeting';
+import { getDayWord } from '../../utils/homeGreeting';
 import { useMoodHistory } from '../../hooks/useMoodHistory';
-import FloatingMomentumBadge from '../../components/ui/FloatingMomentumBadge';
 import { MoodBadge } from '../../components/ui/MoodBadge';
 import { maybeRequestReviewAfterComeback } from '../../utils/reviewRequest';
 import { useNotificationScheduler } from '../../hooks/useNotificationScheduler';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { getProfileBanner, getHeavyMoodAdaptiveBanner } from '../../utils/emotionalProfile';
-import { getContinuityPhrase, getEmotionalPhase } from '../../utils/progressionEngine';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useRitualIntention } from '../../hooks/useRitualIntention';
 import { getIntentionBanner } from '../../utils/ritualIntention';
-import { CEREMONY_MILESTONES } from '../../utils/milestoneSystem';
 import { useMilestones } from '../../hooks/useMilestones';
 import {
   hapticLight,
@@ -91,6 +71,16 @@ import {
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableOpacity);
 
+const SUBHEADLINE_KEYS = [
+  'today.subheadline.0',
+  'today.subheadline.1',
+  'today.subheadline.2',
+  'today.subheadline.3',
+  'today.subheadline.4',
+  'today.subheadline.5',
+  'today.subheadline.6',
+];
+
 const CHECKLIST_KEYS = [
   { id: 'morning',        tKey: 'today.checklist.morning',        icon: 'sunny-outline' },
   { id: 'action',         tKey: 'today.checklist.action',         icon: 'flash-outline' },
@@ -98,13 +88,6 @@ const CHECKLIST_KEYS = [
   { id: 'nodistractions', tKey: 'today.checklist.nodistractions', icon: 'notifications-off-outline' },
   { id: 'evening',        tKey: 'today.checklist.evening',        icon: 'moon-outline' },
 ];
-
-function getGreetingKey(): 'greeting.morning' | 'greeting.afternoon' | 'greeting.evening' {
-  const h = new Date().getHours();
-  if (h < 12) return 'greeting.morning';
-  if (h < 18) return 'greeting.afternoon';
-  return 'greeting.evening';
-}
 
 export default function TodayScreen() {
   const router = useRouter();
@@ -132,7 +115,7 @@ export default function TodayScreen() {
     ? getInsightForContext('completion', progress.currentDay, lang)
     : null;
   // Daily Checklist — persiste via useHabits (mesma fonte de verdade da tela Habits)
-  const { todayCompleted: checkItems, toggleHabit: persistToggle, todayKey: habitTodayKey, habitLog, habits } = useHabits();
+  const { todayCompleted: checkItems, toggleHabit: persistToggle, habitLog, habits } = useHabits();
   // Weekly recap auto-trigger
   const { shouldShowRecap, loading: recapLoading } = useWeeklyRecap(progress, weeklyScore, habitLog, habits.length);
   const recapNavigatedRef = useRef(false);
@@ -158,8 +141,8 @@ export default function TodayScreen() {
   }, [loading]);
   // justCompleted: APENAS para saber se animamos o card (não controla renderização)
   const [justCompleted, setJustCompleted] = useState(false);
-  const [timerMode, setTimerMode] = useState<'focus' | 'detox' | null>(null);
-  const [userName, setUserName] = useState<string>('');
+  const [_timerMode, _setTimerMode] = useState<'focus' | 'detox' | null>(null);
+  const [_userName, setUserName] = useState<string>('');
   const [selectedMood, setSelectedMood] = useState<'hard' | 'okay' | 'good' | null>(null);
   const [wordExpanded, setWordExpanded] = useState(false);
   const [yesterdayEntry, setYesterdayEntry] = useState<DailyEntry | null>(null);
@@ -170,7 +153,7 @@ export default function TodayScreen() {
   const breatheAnim      = useRef(new Animated.Value(1)).current;
   const btnSlideAnim     = useRef(new Animated.Value(100)).current;
   const btnOpacity       = useRef(new Animated.Value(0)).current;
-  const glowAnim         = useRef(new Animated.Value(0)).current;
+  const _glowAnim        = useRef(new Animated.Value(0)).current;
   const pulseLoop        = useRef<Animated.CompositeAnimation | null>(null);
   const breatheLoop      = useRef<Animated.CompositeAnimation | null>(null);
   const lastTrackedDayRef = useRef('');
@@ -206,6 +189,7 @@ export default function TodayScreen() {
       duration: 200,
       useNativeDriver: false,
     }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordExpanded]);
 
   // Auto-navigate to weekly recap when Sunday evening / Monday trigger fires
@@ -215,6 +199,7 @@ export default function TodayScreen() {
       const timer = setTimeout(() => router.push('/weekly-recap'), 1400);
       return () => clearTimeout(timer);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [shouldShowRecap, loading, recapLoading]);
 
 
@@ -243,6 +228,7 @@ export default function TodayScreen() {
     };
     const sub = AppState.addEventListener('change', handleAppState);
     return () => sub.remove();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reload]);
 
   // Se carregou como já-completado (sessão anterior), mostra card sem animação
@@ -255,23 +241,24 @@ export default function TodayScreen() {
       completedAnim.setValue(0);
       setJustCompleted(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isCompletedToday]);
 
   const dayData        = getDayContent(progress.currentDay) ?? getDayContent(1)!;
   const tomorrowData   = getDayContent(progress.currentDay + 1) ?? null;
   const canAccess      = true;
   const emotionalState = getEmotionalState(progress.streak, progress.completedDays, weeklyScore);
-  const returnedAfterAbsence = didReturnAfterAbsence(progress.completedDays, progress.currentDay);
+  const _returnedAfterAbsence = didReturnAfterAbsence(progress.completedDays, progress.currentDay);
   const comeback = detectComebackState(progress.completedByDate, progress.completedDays.length);
 
   // Retention routing: return experience → mantra selection → identity question
   // Must be declared AFTER comeback so the closure captures it correctly.
   useEffect(() => {
     if (loading) return;
-    const daysMissed = comeback.daysMissed;
+    const _daysMissed = comeback.daysMissed;
     const streak = progress.streak;
     async function checkRetentionRouting() {
-      const todayStr = getLocalDateKey();
+      const _todayStr = getLocalDateKey();
       // System 7: mantra selection after Day 3
       if (streak >= 3) {
         const shown = await getItem<boolean>(StorageKeys.MANTRA_SHOWN, false);
@@ -284,12 +271,13 @@ export default function TodayScreen() {
       }
     }
     checkRetentionRouting();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [loading, comeback.daysMissed, progress.streak]);
 
   // Banner priority: comeback → daily state → heavy mood → intention (ritual) → profile → generic
   const dailyStateBanner = getDailyStateBanner(dailyState);
   const heavyMoodBanner = getHeavyMoodAdaptiveBanner(moodHistory.heavyDayCount, progress.currentDay);
-  const preCompletionBanner = comeback.isComeback
+  const _preCompletionBanner = comeback.isComeback
     ? null
     : dailyStateBanner
     ? dailyStateBanner
@@ -333,6 +321,7 @@ export default function TodayScreen() {
         }),
       ]).start();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [canAccess, todayKey]);
 
   // Idle pulse + breathe no botão enquanto não completado
@@ -352,6 +341,7 @@ export default function TodayScreen() {
       pulseLoop.current?.stop();
       breatheLoop.current?.stop();
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [completed, canAccess]);
 
   // Ritual card slow breathing glow — always active (card is always visible)
@@ -359,6 +349,7 @@ export default function TodayScreen() {
     ritualGlowLoop.current = createRitualGlowPulse(ritualGlowAnim);
     ritualGlowLoop.current.start();
     return () => ritualGlowLoop.current?.stop();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const MILESTONES     = [3, 7, 14, 21, 30, 60, 90, 100, 180, 365];
@@ -373,7 +364,7 @@ export default function TodayScreen() {
   ).current;
 
 
-  const toggleCheck = (id: string) => {
+  const _toggleCheck = (id: string) => {
     hapticLight();
     const anim = checkAnims[id];
     if (anim) bounceAnim(anim).start();
@@ -888,7 +879,7 @@ const tomorrowCatBgMap: Record<string, string> = {
   Momentum: 'rgba(61,184,106,0.10)', Calm: 'rgba(91,170,150,0.10)',
   Clarity: 'rgba(20,184,166,0.10)', Rest: 'rgba(123,140,200,0.10)',
 };
-const tomorrowCatLabelMap: Record<string, string> = {
+const _tomorrowCatLabelMap: Record<string, string> = {
   Focus: 'Focus', Rhythm: 'Rhythm', Discipline: 'Discipline',
   Courage: 'Courage', Momentum: 'Momentum', Calm: 'Calm',
   Clarity: 'Clarity', Rest: 'Rest',
@@ -907,8 +898,6 @@ function TomorrowAnticipationCard({
   daysToNext: number | null;
   emotionalState?: EmotionalState;
 }) {
-  if (!tomorrow) return null;
-
   const { t: tCard } = useLanguage();
   const dotPulse = useRef(new Animated.Value(1)).current;
 
@@ -919,7 +908,10 @@ function TomorrowAnticipationCard({
         Animated.timing(dotPulse, { toValue: 1,   duration: 2000, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
       ])
     ).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  if (!tomorrow) return null;
 
   const cat      = tomorrow.theme as DailyCategory;
   const copy     = getTomorrowAnticipateCopy(streak, nextMilestone, daysToNext, cat, emotionalState);
@@ -950,9 +942,7 @@ function TomorrowAnticipationCard({
 
       {/* Message teaser — first line only */}
       <Text style={anticipationStyles.teaser} numberOfLines={1}>
-        "{tomorrow.home_card.headline.length > 55
-          ? tomorrow.home_card.headline.slice(0, 53) + '…'
-          : tomorrow.home_card.headline}"
+        {`"${tomorrow.home_card.headline.length > 55 ? tomorrow.home_card.headline.slice(0, 53) + '…' : tomorrow.home_card.headline}"`}
       </Text>
 
       {/* Continuity copy — the retention hook */}
@@ -1014,6 +1004,7 @@ function YesterdayEchoCard({ entry, lang }: { entry: DailyEntry; lang: string })
 
   useEffect(() => {
     Animated.timing(fadeAnim, { toValue: 1, duration: 600, delay: 200, useNativeDriver: true }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const yesterday = lang === 'pt' ? 'Ontem você escreveu:' : lang === 'es' ? 'Ayer escribiste:' : lang === 'fr' ? 'Hier tu as écrit :' : lang === 'de' ? 'Gestern hast du geschrieben:' : 'Yesterday you wrote:';
@@ -1024,7 +1015,7 @@ function YesterdayEchoCard({ entry, lang }: { entry: DailyEntry; lang: string })
       <View style={echoStyles.accentDot} />
       <View style={{ flex: 1, gap: 4 }}>
         <Text style={echoStyles.eyebrow}>{yesterday}</Text>
-        <Text style={echoStyles.quote} numberOfLines={2}>"{truncated}"</Text>
+        <Text style={echoStyles.quote} numberOfLines={2}>{`"${truncated}"`}</Text>
         <Text style={echoStyles.continuity}>{continuity}</Text>
       </View>
     </Animated.View>
@@ -1076,7 +1067,7 @@ const echoStyles = StyleSheet.create({
 
 // ─── Componentes do card ──────────────────────────────────────────────────────
 
-function DailyResetCard({ data, categoryOverride, onActionSave, onReflectionSave }: {
+function DailyResetCard({ data, categoryOverride, onActionSave, onReflectionSave: _onReflectionSave }: {
   data: Ritual;
   categoryOverride?: string;
   onActionSave?: (text: string) => void;
@@ -1100,6 +1091,7 @@ function DailyResetCard({ data, categoryOverride, onActionSave, onReflectionSave
 
   useEffect(() => {
     fadeSlideIn(cardOpacity, cardTranslateY, 80).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -1157,6 +1149,7 @@ function Section({ icon, title, content, open, onToggle, inputKey, inputPlacehol
     } else {
       accordionClose(opacity, translateY).start(() => setVisible(false));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   const chevronRotate = chevronAnim.interpolate({
@@ -1213,7 +1206,7 @@ function Section({ icon, title, content, open, onToggle, inputKey, inputPlacehol
   );
 }
 
-const tomorrowCatLabel: Record<string, string> = {
+const _tomorrowCatLabel: Record<string, string> = {
   Focus: 'Focus', Rhythm: 'Rhythm', Discipline: 'Discipline',
   Courage: 'Courage', Momentum: 'Momentum', Calm: 'Calm',
   Clarity: 'Clarity', Rest: 'Rest',
@@ -1230,7 +1223,7 @@ const tomorrowCatBg: Record<string, string> = {
   Clarity: 'rgba(20,184,166,0.12)', Rest: 'rgba(123,140,200,0.12)',
 };
 
-function CompletedCard({ day, streak, totalDays, tomorrow, nextMilestone, daysToNext, returnedAfterAbsence, checklistComplete, reflection, communityInsight, reflectionPromptId }: {
+function CompletedCard({ day, streak, totalDays: _totalDays, tomorrow, nextMilestone: _nextMilestone, daysToNext: _daysToNext, returnedAfterAbsence: _returnedAfterAbsence, checklistComplete: _checklistComplete, reflection, communityInsight, reflectionPromptId }: {
   day: number;
   streak: number;
   totalDays: number;
@@ -1294,7 +1287,7 @@ function CompletedCard({ day, streak, totalDays, tomorrow, nextMilestone, daysTo
         >
           <View style={cardStyles.reflectionRowInner}>
             <Text style={cardStyles.reflectionEyebrow}>{cardT('today.reflect.eyebrow')}</Text>
-            <Text style={cardStyles.reflectionPrompt}>"{reflection}"</Text>
+            <Text style={cardStyles.reflectionPrompt}>{`"${reflection}"`}</Text>
           </View>
           <Ionicons name="create-outline" size={16} color={Colors.textMuted} />
         </TouchableOpacity>
@@ -1328,9 +1321,7 @@ function CompletedCard({ day, streak, totalDays, tomorrow, nextMilestone, daysTo
           {getCategoryTheme(tomorrow.theme as DailyCategory)}
         </Text>
         <Text style={cardStyles.tomorrowMessage} numberOfLines={2}>
-          "{tomorrow.home_card.headline.length > 65
-            ? tomorrow.home_card.headline.slice(0, 63) + '…'
-            : tomorrow.home_card.headline}"
+          {`"${tomorrow.home_card.headline.length > 65 ? tomorrow.home_card.headline.slice(0, 63) + '…' : tomorrow.home_card.headline}"`}
         </Text>
         <Text style={cardStyles.tomorrowNoPressure}>{cardT('today.tomorrow.nopressure')}</Text>
       </View>
@@ -1348,6 +1339,7 @@ function CompletedCard({ day, streak, totalDays, tomorrow, nextMilestone, daysTo
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function LockedCard({ day, onUnlock }: { day: number; onUnlock: () => void }) {
   const { t } = useLanguage();
   return (

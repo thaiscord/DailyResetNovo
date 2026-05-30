@@ -66,7 +66,7 @@ export async function clearAllUserData(): Promise<void> {
       try { await AsyncStorage.clear(); } catch(e) { console.log(e); }
 
       try {
-        if (window.indexedDB && window.indexedDB.databases) {
+        if (window.indexedDB && typeof window.indexedDB.databases === 'function') {
           const dbs = await indexedDB.databases();
           await Promise.all(
             dbs.map(db => db.name

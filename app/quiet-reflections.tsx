@@ -75,7 +75,7 @@ function Fragment({ entry, fi, delay }: { entry: ClearMindEntry; fi: number; del
 
   if (v === 2) return (
     <Animated.View style={[S.box, S.boxCentered, { opacity, transform: [{ translateY: ty }] }]}>
-      {promptText ? <Text style={[S.prompt, { textAlign: 'center' }]}>"{promptText}"</Text> : null}
+      {promptText ? <Text style={[S.prompt, { textAlign: 'center' }]}>{`"${promptText}"`}</Text> : null}
       <Text style={S.textCentered}>{entry.text}</Text>
       <Text style={S.dateCentered}>{fmt(entry.date)}</Text>
     </Animated.View>
@@ -84,7 +84,7 @@ function Fragment({ entry, fi, delay }: { entry: ClearMindEntry; fi: number; del
   return (
     <Animated.View style={[S.box, v === 1 && S.boxCompact, { opacity, transform: [{ translateY: ty }] }]}>
       <Text style={S.date}>{fmt(entry.date)}</Text>
-      {promptText ? <Text style={S.prompt}>"{promptText}"</Text> : null}
+      {promptText ? <Text style={S.prompt}>{`"${promptText}"`}</Text> : null}
       <Text style={S.text}>{entry.text}</Text>
     </Animated.View>
   );

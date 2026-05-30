@@ -84,6 +84,7 @@ function TabIcon({ iconName, focused }: { iconName: string; focused: boolean }) 
       tension: 160,
       useNativeDriver: true,
     }).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [focused]);
 
   return (
@@ -131,7 +132,6 @@ export default function TabsLayout() {
 
   return (
     <Tabs
-      lazy={Platform.OS !== 'web'}
       screenOptions={screenOptions}
     >
       {TABS.map(tab => (
