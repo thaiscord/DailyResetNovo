@@ -359,10 +359,15 @@ export default function MindsetScreen() {
   const [readCardIds, setReadCardIds] = useState<Set<string>>(new Set());
   const [recommendationState, setRecommendationState] = useState<'A' | 'T' | 'B'>('A');
   const [selectedEmotion, setSelectedEmotion] = useState<EmotionKey | null>(null);
-  const recFadeAnim    = useRef(new Animated.Value(1)).current;
-  const filterFadeAnim = useRef(new Animated.Value(1)).current;
-  const catHeaderAnim  = useRef(new Animated.Value(1)).current;
-  const ambientPulse   = useRef(new Animated.Value(1)).current;
+  const recFadeAnim          = useRef(new Animated.Value(1)).current;
+  const filterFadeAnim       = useRef(new Animated.Value(1)).current;
+  const catHeaderAnim        = useRef(new Animated.Value(1)).current;
+  const ambientPulse         = useRef(new Animated.Value(1)).current;
+  const otherCardsFadeAnim   = useRef(new Animated.Value(1)).current;
+  const selectedCardFadeAnim = useRef(new Animated.Value(1)).current;
+  const mindsetTranslateY    = useRef(new Animated.Value(10)).current;
+  const animSeqToken         = useRef(0);
+  const [pendingEmotion, setPendingEmotion] = useState<EmotionKey | null>(null);
 
   useEffect(() => {
     const pulse = () => {
@@ -399,12 +404,18 @@ export default function MindsetScreen() {
           } else {
             setRecommendationState('A');
             setSelectedEmotion(null);
+            setPendingEmotion(null);
+            otherCardsFadeAnim.setValue(1);
+            selectedCardFadeAnim.setValue(1);
           }
           recFadeAnim.setValue(1);
         });
       } else {
         setRecommendationState('A');
         setSelectedEmotion(null);
+        setPendingEmotion(null);
+        otherCardsFadeAnim.setValue(1);
+        selectedCardFadeAnim.setValue(1);
         recFadeAnim.setValue(1);
       }
     });
@@ -473,53 +484,94 @@ export default function MindsetScreen() {
   }, [activeCat, currentDay, archiveLimit, profile]);
 
   const handleSelectEmotion = (emotionKey: EmotionKey) => {
+    const token = ++animSeqToken.current;
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
 
-    // Persist without blocking — animation must start on the same frame as the tap.
+    // Persist without blocking — animation starts on the same frame as the tap.
     void setItem('mindset_recommendation_date', getLocalDateKey());
     void setItem('mindset_recommendation_mood', emotionKey);
 
-    // Phase 1 — fade out the emotion cards (A).
-    // Easing.in: starts slow, accelerates → natural "leaving" feel.
-    Animated.timing(recFadeAnim, {
-      toValue: 0, duration: 220,
+    // Cancel any in-progress sequence and reset per-card values.
+    otherCardsFadeAnim.stopAnimation();
+    selectedCardFadeAnim.stopAnimation();
+    recFadeAnim.stopAnimation();
+    otherCardsFadeAnim.setValue(1);
+    selectedCardFadeAnim.setValue(1);
+    mindsetTranslateY.setValue(10);
+
+    // Mark the tapped card so state A can assign the correct opacity value per card.
+    setPendingEmotion(emotionKey);
+
+    // Phase 1 — fade out non-selected cards + header text (300ms).
+    Animated.timing(otherCardsFadeAnim, {
+      toValue: 0, duration: 300,
       easing: Easing.in(Easing.sin), useNativeDriver: true,
     }).start(() => {
-      setSelectedEmotion(emotionKey);
-      setRecommendationState('T');
+      if (animSeqToken.current !== token) return;
 
-      // Defer one tick so React renders the T node before the fade-in begins.
-      // Without this, the fade-in fires while recFadeAnim is still 0 and the
-      // T content hasn't mounted yet, producing a jump instead of a smooth entry.
+      // Phase 2 — hold the selected card visible (~400ms so the app feels acknowledged).
       setTimeout(() => {
-        // Phase 2 — fade in the supportive sentence (T).
-        Animated.timing(recFadeAnim, {
-          toValue: 1, duration: 400,
-          easing: Easing.out(Easing.sin), useNativeDriver: true,
+        if (animSeqToken.current !== token) return;
+
+        // Phase 3 — fade out the selected card (300ms).
+        Animated.timing(selectedCardFadeAnim, {
+          toValue: 0, duration: 300,
+          easing: Easing.in(Easing.sin), useNativeDriver: true,
         }).start(() => {
+          if (animSeqToken.current !== token) return;
 
-          // Phase 3 — hold long enough for the user to read and absorb the sentence.
+          setSelectedEmotion(emotionKey);
+          recFadeAnim.setValue(0);
+          setRecommendationState('T');
+
+          // One frame so React renders the T node before fade-in begins.
           setTimeout(() => {
-            // Phase 4 — fade out the supportive sentence.
+            if (animSeqToken.current !== token) return;
+
+            // Phase 4 — fade in the transitional phrase (500ms).
             Animated.timing(recFadeAnim, {
-              toValue: 0, duration: 350,
-              easing: Easing.in(Easing.sin), useNativeDriver: true,
+              toValue: 1, duration: 500,
+              easing: Easing.out(Easing.sin), useNativeDriver: true,
             }).start(() => {
-              setRecommendationState('B');
+              if (animSeqToken.current !== token) return;
 
-              // One frame so React renders the B node before the fade-in begins.
+              // Phase 5 — hold phrase long enough to absorb it (1100ms).
               setTimeout(() => {
-                // Phase 5 — fade in the personalized mindset (B).
-                Animated.timing(recFadeAnim, {
-                  toValue: 1, duration: 500,
-                  easing: Easing.out(Easing.sin), useNativeDriver: true,
-                }).start();
-              }, 16);
-            });
-          }, 1300);
+                if (animSeqToken.current !== token) return;
 
+                // Phase 6 — fade out the phrase (450ms).
+                Animated.timing(recFadeAnim, {
+                  toValue: 0, duration: 450,
+                  easing: Easing.in(Easing.sin), useNativeDriver: true,
+                }).start(() => {
+                  if (animSeqToken.current !== token) return;
+
+                  recFadeAnim.setValue(0);
+                  mindsetTranslateY.setValue(10);
+                  setRecommendationState('B');
+
+                  // One frame so React renders the B node before fade-in begins.
+                  setTimeout(() => {
+                    if (animSeqToken.current !== token) return;
+
+                    // Phase 7 — fade in + slide up the personalized mindsets (500ms).
+                    Animated.parallel([
+                      Animated.timing(recFadeAnim, {
+                        toValue: 1, duration: 500,
+                        easing: Easing.out(Easing.sin), useNativeDriver: true,
+                      }),
+                      Animated.timing(mindsetTranslateY, {
+                        toValue: 0, duration: 500,
+                        easing: Easing.out(Easing.sin), useNativeDriver: true,
+                      }),
+                    ]).start();
+                  }, 16);
+                });
+              }, 1100);
+            });
+          }, 0);
         });
-      }, 0);
+      }, 400);
     });
   };
 
@@ -754,46 +806,54 @@ export default function MindsetScreen() {
             {/* ── ESTADO A: Pergunta ───────────────────────────────────────── */}
             {recommendationState === 'A' && (
               <View style={{ paddingHorizontal: Spacing.xl }}>
-                <Text style={{ fontSize: 11, letterSpacing: 1.2, color: '#C9973A', fontWeight: '600', marginBottom: 12, opacity: 0.9 }}>
-                  {t('mindset.foryou.title')}
-                </Text>
-                <Text style={{ fontSize: 18, fontWeight: '700', color: '#3D3530', lineHeight: 26, marginBottom: 16 }}>
-                  {t('mindset.foryou.question')}
-                </Text>
+                <Animated.View style={{ opacity: otherCardsFadeAnim }}>
+                  <Text style={{ fontSize: 11, letterSpacing: 1.2, color: '#C9973A', fontWeight: '600', marginBottom: 12, opacity: 0.9 }}>
+                    {t('mindset.foryou.title')}
+                  </Text>
+                  <Text style={{ fontSize: 18, fontWeight: '700', color: '#3D3530', lineHeight: 26, marginBottom: 16 }}>
+                    {t('mindset.foryou.question')}
+                  </Text>
+                </Animated.View>
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
                   {EMOTIONS.map((emotion, idx) => {
                     const emoRadius = [20, 18, 19, 18, 20][idx] ?? 18;
                     const emoPad    = [17, 16, 16, 17, 16][idx] ?? 16;
-                    const isActive  = selectedEmotion === emotion.key;
+                    const isActive  = pendingEmotion === emotion.key;
                     return (
-                      <TouchableOpacity
+                      <Animated.View
                         key={emotion.key}
                         style={{
                           width: '47%',
-                          backgroundColor: isActive ? '#F6F2E8' : '#F9F6F0',
-                          borderRadius: emoRadius,
-                          padding: emoPad,
-                          alignItems: 'center',
-                          shadowColor: '#C9A84C',
-                          shadowOffset: { width: 0, height: 3 },
-                          shadowOpacity: isActive ? 0.18 : 0.09,
-                          shadowRadius: 14,
-                          elevation: isActive ? 4 : 2,
-                          borderWidth: 1,
-                          borderColor: isActive ? 'rgba(201,168,76,0.38)' : 'rgba(201,168,76,0.14)',
+                          opacity: isActive ? selectedCardFadeAnim : otherCardsFadeAnim,
                         }}
-                        onPress={() => handleSelectEmotion(emotion.key)}
-                        activeOpacity={0.88}
                       >
-                        <Text style={{
-                          fontSize: 15,
-                          fontWeight: isActive ? '600' : '500',
-                          color: isActive ? '#2C2724' : '#5A524D',
-                          letterSpacing: 0.2,
-                          textAlign: 'center',
-                          lineHeight: 20,
-                        }}>{t('mindset.emotion.' + emotion.key)}</Text>
-                      </TouchableOpacity>
+                        <TouchableOpacity
+                          style={{
+                            backgroundColor: isActive ? '#F6F2E8' : '#F9F6F0',
+                            borderRadius: emoRadius,
+                            padding: emoPad,
+                            alignItems: 'center',
+                            shadowColor: '#C9A84C',
+                            shadowOffset: { width: 0, height: 3 },
+                            shadowOpacity: isActive ? 0.18 : 0.09,
+                            shadowRadius: 14,
+                            elevation: isActive ? 4 : 2,
+                            borderWidth: 1,
+                            borderColor: isActive ? 'rgba(201,168,76,0.38)' : 'rgba(201,168,76,0.14)',
+                          }}
+                          onPress={() => handleSelectEmotion(emotion.key)}
+                          activeOpacity={0.88}
+                        >
+                          <Text style={{
+                            fontSize: 15,
+                            fontWeight: isActive ? '600' : '500',
+                            color: isActive ? '#2C2724' : '#5A524D',
+                            letterSpacing: 0.2,
+                            textAlign: 'center',
+                            lineHeight: 20,
+                          }}>{t('mindset.emotion.' + emotion.key)}</Text>
+                        </TouchableOpacity>
+                      </Animated.View>
                     );
                   })}
                 </View>
@@ -826,7 +886,7 @@ export default function MindsetScreen() {
 
             {/* ── ESTADO B: Cards recomendados ─────────────────────────────── */}
             {recommendationState === 'B' && selectedEmotion && (
-              <>
+              <Animated.View style={{ transform: [{ translateY: mindsetTranslateY }] }}><>
                 <View style={{ paddingHorizontal: Spacing.xl, marginBottom: 12 }}>
                   <Text style={{ fontSize: 13, fontWeight: '600', color: '#3D3530', marginBottom: 4, fontStyle: 'italic' }}>
                     {lang === 'pt'
@@ -888,7 +948,7 @@ export default function MindsetScreen() {
                     </TouchableOpacity>
                   )}
                 />
-              </>
+              </></Animated.View>
             )}
 
           </Animated.View>
