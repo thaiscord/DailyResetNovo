@@ -8,8 +8,7 @@ import { mindsetCards, mindsetCategories, rituals, dailyResetsExtended, type Min
 import { useProgress } from '../../hooks/useProgress';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
-import { getItem, setItem, getLocalDateKey, StorageKeys } from '../../hooks/useStorage';
-import { getStateCategory, type DailyState } from '../../utils/dailyState';
+import { getItem, setItem, getLocalDateKey } from '../../hooks/useStorage';
 
 // ─── Access tiers ─────────────────────────────────────────────────────────────
 const ACCESS_RULES = {
@@ -388,13 +387,6 @@ export default function MindsetScreen() {
     if (Platform.OS !== 'web') { setFocusVersion(v => v + 1); }
     getItem<string[]>('mindset_read_cards', []).then(ids => setReadCardIds(new Set(ids ?? [])));
     const today = getLocalDateKey();
-    // Auto-set category from today's emotional state (only if user hasn't manually changed it)
-    if (!userChangedCatRef.current) {
-      getItem<DailyState>(StorageKeys.DAILY_STATE + '_' + today, null).then(state => {
-        const cat = getStateCategory(state);
-        if (cat) setActiveCat(cat);
-      });
-    }
     getItem<string>('mindset_recommendation_date', '').then(savedDate => {
       if (savedDate === today) {
         getItem<string>('mindset_recommendation_mood', '').then(mood => {
