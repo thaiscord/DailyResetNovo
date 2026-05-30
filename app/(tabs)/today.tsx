@@ -492,7 +492,7 @@ export default function TodayScreen() {
       <View pointerEvents="none" style={styles.ambientBottom} />
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={[styles.scroll, canAccess && !completed && styles.scrollWithBtn]}
+        contentContainerStyle={styles.scroll}
         decelerationRate="normal"
         scrollEventThrottle={16}
       >
@@ -824,33 +824,33 @@ export default function TodayScreen() {
           />
         )}
 
+        {/* Finish button — inline in the scroll flow, appears after all reset content */}
+        {!completed && (
+          <Animated.View style={[
+            styles.stickyBtnWrap,
+            {
+              opacity: btnOpacity,
+              transform: [{ translateY: btnSlideAnim }],
+            },
+          ]}>
+            <Animated.View style={[styles.completeBtn, { opacity: pulseAnim, transform: [{ scale: breatheAnim }] }]}>
+              <TouchableOpacity
+                onPress={handleComplete}
+                activeOpacity={1}
+                onPressIn={() => Animated.spring(scaleAnim, { toValue: 0.97, friction: 12, useNativeDriver: true }).start()}
+                onPressOut={() => Animated.spring(scaleAnim, { toValue: 1, friction: 6, useNativeDriver: true }).start()}
+              >
+                <Animated.View style={[styles.completeBtnInner, { transform: [{ scale: scaleAnim }] }]}>
+                  <Ionicons name="checkmark-circle" size={17} color="rgba(255,255,255,0.90)" />
+                  <Text style={styles.completeBtnText}>{t('today.cta.complete')}</Text>
+                </Animated.View>
+              </TouchableOpacity>
+            </Animated.View>
+          </Animated.View>
+        )}
+
         <View style={styles.quickRowBottomSpacer} />
       </ScrollView>
-
-      {/* CTA fixo na base — centro emocional da tela */}
-      {!completed && (
-        <Animated.View style={[
-          styles.stickyBtnWrap,
-          {
-            opacity: btnOpacity,
-            transform: [{ translateY: btnSlideAnim }],
-          },
-        ]}>
-          <Animated.View style={[styles.completeBtn, { opacity: pulseAnim, transform: [{ scale: breatheAnim }] }]}>
-            <TouchableOpacity
-              onPress={handleComplete}
-              activeOpacity={1}
-              onPressIn={() => Animated.spring(scaleAnim, { toValue: 0.97, friction: 12, useNativeDriver: true }).start()}
-              onPressOut={() => Animated.spring(scaleAnim, { toValue: 1, friction: 6, useNativeDriver: true }).start()}
-            >
-              <Animated.View style={[styles.completeBtnInner, { transform: [{ scale: scaleAnim }] }]}>
-                <Ionicons name="checkmark-circle" size={17} color="rgba(255,255,255,0.90)" />
-                <Text style={styles.completeBtnText}>{t('today.cta.complete')}</Text>
-              </Animated.View>
-            </TouchableOpacity>
-          </Animated.View>
-        </Animated.View>
-      )}
 
       {/* Dark completion overlay — covers Today re-renders during ceremony transition */}
       <Animated.View
@@ -1509,16 +1509,10 @@ const styles = StyleSheet.create({
     fontWeight: Typography.weights.semibold,
   },
 
-  // Container fixo na base da tela
+  // Finish button wrapper — inline in the scroll, not fixed/sticky
   stickyBtnWrap: {
-    position: 'absolute',
-    bottom: 24,
-    left: 0,
-    right: 0,
     paddingHorizontal: 20,
-    paddingTop: 10,
-    backgroundColor: Colors.background,
-    zIndex: 99,
+    marginTop: Spacing.lg,
   },
   // CTA flutuante — calmo, premium, não dominante
   completeBtn: {
