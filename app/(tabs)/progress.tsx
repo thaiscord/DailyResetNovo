@@ -635,9 +635,15 @@ function YourHistorySection({
   weeklyScore: number;
   totalEntries: number;
 }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const router = useRouter();
   const translateY = fadeAnim.interpolate({ inputRange: [0, 1], outputRange: [10, 0] });
+
+  const weeklyBadgeLabel =
+    lang === 'pt' ? 'Semanal' :
+    lang === 'es' ? 'Semanal' :
+    lang === 'fr' ? 'Semaine' :
+    lang === 'de' ? 'Woche'   : 'Weekly';
 
   const weekRecapSub = weeklyScore >= 5
     ? t('progress2.history.weekrecap.sub.many')
@@ -654,33 +660,43 @@ function YourHistorySection({
   return (
     <Animated.View style={{ opacity: fadeAnim, transform: [{ translateY }] }}>
       <Text style={styles.sectionTitle}>{t('progress.section.yourStory')}</Text>
+      {/* Weekly Recap — primary card: white surface, gold shadow, bold title */}
       <TouchableOpacity
-        style={[styles.card, styles.historyNavCard, styles.historyNavCardWarm]}
-        activeOpacity={0.8}
+        style={[styles.card, styles.historyNavCard, styles.weeklyRecapCard]}
+        activeOpacity={0.82}
         onPress={() => router.push('/weekly-recap-history' as never)}
       >
-        <View style={styles.historyNavIcon}>
-          <Ionicons name="calendar-outline" size={16} color={Colors.gold} />
+        <View style={styles.weeklyRecapIcon}>
+          <Ionicons name="calendar-outline" size={20} color={Colors.gold} />
         </View>
         <View style={styles.historyNavText}>
-          <Text style={styles.historyNavTitle}>{t('progress2.history.weekrecap.title')}</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+            <Text style={styles.weeklyRecapTitle}>{t('progress2.history.weekrecap.title')}</Text>
+            <View style={styles.weeklyBadge}>
+              <Text style={styles.weeklyBadgeText}>{weeklyBadgeLabel}</Text>
+            </View>
+          </View>
           <Text style={styles.historyNavSub}>{weekRecapSub}</Text>
         </View>
-        <Ionicons name="chevron-forward" size={12} color={`${Colors.textMuted}88`} />
+        <Ionicons name="chevron-forward" size={14} color={Colors.gold} style={{ opacity: 0.5 }} />
       </TouchableOpacity>
+
+      {/* Quiet Reflections — secondary card: ivory surface, filled moon, entry count */}
       <TouchableOpacity
-        style={[styles.card, styles.historyNavCard, styles.historyNavCardWarm, { marginTop: Spacing.sm }]}
-        activeOpacity={0.8}
+        style={[styles.card, styles.historyNavCard, styles.quietRefNavCard]}
+        activeOpacity={0.82}
         onPress={() => router.push('/quiet-reflections' as never)}
       >
-        <View style={styles.historyNavIcon}>
-          <Ionicons name="moon-outline" size={16} color={Colors.gold} />
+        <View style={styles.quietRefNavIcon}>
+          <Ionicons name="moon" size={18} color={Colors.gold} />
         </View>
         <View style={styles.historyNavText}>
-          <Text style={styles.historyNavTitle}>{t('qr.title')}</Text>
-          <Text style={styles.historyNavSub}>{quietRefSub}</Text>
+          <Text style={styles.quietRefNavTitle}>{t('qr.title')}</Text>
+          <Text style={[styles.historyNavSub, totalEntries > 0 ? styles.historyNavSubData : undefined]}>
+            {quietRefSub}
+          </Text>
         </View>
-        <Ionicons name="chevron-forward" size={12} color={`${Colors.textMuted}88`} />
+        <Ionicons name="chevron-forward" size={14} color={Colors.textMuted} style={{ opacity: 0.5 }} />
       </TouchableOpacity>
     </Animated.View>
   );
@@ -1250,6 +1266,64 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     fontStyle: 'italic' as const,
     lineHeight: 17,
+  },
+  historyNavSubData: {
+    color: Colors.textSecondary,
+    fontStyle: 'normal' as const,
+  },
+
+  // Weekly Recap — primary card (white surface, gold-tinted shadow)
+  weeklyRecapCard: {
+    backgroundColor: '#FFFFFF',
+    shadowColor: Colors.gold,
+    shadowOpacity: 0.14,
+    borderColor: `${Colors.gold}28`,
+  },
+  weeklyRecapIcon: {
+    width: 38,
+    height: 38,
+    borderRadius: 19,
+    backgroundColor: `${Colors.gold}18`,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  },
+  weeklyRecapTitle: {
+    fontSize: Typography.sizes.base,
+    fontWeight: '600' as const,
+    color: Colors.textPrimary,
+    letterSpacing: -0.2,
+  },
+  weeklyBadge: {
+    backgroundColor: `${Colors.gold}16`,
+    borderRadius: Radii.full,
+    paddingHorizontal: 8,
+    paddingVertical: 2,
+  },
+  weeklyBadgeText: {
+    fontSize: 10,
+    fontWeight: '600' as const,
+    color: Colors.gold,
+    letterSpacing: 0.5,
+  },
+
+  // Quiet Reflections — secondary card (ivory surface, standard shadow)
+  quietRefNavCard: {
+    marginTop: Spacing.sm,
+    borderColor: `${Colors.gold}18`,
+  },
+  quietRefNavIcon: {
+    width: 34,
+    height: 34,
+    borderRadius: 17,
+    backgroundColor: `${Colors.gold}12`,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  },
+  quietRefNavTitle: {
+    fontSize: Typography.sizes.base,
+    fontWeight: '500' as const,
+    color: Colors.textPrimary,
+    letterSpacing: -0.1,
   },
 
   // Quiet reflections card

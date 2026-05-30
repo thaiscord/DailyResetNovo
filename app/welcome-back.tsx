@@ -1,6 +1,6 @@
 // ─── Welcome Back Experience ──────────────────────────────────────────────────
 // Gentle re-entry ritual for returning users. Shown before the Today screen.
-// 3–7 seconds total. Tap anywhere to skip instantly.
+// ~5s total. Tap anywhere to skip instantly.
 // Tone: calm, grounding, premium, emotionally warm. Never motivational.
 // All copy comes from locales/translations.ts (wb.* keys).
 
@@ -32,21 +32,13 @@ export default function WelcomeBackScreen() {
 
   const screenOpacity = useRef(new Animated.Value(1)).current;
   const glowOpacity   = useRef(new Animated.Value(0)).current;
+  const glowBreath    = useRef(new Animated.Value(0.8)).current;
   const logoOpacity   = useRef(new Animated.Value(0)).current;
-  const logoScale     = useRef(new Animated.Value(0.94)).current;
+  const logoScale     = useRef(new Animated.Value(0.96)).current;
   const msgOpacity    = useRef(new Animated.Value(0)).current;
-  const msgSlide      = useRef(new Animated.Value(10)).current;
+  const msgSlide      = useRef(new Animated.Value(8)).current;
 
-  // Outer halo — opacity + scale breathe together
-  const glowPulse  = useRef(new Animated.Value(0.7)).current;
-  const glowScale  = useRef(new Animated.Value(1.0)).current;
-
-  // Inner halo — same cycle, ~1.1s phase offset so they never breathe in unison
-  const innerPulse = useRef(new Animated.Value(0.45)).current;
-  const innerScale = useRef(new Animated.Value(1.0)).current;
-
-  const hasNavigated   = useRef(false);
-  const innerTimerRef  = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const hasNavigated = useRef(false);
 
   const navigateAway = useCallback(() => {
     if (hasNavigated.current) return;
@@ -61,99 +53,51 @@ export default function WelcomeBackScreen() {
   }, [router, screenOpacity]);
 
   useEffect(() => {
-    // ── Entry sequence: glow → logo → message → hold → exit ─────────────────
+    // Glow + logo fade in together, then message, then hold and exit
     Animated.sequence([
-      Animated.timing(glowOpacity, {
-        toValue: 1, duration: 600,
-        easing: Easing.out(Easing.cubic), useNativeDriver: true,
-      }),
       Animated.parallel([
+        Animated.timing(glowOpacity, {
+          toValue: 1, duration: 500,
+          easing: Easing.out(Easing.cubic), useNativeDriver: true,
+        }),
         Animated.timing(logoOpacity, {
-          toValue: 1, duration: 900,
+          toValue: 1, duration: 600,
           easing: Easing.out(Easing.cubic), useNativeDriver: true,
         }),
         Animated.timing(logoScale, {
-          toValue: 1, duration: 900,
-          easing: Easing.out(Easing.cubic), useNativeDriver: true,
-        }),
-      ]),
-      Animated.delay(300),
-      Animated.parallel([
-        Animated.timing(msgOpacity, {
           toValue: 1, duration: 700,
           easing: Easing.out(Easing.cubic), useNativeDriver: true,
         }),
+      ]),
+      Animated.delay(350),
+      Animated.parallel([
+        Animated.timing(msgOpacity, {
+          toValue: 1, duration: 600,
+          easing: Easing.out(Easing.cubic), useNativeDriver: true,
+        }),
         Animated.timing(msgSlide, {
-          toValue: 0, duration: 700,
+          toValue: 0, duration: 600,
           easing: Easing.out(Easing.cubic), useNativeDriver: true,
         }),
       ]),
-      Animated.delay(3800),
+      Animated.delay(3200),
     ]).start(navigateAway);
 
-    // ── Outer halo breathing — 5.5s cycle, ±2.5% scale ──────────────────────
+    // Very slow glow breath — almost imperceptible, 6s cycle
     Animated.loop(
       Animated.sequence([
-        Animated.timing(glowScale, {
-          toValue: 1.025, duration: 2750,
+        Animated.timing(glowBreath, {
+          toValue: 1.0, duration: 3000,
           easing: Easing.inOut(Easing.sin), useNativeDriver: true,
         }),
-        Animated.timing(glowScale, {
-          toValue: 1.0, duration: 2750,
+        Animated.timing(glowBreath, {
+          toValue: 0.75, duration: 3000,
           easing: Easing.inOut(Easing.sin), useNativeDriver: true,
         }),
       ])
     ).start();
 
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(glowPulse, {
-          toValue: 1.0, duration: 2750,
-          easing: Easing.inOut(Easing.sin), useNativeDriver: true,
-        }),
-        Animated.timing(glowPulse, {
-          toValue: 0.65, duration: 2750,
-          easing: Easing.inOut(Easing.sin), useNativeDriver: true,
-        }),
-      ])
-    ).start();
-
-    // ── Inner halo breathing — same cycle, ~1.1s phase offset ────────────────
-    innerTimerRef.current = setTimeout(() => {
-      Animated.loop(
-        Animated.sequence([
-          Animated.timing(innerScale, {
-            toValue: 1.02, duration: 2750,
-            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
-          }),
-          Animated.timing(innerScale, {
-            toValue: 1.0, duration: 2750,
-            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
-          }),
-        ])
-      ).start();
-
-      Animated.loop(
-        Animated.sequence([
-          Animated.timing(innerPulse, {
-            toValue: 0.85, duration: 2750,
-            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
-          }),
-          Animated.timing(innerPulse, {
-            toValue: 0.45, duration: 2750,
-            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
-          }),
-        ])
-      ).start();
-    }, 1100);
-
-    return () => {
-      if (innerTimerRef.current) clearTimeout(innerTimerRef.current);
-      glowScale.stopAnimation();
-      glowPulse.stopAnimation();
-      innerScale.stopAnimation();
-      innerPulse.stopAnimation();
-    };
+    return () => { glowBreath.stopAnimation(); };
   }, []);
 
   return (
@@ -165,56 +109,23 @@ export default function WelcomeBackScreen() {
       <Animated.View style={[StyleSheet.absoluteFillObject, { opacity: screenOpacity }]}>
         <StatusBar barStyle="light-content" />
 
-        {/* Soft ambient warmth — very low opacity radial-ish glow behind the rings */}
+        {/* Soft golden glow — small, centered behind the logo, breathes gently */}
         <Animated.View
           pointerEvents="none"
           style={[
-            styles.ambientContainer,
-            { opacity: Animated.multiply(glowOpacity, 0.9 as any) },
+            styles.glowContainer,
+            { opacity: Animated.multiply(glowOpacity, glowBreath) },
           ]}
         >
           <LinearGradient
-            colors={['rgba(201,168,76,0.08)', 'rgba(201,168,76,0.00)']}
-            style={styles.ambient}
+            colors={['rgba(201,168,76,0.13)', 'rgba(201,168,76,0.00)']}
+            style={styles.glow}
           />
         </Animated.View>
 
-        {/* Outer halo ring — translucent edge, near-invisible center, breathes */}
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            styles.outerHaloContainer,
-            {
-              opacity: Animated.multiply(glowOpacity, glowPulse),
-              transform: [{ translateY: -20 }, { scale: glowScale }],
-            },
-          ]}
-        >
-          <View style={styles.outerHalo} />
-        </Animated.View>
-
-        {/* Inner halo ring — slightly smaller, phase-offset breathing */}
-        <Animated.View
-          pointerEvents="none"
-          style={[
-            styles.innerHaloContainer,
-            {
-              opacity: Animated.multiply(glowOpacity, innerPulse),
-              transform: [{ translateY: 28 }, { scale: innerScale }],
-            },
-          ]}
-        >
-          <View style={styles.innerHalo} />
-        </Animated.View>
-
-        {/* Content centered */}
+        {/* Logo + message, centered */}
         <View style={styles.content}>
-          <Animated.View
-            style={{
-              opacity: logoOpacity,
-              transform: [{ scale: logoScale }],
-            }}
-          >
+          <Animated.View style={{ opacity: logoOpacity, transform: [{ scale: logoScale }] }}>
             <DailyResetLogo
               width={Math.round(width * 1.05)}
               height={Math.round(width * 0.52)}
@@ -224,10 +135,7 @@ export default function WelcomeBackScreen() {
           <Animated.Text
             style={[
               styles.message,
-              {
-                opacity: msgOpacity,
-                transform: [{ translateY: msgSlide }],
-              },
+              { opacity: msgOpacity, transform: [{ translateY: msgSlide }] },
             ]}
           >
             {message}
@@ -244,46 +152,17 @@ const styles = StyleSheet.create({
     backgroundColor: '#1A1A18',
   },
 
-  // Soft gradient blob — ambient golden warmth, very faint
-  ambientContainer: {
+  // Small soft glow — sits behind the logo area, not a giant graphic
+  glowContainer: {
     ...StyleSheet.absoluteFillObject,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  ambient: {
-    width: width * 1.5,
-    height: width * 1.5,
-    borderRadius: width * 0.75,
-  },
-
-  // Outer halo ring — thin translucent border, nearly transparent fill
-  outerHaloContainer: {
-    ...StyleSheet.absoluteFillObject,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  outerHalo: {
-    width: width * 1.25,
-    height: width * 1.25,
-    borderRadius: width * 0.625,
-    borderWidth: 1.5,
-    borderColor: 'rgba(201,168,76,0.20)',
-    backgroundColor: 'rgba(201,168,76,0.03)',
-  },
-
-  // Inner halo ring — slightly smaller, thinner border
-  innerHaloContainer: {
-    ...StyleSheet.absoluteFillObject,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  innerHalo: {
-    width: width * 0.78,
-    height: width * 0.78,
-    borderRadius: width * 0.39,
-    borderWidth: 1,
-    borderColor: 'rgba(201,168,76,0.13)',
-    backgroundColor: 'rgba(201,168,76,0.04)',
+  glow: {
+    width: width * 0.8,
+    height: width * 0.8,
+    borderRadius: width * 0.4,
+    transform: [{ translateY: -(width * 0.06) }],
   },
 
   content: {
