@@ -1,5 +1,6 @@
 import { useRef, useEffect, useMemo } from 'react';
 import { Animated, TouchableOpacity, Text, Platform } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Tabs, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
@@ -100,14 +101,17 @@ function TabIcon({ iconName, focused }: { iconName: string; focused: boolean }) 
 // ─── Layout ───────────────────────────────────────────────────────────────────
 export default function TabsLayout() {
   const { lang } = useLanguage();
+  const insets = useSafeAreaInsets();
 
-  // Fixed web tab bar dimensions. These match the pre-regression values (when
-  // insets.bottom was ~0 on web). Using black-translucent status bar causes
-  // env(safe-area-inset-bottom) to expand, which would inadvertently enlarge
-  // the tab bar if calculated from useSafeAreaInsets(). Native iOS handles its
-  // own safe-area padding independently through the os-level tab bar.
-  const tabBarHeight      = Platform.OS === 'ios' ? 84 : Platform.OS === 'web' ? 68 : 64;
-  const tabBarPaddingBottom = Platform.OS === 'ios' ? 26 : Platform.OS === 'web' ? 12 : 8;
+  // Web tab bar dimensions driven by the actual bottom safe-area inset so
+  // icons always sit naturally above the iPhone home indicator.
+  // IMPORTANT: tabBarSafeAreaInsets={bottom:0} in screenOptions (below) tells
+  // React Navigation NOT to add env(safe-area-inset-bottom) a second time.
+  // Without that guard, total bottom space = webBottomInset + RN auto-inset
+  // ≈ 34 + 34 = 68 px on iPhone PWA — the "pushed down" regression.
+  const webBottomInset    = Math.max(insets.bottom, 12);
+  const tabBarHeight      = Platform.OS === 'ios' ? 84 : Platform.OS === 'web' ? 56 + webBottomInset : 64;
+  const tabBarPaddingBottom = Platform.OS === 'ios' ? 26 : Platform.OS === 'web' ? webBottomInset     : 8;
 
   const screenOptions = useMemo(() => ({
     headerShown: false,
@@ -116,6 +120,9 @@ export default function TabsLayout() {
     tabBarActiveTintColor: GOLD,
     tabBarInactiveTintColor: MUTED,
     tabBarButton: TabBarButton,
+    // Prevent React Navigation from adding env(safe-area-inset-bottom) on top
+    // of our own paddingBottom — we already account for it in webBottomInset.
+    tabBarSafeAreaInsets: Platform.OS === 'web' ? { bottom: 0 } : undefined,
     tabBarStyle: {
       backgroundColor: NAV_BG,
       borderTopColor: NAV_BORDER,
