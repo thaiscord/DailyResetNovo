@@ -56,6 +56,16 @@ function SectionLabel({ children }: { children: string }) {
   return <Text style={styles.sectionLabel}>{children}</Text>;
 }
 
+// ─── Shared chip — single source of truth for all recap chips ─────────────────
+
+function RecapChip({ label, primary = false }: { label: string; primary?: boolean }) {
+  return (
+    <View style={[styles.chip, primary && styles.chipPrimary]}>
+      <Text style={[styles.chipText, primary && styles.chipTextPrimary]}>{label}</Text>
+    </View>
+  );
+}
+
 // ─── Section 1 — Week Overview ────────────────────────────────────────────────
 
 function SectionOverview({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
@@ -264,11 +274,7 @@ function SectionCategories({ insights, lang }: { insights: WeekInsights; lang: s
         <View style={styles.card}>
           <View style={styles.chipRow}>
             {topCategories.map(cat => (
-              <View key={cat} style={[styles.chip, cat === dominant && styles.chipPrimary]}>
-                <Text style={[styles.chipText, cat === dominant && styles.chipTextPrimary]}>
-                  {getCategoryLabel(cat, lang)}
-                </Text>
-              </View>
+              <RecapChip key={cat} label={getCategoryLabel(cat, lang)} primary={cat === dominant} />
             ))}
           </View>
           {dominant && categoryCounts[dominant] > 1 && (
@@ -300,9 +306,7 @@ function SectionWords({ insights, lang, weekNumber }: { insights: WeekInsights; 
           <Text style={styles.wordsNote}>{manyLabel}</Text>
           <View style={styles.chipRow}>
             {words.map((w, i) => (
-              <View key={i} style={[styles.chip, i === 0 && styles.chipPrimary]}>
-                <Text style={[styles.chipText, i === 0 && styles.chipTextPrimary]}>{w}</Text>
-              </View>
+              <RecapChip key={i} label={w} primary={i === 0} />
             ))}
           </View>
         </View>
@@ -806,6 +810,8 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
     borderWidth: 1,
     borderColor: Colors.border,
+    minWidth: 64,
+    alignItems: 'center',
   },
   chipPrimary: {
     backgroundColor: Colors.accentDim,
@@ -813,8 +819,9 @@ const styles = StyleSheet.create({
   },
   chipText: {
     fontSize: Typography.sizes.sm,
-    color: Colors.textSecondary,
     fontWeight: Typography.weights.medium,
+    lineHeight: 18,
+    color: Colors.textSecondary,
   },
   chipTextPrimary: { color: Colors.gold },
   categoryNote: {
