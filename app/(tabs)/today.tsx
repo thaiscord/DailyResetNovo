@@ -13,7 +13,7 @@ import { useWeeklyRecap } from '../../hooks/useWeeklyRecap';
 import { getItem, setItem, StorageKeys, getLocalDateKey } from '../../hooks/useStorage';
 import { saveDailyEntry, getDailyEntry, type DailyEntry } from '../../utils/dailyEntries';
 import { DAILY_STATE_OPTIONS, getDailyStateBanner, getAdaptiveWord, getAdaptiveDepth, getStateCategory, type DailyState } from '../../utils/dailyState';
-import { getCurrentChapterName, CEREMONY_MILESTONES } from '../../utils/milestoneSystem';
+import { CEREMONY_MILESTONES } from '../../utils/milestoneSystem';
 import { getActionPlaceholder } from '../../utils/writingPlaceholders';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../../theme';
 import {
@@ -662,46 +662,6 @@ export default function TodayScreen() {
               );
             })()}
           </View>
-
-          {/* Chapter name badge — shows emotional chapter at milestone streaks */}
-          {(() => {
-            const chapter = getCurrentChapterName(progress.streak);
-            if (!chapter || progress.streak === 0) return null;
-            return (
-              <View style={{
-                flexDirection: 'row',
-                alignItems: 'center',
-                gap: 5,
-                marginTop: 6,
-                alignSelf: 'flex-start',
-                backgroundColor: Colors.accentDim,
-                borderRadius: Radii.full,
-                paddingHorizontal: 10,
-                paddingVertical: 4,
-                borderWidth: 1,
-                borderColor: 'rgba(201,168,76,0.20)',
-              }}>
-                <Text style={{
-                  fontSize: 9,
-                  fontWeight: '700',
-                  color: Colors.gold,
-                  letterSpacing: 1.5,
-                  textTransform: 'uppercase',
-                }}>
-                  {lang === 'pt' ? 'CAPÍTULO' : lang === 'es' ? 'CAPÍTULO' : lang === 'fr' ? 'CHAPITRE' : lang === 'de' ? 'KAPITEL' : 'CHAPTER'}
-                </Text>
-                <View style={{ width: 1, height: 10, backgroundColor: 'rgba(201,168,76,0.30)' }} />
-                <Text style={{
-                  fontSize: 11,
-                  color: Colors.gold,
-                  fontWeight: '500',
-                  fontStyle: 'italic',
-                }}>
-                  {chapter}
-                </Text>
-              </View>
-            );
-          })()}
 
           {/* Continuity phrase — quiet emotional memory for returning users */}
           {progress.completedDays.length >= 3 && completed && (() => {
