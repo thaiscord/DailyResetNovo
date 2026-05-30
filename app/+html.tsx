@@ -26,6 +26,17 @@ export default function Root({ children }: { children: React.ReactNode }) {
             anti-flicker measure on web. */}
         <style>{`
           html, body { background-color: #FEF9EC; margin: 0; padding: 0; }
+
+          /*
+           * Prevent iOS Safari / PWA from auto-zooming when the user taps a text
+           * input whose font-size is below 16px. iOS triggers this zoom whenever
+           * an input's computed font-size is < 16px. Setting 16px here overrides
+           * any React Native Web inline styles that are smaller (13px, 14px).
+           * This rule only runs in the browser build — no effect on native.
+           */
+          input, textarea, [contenteditable="true"] {
+            font-size: 16px !important;
+          }
         `}</style>
       </head>
       <body>{children}</body>
