@@ -564,9 +564,8 @@ export default function TodayScreen() {
               ))}
             </View>
 
-            {/* Daily emotional state picker — adapts tone/banner to current state */}
-            {!completed && (
-              <View style={{ marginTop: 6 }}>
+            {/* Daily emotional state picker — always visible, even after reset completion */}
+            <View style={{ marginTop: 6 }}>
                 <Text style={{ fontSize: 11, color: Colors.textMuted, letterSpacing: 0.8, marginBottom: 6, fontStyle: 'italic' }}>
                   {lang === 'pt' ? 'Como está sua mente hoje?' : lang === 'es' ? '¿Cómo está tu mente hoy?' : lang === 'fr' ? 'Comment va ton esprit aujourd\'hui ?' : lang === 'de' ? 'Wie fühlt sich dein Kopf gerade an?' : 'How does your mind feel?'}
                 </Text>
@@ -608,7 +607,6 @@ export default function TodayScreen() {
                   })}
                 </View>
               </View>
-            )}
 
             {/* Word of the day — tap to expand meaning */}
             {(() => {
