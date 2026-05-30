@@ -1272,9 +1272,9 @@ const styles = StyleSheet.create({
     fontStyle: 'normal' as const,
   },
 
-  // Weekly Recap — primary card (white surface, gold-tinted shadow)
+  // Weekly Recap — primary card (warm off-white surface, gold-tinted shadow)
   weeklyRecapCard: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FCFBF7',
     shadowColor: Colors.gold,
     shadowOpacity: 0.14,
     borderColor: `${Colors.gold}28`,
