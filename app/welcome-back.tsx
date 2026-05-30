@@ -6,7 +6,7 @@
 
 import { useRef, useEffect, useCallback } from 'react';
 import {
-  View, Text, StyleSheet, TouchableOpacity,
+  View, StyleSheet, TouchableOpacity,
   Animated, Easing, Dimensions, StatusBar,
 } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -36,10 +36,17 @@ export default function WelcomeBackScreen() {
   const logoScale     = useRef(new Animated.Value(0.94)).current;
   const msgOpacity    = useRef(new Animated.Value(0)).current;
   const msgSlide      = useRef(new Animated.Value(10)).current;
-  const glowPulse     = useRef(new Animated.Value(0.55)).current;
-  const glowScale     = useRef(new Animated.Value(1)).current;
 
-  const hasNavigated = useRef(false);
+  // Outer halo — opacity + scale breathe together
+  const glowPulse  = useRef(new Animated.Value(0.7)).current;
+  const glowScale  = useRef(new Animated.Value(1.0)).current;
+
+  // Inner halo — same cycle, ~1.1s phase offset so they never breathe in unison
+  const innerPulse = useRef(new Animated.Value(0.45)).current;
+  const innerScale = useRef(new Animated.Value(1.0)).current;
+
+  const hasNavigated   = useRef(false);
+  const innerTimerRef  = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const navigateAway = useCallback(() => {
     if (hasNavigated.current) return;
@@ -54,7 +61,7 @@ export default function WelcomeBackScreen() {
   }, [router, screenOpacity]);
 
   useEffect(() => {
-    // Entry sequence: glow → logo → message → hold → exit
+    // ── Entry sequence: glow → logo → message → hold → exit ─────────────────
     Animated.sequence([
       Animated.timing(glowOpacity, {
         toValue: 1, duration: 600,
@@ -84,33 +91,69 @@ export default function WelcomeBackScreen() {
       Animated.delay(3800),
     ]).start(navigateAway);
 
-    // Opacity breathing — calming pulse on glow
+    // ── Outer halo breathing — 5.5s cycle, ±2.5% scale ──────────────────────
     Animated.loop(
       Animated.sequence([
-        Animated.timing(glowPulse, {
-          toValue: 1, duration: 3200,
+        Animated.timing(glowScale, {
+          toValue: 1.025, duration: 2750,
           easing: Easing.inOut(Easing.sin), useNativeDriver: true,
         }),
-        Animated.timing(glowPulse, {
-          toValue: 0.45, duration: 3200,
+        Animated.timing(glowScale, {
+          toValue: 1.0, duration: 2750,
           easing: Easing.inOut(Easing.sin), useNativeDriver: true,
         }),
-      ]),
+      ])
     ).start();
 
-    // Scale breathing — imperceptibly slow, like the room breathing (12s cycle)
     Animated.loop(
       Animated.sequence([
-        Animated.timing(glowScale, {
-          toValue: 1.03, duration: 6000,
+        Animated.timing(glowPulse, {
+          toValue: 1.0, duration: 2750,
           easing: Easing.inOut(Easing.sin), useNativeDriver: true,
         }),
-        Animated.timing(glowScale, {
-          toValue: 1.0, duration: 6000,
+        Animated.timing(glowPulse, {
+          toValue: 0.65, duration: 2750,
           easing: Easing.inOut(Easing.sin), useNativeDriver: true,
         }),
-      ]),
+      ])
     ).start();
+
+    // ── Inner halo breathing — same cycle, ~1.1s phase offset ────────────────
+    innerTimerRef.current = setTimeout(() => {
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(innerScale, {
+            toValue: 1.02, duration: 2750,
+            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
+          }),
+          Animated.timing(innerScale, {
+            toValue: 1.0, duration: 2750,
+            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
+          }),
+        ])
+      ).start();
+
+      Animated.loop(
+        Animated.sequence([
+          Animated.timing(innerPulse, {
+            toValue: 0.85, duration: 2750,
+            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
+          }),
+          Animated.timing(innerPulse, {
+            toValue: 0.45, duration: 2750,
+            easing: Easing.inOut(Easing.sin), useNativeDriver: true,
+          }),
+        ])
+      ).start();
+    }, 1100);
+
+    return () => {
+      if (innerTimerRef.current) clearTimeout(innerTimerRef.current);
+      glowScale.stopAnimation();
+      glowPulse.stopAnimation();
+      innerScale.stopAnimation();
+      innerPulse.stopAnimation();
+    };
   }, []);
 
   return (
@@ -122,43 +165,50 @@ export default function WelcomeBackScreen() {
       <Animated.View style={[StyleSheet.absoluteFillObject, { opacity: screenOpacity }]}>
         <StatusBar barStyle="light-content" />
 
-        {/* Ambient warm glow — breathes via opacity + scale */}
+        {/* Soft ambient warmth — very low opacity radial-ish glow behind the rings */}
         <Animated.View
           pointerEvents="none"
           style={[
-            styles.glowContainer,
+            styles.ambientContainer,
+            { opacity: Animated.multiply(glowOpacity, 0.9 as any) },
+          ]}
+        >
+          <LinearGradient
+            colors={['rgba(201,168,76,0.08)', 'rgba(201,168,76,0.00)']}
+            style={styles.ambient}
+          />
+        </Animated.View>
+
+        {/* Outer halo ring — translucent edge, near-invisible center, breathes */}
+        <Animated.View
+          pointerEvents="none"
+          style={[
+            styles.outerHaloContainer,
             {
               opacity: Animated.multiply(glowOpacity, glowPulse),
               transform: [{ translateY: -20 }, { scale: glowScale }],
             },
           ]}
         >
-          <LinearGradient
-            colors={['rgba(201,168,76,0.34)', 'rgba(201,168,76,0.00)']}
-            style={styles.glow}
-          />
+          <View style={styles.outerHalo} />
         </Animated.View>
 
-        {/* Secondary deeper glow — scale-breathes in sync */}
+        {/* Inner halo ring — slightly smaller, phase-offset breathing */}
         <Animated.View
           pointerEvents="none"
           style={[
-            styles.glowContainerDeep,
+            styles.innerHaloContainer,
             {
-              opacity: Animated.multiply(glowOpacity, 0.55 as any),
-              transform: [{ translateY: 40 }, { scale: glowScale }],
+              opacity: Animated.multiply(glowOpacity, innerPulse),
+              transform: [{ translateY: 28 }, { scale: innerScale }],
             },
           ]}
         >
-          <LinearGradient
-            colors={['rgba(180,120,30,0.21)', 'rgba(180,120,30,0.00)']}
-            style={styles.glowDeep}
-          />
+          <View style={styles.innerHalo} />
         </Animated.View>
 
         {/* Content centered */}
         <View style={styles.content}>
-          {/* Logo with scale-in */}
           <Animated.View
             style={{
               opacity: logoOpacity,
@@ -171,7 +221,6 @@ export default function WelcomeBackScreen() {
             />
           </Animated.View>
 
-          {/* Contextual message from i18n */}
           <Animated.Text
             style={[
               styles.message,
@@ -194,28 +243,49 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#1A1A18',
   },
-  glowContainer: {
+
+  // Soft gradient blob — ambient golden warmth, very faint
+  ambientContainer: {
     ...StyleSheet.absoluteFillObject,
     alignItems: 'center',
     justifyContent: 'center',
-    transform: [{ translateY: -20 }],
   },
-  glow: {
+  ambient: {
+    width: width * 1.5,
+    height: width * 1.5,
+    borderRadius: width * 0.75,
+  },
+
+  // Outer halo ring — thin translucent border, nearly transparent fill
+  outerHaloContainer: {
+    ...StyleSheet.absoluteFillObject,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  outerHalo: {
     width: width * 1.25,
     height: width * 1.25,
     borderRadius: width * 0.625,
+    borderWidth: 1.5,
+    borderColor: 'rgba(201,168,76,0.20)',
+    backgroundColor: 'rgba(201,168,76,0.03)',
   },
-  glowContainerDeep: {
+
+  // Inner halo ring — slightly smaller, thinner border
+  innerHaloContainer: {
     ...StyleSheet.absoluteFillObject,
     alignItems: 'center',
     justifyContent: 'center',
-    transform: [{ translateY: 40 }],
   },
-  glowDeep: {
-    width: width * 0.9,
-    height: width * 0.9,
-    borderRadius: width * 0.45,
+  innerHalo: {
+    width: width * 0.78,
+    height: width * 0.78,
+    borderRadius: width * 0.39,
+    borderWidth: 1,
+    borderColor: 'rgba(201,168,76,0.13)',
+    backgroundColor: 'rgba(201,168,76,0.04)',
   },
+
   content: {
     flex: 1,
     alignItems: 'center',
