@@ -595,7 +595,7 @@ const en: TranslationMap = {
   // Emotion labels + subtitles
   'mindset.emotion.overwhelmed':     'Pressure',
   'mindset.emotion.numb':            'Foggy',
-  'mindset.emotion.frustrated':      'Mental weight',
+  'mindset.emotion.frustrated':      'Overwhelm',
   'mindset.emotion.low_energy':      'Low energy',
   'mindset.emotion.anxious':         'Inner noise',
   'mindset.emotion.overwhelmed.sub': 'For when everything feels like too much.',
@@ -630,6 +630,7 @@ const en: TranslationMap = {
   // ── Profile remaining ──────────────────────────────────────────────────────────
   'profile.journey.eyebrow':       'YOUR RECOVERY PATH',
   'profile.journey.change':        'Change',
+  'profile.journey.choose':        'Choose',
   'profile.journey.fallback':      'Your Journey',
 
   // ── Day / Month names ──────────────────────────────────────────────────────────
@@ -1381,6 +1382,7 @@ const es: TranslationMap = {
   // ── Profile remaining ──────────────────────────────────────────────────────────
   'profile.journey.eyebrow':       'VIAJE EMOCIONAL',
   'profile.journey.change':        'Cambiar',
+  'profile.journey.choose':        'Elegir',
   'profile.journey.fallback':      'Tu Viaje',
 
   // ── Day / Month names ──────────────────────────────────────────────────────────
@@ -3065,7 +3067,7 @@ const es: TranslationMap = {
   'mindset.foryou.curated':          'Curado para tu viaje',
   'mindset.emotion.overwhelmed':     'Presión',
   'mindset.emotion.numb':            'Neblinoso',
-  'mindset.emotion.frustrated':      'Peso mental',
+  'mindset.emotion.frustrated':      'Agobio',
   'mindset.emotion.low_energy':      'Energía baja',
   'mindset.emotion.anxious':         'Ruido interior',
   'mindset.emotion.overwhelmed.sub': 'Para cuando todo parece demasiado.',
@@ -3723,7 +3725,7 @@ const fr: TranslationMap = {
   'mindset.foryou.curated':          'Sélectionné pour ton voyage',
   'mindset.emotion.overwhelmed':     'Pression',
   'mindset.emotion.numb':            'Brouillard mental',
-  'mindset.emotion.frustrated':      'Poids intérieur',
+  'mindset.emotion.frustrated':      'Débordement',
   'mindset.emotion.low_energy':      'Énergie basse',
   'mindset.emotion.anxious':         'Bruit intérieur',
   'mindset.emotion.overwhelmed.sub': 'Pour quand tout semble trop.',
@@ -5293,6 +5295,7 @@ const fr: TranslationMap = {
   // ── Profile remaining ──────────────────────────────────────────────────────────
   'profile.journey.eyebrow':       'TON CHEMIN DE RETOUR',
   'profile.journey.change':        'Modifier',
+  'profile.journey.choose':        'Choisir',
   'profile.journey.fallback':      'Ton Voyage',
   'profile.greet.hi':               'Bonjour, {{name}}.',
   'profile.greet.becoming':         'Qui es-tu en train de devenir ?',
@@ -6252,7 +6255,7 @@ const de: TranslationMap = {
   'mindset.foryou.curated':          'Für deine Reise ausgewählt',
   'mindset.emotion.overwhelmed':     'Druck',
   'mindset.emotion.numb':            'Gedankennebel',
-  'mindset.emotion.frustrated':      'Innere Schwere',
+  'mindset.emotion.frustrated':      'Überwältigt',
   'mindset.emotion.low_energy':      'Wenig Energie',
   'mindset.emotion.anxious':         'Innere Unruhe',
   'mindset.emotion.overwhelmed.sub': 'Für wenn alles zu viel erscheint.',
@@ -7814,6 +7817,7 @@ const de: TranslationMap = {
   // ── Profile remaining ──────────────────────────────────────────────────────────
   'profile.journey.eyebrow':       'DEIN RÜCKWEG',
   'profile.journey.change':        'Ändern',
+  'profile.journey.choose':        'Wählen',
   'profile.journey.fallback':      'Deine Reise',
   'profile.greet.hi':               'Hallo, {{name}}.',
   'profile.greet.becoming':         'Wer wirst du gerade?',
@@ -10370,7 +10374,7 @@ const pt: TranslationMap = {
   // Emoções
   'mindset.emotion.overwhelmed':     'Pressão',
   'mindset.emotion.numb':            'Nublado',
-  'mindset.emotion.frustrated':      'Peso mental',
+  'mindset.emotion.frustrated':      'Esgotamento',
   'mindset.emotion.low_energy':      'Baixa energia',
   'mindset.emotion.anxious':         'Ruído interno',
   'mindset.emotion.overwhelmed.sub': 'Para quando tudo pesa demais.',
@@ -10468,6 +10472,7 @@ const pt: TranslationMap = {
   'profile.modal.terms.footer':   'Ao usar o Daily Reset, você concorda com estes Termos de uso.',
   'profile.journey.eyebrow':       'SEU CAMINHO DE RECUPERAÇÃO',
   'profile.journey.change':        'Alterar',
+  'profile.journey.choose':        'Escolher',
   'profile.journey.fallback':      'Sua jornada',
   'profile.section.transformation': 'MINHA TRANSFORMAÇÃO',
   'profile.section.journey':        'SUA JORNADA',

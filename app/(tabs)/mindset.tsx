@@ -10,9 +10,6 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { getItem, setItem, getLocalDateKey, StorageKeys } from '../../hooks/useStorage';
 import { getStateCategory, type DailyState } from '../../utils/dailyState';
-import {
-  PressureIcon, FoggyIcon, MentalWeightIcon, LowEnergyIcon, InnerNoiseIcon,
-} from '../../components/EmotionIcons';
 
 // ─── Access tiers ─────────────────────────────────────────────────────────────
 const ACCESS_RULES = {
@@ -131,13 +128,54 @@ const SCREEN_WIDTH = Dimensions.get('window').width;
 
 // Emoções diárias → categoria recomendada
 const EMOTIONS = [
-  { key: 'overwhelmed' as const, Icon: PressureIcon,    label: 'Pressure',      cat: 'Calm',   subtitle: 'For when everything feels like too much.' },
-  { key: 'numb'        as const, Icon: FoggyIcon,        label: 'Foggy',         cat: 'Rhythm', subtitle: 'For when the mind goes quiet.' },
-  { key: 'frustrated'  as const, Icon: MentalWeightIcon, label: 'Mental weight', cat: 'Rhythm', subtitle: 'For when the weight is hard to carry.' },
-  { key: 'low_energy'  as const, Icon: LowEnergyIcon,    label: 'Low energy',    cat: 'Calm',   subtitle: 'For when the pace has slowed.' },
-  { key: 'anxious'     as const, Icon: InnerNoiseIcon,   label: 'Inner noise',   cat: 'Calm',   subtitle: "For when the noise doesn't stop." },
+  { key: 'overwhelmed' as const, label: 'Pressure',      cat: 'Calm',   subtitle: 'For when everything feels like too much.' },
+  { key: 'numb'        as const, label: 'Foggy',         cat: 'Rhythm', subtitle: 'For when the mind goes quiet.' },
+  { key: 'frustrated'  as const, label: 'Overwhelm',     cat: 'Rhythm', subtitle: 'For when everything becomes too much to hold.' },
+  { key: 'low_energy'  as const, label: 'Low energy',    cat: 'Calm',   subtitle: 'For when the pace has slowed.' },
+  { key: 'anxious'     as const, label: 'Inner noise',   cat: 'Calm',   subtitle: "For when the noise doesn't stop." },
 ];
 type EmotionKey = typeof EMOTIONS[number]['key'];
+
+// ─── Micro transition messages ────────────────────────────────────────────────
+// Shown for ~900ms between the emotion selection and the mindset reveal.
+// One quiet sentence per state — acknowledges without coaching.
+const TRANSITION_MESSAGES: Record<string, Record<EmotionKey, string>> = {
+  en: {
+    overwhelmed: 'Not everything needs your attention right now.',
+    numb:        "Clarity doesn't arrive all at once.",
+    frustrated:  "You don't have to carry everything today.",
+    low_energy:  'Today is about what matters most.',
+    anxious:     "You don't need to follow every thought.",
+  },
+  pt: {
+    overwhelmed: 'Nem tudo precisa da sua atenção agora.',
+    numb:        'A clareza não chega tudo de uma vez.',
+    frustrated:  'Você não precisa carregar tudo hoje.',
+    low_energy:  'Hoje é sobre o que realmente importa.',
+    anxious:     'Você não precisa seguir cada pensamento.',
+  },
+  es: {
+    overwhelmed: 'No todo necesita tu atención ahora.',
+    numb:        'La claridad no llega toda a la vez.',
+    frustrated:  'No tienes que cargar con todo hoy.',
+    low_energy:  'Hoy es sobre lo que más importa.',
+    anxious:     'No tienes que seguir cada pensamiento.',
+  },
+  fr: {
+    overwhelmed: "Tout n'a pas besoin de ton attention maintenant.",
+    numb:        "La clarté n'arrive pas d'un coup.",
+    frustrated:  "Tu n'as pas à tout porter aujourd'hui.",
+    low_energy:  "Ce qui compte vraiment, c'est aujourd'hui.",
+    anxious:     "Tu n'as pas à suivre chaque pensée.",
+  },
+  de: {
+    overwhelmed: 'Nicht alles braucht gerade deine Aufmerksamkeit.',
+    numb:        'Klarheit kommt nicht auf einmal.',
+    frustrated:  'Du musst heute nicht alles tragen.',
+    low_energy:  'Heute geht es um das, was wirklich zählt.',
+    anxious:     'Du musst nicht jedem Gedanken folgen.',
+  },
+};
 
 // ─── Adaptive emotional copy per emotion state ────────────────────────────────
 const EMOTION_ADAPTIVE_PT: Record<EmotionKey, { eyebrow: string; hint: string }> = {
@@ -437,7 +475,7 @@ export default function MindsetScreen() {
   const [selected, setSelected] = useState<MindsetCard | null>(null);
   const [focusVersion, setFocusVersion] = useState(0);
   const [readCardIds, setReadCardIds] = useState<Set<string>>(new Set());
-  const [recommendationState, setRecommendationState] = useState<'A' | 'B'>('A');
+  const [recommendationState, setRecommendationState] = useState<'A' | 'T' | 'B'>('A');
   const [selectedEmotion, setSelectedEmotion] = useState<EmotionKey | null>(null);
   const recFadeAnim    = useRef(new Animated.Value(1)).current;
   const filterFadeAnim = useRef(new Animated.Value(1)).current;
@@ -550,14 +588,54 @@ export default function MindsetScreen() {
     return [...unlocked, ...future.slice(0, 2)];
   }, [activeCat, currentDay, archiveLimit, profile]);
 
-  const handleSelectEmotion = async (emotionKey: EmotionKey) => {
+  const handleSelectEmotion = (emotionKey: EmotionKey) => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
-    await setItem('mindset_recommendation_date', getLocalDateKey());
-    await setItem('mindset_recommendation_mood', emotionKey);
-    Animated.timing(recFadeAnim, { toValue: 0, duration: 200, easing: Easing.out(Easing.sin), useNativeDriver: true }).start(() => {
+
+    // Persist without blocking — animation must start on the same frame as the tap.
+    void setItem('mindset_recommendation_date', getLocalDateKey());
+    void setItem('mindset_recommendation_mood', emotionKey);
+
+    // Phase 1 — fade out the emotion cards (A).
+    // Easing.in: starts slow, accelerates → natural "leaving" feel.
+    Animated.timing(recFadeAnim, {
+      toValue: 0, duration: 220,
+      easing: Easing.in(Easing.sin), useNativeDriver: true,
+    }).start(() => {
       setSelectedEmotion(emotionKey);
-      setRecommendationState('B');
-      Animated.timing(recFadeAnim, { toValue: 1, duration: 450, easing: Easing.out(Easing.sin), useNativeDriver: true }).start();
+      setRecommendationState('T');
+
+      // Defer one tick so React renders the T node before the fade-in begins.
+      // Without this, the fade-in fires while recFadeAnim is still 0 and the
+      // T content hasn't mounted yet, producing a jump instead of a smooth entry.
+      setTimeout(() => {
+        // Phase 2 — fade in the supportive sentence (T).
+        Animated.timing(recFadeAnim, {
+          toValue: 1, duration: 400,
+          easing: Easing.out(Easing.sin), useNativeDriver: true,
+        }).start(() => {
+
+          // Phase 3 — hold long enough for the user to read and absorb the sentence.
+          setTimeout(() => {
+            // Phase 4 — fade out the supportive sentence.
+            Animated.timing(recFadeAnim, {
+              toValue: 0, duration: 350,
+              easing: Easing.in(Easing.sin), useNativeDriver: true,
+            }).start(() => {
+              setRecommendationState('B');
+
+              // One frame so React renders the B node before the fade-in begins.
+              setTimeout(() => {
+                // Phase 5 — fade in the personalized mindset (B).
+                Animated.timing(recFadeAnim, {
+                  toValue: 1, duration: 500,
+                  easing: Easing.out(Easing.sin), useNativeDriver: true,
+                }).start();
+              }, 16);
+            });
+          }, 1300);
+
+        });
+      }, 0);
     });
   };
 
@@ -786,12 +864,6 @@ export default function MindsetScreen() {
           })()}
         </Animated.View>
 
-        {/* ── Day-range inter-section phrase ─────────────────────────────────── */}
-        <FadeInCard key={`drp-${focusVersion}-${activeCat}`} delay={Math.min(visible.length, 6) * 80 + 120}>
-          <Text style={styles.dayRangePhrase}>{getDayRangePhrase(currentDay, lang)}</Text>
-        </FadeInCard>
-
-
         {/* ── For You Today — recomendação interativa ──────────────────────── */}
         <Animated.View style={{ opacity: recFadeAnim, marginTop: Spacing.md }}>
 
@@ -829,17 +901,42 @@ export default function MindsetScreen() {
                         onPress={() => handleSelectEmotion(emotion.key)}
                         activeOpacity={0.88}
                       >
-                        <View style={{ marginBottom: 6 }}>
-                          <emotion.Icon
-                            size={20}
-                            color={isActive ? '#C9A84C' : '#8A7A72'}
-                          />
-                        </View>
-                        <Text style={{ fontSize: 13, fontWeight: '500', color: '#4A4440', letterSpacing: 0.1 }}>{t('mindset.emotion.' + emotion.key)}</Text>
+                        <Text style={{
+                          fontSize: 15,
+                          fontWeight: isActive ? '600' : '500',
+                          color: isActive ? '#2C2724' : '#5A524D',
+                          letterSpacing: 0.2,
+                          textAlign: 'center',
+                          lineHeight: 20,
+                        }}>{t('mindset.emotion.' + emotion.key)}</Text>
                       </TouchableOpacity>
                     );
                   })}
                 </View>
+              </View>
+            )}
+
+            {/* ── ESTADO T: Mensagem de transição ──────────────────────────── */}
+            {recommendationState === 'T' && selectedEmotion && (
+              <View style={{
+                paddingHorizontal: Spacing.xl,
+                paddingVertical: 32,
+                alignItems: 'center',
+                justifyContent: 'center',
+                minHeight: 130,
+              }}>
+                <Text style={{
+                  fontSize: 16,
+                  fontWeight: '400',
+                  color: '#5A524D',
+                  textAlign: 'center',
+                  lineHeight: 26,
+                  fontStyle: 'italic',
+                  letterSpacing: 0.1,
+                }}>
+                  {TRANSITION_MESSAGES[lang]?.[selectedEmotion]
+                    ?? TRANSITION_MESSAGES['en']![selectedEmotion]}
+                </Text>
               </View>
             )}
 
@@ -907,17 +1004,6 @@ export default function MindsetScreen() {
                     </TouchableOpacity>
                   )}
                 />
-                {selectedEmotion && (
-                  <Text style={styles.adaptiveHint}>
-                    {lang === 'pt'
-                      ? EMOTION_ADAPTIVE_PT[selectedEmotion].hint
-                      : lang === 'es'
-                      ? EMOTION_ADAPTIVE_ES[selectedEmotion].hint
-                      : lang === 'de'
-                      ? EMOTION_ADAPTIVE_DE[selectedEmotion].hint
-                      : EMOTION_ADAPTIVE_EN[selectedEmotion].hint}
-                  </Text>
-                )}
               </>
             )}
 

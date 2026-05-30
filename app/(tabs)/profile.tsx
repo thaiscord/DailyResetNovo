@@ -950,40 +950,46 @@ export default function ProfileScreen() {
         )}
 
         {/* ── 5. EMOTIONAL JOURNEY ─────────────────────────────── */}
-        {profile && (
-          <View style={styles.section}>
-            <Text style={styles.sectionEyebrow}>{t('profile.journey.eyebrow')}</Text>
-            <TouchableOpacity
-              style={styles.profileJourneyCard}
-              onPress={() => setShowProfilePicker(true)}
-              activeOpacity={0.82}
-            >
-              <View style={styles.profileJourneyLeft}>
-                <View style={styles.profileJourneyIconWrap}>
-                  <Ionicons
-                    name={
-                      profile === 'focus'      ? 'flash'    :
-                      profile === 'calm'       ? 'leaf'     :
-                      profile === 'confidence' ? 'star'     :
-                      'heart'
-                    }
-                    size={18}
-                    color={Colors.gold}
-                  />
-                </View>
-                <View style={styles.profileJourneyText}>
-                  <Text style={styles.profileJourneyLabel}>
-                    {getProfileLabel(profile, contextLang)}
-                  </Text>
-                  <Text style={styles.profileJourneyDesc}>
-                    {getProfileDescriptionShort(profile, progress.currentDay, contextLang)}
-                  </Text>
-                </View>
+        {/* Always visible — adapts to whether a recovery path has been chosen. */}
+        <View style={styles.section}>
+          <Text style={styles.sectionEyebrow}>{t('profile.journey.eyebrow')}</Text>
+          <TouchableOpacity
+            style={styles.profileJourneyCard}
+            onPress={() => setShowProfilePicker(true)}
+            activeOpacity={0.82}
+          >
+            <View style={styles.profileJourneyLeft}>
+              <View style={styles.profileJourneyIconWrap}>
+                <Ionicons
+                  name={
+                    profile === 'focus'      ? 'flash'           :
+                    profile === 'calm'       ? 'leaf'            :
+                    profile === 'confidence' ? 'star'            :
+                    profile === 'burnout'    ? 'heart'           :
+                    'compass-outline'
+                  }
+                  size={18}
+                  color={Colors.gold}
+                />
               </View>
-              <Text style={styles.profileJourneyChange}>{t('profile.journey.change')}</Text>
-            </TouchableOpacity>
-          </View>
-        )}
+              <View style={styles.profileJourneyText}>
+                <Text style={styles.profileJourneyLabel}>
+                  {profile
+                    ? getProfileLabel(profile, contextLang)
+                    : t('profile.journey.fallback')}
+                </Text>
+                <Text style={styles.profileJourneyDesc}>
+                  {profile
+                    ? getProfileDescriptionShort(profile, progress.currentDay, contextLang)
+                    : t('profile.modal.journey.sub')}
+                </Text>
+              </View>
+            </View>
+            <Text style={styles.profileJourneyChange}>
+              {profile ? t('profile.journey.change') : t('profile.journey.choose')}
+            </Text>
+          </TouchableOpacity>
+        </View>
 
         {/* ── 6. SETTINGS — staggered fade-in ─────────────────── */}
         <View style={styles.section}>
