@@ -1,887 +1,799 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Animated, Easing, Dimensions, StatusBar,
+  Animated, Easing, StatusBar,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import Svg, { Circle } from 'react-native-svg';
 import * as Haptics from 'expo-haptics';
 import { useProgress } from '../hooks/useProgress';
 import { useHabits } from '../hooks/useHabits';
 import { useLanguage } from '../hooks/useLanguage';
 import { useWeeklyRecap } from '../hooks/useWeeklyRecap';
-import { getFutureReflectionPrompt, getFutureIdentityPhase } from '../utils/futureSelf';
-import CommunityInsightCard from '../components/CommunityInsightCard';
-import { MoodBadge } from '../components/ui/MoodBadge';
-import { getInsightForContext } from '../utils/socialProof';
 import { maybeRequestReviewAfterRecap } from '../utils/reviewRequest';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
-import { getWeekEntries, DailyEntry } from '../utils/dailyEntries';
+import { getWeekAllDays } from '../utils/dailyEntries';
+import { getAppNow } from '../utils/appDate';
+import { getWeekMonday } from '../utils/weeklyRecap';
 import {
-  WeeklyRecapData,
-  getWeeklyNarrative,
-  getEmotionalMetrics,
-  getWeeklyHighlights,
-  getWeeklyFutureMomentum,
-  getCelebrationLevel,
-  CelebrationLevel,
-} from '../utils/weeklyRecap';
-
-const { width } = Dimensions.get('window');
-const AnimatedCircle = Animated.createAnimatedComponent(Circle);
-
-// ─── Animated SVG Ring ────────────────────────────────────────────────────────
-function RecapRing({ pct, size = 140, stroke = 12 }: { pct: number; size?: number; stroke?: number }) {
-  const r = (size - stroke) / 2;
-  const circ = 2 * Math.PI * r;
-  const anim = useRef(new Animated.Value(0)).current;
-
-  useEffect(() => {
-    Animated.timing(anim, {
-      toValue: pct,
-      duration: 1400,
-      delay: 400,
-      easing: Easing.out(Easing.cubic),
-      useNativeDriver: false,
-    }).start();
-  }, [pct]);
-
-  const offset = anim.interpolate({
-    inputRange: [0, 100],
-    outputRange: [circ, 0],
-    extrapolate: 'clamp',
-  });
-
-  return (
-    <Svg width={size} height={size}>
-      <Circle
-        cx={size / 2} cy={size / 2} r={r}
-        stroke="rgba(255,255,255,0.10)" strokeWidth={stroke} fill="none"
-      />
-      <AnimatedCircle
-        cx={size / 2} cy={size / 2} r={r}
-        stroke={Colors.accent} strokeWidth={stroke} fill="none"
-        strokeDasharray={circ} strokeDashoffset={offset}
-        strokeLinecap="round"
-        transform={`rotate(-90 ${size / 2} ${size / 2})`}
-      />
-    </Svg>
-  );
-}
+  buildWeekInsights,
+  WeekInsights,
+  getDayName,
+  getMoodLabel,
+  getCategoryLabel,
+  getRhythmCopy,
+  getWeekOverviewLines,
+  getTrendCopy,
+  getQuietObservation,
+  getLookingAhead,
+} from '../utils/weeklyInsights';
 
 // ─── Staggered fade-in ────────────────────────────────────────────────────────
+
 function FadeIn({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
   const opacity = useRef(new Animated.Value(0)).current;
-  const ty = useRef(new Animated.Value(18)).current;
-
+  const ty      = useRef(new Animated.Value(16)).current;
   useEffect(() => {
     Animated.parallel([
-      Animated.timing(opacity, { toValue: 1, duration: 500, delay, useNativeDriver: true }),
-      Animated.timing(ty, { toValue: 0, duration: 500, delay, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
+      Animated.timing(opacity, { toValue: 1, duration: 480, delay, useNativeDriver: true }),
+      Animated.timing(ty,      { toValue: 0, duration: 480, delay, easing: Easing.out(Easing.cubic), useNativeDriver: true }),
     ]).start();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
   return <Animated.View style={{ opacity, transform: [{ translateY: ty }] }}>{children}</Animated.View>;
 }
 
-// ─── Golden glow overlay (exceptional weeks) ──────────────────────────────────
-function GoldenGlow({ level }: { level: CelebrationLevel }) {
-  const glow = useRef(new Animated.Value(0)).current;
+// ─── Section label ─────────────────────────────────────────────────────────────
 
-  useEffect(() => {
-    if (level === 'none') return;
-    Animated.loop(
-      Animated.sequence([
-        Animated.timing(glow, { toValue: 1, duration: 2200, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
-        Animated.timing(glow, { toValue: 0.4, duration: 2200, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
-      ]),
-    ).start();
-  }, [level]);
+function SectionLabel({ children }: { children: string }) {
+  return <Text style={styles.sectionLabel}>{children}</Text>;
+}
 
-  if (level === 'none') return null;
+// ─── Section 1 — Week Overview ────────────────────────────────────────────────
 
-  const opacity = level === 'exceptional' ? 0.18 : level === 'strong' ? 0.11 : 0.07;
+function SectionOverview({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const { intro, narrative } = getWeekOverviewLines(insights, lang);
+  const returnsLabel = lang === 'pt' ? 'retornos' : lang === 'es' ? 'retornos' : lang === 'fr' ? 'retours' : lang === 'de' ? 'Rückkehren' : 'returns';
+  const quietLabel   = lang === 'pt' ? 'dias quietos' : lang === 'es' ? 'días tranquilos' : lang === 'fr' ? 'jours calmes' : lang === 'de' ? 'stille Tage' : 'quiet days';
 
   return (
-    <Animated.View
-      pointerEvents="none"
-      style={[
-        StyleSheet.absoluteFillObject,
-        { opacity: glow.interpolate({ inputRange: [0, 1], outputRange: [0, opacity] }) },
-      ]}
-    >
-      <LinearGradient
-        colors={['transparent', Colors.accent, 'transparent']}
-        start={{ x: 0.5, y: 0 }}
-        end={{ x: 0.5, y: 1 }}
-        style={StyleSheet.absoluteFillObject}
-      />
-    </Animated.View>
+    <FadeIn delay={80}>
+      <View style={styles.card}>
+        <Text style={styles.overviewIntro}>{intro}</Text>
+        <View style={styles.overviewStats}>
+          <View style={styles.overviewStatItem}>
+            <Text style={styles.overviewStatNum}>{insights.resetsCompleted}</Text>
+            <Text style={styles.overviewStatLabel}>{returnsLabel}</Text>
+          </View>
+          <View style={styles.overviewStatDivider} />
+          <View style={styles.overviewStatItem}>
+            <Text style={styles.overviewStatNum}>{insights.skippedCount}</Text>
+            <Text style={styles.overviewStatLabel}>{quietLabel}</Text>
+          </View>
+        </View>
+        {narrative ? (
+          <Text style={styles.overviewNarrative}>{narrative}</Text>
+        ) : null}
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 2 — Your Rhythm ──────────────────────────────────────────────────
+
+function SectionRhythm({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title = lang === 'pt' ? 'SEU RITMO' : lang === 'es' ? 'TU RITMO' : lang === 'fr' ? 'TON RYTHME' : lang === 'de' ? 'DEIN RHYTHMUS' : 'YOUR RHYTHM';
+  const copy  = getRhythmCopy(insights.rhythmPattern, lang);
+  const dayLetters = lang === 'pt'
+    ? ['S','T','Q','Q','S','S','D']
+    : lang === 'es' || lang === 'fr'
+    ? ['L','M','M','J','V','S','D']
+    : lang === 'de'
+    ? ['M','D','M','D','F','S','S']
+    : ['M','T','W','T','F','S','S'];
+
+  return (
+    <FadeIn delay={160}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={styles.card}>
+          {/* Dot grid */}
+          <View style={styles.rhythmRow}>
+            {insights.days.map((d, i) => (
+              <View key={i} style={styles.rhythmCell}>
+                <View style={[styles.rhythmDot, d.completed && styles.rhythmDotFilled]} />
+                <Text style={[styles.rhythmDayLetter, d.completed && styles.rhythmDayLetterActive]}>
+                  {dayLetters[i]}
+                </Text>
+              </View>
+            ))}
+          </View>
+          <Text style={styles.rhythmCopy}>{copy}</Text>
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 3 — How You Arrived (mood) ──────────────────────────────────────
+
+function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title   = lang === 'pt' ? 'COMO VOCÊ CHEGOU' : lang === 'es' ? 'CÓMO LLEGASTE' : lang === 'fr' ? 'COMMENT TU ES ARRIVÉ' : lang === 'de' ? 'WIE DU ANKAMST' : 'HOW YOU ARRIVED';
+  const mostLabel = lang === 'pt' ? 'Estado mais frequente' : lang === 'es' ? 'Estado más frecuente' : lang === 'fr' ? 'État le plus fréquent' : lang === 'de' ? 'Häufigster Zustand' : 'Most common state';
+  const alsoLabel = lang === 'pt' ? 'Também presente' : lang === 'es' ? 'También presente' : lang === 'fr' ? 'Aussi présent' : lang === 'de' ? 'Auch präsent' : 'Also present';
+
+  const { moodCounts, dominantMood, secondaryMoods, moodTotal } = insights;
+  if (moodTotal === 0) return null;
+
+  const MOOD_DOT: Record<string, string> = { hard: '#C9806A', okay: '#C9A84C', good: '#7FAF7A' };
+
+  return (
+    <FadeIn delay={240}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={styles.card}>
+          {dominantMood && (
+            <View style={styles.moodPrimary}>
+              <Text style={styles.moodPrimaryLabel}>{mostLabel}</Text>
+              <View style={styles.moodRow}>
+                <View style={[styles.moodDot, { backgroundColor: MOOD_DOT[dominantMood] }]} />
+                <Text style={styles.moodName}>{getMoodLabel(dominantMood, lang)}</Text>
+                <Text style={styles.moodCount}>{moodCounts[dominantMood]}×</Text>
+              </View>
+            </View>
+          )}
+          {secondaryMoods.length > 0 && (
+            <View style={styles.moodSecondary}>
+              <Text style={styles.moodSecondaryLabel}>{alsoLabel}</Text>
+              {secondaryMoods.map(m => (
+                <View key={m} style={styles.moodRow}>
+                  <View style={[styles.moodDot, styles.moodDotSmall, { backgroundColor: MOOD_DOT[m] }]} />
+                  <Text style={styles.moodNameSmall}>{getMoodLabel(m, lang)}</Text>
+                  <Text style={styles.moodCountSmall}>{moodCounts[m]}×</Text>
+                </View>
+              ))}
+            </View>
+          )}
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 4 — What Your Mind Was Asking For ────────────────────────────────
+
+function SectionCategories({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title  = lang === 'pt' ? 'O QUE SUA MENTE PEDIA' : lang === 'es' ? 'LO QUE TU MENTE PEDÍA' : lang === 'fr' ? 'CE QUE TON ESPRIT DEMANDAIT' : lang === 'de' ? 'WONACH DEIN GEIST FRAGTE' : 'WHAT YOUR MIND WAS ASKING FOR';
+  const subKey = lang === 'pt' ? 'apareceu mais vezes' : lang === 'es' ? 'apareció más veces' : lang === 'fr' ? 'est apparu le plus souvent' : lang === 'de' ? 'kam am häufigsten vor' : 'appeared most often';
+
+  const { topCategories, categoryCounts } = insights;
+  if (topCategories.length === 0) return null;
+  const dominant = topCategories[0];
+
+  return (
+    <FadeIn delay={300}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={styles.card}>
+          <View style={styles.chipRow}>
+            {topCategories.map(cat => (
+              <View key={cat} style={[styles.chip, cat === dominant && styles.chipPrimary]}>
+                <Text style={[styles.chipText, cat === dominant && styles.chipTextPrimary]}>
+                  {getCategoryLabel(cat, lang)}
+                </Text>
+              </View>
+            ))}
+          </View>
+          {dominant && categoryCounts[dominant] > 1 && (
+            <Text style={styles.categoryNote}>
+              {getCategoryLabel(dominant, lang)} {subKey}.
+            </Text>
+          )}
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 5 — Words of the Week ────────────────────────────────────────────
+
+function SectionWords({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title    = lang === 'pt' ? 'PALAVRAS DA SEMANA' : lang === 'es' ? 'PALABRAS DE LA SEMANA' : lang === 'fr' ? 'MOTS DE LA SEMAINE' : lang === 'de' ? 'WORTE DER WOCHE' : 'WORDS OF THE WEEK';
+  const oneLabel = lang === 'pt' ? 'Uma palavra esteve com você esta semana' : lang === 'es' ? 'Una palabra estuvo contigo esta semana' : lang === 'fr' ? 'Un mot t\'a accompagné cette semaine' : lang === 'de' ? 'Ein Wort begleitete dich diese Woche' : 'One word stayed with you this week';
+  const manyLabel = lang === 'pt' ? 'Palavras que ficaram com você' : lang === 'es' ? 'Palabras que se quedaron contigo' : lang === 'fr' ? 'Mots qui sont restés avec toi' : lang === 'de' ? 'Worte, die bei dir blieben' : 'Words that stayed with you';
+
+  const { uniqueWords, mostFrequentWord } = insights;
+  if (uniqueWords.length === 0) return null;
+
+  return (
+    <FadeIn delay={360}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={styles.card}>
+          <Text style={styles.wordsNote}>{uniqueWords.length === 1 ? oneLabel : manyLabel}</Text>
+          <View style={styles.chipRow}>
+            {uniqueWords.map(w => (
+              <View key={w} style={[styles.chip, w === mostFrequentWord && styles.chipPrimary]}>
+                <Text style={[styles.chipText, w === mostFrequentWord && styles.chipTextPrimary]}>{w}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 6 — A Moment That Stood Out ──────────────────────────────────────
+
+function SectionHighlight({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title    = lang === 'pt' ? 'UM MOMENTO QUE SE DESTACOU' : lang === 'es' ? 'UN MOMENTO QUE DESTACÓ' : lang === 'fr' ? 'UN MOMENT QUI S\'EST DÉMARQUÉ' : lang === 'de' ? 'EIN MOMENT DER HERVORSTACH' : 'A MOMENT THAT STOOD OUT';
+  const onLabel  = lang === 'pt' ? 'Na' : lang === 'es' ? 'El' : lang === 'fr' ? 'Le' : lang === 'de' ? 'Am' : 'On';
+  const youWrote = lang === 'pt' ? 'você escreveu' : lang === 'es' ? 'escribiste' : lang === 'fr' ? 'tu as écrit' : lang === 'de' ? 'hast du geschrieben' : 'you wrote';
+
+  const { highlight } = insights;
+  if (!highlight) return null;
+
+  const dayName = getDayName(highlight.dayIndex, lang);
+  const preview = highlight.text.length > 140 ? highlight.text.slice(0, 137) + '…' : highlight.text;
+
+  return (
+    <FadeIn delay={420}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={[styles.card, styles.highlightCard]}>
+          <Text style={styles.highlightMeta}>
+            {onLabel} {dayName}, {youWrote}:
+          </Text>
+          <View style={styles.highlightQuoteBar} />
+          <Text style={styles.highlightQuote}>{`"${preview}"`}</Text>
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 7 — What Changed ─────────────────────────────────────────────────
+
+function SectionTrend({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title = lang === 'pt' ? 'O QUE MUDOU' : lang === 'es' ? 'QUÉ CAMBIÓ' : lang === 'fr' ? 'CE QUI A CHANGÉ' : lang === 'de' ? 'WAS SICH VERÄNDERTE' : 'WHAT CHANGED';
+
+  const copy = getTrendCopy(insights, lang);
+  if (!copy) return null;
+
+  return (
+    <FadeIn delay={480}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={styles.card}>
+          <Text style={styles.trendBeginning}>{copy.beginning}</Text>
+          <View style={styles.trendDivider} />
+          <Text style={styles.trendEnding}>{copy.ending}</Text>
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 8 — A Quiet Observation ──────────────────────────────────────────
+
+function SectionObservation({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title = lang === 'pt' ? 'UMA OBSERVAÇÃO QUIETA' : lang === 'es' ? 'UNA OBSERVACIÓN TRANQUILA' : lang === 'fr' ? 'UNE OBSERVATION CALME' : lang === 'de' ? 'EINE STILLE BEOBACHTUNG' : 'A QUIET OBSERVATION';
+  const lines = getQuietObservation(insights, lang);
+
+  return (
+    <FadeIn delay={540}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={[styles.card, styles.observationCard]}>
+          {lines.map((line, i) => (
+            <Text key={i} style={[styles.observationLine, i > 0 && styles.observationLineGap]}>
+              {line}
+            </Text>
+          ))}
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 9 — Looking Ahead ────────────────────────────────────────────────
+
+function SectionLookingAhead({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title = lang === 'pt' ? 'OLHANDO ADIANTE' : lang === 'es' ? 'MIRANDO ADELANTE' : lang === 'fr' ? 'EN REGARDANT DEVANT' : lang === 'de' ? 'NACH VORNE SCHAUEN' : 'LOOKING AHEAD';
+  const lines = getLookingAhead(insights, lang);
+
+  return (
+    <FadeIn delay={600}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={styles.card}>
+          {lines.map((line, i) => (
+            <Text key={i} style={[styles.lookingAheadLine, i > 0 && styles.lookingAheadLineGap]}>
+              {line}
+            </Text>
+          ))}
+        </View>
+      </View>
+    </FadeIn>
   );
 }
 
 // ─── Main Screen ──────────────────────────────────────────────────────────────
+
 export default function WeeklyRecapScreen() {
-  const router = useRouter();
+  const router      = useRouter();
+  const insets      = useSafeAreaInsets();
   const { week: weekParam } = useLocalSearchParams<{ week?: string }>();
   const isHistorical = !!weekParam;
 
   const { progress, weeklyScore, loading: progressLoading } = useProgress();
-  const { habitLog, habits, loading: habitsLoading } = useHabits();
-  const { t, lang } = useLanguage();
-  const { generateAndSave, generateCurrentWeekPreview, dismissAutoTrigger, getRecapForWeek, loading: recapLoading } =
-    useWeeklyRecap(progress, weeklyScore, habitLog, habits.length);
+  const { habitLog, habits, loading: habitsLoading }        = useHabits();
+  const { lang }                                            = useLanguage();
+  const {
+    generateAndSave, generateCurrentWeekPreview,
+    dismissAutoTrigger, getRecapForWeek, loading: recapLoading,
+  } = useWeeklyRecap(progress, weeklyScore, habitLog, habits.length);
 
-  const [recap, setRecap] = useState<WeeklyRecapData | null>(null);
-  const [weekEntries, setWeekEntries] = useState<DailyEntry[]>([]);
+  const [recap,    setRecap]    = useState<ReturnType<typeof generateCurrentWeekPreview> | null>(null);
+  const [insights, setInsights] = useState<WeekInsights | null>(null);
   const dataLoading = progressLoading || habitsLoading || recapLoading;
 
-  useEffect(() => {
-    const today = new Date();
-    const dayOfWeek = today.getDay();
-    const daysToMonday = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
-    const monday = new Date(today);
-    monday.setDate(today.getDate() - daysToMonday);
-    const startDate = monday.toISOString().split('T')[0];
-    getWeekEntries(startDate).then(setWeekEntries);
-  }, []);
-
-  // Resolve which recap to display
+  // ── Resolve recap ────────────────────────────────────────────────────────────
   useEffect(() => {
     if (dataLoading) return;
-
     if (isHistorical && weekParam) {
       const stored = getRecapForWeek(parseInt(weekParam, 10));
-      if (stored) {
-        setRecap(stored);
-        return;
-      }
+      if (stored) { setRecap(stored); return; }
     }
-
-    // Auto-triggered: generate & save last week's recap
     generateAndSave().then(setRecap);
   }, [dataLoading, isHistorical, weekParam]);
 
-  const handleClose = useCallback(async () => {
-    if (!isHistorical) {
-      await dismissAutoTrigger();
+  // ── Load week entries once recap (and weekMonday) is known ───────────────────
+  useEffect(() => {
+    if (!recap) return;
+
+    // Resolve the Monday for this recap
+    let mondayKey = (recap as any).weekMonday as string | undefined;
+    if (!mondayKey) {
+      // Fallback: use getAppNow() for current recap, savedAt for historical
+      const base = isHistorical && (recap as any).savedAt
+        ? new Date((recap as any).savedAt)
+        : getAppNow();
+      mondayKey = (() => {
+        const monday = getWeekMonday(base);
+        return `${monday.getFullYear()}-${String(monday.getMonth() + 1).padStart(2, '0')}-${String(monday.getDate()).padStart(2, '0')}`;
+      })();
     }
+
+    getWeekAllDays(mondayKey).then(allDays => {
+      const [y, m, d] = mondayKey!.split('-').map(Number);
+      const monday = new Date(y, m - 1, d);
+      setInsights(buildWeekInsights(allDays, monday));
+    });
+  }, [recap]);
+
+  const handleClose = useCallback(async () => {
+    if (!isHistorical) await dismissAutoTrigger();
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
     router.back();
   }, [isHistorical, dismissAutoTrigger, router]);
 
   const handleReady = useCallback(() => {
     Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
-
-    // Request review after a strong week — feels earned, not engineered
-    if (recap) {
-      maybeRequestReviewAfterRecap(recap.resetsCompleted, recap.totalDaysCompleted);
-    }
-
+    if (recap) maybeRequestReviewAfterRecap(recap.resetsCompleted, recap.totalDaysCompleted);
     handleClose();
   }, [handleClose, recap]);
 
-  if (!recap) {
+  const loadingLabel =
+    lang === 'pt' ? 'Carregando...' :
+    lang === 'es' ? 'Cargando...' :
+    lang === 'fr' ? 'Chargement...' :
+    lang === 'de' ? 'Laden...' : 'Loading...';
+
+  if (!recap || !insights) {
     return (
-      <View style={styles.loadingContainer}>
-        <Text style={styles.loadingText}>{t('recap.loading')}</Text>
+      <View style={[styles.loadingContainer, { paddingTop: insets.top }]}>
+        <Text style={styles.loadingText}>{loadingLabel}</Text>
       </View>
     );
   }
 
-  // ── Compute all display values ──────────────────────────────────────────────
-  const narrative        = getWeeklyNarrative(recap.narrativeState, recap.resetsCompleted);
-  const metrics          = getEmotionalMetrics(recap.resetsCompleted, recap.streakAtEnd, recap.weekNumber);
-  const highlights       = getWeeklyHighlights(recap.resetsCompleted, recap.streakAtEnd, recap.weeklyHabitRate, recap.weekNumber);
-  const futureMomentum   = getWeeklyFutureMomentum(recap.narrativeState);
-  const celebration      = getCelebrationLevel(recap.resetsCompleted, recap.streakAtEnd);
-  const ringPct          = Math.round((recap.resetsCompleted / 7) * 100);
-  const reflectionPrompt = getFutureReflectionPrompt(recap.streakAtEnd, recap.totalDaysCompleted);
-  const futurePhase      = getFutureIdentityPhase(recap.streakAtEnd, recap.totalDaysCompleted);
-  const recapInsight     = getInsightForContext('recap', recap.weekNumber, lang);
+  const weekTitle    = lang === 'pt' || lang === 'es' ? `Semana ${recap.weekNumber}` : lang === 'fr' ? `Semaine ${recap.weekNumber}` : lang === 'de' ? `Woche ${recap.weekNumber}` : `Week ${recap.weekNumber}`;
+  const closeLabel   = lang === 'pt' ? 'Fechar' : lang === 'es' ? 'Cerrar' : lang === 'fr' ? 'Fermer' : lang === 'de' ? 'Schließen' : 'Close';
+  const readyLabel   = lang === 'pt' ? 'Pronto' : lang === 'es' ? 'Listo' : lang === 'fr' ? 'Prêt' : lang === 'de' ? 'Bereit' : 'I\'m ready';
 
   return (
     <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="dark-content" />
 
-      {/* ── DARK IMMERSIVE HEADER ──────────────────────────────────────────── */}
-      <View style={styles.header}>
-        <GoldenGlow level={celebration} />
-
-        {/* Back button */}
+      {/* ── LIGHT HEADER ──────────────────────────────────────────────────────── */}
+      <View style={[styles.header, { paddingTop: insets.top + 12 }]}>
         <TouchableOpacity style={styles.backBtn} onPress={handleClose} activeOpacity={0.7}>
-          <Ionicons name="chevron-back" size={22} color="rgba(255,255,255,0.6)" />
+          <Ionicons name="chevron-back" size={22} color={Colors.textSecondary} />
         </TouchableOpacity>
 
-        {/* Eyebrow */}
         <FadeIn delay={0}>
-          <Text style={styles.headerEyebrow}>{t('recap.eyebrow')}</Text>
-        </FadeIn>
-
-        {/* Ring + Week number */}
-        <FadeIn delay={100}>
-          <View style={styles.headerRingRow}>
-            <View style={styles.headerRingWrap}>
-              <RecapRing pct={ringPct} />
-              <View style={styles.ringCenter}>
-                <Text style={styles.ringNumber}>{recap.resetsCompleted}</Text>
-                <Text style={styles.ringDenom}>/7</Text>
-              </View>
-            </View>
-            <View style={styles.headerTextCol}>
-              <Text style={styles.headerWeekLabel}>{t('recap.week.label')} {recap.weekNumber}</Text>
-              <Text style={styles.headerDateLabel}>{recap.dateLabel}</Text>
-              {celebration !== 'none' && (
-                <View style={styles.celebrationPill}>
-                  <Ionicons name="star" size={10} color={Colors.charcoal} />
-                  <Text style={styles.celebrationPillText}>
-                    {celebration === 'exceptional' ? t('recap.cel.outstanding') : celebration === 'strong' ? t('recap.cel.strong') : t('recap.cel.good')}
-                  </Text>
-                </View>
-              )}
-            </View>
+          <View style={styles.headerContent}>
+            <Text style={styles.headerWeekLabel}>{weekTitle}</Text>
+            <Text style={styles.headerDateLabel}>{recap.dateLabel}</Text>
           </View>
-        </FadeIn>
-
-        {/* Headline copy */}
-        <FadeIn delay={220}>
-          <Text style={styles.headerHeadline}>{narrative.headline}</Text>
         </FadeIn>
       </View>
 
-      {/* ── SCROLLABLE BODY ────────────────────────────────────────────────── */}
+      {/* ── SCROLLABLE BODY ───────────────────────────────────────────────────── */}
       <ScrollView
         style={styles.scroll}
-        contentContainerStyle={styles.scrollContent}
+        contentContainerStyle={[styles.scrollContent, { paddingBottom: insets.bottom + 48 }]}
         showsVerticalScrollIndicator={false}
       >
-        {/* 1 ── NARRATIVE CARD */}
-        <FadeIn delay={320}>
-          <View style={styles.narrativeCard}>
-            <View style={styles.narrativeAccentBar} />
-            <Text style={styles.narrativeBody}>{narrative.body}</Text>
-            <View style={styles.narrativeDivider} />
-            <Text style={styles.narrativeSubtext}>{narrative.subtext}</Text>
-          </View>
-        </FadeIn>
+        {/* 1 — Week Overview */}
+        <SectionOverview insights={insights} lang={lang} />
 
-        {/* 2 ── EMOTIONAL METRICS */}
-        <FadeIn delay={420}>
-          <View style={styles.section}>
-            <Text style={styles.sectionEyebrow}>{t('recap.section.focus')}</Text>
-            <View style={styles.metricsRow}>
-              {metrics.map((m, i) => (
-                <View key={i} style={[styles.metricCard, i === 0 && styles.metricCardPrimary]}>
-                  <Ionicons
-                    name={m.icon as any}
-                    size={18}
-                    color={i === 0 ? Colors.charcoal : Colors.gold}
-                  />
-                  <Text style={[styles.metricEmotional, i === 0 && styles.metricEmotionalPrimary]}>
-                    {m.emotional}
-                  </Text>
-                  <Text style={[styles.metricRaw, i === 0 && styles.metricRawPrimary]}>
-                    {m.raw}
-                  </Text>
-                </View>
-              ))}
-            </View>
-          </View>
-        </FadeIn>
+        {/* 2 — Your Rhythm */}
+        <SectionRhythm insights={insights} lang={lang} />
 
-        {/* 3 ── HIGHLIGHTS */}
-        <FadeIn delay={520}>
-          <View style={styles.section}>
-            <Text style={styles.sectionEyebrow}>{t('recap.section.highlights')}</Text>
-            <View style={styles.highlightsCard}>
-              {highlights.map((h, i) => (
-                <View key={i}>
-                  {i > 0 && <View style={styles.highlightDivider} />}
-                  <View style={styles.highlightRow}>
-                    <View style={styles.highlightIconWrap}>
-                      <Ionicons name={h.icon as any} size={16} color={Colors.gold} />
-                    </View>
-                    <View style={styles.highlightTextWrap}>
-                      <Text style={styles.highlightEmotional}>{h.emotional}</Text>
-                      <Text style={styles.highlightLabel}>{h.label} · {h.value}</Text>
-                    </View>
-                  </View>
-                </View>
-              ))}
-            </View>
-          </View>
-        </FadeIn>
+        {/* 3 — How You Arrived */}
+        {insights.moodTotal > 0 && <SectionMood insights={insights} lang={lang} />}
 
-        {/* Daily entries — mood, action, reflection per day */}
-        {weekEntries.length > 0 && (
-          <FadeIn delay={560}>
-            <View style={styles.section}>
-              <Text style={styles.sectionEyebrow}>
-                {lang === 'de' ? 'EINTRÄGE DIESER WOCHE' : lang === 'es' ? 'REGISTROS DE LA SEMANA' : lang === 'pt' ? 'REGISTROS DA SEMANA' : "THIS WEEK'S ENTRIES"}
-              </Text>
-              {weekEntries.map((entry) => {
-                const dateObj = new Date(entry.date + 'T12:00:00');
-                const formattedDate = lang === 'de'
-                  ? dateObj.toLocaleDateString('de-DE', { weekday: 'short', day: 'numeric', month: 'short' })
-                  : lang === 'pt'
-                  ? dateObj.toLocaleDateString('pt-BR', { weekday: 'short', day: 'numeric', month: 'short' })
-                  : lang === 'es'
-                  ? dateObj.toLocaleDateString('es-ES', { weekday: 'short', day: 'numeric', month: 'short' })
-                  : dateObj.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-                return (
-                  <View key={entry.date} style={{
-                    backgroundColor: Colors.card,
-                    borderRadius: Radii.lg,
-                    padding: Spacing.base,
-                    marginBottom: Spacing.md,
-                    borderWidth: 1,
-                    borderColor: Colors.borderLight,
-                  }}>
-                    <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginBottom: Spacing.xs }}>
-                      <Text style={{ fontWeight: '700', fontSize: 15, color: Colors.textPrimary }}>
-                        {lang === 'de' ? `Tag ${entry.day}` : lang === 'es' ? `Día ${entry.day}` : lang === 'pt' ? `Dia ${entry.day}` : `Day ${entry.day}`} — {formattedDate}
-                      </Text>
-                      {entry.completed && (
-                        <Text style={{ color: Colors.gold, fontSize: 12 }}>
-                          {lang === 'de' ? '✓ Abgeschlossen' : lang === 'es' ? '✓ Completado' : lang === 'pt' ? '✓ Concluído' : '✓ Completed'}
-                        </Text>
-                      )}
-                    </View>
-                    {entry.mood && (
-                      <View style={{ marginTop: Spacing.xs }}>
-                        <MoodBadge mood={entry.mood} />
-                      </View>
-                    )}
-                    {!!entry.action_response && (
-                      <Text numberOfLines={2} style={{ fontSize: 13, color: Colors.textSecondary, marginTop: 6, fontStyle: 'italic' }}>
-                        {`"${entry.action_response}"`}
-                      </Text>
-                    )}
-                    {!!entry.reflection_response && (
-                      <Text numberOfLines={2} style={{ fontSize: 13, color: Colors.textSecondary, marginTop: 4, fontStyle: 'italic' }}>
-                        {`"${entry.reflection_response}"`}
-                      </Text>
-                    )}
-                  </View>
-                );
-              })}
-              {/* Weekly summary */}
-              {(() => {
-                const completed = weekEntries.filter(e => e.completed).length;
-                const moods = weekEntries.map(e => e.mood).filter(Boolean);
-                const moodCounts = moods.reduce<Record<string, number>>((acc, m) => {
-                  if (m) acc[m] = (acc[m] ?? 0) + 1;
-                  return acc;
-                }, {});
-                const topMood = Object.entries(moodCounts).sort((a, b) => b[1] - a[1])[0]?.[0];
-                const bestReflection = weekEntries.find(e => !!e.reflection_response)?.reflection_response;
-                return (
-                  <View style={{ backgroundColor: Colors.backgroundSecondary, borderRadius: Radii.md, padding: Spacing.base, gap: Spacing.xs }}>
-                    <Text style={{ fontSize: Typography.sizes.xs, fontWeight: Typography.weights.bold, color: Colors.gold, letterSpacing: 1.5 }}>
-                      {lang === 'es' ? 'RESUMEN DE LA SEMANA' : lang === 'pt' ? 'RESUMO DA SEMANA' : lang === 'de' ? 'WOCHENZUSAMMENFASSUNG' : 'WEEK SUMMARY'}
-                    </Text>
-                    <Text style={{ fontSize: Typography.sizes.sm, color: Colors.textSecondary }}>
-                      {lang === 'es' ? `Días completados: ${completed}/${weekEntries.length}` : lang === 'pt' ? `Dias concluídos: ${completed}/${weekEntries.length}` : lang === 'de' ? `Abgeschlossene Tage: ${completed}/${weekEntries.length}` : `Days completed: ${completed}/${weekEntries.length}`}
-                    </Text>
-                    {topMood && (
-                      <View style={{ flexDirection: 'row', alignItems: 'center', gap: Spacing.xs }}>
-                        <Text style={{ fontSize: Typography.sizes.sm, color: Colors.textSecondary }}>
-                          {lang === 'es' ? 'Estado más frecuente:' : lang === 'pt' ? 'Estado mais frequente:' : lang === 'de' ? 'Häufigste Stimmung:' : 'Most common mood:'}
-                        </Text>
-                        <MoodBadge mood={topMood as 'hard' | 'okay' | 'good'} />
-                      </View>
-                    )}
-                    {bestReflection && (
-                      <Text numberOfLines={3} style={{ fontSize: Typography.sizes.sm, color: Colors.textSecondary, fontStyle: 'italic', marginTop: 4 }}>
-                        {`${lang === 'es' ? 'Un momento para reflexionar:' : lang === 'pt' ? 'Um momento para refletir:' : lang === 'de' ? 'Ein Moment zum Reflektieren:' : 'A moment to reflect:'} "${bestReflection}"`}
-                      </Text>
-                    )}
-                  </View>
-                );
-              })()}
-            </View>
-          </FadeIn>
-        )}
+        {/* 4 — What Your Mind Was Asking For */}
+        {insights.topCategories.length > 0 && <SectionCategories insights={insights} lang={lang} />}
 
-        {/* Community insight — subtle normalization in recap */}
-        <FadeIn delay={580}>
-          <View style={{ paddingHorizontal: Spacing.xl, marginBottom: Spacing.md }}>
-            <CommunityInsightCard insight={recapInsight} variant="subtle" />
-          </View>
-        </FadeIn>
+        {/* 5 — Words of the Week */}
+        {insights.uniqueWords.length > 0 && <SectionWords insights={insights} lang={lang} />}
 
-        {/* 4 ── HABIT RHYTHM (if data available) */}
-        {recap.weeklyHabitRate > 0 && (
-          <FadeIn delay={600}>
-            <View style={styles.section}>
-              <Text style={styles.sectionEyebrow}>{t('recap.section.habits')}</Text>
-              <View style={styles.habitCard}>
-                <View style={styles.habitBar}>
-                  <View
-                    style={[
-                      styles.habitBarFill,
-                      { width: `${Math.max(recap.weeklyHabitRate, 2)}%` as any },
-                    ]}
-                  />
-                </View>
-                <Text style={styles.habitRate}>{recap.weeklyHabitRate}%</Text>
-                <Text style={styles.habitEmotional}>
-                  {recap.weeklyHabitRate >= 70
-                    ? t('recap.habit.automatic')
-                    : recap.weeklyHabitRate >= 40
-                    ? t('recap.habit.growing')
-                    : t('recap.habit.small')}
-                </Text>
-              </View>
-            </View>
-          </FadeIn>
-        )}
+        {/* 6 — A Moment That Stood Out */}
+        {insights.highlight && <SectionHighlight insights={insights} lang={lang} />}
 
-        {/* 5 ── REFLECTION PROMPT */}
-        <FadeIn delay={650}>
-          <View style={styles.reflectionSection}>
-            <Text style={styles.reflectionEyebrow}>{t('recap.section.reflection')}</Text>
-            <Text style={styles.reflectionQuestion}>{reflectionPrompt}</Text>
-            <View style={styles.reflectionPhaseRow}>
-              <View style={styles.reflectionPhasePill}>
-                <Text style={styles.reflectionPhaseText}>{futurePhase.label.toUpperCase()}</Text>
-              </View>
-              <Text style={styles.reflectionPhaseMessage}>{futurePhase.message}</Text>
-            </View>
-          </View>
-        </FadeIn>
+        {/* 7 — What Changed */}
+        {insights.trendDirection && <SectionTrend insights={insights} lang={lang} />}
 
-        {/* 6 ── FUTURE MOMENTUM */}
+        {/* 8 — A Quiet Observation */}
+        <SectionObservation insights={insights} lang={lang} />
+
+        {/* 9 — Looking Ahead */}
+        <SectionLookingAhead insights={insights} lang={lang} />
+
+        {/* CTA */}
         <FadeIn delay={680}>
-          <View style={styles.momentumSection}>
-            {futureMomentum.map((line, i) => (
-              <Text
-                key={i}
-                style={[
-                  styles.momentumLine,
-                  i === 0 && styles.momentumLineFirst,
-                  i === futureMomentum.length - 1 && styles.momentumLineLast,
-                ]}
-              >
-                {line}
-              </Text>
-            ))}
-          </View>
-        </FadeIn>
-
-        {/* 6 ── CTA BUTTON */}
-        <FadeIn delay={800}>
           <View style={styles.ctaSection}>
-            <TouchableOpacity
-              style={styles.ctaButton}
-              onPress={handleReady}
-              activeOpacity={0.82}
-            >
-              <Text style={styles.ctaText}>
-                {isHistorical ? t('recap.cta.close') : t('recap.cta.ready')}
-              </Text>
-              <Ionicons name="arrow-forward" size={16} color={Colors.charcoal} />
+            <TouchableOpacity style={styles.ctaButton} onPress={handleReady} activeOpacity={0.82}>
+              <Text style={styles.ctaText}>{isHistorical ? closeLabel : readyLabel}</Text>
             </TouchableOpacity>
-
             {!isHistorical && (
               <TouchableOpacity onPress={handleClose} style={styles.skipBtn} activeOpacity={0.6}>
-                <Text style={styles.skipText}>{t('recap.cta.close')}</Text>
+                <Text style={styles.skipText}>{closeLabel}</Text>
               </TouchableOpacity>
             )}
           </View>
         </FadeIn>
-
-        <View style={styles.bottomPad} />
       </ScrollView>
     </View>
   );
 }
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
+
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: Colors.background },
 
   loadingContainer: {
-    flex: 1, backgroundColor: Colors.charcoal,
-    alignItems: 'center', justifyContent: 'center',
+    flex: 1,
+    backgroundColor: Colors.background,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   loadingText: {
-    color: 'rgba(255,255,255,0.5)', fontSize: Typography.sizes.sm,
+    fontSize: Typography.sizes.sm,
+    color: Colors.textMuted,
     fontStyle: 'italic',
   },
 
   // ── Header ──────────────────────────────────────────────────────────────────
   header: {
-    backgroundColor: Colors.charcoal,
-    paddingTop: 56,
-    paddingBottom: Spacing.xl,
+    backgroundColor: Colors.background,
     paddingHorizontal: Spacing.xl,
-    overflow: 'hidden',
+    paddingBottom: Spacing.lg,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderBottomColor: Colors.border,
   },
   backBtn: {
-    position: 'absolute',
-    top: 56,
-    left: Spacing.lg,
     width: 36, height: 36,
     borderRadius: 18,
-    backgroundColor: 'rgba(255,255,255,0.08)',
+    backgroundColor: Colors.backgroundSecondary,
     alignItems: 'center', justifyContent: 'center',
-    zIndex: 10,
+    marginBottom: Spacing.md,
   },
-  headerEyebrow: {
-    fontSize: Typography.sizes.xs,
-    fontWeight: Typography.weights.bold,
-    color: Colors.gold,
-    letterSpacing: 2.5,
-    textAlign: 'center',
-    marginBottom: Spacing.lg,
-  },
-  headerRingRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: Spacing.xl,
-    marginBottom: Spacing.lg,
-  },
-  headerRingWrap: {
-    position: 'relative',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  ringCenter: {
-    position: 'absolute',
-    flexDirection: 'row',
-    alignItems: 'baseline',
-  },
-  ringNumber: {
-    fontSize: 38,
-    fontWeight: Typography.weights.black,
-    color: Colors.white,
-    letterSpacing: -1,
-  },
-  ringDenom: {
-    fontSize: Typography.sizes.lg,
-    fontWeight: Typography.weights.semibold,
-    color: 'rgba(255,255,255,0.45)',
-    marginLeft: 1,
-  },
-  headerTextCol: {
-    flex: 1,
-    gap: Spacing.xs,
+  headerContent: {
+    gap: 4,
   },
   headerWeekLabel: {
-    fontSize: Typography.sizes.xxxl,
-    fontWeight: Typography.weights.black,
-    color: Colors.white,
-    letterSpacing: -1,
-    lineHeight: 40,
+    fontSize: Typography.sizes.xxl,
+    fontWeight: Typography.weights.bold,
+    color: Colors.textPrimary,
+    letterSpacing: -0.5,
+    lineHeight: 34,
   },
   headerDateLabel: {
     fontSize: Typography.sizes.sm,
-    color: 'rgba(255,255,255,0.45)',
-    letterSpacing: 0.3,
-  },
-  celebrationPill: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    backgroundColor: Colors.accent,
-    borderRadius: Radii.full,
-    paddingHorizontal: Spacing.md,
-    paddingVertical: 4,
-    alignSelf: 'flex-start',
-    marginTop: Spacing.xs,
-  },
-  celebrationPillText: {
-    fontSize: Typography.sizes.xs,
-    fontWeight: Typography.weights.bold,
-    color: Colors.charcoal,
-    letterSpacing: 0.5,
-  },
-  headerHeadline: {
-    fontSize: Typography.sizes.base,
-    fontWeight: Typography.weights.medium,
-    color: 'rgba(255,255,255,0.65)',
-    fontStyle: 'italic',
-    lineHeight: 24,
-    textAlign: 'center',
-    paddingTop: Spacing.sm,
+    color: Colors.textMuted,
+    letterSpacing: 0.2,
   },
 
   // ── Scroll ───────────────────────────────────────────────────────────────────
   scroll: { flex: 1 },
-  scrollContent: { paddingTop: Spacing.xl },
-
-  section: {
+  scrollContent: {
     paddingHorizontal: Spacing.xl,
-    marginBottom: Spacing.xl,
+    paddingTop: Spacing.xl,
+    gap: Spacing.xl,
   },
-  sectionEyebrow: {
+
+  // ── Shared section ───────────────────────────────────────────────────────────
+  section: { gap: Spacing.sm },
+
+  sectionLabel: {
     fontSize: Typography.sizes.xs,
     fontWeight: Typography.weights.bold,
     color: Colors.gold,
-    letterSpacing: 2,
+    letterSpacing: 1.8,
+    marginBottom: 2,
+  },
+
+  card: {
+    backgroundColor: Colors.card,
+    borderRadius: Radii.xl,
+    padding: Spacing.lg,
+    borderWidth: 1,
+    borderColor: Colors.borderLight,
+    ...Shadows.card,
+  },
+
+  // ── Section 1 — Overview ─────────────────────────────────────────────────────
+  overviewIntro: {
+    fontSize: Typography.sizes.base,
+    fontWeight: Typography.weights.semibold,
+    color: Colors.textPrimary,
+    letterSpacing: -0.2,
     marginBottom: Spacing.md,
   },
-
-  // ── Narrative Card ────────────────────────────────────────────────────────────
-  narrativeCard: {
-    marginHorizontal: Spacing.xl,
-    marginBottom: Spacing.xl,
-    backgroundColor: Colors.card,
-    borderRadius: Radii.xl,
-    padding: Spacing.lg,
-    borderWidth: 1,
-    borderColor: Colors.borderLight,
-    ...Shadows.cardStrong,
-  },
-  narrativeAccentBar: {
-    width: 32,
-    height: 3,
-    backgroundColor: Colors.accent,
-    borderRadius: Radii.full,
-    marginBottom: Spacing.base,
-  },
-  narrativeBody: {
-    fontSize: Typography.sizes.base,
-    fontWeight: Typography.weights.medium,
-    color: Colors.textPrimary,
-    lineHeight: 28,
-    fontStyle: 'italic',
-    marginBottom: Spacing.base,
-  },
-  narrativeDivider: {
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: Colors.borderLight,
-    marginBottom: Spacing.base,
-  },
-  narrativeSubtext: {
-    fontSize: Typography.sizes.sm,
-    color: Colors.textMuted,
-    lineHeight: 20,
-    fontStyle: 'italic',
-  },
-
-  // ── Metrics ───────────────────────────────────────────────────────────────────
-  metricsRow: {
-    gap: Spacing.md,
-  },
-  metricCard: {
-    backgroundColor: Colors.card,
-    borderRadius: Radii.xl,
-    padding: Spacing.base,
-    borderWidth: 1,
-    borderColor: Colors.borderLight,
+  overviewStats: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: Spacing.md,
-    ...Shadows.card,
+    gap: Spacing.base,
+    marginBottom: Spacing.base,
   },
-  metricCardPrimary: {
-    backgroundColor: Colors.charcoal,
-    borderColor: Colors.charcoal,
-  },
-  metricEmotional: {
-    flex: 1,
-    fontSize: Typography.sizes.sm,
-    fontWeight: Typography.weights.semibold,
-    color: Colors.textPrimary,
-    lineHeight: 20,
-  },
-  metricEmotionalPrimary: {
-    color: Colors.white,
-  },
-  metricRaw: {
-    fontSize: Typography.sizes.xs,
-    color: Colors.textMuted,
-  },
-  metricRawPrimary: {
-    color: 'rgba(255,255,255,0.45)',
-  },
-
-  // ── Highlights ─────────────────────────────────────────────────────────────────
-  highlightsCard: {
-    backgroundColor: Colors.card,
-    borderRadius: Radii.xl,
-    padding: Spacing.lg,
-    borderWidth: 1,
-    borderColor: Colors.borderLight,
-    ...Shadows.card,
-  },
-  highlightRow: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    gap: Spacing.md,
-    paddingVertical: Spacing.sm,
-  },
-  highlightIconWrap: {
-    width: 34,
-    height: 34,
-    borderRadius: 17,
-    backgroundColor: Colors.accentDim,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexShrink: 0,
-  },
-  highlightTextWrap: {
-    flex: 1,
-    gap: 2,
-  },
-  highlightEmotional: {
-    fontSize: Typography.sizes.sm,
-    fontWeight: Typography.weights.semibold,
-    color: Colors.textPrimary,
-    lineHeight: 20,
-  },
-  highlightLabel: {
-    fontSize: Typography.sizes.xs,
-    color: Colors.textMuted,
-  },
-  highlightDivider: {
-    height: StyleSheet.hairlineWidth,
-    backgroundColor: Colors.borderLight,
-    marginLeft: 46,
-  },
-
-  // ── Habit Card ─────────────────────────────────────────────────────────────────
-  habitCard: {
-    backgroundColor: Colors.card,
-    borderRadius: Radii.xl,
-    padding: Spacing.lg,
-    borderWidth: 1,
-    borderColor: Colors.borderLight,
-    gap: Spacing.sm,
-    ...Shadows.card,
-  },
-  habitBar: {
-    height: 6,
-    backgroundColor: Colors.backgroundSecondary,
-    borderRadius: Radii.full,
-    overflow: 'hidden',
-  },
-  habitBarFill: {
-    height: '100%',
-    backgroundColor: Colors.accent,
-    borderRadius: Radii.full,
-  },
-  habitRate: {
-    fontSize: Typography.sizes.xxl,
+  overviewStatItem: { alignItems: 'center', flex: 1 },
+  overviewStatNum: {
+    fontSize: Typography.sizes.xxxl,
     fontWeight: Typography.weights.black,
     color: Colors.textPrimary,
-    letterSpacing: -0.5,
+    letterSpacing: -1,
+    lineHeight: 44,
   },
-  habitEmotional: {
+  overviewStatLabel: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    letterSpacing: 0.3,
+    marginTop: 1,
+  },
+  overviewStatDivider: {
+    width: 1,
+    height: 44,
+    backgroundColor: Colors.border,
+  },
+  overviewNarrative: {
     fontSize: Typography.sizes.sm,
     color: Colors.textSecondary,
+    lineHeight: 22,
     fontStyle: 'italic',
-    lineHeight: 20,
-  },
-
-  // ── Future Momentum ────────────────────────────────────────────────────────────
-  // ── Reflection Section ────────────────────────────────────────────────────────
-  reflectionSection: {
-    marginHorizontal: Spacing.xl,
-    marginBottom: Spacing.xl,
-    backgroundColor: Colors.card,
-    borderRadius: Radii.xl,
-    padding: Spacing.lg,
-    borderWidth: 1,
-    borderColor: Colors.borderLight,
-    gap: Spacing.md,
-    ...Shadows.card,
-  },
-  reflectionEyebrow: {
-    fontSize: Typography.sizes.xs,
-    fontWeight: Typography.weights.bold,
-    color: Colors.gold,
-    letterSpacing: 2,
-  },
-  reflectionQuestion: {
-    fontSize: Typography.sizes.base,
-    fontWeight: Typography.weights.medium,
-    color: Colors.textPrimary,
-    fontStyle: 'italic',
-    lineHeight: 26,
-  },
-  reflectionPhaseRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: Spacing.sm,
     paddingTop: Spacing.sm,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: Colors.borderLight,
-    flexWrap: 'wrap',
-  },
-  reflectionPhasePill: {
-    backgroundColor: Colors.accentDim,
-    borderRadius: Radii.full,
-    paddingHorizontal: Spacing.sm,
-    paddingVertical: 3,
-    borderWidth: 1,
-    borderColor: Colors.accent,
-  },
-  reflectionPhaseText: {
-    fontSize: 9,
-    fontWeight: Typography.weights.bold,
-    color: Colors.gold,
-    letterSpacing: 1.5,
-  },
-  reflectionPhaseMessage: {
-    fontSize: Typography.sizes.xs,
-    color: Colors.textMuted,
-    fontStyle: 'italic',
-    flex: 1,
   },
 
-  momentumSection: {
-    marginHorizontal: Spacing.xl,
-    marginBottom: Spacing.xl,
-    backgroundColor: Colors.charcoal,
-    borderRadius: Radii.xl,
-    paddingVertical: Spacing.xl,
-    paddingHorizontal: Spacing.xl,
+  // ── Section 2 — Rhythm ───────────────────────────────────────────────────────
+  rhythmRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: Spacing.base,
+  },
+  rhythmCell: { alignItems: 'center', gap: 6, flex: 1 },
+  rhythmDot: {
+    width: 28, height: 28,
+    borderRadius: 14,
+    backgroundColor: Colors.backgroundSecondary,
+    borderWidth: 1,
+    borderColor: Colors.border,
+  },
+  rhythmDotFilled: {
+    backgroundColor: Colors.accent,
+    borderColor: Colors.accent,
+  },
+  rhythmDayLetter: {
+    fontSize: 10,
+    fontWeight: Typography.weights.bold,
+    color: Colors.textMuted,
+    letterSpacing: 0.5,
+  },
+  rhythmDayLetterActive: { color: Colors.gold },
+  rhythmCopy: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    lineHeight: 20,
+    fontStyle: 'italic',
+  },
+
+  // ── Section 3 — Mood ─────────────────────────────────────────────────────────
+  moodPrimary: { marginBottom: Spacing.md },
+  moodPrimaryLabel: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    letterSpacing: 0.5,
+    marginBottom: Spacing.sm,
+  },
+  moodSecondary: {
+    paddingTop: Spacing.sm,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: Colors.borderLight,
+    gap: Spacing.sm,
+  },
+  moodSecondaryLabel: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    letterSpacing: 0.5,
+    marginBottom: 2,
+  },
+  moodRow: {
+    flexDirection: 'row',
     alignItems: 'center',
     gap: Spacing.sm,
   },
-  momentumLine: {
-    fontSize: Typography.sizes.sm,
+  moodDot: {
+    width: 12, height: 12,
+    borderRadius: 6,
+  },
+  moodDotSmall: { width: 9, height: 9, borderRadius: 5 },
+  moodName: {
+    flex: 1,
+    fontSize: Typography.sizes.base,
     fontWeight: Typography.weights.medium,
-    color: 'rgba(255,255,255,0.55)',
-    textAlign: 'center',
+    color: Colors.textPrimary,
+  },
+  moodCount: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textMuted,
+    fontVariant: ['tabular-nums'],
+  },
+  moodNameSmall: {
+    flex: 1,
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+  },
+  moodCountSmall: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+  },
+
+  // ── Section 4 — Categories ────────────────────────────────────────────────────
+  chipRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: Spacing.sm,
+    marginBottom: Spacing.sm,
+  },
+  chip: {
+    backgroundColor: Colors.backgroundSecondary,
+    borderRadius: Radii.full,
+    paddingHorizontal: Spacing.base,
+    paddingVertical: 7,
+    borderWidth: 1,
+    borderColor: Colors.border,
+  },
+  chipPrimary: {
+    backgroundColor: Colors.accentDim,
+    borderColor: Colors.accent,
+  },
+  chipText: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    fontWeight: Typography.weights.medium,
+  },
+  chipTextPrimary: { color: Colors.gold },
+  categoryNote: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    fontStyle: 'italic',
+    marginTop: 2,
+  },
+
+  // ── Section 5 — Words ─────────────────────────────────────────────────────────
+  wordsNote: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
     letterSpacing: 0.3,
+    marginBottom: Spacing.sm,
+  },
+
+  // ── Section 6 — Highlight ──────────────────────────────────────────────────────
+  highlightCard: {
+    backgroundColor: Colors.backgroundSecondary,
+  },
+  highlightMeta: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    letterSpacing: 0.5,
+    marginBottom: Spacing.md,
+  },
+  highlightQuoteBar: {
+    width: 28, height: 2,
+    backgroundColor: Colors.accent,
+    borderRadius: Radii.full,
+    marginBottom: Spacing.md,
+  },
+  highlightQuote: {
+    fontSize: Typography.sizes.base,
+    fontWeight: Typography.weights.medium,
+    color: Colors.textPrimary,
+    fontStyle: 'italic',
+    lineHeight: 28,
+    letterSpacing: 0.1,
+  },
+
+  // ── Section 7 — Trend ─────────────────────────────────────────────────────────
+  trendBeginning: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    lineHeight: 22,
+    marginBottom: Spacing.base,
+  },
+  trendDivider: {
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: Colors.borderLight,
+    marginBottom: Spacing.base,
+  },
+  trendEnding: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textPrimary,
+    fontWeight: Typography.weights.medium,
+    lineHeight: 22,
+  },
+
+  // ── Section 8 — Observation ───────────────────────────────────────────────────
+  observationCard: {
+    backgroundColor: Colors.charcoal,
+    alignItems: 'center',
+    paddingVertical: Spacing.xl,
+    gap: 0,
+  },
+  observationLine: {
+    fontSize: Typography.sizes.base,
+    fontWeight: Typography.weights.medium,
+    color: 'rgba(255,255,255,0.82)',
+    fontStyle: 'italic',
+    lineHeight: 28,
+    textAlign: 'center',
+    letterSpacing: 0.1,
+  },
+  observationLineGap: { marginTop: Spacing.base },
+
+  // ── Section 9 — Looking Ahead ─────────────────────────────────────────────────
+  lookingAheadLine: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
     lineHeight: 22,
     fontStyle: 'italic',
   },
-  momentumLineFirst: {
-    fontSize: Typography.sizes.base,
-    fontWeight: Typography.weights.semibold,
-    color: Colors.white,
-  },
-  momentumLineLast: {
-    color: Colors.gold,
-    fontStyle: 'normal',
-    fontWeight: Typography.weights.bold,
-    letterSpacing: 1,
-    fontSize: Typography.sizes.xs,
-    textTransform: 'uppercase',
-  },
+  lookingAheadLineGap: { marginTop: Spacing.sm },
 
   // ── CTA ────────────────────────────────────────────────────────────────────────
-  ctaSection: {
-    paddingHorizontal: Spacing.xl,
-    gap: Spacing.md,
-    marginBottom: Spacing.xl,
-  },
+  ctaSection: { gap: Spacing.md },
   ctaButton: {
     backgroundColor: Colors.accent,
     borderRadius: Radii.xl,
     paddingVertical: Spacing.base,
-    paddingHorizontal: Spacing.xl,
-    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: Spacing.sm,
     ...Shadows.accent,
   },
   ctaText: {
@@ -890,14 +802,6 @@ const styles = StyleSheet.create({
     color: Colors.charcoal,
     letterSpacing: 0.2,
   },
-  skipBtn: {
-    alignItems: 'center',
-    paddingVertical: Spacing.sm,
-  },
-  skipText: {
-    fontSize: Typography.sizes.sm,
-    color: Colors.textMuted,
-  },
-
-  bottomPad: { height: Spacing.xxl },
+  skipBtn: { alignItems: 'center', paddingVertical: Spacing.sm },
+  skipText: { fontSize: Typography.sizes.sm, color: Colors.textMuted },
 });

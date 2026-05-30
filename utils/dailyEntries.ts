@@ -59,13 +59,32 @@ export async function clearAllDailyEntries(): Promise<void> {
 
 export async function getWeekEntries(startDate: string): Promise<DailyEntry[]> {
   const entries: DailyEntry[] = [];
-  const start = new Date(startDate);
+  const [y, m, d] = startDate.split('-').map(Number);
+  const start = new Date(y, m - 1, d);
   for (let i = 0; i < 7; i++) {
     const date = new Date(start);
     date.setDate(start.getDate() + i);
-    const dateStr = date.toISOString().split('T')[0];
+    const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
     const entry = await getDailyEntry(dateStr);
     if (entry) entries.push(entry);
   }
   return entries;
+}
+
+/**
+ * Returns all 7 days of a Mon-Sun week as an array of (DailyEntry | null).
+ * Index 0 = Monday, index 6 = Sunday. Null means the day was skipped.
+ * Uses local-timezone date arithmetic to match stored YYYY-MM-DD keys.
+ */
+export async function getWeekAllDays(mondayKey: string): Promise<(DailyEntry | null)[]> {
+  const [y, m, d] = mondayKey.split('-').map(Number);
+  const monday = new Date(y, m - 1, d);
+  const result: (DailyEntry | null)[] = [];
+  for (let i = 0; i < 7; i++) {
+    const date = new Date(monday);
+    date.setDate(monday.getDate() + i);
+    const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    result.push(await getDailyEntry(dateStr));
+  }
+  return result;
 }
