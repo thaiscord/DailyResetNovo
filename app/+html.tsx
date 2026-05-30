@@ -26,14 +26,23 @@ export default function Root({ children }: { children: React.ReactNode }) {
             gap never shows a white flash — this is the single most reliable
             anti-flicker measure on web. */}
         <style>{`
-          html, body { background-color: #FEF9EC; margin: 0; padding: 0; min-height: 100%; }
-
           /*
-           * #root is the React Native Web mount point. Giving it the same
-           * background ensures no ancestor div leaks a white or wrong-color
-           * strip behind the iOS PWA status bar (which is transparent with
-           * black-translucent + viewport-fit=cover).
+           * Safe-area top fix for iOS PWA.
+           *
+           * How it works:
+           *  - viewport-fit=cover  → viewport extends behind the status bar.
+           *  - black-translucent   → status bar is fully transparent.
+           *  - html / body / #root each carry background-color: #FEF9EC so
+           *    every ancestor div in the render tree shows cream behind the
+           *    transparent status bar for light screens.
+           *  - For dark screens (welcome-back, reset-ritual) the screen's own
+           *    View fills flex:1 all the way to the top, covering these cream
+           *    ancestors with the correct dark background.
+           *  - env(safe-area-inset-top) is the CSS value that equals the
+           *    status bar height; the background fills that region without
+           *    adding any extra padding to the content.
            */
+          html, body { background-color: #FEF9EC; margin: 0; padding: 0; min-height: 100%; }
           #root { background-color: #FEF9EC; min-height: 100vh; }
 
           /*
