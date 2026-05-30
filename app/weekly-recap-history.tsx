@@ -13,7 +13,6 @@ import { useLanguage } from '../hooks/useLanguage';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
 import {
   WeeklyRecapData,
-  getCelebrationLevel,
   getWeeklyNarrative,
 } from '../utils/weeklyRecap';
 
@@ -30,39 +29,34 @@ function FadeIn({ delay = 0, children }: { delay?: number; children: React.React
   return <Animated.View style={{ opacity, transform: [{ translateY: ty }] }}>{children}</Animated.View>;
 }
 
-// ─── Insight generators (locale-aware) ───────────────────────────────────────
-
-function useWeekInsight(weeklyScore: number, streak: number) {
-  const { t } = useLanguage();
-  if (weeklyScore === 7) return t('recap.insight.sevenForSeven');
-  if (weeklyScore >= 5) return t('recap.insight.showedUpN', { n: weeklyScore });
-  if (weeklyScore >= 3) return t('recap.insight.nResets', { n: weeklyScore });
-  if (weeklyScore === 2) return t('recap.insight.twoReturns');
-  if (weeklyScore === 1) return streak > 0 ? t('recap.insight.cameBackStreak') : t('recap.insight.cameBack');
-  return t('recap.insight.stillYours');
-}
-
-function useWeekSubInsight(weeklyScore: number, streak: number, totalDays: number) {
-  const { t } = useLanguage();
-  if (weeklyScore === 7) return t('recap.subinsight.remarkable');
-  if (weeklyScore >= 5) return t('recap.subinsight.strong');
-  if (streak >= 7) return t('recap.subinsight.streakHolding');
-  if (streak >= 3 && weeklyScore >= 2) return t('recap.subinsight.repetition');
-  if (totalDays >= 1 && weeklyScore >= 1) return t('recap.subinsight.eachReset');
-  return null;
-}
-
 // ─── Current week preview card ────────────────────────────────────────────────
 
-function CurrentWeekCard({ weeklyScore, streak, totalDays }: {
-  weeklyScore: number;
-  streak: number;
-  totalDays: number;
-}) {
-  const { t } = useLanguage();
-  const ringPct  = weeklyScore / 7;
-  const insight  = useWeekInsight(weeklyScore, streak);
-  const subline  = useWeekSubInsight(weeklyScore, streak, totalDays);
+function currentWeekLine(n: number, lang: string): string {
+  if (n === 0) {
+    if (lang === 'pt') return 'A semana ainda está se formando.';
+    if (lang === 'es') return 'La semana aún está tomando forma.';
+    if (lang === 'fr') return 'La semaine prend encore forme.';
+    if (lang === 'de') return 'Die Woche nimmt noch Form an.';
+    return 'The week is still taking shape.';
+  }
+  if (n === 1) {
+    if (lang === 'pt') return 'Um retorno até agora.';
+    if (lang === 'es') return 'Un regreso hasta ahora.';
+    if (lang === 'fr') return 'Un retour jusqu\'ici.';
+    if (lang === 'de') return 'Eine Rückkehr bisher.';
+    return 'One return so far.';
+  }
+  if (lang === 'pt') return `${n} retornos até agora.`;
+  if (lang === 'es') return `${n} regresos hasta ahora.`;
+  if (lang === 'fr') return `${n} retours jusqu'ici.`;
+  if (lang === 'de') return `${n} Rückkehren bisher.`;
+  return `${n} returns so far.`;
+}
+
+function CurrentWeekCard({ weeklyScore }: { weeklyScore: number }) {
+  const { t, lang } = useLanguage();
+  const ringPct = weeklyScore / 7;
+  const line    = currentWeekLine(weeklyScore, lang);
 
   return (
     <FadeIn delay={80}>
@@ -71,17 +65,8 @@ function CurrentWeekCard({ weeklyScore, streak, totalDays }: {
           <View style={styles.currentWeekLiveDot} />
           <Text style={styles.currentWeekEyebrow}>{t('recap.history.current.eyebrow')}</Text>
         </View>
-
-        {/* Progress row */}
         <View style={styles.currentWeekBody}>
-          <View style={styles.currentWeekTextWrap}>
-            <Text style={styles.currentWeekInsight}>{insight}</Text>
-            {subline && (
-              <Text style={styles.currentWeekSub}>{subline}</Text>
-            )}
-          </View>
-
-          {/* Mini progress bar */}
+          <Text style={styles.currentWeekInsight}>{line}</Text>
           <View style={styles.currentWeekRingWrap}>
             <View style={styles.currentWeekRingTrack}>
               <View style={[styles.currentWeekRingFill, { width: `${Math.max(ringPct * 100, weeklyScore > 0 ? 8 : 0)}%` as any }]} />
@@ -97,7 +82,7 @@ function CurrentWeekCard({ weeklyScore, streak, totalDays }: {
 // ─── Narrative state accent color ─────────────────────────────────────────────
 function narrativeAccentColor(state: WeeklyRecapData['narrativeState']): string {
   switch (state) {
-    case 'breakthrough':      return Colors.accent;
+    case 'breakthrough':      return Colors.gold;
     case 'high_consistency':  return Colors.success;
     case 'first_week':        return Colors.gold;
     case 'momentum':          return '#4A90D9';
@@ -106,17 +91,33 @@ function narrativeAccentColor(state: WeeklyRecapData['narrativeState']): string 
   }
 }
 
+// Calm week descriptor based on narrative state — no achievement language
+function weekDescriptor(state: WeeklyRecapData['narrativeState'], lang: string): string | null {
+  const map: Record<WeeklyRecapData['narrativeState'], Record<string, string>> = {
+    breakthrough:     { en: 'A full week', pt: 'Uma semana completa', es: 'Una semana completa', fr: 'Une semaine complète', de: 'Eine volle Woche' },
+    high_consistency: { en: 'Steady presence', pt: 'Presença constante', es: 'Presencia constante', fr: 'Présence constante', de: 'Beständige Präsenz' },
+    momentum:         { en: 'You kept returning', pt: 'Você continuou voltando', es: 'Seguiste volviendo', fr: 'Tu as continué à revenir', de: 'Du bist zurückgekehrt' },
+    comeback:         { en: 'Finding your way back', pt: 'Encontrando seu caminho', es: 'Encontrando tu camino', fr: 'Retrouvant ton chemin', de: 'Deinen Weg zurückfinden' },
+    first_week:       { en: 'The beginning', pt: 'O começo', es: 'El comienzo', fr: 'Le début', de: 'Der Anfang' },
+    low_activity:     null as any, // not shown for quiet weeks
+  };
+  if (state === 'low_activity') return null;
+  const entry = map[state];
+  return entry ? (entry[lang] ?? entry.en) : null;
+}
+
 // ─── Single recap card ────────────────────────────────────────────────────────
 function RecapCard({ recap, index, onPress }: {
   recap: WeeklyRecapData;
   index: number;
   onPress: () => void;
 }) {
-  const { t } = useLanguage();
-  const celebration = getCelebrationLevel(recap.resetsCompleted, recap.streakAtEnd);
+  const { lang } = useLanguage();
   const narrative   = getWeeklyNarrative(recap.narrativeState, recap.resetsCompleted);
   const accent      = narrativeAccentColor(recap.narrativeState);
+  const descriptor  = weekDescriptor(recap.narrativeState, lang);
   const ringPct     = recap.resetsCompleted / 7;
+  const weekLabel   = lang === 'pt' || lang === 'es' ? 'Semana' : lang === 'fr' ? 'Semaine' : lang === 'de' ? 'Woche' : 'Week';
 
   return (
     <FadeIn delay={index * 80}>
@@ -129,7 +130,7 @@ function RecapCard({ recap, index, onPress }: {
         <View style={styles.cardBody}>
           <View style={styles.cardHeaderRow}>
             <View style={styles.cardHeaderLeft}>
-              <Text style={styles.cardWeekLabel}>{t('recap.week.label')} {recap.weekNumber}</Text>
+              <Text style={styles.cardWeekLabel}>{weekLabel} {recap.weekNumber}</Text>
               <Text style={styles.cardDateLabel}>{recap.dateLabel}</Text>
             </View>
             <View style={styles.miniRingWrap}>
@@ -140,34 +141,70 @@ function RecapCard({ recap, index, onPress }: {
             </View>
           </View>
           <Text style={styles.cardHeadline} numberOfLines={2}>{narrative.headline}</Text>
-          {celebration !== 'none' && (
-            <View style={[styles.celebrationPill, { backgroundColor: `${accent}22`, borderColor: `${accent}55` }]}>
-              <Ionicons name="star" size={9} color={accent} />
-              <Text style={[styles.celebrationText, { color: accent }]}>
-                {celebration === 'exceptional' ? t('recap.cel.outstanding') : celebration === 'strong' ? t('recap.cel.strong') : t('recap.cel.good')}
-              </Text>
+          {descriptor ? (
+            <View style={[styles.descriptorPill, { borderColor: `${accent}44` }]}>
+              <Text style={[styles.descriptorText, { color: accent }]}>{descriptor}</Text>
             </View>
-          )}
-          <View style={styles.cardFooter}>
-            {recap.streakAtEnd > 0 && (
-              <View style={styles.statChip}>
-                <Ionicons name="flame" size={11} color={Colors.streak} />
-                <Text style={styles.statChipText}>{recap.streakAtEnd} {t('recap.card.streakLabel')}</Text>
-              </View>
-            )}
-            {recap.weeklyHabitRate > 0 && (
-              <View style={styles.statChip}>
-                <Ionicons name="checkmark-circle" size={11} color={Colors.success} />
-                <Text style={styles.statChipText}>{recap.weeklyHabitRate}{t('recap.card.habitsLabel')}</Text>
-              </View>
-            )}
-            <View style={styles.cardChevron}>
-              <Ionicons name="chevron-forward" size={14} color={Colors.textMuted} />
-            </View>
+          ) : null}
+          <View style={styles.cardChevron}>
+            <Ionicons name="chevron-forward" size={14} color={Colors.textMuted} />
           </View>
         </View>
       </TouchableOpacity>
     </FadeIn>
+  );
+}
+
+// ─── Chapter summary (replaces dark stats dashboard) ──────────────────────────
+
+function chapterPhrase(weeks: number, lang: string): string {
+  if (weeks === 1) {
+    if (lang === 'pt') return 'Um ritmo começando a se formar.';
+    if (lang === 'es') return 'Un ritmo comenzando a tomar forma.';
+    if (lang === 'fr') return 'Un rythme qui commence à prendre forme.';
+    if (lang === 'de') return 'Ein Rhythmus beginnt sich zu formen.';
+    return 'A rhythm beginning to form.';
+  }
+  if (weeks <= 3) {
+    if (lang === 'pt') return 'Algo está se estabelecendo.';
+    if (lang === 'es') return 'Algo se está estableciendo.';
+    if (lang === 'fr') return 'Quelque chose se stabilise.';
+    if (lang === 'de') return 'Etwas beginnt sich einzupendeln.';
+    return 'Something is settling in.';
+  }
+  if (weeks <= 7) {
+    if (lang === 'pt') return 'Um padrão tomando forma, semana por semana.';
+    if (lang === 'es') return 'Un patrón tomando forma, semana a semana.';
+    if (lang === 'fr') return 'Un fil qui se tisse, semaine après semaine.';
+    if (lang === 'de') return 'Ein Muster, das sich Woche für Woche zeigt.';
+    return 'A pattern taking shape, week by week.';
+  }
+  if (lang === 'pt') return 'Uma prática que continua.';
+  if (lang === 'es') return 'Una práctica que continúa.';
+  if (lang === 'fr') return 'Une pratique qui se poursuit.';
+  if (lang === 'de') return 'Eine Praxis, die weitergeht.';
+  return 'A sustained practice.';
+}
+
+function ChapterSummary({ recaps, lang }: { recaps: WeeklyRecapData[]; lang: string }) {
+  const totalResets = recaps.reduce((acc, r) => acc + r.resetsCompleted, 0);
+  const weeks = recaps.length;
+  const phrase = chapterPhrase(weeks, lang);
+
+  const chapterLabel  = lang === 'pt' ? 'Este capítulo até agora' : lang === 'es' ? 'Este capítulo hasta ahora' : lang === 'fr' ? 'Ce chapitre jusqu\'ici' : lang === 'de' ? 'Dieses Kapitel bisher' : 'This chapter so far';
+  const weeksLabel    = lang === 'pt' ? weeks === 1 ? '1 semana vivida' : `${weeks} semanas vividas` : lang === 'es' ? weeks === 1 ? '1 semana vivida' : `${weeks} semanas vividas` : lang === 'fr' ? weeks === 1 ? '1 semaine vécue' : `${weeks} semaines vécues` : lang === 'de' ? weeks === 1 ? '1 Woche gelebt' : `${weeks} Wochen gelebt` : weeks === 1 ? '1 week lived' : `${weeks} weeks lived`;
+  const returnsLabel  = lang === 'pt' ? `${totalResets} retornos quietos` : lang === 'es' ? `${totalResets} regresos tranquilos` : lang === 'fr' ? `${totalResets} retours calmes` : lang === 'de' ? `${totalResets} stille Rückkehren` : `${totalResets} quiet returns`;
+
+  return (
+    <View style={styles.chapterCard}>
+      <Text style={styles.chapterTitle}>{chapterLabel}</Text>
+      <View style={styles.chapterStats}>
+        <Text style={styles.chapterStat}>{weeksLabel}</Text>
+        <Text style={styles.chapterStatSep}>·</Text>
+        <Text style={styles.chapterStat}>{returnsLabel}</Text>
+      </View>
+      <Text style={styles.chapterPhrase}>{phrase}</Text>
+    </View>
   );
 }
 
@@ -203,10 +240,9 @@ export default function WeeklyRecapHistoryScreen() {
     router.push({ pathname: '/weekly-recap', params: { week: String(weekNumber) } });
   }, [router]);
 
-  const { t } = useLanguage();
-  const sortedRecaps  = [...recaps].sort((a, b) => b.weekNumber - a.weekNumber);
-  const hasAnyData    = weeklyScore > 0 || progress.completedDays.length > 0;
-  const totalDays     = progress.completedDays.length;
+  const { t, lang } = useLanguage();
+  const sortedRecaps = [...recaps].sort((a, b) => b.weekNumber - a.weekNumber);
+  const hasAnyData   = weeklyScore > 0 || progress.completedDays.length > 0;
 
   return (
     <View style={styles.root}>
@@ -233,11 +269,7 @@ export default function WeeklyRecapHistoryScreen() {
 
         {/* Current week preview — always shown if there's any activity */}
         {hasAnyData && (
-          <CurrentWeekCard
-            weeklyScore={weeklyScore}
-            streak={progress.streak}
-            totalDays={totalDays}
-          />
+          <CurrentWeekCard weeklyScore={weeklyScore} />
         )}
 
         {sortedRecaps.length === 0 ? (
@@ -251,28 +283,9 @@ export default function WeeklyRecapHistoryScreen() {
           )
         ) : (
           <>
-            {/* Journey summary */}
+            {/* Chapter summary — soft narrative, not a stats dashboard */}
             <FadeIn delay={60}>
-              <View style={styles.journeySummary}>
-                <View style={styles.journeySummaryItem}>
-                  <Text style={styles.journeySummaryValue}>{recaps.length}</Text>
-                  <Text style={styles.journeySummaryLabel}>{t('recap.history.sum.weeks')}</Text>
-                </View>
-                <View style={styles.journeySummaryDivider} />
-                <View style={styles.journeySummaryItem}>
-                  <Text style={styles.journeySummaryValue}>
-                    {recaps.reduce((acc, r) => acc + r.resetsCompleted, 0)}
-                  </Text>
-                  <Text style={styles.journeySummaryLabel}>{t('recap.history.sum.resets')}</Text>
-                </View>
-                <View style={styles.journeySummaryDivider} />
-                <View style={styles.journeySummaryItem}>
-                  <Text style={styles.journeySummaryValue}>
-                    {Math.max(...recaps.map(r => r.streakAtEnd), 0)}
-                  </Text>
-                  <Text style={styles.journeySummaryLabel}>{t('recap.history.sum.streak')}</Text>
-                </View>
-              </View>
+              <ChapterSummary recaps={recaps} lang={lang} />
             </FadeIn>
 
             {sortedRecaps.map((recap, i) => (
@@ -334,10 +347,8 @@ const styles = StyleSheet.create({
   currentWeekEyebrowRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm },
   currentWeekLiveDot: { width: 6, height: 6, borderRadius: 3, backgroundColor: Colors.accent },
   currentWeekEyebrow: { fontSize: 9, fontWeight: Typography.weights.bold, color: Colors.gold, letterSpacing: 2 },
-  currentWeekBody: { flexDirection: 'row', alignItems: 'flex-start', gap: Spacing.md },
-  currentWeekTextWrap: { flex: 1, gap: 4 },
-  currentWeekInsight: { fontSize: Typography.sizes.sm, fontWeight: Typography.weights.semibold, color: Colors.textPrimary, lineHeight: 20 },
-  currentWeekSub: { fontSize: Typography.sizes.xs, color: Colors.textMuted, fontStyle: 'italic', lineHeight: 17 },
+  currentWeekBody: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: Spacing.md },
+  currentWeekInsight: { flex: 1, fontSize: Typography.sizes.sm, fontWeight: Typography.weights.medium, color: Colors.textPrimary, lineHeight: 20 },
   currentWeekRingWrap: { alignItems: 'flex-end', gap: 4, minWidth: 60 },
   currentWeekRingTrack: { height: 4, width: 60, backgroundColor: Colors.backgroundSecondary, borderRadius: Radii.full, overflow: 'hidden' },
   currentWeekRingFill: { height: '100%', backgroundColor: Colors.accent, borderRadius: Radii.full },
@@ -351,15 +362,20 @@ const styles = StyleSheet.create({
   comingSoonTitle: { fontSize: Typography.sizes.sm, fontWeight: Typography.weights.semibold, color: Colors.textSecondary, textAlign: 'center' },
   comingSoonSub: { fontSize: Typography.sizes.xs, color: Colors.textMuted, textAlign: 'center', lineHeight: 20, fontStyle: 'italic' },
 
-  // ── Journey summary ───────────────────────────────────────────────────────────
-  journeySummary: {
-    backgroundColor: Colors.charcoal, borderRadius: Radii.xl, padding: Spacing.lg,
-    flexDirection: 'row', alignItems: 'center', marginBottom: Spacing.xl, ...Shadows.charcoal,
+  // ── Chapter summary (soft cream card) ────────────────────────────────────────
+  chapterCard: {
+    backgroundColor: Colors.card, borderRadius: Radii.xl, padding: Spacing.lg,
+    marginBottom: Spacing.xl, borderWidth: 1, borderColor: Colors.borderLight,
+    gap: Spacing.sm, ...Shadows.card,
   },
-  journeySummaryItem: { flex: 1, alignItems: 'center' },
-  journeySummaryValue: { fontSize: Typography.sizes.xxl, fontWeight: Typography.weights.black, color: Colors.white, letterSpacing: -0.5 },
-  journeySummaryLabel: { fontSize: 10, color: 'rgba(255,255,255,0.45)', textTransform: 'uppercase', letterSpacing: 0.5, marginTop: 2 },
-  journeySummaryDivider: { width: 1, height: 40, backgroundColor: 'rgba(255,255,255,0.08)' },
+  chapterTitle: {
+    fontSize: Typography.sizes.xs, fontWeight: Typography.weights.bold,
+    color: Colors.gold, letterSpacing: 1.8, marginBottom: 2,
+  },
+  chapterStats: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, flexWrap: 'wrap' },
+  chapterStat: { fontSize: Typography.sizes.base, fontWeight: Typography.weights.semibold, color: Colors.textPrimary },
+  chapterStatSep: { fontSize: Typography.sizes.sm, color: Colors.textMuted },
+  chapterPhrase: { fontSize: Typography.sizes.sm, color: Colors.textMuted, fontStyle: 'italic', lineHeight: 20, marginTop: 2 },
 
   // ── Recap card ────────────────────────────────────────────────────────────────
   card: {
@@ -377,12 +393,12 @@ const styles = StyleSheet.create({
   miniRingFill: { height: '100%', borderRadius: Radii.full },
   miniRingText: { fontSize: Typography.sizes.xs, fontWeight: Typography.weights.bold, color: Colors.textSecondary },
   cardHeadline: { fontSize: Typography.sizes.sm, color: Colors.textSecondary, fontStyle: 'italic', lineHeight: 20 },
-  celebrationPill: { flexDirection: 'row', alignItems: 'center', gap: 4, borderRadius: Radii.full, paddingHorizontal: Spacing.sm, paddingVertical: 3, alignSelf: 'flex-start', borderWidth: 1 },
-  celebrationText: { fontSize: 10, fontWeight: Typography.weights.bold, letterSpacing: 0.3 },
-  cardFooter: { flexDirection: 'row', alignItems: 'center', gap: Spacing.sm, marginTop: 2 },
-  statChip: { flexDirection: 'row', alignItems: 'center', gap: 3, backgroundColor: Colors.backgroundSecondary, borderRadius: Radii.full, paddingHorizontal: Spacing.sm, paddingVertical: 3 },
-  statChipText: { fontSize: 10, color: Colors.textSecondary, fontWeight: Typography.weights.medium },
-  cardChevron: { marginLeft: 'auto' as any },
+  descriptorPill: {
+    borderRadius: Radii.full, paddingHorizontal: Spacing.sm, paddingVertical: 3,
+    alignSelf: 'flex-start', borderWidth: 1, backgroundColor: 'transparent',
+  },
+  descriptorText: { fontSize: 10, fontWeight: Typography.weights.medium, letterSpacing: 0.2 },
+  cardChevron: { alignSelf: 'flex-end', marginTop: 2 },
 
   // ── Empty state ────────────────────────────────────────────────────────────────
   emptyWrap: { alignItems: 'center', paddingVertical: Spacing.xxl, gap: Spacing.md },

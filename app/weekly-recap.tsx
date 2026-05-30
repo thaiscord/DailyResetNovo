@@ -27,6 +27,7 @@ import {
   getTrendCopy,
   getQuietObservation,
   getLookingAhead,
+  getSmallMoments,
 } from '../utils/weeklyInsights';
 
 // ─── Staggered fade-in ────────────────────────────────────────────────────────
@@ -116,7 +117,31 @@ function SectionRhythm({ insights, lang }: { insights: WeekInsights; lang: strin
   );
 }
 
-// ─── Section 3 — How You Arrived (mood) ──────────────────────────────────────
+// ─── Section 3 — Small Moments ───────────────────────────────────────────────
+
+function SectionSmallMoments({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title  = lang === 'pt' ? 'PEQUENOS MOMENTOS DESTA SEMANA' : lang === 'es' ? 'PEQUEÑOS MOMENTOS DE ESTA SEMANA' : lang === 'fr' ? 'PETITS MOMENTS DE CETTE SEMAINE' : lang === 'de' ? 'KLEINE MOMENTE DIESER WOCHE' : 'SMALL MOMENTS FROM THIS WEEK';
+  const lines  = getSmallMoments(insights, lang);
+  if (lines.length === 0) return null;
+
+  return (
+    <FadeIn delay={220}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={styles.card}>
+          {lines.map((line, i) => (
+            <View key={i} style={[styles.smallMomentRow, i > 0 && styles.smallMomentRowGap]}>
+              <View style={styles.smallMomentDot} />
+              <Text style={styles.smallMomentText}>{line}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 4 — How You Arrived (mood) ──────────────────────────────────────
 
 function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string }) {
   const title   = lang === 'pt' ? 'COMO VOCÊ CHEGOU' : lang === 'es' ? 'CÓMO LLEGASTE' : lang === 'fr' ? 'COMMENT TU ES ARRIVÉ' : lang === 'de' ? 'WIE DU ANKAMST' : 'HOW YOU ARRIVED';
@@ -434,10 +459,13 @@ export default function WeeklyRecapScreen() {
         {/* 2 — Your Rhythm */}
         <SectionRhythm insights={insights} lang={lang} />
 
-        {/* 3 — How You Arrived */}
+        {/* 3 — Small Moments */}
+        <SectionSmallMoments insights={insights} lang={lang} />
+
+        {/* 4 — How You Arrived */}
         {insights.moodTotal > 0 && <SectionMood insights={insights} lang={lang} />}
 
-        {/* 4 — What Your Mind Was Asking For */}
+        {/* 5 — What Your Mind Was Asking For */}
         {insights.topCategories.length > 0 && <SectionCategories insights={insights} lang={lang} />}
 
         {/* 5 — Words of the Week */}
@@ -675,7 +703,22 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
   },
 
-  // ── Section 4 — Categories ────────────────────────────────────────────────────
+  // ── Section 3 — Small Moments ─────────────────────────────────────────────────
+  smallMomentRow: { flexDirection: 'row', alignItems: 'flex-start', gap: Spacing.sm },
+  smallMomentRowGap: { marginTop: Spacing.md },
+  smallMomentDot: {
+    width: 5, height: 5, borderRadius: 3,
+    backgroundColor: Colors.gold,
+    marginTop: 7, flexShrink: 0,
+  },
+  smallMomentText: {
+    flex: 1,
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    lineHeight: 21,
+  },
+
+  // ── Section 5 — Categories ────────────────────────────────────────────────────
   chipRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',

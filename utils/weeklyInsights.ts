@@ -170,9 +170,9 @@ export function getDayName(index: number, lang: string): string {
 }
 
 const MOOD_LABELS: Record<'hard' | 'okay' | 'good', Record<string, string>> = {
-  hard: { en: 'Hard day',    pt: 'Dia difícil',    es: 'Día difícil',    fr: 'Jour difficile',  de: 'Schwerer Tag'  },
-  okay: { en: 'Steady day',  pt: 'Dia estável',    es: 'Día estable',    fr: 'Jour stable',     de: 'Ruhiger Tag'   },
-  good: { en: 'Lighter day', pt: 'Dia mais leve',  es: 'Día más ligero', fr: 'Jour plus léger', de: 'Leichter Tag'  },
+  hard: { en: 'Difficult',   pt: 'Difícil',        es: 'Difícil',        fr: 'Difficile',       de: 'Schwer'        },
+  okay: { en: 'Steady',      pt: 'Estável',        es: 'Estable',        fr: 'Stable',          de: 'Ruhig'         },
+  good: { en: 'Lighter',     pt: 'Mais leve',      es: 'Más ligero',     fr: 'Plus léger',      de: 'Leichter'      },
 };
 export function getMoodLabel(mood: 'hard' | 'okay' | 'good', lang: string): string {
   return MOOD_LABELS[mood][lang] ?? MOOD_LABELS[mood].en;
@@ -287,20 +287,20 @@ function observationKey(insights: WeekInsights): ObservationKey {
 const QUIET_OBSERVATIONS: Record<ObservationKey, Record<string, string[]>> = {
   sparse_hard: {
     en: ['This week carried weight.',
-         'You didn\'t need to accomplish more.\nBeing present at all was already something.',
-         'Sometimes the quietest weeks ask the most of us.'],
+         'You didn\'t need to accomplish more.\nBeing here at all was already something.',
+         'Some weeks are simply heavy. This was one of them.'],
     pt: ['Esta semana carregou peso.',
-         'Você não precisava realizar mais.\nEstar presente já era alguma coisa.',
-         'Às vezes as semanas mais silenciosas são as que mais nos pedem.'],
+         'Você não precisava realizar mais.\nEstar aqui já era alguma coisa.',
+         'Algumas semanas são simplesmente pesadas. Esta foi uma delas.'],
     es: ['Esta semana llevó peso.',
-         'No necesitabas lograr más.\nEstar presente ya era algo.',
-         'A veces las semanas más silenciosas son las que más nos piden.'],
+         'No necesitabas lograr más.\nEstar aquí ya era algo.',
+         'Algunas semanas son simplemente pesadas. Esta fue una de ellas.'],
     fr: ['Cette semaine a porté un poids.',
-         'Tu n\'avais pas besoin d\'accomplir davantage.\nÊtre présent était déjà quelque chose.',
-         'Parfois les semaines les plus silencieuses sont celles qui demandent le plus.'],
+         'Tu n\'avais pas besoin d\'accomplir davantage.\nÊtre là était déjà quelque chose.',
+         'Certaines semaines sont simplement lourdes. Celle-ci en faisait partie.'],
     de: ['Diese Woche trug ein Gewicht.',
-         'Du musstest nicht mehr erreichen.\nPräsent zu sein war bereits etwas.',
-         'Manchmal sind die stillsten Wochen die, die am meisten von uns verlangen.'],
+         'Du musstest nicht mehr erreichen.\nDa zu sein war bereits etwas.',
+         'Manche Wochen sind einfach schwer. Diese war eine davon.'],
   },
   sparse_quiet: {
     en: ['This week was gentle.',
@@ -321,71 +321,71 @@ const QUIET_OBSERVATIONS: Record<ObservationKey, Record<string, string[]>> = {
   },
   moderate_hard: {
     en: ['The week had difficult moments.',
-         'You kept coming back even when it wasn\'t easy.\nThat takes more than it looks like.',
-         'What shows up in hard weeks is often what matters most.'],
+         'You kept coming back even when it wasn\'t easy.',
+         'You were still here, even through the harder days.'],
     pt: ['A semana teve momentos difíceis.',
-         'Você continuou voltando mesmo quando não foi fácil.\nIsso exige mais do que parece.',
-         'O que aparece nas semanas difíceis é muitas vezes o que mais importa.'],
+         'Você continuou voltando mesmo quando não foi fácil.',
+         'Você ainda estava aqui, mesmo nos dias mais difíceis.'],
     es: ['La semana tuvo momentos difíciles.',
-         'Seguiste volviendo incluso cuando no fue fácil.\nEso requiere más de lo que parece.',
-         'Lo que aparece en las semanas difíciles es a menudo lo que más importa.'],
+         'Seguiste volviendo incluso cuando no fue fácil.',
+         'Seguías aquí, incluso en los días más difíciles.'],
     fr: ['La semaine a eu des moments difficiles.',
-         'Tu as continué à revenir même quand ce n\'était pas facile.\nCela demande plus qu\'il n\'y paraît.',
-         'Ce qui se montre dans les semaines difficiles est souvent ce qui compte le plus.'],
+         'Tu as continué à revenir même quand ce n\'était pas facile.',
+         'Tu étais encore là, même pendant les jours les plus difficiles.'],
     de: ['Die Woche hatte schwere Momente.',
-         'Du bist immer wieder zurückgekehrt, auch wenn es nicht einfach war.\nDas verlangt mehr, als es aussieht.',
-         'Was sich in schweren Wochen zeigt, ist oft das, was am meisten zählt.'],
+         'Du bist immer wieder zurückgekehrt, auch wenn es nicht einfach war.',
+         'Du warst noch hier, auch an den schwereren Tagen.'],
   },
   moderate_flowing: {
     en: ['There was a rhythm this week, even in the spaces between.',
-         'You found your way back several times.\nThat pattern is quietly building something.',
-         'Each return adds to what\'s already here.'],
+         'You found your way back several times.',
+         'The thread continued.'],
     pt: ['Houve um ritmo nesta semana, mesmo nos espaços entre eles.',
-         'Você encontrou seu caminho de volta várias vezes.\nEsse padrão está construindo algo silenciosamente.',
-         'Cada retorno acrescenta ao que já está aqui.'],
+         'Você encontrou seu caminho de volta várias vezes.',
+         'O fio continuou.'],
     es: ['Hubo un ritmo esta semana, incluso en los espacios entre ellos.',
-         'Encontraste tu camino de regreso varias veces.\nEse patrón está construyendo algo silenciosamente.',
-         'Cada regreso agrega a lo que ya está aquí.'],
+         'Encontraste tu camino de regreso varias veces.',
+         'El hilo continuó.'],
     fr: ['Il y avait un rythme cette semaine, même dans les espaces entre.',
-         'Tu as trouvé ton chemin de retour plusieurs fois.\nCe schéma construit quelque chose silencieusement.',
-         'Chaque retour s\'ajoute à ce qui est déjà là.'],
+         'Tu as trouvé ton chemin de retour plusieurs fois.',
+         'Le fil a continué.'],
     de: ['Es gab einen Rhythmus in dieser Woche, auch in den Räumen dazwischen.',
-         'Du hast mehrmals deinen Weg zurückgefunden.\nDieses Muster baut still etwas auf.',
-         'Jede Rückkehr fügt dem hinzu, was bereits hier ist.'],
+         'Du hast mehrmals deinen Weg zurückgefunden.',
+         'Der Faden ging weiter.'],
   },
   consistent_hard: {
     en: ['This week asked a lot of you — and you kept showing up.',
-         'There\'s something worth noticing in that.\nConsistency through difficulty is a different kind of strength.',
+         'Showing up every day even when it was heavy — that happened.',
          'Even heavy weeks leave a trace of presence.'],
     pt: ['Esta semana pediu muito de você — e você continuou aparecendo.',
-         'Há algo que vale a pena notar nisso.\nA consistência através da dificuldade é um tipo diferente de força.',
+         'Aparecer todos os dias mesmo quando estava pesado — isso aconteceu.',
          'Mesmo as semanas pesadas deixam um traço de presença.'],
     es: ['Esta semana te pidió mucho — y seguiste apareciendo.',
-         'Hay algo que vale la pena notar en eso.\nLa consistencia a través de la dificultad es un tipo diferente de fuerza.',
+         'Aparecer todos los días incluso cuando estaba pesado — eso sucedió.',
          'Incluso las semanas pesadas dejan una huella de presencia.'],
     fr: ['Cette semaine t\'a beaucoup demandé — et tu as continué à te présenter.',
-         'Il y a quelque chose qui mérite d\'être remarqué là-dedans.\nLa constance à travers la difficulté est une force différente.',
+         'Te présenter chaque jour même quand c\'était lourd — c\'est arrivé.',
          'Même les semaines lourdes laissent une trace de présence.'],
     de: ['Diese Woche hat viel von dir verlangt — und du bist trotzdem erschienen.',
-         'Daran ist etwas zu bemerken wert.\nBeständigkeit durch Schwierigkeit ist eine andere Art von Stärke.',
+         'Jeden Tag zu erscheinen, auch wenn es schwer war — das ist passiert.',
          'Selbst schwere Wochen hinterlassen eine Spur von Präsenz.'],
   },
   consistent_flowing: {
     en: ['Something has quietly settled this week.',
          'You were here, day after day.\nNot perfectly. Just present.',
-         'What you build by returning — even on ordinary days — is not small.'],
+         'Even ordinary days became part of your return.'],
     pt: ['Algo se estabeleceu silenciosamente nesta semana.',
          'Você esteve aqui, dia após dia.\nNão perfeitamente. Apenas presente.',
-         'O que você constrói ao voltar — mesmo nos dias ordinários — não é pequeno.'],
+         'Mesmo os dias ordinários se tornaram parte do seu retorno.'],
     es: ['Algo se ha establecido silenciosamente esta semana.',
          'Estuviste aquí, día tras día.\nNo perfectamente. Solo presente.',
-         'Lo que construyes al regresar — incluso en los días ordinarios — no es pequeño.'],
+         'Incluso los días ordinarios se convirtieron en parte de tu regreso.'],
     fr: ['Quelque chose s\'est doucement installé cette semaine.',
          'Tu étais là, jour après jour.\nPas parfaitement. Juste présent.',
-         'Ce que tu construis en revenant — même les jours ordinaires — n\'est pas petit.'],
+         'Même les jours ordinaires sont devenus partie de ton retour.'],
     de: ['Etwas hat sich diese Woche still eingependelt.',
          'Du warst hier, Tag für Tag.\nNicht perfekt. Nur präsent.',
-         'Was du durch Zurückkehren aufbaust — auch an gewöhnlichen Tagen — ist nicht klein.'],
+         'Selbst gewöhnliche Tage wurden Teil deiner Rückkehr.'],
   },
 };
 
@@ -451,4 +451,117 @@ export function getLookingAhead(insights: WeekInsights, lang: string): string[] 
   const key = lookingAheadKey(insights);
   const l   = lang in LOOKING_AHEAD[key] ? lang : 'en';
   return LOOKING_AHEAD[key][l];
+}
+
+// ─── Section: Small Moments ───────────────────────────────────────────────────
+// Generates 2–3 specific, data-driven observations. Each one names something
+// that actually happened — no interpretation, no coaching, just noticing.
+
+const CAT_MOMENT: Record<string, Record<string, string>> = {
+  Rest:     { en: 'You chose Rest more than any other path this week.', pt: 'Você escolheu Descanso mais do que qualquer outro caminho esta semana.', es: 'Elegiste Descanso más que cualquier otro camino esta semana.', fr: 'Tu as choisi le Repos plus que tout autre chemin cette semaine.', de: 'Du hast diese Woche Erholung mehr als jeden anderen Weg gewählt.' },
+  Calm:     { en: 'Calm came up more than anything else this week.', pt: 'Calma apareceu mais do que qualquer outra coisa esta semana.', es: 'Calma apareció más que cualquier otra cosa esta semana.', fr: 'Le calme est apparu plus que n\'importe quoi d\'autre cette semaine.', de: 'Ruhe kam diese Woche mehr als alles andere vor.' },
+  Clarity:  { en: 'Clarity was what you reached for most this week.', pt: 'Clareza foi o que você mais buscou esta semana.', es: 'Claridad fue lo que más buscaste esta semana.', fr: 'La clarté était ce que tu cherchais le plus cette semaine.', de: 'Klarheit war das, wonach du diese Woche am meisten gesucht hast.' },
+  Focus:    { en: 'You chose Focus more than once this week.', pt: 'Você escolheu Foco mais de uma vez esta semana.', es: 'Elegiste Enfoque más de una vez esta semana.', fr: 'Tu as choisi le Focus plus d\'une fois cette semaine.', de: 'Du hast diese Woche mehr als einmal Fokus gewählt.' },
+  Momentum: { en: 'Momentum was the direction you chose most this week.', pt: 'Impulso foi a direção que você mais escolheu esta semana.', es: 'El impulso fue la dirección que más elegiste esta semana.', fr: 'L\'élan était la direction que tu choisissais le plus cette semaine.', de: 'Schwung war diese Woche die Richtung, die du am häufigsten wähltest.' },
+  Courage:  { en: 'You returned to Courage more than once this week.', pt: 'Você voltou à Coragem mais de uma vez esta semana.', es: 'Volviste al Coraje más de una vez esta semana.', fr: 'Tu es revenu au Courage plus d\'une fois cette semaine.', de: 'Du bist diese Woche mehr als einmal zu Mut zurückgekehrt.' },
+  Rhythm:   { en: 'Rhythm was the thread you kept returning to.', pt: 'Ritmo foi o fio ao qual você continuou voltando.', es: 'El ritmo fue el hilo al que seguiste volviendo.', fr: 'Le rythme était le fil vers lequel tu revenais sans cesse.', de: 'Rhythmus war der Faden, zu dem du immer wieder zurückgekehrt bist.' },
+};
+
+const HARD_MOOD_MOMENT: Record<string, string> = {
+  en: 'Difficult days appeared more than once this week.',
+  pt: 'Dias difíceis apareceram mais de uma vez esta semana.',
+  es: 'Días difíciles aparecieron más de una vez esta semana.',
+  fr: 'Des jours difficiles sont apparus plus d\'une fois cette semaine.',
+  de: 'Schwere Tage kamen diese Woche mehr als einmal vor.',
+};
+
+const GOOD_MOOD_MOMENT: Record<string, string> = {
+  en: 'Lighter days were more present this week.',
+  pt: 'Dias mais leves estiveram mais presentes esta semana.',
+  es: 'Días más ligeros estuvieron más presentes esta semana.',
+  fr: 'Des jours plus légers étaient plus présents cette semaine.',
+  de: 'Leichtere Tage waren diese Woche präsenter.',
+};
+
+const RETURN_AFTER_SKIP: Record<string, string> = {
+  en: 'You returned after a quiet day.',
+  pt: 'Você voltou depois de um dia silencioso.',
+  es: 'Regresaste después de un día tranquilo.',
+  fr: 'Tu es revenu après un jour calme.',
+  de: 'Du bist nach einem stillen Tag zurückgekehrt.',
+};
+
+const BACK_LOADED_MOMENT: Record<string, string> = {
+  en: 'Your check-ins became more consistent as the week went on.',
+  pt: 'Seus check-ins ficaram mais consistentes à medida que a semana avançou.',
+  es: 'Tus check-ins se volvieron más consistentes a medida que avanzaba la semana.',
+  fr: 'Tes retours sont devenus plus réguliers au fil de la semaine.',
+  de: 'Deine Rückkehren wurden beständiger, je weiter die Woche fortschritt.',
+};
+
+const FRONT_LOADED_MOMENT: Record<string, string> = {
+  en: 'You showed up most at the start of the week.',
+  pt: 'Você apareceu mais no início da semana.',
+  es: 'Apareciste más al comienzo de la semana.',
+  fr: 'Tu t\'es présenté surtout en début de semaine.',
+  de: 'Du bist vor allem zu Beginn der Woche erschienen.',
+};
+
+const SINGLE_WORD_MOMENT: Record<string, (w: string) => string> = {
+  en: w => `One word stayed with you all week: ${w}.`,
+  pt: w => `Uma palavra ficou com você a semana toda: ${w}.`,
+  es: w => `Una palabra estuvo contigo toda la semana: ${w}.`,
+  fr: w => `Un seul mot t\'a accompagné toute la semaine : ${w}.`,
+  de: w => `Ein Wort blieb die ganze Woche bei dir: ${w}.`,
+};
+
+function pick<T extends Record<string, string>>(map: T, lang: string): string {
+  return map[lang] ?? map.en ?? '';
+}
+
+export function getSmallMoments(insights: WeekInsights, lang: string): string[] {
+  const moments: string[] = [];
+  const l = lang in HARD_MOOD_MOMENT ? lang : 'en';
+
+  // 1. Top category — only if a single category dominates clearly
+  if (insights.topCategories.length > 0) {
+    const top = insights.topCategories[0];
+    const topCount = insights.categoryCounts[top] ?? 0;
+    if (topCount >= 2 && CAT_MOMENT[top]) {
+      moments.push(pick(CAT_MOMENT[top] as Record<string, string>, l));
+    }
+  }
+
+  // 2. Dominant mood — only if it appeared multiple times
+  if (insights.dominantMood === 'hard' && insights.moodCounts.hard >= 2) {
+    moments.push(HARD_MOOD_MOMENT[l]);
+  } else if (insights.dominantMood === 'good' && insights.moodCounts.good >= 2) {
+    moments.push(GOOD_MOOD_MOMENT[l]);
+  }
+
+  // 3. Rhythm pattern — only for back/front loaded with enough data
+  if (insights.resetsCompleted >= 3 && moments.length < 3) {
+    if (insights.rhythmPattern === 'backLoaded') {
+      moments.push(BACK_LOADED_MOMENT[l]);
+    } else if (insights.rhythmPattern === 'frontLoaded') {
+      moments.push(FRONT_LOADED_MOMENT[l]);
+    }
+  }
+
+  // 4. Return after a skipped day (check for gap-then-return pattern)
+  if (moments.length < 3 && insights.resetsCompleted >= 2) {
+    const { days } = insights;
+    const hadReturnAfterSkip = days.some((d, i) =>
+      i > 0 && d.completed && !days[i - 1].completed
+    );
+    if (hadReturnAfterSkip) moments.push(RETURN_AFTER_SKIP[l]);
+  }
+
+  // 5. A single repeated word
+  if (moments.length < 3 && insights.mostFrequentWord) {
+    const fn = SINGLE_WORD_MOMENT[l] ?? SINGLE_WORD_MOMENT.en;
+    moments.push(fn(insights.mostFrequentWord));
+  }
+
+  return moments.slice(0, 3);
 }
