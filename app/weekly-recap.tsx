@@ -26,10 +26,13 @@ import {
   getCategoryLabel,
   getRhythmCopy,
   getWeekOverviewLines,
+  getWeekWords,
   getTrendCopy,
   getQuietObservation,
   getLookingAhead,
   getSmallMoments,
+  getHowYouArrivedNote,
+  getCategoryContextNote,
 } from '../utils/weeklyInsights';
 
 // ─── Staggered fade-in ────────────────────────────────────────────────────────
@@ -55,8 +58,8 @@ function SectionLabel({ children }: { children: string }) {
 
 // ─── Section 1 — Week Overview ────────────────────────────────────────────────
 
-function SectionOverview({ insights, lang }: { insights: WeekInsights; lang: string }) {
-  const { intro, narrative } = getWeekOverviewLines(insights, lang);
+function SectionOverview({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
+  const { intro, narrative } = getWeekOverviewLines(insights, lang, weekNumber);
   const returnsLabel = lang === 'pt' ? 'retornos' : lang === 'es' ? 'retornos' : lang === 'fr' ? 'retours' : lang === 'de' ? 'Rückkehren' : 'returns';
   const quietLabel   = lang === 'pt' ? 'dias quietos' : lang === 'es' ? 'días tranquilos' : lang === 'fr' ? 'jours calmes' : lang === 'de' ? 'stille Tage' : 'quiet days';
 
@@ -85,9 +88,9 @@ function SectionOverview({ insights, lang }: { insights: WeekInsights; lang: str
 
 // ─── Section 2 — Your Rhythm ──────────────────────────────────────────────────
 
-function SectionRhythm({ insights, lang }: { insights: WeekInsights; lang: string }) {
+function SectionRhythm({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
   const title = lang === 'pt' ? 'SEU RITMO' : lang === 'es' ? 'TU RITMO' : lang === 'fr' ? 'TON RYTHME' : lang === 'de' ? 'DEIN RHYTHMUS' : 'YOUR RHYTHM';
-  const copy  = getRhythmCopy(insights.rhythmPattern, lang);
+  const copy  = getRhythmCopy(insights.rhythmPattern, lang, weekNumber);
   const dayLetters = lang === 'pt'
     ? ['S','T','Q','Q','S','S','D']
     : lang === 'es' || lang === 'fr'
@@ -147,7 +150,7 @@ function SectionSmallMoments({ insights, lang }: { insights: WeekInsights; lang:
 // Prefers real daily state check-ins (Racing Mind, Tired, Overwhelmed…).
 // Falls back to mood data (Difficult, Steady, Lighter) when no state data exists.
 
-function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string }) {
+function SectionMood({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
   const useStates = insights.stateTotal > 0;
 
   // Section title changes based on data source
@@ -192,6 +195,10 @@ function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string 
                 ))}
               </View>
             )}
+            {(() => {
+              const note = getHowYouArrivedNote(insights, lang, weekNumber);
+              return note ? <Text style={styles.arrivedNote}>{note}</Text> : null;
+            })()}
           </View>
         </View>
       </FadeIn>
@@ -229,6 +236,10 @@ function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string 
               ))}
             </View>
           )}
+          {(() => {
+            const note = getHowYouArrivedNote(insights, lang, weekNumber);
+            return note ? <Text style={styles.arrivedNote}>{note}</Text> : null;
+          })()}
         </View>
       </View>
     </FadeIn>
@@ -244,6 +255,7 @@ function SectionCategories({ insights, lang }: { insights: WeekInsights; lang: s
   const { topCategories, categoryCounts } = insights;
   if (topCategories.length === 0) return null;
   const dominant = topCategories[0];
+  const contextNote = getCategoryContextNote(insights, lang);
 
   return (
     <FadeIn delay={300}>
@@ -261,7 +273,7 @@ function SectionCategories({ insights, lang }: { insights: WeekInsights; lang: s
           </View>
           {dominant && categoryCounts[dominant] > 1 && (
             <Text style={styles.categoryNote}>
-              {getCategoryLabel(dominant, lang)} {subKey}.
+              {contextNote || `${getCategoryLabel(dominant, lang)} ${subKey}.`}
             </Text>
           )}
         </View>
@@ -272,24 +284,24 @@ function SectionCategories({ insights, lang }: { insights: WeekInsights; lang: s
 
 // ─── Section 5 — Words of the Week ────────────────────────────────────────────
 
-function SectionWords({ insights, lang }: { insights: WeekInsights; lang: string }) {
+function SectionWords({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
   const title    = lang === 'pt' ? 'PALAVRAS DA SEMANA' : lang === 'es' ? 'PALABRAS DE LA SEMANA' : lang === 'fr' ? 'MOTS DE LA SEMAINE' : lang === 'de' ? 'WORTE DER WOCHE' : 'WORDS OF THE WEEK';
-  const oneLabel = lang === 'pt' ? 'Uma palavra esteve com você esta semana' : lang === 'es' ? 'Una palabra estuvo contigo esta semana' : lang === 'fr' ? 'Un mot t\'a accompagné cette semaine' : lang === 'de' ? 'Ein Wort begleitete dich diese Woche' : 'One word stayed with you this week';
-  const manyLabel = lang === 'pt' ? 'Palavras que ficaram com você' : lang === 'es' ? 'Palabras que se quedaron contigo' : lang === 'fr' ? 'Mots qui sont restés avec toi' : lang === 'de' ? 'Worte, die bei dir blieben' : 'Words that stayed with you';
+  const manyLabel = lang === 'pt' ? 'Palavras que foram aparecendo' : lang === 'es' ? 'Palabras que siguieron apareciendo' : lang === 'fr' ? 'Mots qui revenaient sans cesse' : lang === 'de' ? 'Wörter, die immer wieder auftauchten' : 'Words that kept appearing';
 
-  const { uniqueWords, mostFrequentWord } = insights;
-  if (uniqueWords.length === 0) return null;
+  // Derive words from actual week data (real word_of_day first, then context)
+  const words = getWeekWords(insights, lang, weekNumber);
+  if (words.length === 0) return null;
 
   return (
     <FadeIn delay={360}>
       <View style={styles.section}>
         <SectionLabel>{title}</SectionLabel>
         <View style={styles.card}>
-          <Text style={styles.wordsNote}>{uniqueWords.length === 1 ? oneLabel : manyLabel}</Text>
+          <Text style={styles.wordsNote}>{manyLabel}</Text>
           <View style={styles.chipRow}>
-            {uniqueWords.map(w => (
-              <View key={w} style={[styles.chip, w === mostFrequentWord && styles.chipPrimary]}>
-                <Text style={[styles.chipText, w === mostFrequentWord && styles.chipTextPrimary]}>{w}</Text>
+            {words.map((w, i) => (
+              <View key={i} style={[styles.chip, i === 0 && styles.chipPrimary]}>
+                <Text style={[styles.chipText, i === 0 && styles.chipTextPrimary]}>{w}</Text>
               </View>
             ))}
           </View>
@@ -352,9 +364,9 @@ function SectionTrend({ insights, lang }: { insights: WeekInsights; lang: string
 
 // ─── Section 8 — A Quiet Observation ──────────────────────────────────────────
 
-function SectionObservation({ insights, lang }: { insights: WeekInsights; lang: string }) {
+function SectionObservation({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
   const title = lang === 'pt' ? 'UMA OBSERVAÇÃO QUIETA' : lang === 'es' ? 'UNA OBSERVACIÓN TRANQUILA' : lang === 'fr' ? 'UNE OBSERVATION CALME' : lang === 'de' ? 'EINE STILLE BEOBACHTUNG' : 'A QUIET OBSERVATION';
-  const lines = getQuietObservation(insights, lang);
+  const lines = getQuietObservation(insights, lang, weekNumber);
 
   return (
     <FadeIn delay={540}>
@@ -374,9 +386,9 @@ function SectionObservation({ insights, lang }: { insights: WeekInsights; lang: 
 
 // ─── Section 9 — Looking Ahead ────────────────────────────────────────────────
 
-function SectionLookingAhead({ insights, lang }: { insights: WeekInsights; lang: string }) {
+function SectionLookingAhead({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
   const title = lang === 'pt' ? 'OLHANDO ADIANTE' : lang === 'es' ? 'MIRANDO ADELANTE' : lang === 'fr' ? 'EN REGARDANT DEVANT' : lang === 'de' ? 'NACH VORNE SCHAUEN' : 'LOOKING AHEAD';
-  const lines = getLookingAhead(insights, lang);
+  const lines = getLookingAhead(insights, lang, weekNumber);
 
   return (
     <FadeIn delay={600}>
@@ -506,34 +518,34 @@ export default function WeeklyRecapScreen() {
         showsVerticalScrollIndicator={false}
       >
         {/* 1 — Week Overview */}
-        <SectionOverview insights={insights} lang={lang} />
+        <SectionOverview insights={insights} lang={lang} weekNumber={recap.weekNumber} />
 
         {/* 2 — Your Rhythm */}
-        <SectionRhythm insights={insights} lang={lang} />
+        <SectionRhythm insights={insights} lang={lang} weekNumber={recap.weekNumber} />
 
         {/* 3 — Small Moments */}
         <SectionSmallMoments insights={insights} lang={lang} />
 
         {/* 4 — How You Arrived */}
-        {insights.moodTotal > 0 && <SectionMood insights={insights} lang={lang} />}
+        {(insights.stateTotal > 0 || insights.moodTotal > 0) && <SectionMood insights={insights} lang={lang} weekNumber={recap.weekNumber} />}
 
         {/* 5 — What Your Mind Was Asking For */}
         {insights.topCategories.length > 0 && <SectionCategories insights={insights} lang={lang} />}
 
-        {/* 5 — Words of the Week */}
-        {insights.uniqueWords.length > 0 && <SectionWords insights={insights} lang={lang} />}
+        {/* 6 — Words of the Week (always shown — derived from context when no word_of_day) */}
+        <SectionWords insights={insights} lang={lang} weekNumber={recap.weekNumber} />
 
-        {/* 6 — A Moment That Stood Out */}
+        {/* 7 — A Moment That Stood Out */}
         {insights.highlight && <SectionHighlight insights={insights} lang={lang} />}
 
-        {/* 7 — What Changed */}
+        {/* 8 — What Changed */}
         {insights.trendDirection && <SectionTrend insights={insights} lang={lang} />}
 
-        {/* 8 — A Quiet Observation */}
-        <SectionObservation insights={insights} lang={lang} />
+        {/* 9 — A Quiet Observation */}
+        <SectionObservation insights={insights} lang={lang} weekNumber={recap.weekNumber} />
 
-        {/* 9 — Looking Ahead */}
-        <SectionLookingAhead insights={insights} lang={lang} />
+        {/* 10 — Looking Ahead */}
+        <SectionLookingAhead insights={insights} lang={lang} weekNumber={recap.weekNumber} />
 
         {/* CTA */}
         <FadeIn delay={680}>
@@ -753,6 +765,16 @@ const styles = StyleSheet.create({
   moodCountSmall: {
     fontSize: Typography.sizes.xs,
     color: Colors.textMuted,
+  },
+  arrivedNote: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    fontStyle: 'italic',
+    lineHeight: 20,
+    paddingTop: Spacing.sm,
+    marginTop: Spacing.sm,
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderTopColor: Colors.borderLight,
   },
 
   // ── Section 3 — Small Moments ─────────────────────────────────────────────────
