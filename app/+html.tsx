@@ -15,7 +15,8 @@ export default function Root({ children }: { children: React.ReactNode }) {
         <link rel="manifest" href="/manifest.json" />
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        {/* black-translucent → transparent status bar; page background fills behind it on iOS PWA */}
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Daily Reset" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
 
@@ -25,7 +26,15 @@ export default function Root({ children }: { children: React.ReactNode }) {
             gap never shows a white flash — this is the single most reliable
             anti-flicker measure on web. */}
         <style>{`
-          html, body { background-color: #FEF9EC; margin: 0; padding: 0; }
+          html, body { background-color: #FEF9EC; margin: 0; padding: 0; min-height: 100%; }
+
+          /*
+           * #root is the React Native Web mount point. Giving it the same
+           * background ensures no ancestor div leaks a white or wrong-color
+           * strip behind the iOS PWA status bar (which is transparent with
+           * black-translucent + viewport-fit=cover).
+           */
+          #root { background-color: #FEF9EC; min-height: 100vh; }
 
           /*
            * Prevent iOS Safari / PWA from auto-zooming when the user taps a text
