@@ -13,7 +13,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import { useWeeklyRecap } from '../hooks/useWeeklyRecap';
 import { maybeRequestReviewAfterRecap } from '../utils/reviewRequest';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
-import { getWeekAllDays } from '../utils/dailyEntries';
+import { getWeekAllDays, getDailyStatesForWeek } from '../utils/dailyEntries';
 import { getAppNow } from '../utils/appDate';
 import { getWeekMonday } from '../utils/weeklyRecap';
 import {
@@ -21,6 +21,8 @@ import {
   WeekInsights,
   getDayName,
   getMoodLabel,
+  getStateLabel,
+  STATE_DOT_COLOR,
   getCategoryLabel,
   getRhythmCopy,
   getWeekOverviewLines,
@@ -141,17 +143,64 @@ function SectionSmallMoments({ insights, lang }: { insights: WeekInsights; lang:
   );
 }
 
-// ─── Section 4 — How You Arrived (mood) ──────────────────────────────────────
+// ─── Section 4 — How You Arrived ─────────────────────────────────────────────
+// Prefers real daily state check-ins (Racing Mind, Tired, Overwhelmed…).
+// Falls back to mood data (Difficult, Steady, Lighter) when no state data exists.
 
 function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string }) {
-  const title   = lang === 'pt' ? 'COMO VOCÊ CHEGOU' : lang === 'es' ? 'CÓMO LLEGASTE' : lang === 'fr' ? 'COMMENT TU ES ARRIVÉ' : lang === 'de' ? 'WIE DU ANKAMST' : 'HOW YOU ARRIVED';
-  const mostLabel = lang === 'pt' ? 'Estado mais frequente' : lang === 'es' ? 'Estado más frecuente' : lang === 'fr' ? 'État le plus fréquent' : lang === 'de' ? 'Häufigster Zustand' : 'Most common state';
-  const alsoLabel = lang === 'pt' ? 'Também presente' : lang === 'es' ? 'También presente' : lang === 'fr' ? 'Aussi présent' : lang === 'de' ? 'Auch präsent' : 'Also present';
+  const useStates = insights.stateTotal > 0;
 
-  const { moodCounts, dominantMood, secondaryMoods, moodTotal } = insights;
-  if (moodTotal === 0) return null;
+  // Section title changes based on data source
+  const title = useStates
+    ? (lang === 'pt' ? 'COMO VOCÊ CHEGOU' : lang === 'es' ? 'CÓMO LLEGASTE' : lang === 'fr' ? 'COMMENT TU ES ARRIVÉ' : lang === 'de' ? 'WIE DU ANKAMST' : 'HOW YOU ARRIVED')
+    : (lang === 'pt' ? 'COMO OS DIAS PARECERAM' : lang === 'es' ? 'CÓMO SE SINTIERON LOS DÍAS' : lang === 'fr' ? 'COMMENT LES JOURS ONT SEMBLÉ' : lang === 'de' ? 'WIE SICH DIE TAGE ANFÜHLTEN' : 'HOW THE DAYS FELT');
+
+  const mostLabel = lang === 'pt' ? 'Mais presente' : lang === 'es' ? 'Más presente' : lang === 'fr' ? 'Le plus présent' : lang === 'de' ? 'Am häufigsten' : 'Most present';
+  const alsoLabel = lang === 'pt' ? 'Também apareceu' : lang === 'es' ? 'También apareció' : lang === 'fr' ? 'Aussi apparu' : lang === 'de' ? 'Auch erschienen' : 'Also appeared';
+  const timesLabel = (n: number) =>
+    lang === 'pt' ? `${n}×` : lang === 'es' ? `${n}×` : lang === 'fr' ? `${n}×` : lang === 'de' ? `${n}×` : `${n}×`;
 
   const MOOD_DOT: Record<string, string> = { hard: '#C9806A', okay: '#C9A84C', good: '#7FAF7A' };
+
+  if (useStates) {
+    // Show real emotional check-in states
+    const { stateCounts, dominantState, secondaryStates } = insights;
+    return (
+      <FadeIn delay={240}>
+        <View style={styles.section}>
+          <SectionLabel>{title}</SectionLabel>
+          <View style={styles.card}>
+            {dominantState && (
+              <View style={styles.moodPrimary}>
+                <Text style={styles.moodPrimaryLabel}>{mostLabel}</Text>
+                <View style={styles.moodRow}>
+                  <View style={[styles.moodDot, { backgroundColor: STATE_DOT_COLOR[dominantState] ?? '#A8A8A8' }]} />
+                  <Text style={styles.moodName}>{getStateLabel(dominantState, lang)}</Text>
+                  <Text style={styles.moodCount}>{timesLabel(stateCounts[dominantState])}</Text>
+                </View>
+              </View>
+            )}
+            {secondaryStates.length > 0 && (
+              <View style={styles.moodSecondary}>
+                <Text style={styles.moodSecondaryLabel}>{alsoLabel}</Text>
+                {secondaryStates.slice(0, 3).map(s => (
+                  <View key={s} style={styles.moodRow}>
+                    <View style={[styles.moodDot, styles.moodDotSmall, { backgroundColor: STATE_DOT_COLOR[s] ?? '#A8A8A8' }]} />
+                    <Text style={styles.moodNameSmall}>{getStateLabel(s, lang)}</Text>
+                    <Text style={styles.moodCountSmall}>{timesLabel(stateCounts[s])}</Text>
+                  </View>
+                ))}
+              </View>
+            )}
+          </View>
+        </View>
+      </FadeIn>
+    );
+  }
+
+  // Fallback: show mood data
+  const { moodCounts, dominantMood, secondaryMoods, moodTotal } = insights;
+  if (moodTotal === 0) return null;
 
   return (
     <FadeIn delay={240}>
@@ -164,7 +213,7 @@ function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string 
               <View style={styles.moodRow}>
                 <View style={[styles.moodDot, { backgroundColor: MOOD_DOT[dominantMood] }]} />
                 <Text style={styles.moodName}>{getMoodLabel(dominantMood, lang)}</Text>
-                <Text style={styles.moodCount}>{moodCounts[dominantMood]}×</Text>
+                <Text style={styles.moodCount}>{timesLabel(moodCounts[dominantMood])}</Text>
               </View>
             </View>
           )}
@@ -175,7 +224,7 @@ function SectionMood({ insights, lang }: { insights: WeekInsights; lang: string 
                 <View key={m} style={styles.moodRow}>
                   <View style={[styles.moodDot, styles.moodDotSmall, { backgroundColor: MOOD_DOT[m] }]} />
                   <Text style={styles.moodNameSmall}>{getMoodLabel(m, lang)}</Text>
-                  <Text style={styles.moodCountSmall}>{moodCounts[m]}×</Text>
+                  <Text style={styles.moodCountSmall}>{timesLabel(moodCounts[m])}</Text>
                 </View>
               ))}
             </View>
@@ -392,10 +441,13 @@ export default function WeeklyRecapScreen() {
       })();
     }
 
-    getWeekAllDays(mondayKey).then(allDays => {
+    Promise.all([
+      getWeekAllDays(mondayKey),
+      getDailyStatesForWeek(mondayKey),
+    ]).then(([allDays, dailyStates]) => {
       const [y, m, d] = mondayKey!.split('-').map(Number);
       const monday = new Date(y, m - 1, d);
-      setInsights(buildWeekInsights(allDays, monday));
+      setInsights(buildWeekInsights(allDays, monday, dailyStates));
     });
   }, [recap]);
 

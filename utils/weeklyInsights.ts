@@ -14,10 +14,11 @@ export type RhythmPattern =
   | 'sparse';     // 0–2 completions
 
 export interface WeekDayData {
-  dayIndex: number;   // 0=Mon … 6=Sun
-  dateKey: string;    // 'YYYY-MM-DD'
+  dayIndex: number;       // 0=Mon … 6=Sun
+  dateKey: string;        // 'YYYY-MM-DD'
   entry: DailyEntry | null;
   completed: boolean;
+  dailyState: string | null; // 'racing'|'tired'|'overwhelmed'|'unclear'|'drained'
 }
 
 export interface WeekInsights {
@@ -26,10 +27,16 @@ export interface WeekInsights {
   skippedCount: number;
   rhythmPattern: RhythmPattern;
   completedDayIndices: number[];
+  // Mood (from post-reset badge selection)
   moodCounts: { hard: number; okay: number; good: number };
   dominantMood: 'hard' | 'okay' | 'good' | null;
   secondaryMoods: Array<'hard' | 'okay' | 'good'>;
   moodTotal: number;
+  // Daily emotional state (from pre-reset check-in — real user data)
+  stateCounts: Record<string, number>;
+  dominantState: string | null;
+  secondaryStates: string[];
+  stateTotal: number;
   topCategories: string[];
   categoryCounts: Record<string, number>;
   uniqueWords: string[];
@@ -66,25 +73,48 @@ function rhythmPatternOf(indices: number[], total: number): RhythmPattern {
   return 'steady';
 }
 
-export function buildWeekInsights(allDays: (DailyEntry | null)[], monday: Date): WeekInsights {
+/**
+ * Build a complete insight snapshot for one Mon-Sun week.
+ * dailyStates — optional per-day emotional check-in array (index 0=Mon).
+ * Loaded from 'daily_state_v1_YYYY-MM-DD' keys via getDailyStatesForWeek().
+ */
+export function buildWeekInsights(
+  allDays: (DailyEntry | null)[],
+  monday: Date,
+  dailyStates: (string | null)[] = [],
+): WeekInsights {
   const days: WeekDayData[] = allDays.map((entry, i) => {
     const d = new Date(monday);
     d.setDate(monday.getDate() + i);
     const dateKey = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
-    return { dayIndex: i, dateKey, entry, completed: entry?.completed ?? false };
+    return {
+      dayIndex: i, dateKey, entry,
+      completed: entry?.completed ?? false,
+      dailyState: dailyStates[i] ?? null,
+    };
   });
 
   const completedDayIndices = days.filter(d => d.completed).map(d => d.dayIndex);
   const resetsCompleted = completedDayIndices.length;
 
-  // Mood
+  // Mood (post-reset badge)
   const moodCounts = { hard: 0, okay: 0, good: 0 };
   days.forEach(d => { if (d.entry?.mood) moodCounts[d.entry.mood]++; });
-  const moodTotal   = moodCounts.hard + moodCounts.okay + moodCounts.good;
+  const moodTotal    = moodCounts.hard + moodCounts.okay + moodCounts.good;
   const dominantMood = dominantMoodOf(moodCounts);
   const secondaryMoods = (['hard', 'okay', 'good'] as const)
     .filter(m => m !== dominantMood && moodCounts[m] > 0)
     .sort((a, b) => moodCounts[b] - moodCounts[a]);
+
+  // Daily emotional state (pre-reset check-in — real user selections)
+  const stateCounts: Record<string, number> = {};
+  days.forEach(d => {
+    if (d.dailyState) stateCounts[d.dailyState] = (stateCounts[d.dailyState] ?? 0) + 1;
+  });
+  const sortedStates  = Object.entries(stateCounts).sort((a, b) => b[1] - a[1]);
+  const dominantState = sortedStates[0]?.[0] ?? null;
+  const secondaryStates = sortedStates.slice(1).map(([s]) => s);
+  const stateTotal    = sortedStates.reduce((acc, [, n]) => acc + n, 0);
 
   // Categories
   const categoryCounts: Record<string, number> = {};
@@ -93,16 +123,16 @@ export function buildWeekInsights(allDays: (DailyEntry | null)[], monday: Date):
   });
   const topCategories = Object.entries(categoryCounts).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([k]) => k);
 
-  // Words
+  // Words (word_of_day when saved; no fallback — empty = section not shown)
   const wordCounts: Record<string, number> = {};
   days.forEach(d => {
     if (d.entry?.word_of_day) wordCounts[d.entry.word_of_day] = (wordCounts[d.entry.word_of_day] ?? 0) + 1;
   });
-  const sortedWords     = Object.entries(wordCounts).sort((a, b) => b[1] - a[1]);
-  const uniqueWords     = sortedWords.map(([w]) => w);
+  const sortedWords      = Object.entries(wordCounts).sort((a, b) => b[1] - a[1]);
+  const uniqueWords      = sortedWords.map(([w]) => w);
   const mostFrequentWord = sortedWords.length > 0 && sortedWords[0][1] > 1 ? sortedWords[0][0] : null;
 
-  // Highlight — best piece of user writing this week
+  // Highlight — best piece of user writing
   const candidates: NonNullable<WeekInsights['highlight']>[] = [];
   days.forEach(d => {
     if (!d.entry) return;
@@ -118,7 +148,7 @@ export function buildWeekInsights(allDays: (DailyEntry | null)[], monday: Date):
   });
   const highlight = candidates[0] ?? null;
 
-  // Trend — compare first half (Mon–Thu) with second half (Thu–Sun)
+  // Trend — first half (Mon–Thu) vs second half (Thu–Sun)
   function halfDominant(half: WeekDayData[]) {
     const c = { hard: 0, okay: 0, good: 0 };
     half.forEach(d => { if (d.entry?.mood) c[d.entry.mood]++; });
@@ -143,6 +173,10 @@ export function buildWeekInsights(allDays: (DailyEntry | null)[], monday: Date):
     dominantMood,
     secondaryMoods,
     moodTotal,
+    stateCounts,
+    dominantState,
+    secondaryStates,
+    stateTotal,
     topCategories,
     categoryCounts,
     uniqueWords,
@@ -178,6 +212,27 @@ export function getMoodLabel(mood: 'hard' | 'okay' | 'good', lang: string): stri
   return MOOD_LABELS[mood][lang] ?? MOOD_LABELS[mood].en;
 }
 
+// Daily emotional state labels — matches DAILY_STATE_OPTIONS in dailyState.ts
+const STATE_LABELS: Record<string, Record<string, string>> = {
+  racing:      { en: 'Racing Mind',  pt: 'Mente acelerada',  es: 'La mente no para',      fr: 'Pensées rapides',  de: 'Gedankenkarussell' },
+  tired:       { en: 'Tired',        pt: 'Com cansaço',      es: 'Agotado',               fr: 'Fatigue',          de: 'Müde'              },
+  overwhelmed: { en: 'Overwhelmed',  pt: 'Sobrecarregado',   es: 'Todo se siente mucho',  fr: 'Trop plein',       de: 'Überwältigt'       },
+  unclear:     { en: 'Unfocused',    pt: 'Sem clareza',      es: 'Sin claridad',          fr: 'Flou',             de: 'Unklar'            },
+  drained:     { en: 'Low Energy',   pt: 'Sem energia',      es: 'Sin energía',           fr: 'Peu d\'énergie',   de: 'Wenig Energie'     },
+};
+// Color for each state dot
+export const STATE_DOT_COLOR: Record<string, string> = {
+  racing:      '#C9806A',
+  tired:       '#9B9B9B',
+  overwhelmed: '#B87560',
+  unclear:     '#7A8FA8',
+  drained:     '#A89060',
+};
+export function getStateLabel(state: string, lang: string): string {
+  const entry = STATE_LABELS[state];
+  return entry ? (entry[lang] ?? entry.en) : state;
+}
+
 const CAT_LABELS: Record<string, Record<string, string>> = {
   Calm:     { en: 'Calm',     pt: 'Calma',     es: 'Calma',      fr: 'Calme',     de: 'Ruhe'       },
   Clarity:  { en: 'Clarity',  pt: 'Clareza',   es: 'Claridad',   fr: 'Clarté',    de: 'Klarheit'   },
@@ -202,26 +257,25 @@ const OVERVIEW_INTRO: Record<string, (n: number) => string> = {
   de: n => n === 0 ? 'Die Woche verging in Stille.' : n === 1 ? 'Du bist diese Woche einmal zurückgekehrt.' : n === 7 ? 'Du bist diese Woche jeden Tag zurückgekehrt.' : `Diese Woche bist du ${n} Mal zurückgekehrt.`,
 };
 
-// Overview narrative lines (2 sentences, based on mood + completion)
-type OverviewKey = 'high_hard' | 'high_light' | 'mid_hard' | 'mid_light' | 'low';
-const OVERVIEW_NARRATIVE: Record<OverviewKey, Record<string, string>> = {
-  high_hard:  { en: 'The week was demanding.\nBut you kept coming back.', pt: 'A semana foi exigente.\nMas você continuou voltando.', es: 'La semana fue exigente.\nPero seguiste volviendo.', fr: 'La semaine a été exigeante.\nMais tu as continué à revenir.', de: 'Die Woche war fordernd.\nAber du bist immer wieder zurückgekehrt.' },
-  high_light: { en: 'There was a steadiness to this week.\nYou kept finding your way back.', pt: 'Houve uma constância nesta semana.\nVocê continuou encontrando seu caminho.', es: 'Hubo una constancia en esta semana.\nSeguiste encontrando tu camino de regreso.', fr: 'Il y avait une stabilité dans cette semaine.\nTu as continué à trouver ton chemin.', de: 'Diese Woche hatte eine Beständigkeit.\nDu hast immer wieder deinen Weg zurückgefunden.' },
-  mid_hard:   { en: 'Some days were difficult.\nYou kept coming back anyway.', pt: 'Alguns dias foram difíceis.\nVocê continuou voltando mesmo assim.', es: 'Algunos días fueron difíciles.\nAun así, seguiste volviendo.', fr: 'Certains jours ont été difficiles.\nTu es quand même revenu.', de: 'Einige Tage waren schwer.\nDu bist trotzdem zurückgekehrt.' },
-  mid_light:  { en: 'You navigated the week at your own pace.\nThe returns were quiet and consistent.', pt: 'Você navegou a semana no seu próprio ritmo.\nOs retornos foram quietos e consistentes.', es: 'Navegaste la semana a tu propio ritmo.\nLos regresos fueron tranquilos y consistentes.', fr: 'Tu as navigué la semaine à ton propre rythme.\nLes retours ont été calmes et réguliers.', de: 'Du hast die Woche in deinem eigenen Tempo gemeistert.\nDie Rückkehren waren ruhig und beständig.' },
-  low:        { en: 'The week asked a lot.\nYou were still here.', pt: 'A semana pediu muito.\nVocê ainda estava aqui.', es: 'La semana pidió mucho.\nAún así, estuviste aquí.', fr: 'La semaine a demandé beaucoup.\nTu étais quand même là.', de: 'Die Woche hat viel verlangt.\nDu warst trotzdem noch hier.' },
+// Overview narrative — per-count, imperfect-week-safe
+// Each count has its own line so the recap feels written for this exact week.
+const OVERVIEW_NARRATIVE: Record<string, Record<string, string>> = {
+  n0: { en: 'The week passed quietly.', pt: 'A semana passou em silêncio.', es: 'La semana pasó en silencio.', fr: 'La semaine est passée en silence.', de: 'Die Woche verging still.' },
+  n1: { en: 'There were quiet days.\nBut you still returned.', pt: 'Houve dias silenciosos.\nMas você ainda voltou.', es: 'Hubo días tranquilos.\nPero todavía regresaste.', fr: 'Il y a eu des jours calmes.\nMais tu es quand même revenu.', de: 'Es gab stille Tage.\nAber du bist trotzdem zurückgekehrt.' },
+  n2: { en: 'There were quiet days.\nBut you still returned.', pt: 'Houve dias silenciosos.\nMas você ainda voltou.', es: 'Hubo días tranquilos.\nPero todavía regresaste.', fr: 'Il y a eu des jours calmes.\nMais tu es quand même revenu.', de: 'Es gab stille Tage.\nAber du bist trotzdem zurückgekehrt.' },
+  n3: { en: 'This week wasn\'t continuous.\nStill, you found your way back.', pt: 'Esta semana não foi contínua.\nAinda assim, você encontrou seu caminho.', es: 'Esta semana no fue continua.\nAun así, encontraste tu camino de regreso.', fr: 'Cette semaine n\'a pas été continue.\nPourtant, tu as trouvé ton chemin.', de: 'Diese Woche war nicht durchgehend.\nDennoch hast du deinen Weg zurückgefunden.' },
+  n4: { en: 'Some days were left untouched.\nOthers became moments for yourself.', pt: 'Alguns dias ficaram sem toque.\nOutros se tornaram momentos para você.', es: 'Algunos días quedaron sin tocar.\nOtros se convirtieron en momentos para ti.', fr: 'Certains jours sont restés sans contact.\nD\'autres sont devenus des moments pour toi.', de: 'Einige Tage blieben unberührt.\nAndere wurden zu Momenten für dich.' },
+  n5: { en: 'The rhythm wasn\'t perfect.\nIt didn\'t need to be.', pt: 'O ritmo não foi perfeito.\nNão precisava ser.', es: 'El ritmo no fue perfecto.\nNo necesitaba serlo.', fr: 'Le rythme n\'était pas parfait.\nIl n\'avait pas besoin de l\'être.', de: 'Der Rhythmus war nicht perfekt.\nEr musste es nicht sein.' },
+  n6: { en: 'You stayed close to your reset.\nEven on the quieter days.', pt: 'Você ficou perto do seu reset.\nMesmo nos dias mais quietos.', es: 'Te mantuviste cerca de tu reset.\nIncluso en los días más tranquilos.', fr: 'Tu es resté proche de ton reset.\nMême pendant les jours plus calmes.', de: 'Du bliebst nah an deinem Reset.\nAuch an den stilleren Tagen.' },
+  n7: { en: 'You were here every day this week.', pt: 'Você esteve aqui todos os dias desta semana.', es: 'Estuviste aquí todos los días de esta semana.', fr: 'Tu étais là chaque jour de cette semaine.', de: 'Du warst diese Woche jeden Tag hier.' },
 };
 
 export function getWeekOverviewLines(insights: WeekInsights, lang: string): { intro: string; narrative: string } {
-  const { resetsCompleted, dominantMood } = insights;
+  const { resetsCompleted } = insights;
   const l = lang in OVERVIEW_INTRO ? lang : 'en';
-  const intro = OVERVIEW_INTRO[l](resetsCompleted);
-  const isHard = dominantMood === 'hard';
-  let key: OverviewKey;
-  if (resetsCompleted >= 5) key = isHard ? 'high_hard' : 'high_light';
-  else if (resetsCompleted >= 3) key = isHard ? 'mid_hard' : 'mid_light';
-  else key = 'low';
-  const narrative = OVERVIEW_NARRATIVE[key][l] ?? OVERVIEW_NARRATIVE[key].en;
+  const intro     = OVERVIEW_INTRO[l](resetsCompleted);
+  const key       = `n${Math.min(resetsCompleted, 7)}`;
+  const narrative = OVERVIEW_NARRATIVE[key]?.[l] ?? OVERVIEW_NARRATIVE[key]?.en ?? '';
   return { intro, narrative };
 }
 
@@ -242,24 +296,24 @@ export function getRhythmCopy(pattern: RhythmPattern, lang: string): string {
 
 type TrendMood = 'hard' | 'okay' | 'good';
 const TREND_BEGIN: Record<TrendMood, Record<string, string>> = {
-  hard: { en: 'You began the week carrying something heavy.', pt: 'Você começou a semana carregando algo pesado.', es: 'Comenzaste la semana cargando algo pesado.', fr: 'Tu as commencé la semaine en portant quelque chose de lourd.', de: 'Du bist mit etwas Schwerem in die Woche gegangen.' },
-  okay: { en: 'You began the week at a steady pace.', pt: 'Você começou a semana num ritmo estável.', es: 'Comenzaste la semana a un ritmo estable.', fr: 'Tu as commencé la semaine à un rythme stable.', de: 'Du bist in einem gleichmäßigen Tempo in die Woche gestartet.' },
-  good: { en: 'The week started on lighter ground.', pt: 'A semana começou em terreno mais leve.', es: 'La semana comenzó en terreno más ligero.', fr: 'La semaine a commencé sur un terrain plus léger.', de: 'Die Woche begann auf leichterem Boden.' },
+  hard: { en: 'The beginning felt heavier.', pt: 'O começo pareceu mais pesado.', es: 'El comienzo se sintió más pesado.', fr: 'Le début a semblé plus lourd.', de: 'Der Anfang fühlte sich schwerer an.' },
+  okay: { en: 'The week started at a quiet pace.', pt: 'A semana começou num ritmo quieto.', es: 'La semana empezó a un ritmo tranquilo.', fr: 'La semaine a commencé à un rythme calme.', de: 'Die Woche begann in einem ruhigen Tempo.' },
+  good: { en: 'The week started with a little more ease.', pt: 'A semana começou com um pouco mais de leveza.', es: 'La semana comenzó con un poco más de facilidad.', fr: 'La semaine a commencé avec un peu plus de légèreté.', de: 'Die Woche begann mit etwas mehr Leichtigkeit.' },
 };
 const TREND_END_IMPROVED: Record<TrendMood, Record<string, string>> = {
-  hard: { en: 'By the end, things had not fully eased —\nbut you were still here.', pt: 'No final, as coisas não aliviaram completamente —\nmas você ainda estava aqui.', es: 'Al final, las cosas no aliviaron del todo —\npero seguías aquí.', fr: 'À la fin, les choses ne s\'étaient pas complètement allégées —\nmais tu étais toujours là.', de: 'Bis zum Ende hatte sich nicht alles erleichtert —\naber du warst noch da.' },
-  okay: { en: 'By the end, a little more steadiness arrived.', pt: 'No final, um pouco mais de estabilidade chegou.', es: 'Al final, llegó un poco más de estabilidad.', fr: 'À la fin, un peu plus de stabilité est arrivée.', de: 'Gegen Ende kam ein wenig mehr Beständigkeit.' },
-  good: { en: 'By the end, something had lightened.', pt: 'No final, algo aliviou.', es: 'Al final, algo se alivió.', fr: 'À la fin, quelque chose s\'est allégé.', de: 'Gegen Ende hatte sich etwas erleichtert.' },
+  hard: { en: 'Things didn\'t fully ease —\nbut something shifted near the end.', pt: 'As coisas não aliviaram completamente —\nmas algo mudou perto do final.', es: 'Las cosas no aliviaron del todo —\npero algo cambió cerca del final.', fr: 'Les choses ne se sont pas complètement allégées —\nmais quelque chose a changé vers la fin.', de: 'Es erleichterte sich nicht vollständig —\naber gegen Ende änderte sich etwas.' },
+  okay: { en: 'There was more steadiness near the end of the week.', pt: 'Houve mais estabilidade perto do final da semana.', es: 'Hubo más estabilidad cerca del final de la semana.', fr: 'Il y a eu plus de stabilité vers la fin de la semaine.', de: 'Gegen Ende der Woche war mehr Beständigkeit spürbar.' },
+  good: { en: 'The end of the week felt a little lighter.', pt: 'O final da semana pareceu um pouco mais leve.', es: 'El final de la semana se sintió un poco más ligero.', fr: 'La fin de la semaine a semblé un peu plus légère.', de: 'Das Ende der Woche fühlte sich etwas leichter an.' },
 };
 const TREND_END_DECLINED: Record<TrendMood, Record<string, string>> = {
-  hard: { en: 'The week became heavier as it went on.\nYou carried it anyway.', pt: 'A semana ficou mais pesada à medida que avançou.\nVocê carregou mesmo assim.', es: 'La semana se volvió más pesada a medida que avanzaba.\nLo cargaste de todas formas.', fr: 'La semaine est devenue plus lourde au fur et à mesure.\nTu l\'as portée quand même.', de: 'Die Woche wurde schwerer, je weiter sie ging.\nDu hast sie trotzdem getragen.' },
-  okay: { en: 'The week slowed toward the end.\nYou stayed with it.', pt: 'A semana desacelerou no final.\nVocê permaneceu com ela.', es: 'La semana se ralentizó hacia el final.\nPermaneciste con ella.', fr: 'La semaine a ralenti vers la fin.\nTu y es resté.', de: 'Die Woche verlangsamte sich gegen Ende.\nDu bist dabei geblieben.' },
-  good: { en: 'Energy faded toward the end of the week.\nSometimes the week just ends that way.', pt: 'A energia diminuiu no final da semana.\nÀs vezes a semana simplesmente termina assim.', es: 'La energía se desvaneció hacia el final de la semana.\nA veces la semana simplemente termina así.', fr: 'L\'énergie s\'est estompée vers la fin de la semaine.\nParfois la semaine se termine simplement ainsi.', de: 'Die Energie ließ gegen Ende der Woche nach.\nManchmal endet die Woche einfach so.' },
+  hard: { en: 'More weight arrived as the week went on.', pt: 'Mais peso chegou à medida que a semana avançou.', es: 'Más peso llegó a medida que avanzaba la semana.', fr: 'Plus de poids est arrivé au fil de la semaine.', de: 'Im Laufe der Woche kam mehr Gewicht dazu.' },
+  okay: { en: 'A quieter pace started to emerge toward the end.', pt: 'Um ritmo mais quieto começou a surgir no final.', es: 'Un ritmo más tranquilo empezó a emerger hacia el final.', fr: 'Un rythme plus calme a commencé à émerger vers la fin.', de: 'Gegen Ende begann ein ruhigeres Tempo zu entstehen.' },
+  good: { en: 'The energy quieted a little as the week went on.\nSometimes the week just ends that way.', pt: 'A energia quietou um pouco à medida que a semana avançou.\nÀs vezes a semana termina assim.', es: 'La energía se calmó un poco a medida que avanzaba la semana.\nA veces la semana termina así.', fr: 'L\'énergie s\'est calmée un peu au fil de la semaine.\nParfois la semaine se termine ainsi.', de: 'Die Energie wurde im Laufe der Woche ruhiger.\nManchmal endet die Woche einfach so.' },
 };
 const TREND_END_STEADY: Record<TrendMood, Record<string, string>> = {
-  hard: { en: 'The weight stayed constant through the week.\nYou navigated it all the same.', pt: 'O peso permaneceu constante ao longo da semana.\nVocê a navegou mesmo assim.', es: 'El peso se mantuvo constante a lo largo de la semana.\nLa navegaste de todas formas.', fr: 'Le poids est resté constant tout au long de la semaine.\nTu l\'as navigué quand même.', de: 'Die Last blieb die ganze Woche konstant.\nDu hast sie trotzdem gemeistert.' },
-  okay: { en: 'The week stayed at a consistent pace from start to finish.', pt: 'A semana manteve um ritmo consistente do início ao fim.', es: 'La semana mantuvo un ritmo constante de principio a fin.', fr: 'La semaine a maintenu un rythme constant du début à la fin.', de: 'Die Woche verlief von Anfang bis Ende in einem gleichmäßigen Tempo.' },
-  good: { en: 'The lightness held through the whole week.', pt: 'A leveza se manteve durante toda a semana.', es: 'La ligereza se mantuvo durante toda la semana.', fr: 'La légèreté a tenu tout au long de la semaine.', de: 'Die Leichtigkeit hielt die ganze Woche an.' },
+  hard: { en: 'The weight didn\'t lift much, but you were still moving.', pt: 'O peso não aliviou muito, mas você ainda estava em movimento.', es: 'El peso no levantó mucho, pero todavía estabas en movimiento.', fr: 'Le poids n\'a pas beaucoup levé, mais tu étais encore en mouvement.', de: 'Das Gewicht hob sich nicht viel, aber du warst noch in Bewegung.' },
+  okay: { en: 'The rhythm didn\'t change much from day to day.', pt: 'O ritmo não mudou muito de dia para dia.', es: 'El ritmo no cambió mucho de día en día.', fr: 'Le rythme n\'a pas beaucoup changé d\'un jour à l\'autre.', de: 'Der Rhythmus änderte sich von Tag zu Tag nicht viel.' },
+  good: { en: 'The week held a similar pace from beginning to end.', pt: 'A semana manteve um ritmo semelhante do início ao fim.', es: 'La semana mantuvo un ritmo similar de principio a fin.', fr: 'La semaine a gardé un rythme similaire du début à la fin.', de: 'Die Woche hielt ein ähnliches Tempo vom Anfang bis zum Ende.' },
 };
 
 export function getTrendCopy(insights: WeekInsights, lang: string): { beginning: string; ending: string } | null {

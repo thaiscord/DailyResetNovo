@@ -88,3 +88,27 @@ export async function getWeekAllDays(mondayKey: string): Promise<(DailyEntry | n
   }
   return result;
 }
+
+/**
+ * Returns the daily emotional state ('racing'|'tired'|'overwhelmed'|'unclear'|'drained')
+ * for each of the 7 days in the Mon-Sun week starting at mondayKey.
+ * Index 0 = Monday. Null means no state was selected that day.
+ *
+ * Reads from the per-day key written by today.tsx:
+ *   setItem(StorageKeys.DAILY_STATE + '_' + dateKey, state)
+ *   → key: 'daily_state_v1_YYYY-MM-DD'
+ */
+export async function getDailyStatesForWeek(mondayKey: string): Promise<(string | null)[]> {
+  const [y, m, d] = mondayKey.split('-').map(Number);
+  const monday = new Date(y, m - 1, d);
+  const STATE_PREFIX = 'daily_state_v1_';
+  const result: (string | null)[] = [];
+  for (let i = 0; i < 7; i++) {
+    const date = new Date(monday);
+    date.setDate(monday.getDate() + i);
+    const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    const raw = await AsyncStorage.getItem(`${STATE_PREFIX}${dateStr}`);
+    result.push(raw ?? null);
+  }
+  return result;
+}
