@@ -19,6 +19,7 @@ export const StorageKeys = {
   LANGUAGE: 'language',
   WEEKLY_RECAPS: 'weekly_recaps_v1',
   LAST_RECAP_WEEK: 'last_recap_week_v1',
+  LAST_RECAP_WEEK_MONDAY: 'last_recap_week_monday_v2', // YYYY-MM-DD of last recap's Monday
   COMEBACK_COUNT: 'comeback_count',
   MILESTONE_CEREMONIES_SEEN: 'milestone_ceremonies_seen_v1',
   MILESTONE_HISTORY: 'milestone_history_v1',

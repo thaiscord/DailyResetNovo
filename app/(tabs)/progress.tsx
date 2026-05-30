@@ -645,11 +645,9 @@ function YourHistorySection({
     lang === 'fr' ? 'Semaine' :
     lang === 'de' ? 'Woche'   : 'Weekly';
 
-  const weekRecapSub = weeklyScore >= 5
-    ? t('progress2.history.weekrecap.sub.many')
-    : weeklyScore >= 2
-      ? t('progress2.history.weekrecap.sub.some')
-      : t('progress2.weekrecap.subtitle');
+  // Use per-count translation keys (n0–n7) so the card shows the actual
+  // calendar-week completion count rather than a generic bucket label.
+  const weekRecapSub = t(`progress2.weekrecap.n${Math.min(weeklyScore, 7)}`);
 
   const quietRefSub = totalEntries === 0
     ? t('qr.subtitle')

@@ -29,6 +29,7 @@ export interface WeeklyRecapData {
   weekNumber: number;
   weekLabel: string;
   dateLabel: string;
+  weekMonday?: string; // 'YYYY-MM-DD' of Monday — calendar-week identifier
   resetsCompleted: number;
   streakAtEnd: number;
   bestStreakAtEnd: number;
@@ -38,7 +39,60 @@ export interface WeeklyRecapData {
   savedAt: string;
 }
 
-// ─── Date Helpers ─────────────────────────────────────────────────────────────
+// ─── Calendar Week Helpers ────────────────────────────────────────────────────
+
+/**
+ * Returns the Monday of the Mon-Sun calendar week containing `date`.
+ * All date math uses the local timezone of the device.
+ */
+export function getWeekMonday(date: Date): Date {
+  const d = new Date(date);
+  const day = d.getDay(); // 0=Sun, 1=Mon … 6=Sat
+  const diff = day === 0 ? -6 : 1 - day; // if Sunday go back 6 days, else back to Monday
+  d.setDate(d.getDate() + diff);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+/** Returns 'YYYY-MM-DD' of the Monday of the calendar week containing `date`. */
+export function getWeekMondayKey(date: Date): string {
+  return getLocalDateKey(getWeekMonday(date));
+}
+
+/**
+ * Returns a human-readable date range label for the Mon-Sun week starting at `monday`.
+ * e.g. "May 27 – Jun 2" or "May 27 – May 31"
+ */
+export function getCalendarWeekDateLabel(monday: Date): string {
+  const sunday = new Date(monday);
+  sunday.setDate(monday.getDate() + 6);
+
+  const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  const startStr = `${monthNames[monday.getMonth()]} ${monday.getDate()}`;
+  const endStr   = `${monthNames[sunday.getMonth()]} ${sunday.getDate()}`;
+  return `${startStr} – ${endStr}`;
+}
+
+/**
+ * Count how many days in a Mon-Sun calendar week have a completion entry.
+ * `monday` is the Monday of that week (use getWeekMonday() to obtain it).
+ */
+export function countResetsInCalendarWeek(
+  completedByDate: Record<string, true>,
+  monday: Date,
+): number {
+  let count = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(monday);
+    d.setDate(d.getDate() + i);
+    if (completedByDate[getLocalDateKey(d)]) count++;
+  }
+  return count;
+}
+
+// ─── Date Helpers (legacy — kept for backward compatibility) ──────────────────
 
 /** Returns an array of YYYY-MM-DD keys for the last N days (inclusive of today). */
 export function getLastNDateKeys(n: number): string[] {

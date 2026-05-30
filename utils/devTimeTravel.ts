@@ -179,6 +179,7 @@ export async function resetDevTime(): Promise<void> {
     // ── Recaps & reflections ──────────────────────────────────────────────
     StorageKeys.WEEKLY_RECAPS,
     StorageKeys.LAST_RECAP_WEEK,
+    StorageKeys.LAST_RECAP_WEEK_MONDAY,
     StorageKeys.REFLECTIONS,
     // ── Habits ────────────────────────────────────────────────────────────
     StorageKeys.HABIT_LOG,
@@ -227,6 +228,7 @@ export async function resetProgressOnly(): Promise<void> {
     StorageKeys.MILESTONE_HISTORY,
     StorageKeys.WEEKLY_RECAPS,
     StorageKeys.LAST_RECAP_WEEK,
+    StorageKeys.LAST_RECAP_WEEK_MONDAY,
     StorageKeys.REFLECTIONS,
     StorageKeys.HABIT_LOG,
     StorageKeys.HABITS,

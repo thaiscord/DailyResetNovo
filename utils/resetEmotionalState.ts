@@ -140,6 +140,7 @@ export async function resetEmotionalState(): Promise<void> {
       StorageKeys.IS_PREMIUM,
       StorageKeys.WEEKLY_RECAPS,
       StorageKeys.LAST_RECAP_WEEK,
+      StorageKeys.LAST_RECAP_WEEK_MONDAY,
       StorageKeys.COMEBACK_COUNT,
       StorageKeys.MILESTONE_CEREMONIES_SEEN,
       StorageKeys.MILESTONE_HISTORY,

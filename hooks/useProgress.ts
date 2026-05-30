@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { AppState, AppStateStatus } from 'react-native';
 import { getItem, setItem, StorageKeys, getLocalDateKey } from './useStorage';
 import { getAppNow } from '../utils/appDate';
+import { getWeekMonday } from '../utils/weeklyRecap';
 
 export interface ProgressState {
   currentDay: number;
@@ -158,11 +159,18 @@ export function useProgress() {
     setProgress(prev => ({ ...prev, isPremium: true }));
   }, []);
 
-  const weeklyScore = progress.completedDays.filter(d => {
-    const now = getAppNow();
-    const dayOfWeek = now.getDay();
-    return d >= progress.currentDay - dayOfWeek && d <= progress.currentDay;
-  }).length;
+  // Count completions in the current Mon-Sun calendar week using completedByDate
+  // (YYYY-MM-DD keys). Uses getAppNow() so dev time-travel is respected.
+  const weeklyScore = (() => {
+    const monday = getWeekMonday(getAppNow());
+    let count = 0;
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(monday);
+      d.setDate(d.getDate() + i);
+      if (progress.completedByDate[getLocalDateKey(d)]) count++;
+    }
+    return count;
+  })();
 
   const monthlyScore = progress.completedDays.filter(d => {
     const now = getAppNow();
