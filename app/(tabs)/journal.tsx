@@ -10,6 +10,7 @@ import { getAllDailyEntries, DailyEntry } from '../../utils/dailyEntries';
 import { getItem } from '../../hooks/useStorage';
 import { useLanguage } from '../../hooks/useLanguage';
 import { MoodBadge } from '../../components/ui/MoodBadge';
+import { Colors } from '../../theme';
 
 // Known PT titles for already-stored daily entries
 const PT_RESET_TITLES: Record<string, string> = {
@@ -365,7 +366,7 @@ function EntryModal({ entry, onClose }: { entry: DailyEntry; onClose: () => void
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: '#FAF6EF',
+    backgroundColor: Colors.background,
   },
   ambientTop: { position: 'absolute', top: 0, left: 0, right: 0, height: 240, backgroundColor: 'rgba(201,151,58,0.018)', zIndex: 0 },
 
@@ -373,7 +374,7 @@ const styles = StyleSheet.create({
   header: {
     paddingHorizontal: 20,
     paddingBottom: 16,
-    backgroundColor: '#FAF6EF',
+    backgroundColor: Colors.background,
   },
   title: {
     fontSize: 28,
