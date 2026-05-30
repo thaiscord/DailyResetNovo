@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity,
   Modal, StyleSheet, StatusBar, Animated,
@@ -67,15 +67,17 @@ function getDateLocale(lang: string): string {
 
 export default function JournalScreen() {
   const insets = useSafeAreaInsets();
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [entries, setEntries] = useState<DailyEntry[]>([]);
   const [selected, setSelected] = useState<DailyEntry | null>(null);
-  // Start as false — data loads immediately on mount via useEffect below.
-  // Avoids blank→content flash when switching to this tab for the first time.
   const [loading, _setLoading] = useState(false);
 
+  // Calendar defaults to the current month
+  const nowRef = useRef(new Date());
+  const [calYear,  setCalYear]  = useState(nowRef.current.getFullYear());
+  const [calMonth, setCalMonth] = useState(nowRef.current.getMonth()); // 0-indexed
+
   // Load immediately on mount so data is ready before the user first visits.
-  // With lazy:false the screen mounts at app start, so this runs upfront.
   useEffect(() => {
     getAllDailyEntries().then(e => setEntries(e));
   }, []);
@@ -84,6 +86,37 @@ export default function JournalScreen() {
   useFocusEffect(useCallback(() => {
     getAllDailyEntries().then(e => setEntries(e));
   }, []));
+
+  // 3 most recent entries (getAllDailyEntries returns desc by date)
+  const recentEntries = useMemo(() => entries.slice(0, 3), [entries]);
+
+  // Fast O(1) date → entry lookup for the calendar
+  const entriesByDate = useMemo(() => {
+    const map: Record<string, DailyEntry> = {};
+    entries.forEach(e => { map[e.date] = e; });
+    return map;
+  }, [entries]);
+
+  // Calendar navigation bounds
+  const today = new Date();
+  const canGoNext = calYear < today.getFullYear() ||
+    (calYear === today.getFullYear() && calMonth < today.getMonth());
+
+  const canGoPrev = useMemo(() => {
+    if (entries.length === 0) return false;
+    const oldest = entries[entries.length - 1].date; // 'YYYY-MM-DD', desc sorted
+    const [oYear, oMonthOne] = oldest.split('-').map(Number);
+    return calYear > oYear || (calYear === oYear && calMonth > oMonthOne - 1);
+  }, [entries, calYear, calMonth]);
+
+  const goToPrevMonth = () => {
+    if (calMonth === 0) { setCalYear(y => y - 1); setCalMonth(11); }
+    else setCalMonth(m => m - 1);
+  };
+  const goToNextMonth = () => {
+    if (calMonth === 11) { setCalYear(y => y + 1); setCalMonth(0); }
+    else setCalMonth(m => m + 1);
+  };
 
   return (
     <View style={styles.root}>
@@ -113,20 +146,154 @@ export default function JournalScreen() {
           decelerationRate="normal"
           scrollEventThrottle={16}
         >
-          {entries.map((entry, index) => (
-            <RevealCard key={entry.date} delay={Math.min(index, 5) * 70}>
-              <EntryCard
-                entry={entry}
-                onPress={() => setSelected(entry)}
-              />
+          {/* ── Recent resets ──────────────────────────────────────── */}
+          <Text style={styles.sectionLabel}>{t('journal.recent.title')}</Text>
+          {recentEntries.map((entry, index) => (
+            <RevealCard key={entry.date} delay={Math.min(index, 3) * 70}>
+              <EntryCard entry={entry} onPress={() => setSelected(entry)} />
             </RevealCard>
           ))}
+
+          {/* ── Reset calendar ──────────────────────────────────────── */}
+          <Text style={[styles.sectionLabel, { marginTop: 24 }]}>
+            {t('journal.calendar.title')}
+          </Text>
+          <ResetCalendar
+            year={calYear}
+            month={calMonth}
+            entriesByDate={entriesByDate}
+            onSelectEntry={setSelected}
+            onPrevMonth={goToPrevMonth}
+            onNextMonth={goToNextMonth}
+            canGoPrev={canGoPrev}
+            canGoNext={canGoNext}
+            lang={lang}
+          />
         </ScrollView>
       )}
 
       {selected && (
         <EntryModal entry={selected} onClose={() => setSelected(null)} />
       )}
+    </View>
+  );
+}
+
+// ─── Reset Calendar ───────────────────────────────────────────────────────────
+
+function ResetCalendar({
+  year, month, entriesByDate, onSelectEntry,
+  onPrevMonth, onNextMonth, canGoPrev, canGoNext, lang,
+}: {
+  year: number;
+  month: number;
+  entriesByDate: Record<string, DailyEntry>;
+  onSelectEntry: (entry: DailyEntry) => void;
+  onPrevMonth: () => void;
+  onNextMonth: () => void;
+  canGoPrev: boolean;
+  canGoNext: boolean;
+  lang: string;
+}) {
+  const locale = getDateLocale(lang);
+  const todayObj = new Date();
+  const todayStr = [
+    todayObj.getFullYear(),
+    String(todayObj.getMonth() + 1).padStart(2, '0'),
+    String(todayObj.getDate()).padStart(2, '0'),
+  ].join('-');
+
+  // Month/year title via Intl — respects the app language
+  const monthTitle = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' })
+    .format(new Date(year, month));
+
+  // Short weekday labels starting from Sunday (Jan 7 2024 = Sunday)
+  const weekdays = Array.from({ length: 7 }, (_, i) =>
+    new Intl.DateTimeFormat(locale, { weekday: 'narrow' }).format(new Date(2024, 0, 7 + i))
+  );
+
+  // Build the flat cell array: nulls for empty leading cells, then day numbers
+  const firstWeekday = new Date(year, month, 1).getDay(); // 0 = Sunday
+  const daysInMonth  = new Date(year, month + 1, 0).getDate();
+  const cells: (number | null)[] = [
+    ...Array<null>(firstWeekday).fill(null),
+    ...Array.from({ length: daysInMonth }, (_, i) => i + 1),
+  ];
+  // Pad to a full row of 7
+  while (cells.length % 7 !== 0) cells.push(null);
+
+  const rows = Array.from({ length: cells.length / 7 }, (_, i) =>
+    cells.slice(i * 7, i * 7 + 7)
+  );
+
+  const pad = (n: number) => String(n).padStart(2, '0');
+
+  return (
+    <View style={calStyles.card}>
+      {/* Month navigation */}
+      <View style={calStyles.navRow}>
+        <TouchableOpacity
+          onPress={onPrevMonth}
+          disabled={!canGoPrev}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          activeOpacity={0.7}
+        >
+          <Text style={[calStyles.navArrow, !canGoPrev && calStyles.navArrowDim]}>‹</Text>
+        </TouchableOpacity>
+        <Text style={calStyles.monthTitle}>{monthTitle}</Text>
+        <TouchableOpacity
+          onPress={onNextMonth}
+          disabled={!canGoNext}
+          hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+          activeOpacity={0.7}
+        >
+          <Text style={[calStyles.navArrow, !canGoNext && calStyles.navArrowDim]}>›</Text>
+        </TouchableOpacity>
+      </View>
+
+      {/* Weekday header row */}
+      <View style={calStyles.weekRow}>
+        {weekdays.map((wd, i) => (
+          <Text key={i} style={calStyles.weekDay}>{wd}</Text>
+        ))}
+      </View>
+
+      {/* Day grid — one row per week */}
+      {rows.map((row, rowIdx) => (
+        <View key={rowIdx} style={calStyles.row}>
+          {row.map((day, colIdx) => {
+            if (!day) return <View key={colIdx} style={calStyles.cell} />;
+            const dateStr = `${year}-${pad(month + 1)}-${pad(day)}`;
+            const entry   = entriesByDate[dateStr];
+            const isToday = dateStr === todayStr;
+            const hasReset = Boolean(entry);
+            return (
+              <TouchableOpacity
+                key={colIdx}
+                style={calStyles.cell}
+                onPress={() => entry && onSelectEntry(entry)}
+                activeOpacity={hasReset ? 0.72 : 1}
+                disabled={!hasReset}
+              >
+                <View style={[
+                  calStyles.dayDot,
+                  hasReset && calStyles.dayDotReset,
+                  isToday && !hasReset && calStyles.dayDotToday,
+                  isToday && hasReset && calStyles.dayDotTodayReset,
+                ]}>
+                  <Text style={[
+                    calStyles.dayText,
+                    hasReset && calStyles.dayTextReset,
+                    isToday && !hasReset && calStyles.dayTextToday,
+                  ]}>
+                    {day}
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+      ))}
     </View>
   );
 }
@@ -387,6 +554,17 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
 
+  // Section label
+  sectionLabel: {
+    fontSize: 10,
+    fontWeight: '700',
+    letterSpacing: 1.4,
+    color: '#ABA49E',
+    textTransform: 'uppercase',
+    marginBottom: 12,
+    marginTop: 8,
+  },
+
   // Card
   card: {
     backgroundColor: '#F9F6F0',
@@ -597,5 +775,102 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#8CAA8C',
     fontWeight: '400',
+  },
+});
+
+// ─── Calendar styles ──────────────────────────────────────────────────────────
+
+const calStyles = StyleSheet.create({
+  card: {
+    backgroundColor: '#F9F6F0',
+    borderRadius: 18,
+    padding: 18,
+    marginBottom: 11,
+    borderWidth: 1,
+    borderColor: 'rgba(201,168,76,0.14)',
+    shadowColor: '#2A2018',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.07,
+    shadowRadius: 12,
+    elevation: 2,
+  },
+  navRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 16,
+  },
+  navArrow: {
+    fontSize: 22,
+    color: '#C9973A',
+    paddingHorizontal: 4,
+    lineHeight: 28,
+  },
+  navArrowDim: {
+    color: '#D6CFC8',
+  },
+  monthTitle: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: '#3A3330',
+    letterSpacing: 0.1,
+    textTransform: 'capitalize',
+  },
+  weekRow: {
+    flexDirection: 'row',
+    marginBottom: 4,
+  },
+  weekDay: {
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 10,
+    fontWeight: '700',
+    color: '#ABA49E',
+    letterSpacing: 0.6,
+    textTransform: 'uppercase',
+    paddingVertical: 4,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  cell: {
+    flex: 1,
+    aspectRatio: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 2,
+  },
+  dayDot: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  dayDotReset: {
+    backgroundColor: 'rgba(201,168,76,0.16)',
+    borderWidth: 1,
+    borderColor: 'rgba(201,168,76,0.32)',
+  },
+  dayDotToday: {
+    borderWidth: 1,
+    borderColor: 'rgba(61,53,48,0.20)',
+  },
+  dayDotTodayReset: {
+    backgroundColor: 'rgba(201,168,76,0.24)',
+    borderWidth: 1.5,
+    borderColor: 'rgba(201,168,76,0.52)',
+  },
+  dayText: {
+    fontSize: 13,
+    color: '#C8C0B8',
+  },
+  dayTextReset: {
+    color: '#B8924A',
+    fontWeight: '600',
+  },
+  dayTextToday: {
+    color: '#3D3530',
+    fontWeight: '600',
   },
 });
