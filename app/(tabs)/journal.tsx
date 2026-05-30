@@ -7,7 +7,8 @@ import { softCardReveal } from '../../utils/motion';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useFocusEffect } from 'expo-router';
 import { getAllDailyEntries, DailyEntry } from '../../utils/dailyEntries';
-import { getItem } from '../../hooks/useStorage';
+import { getItem, getLocalDateKey } from '../../hooks/useStorage';
+import { getAppNow } from '../../utils/appDate';
 import { useLanguage } from '../../hooks/useLanguage';
 import { MoodBadge } from '../../components/ui/MoodBadge';
 import { Colors } from '../../theme';
@@ -72,10 +73,15 @@ export default function JournalScreen() {
   const [selected, setSelected] = useState<DailyEntry | null>(null);
   const [loading, _setLoading] = useState(false);
 
-  // Calendar defaults to the current month
-  const nowRef = useRef(new Date());
-  const [calYear,  setCalYear]  = useState(nowRef.current.getFullYear());
-  const [calMonth, setCalMonth] = useState(nowRef.current.getMonth()); // 0-indexed
+  // Calendar — initialise to getAppNow() so dev time-travel is respected from
+  // the start, then jump to the most recent entry's month once entries load.
+  const appNow0 = getAppNow();
+  const [calYear,  setCalYear]  = useState(appNow0.getFullYear());
+  const [calMonth, setCalMonth] = useState(appNow0.getMonth()); // 0-indexed
+  // Tracks the 'YYYY-MM' of the most recent month the calendar auto-jumped to.
+  // Null = never jumped. Replaced by calJumpedRef to allow forward jumps after
+  // dev time-travel advances entries into a new month.
+  const calJumpedMonthRef = useRef<string | null>(null);
 
   // Load immediately on mount so data is ready before the user first visits.
   useEffect(() => {
@@ -87,6 +93,23 @@ export default function JournalScreen() {
     getAllDailyEntries().then(e => setEntries(e));
   }, []));
 
+  // Jump the calendar to the most recent entry's month whenever entries load or
+  // change to a newer month. This covers first load AND dev time-travel: when
+  // the dev panel advances the date to June and the user completes a reset,
+  // useFocusEffect reloads entries (now containing a June date) and this effect
+  // jumps the calendar forward to June automatically.
+  useEffect(() => {
+    if (entries.length === 0) return;
+    const mostRecentMonthKey = entries[0].date.slice(0, 7); // 'YYYY-MM'
+    // Skip if we already jumped to this month or a later one.
+    if (calJumpedMonthRef.current !== null &&
+        mostRecentMonthKey <= calJumpedMonthRef.current) return;
+    calJumpedMonthRef.current = mostRecentMonthKey;
+    const [y, m] = entries[0].date.split('-').map(Number);
+    setCalYear(y);
+    setCalMonth(m - 1); // entry month is 1-indexed; state is 0-indexed
+  }, [entries]);
+
   // 3 most recent entries (getAllDailyEntries returns desc by date)
   const recentEntries = useMemo(() => entries.slice(0, 3), [entries]);
 
@@ -97,10 +120,15 @@ export default function JournalScreen() {
     return map;
   }, [entries]);
 
-  // Calendar navigation bounds
-  const today = new Date();
-  const canGoNext = calYear < today.getFullYear() ||
-    (calYear === today.getFullYear() && calMonth < today.getMonth());
+  // Today's date key via the app's date system (respects dev time-travel offset).
+  // Passed to the calendar so the "today" dot is always on the correct cell.
+  const todayStr = getLocalDateKey(); // calls getAppNow() internally
+
+  // Calendar navigation bounds — use getAppNow() not new Date() so dev-advanced
+  // months are reachable (e.g. real date May, dev date June → canGoNext = false).
+  const appNow = getAppNow();
+  const canGoNext = calYear < appNow.getFullYear() ||
+    (calYear === appNow.getFullYear() && calMonth < appNow.getMonth());
 
   const canGoPrev = useMemo(() => {
     if (entries.length === 0) return false;
@@ -167,6 +195,7 @@ export default function JournalScreen() {
             onNextMonth={goToNextMonth}
             canGoPrev={canGoPrev}
             canGoNext={canGoNext}
+            todayStr={todayStr}
             lang={lang}
           />
         </ScrollView>
@@ -183,7 +212,7 @@ export default function JournalScreen() {
 
 function ResetCalendar({
   year, month, entriesByDate, onSelectEntry,
-  onPrevMonth, onNextMonth, canGoPrev, canGoNext, lang,
+  onPrevMonth, onNextMonth, canGoPrev, canGoNext, todayStr, lang,
 }: {
   year: number;
   month: number;
@@ -193,15 +222,10 @@ function ResetCalendar({
   onNextMonth: () => void;
   canGoPrev: boolean;
   canGoNext: boolean;
+  todayStr: string; // 'YYYY-MM-DD' from getLocalDateKey() — respects dev time-travel
   lang: string;
 }) {
   const locale = getDateLocale(lang);
-  const todayObj = new Date();
-  const todayStr = [
-    todayObj.getFullYear(),
-    String(todayObj.getMonth() + 1).padStart(2, '0'),
-    String(todayObj.getDate()).padStart(2, '0'),
-  ].join('-');
 
   // Month/year title via Intl — respects the app language
   const monthTitle = new Intl.DateTimeFormat(locale, { month: 'long', year: 'numeric' })
