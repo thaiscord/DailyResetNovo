@@ -898,7 +898,8 @@ export default function MindsetScreen() {
                   showsHorizontalScrollIndicator={false}
                   data={recommendedCardsV2}
                   keyExtractor={item => item.id}
-                  contentContainerStyle={{ paddingHorizontal: Spacing.xl }}
+                  contentContainerStyle={{ paddingHorizontal: Spacing.xl, paddingVertical: 10 }}
+                  style={{ marginBottom: 16 }}
                   ItemSeparatorComponent={() => <View style={{ width: 12 }} />}
                   renderItem={({ item }) => (
                     <TouchableOpacity
