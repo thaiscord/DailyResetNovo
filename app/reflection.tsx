@@ -5,6 +5,7 @@ import {
   ScrollView, StatusBar,
 } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
 import { useProgress } from '../hooks/useProgress';
 import { useReflections } from '../hooks/useReflections';
@@ -17,6 +18,7 @@ import { Colors, Typography, Spacing, Radii } from '../theme';
 
 export default function ReflectionScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const params = useLocalSearchParams<{
     prompt?: string;
     promptId?: string;
@@ -110,8 +112,13 @@ export default function ReflectionScreen() {
       <StatusBar barStyle="dark-content" />
 
       {/* ── Header ──────────────────────────────────────────────────────────── */}
-      <View style={styles.header}>
-        <TouchableOpacity onPress={handleClose} style={styles.closeBtn} activeOpacity={0.6}>
+      <View style={[styles.header, { paddingTop: Math.max(insets.top + 16, 56) }]}>
+        <TouchableOpacity
+          onPress={handleClose}
+          style={styles.closeBtn}
+          activeOpacity={0.6}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+        >
           <Text style={styles.closeBtnText}>✕</Text>
         </TouchableOpacity>
         <Text style={styles.headerEyebrow}>{t('reflect.eyebrow')}</Text>

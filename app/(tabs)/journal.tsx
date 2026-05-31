@@ -461,7 +461,7 @@ function EntryModal({ entry, onClose }: { entry: DailyEntry; onClose: () => void
     >
       <View style={[styles.modalRoot, { paddingBottom: insets.bottom + 24 }]}>
         {/* Header */}
-        <View style={styles.modalHeader}>
+        <View style={[styles.modalHeader, { paddingTop: Math.max(insets.top + 16, 28) }]}>
           <View style={{ flex: 1 }}>
             <Text style={styles.modalDay}>{t('journal.day', { day: entry.day })}</Text>
             <Text style={styles.modalDate}>{dateLong}</Text>
