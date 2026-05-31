@@ -1175,7 +1175,6 @@ function Section({ icon, title, content, open, onToggle, inputKey, inputPlacehol
           </View>
         </View>
         <Text style={cardStyles.sectionTitle}>{title}</Text>
-        {inputKey && <Ionicons name="create-outline" size={16} color={Colors.textMuted} />}
         <Animated.View style={{ transform: [{ rotate: chevronRotate }] }}>
           <Ionicons name="chevron-down" size={13} color={Colors.textMuted} style={{ opacity: 0.7 }} />
         </Animated.View>
@@ -1185,29 +1184,35 @@ function Section({ icon, title, content, open, onToggle, inputKey, inputPlacehol
           <View style={cardStyles.sectionBody}>
             <Text style={cardStyles.sectionContent}>{content}</Text>
             {inputKey && (
-              <TextInput
-                placeholder={inputPlaceholder}
-                placeholderTextColor="#B0A89E"
-                selectionColor={Colors.gold}
-                multiline
-                value={response}
-                onChangeText={(text) => {
-                  setResponse(text);
-                  setItem(inputKey, text);
-                  onSave?.(text);
-                }}
-                style={{
-                  padding: 12,
-                  paddingTop: 10,
-                  backgroundColor: Colors.backgroundSecondary,
-                  borderRadius: Radii.md,
-                  fontSize: 14,
-                  color: Colors.textPrimary,
-                  lineHeight: 23,
-                  minHeight: 52,
-                  textAlignVertical: 'top',
-                }}
-              />
+              <View style={{ position: 'relative' }}>
+                <TextInput
+                  placeholder={inputPlaceholder}
+                  placeholderTextColor="#B0A89E"
+                  selectionColor={Colors.gold}
+                  multiline
+                  value={response}
+                  onChangeText={(text) => {
+                    setResponse(text);
+                    setItem(inputKey, text);
+                    onSave?.(text);
+                  }}
+                  style={{
+                    padding: 12,
+                    paddingTop: 10,
+                    paddingRight: 34,
+                    backgroundColor: Colors.backgroundSecondary,
+                    borderRadius: Radii.md,
+                    fontSize: 14,
+                    color: Colors.textPrimary,
+                    lineHeight: 23,
+                    minHeight: 52,
+                    textAlignVertical: 'top',
+                  }}
+                />
+                <View pointerEvents="none" style={{ position: 'absolute', top: 8, right: 10 }}>
+                  <Ionicons name="create-outline" size={16} color={Colors.textMuted} />
+                </View>
+              </View>
             )}
           </View>
         </Animated.View>
