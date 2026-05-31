@@ -654,9 +654,12 @@ function YourHistorySection({
     lang === 'fr' ? 'Semaine' :
     lang === 'de' ? 'Woche'   : 'Weekly';
 
-  // Use per-count translation keys (n0–n7) so the card shows the actual
-  // calendar-week completion count rather than a generic bucket label.
-  const weekRecapSub = t(`progress2.weekrecap.n${Math.min(weeklyScore, 7)}`);
+  // For the first 7 resets use totalDays so the card always reflects how many
+  // resets the user has actually done, regardless of which calendar week each
+  // fell in. After 7+ resets a full recap exists and we switch to weeklyScore
+  // so the card tracks the current calendar-week progress.
+  const weekCardCount = totalDays <= 7 ? totalDays : weeklyScore;
+  const weekRecapSub  = t(`progress2.weekrecap.n${Math.min(weekCardCount, 7)}`);
 
   const quietRefSub = totalEntries === 0
     ? t('qr.subtitle')
@@ -714,7 +717,7 @@ function YourHistorySection({
 export default function ProgressScreen() {
   const { width: screenWidth } = useWindowDimensions();
   const isTablet = screenWidth >= 768;
-  const { progress, weeklyScore, comebackCount } = useProgress();
+  const { progress, weeklyScore, comebackCount, reload } = useProgress();
   const { totalEntries, saveEntry } = useSpaceReflections();
 
   // On web, start at 1 (fully visible) so there's no staggered pop-in on tab switch.
@@ -744,10 +747,11 @@ export default function ProgressScreen() {
   }, []);
 
   useFocusEffect(useCallback(() => {
+    reload();
     // On web, sections start at opacity 1 (FADE_INIT above). Replaying the
     // staggered entrance on every tab switch causes visible flicker — skip it.
     if (Platform.OS !== 'web') { runEntranceAnimations(); }
-  }, [runEntranceAnimations]));
+  }, [reload, runEntranceAnimations]));
 
   const totalDays = progress.completedDays.length;
   const hasData   = totalDays >= 1;

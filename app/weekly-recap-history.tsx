@@ -3,7 +3,7 @@ import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   Animated, Easing,
 } from 'react-native';
-import { useRouter } from 'expo-router';
+import { useRouter, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import * as Haptics from 'expo-haptics';
 import { useProgress } from '../hooks/useProgress';
@@ -173,9 +173,12 @@ function EmptyState() {
 // ─── Main Screen ──────────────────────────────────────────────────────────────
 export default function WeeklyRecapHistoryScreen() {
   const router = useRouter();
-  const { progress, weeklyScore } = useProgress();
-  const { habitLog, habits }      = useHabits();
+  const { progress, weeklyScore, reload } = useProgress();
+  const { habitLog, habits }              = useHabits();
   const { recaps } = useWeeklyRecap(progress, weeklyScore, habitLog, habits.length);
+
+  // Reload on every focus so the count is always fresh when returning from Today tab.
+  useFocusEffect(useCallback(() => { reload(); }, [reload]));
 
   const handleBack = useCallback(() => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -188,7 +191,14 @@ export default function WeeklyRecapHistoryScreen() {
 
   const { t, lang } = useLanguage();
   const sortedRecaps = [...recaps].sort((a, b) => b.weekNumber - a.weekNumber);
-  const hasAnyData   = weeklyScore > 0 || progress.completedDays.length > 0;
+  const totalCompleted = progress.completedDays.length;
+  const hasAnyData     = totalCompleted > 0;
+
+  // Single source of truth: first 7 resets use totalCompleted so the count
+  // matches the Progress tab's QuietSummary regardless of calendar week
+  // boundaries. After 7+ resets a full recap exists; switch to weeklyScore
+  // so the card tracks the current calendar-week progress correctly.
+  const displayCount = totalCompleted <= 7 ? totalCompleted : weeklyScore;
 
   return (
     <View style={styles.root}>
@@ -215,7 +225,7 @@ export default function WeeklyRecapHistoryScreen() {
 
         {/* Current week preview — always shown if there's any activity */}
         {hasAnyData && (
-          <CurrentWeekCard weeklyScore={weeklyScore} />
+          <CurrentWeekCard weeklyScore={displayCount} />
         )}
 
         {sortedRecaps.length === 0 ? (
