@@ -10,9 +10,11 @@ import {
 import { useRouter } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { Colors, Typography, Spacing, Radii } from '../theme';
-import { setItem, StorageKeys } from '../hooks/useStorage';
+import { setItem, StorageKeys, getLocalDateKey } from '../hooks/useStorage';
+import { getItem } from '../hooks/useStorage';
 import { track } from '../utils/analytics';
-import { isEs, isPt } from '../utils/langStore';
+import { isEs, isPt, isFr, isDe } from '../utils/langStore';
+import type { ReflectionEntry } from '../hooks/useReflections';
 
 export default function IdentityQuestionScreen() {
   const router = useRouter();
@@ -39,10 +41,34 @@ export default function IdentityQuestionScreen() {
   const handleSave = async () => {
     const trimmed = answer.trim();
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+
+    const prompt =
+      isDe() ? 'Wer wirst du gerade?'
+      : isFr() ? 'Qui es-tu en train de devenir ?'
+      : es     ? '¿En quién te estás convirtiendo?'
+      : pt     ? 'Em quem você está se tornando?'
+      : 'Who are you becoming?';
+
+    // Save to identity storage (primary) + reflections journal (visible in Journal tab)
     await Promise.all([
       trimmed ? setItem(StorageKeys.IDENTITY_ANSWER, trimmed) : Promise.resolve(),
       setItem(StorageKeys.IDENTITY_ASKED, true),
+      trimmed
+        ? (async () => {
+            const current = await getItem<ReflectionEntry[]>(StorageKeys.REFLECTIONS, []);
+            const entry: ReflectionEntry = {
+              id: `identity_${Date.now()}`,
+              date: getLocalDateKey(),
+              promptId: 'identity_question_day7',
+              prompt,
+              text: trimmed,
+              createdAt: new Date().toISOString(),
+            };
+            await setItem(StorageKeys.REFLECTIONS, [...current, entry]);
+          })()
+        : Promise.resolve(),
     ]);
+
     track('identity_question_answered', { answered: !!trimmed });
     router.replace('/(tabs)/today');
   };

@@ -8,6 +8,7 @@ import { useEmotionalProfile } from './useEmotionalProfile';
 import { isEs, isPt } from '../utils/langStore';
 import {
   getJourneyChapter,
+  getLocalizedChapter,
   getNextChapter,
   getDaysUntilNextChapter,
   getUnlockPreview,
@@ -56,7 +57,7 @@ export function useAnticipation(): AnticipationContext {
   const streak     = progress.streak;
   const currentDay = progress.currentDay;
 
-  const chapter = useMemo(() => getJourneyChapter(totalDays), [totalDays]);
+  const chapter = useMemo(() => getLocalizedChapter(getJourneyChapter(totalDays)), [totalDays]);
   const nextChapter = useMemo(() => getNextChapter(totalDays), [totalDays]);
   const daysUntilNextChapter = useMemo(() => getDaysUntilNextChapter(totalDays), [totalDays]);
 

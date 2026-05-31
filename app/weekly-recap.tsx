@@ -467,7 +467,7 @@ export default function WeeklyRecapScreen() {
     ]).then(([allDays, dailyStates]) => {
       const [y, m, d] = mondayKey!.split('-').map(Number);
       const monday = new Date(y, m - 1, d);
-      setInsights(buildWeekInsights(allDays, monday, dailyStates));
+      setInsights(buildWeekInsights(allDays, monday, dailyStates, progress.completedByDate));
     });
   }, [recap]);
 

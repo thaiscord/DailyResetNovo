@@ -4,7 +4,7 @@
 // Tone rule: deeper personalization should feel more *seen*, not more clinical.
 
 import type { EmotionalProfile } from './emotionalProfile';
-import { isEs } from './langStore';
+import { isEs, isPt, isFr, isDe } from './langStore';
 
 // ─── Journey Stage ────────────────────────────────────────────────────────────
 // Based on total completed days — measures habit depth, not calendar time.
@@ -258,11 +258,117 @@ const MILESTONE_OVERRIDES_ES: Record<number, MilestoneOverrideMap> = {
   },
 };
 
+const MILESTONE_OVERRIDES_PT: Record<number, MilestoneOverrideMap> = {
+  7: {
+    'gentle-rebuilder':        { title: 'Sete dias sendo gentil com você mesma.', sub: 'Não forçou. Voltou.' },
+    'nervous-system-recovery': { title: 'Uma semana de cura.', sub: 'Seu sistema nervoso está começando a lembrar da calma.' },
+    'quiet-momentum':          { title: 'Sete dias quietos.', sub: 'A cura se acumula em formas que nem sempre se veem.' },
+    'burnout-restored':        { title: 'Uma semana desde um lugar de força.', sub: 'Você sabe agora: descanso constrói.' },
+    'focus-starter':           { title: 'Sete dias protegendo sua atenção.', sub: 'Seu foco já é mais do que era.' },
+    'focus-recovery':          { title: 'Uma semana construindo foco.', sub: 'A lente está ficando mais nítida.' },
+    'clarity-builder':         { title: 'Sete dias de clareza.', sub: 'A distração está perdendo terreno.' },
+    'focus-established':       { title: 'Uma semana — sem esforço.', sub: 'Isso não é mais prática. É identidade.' },
+    'trust-rebuilding':        { title: 'Sete promessas cumpridas.', sub: 'É assim que começa a confiança em si mesma.' },
+    'confidence-emerging':     { title: 'Uma semana de constância.', sub: 'A confiança cresce com a repetição — e você está provando.' },
+    'confidence-momentum':     { title: 'Sete dias aparecendo.', sub: 'A confiança já é quem você está sendo.' },
+    'self-reliant':            { title: 'Uma semana — sobre confiança profunda.', sub: 'Você não precisa de motivação. Tem identidade.' },
+    'emotional-softening':     { title: 'Sete dias de quietude.', sub: 'Você escolheu a calma. Isso foi corajoso.' },
+    'calm-seeker':             { title: 'Uma semana de quietude.', sub: 'Você está aprendendo como a paz parece.' },
+    'emotional-steadiness':    { title: 'Sete dias enraizados.', sub: 'A calma já está dentro de você.' },
+    'calm-established':        { title: 'Uma semana assentada.', sub: 'A quietude já é sua segunda natureza.' },
+  },
+  21: {
+    'gentle-rebuilder':        { title: 'Três semanas voltando com gentileza.', sub: 'Sem pressão. Sem forçar. Só presença.' },
+    'nervous-system-recovery': { title: 'Vinte e um dias de cura.', sub: 'Seu sistema nervoso tem novos padrões agora.' },
+    'quiet-momentum':          { title: 'Três semanas de restauração quieta.', sub: 'Você não apressou. Era esse o ponto.' },
+    'trust-rebuilding':        { title: 'Três semanas de promessas cumpridas.', sub: 'Você provou algo para si mesma.' },
+    'emotional-softening':     { title: 'Três semanas escolhendo o que é suave.', sub: 'Você é mais gentil com si mesma do que quando começou.' },
+    'emotional-steadiness':    { title: 'Três semanas enraizadas.', sub: 'A calma não é mais algo que você alcança. Ela vive em você.' },
+  },
+  30: {
+    'gentle-rebuilder':        { title: 'Trinta retornos gentis.', sub: 'Você se reconstruiu sem se quebrar. Isso é raro.' },
+    'nervous-system-recovery': { title: 'Trinta dias de cura.', sub: 'Seu sistema nervoso aprendeu um novo ritmo.' },
+    'quiet-momentum':          { title: 'Trinta dias de constância quieta.', sub: 'Cura no seu próprio ritmo. Sem atalhos necessários.' },
+    'trust-rebuilding':        { title: 'Trinta promessas cumpridas.', sub: 'Você é alguém que cumpre o que promete. Oficial.' },
+    'emotional-softening':     { title: 'Trinta dias escolhendo a calma.', sub: 'A suavidade se tornou sua base.' },
+    'emotional-steadiness':    { title: 'Trinta dias enraizados.', sub: 'Sua estabilidade não é mais algo que você pratica. É você.' },
+  },
+};
+
+const MILESTONE_OVERRIDES_FR: Record<number, MilestoneOverrideMap> = {
+  7: {
+    'gentle-rebuilder':        { title: 'Sept jours de douceur envers toi-même.', sub: "Tu n'as pas forcé. Tu es revenu." },
+    'nervous-system-recovery': { title: 'Une semaine de guérison.', sub: 'Ton système nerveux commence à se rappeler du calme.' },
+    'quiet-momentum':          { title: 'Sept jours tranquilles.', sub: 'La guérison s\'accumule de façons invisibles.' },
+    'burnout-restored':        { title: 'Une semaine depuis un lieu de force.', sub: 'Tu sais maintenant : le repos construit.' },
+    'focus-starter':           { title: 'Sept jours à protéger ton attention.', sub: 'Ta concentration est déjà plus grande qu\'avant.' },
+    'focus-recovery':          { title: 'Une semaine à construire la concentration.', sub: 'La lentille devient plus nette.' },
+    'clarity-builder':         { title: 'Sept jours de clarté.', sub: 'La distraction perd du terrain.' },
+    'focus-established':       { title: 'Une semaine — sans effort.', sub: "Ce n'est plus une pratique. C'est une identité." },
+    'trust-rebuilding':        { title: 'Sept promesses tenues.', sub: "C'est ainsi que commence la confiance en soi." },
+    'confidence-emerging':     { title: 'Une semaine de constance.', sub: 'La confiance grandit par la répétition — et tu le prouves.' },
+    'confidence-momentum':     { title: 'Sept jours à te présenter.', sub: 'La confiance est déjà qui tu es en train de devenir.' },
+    'self-reliant':            { title: 'Une semaine — sur une confiance profonde.', sub: "Tu n'as pas besoin de motivation. Tu as une identité." },
+    'emotional-softening':     { title: 'Sept jours de calme.', sub: "Tu as choisi la lenteur. C'était courageux." },
+    'calm-seeker':             { title: 'Une semaine de tranquillité.', sub: 'Tu apprends à quoi ressemble la paix.' },
+    'emotional-steadiness':    { title: 'Sept jours ancrés.', sub: 'Le calme est déjà en toi.' },
+    'calm-established':        { title: 'Une semaine apaisée.', sub: 'La tranquillité est ta seconde nature.' },
+  },
+  21: {
+    'gentle-rebuilder':        { title: 'Trois semaines de retours doux.', sub: 'Sans pression. Sans forcer. Juste de la présence.' },
+    'trust-rebuilding':        { title: 'Trois semaines de promesses tenues.', sub: 'Tu t\'es prouvé quelque chose.' },
+    'emotional-softening':     { title: 'Trois semaines à choisir la douceur.', sub: 'Tu es plus doux avec toi-même qu\'au début.' },
+    'emotional-steadiness':    { title: 'Trois semaines ancrées.', sub: "Le calme n'est plus quelque chose que tu atteins. Il vit en toi." },
+  },
+  30: {
+    'gentle-rebuilder':        { title: 'Trente retours doux.', sub: 'Tu t\'es reconstruit sans te briser. C\'est rare.' },
+    'trust-rebuilding':        { title: 'Trente promesses tenues.', sub: 'Tu es quelqu\'un qui tient ses engagements. Officiel.' },
+    'emotional-softening':     { title: 'Trente jours à choisir le calme.', sub: 'La douceur est devenue ta fondation.' },
+    'emotional-steadiness':    { title: 'Trente jours ancrés.', sub: "Ta stabilité n'est plus quelque chose que tu pratiques. C'est toi." },
+  },
+};
+
+const MILESTONE_OVERRIDES_DE: Record<number, MilestoneOverrideMap> = {
+  7: {
+    'gentle-rebuilder':        { title: 'Sieben Tage der Sanftheit mit dir selbst.', sub: 'Du hast nicht erzwungen. Du bist zurückgekehrt.' },
+    'nervous-system-recovery': { title: 'Eine Woche der Heilung.', sub: 'Dein Nervensystem beginnt, Sicherheit zu erinnern.' },
+    'quiet-momentum':          { title: 'Sieben ruhige Tage.', sub: 'Heilung sammelt sich auf unsichtbare Weise an.' },
+    'burnout-restored':        { title: 'Eine Woche aus einem Ort der Stärke.', sub: 'Du weißt jetzt: Ruhe baut auf.' },
+    'focus-starter':           { title: 'Sieben Tage, deine Aufmerksamkeit zu schützen.', sub: 'Dein Fokus ist bereits mehr als er war.' },
+    'focus-recovery':          { title: 'Eine Woche Fokus aufbauen.', sub: 'Die Linse wird klarer.' },
+    'clarity-builder':         { title: 'Sieben Tage Klarheit.', sub: 'Die Ablenkung verliert ihren Griff.' },
+    'focus-established':       { title: 'Eine Woche — mühelos.', sub: 'Das ist keine Übung mehr. Es ist Identität.' },
+    'trust-rebuilding':        { title: 'Sieben gehaltene Versprechen.', sub: 'So beginnt das Vertrauen in sich selbst.' },
+    'confidence-emerging':     { title: 'Eine Woche Beständigkeit.', sub: 'Vertrauen wächst durch Wiederholung — und du beweist es.' },
+    'confidence-momentum':     { title: 'Sieben Tage des Erscheinens.', sub: 'Vertrauen ist bereits, wer du wirst.' },
+    'self-reliant':            { title: 'Eine Woche — aus tiefem Vertrauen.', sub: 'Du brauchst keine Motivation. Du hast Identität.' },
+    'emotional-softening':     { title: 'Sieben ruhige Tage.', sub: 'Du hast die Langsamkeit gewählt. Das war mutig.' },
+    'calm-seeker':             { title: 'Eine Woche der Stille.', sub: 'Du lernst, wie Frieden sich anfühlt.' },
+    'emotional-steadiness':    { title: 'Sieben geerdte Tage.', sub: 'Ruhe ist bereits in dir.' },
+    'calm-established':        { title: 'Eine ruhige Woche.', sub: 'Stille ist deine zweite Natur.' },
+  },
+  21: {
+    'gentle-rebuilder':        { title: 'Drei Wochen sanfter Rückkehr.', sub: 'Kein Druck. Kein Zwang. Nur Präsenz.' },
+    'trust-rebuilding':        { title: 'Drei Wochen gehaltener Versprechen.', sub: 'Du hast dir selbst etwas bewiesen.' },
+    'emotional-softening':     { title: 'Drei Wochen, die Sanftheit zu wählen.', sub: 'Du bist sanfter mit dir als am Anfang.' },
+    'emotional-steadiness':    { title: 'Drei geerdte Wochen.', sub: 'Ruhe ist nicht mehr etwas, nach dem du greifst. Sie lebt in dir.' },
+  },
+  30: {
+    'gentle-rebuilder':        { title: 'Dreißig sanfte Rückkehren.', sub: 'Du hast dich wiederaufgebaut, ohne dich zu brechen. Das ist selten.' },
+    'trust-rebuilding':        { title: 'Dreißig gehaltene Versprechen.', sub: 'Du bist jemand, der sein Wort hält. Offiziell.' },
+    'emotional-softening':     { title: 'Dreißig Tage, die Ruhe zu wählen.', sub: 'Sanftheit ist dein Fundament geworden.' },
+    'emotional-steadiness':    { title: 'Dreißig geerdte Tage.', sub: 'Deine Standhaftigkeit ist keine Übung mehr. Du bist es.' },
+  },
+};
+
 export function getPersonalizedMilestoneMessage(
   milestone: number,
   archetype: EmotionalArchetype,
 ): MilestoneMessage | null {
+  if (isPt()) return MILESTONE_OVERRIDES_PT[milestone]?.[archetype] ?? null;
   if (isEs()) return MILESTONE_OVERRIDES_ES[milestone]?.[archetype] ?? null;
+  if (isFr()) return MILESTONE_OVERRIDES_FR[milestone]?.[archetype] ?? null;
+  if (isDe()) return MILESTONE_OVERRIDES_DE[milestone]?.[archetype] ?? null;
   return MILESTONE_OVERRIDES[milestone]?.[archetype] ?? null;
 }
 

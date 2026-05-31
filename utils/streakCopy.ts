@@ -856,6 +856,15 @@ const categoryThemeDe: Record<DailyCategory, string> = {
   detox:       'Deine innere Stille zurückgewinnen.',
 };
 
+const categoryThemePt: Record<DailyCategory, string> = {
+  focus:       'Afiando sua atenção.',
+  discipline:  'Construindo estabilidade.',
+  confidence:  'Voltando para si mesma.',
+  productivity:'Criando clareza.',
+  emotional:   'Acolhendo o que importa.',
+  detox:       'Reconquistando seu silêncio interior.',
+};
+
 export function getCategoryTheme(cat: DailyCategory): string {
   return (isEs() ? categoryThemeEs : isFr() ? categoryThemeFr : isDe() ? categoryThemeDe : categoryThemeEn)[cat];
 }
@@ -877,11 +886,21 @@ export function getTomorrowAnticipateCopy(
   emotionalState?: EmotionalState
 ): { headline: string; sub: string; continuityCopy: string } {
   const es = isEs();
+  const pt = isPt();
   const fr = isFr();
-  const theme = es ? categoryThemeEs[category] : fr ? categoryThemeFr[category] : categoryTeaser[category];
-
   const de = isDe();
-  const headline = es
+
+  const theme = es ? categoryThemeEs[category]
+    : pt ? categoryThemePt[category]
+    : fr ? categoryThemeFr[category]
+    : de ? categoryThemeDe[category]
+    : categoryTeaser[category];
+
+  const headline = pt
+    ? (streak === 0 ? 'Amanhã é o Dia 1.'
+      : streak === 1 ? 'Amanhã, o Dia 2 continua.'
+      : `O Dia ${streak + 1} chega amanhã.`)
+    : es
     ? (streak === 0 ? 'Mañana es el Día 1.'
       : streak === 1 ? 'Mañana, el Día 2 continúa.'
       : `El Día ${streak + 1} llega mañana.`)
@@ -902,19 +921,19 @@ export function getTomorrowAnticipateCopy(
   let continuityCopy: string;
 
   if (emotionalState === 'returning') {
-    continuityCopy = es ? 'Mañana estará aquí cuando puedas.' : fr ? 'Demain sera là quand le moment sera juste.' : de ? 'Morgen ist da, wenn du bereit bist.' : "Tomorrow is there when you're ready.";
+    continuityCopy = pt ? 'Amanhã estará aqui quando você puder.' : es ? 'Mañana estará aquí cuando puedas.' : fr ? 'Demain sera là quand le moment sera juste.' : de ? 'Morgen ist da, wenn du bereit bist.' : "Tomorrow is there when you're ready.";
   } else if (nextMilestone !== null && daysToNext !== null && daysToNext === 1) {
-    continuityCopy = es ? 'Mañana es un regreso más.' : fr ? 'Demain est un retour de plus.' : de ? 'Morgen ist noch eine Rückkehr.' : 'Tomorrow is one more quiet return.';
+    continuityCopy = pt ? 'Amanhã é mais um retorno.' : es ? 'Mañana es un regreso más.' : fr ? 'Demain est un retour de plus.' : de ? 'Morgen ist noch eine Rückkehr.' : 'Tomorrow is one more quiet return.';
   } else if (nextMilestone !== null && daysToNext !== null && daysToNext <= 3) {
-    continuityCopy = es ? 'Un ritmo se está formando suavemente.' : fr ? 'Un rythme se forme doucement.' : de ? 'Ein Rhythmus formt sich still.' : 'A rhythm is quietly forming.';
+    continuityCopy = pt ? 'Um ritmo está se formando quietamente.' : es ? 'Un ritmo se está formando suavemente.' : fr ? 'Un rythme se forme doucement.' : de ? 'Ein Rhythmus formt sich still.' : 'A rhythm is quietly forming.';
   } else if (emotionalState === 'momentum') {
-    continuityCopy = es ? 'El ritmo es tuyo para continuar.' : fr ? 'Le rythme est à toi pour continuer.' : de ? 'Der Rhythmus gehört dir zum Weitermachen.' : 'The rhythm is yours to continue.';
+    continuityCopy = pt ? 'O ritmo é seu para continuar.' : es ? 'El ritmo es tuyo para continuar.' : fr ? 'Le rythme est à toi pour continuer.' : de ? 'Der Rhythmus gehört dir zum Weitermachen.' : 'The rhythm is yours to continue.';
   } else if (streak === 0) {
-    continuityCopy = es ? 'Mañana estará aquí cuando puedas.' : fr ? 'Demain sera là quand le moment sera juste.' : de ? 'Morgen ist da, wenn du bereit bist.' : "Tomorrow is there when you're ready.";
+    continuityCopy = pt ? 'Amanhã estará aqui quando você puder.' : es ? 'Mañana estará aquí cuando puedas.' : fr ? 'Demain sera là quand le moment sera juste.' : de ? 'Morgen ist da, wenn du bereit bist.' : "Tomorrow is there when you're ready.";
   } else if (streak < 7) {
-    continuityCopy = es ? 'Mañana es otro momento tranquilo.' : fr ? 'Demain est un autre moment calme.' : de ? 'Morgen ist ein weiterer stiller Moment.' : 'Tomorrow is another quiet moment.';
+    continuityCopy = pt ? 'Amanhã é mais um momento tranquilo.' : es ? 'Mañana es otro momento tranquilo.' : fr ? 'Demain est un autre moment calme.' : de ? 'Morgen ist ein weiterer stiller Moment.' : 'Tomorrow is another quiet moment.';
   } else {
-    continuityCopy = es ? 'Regresa cuando puedas.' : fr ? 'Reviens quand le moment sera juste.' : de ? 'Komm zurück, wenn du bereit bist.' : "Come back when you're ready.";
+    continuityCopy = pt ? 'Volte quando puder.' : es ? 'Regresa cuando puedas.' : fr ? 'Reviens quand le moment sera juste.' : de ? 'Komm zurück, wenn du bereit bist.' : "Come back when you're ready.";
   }
 
   return { headline, sub, continuityCopy };

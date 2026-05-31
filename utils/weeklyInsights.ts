@@ -82,14 +82,20 @@ export function buildWeekInsights(
   allDays: (DailyEntry | null)[],
   monday: Date,
   dailyStates: (string | null)[] = [],
+  completedByDate?: Record<string, boolean | true>,
 ): WeekInsights {
   const days: WeekDayData[] = allDays.map((entry, i) => {
     const d = new Date(monday);
     d.setDate(monday.getDate() + i);
     const dateKey = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    // Use completedByDate as authoritative source when available — fixes off-by-one
+    // errors where DailyEntry.completed may lag behind the completion record.
+    const isCompleted = completedByDate
+      ? !!completedByDate[dateKey]
+      : (entry?.completed ?? false);
     return {
       dayIndex: i, dateKey, entry,
-      completed: entry?.completed ?? false,
+      completed: isCompleted,
       dailyState: dailyStates[i] ?? null,
     };
   });

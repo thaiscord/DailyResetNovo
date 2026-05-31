@@ -9,7 +9,7 @@
 // — Mystery creates curiosity without anxiety.
 
 import type { EmotionalProfile } from './emotionalProfile';
-import { isEs, isPt, isFr } from './langStore';
+import { isEs, isPt, isFr, isDe } from './langStore';
 
 // ─── Journey Chapters ─────────────────────────────────────────────────────────
 // The user's journey is framed as emotional chapters, not achievements.
@@ -153,14 +153,106 @@ const CHAPTER_EYEBROW_FR: Record<string, string> = {
   'transformation':     'CHAPITRE 9',
 };
 
+const CHAPTER_EYEBROW_PT: Record<string, string> = {
+  'first-steps':        'CAPÍTULO 1',
+  'finding-rhythm':     'CAPÍTULO 2',
+  'momentum-forming':   'CAPÍTULO 3',
+  'rebuilding-trust':   'CAPÍTULO 4',
+  'emotional-clarity':  'CAPÍTULO 5',
+  'quiet-discipline':   'CAPÍTULO 6',
+  'identity-returning': 'CAPÍTULO 7',
+  'inner-stability':    'CAPÍTULO 8',
+  'transformation':     'CAPÍTULO 9',
+};
+const CHAPTER_TAGLINE_PT: Record<string, string> = {
+  'first-steps':        'Todo começo importa.',
+  'finding-rhythm':     'O padrão está despertando.',
+  'momentum-forming':   'Algo está mudando.',
+  'rebuilding-trust':   'A constância está se tornando visível.',
+  'emotional-clarity':  'A clareza está chegando aos poucos.',
+  'quiet-discipline':   'O esforço está se tornando instinto.',
+  'identity-returning': 'Quem você está se tornando é visível.',
+  'inner-stability':    'Você carrega a quietude dentro de você.',
+  'transformation':     'Você se reconstruiu.',
+};
+
+const CHAPTER_EYEBROW_ES: Record<string, string> = {
+  'first-steps':        'CAPÍTULO 1',
+  'finding-rhythm':     'CAPÍTULO 2',
+  'momentum-forming':   'CAPÍTULO 3',
+  'rebuilding-trust':   'CAPÍTULO 4',
+  'emotional-clarity':  'CAPÍTULO 5',
+  'quiet-discipline':   'CAPÍTULO 6',
+  'identity-returning': 'CAPÍTULO 7',
+  'inner-stability':    'CAPÍTULO 8',
+  'transformation':     'CAPÍTULO 9',
+};
+const CHAPTER_TAGLINE_ES: Record<string, string> = {
+  'first-steps':        'Cada comienzo importa.',
+  'finding-rhythm':     'El patrón está despertando.',
+  'momentum-forming':   'Algo está cambiando.',
+  'rebuilding-trust':   'La constancia se está volviendo visible.',
+  'emotional-clarity':  'La claridad llega despacio.',
+  'quiet-discipline':   'El esfuerzo se está volviendo instinto.',
+  'identity-returning': 'Quien te estás convirtiendo es visible.',
+  'inner-stability':    'Llevas la tranquilidad dentro de ti.',
+  'transformation':     'Te has reconstruido.',
+};
+
+const CHAPTER_EYEBROW_DE: Record<string, string> = {
+  'first-steps':        'KAPITEL 1',
+  'finding-rhythm':     'KAPITEL 2',
+  'momentum-forming':   'KAPITEL 3',
+  'rebuilding-trust':   'KAPITEL 4',
+  'emotional-clarity':  'KAPITEL 5',
+  'quiet-discipline':   'KAPITEL 6',
+  'identity-returning': 'KAPITEL 7',
+  'inner-stability':    'KAPITEL 8',
+  'transformation':     'KAPITEL 9',
+};
+const CHAPTER_TAGLINE_DE: Record<string, string> = {
+  'first-steps':        'Jeder Anfang zählt.',
+  'finding-rhythm':     'Das Muster erwacht.',
+  'momentum-forming':   'Etwas verändert sich.',
+  'rebuilding-trust':   'Beständigkeit wird sichtbar.',
+  'emotional-clarity':  'Klarheit kommt langsam.',
+  'quiet-discipline':   'Anstrengung wird Instinkt.',
+  'identity-returning': 'Wer du wirst, ist sichtbar.',
+  'inner-stability':    'Du trägst Stille in dir.',
+  'transformation':     'Du hast dich neu aufgebaut.',
+};
+
 export function getLocalizedChapter(chapter: JourneyChapter): JourneyChapter {
-  if (!isFr()) return chapter;
-  return {
-    ...chapter,
-    name: CHAPTER_NAME_FR[chapter.name] ?? chapter.name,
-    eyebrow: CHAPTER_EYEBROW_FR[chapter.id] ?? chapter.eyebrow,
-    tagline: CHAPTER_TAGLINE_FR[chapter.id] ?? chapter.tagline,
-  };
+  if (isPt()) {
+    return {
+      ...chapter,
+      eyebrow: CHAPTER_EYEBROW_PT[chapter.id] ?? chapter.eyebrow,
+      tagline: CHAPTER_TAGLINE_PT[chapter.id] ?? chapter.tagline,
+    };
+  }
+  if (isEs()) {
+    return {
+      ...chapter,
+      eyebrow: CHAPTER_EYEBROW_ES[chapter.id] ?? chapter.eyebrow,
+      tagline: CHAPTER_TAGLINE_ES[chapter.id] ?? chapter.tagline,
+    };
+  }
+  if (isFr()) {
+    return {
+      ...chapter,
+      name: CHAPTER_NAME_FR[chapter.name] ?? chapter.name,
+      eyebrow: CHAPTER_EYEBROW_FR[chapter.id] ?? chapter.eyebrow,
+      tagline: CHAPTER_TAGLINE_FR[chapter.id] ?? chapter.tagline,
+    };
+  }
+  if (isDe()) {
+    return {
+      ...chapter,
+      eyebrow: CHAPTER_EYEBROW_DE[chapter.id] ?? chapter.eyebrow,
+      tagline: CHAPTER_TAGLINE_DE[chapter.id] ?? chapter.tagline,
+    };
+  }
+  return chapter;
 }
 
 export function getJourneyChapter(totalDays: number): JourneyChapter {
