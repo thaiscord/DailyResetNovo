@@ -1,56 +1,116 @@
-O botão “Resetar meus dados” ainda NÃO funciona no web app/Vercel.
-
-Investigue o código real antes de alterar qualquer coisa.
+REVISÃO COMPLETA DOS "UM MOMENTO PARA REFLETIR"
 
 Objetivo:
-Quando o usuário clicar em “Resetar meus dados” e confirmar, o app precisa voltar para o estado inicial absoluto, como se fosse a primeira vez abrindo o app.
 
-Corrija de forma definitiva.
+Revisar TODAS as perguntas utilizadas no card "Um momento para refletir" do Daily Reset.
 
-Tarefas obrigatórias:
+A meta não é apenas traduzir ou corrigir textos. A meta é alinhar toda a biblioteca de perguntas à identidade emocional do aplicativo.
 
-1. Encontrar exatamente onde está o botão “Resetar meus dados” na aba Você/Profile.
+IDENTIDADE OBRIGATÓRIA
 
-2. Encontrar qual função está sendo chamada no clique desse botão.
+As perguntas devem ser:
 
-3. Corrigir essa função para apagar TODOS os dados persistidos usados pelo app.
+* Humanas
+* Simples
+* Naturais
+* Fáceis de responder
+* Baseadas na vida real
+* Leves emocionalmente
+* Reflexivas sem parecer terapia
+* Profundas sem parecer coach
+* Compatíveis com a proposta de micro resets diários
+* Compatíveis com pessoas cansadas, sobrecarregadas ou em burnout
 
-No web, precisa limpar:
-- localStorage
-- sessionStorage
-- AsyncStorage
-- qualquer chave usada pelo app
-- qualquer estado persistido de onboarding, idioma, reset, progresso, diário, mindset, notificações, recuperação, streak, ritual e usuário
+EVITAR
 
-4. Depois de limpar os dados, forçar reinicialização real do app no navegador:
-- usar window.location.replace("/")
-ou
-- window.location.reload()
-mas garantindo que o app volte para a tela inicial/onboarding/seleção de idioma.
+Remover ou reescrever perguntas que pareçam:
 
-5. Não basta limpar os dados. O estado React também precisa ser resetado ou a página precisa recarregar.
+* Autoajuda genérica
+* Coach motivacional
+* Terapia explícita
+* Espiritualidade forçada
+* Linguagem corporativa
+* Linguagem excessivamente abstrata
+* Perguntas difíceis de responder rapidamente
 
-6. Adicionar logs temporários no console para confirmar:
-- “RESET STARTED”
-- listar as chaves antes de apagar
-- “RESET COMPLETED”
-- listar as chaves depois de apagar
+Exemplos de perguntas desejadas:
 
-7. Testar no ambiente web:
-- abrir o app
-- completar onboarding
-- fazer um reset
-- ir em Você
-- clicar em Resetar meus dados
-- confirmar
-- verificar que voltou para o começo
-- atualizar o navegador
-- confirmar que os dados antigos NÃO voltaram
+* O que ajudaria seu dia a ficar 1% mais leve?
+* O que você precisa ouvir de si mesmo hoje?
+* O que está pedindo sua atenção neste momento?
+* O que você gostaria de fazer com mais calma?
+* O que tem ocupado espaço demais na sua mente?
+* O que você gostaria de deixar menos pesado hoje?
+* O que vale a pena proteger nesta semana?
+* O que você tem ignorado em si mesmo?
+* O que está funcionando melhor do que você percebe?
+* O que trouxe um pouco de alívio recentemente?
+* O que merece menos cobrança hoje?
+* O que você gostaria de simplificar?
 
-8. Não alterar layout, design, cores ou estrutura visual.
+PROCESSO DE REVISÃO
 
-9. Se existir mais de uma função de reset no app, remover duplicação e fazer todas chamarem uma única função central:
-clearAllUserData()
+Analise toda a biblioteca existente de perguntas.
 
-10. Atenção:
-O bug atual é que no Vercel o botão parece clicar, mas os dados continuam. Então a correção precisa atingir o botão real usado na interface atual, não apenas criar uma função nova sem conectar ao botão.
+Para cada pergunta:
+
+1. Avalie se ela está alinhada com a identidade do app.
+2. Se estiver boa, mantenha.
+3. Se parecer coach, terapia, autoajuda ou artificial, substitua.
+4. Garanta que perguntas próximas não sejam repetitivas.
+5. Aumente a variedade emocional ao longo dos dias.
+
+A distribuição deve incluir temas como:
+
+* Descanso
+* Ritmo
+* Pressão
+* Clareza
+* Atenção
+* Energia
+* Pequenas vitórias
+* Autocuidado realista
+* Sobrecarga
+* Recomeço
+* Limites
+* Presença
+* Calma
+* Direção
+* Relações
+* Trabalho
+* Tempo
+* Gratidão sem clichês
+
+INTERNACIONALIZAÇÃO (i18n)
+
+Após revisar a versão principal:
+
+Revisar também todas as traduções para:
+
+* Inglês
+* Espanhol
+* Francês
+* Alemão
+
+IMPORTANTE:
+
+Não fazer traduções literais.
+
+Cada idioma deve soar como se tivesse sido escrito originalmente por um falante nativo.
+
+Priorizar naturalidade acima de fidelidade literal.
+
+Se uma pergunta funcionar melhor com outra estrutura em determinado idioma, adaptar livremente mantendo a intenção emocional.
+
+Exemplo:
+
+Português:
+"O que ajudaria seu dia a ficar 1% mais leve?"
+
+Não traduzir palavra por palavra.
+
+Adaptar para a forma mais natural e humana para cada idioma.
+
+RESULTADO ESPERADO
+
+Gerar uma biblioteca de perguntas consistente, emocionalmente inteligente, sem tom de coach, sem tom terapêutico e alinhada à identidade premium, calma e humana do Daily Reset.
