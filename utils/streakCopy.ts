@@ -937,7 +937,7 @@ const dynamicHeadlines: Record<EmotionalState, string[]> = {
   beginner: [
     'Begin again\nfrom here.',
     'One reset.\nOne day at a time.',
-    'The journey\nstarts here.',
+    'This space\nis here for you.',
   ],
   returning: [
     'You came back.\nThat matters.',
@@ -947,25 +947,25 @@ const dynamicHeadlines: Record<EmotionalState, string[]> = {
   building: [
     'Still here.\nStill moving.',
     'Quiet progress is still progress.',
-    'Small steps.\nPermanent change.',
+    'Small steps.\nThey add up.',
   ],
   struggling: [
-    'Every day you return\nis a victory.',
+    'Every day you return\nis enough.',
     'Progress is not\nlinear. That is okay.',
     'Come back.\nThat\'s all it takes.',
   ],
   momentum: [
-    'You are building\na new identity.',
-    'Consistency is\nbecoming you.',
-    'The work is\nworking.',
+    'You\'re still here.\nThat means something.',
+    'Something is\nsettling in you.',
+    'This space\nis holding you.',
   ],
 };
 
 const dynamicHeadlinesEs: Record<EmotionalState, string[]> = {
   beginner: [
-    'Retoma el control\nde tu vida.',
+    'Empieza de nuevo\ndesde aquí.',
     'Un regreso.\nUn día a la vez.',
-    'El viaje\nempieza aquí.',
+    'Este espacio\nestá aquí para ti.',
   ],
   returning: [
     'Volviste.\nEso importa.',
@@ -973,19 +973,19 @@ const dynamicHeadlinesEs: Record<EmotionalState, string[]> = {
     'Volver a empezar no\nes empezar de cero.',
   ],
   building: [
-    'Retoma el control\nde tu vida.',
-    'El progreso es silencioso.\nAun así, vuelve a ti.',
-    'Pequeños pasos.\nCambio permanente.',
+    'Todavía aquí.\nTodavía en movimiento.',
+    'El progreso silencioso\nsigue siendo progreso.',
+    'Pequeños pasos.\nSe van sumando.',
   ],
   struggling: [
-    'Cada día que regresas\nes una victoria.',
-    'El progreso no es\nlineal. Sigue.',
+    'Cada día que regresas\nya es suficiente.',
+    'El progreso no es\nlineal. Está bien.',
     'Regresa.\nEso es todo lo que se necesita.',
   ],
   momentum: [
-    'Estás construyendo\nuna nueva identidad.',
-    'La consistencia\nte está definiendo.',
-    'El trabajo\nestá funcionando.',
+    'Todavía estás aquí.\nEso dice algo.',
+    'Algo se está\nasentando en ti.',
+    'Este espacio\nte está sosteniendo.',
   ],
 };
 
@@ -993,7 +993,7 @@ const dynamicHeadlinesPt: Record<EmotionalState, string[]> = {
   beginner: [
     'Recomece\ndaqui.',
     'Um reset.\nUm dia de cada vez.',
-    'A jornada\ncomeça aqui.',
+    'Esse espaço\nestá aqui para você.',
   ],
   returning: [
     'Você voltou.\nIsso importa.',
@@ -1003,17 +1003,17 @@ const dynamicHeadlinesPt: Record<EmotionalState, string[]> = {
   building: [
     'Ainda aqui.\nAinda em movimento.',
     'Mesmo um progresso silencioso ainda é progresso.',
-    'Pequenos passos.\nMudança permanente.',
+    'Pequenos passos.\nEles vão somando.',
   ],
   struggling: [
-    'Todo dia que você volta\né uma vitória.',
+    'Todo dia que você volta\njá é suficiente.',
     'O progresso não é\nlinear. Tudo bem.',
     'Volte.\nÉ tudo que precisa.',
   ],
   momentum: [
-    'Você está construindo\numa nova identidade.',
-    'A constância está\nse tornando você.',
-    'O trabalho está\nfuncionando.',
+    'Você ainda está aqui.\nIsso diz algo.',
+    'Algo está se\nassentando em você.',
+    'Esse espaço\nestá te sustentando.',
   ],
 };
 
@@ -1021,7 +1021,7 @@ const dynamicHeadlinesFr: Record<EmotionalState, string[]> = {
   beginner: [
     'Recommence\nd\'ici.',
     'Un souffle.\nUn jour à la fois.',
-    'Le chemin\ncommence ici.',
+    'Cet espace\nest là pour toi.',
   ],
   returning: [
     'Tu es revenu.\nÇa compte.',
@@ -1031,17 +1031,17 @@ const dynamicHeadlinesFr: Record<EmotionalState, string[]> = {
   building: [
     'Encore là.\nEncore en mouvement.',
     'Un progrès silencieux reste du progrès.',
-    'Petits pas.\nChangement durable.',
+    'Petits pas.\nIls s\'accumulent.',
   ],
   struggling: [
-    'Chaque jour où tu reviens\nest une victoire.',
+    'Chaque jour où tu reviens,\nc\'est suffisant.',
     'Le progrès n\'est pas\nlinéaire. C\'est normal.',
     'Reviens.\nC\'est tout ce qu\'il faut.',
   ],
   momentum: [
-    'Tu construis\nune nouvelle identité.',
-    'La constance\ndevient toi.',
-    'Le travail\nfonctionne.',
+    'Tu es encore là.\nÇa veut dire quelque chose.',
+    'Quelque chose\ns\'installe en toi.',
+    'Cet espace\nte porte.',
   ],
 };
 
@@ -1049,7 +1049,7 @@ const dynamicHeadlinesDe: Record<EmotionalState, string[]> = {
   beginner: [
     'Neu beginnen\nvon hier aus.',
     'Ein Reset.\nEinen Tag nach dem anderen.',
-    'Die Reise\nbeginnt hier.',
+    'Dieser Raum\nist für dich da.',
   ],
   returning: [
     'Du bist zurückgekehrt.\nDas zählt.',
@@ -1059,17 +1059,17 @@ const dynamicHeadlinesDe: Record<EmotionalState, string[]> = {
   building: [
     'Immer noch hier.\nImmer noch in Bewegung.',
     'Stiller Fortschritt ist immer noch Fortschritt.',
-    'Kleine Schritte.\nDauerhafter Wandel.',
+    'Kleine Schritte.\nSie summieren sich.',
   ],
   struggling: [
-    'Jeder Tag, an dem du zurückkommst,\nist ein Sieg.',
+    'Jeder Tag, an dem du zurückkommst,\nist genug.',
     'Fortschritt ist nicht\nlinear. Das ist in Ordnung.',
     'Komm zurück.\nDas ist alles, was es braucht.',
   ],
   momentum: [
-    'Du baust\neine neue Identität auf.',
-    'Beständigkeit\nwird zu dir.',
-    'Die Arbeit\nwirkt.',
+    'Du bist noch hier.\nDas bedeutet etwas.',
+    'Etwas setzt sich\nin dir fest.',
+    'Dieser Raum\nträgt dich.',
   ],
 };
 

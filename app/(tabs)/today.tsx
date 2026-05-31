@@ -101,6 +101,11 @@ export default function TodayScreen() {
   const { hasSeen } = useMilestones();
   const { recentIds, markAsSeen } = useContentMemory();
 
+  // Gate: hide Weekly Recap, "What I've Noticed" and weekly analysis for new users.
+  // Both conditions must be met: ≥ 4 completed resets AND ≥ 7 days into the program.
+  const hasEnoughHistory =
+    progress.completedDays.length >= 4 && progress.currentDay >= 7;
+
   // Auto-reschedules the daily notification with fresh contextual copy on focus
   useNotificationScheduler(progress, weeklyScore);
 
@@ -198,15 +203,16 @@ export default function TodayScreen() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wordExpanded]);
 
-  // Auto-navigate to weekly recap when Sunday evening / Monday trigger fires
+  // Auto-navigate to weekly recap when Sunday evening / Monday trigger fires.
+  // Requires sufficient history — skip for users with < 4 resets or < 7 days.
   useEffect(() => {
-    if (shouldShowRecap && !loading && !recapLoading && !recapNavigatedRef.current) {
+    if (shouldShowRecap && !loading && !recapLoading && !recapNavigatedRef.current && hasEnoughHistory) {
       recapNavigatedRef.current = true;
       const timer = setTimeout(() => router.push('/weekly-recap'), 1400);
       return () => clearTimeout(timer);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [shouldShowRecap, loading, recapLoading]);
+  }, [shouldShowRecap, loading, recapLoading, hasEnoughHistory]);
 
 
   // Recarrega progresso ao focar na aba Today
@@ -257,7 +263,7 @@ export default function TodayScreen() {
   const _returnedAfterAbsence = didReturnAfterAbsence(progress.completedDays, progress.currentDay);
   const comeback = detectComebackState(progress.completedByDate, progress.completedDays.length);
 
-  const noticedPattern = getNoticedPattern({
+  const noticedPattern = hasEnoughHistory ? getNoticedPattern({
     heavyDayCount: moodHistory.heavyDayCount,
     moodTrend: moodHistory.trend,
     weeklyScore,
@@ -265,7 +271,7 @@ export default function TodayScreen() {
     totalDays: progress.completedDays.length,
     comebackCount,
     currentDay: progress.currentDay,
-  }, lang);
+  }, lang) : null;
 
   // Retention routing: return experience → mantra selection → identity question
   // Must be declared AFTER comeback so the closure captures it correctly.
@@ -762,7 +768,7 @@ export default function TodayScreen() {
         )}
 
         {/* "What I've Noticed" — conditional pattern card */}
-        {noticedPattern && !completed && (
+        {noticedPattern && !completed && !comeback.isComeback && (
           <View style={styles.noticedCard}>
             <View style={styles.noticedDot} />
             <View style={{ flex: 1, gap: 4 }}>

@@ -559,8 +559,10 @@ export default function WeeklyRecapScreen() {
         {/* 10 — Looking Ahead */}
         <SectionLookingAhead insights={insights} lang={lang} weekNumber={recap.weekNumber} />
 
-        {/* 11 — A Note From Your Week */}
-        <SectionNoteFromWeek insights={insights} lang={lang} />
+        {/* 11 — A Note From Your Week (requires ≥ 4 resets and ≥ 7 days) */}
+        {progress.completedDays.length >= 4 && progress.currentDay >= 7 && (
+          <SectionNoteFromWeek insights={insights} lang={lang} />
+        )}
 
         {/* CTA */}
         <FadeIn delay={680}>
