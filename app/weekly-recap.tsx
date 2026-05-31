@@ -13,7 +13,7 @@ import { useLanguage } from '../hooks/useLanguage';
 import { useWeeklyRecap } from '../hooks/useWeeklyRecap';
 import { maybeRequestReviewAfterRecap } from '../utils/reviewRequest';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
-import { getWeekAllDays, getDailyStatesForWeek } from '../utils/dailyEntries';
+import { getWeekAllDays, getDailyStatesForWeek, type DailyEntry } from '../utils/dailyEntries';
 import { getAppNow } from '../utils/appDate';
 import { getWeekMonday } from '../utils/weeklyRecap';
 import {
@@ -430,8 +430,11 @@ export default function WeeklyRecapScreen() {
     dismissAutoTrigger, getRecapForWeek, loading: recapLoading,
   } = useWeeklyRecap(progress, weeklyScore, habitLog, habits.length);
 
-  const [recap,    setRecap]    = useState<ReturnType<typeof generateCurrentWeekPreview> | null>(null);
-  const [insights, setInsights] = useState<WeekInsights | null>(null);
+  const [recap,      setRecap]      = useState<ReturnType<typeof generateCurrentWeekPreview> | null>(null);
+  const [insights,   setInsights]   = useState<WeekInsights | null>(null);
+  const [weekDays,   setWeekDays]   = useState<(DailyEntry | null)[] | null>(null);
+  const [weekStates, setWeekStates] = useState<(string | null)[] | null>(null);
+  const [weekMonday, setWeekMonday] = useState<Date | null>(null);
   const dataLoading = progressLoading || habitsLoading || recapLoading;
 
   // ── Resolve recap ────────────────────────────────────────────────────────────
@@ -448,28 +451,31 @@ export default function WeeklyRecapScreen() {
   useEffect(() => {
     if (!recap) return;
 
-    // Resolve the Monday for this recap
     let mondayKey = (recap as any).weekMonday as string | undefined;
     if (!mondayKey) {
-      // Fallback: use getAppNow() for current recap, savedAt for historical
       const base = isHistorical && (recap as any).savedAt
         ? new Date((recap as any).savedAt)
         : getAppNow();
-      mondayKey = (() => {
-        const monday = getWeekMonday(base);
-        return `${monday.getFullYear()}-${String(monday.getMonth() + 1).padStart(2, '0')}-${String(monday.getDate()).padStart(2, '0')}`;
-      })();
+      const m = getWeekMonday(base);
+      mondayKey = `${m.getFullYear()}-${String(m.getMonth() + 1).padStart(2, '0')}-${String(m.getDate()).padStart(2, '0')}`;
     }
 
     Promise.all([
       getWeekAllDays(mondayKey),
       getDailyStatesForWeek(mondayKey),
     ]).then(([allDays, dailyStates]) => {
-      const [y, m, d] = mondayKey!.split('-').map(Number);
-      const monday = new Date(y, m - 1, d);
-      setInsights(buildWeekInsights(allDays, monday, dailyStates, progress.completedByDate));
+      const [y, mo, d] = mondayKey!.split('-').map(Number);
+      setWeekMonday(new Date(y, mo - 1, d));
+      setWeekDays(allDays);
+      setWeekStates(dailyStates);
     });
   }, [recap]);
+
+  // ── Rebuild insights whenever entries or completions change ──────────────────
+  useEffect(() => {
+    if (!weekDays || !weekStates || !weekMonday) return;
+    setInsights(buildWeekInsights(weekDays, weekMonday, weekStates, progress.completedByDate));
+  }, [weekDays, weekStates, weekMonday, progress.completedByDate]);
 
   const handleClose = useCallback(async () => {
     if (!isHistorical) await dismissAutoTrigger();

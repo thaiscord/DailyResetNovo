@@ -78,7 +78,25 @@ export function useWeeklyRecap(
       getItem<WeeklyRecapData[]>(StorageKeys.WEEKLY_RECAPS, []),
       getItem<string>(StorageKeys.LAST_RECAP_WEEK_MONDAY, ''),
     ]);
-    setRecaps(storedRecaps);
+
+    // If completions increased since a recap was saved for the most recently
+    // triggered week, update the stored count so history cards show the truth.
+    const recapMonday    = getLastCompletedWeekMonday(getAppNow());
+    const recapMondayKey = getLocalDateKey(recapMonday);
+    const staleIdx       = storedRecaps.findIndex(r => r.weekMonday === recapMondayKey);
+    let freshenedRecaps  = storedRecaps;
+
+    if (staleIdx !== -1) {
+      const freshCount = countResetsInCalendarWeek(progress.completedByDate, recapMonday);
+      if (freshCount > storedRecaps[staleIdx].resetsCompleted) {
+        freshenedRecaps = storedRecaps.map((r, i) =>
+          i === staleIdx ? { ...r, resetsCompleted: freshCount } : r,
+        );
+        await setItem(StorageKeys.WEEKLY_RECAPS, freshenedRecaps);
+      }
+    }
+
+    setRecaps(freshenedRecaps);
     setShouldShowRecap(shouldAutoTrigger(lastRecapWeekMonday, progress.completedByDate));
     setLoading(false);
   }, [progress.completedByDate]);
@@ -91,36 +109,45 @@ export function useWeeklyRecap(
     const lastCompletedMonday = getLastCompletedWeekMonday(now);
     const weekMondayKey = getLocalDateKey(lastCompletedMonday);
 
-    // Return existing recap if this week was already saved
-    const existing = recaps.find(r => r.weekMonday === weekMondayKey);
-    if (existing) return existing;
+    // Always recount from the authoritative source so we never serve a stale count
+    const freshCount  = countResetsInCalendarWeek(progress.completedByDate, lastCompletedMonday);
+    const existingIdx = recaps.findIndex(r => r.weekMonday === weekMondayKey);
 
-    const weekNumber      = recaps.length + 1;
-    const resetsCompleted = countResetsInCalendarWeek(progress.completedByDate, lastCompletedMonday);
+    // Return cached recap only when the count hasn't changed
+    if (existingIdx !== -1 && freshCount <= recaps[existingIdx].resetsCompleted) {
+      return recaps[existingIdx];
+    }
+
+    // Preserve weekNumber when updating an existing recap; assign new number otherwise
+    const weekNumber      = existingIdx !== -1 ? recaps[existingIdx].weekNumber : recaps.length + 1;
     const weeklyHabitRate = computeWeeklyHabitRate(habitLog, totalHabits);
-    const prevWeek        = recaps[recaps.length - 1];
+    const prevWeek        = existingIdx > 0 ? recaps[existingIdx - 1] : recaps[recaps.length - 1];
 
     const narrativeState: WeeklyNarrativeState = getWeeklyNarrativeState(
-      resetsCompleted,
+      freshCount,
       weekNumber,
       prevWeek?.resetsCompleted,
     );
 
     const recap: WeeklyRecapData = {
       weekNumber,
-      weekLabel:         weekLabel(weekNumber),
-      dateLabel:         getCalendarWeekDateLabel(lastCompletedMonday),
-      weekMonday:        weekMondayKey,
-      resetsCompleted,
-      streakAtEnd:       progress.streak,
-      bestStreakAtEnd:   progress.bestStreak,
+      weekLabel:          weekLabel(weekNumber),
+      dateLabel:          getCalendarWeekDateLabel(lastCompletedMonday),
+      weekMonday:         weekMondayKey,
+      resetsCompleted:    freshCount,
+      streakAtEnd:        progress.streak,
+      bestStreakAtEnd:    progress.bestStreak,
       weeklyHabitRate,
       totalDaysCompleted: progress.completedDays.length,
       narrativeState,
-      savedAt:           new Date().toISOString(),
+      savedAt:            new Date().toISOString(),
     };
 
-    const updated = [...recaps, recap];
+    // Replace in-place if updating an existing week; append otherwise
+    const updated = existingIdx !== -1
+      ? recaps.map((r, i) => i === existingIdx ? recap : r)
+      : [...recaps, recap];
+
     await Promise.all([
       setItem(StorageKeys.WEEKLY_RECAPS, updated),
       setItem(StorageKeys.LAST_RECAP_WEEK_MONDAY, weekMondayKey),
