@@ -1,7 +1,7 @@
 import { useRef, useEffect, useCallback, useState } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  Animated, Easing, StatusBar,
+  Animated, Easing, StatusBar, useWindowDimensions,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter, useLocalSearchParams } from 'expo-router';
@@ -415,6 +415,9 @@ function SectionLookingAhead({ insights, lang, weekNumber }: { insights: WeekIns
 export default function WeeklyRecapScreen() {
   const router      = useRouter();
   const insets      = useSafeAreaInsets();
+  const { width: screenWidth } = useWindowDimensions();
+  const isTablet = screenWidth >= 768;
+  const hPad = screenWidth < 360 ? 16 : screenWidth < 430 ? 20 : 32;
   const { week: weekParam } = useLocalSearchParams<{ week?: string }>();
   const isHistorical = !!weekParam;
 
@@ -502,7 +505,7 @@ export default function WeeklyRecapScreen() {
       <StatusBar barStyle="dark-content" />
 
       {/* ── LIGHT HEADER ──────────────────────────────────────────────────────── */}
-      <View style={[styles.header, { paddingTop: insets.top + 12 }]}>
+      <View style={[styles.header, { paddingTop: insets.top + 12, paddingHorizontal: hPad }]}>
         <TouchableOpacity style={styles.backBtn} onPress={handleClose} activeOpacity={0.7}>
           <Ionicons name="chevron-back" size={22} color={Colors.textSecondary} />
         </TouchableOpacity>
@@ -518,7 +521,11 @@ export default function WeeklyRecapScreen() {
       {/* ── SCROLLABLE BODY ───────────────────────────────────────────────────── */}
       <ScrollView
         style={styles.scroll}
-        contentContainerStyle={[styles.scrollContent, { paddingBottom: insets.bottom + 48 }]}
+        contentContainerStyle={[
+          styles.scrollContent,
+          { paddingBottom: insets.bottom + 48, paddingHorizontal: hPad },
+          isTablet && { maxWidth: 640, alignSelf: 'center', width: '100%' },
+        ]}
         showsVerticalScrollIndicator={false}
       >
         {/* 1 — Week Overview */}

@@ -10,6 +10,7 @@ import {
   TextInput,
   AccessibilityInfo,
   Platform,
+  useWindowDimensions,
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Svg, { Circle } from 'react-native-svg';
@@ -703,6 +704,8 @@ function YourHistorySection({
 // ─── Main Screen ──────────────────────────────────────────────────────────────
 
 export default function ProgressScreen() {
+  const { width: screenWidth } = useWindowDimensions();
+  const isTablet = screenWidth >= 768;
   const { progress, weeklyScore, comebackCount } = useProgress();
   const { totalEntries, saveEntry } = useSpaceReflections();
 
@@ -755,7 +758,10 @@ export default function ProgressScreen() {
     <SafeAreaView style={styles.safeArea} edges={['top']}>
       <ScrollView
         style={styles.scroll}
-        contentContainerStyle={styles.content}
+        contentContainerStyle={[
+          styles.content,
+          isTablet && { maxWidth: 640, alignSelf: 'center', width: '100%' },
+        ]}
         showsVerticalScrollIndicator={false}
         keyboardShouldPersistTaps="handled"
         keyboardDismissMode="on-drag"

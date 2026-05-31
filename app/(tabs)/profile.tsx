@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
-  TextInput, Modal, Animated, Platform,
+  TextInput, Modal, Animated, Platform, useWindowDimensions,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { DailyResetLogo } from '../../components/DailyResetLogo';
 import * as Haptics from 'expo-haptics';
 import { Ionicons } from '@expo/vector-icons';
@@ -610,6 +611,12 @@ function SettingsRowAnimated({ index, icon, label, value, isDanger, onPress }: {
 // ─── Component ────────────────────────────────────────────────────────────────
 export default function ProfileScreen() {
   const router = useRouter();
+  const { width: screenWidth } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
+  const isTablet = screenWidth >= 768;
+  const logoW = Math.min(276, screenWidth - 40);
+  const logoH = Math.round(logoW * (138 / 276));
+  const streakFontSize = screenWidth < 360 ? 42 : isTablet ? 64 : 56;
   const { progress, weeklyScore } = useProgress();
   const { profile, setProfile } = useEmotionalProfile();
   const { lang: contextLang, setLang: contextSetLang } = useLanguage();
@@ -760,11 +767,19 @@ export default function ProfileScreen() {
     <View style={styles.container}>
       <View pointerEvents="none" style={styles.ambientTop} />
       <View pointerEvents="none" style={styles.ambientBottom} />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scroll} decelerationRate="normal" scrollEventThrottle={16}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          styles.scroll,
+          isTablet && { maxWidth: 640, alignSelf: 'center', width: '100%' },
+        ]}
+        decelerationRate="normal"
+        scrollEventThrottle={16}
+      >
 
         {/* ── 1. IDENTITY HERO ─────────────────────────────────── */}
-        <View style={styles.hero}>
-          <DailyResetLogo width={276} height={138} variant="light" />
+        <View style={[styles.hero, { paddingTop: Math.max(insets.top + 12, 52) }]}>
+          <DailyResetLogo width={logoW} height={logoH} variant="light" />
 
           {/* Name — editable */}
           {editing ? (
@@ -825,7 +840,7 @@ export default function ProfileScreen() {
               {/* Streak — large identity number */}
               <View style={styles.transformTop}>
                 <View>
-                  <Text style={styles.transformStreakBig}>{streak}</Text>
+                  <Text style={[styles.transformStreakBig, { fontSize: streakFontSize, lineHeight: streakFontSize }]}>{streak}</Text>
                   <Text style={styles.transformStreakUnit}>{t('profile.streak.daysInRow')}</Text>
                 </View>
                 <View style={styles.transformRight}>

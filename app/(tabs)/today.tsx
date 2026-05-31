@@ -2,7 +2,9 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   Animated, Easing, AppState, AppStateStatus, TextInput,
+  useWindowDimensions,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter, useFocusEffect } from 'expo-router';
 import * as Haptics from 'expo-haptics';
@@ -91,6 +93,9 @@ const CHECKLIST_KEYS = [
 
 export default function TodayScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
+  const { width: screenWidth } = useWindowDimensions();
+  const isTablet = screenWidth >= 768;
   const { progress, completeDay, weeklyScore, loading, reload, comebackCount } = useProgress();
   const { hasSeen } = useMilestones();
   const { recentIds, markAsSeen } = useContentMemory();
@@ -492,13 +497,16 @@ export default function TodayScreen() {
       <View pointerEvents="none" style={styles.ambientBottom} />
       <ScrollView
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.scroll}
+        contentContainerStyle={[
+          styles.scroll,
+          isTablet && { maxWidth: 640, alignSelf: 'center', width: '100%' },
+        ]}
         decelerationRate="normal"
         scrollEventThrottle={16}
       >
 
         {/* Header emocional */}
-        <View style={styles.header}>
+        <View style={[styles.header, { paddingTop: Math.max(insets.top + 10, 44) }]}>
           <View style={styles.headerTop}>
             <Text style={styles.greeting}>
               {completed ? t('today.greeting.done') : (() => {

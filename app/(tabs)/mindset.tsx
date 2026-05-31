@@ -1,5 +1,6 @@
 import { useState, useMemo, useRef, useEffect, useCallback } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, Animated, Easing, FlatList, Dimensions, Platform } from 'react-native';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Modal, Animated, Easing, FlatList, Platform, useWindowDimensions } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 import { useFocusEffect } from 'expo-router';
 import * as Haptics from 'expo-haptics';
@@ -123,7 +124,7 @@ function buildCategoryIndexMap(): Record<string, number> {
 }
 const categoryIndexMap = buildCategoryIndexMap();
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
+// SCREEN_WIDTH removed — use screenWidth from useWindowDimensions() inside the component
 
 // Emoções diárias → categoria recomendada
 const EMOTIONS = [
@@ -348,6 +349,9 @@ const PROFILE_ALL_HEADERS: Record<string, { pt: string; en: string; es: string; 
 
 // ─── Componente principal ─────────────────────────────────────────────────────
 export default function MindsetScreen() {
+  const { width: screenWidth } = useWindowDimensions();
+  const insets = useSafeAreaInsets();
+  const isTablet = screenWidth >= 768;
   const { progress } = useProgress();
   const { t, lang } = useLanguage();
   const { profile } = useEmotionalProfile();
@@ -599,9 +603,17 @@ export default function MindsetScreen() {
       <View pointerEvents="none" style={styles.ambientLayer} />
       <Animated.View pointerEvents="none" style={[styles.ambientLayerMid, { opacity: ambientPulse }]} />
       <View pointerEvents="none" style={styles.ambientLayerBottom} />
-      <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scroll} decelerationRate="normal" scrollEventThrottle={16}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={[
+          styles.scroll,
+          isTablet && { maxWidth: 640, alignSelf: 'center', width: '100%' },
+        ]}
+        decelerationRate="normal"
+        scrollEventThrottle={16}
+      >
 
-        <View style={styles.header}>
+        <View style={[styles.header, { paddingTop: Math.max(insets.top + 16, 60) }]}>
           <Text style={styles.eyebrow}>{t('mindset.eyebrow')}</Text>
           <Text style={styles.title}>{t('mindset.title')}</Text>
           <Text style={styles.subtitle}>
@@ -904,7 +916,7 @@ export default function MindsetScreen() {
                   renderItem={({ item }) => (
                     <TouchableOpacity
                       style={{
-                        width: SCREEN_WIDTH * 0.72,
+                        width: Math.min(screenWidth * 0.72, 380),
                         backgroundColor: '#F9F6F0',
                         borderRadius: 16,
                         overflow: 'hidden',

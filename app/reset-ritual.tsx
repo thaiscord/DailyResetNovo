@@ -3,7 +3,9 @@ import {
   View, Text, StyleSheet, TouchableOpacity,
   Animated, Easing, Dimensions, StatusBar,
   TextInput, KeyboardAvoidingView, Platform,
+  useWindowDimensions,
 } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -178,8 +180,10 @@ function StepContent({
   hideHeadline?: boolean;
   children?: React.ReactNode;
 }) {
+  const { width: sw } = useWindowDimensions();
+  const hPad = sw < 360 ? Spacing.xl : Spacing.xxl;
   return (
-    <View style={styles.stepWrap}>
+    <View style={[styles.stepWrap, { paddingHorizontal: hPad }]}>
       {step.streakNote ? (
         <Text style={styles.streakNote}>{step.streakNote}</Text>
       ) : null}
@@ -735,6 +739,7 @@ function FocusVisual({ centerText, active }: { centerText?: string; active: bool
 
 export default function ResetRitualScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const { lang } = useLanguage();
   const { profile } = useEmotionalProfile();
   const { progress } = useProgress();
@@ -977,7 +982,7 @@ export default function ResetRitualScreen() {
       <AmbientParticles dimAnim={ambientDimAnim} />
       <ReturnGlow active={isLast} />
 
-      <TouchableOpacity style={styles.closeBtn} onPress={handleClose} activeOpacity={0.7}>
+      <TouchableOpacity style={[styles.closeBtn, { top: Math.max(insets.top + 12, 56) }]} onPress={handleClose} activeOpacity={0.7}>
         <Ionicons name="close" size={18} color="rgba(255,255,255,0.30)" />
       </TouchableOpacity>
 
