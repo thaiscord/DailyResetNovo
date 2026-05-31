@@ -951,144 +951,144 @@ export function getStreakContinuityMessage(streak: number, nextMilestone: number
   return `${streak} days in. Tomorrow makes ${streak + 1}.`;
 }
 
-// ── Dynamic headline (replaces static "Take back control of your life.") ─────
+// ── Dynamic headline pools — observational, phase-aware, human-toned ─────────
 const dynamicHeadlines: Record<EmotionalState, string[]> = {
   beginner: [
-    'Begin again\nfrom here.',
-    'One reset.\nOne day at a time.',
-    'This space\nis here for you.',
+    'Starting counts.\nEven if it\'s quiet.',
+    'You\'re not back\nat zero.',
+    'You\'re here.\nThat\'s already something.',
   ],
   returning: [
-    'You came back.\nThat matters.',
-    'Every return is\na choice.',
-    'Starting again is\nnot starting over.',
+    'You came back.\nNot everyone does.',
+    'The gap didn\'t\nerase anything.',
+    'Coming back is harder\nthan starting.',
   ],
   building: [
-    'Still here.\nStill moving.',
-    'Quiet progress is still progress.',
-    'Small steps.\nThey add up.',
+    'Something is starting\nto hold.',
+    'The quiet days\ncount too.',
+    'This is what\nconsistency looks like.',
   ],
   struggling: [
-    'Every day you return\nis enough.',
-    'Progress is not\nlinear. That is okay.',
-    'Come back.\nThat\'s all it takes.',
+    'Not every day\nneeds to look the same.',
+    'You don\'t have\nto earn this.',
+    'Being here today\nis enough.',
   ],
   momentum: [
-    'You\'re still here.\nThat means something.',
-    'Something is\nsettling in you.',
-    'This space\nis holding you.',
+    'You\'ve built\nsomething real.',
+    'The hard days\ndidn\'t stop you.',
+    'This is yours\nnow.',
   ],
 };
 
 const dynamicHeadlinesEs: Record<EmotionalState, string[]> = {
   beginner: [
-    'Empieza de nuevo\ndesde aquí.',
-    'Un regreso.\nUn día a la vez.',
-    'Este espacio\nestá aquí para ti.',
+    'Empezar cuenta.\nAunque sea en silencio.',
+    'No estás\nde vuelta al cero.',
+    'Estás aquí.\nEso ya es algo.',
   ],
   returning: [
-    'Volviste.\nEso importa.',
-    'Cada regreso es\nuna elección.',
-    'Volver a empezar no\nes empezar de cero.',
+    'Volviste.\nNo todos lo hacen.',
+    'La pausa no\nborrón nada.',
+    'Volver es más difícil\nque empezar.',
   ],
   building: [
-    'Todavía aquí.\nTodavía en movimiento.',
-    'El progreso silencioso\nsigue siendo progreso.',
-    'Pequeños pasos.\nSe van sumando.',
+    'Algo empieza\na mantenerse.',
+    'Los días tranquilos\ntambién cuentan.',
+    'Así es como se ve\nla consistencia.',
   ],
   struggling: [
-    'Cada día que regresas\nya es suficiente.',
-    'El progreso no es\nlineal. Está bien.',
-    'Regresa.\nEso es todo lo que se necesita.',
+    'No todos los días\nnecesitan parecer igual.',
+    'No tienes que\nganarte esto.',
+    'Estar aquí hoy\nya es suficiente.',
   ],
   momentum: [
-    'Todavía estás aquí.\nEso dice algo.',
-    'Algo se está\nasentando en ti.',
-    'Este espacio\nte está sosteniendo.',
+    'Has construido\nalgo real.',
+    'Los días difíciles\nno te detuvieron.',
+    'Esto ahora\nes tuyo.',
   ],
 };
 
 const dynamicHeadlinesPt: Record<EmotionalState, string[]> = {
   beginner: [
-    'Recomece\ndaqui.',
-    'Um reset.\nUm dia de cada vez.',
-    'Esse espaço\nestá aqui para você.',
+    'Começar conta.\nMesmo que em silêncio.',
+    'Você não está\nde volta ao zero.',
+    'Você está aqui.\nIsso já é algo.',
   ],
   returning: [
-    'Você voltou.\nIsso importa.',
-    'Todo retorno é\numa escolha.',
-    'Recomeçar não é\ncomeçar do zero.',
+    'Você voltou.\nNem todos voltam.',
+    'O intervalo não\napagou nada.',
+    'Voltar é mais difícil\ndo que começar.',
   ],
   building: [
-    'Ainda aqui.\nAinda em movimento.',
-    'Mesmo um progresso silencioso ainda é progresso.',
-    'Pequenos passos.\nEles vão somando.',
+    'Algo está começando\na se firmar.',
+    'Os dias quietos\ntambém contam.',
+    'É assim que a\nconsistência parece.',
   ],
   struggling: [
-    'Todo dia que você volta\njá é suficiente.',
-    'O progresso não é\nlinear. Tudo bem.',
-    'Volte.\nÉ tudo que precisa.',
+    'Nem todo dia\nprecisa parecer igual.',
+    'Você não precisa\nmerecer isso.',
+    'Estar aqui hoje\njá é suficiente.',
   ],
   momentum: [
-    'Você ainda está aqui.\nIsso diz algo.',
-    'Algo está se\nassentando em você.',
-    'Esse espaço\nestá te sustentando.',
+    'Você construiu\nalgo real.',
+    'Os dias difíceis\nnão te pararam.',
+    'Isso agora\né seu.',
   ],
 };
 
 const dynamicHeadlinesFr: Record<EmotionalState, string[]> = {
   beginner: [
-    'Recommence\nd\'ici.',
-    'Un souffle.\nUn jour à la fois.',
-    'Cet espace\nest là pour toi.',
+    'Commencer compte.\nMême en silence.',
+    'Tu ne reviens pas\nà la case départ.',
+    'Tu es là.\nC\'est déjà quelque chose.',
   ],
   returning: [
-    'Tu es revenu.\nÇa compte.',
-    'Chaque retour est\nun choix.',
-    'Recommencer n\'est pas\nrepartir de zéro.',
+    'Tu es revenu.\nPas tout le monde le fait.',
+    'La pause n\'a\nrien effacé.',
+    'Revenir est plus difficile\nque de commencer.',
   ],
   building: [
-    'Encore là.\nEncore en mouvement.',
-    'Un progrès silencieux reste du progrès.',
-    'Petits pas.\nIls s\'accumulent.',
+    'Quelque chose commence\nà tenir.',
+    'Les jours calmes\ncomptent aussi.',
+    'C\'est ainsi que\nla constance ressemble.',
   ],
   struggling: [
-    'Chaque jour où tu reviens,\nc\'est suffisant.',
-    'Le progrès n\'est pas\nlinéaire. C\'est normal.',
-    'Reviens.\nC\'est tout ce qu\'il faut.',
+    'Chaque jour n\'a pas\nbesoin de se ressembler.',
+    'Tu n\'as pas à\nmériter cela.',
+    'Être là aujourd\'hui\nsuffit.',
   ],
   momentum: [
-    'Tu es encore là.\nÇa veut dire quelque chose.',
-    'Quelque chose\ns\'installe en toi.',
-    'Cet espace\nte porte.',
+    'Tu as construit\nquelque chose de réel.',
+    'Les jours difficiles\nne t\'ont pas arrêté.',
+    'C\'est à toi\nmaintenant.',
   ],
 };
 
 const dynamicHeadlinesDe: Record<EmotionalState, string[]> = {
   beginner: [
-    'Neu beginnen\nvon hier aus.',
-    'Ein Reset.\nEinen Tag nach dem anderen.',
-    'Dieser Raum\nist für dich da.',
+    'Anfangen zählt.\nAuch wenn es still ist.',
+    'Du bist nicht\nwieder bei null.',
+    'Du bist hier.\nDas ist bereits etwas.',
   ],
   returning: [
-    'Du bist zurückgekehrt.\nDas zählt.',
-    'Jede Rückkehr ist\neine Wahl.',
-    'Neu anzufangen ist\nnicht von vorne anfangen.',
+    'Du bist zurück.\nNicht jeder kommt zurück.',
+    'Die Pause hat\nnichts ausgelöscht.',
+    'Zurückzukehren ist schwerer\nals anzufangen.',
   ],
   building: [
-    'Immer noch hier.\nImmer noch in Bewegung.',
-    'Stiller Fortschritt ist immer noch Fortschritt.',
-    'Kleine Schritte.\nSie summieren sich.',
+    'Etwas beginnt\nsich zu festigen.',
+    'Die ruhigen Tage\nzählen auch.',
+    'So sieht\nBeständigkeit aus.',
   ],
   struggling: [
-    'Jeder Tag, an dem du zurückkommst,\nist genug.',
-    'Fortschritt ist nicht\nlinear. Das ist in Ordnung.',
-    'Komm zurück.\nDas ist alles, was es braucht.',
+    'Nicht jeder Tag\nmuss gleich aussehen.',
+    'Du musst das\nnicht verdienen.',
+    'Heute hier zu sein\nreicht aus.',
   ],
   momentum: [
-    'Du bist noch hier.\nDas bedeutet etwas.',
-    'Etwas setzt sich\nin dir fest.',
-    'Dieser Raum\nträgt dich.',
+    'Du hast\netwas Echtes aufgebaut.',
+    'Die schweren Tage\nhaben dich nicht gestoppt.',
+    'Das gehört jetzt\ndir.',
   ],
 };
 
