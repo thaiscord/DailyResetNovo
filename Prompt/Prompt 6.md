@@ -1,65 +1,208 @@
-Adjust Today tab emotional state behavior after daily reset completion.
+AJUSTE APENAS OS CARDS "RITUAL DE RESET" E "AMANHÃ".
 
-Current problem:
-After the user completes today's reset, the "How does your mind feel?" options become unavailable or disappear/stop being useful. The selected mental state becomes locked for the rest of the day.
+NÃO alterar layout geral.
+NÃO alterar cores.
+NÃO alterar espaçamentos.
+NÃO alterar tamanho dos cards.
 
-This is not the desired behavior.
+Objetivo:
+Aumentar curiosidade, sensação de personalização e vontade de continuar usando o app.
 
-Desired behavior:
-Completing the daily reset should NOT lock the user's emotional/mental state selection.
+---
 
-The user should still be able to change the "How does your mind feel?" selection at any time during the day, even after finishing today's reset.
+1. CARD "RITUAL DE RESET"
 
-This selected state should continue to update:
-- the "Your word today" value;
-- the emotional tag/category shown in Today;
-- the Reset Ritual recommendation/content;
-- any state-dependent Today personalization.
+---
 
-Important distinction:
-- The daily reset completion state should remain completed.
-- The mental/emotional state should remain editable.
+Hoje o card está muito genérico:
 
-So:
-- Do NOT undo the completed reset.
-- Do NOT reset the streak.
-- Do NOT reopen the completed reset as incomplete.
-- Only allow the mental state chips to stay visible and selectable after completion.
+Título:
+"Ritual de Reset"
 
-Expected behavior:
-1. User opens Today.
-2. User selects "Tired".
-3. The app shows the corresponding word and reset ritual.
-4. User completes today's reset.
-5. The completed state remains visible.
-6. The "How does your mind feel?" section should still be visible or accessible.
-7. User can tap "Racing mind", "Overwhelmed", "Unfocused" or "Low energy".
-8. The word and ritual update according to the new selection.
-9. The completed reset remains completed.
-10. Tomorrow's reset / preview may update if it currently depends on the selected state, but today's completion must not be undone.
+Subtítulo:
+"Um momento calmo para voltar para si."
 
-Technical requirements:
-- Locate the Today tab component and the state logic controlling whether mood/mental-state chips are rendered or disabled after completion.
-- Decouple "daily reset completed" from "mental state editable".
-- Preserve all existing storage behavior for completed reset.
-- Preserve all existing storage behavior for selected emotional state.
-- If needed, store the latest selected mental state separately from the completed reset record.
-- Do not change navbar.
-- Do not change other tabs.
-- Do not change translations unless absolutely necessary.
-- Do not remove the completion card.
-- Do not remove the reset completed state.
-- Do not break streak logic.
+O problema é que ele não comunica valor imediato nem cria motivo para clicar.
 
-UX direction:
-The Today screen should feel like:
-"I completed my reset, but I can still check in with myself again."
+Manter o título:
+"Ritual de Reset"
 
-Not:
-"I completed the reset, so my emotional state is locked for the day."
+Mas substituir o subtítulo fixo por subtítulos curtos e dinâmicos.
 
-After implementing, report:
-- which file controlled the locked state;
-- which variable/hook caused the chips to disappear or become disabled;
-- what was changed so the emotional state remains editable after completion;
-- whether the selected state still updates the word and reset ritual correctly.
+Gerar uma rotação de mensagens.
+
+Exemplos:
+
+* Seu reset está pronto.
+* Um momento criado para hoje.
+* Dois minutos para desacelerar.
+* Um pequeno retorno para você.
+* Seu próximo passo está aqui.
+* Um exercício para este momento.
+* Feito para a mente que você escolheu hoje.
+* Um minuto pode mudar o ritmo.
+* Um espaço para respirar antes de continuar.
+* Algo simples para fazer agora.
+* Seu momento de pausa está esperando.
+* Um reset baseado em como você está hoje.
+* Menos ruído. Mais presença.
+* Um exercício para voltar ao presente.
+* Seu momento começa aqui.
+
+Regras:
+
+* Máximo de 45 caracteres.
+* Nunca usar tom de coach.
+* Nunca usar urgência artificial.
+* Nunca usar exclamações.
+* Nunca usar promessas exageradas.
+* Deve parecer humano, simples e acolhedor.
+
+O subtítulo deve mudar conforme o estado emocional selecionado sempre que possível.
+
+Exemplo:
+
+Mente acelerada:
+"Dois minutos para desacelerar."
+
+Com cansaço:
+"Um espaço para respirar."
+
+Sem clareza:
+"Um exercício para organizar a mente."
+
+Sobrecarregado:
+"Menos peso por alguns minutos."
+
+Sem energia:
+"Sem pressão. Só presença."
+
+---
+
+2. CARD "AMANHÃ"
+
+---
+
+Hoje o card ficou genérico demais:
+
+"Algo pequeno espera você amanhã."
+
+Ele perdeu personalidade.
+
+Objetivo:
+Criar curiosidade sem revelar o conteúdo do próximo reset.
+
+O card NÃO deve mostrar:
+
+* número do próximo dia
+* nome da próxima categoria
+* frase do próximo reset
+* conteúdo do próximo reset
+
+Mas deve sugerir continuidade.
+
+Criar uma rotação de mensagens curtas.
+
+Exemplos:
+
+* Amanhã continua daqui.
+* Há algo guardado para amanhã.
+* O próximo passo aparece quando você voltar.
+* Seu ritmo continua amanhã.
+* Uma nova pausa espera você.
+* Amanhã tem seu próprio momento.
+* O próximo reset chega quando você voltar.
+* Nem tudo precisa acontecer hoje.
+* Amanhã também conta.
+* Algo novo se abre amanhã.
+* Um pequeno espaço continua amanhã.
+* O próximo momento ainda está fechado.
+* Amanhã tem outra página.
+* Há mais do que parece.
+* O caminho continua no seu ritmo.
+
+Regras:
+
+* Máximo de 60 caracteres.
+* Não revelar conteúdo futuro.
+* Não revelar categoria futura.
+* Não revelar dia futuro.
+* Não usar frases motivacionais.
+* Não usar tom de produtividade.
+* Deve despertar curiosidade leve.
+
+---
+
+3. PERSONALIZAÇÃO
+
+---
+
+Se possível, usar o estágio do usuário para variar as mensagens.
+
+Dias 1–3:
+sensação de começo.
+
+Dias 4–7:
+sensação de continuidade.
+
+Dias 8–30:
+sensação de construção silenciosa.
+
+30+ dias:
+sensação de profundidade e permanência.
+
+A experiência deve parecer viva e evoluir com o tempo, sem parecer repetitiva.
+---
+
+4. INTERNACIONALIZAÇÃO (OBRIGATÓRIO)
+
+---
+
+Todos os novos textos dos cards "Ritual de Reset" e "Amanhã" devem utilizar o sistema de i18n existente do app.
+
+NÃO deixar nenhuma string hardcoded.
+
+Adicionar traduções completas para:
+
+* Português
+* Inglês
+* Espanhol
+* Francês
+* Alemão
+
+IMPORTANTE:
+
+Não fazer tradução literal.
+
+Adaptar cada frase para soar natural para um falante nativo.
+
+O objetivo é manter a mesma sensação emocional e não as mesmas palavras.
+
+Exemplo:
+
+PT:
+"Amanhã continua daqui."
+
+EN:
+"Tomorrow picks up where you left off."
+
+ES:
+"Mañana continúa a tu ritmo."
+
+FR:
+"Demain reprend doucement le fil."
+
+DE:
+"Morgen geht es in deinem Tempo weiter."
+
+Cada idioma deve soar humano, acolhedor e natural.
+
+Verificar que:
+
+* Expo Go utiliza as traduções corretas.
+* Web utiliza as traduções corretas.
+* Não existem fallbacks inesperados para inglês.
+* Não existem misturas de idiomas na mesma tela.
+* Os textos mudam corretamente ao trocar o idioma no app.
+
+Executar auditoria completa para garantir que os cards "Ritual de Reset" e "Amanhã" estejam 100% compatíveis com o sistema de internacionalização existente.
