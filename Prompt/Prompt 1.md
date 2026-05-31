@@ -1,116 +1,279 @@
-REVISÃO COMPLETA DOS "UM MOMENTO PARA REFLETIR"
+Implement the following retention and personalization improvements in Daily Reset.
 
-Objetivo:
+IMPORTANT:
+These features must feel human, quiet, thoughtful and emotionally intelligent.
 
-Revisar TODAS as perguntas utilizadas no card "Um momento para refletir" do Daily Reset.
+They must NEVER feel:
 
-A meta não é apenas traduzir ou corrigir textos. A meta é alinhar toda a biblioteca de perguntas à identidade emocional do aplicativo.
+* motivational
+* coach-like
+* productivity-focused
+* gamified
+* corporate
+* therapeutic/clinical
+* AI-generated
 
-IDENTIDADE OBRIGATÓRIA
+The goal is NOT to tell users what to do.
 
-As perguntas devem ser:
+The goal is to help users feel seen.
 
-* Humanas
-* Simples
-* Naturais
-* Fáceis de responder
-* Baseadas na vida real
-* Leves emocionalmente
-* Reflexivas sem parecer terapia
-* Profundas sem parecer coach
-* Compatíveis com a proposta de micro resets diários
-* Compatíveis com pessoas cansadas, sobrecarregadas ou em burnout
+The Daily Reset experience should feel like:
+"A calm place that notices patterns gently."
 
-EVITAR
+---
 
-Remover ou reescrever perguntas que pareçam:
+FEATURE 1: "A Note From Your Week"
 
-* Autoajuda genérica
-* Coach motivacional
-* Terapia explícita
-* Espiritualidade forçada
-* Linguagem corporativa
-* Linguagem excessivamente abstrata
-* Perguntas difíceis de responder rapidamente
+LOCATION:
+Weekly Recap screen.
 
-Exemplos de perguntas desejadas:
+PURPOSE:
+Transform weekly data into emotional meaning.
 
-* O que ajudaria seu dia a ficar 1% mais leve?
-* O que você precisa ouvir de si mesmo hoje?
-* O que está pedindo sua atenção neste momento?
-* O que você gostaria de fazer com mais calma?
-* O que tem ocupado espaço demais na sua mente?
-* O que você gostaria de deixar menos pesado hoje?
-* O que vale a pena proteger nesta semana?
-* O que você tem ignorado em si mesmo?
-* O que está funcionando melhor do que você percebe?
-* O que trouxe um pouco de alívio recentemente?
-* O que merece menos cobrança hoje?
-* O que você gostaria de simplificar?
+This is NOT another statistics card.
 
-PROCESSO DE REVISÃO
+This is NOT a summary of completed resets.
 
-Analise toda a biblioteca existente de perguntas.
+This is NOT motivational feedback.
 
-Para cada pergunta:
+It should appear as the final section of the Weekly Recap.
 
-1. Avalie se ela está alinhada com a identidade do app.
-2. Se estiver boa, mantenha.
-3. Se parecer coach, terapia, autoajuda ou artificial, substitua.
-4. Garanta que perguntas próximas não sejam repetitivas.
-5. Aumente a variedade emocional ao longo dos dias.
+The card should generate a short personalized reflection based on:
 
-A distribuição deve incluir temas como:
+* most selected feelings
+* most selected mindset category
+* reset frequency
+* journal activity
+* changes compared to previous weeks
 
-* Descanso
-* Ritmo
-* Pressão
-* Clareza
-* Atenção
-* Energia
-* Pequenas vitórias
-* Autocuidado realista
-* Sobrecarga
-* Recomeço
-* Limites
-* Presença
-* Calma
-* Direção
-* Relações
-* Trabalho
-* Tempo
-* Gratidão sem clichês
+The reflection should feel observational, not instructional.
 
-INTERNACIONALIZAÇÃO (i18n)
+Good examples:
 
-Após revisar a versão principal:
+"This week felt heavier than the last one.
 
-Revisar também todas as traduções para:
+You searched for calm more often than focus.
 
-* Inglês
-* Espanhol
-* Francês
-* Alemão
+Even on busy days, you still made space for yourself."
 
-IMPORTANTE:
+---
 
-Não fazer traduções literais.
+"Low energy appeared often this week.
 
-Cada idioma deve soar como se tivesse sido escrito originalmente por um falante nativo.
+You weren't looking for productivity.
 
-Priorizar naturalidade acima de fidelidade literal.
+You were looking for recovery."
 
-Se uma pergunta funcionar melhor com outra estrutura em determinado idioma, adaptar livremente mantendo a intenção emocional.
+---
 
-Exemplo:
+"Compared to recent weeks, things seemed a little lighter.
 
-Português:
-"O que ajudaria seu dia a ficar 1% mais leve?"
+You chose more focused mindsets and checked in more consistently."
 
-Não traduzir palavra por palavra.
+Bad examples:
 
-Adaptar para a forma mais natural e humana para cada idioma.
+❌ Keep pushing.
+❌ You are improving.
+❌ Great job.
+❌ Stay strong.
+❌ You can do it.
+❌ Success comes from consistency.
 
-RESULTADO ESPERADO
+Never use motivational language.
 
-Gerar uma biblioteca de perguntas consistente, emocionalmente inteligente, sem tom de coach, sem tom terapêutico e alinhada à identidade premium, calma e humana do Daily Reset.
+Never mention streaks.
+
+Never mention achievement.
+
+The card should feel like a thoughtful observation.
+
+---
+
+FEATURE 2: "What I've Noticed"
+
+LOCATION:
+Home screen.
+
+PURPOSE:
+Create surprise, personalization and emotional continuity.
+
+IMPORTANT:
+This is NOT a permanent card.
+
+This card should appear only when there is a meaningful pattern to show.
+
+If there is no meaningful observation, do not render the card.
+
+Do not force content.
+
+The card should use existing user data such as:
+
+* selected feelings
+* selected mindsets
+* reset times
+* reset frequency
+* journal usage
+* weekly/monthly trends
+
+Examples:
+
+"You've been choosing 'Overwhelmed' quite often lately."
+
+---
+
+"Most of your resets happened after work this week."
+
+---
+
+"You tend to write more when you're carrying a lot mentally."
+
+---
+
+"Rest has appeared more often than focus recently."
+
+---
+
+"You've checked in more frequently this week than last week."
+
+Bad examples:
+
+❌ You completed 3 resets.
+❌ You are doing amazing.
+❌ Keep going.
+❌ Great progress.
+
+The card must reveal something.
+
+It should create the feeling:
+
+"Oh. That's true."
+
+The card should not appear every day.
+
+It should rotate naturally and only when meaningful observations exist.
+
+---
+
+FEATURE 3: "Quiet Milestones"
+
+PURPOSE:
+Celebrate meaningful moments without creating pressure.
+
+IMPORTANT:
+
+Do NOT create streak culture.
+
+Do NOT create fear of losing progress.
+
+Do NOT create urgency.
+
+Do NOT create notifications focused on streak protection.
+
+The milestone should feel reflective.
+
+Examples:
+
+"50 moments of pause."
+
+---
+
+"You've checked in with yourself 30 times."
+
+---
+
+"100 minutes dedicated to yourself."
+
+---
+
+"Three months of showing up when you needed it."
+
+---
+
+"One hundred small pauses.
+
+One day at a time."
+
+Bad examples:
+
+❌ 30 DAY STREAK!
+❌ AMAZING WORK!
+❌ KEEP IT UP!
+❌ YOU'RE ON FIRE!
+
+The emotional tone should remain calm and grounded.
+
+Milestones should appear occasionally and feel meaningful.
+
+Never overuse them.
+
+LOCATION:
+
+Progress screen only.
+
+Do NOT place Quiet Milestones on the Home screen.
+
+The Home screen is reserved for present-moment experiences and observations.
+
+Quiet Milestones serve a different purpose and should live inside the user's longer-term journey.
+
+This prevents overlap with "What I've Noticed".
+
+Feature roles must remain distinct:
+
+* What I've Noticed = discovery
+* A Note From Your Week = interpretation
+* Quiet Milestones = occasional recognition
+
+These features should complement each other rather than repeating the same information in different formats.
+
+Quiet Milestones should be rare.
+
+Do not show them too frequently.
+
+They should feel unexpected and meaningful.
+
+A milestone loses emotional value if users see one every few days.
+
+Prioritize quality over quantity.
+
+
+---
+
+I18N REQUIREMENTS
+
+Supported languages:
+
+* English
+* Portuguese
+* Spanish
+* French
+* German
+
+IMPORTANT:
+
+Do NOT perform literal translations.
+
+Each language must sound natural to native speakers.
+
+Adapt tone and wording culturally.
+
+The emotional experience must remain identical across languages.
+
+Avoid language that sounds AI-generated or translated.
+
+Every generated message should feel like it was originally written in that language.
+
+---
+
+FINAL RULE
+
+Before rendering any generated text, validate:
+
+1. Does this sound human?
+2. Does this avoid coaching?
+3. Does this avoid self-help clichés?
+4. Does this avoid productivity language?
+5. Does this reveal something meaningful?
+6. Would a burned-out person feel understood rather than evaluated?
+
+Only display content that passes all six checks.

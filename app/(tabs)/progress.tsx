@@ -18,6 +18,7 @@ import * as Haptics from 'expo-haptics';
 import { useFocusEffect, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import { useProgress } from '../../hooks/useProgress';
+import { getQuietMilestoneCopy } from '../../utils/milestoneSystem';
 import { useSpaceReflections, type ReflectionEntry } from '../../hooks/useSpaceReflections';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
@@ -408,15 +409,15 @@ function RebuildingTimeline({ totalDays, fadeAnim }: { totalDays: number; fadeAn
   );
 }
 
-// ─── SilentReward ─────────────────────────────────────────────────────────────
-
-const REWARD_MILESTONES = [7, 14, 30, 60, 90] as const;
+// ─── Quiet Milestone Card ─────────────────────────────────────────────────────
+// Rare, calm recognition — never celebratory. Based on total completions (not streak).
+// Shows within a 3-day window of each milestone (m, m+1, m+2).
 
 function SilentReward({ totalDays, fadeAnim }: { totalDays: number; fadeAnim: Animated.Value }) {
-  const { t } = useLanguage();
+  const { lang } = useLanguage();
   const breathAnim = useRef(new Animated.Value(0.5)).current;
 
-  const milestone = REWARD_MILESTONES.find(m => totalDays >= m && totalDays <= m + 2) ?? null;
+  const milestone = getQuietMilestoneCopy(totalDays, lang);
 
   useEffect(() => {
     if (!milestone) return;
@@ -424,21 +425,24 @@ function SilentReward({ totalDays, fadeAnim }: { totalDays: number; fadeAnim: An
       if (reduced) return;
       Animated.loop(
         Animated.sequence([
-          Animated.timing(breathAnim, { toValue: 0.85, duration: 3400, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
-          Animated.timing(breathAnim, { toValue: 0.5,  duration: 3400, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
+          Animated.timing(breathAnim, { toValue: 0.90, duration: 4200, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
+          Animated.timing(breathAnim, { toValue: 0.45, duration: 4200, easing: Easing.inOut(Easing.sin), useNativeDriver: true }),
         ])
       ).start();
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [milestone]);
+  }, [!!milestone]);
 
   if (!milestone) return null;
 
   const combinedOpacity = Animated.multiply(fadeAnim, breathAnim);
 
   return (
-    <Animated.View style={[styles.silentReward, { opacity: combinedOpacity }]}>
-      <Text style={styles.silentRewardText}>{t(`progress2.milestone.${milestone}`)}</Text>
+    <Animated.View style={[styles.quietMilestone, { opacity: combinedOpacity }]}>
+      <View style={styles.quietMilestoneLine} />
+      <Text style={styles.quietMilestoneLine1}>{milestone.line1}</Text>
+      <Text style={styles.quietMilestoneLine2}>{milestone.line2}</Text>
+      <View style={styles.quietMilestoneLine} />
     </Animated.View>
   );
 }
@@ -1386,18 +1390,33 @@ const styles = StyleSheet.create({
     lineHeight: 20,
   },
 
-  // Silent reward
-  silentReward: {
+  // Quiet Milestone Card
+  quietMilestone: {
     alignItems: 'center',
-    paddingVertical: Spacing.sm,
+    paddingVertical: Spacing.lg,
     marginBottom: Spacing.md,
+    gap: Spacing.sm,
   },
-  silentRewardText: {
+  quietMilestoneLine: {
+    width: 24,
+    height: StyleSheet.hairlineWidth,
+    backgroundColor: Colors.gold,
+    opacity: 0.35,
+  },
+  quietMilestoneLine1: {
     fontSize: Typography.sizes.sm,
-    color: Colors.gold,
+    color: Colors.textSecondary,
     fontStyle: 'italic',
-    letterSpacing: 0.4,
+    letterSpacing: 0.3,
     textAlign: 'center',
+    lineHeight: 22,
+  },
+  quietMilestoneLine2: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    letterSpacing: 0.6,
+    textAlign: 'center',
+    lineHeight: 18,
   },
 
   // Summary empty value

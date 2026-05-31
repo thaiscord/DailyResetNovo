@@ -419,3 +419,221 @@ export function getCurrentChapterName(streak: number): string | null {
   if (streak >= 3)   return applyLangCeremony(CEREMONIES[3]!).label;
   return null;
 }
+
+// ─── Quiet Milestones (Progress screen) ──────────────────────────────────────
+// Based on totalDays (accumulative, never resets on missed days).
+// Each milestone has 2 quiet, observational lines — never celebratory.
+// Window: show within 3 days of the milestone (m, m+1, m+2).
+
+export interface QuietMilestone {
+  line1: string;
+  line2: string;
+}
+
+type LM = Record<string, string>;
+function qpick(map: LM, lang: string): string { return map[lang] ?? map['en'] ?? ''; }
+
+const QUIET_MILESTONES: Array<{ total: number; l1: LM; l2: LM }> = [
+  {
+    total: 7,
+    l1: {
+      en: 'Seven moments of making space.',
+      pt: 'Sete momentos de criar espaço.',
+      es: 'Siete momentos de hacer espacio.',
+      fr: 'Sept moments à te faire de la place.',
+      de: 'Sieben Momente des Raumgebens.',
+    },
+    l2: {
+      en: 'One week in.',
+      pt: 'Uma semana.',
+      es: 'Una semana.',
+      fr: 'Une semaine.',
+      de: 'Eine Woche.',
+    },
+  },
+  {
+    total: 14,
+    l1: {
+      en: 'Fourteen small returns.',
+      pt: 'Quatorze pequenos retornos.',
+      es: 'Catorce pequeños regresos.',
+      fr: 'Quatorze petits retours.',
+      de: 'Vierzehn kleine Rückkehren.',
+    },
+    l2: {
+      en: 'Something is beginning to take shape.',
+      pt: 'Algo está começando a tomar forma.',
+      es: 'Algo empieza a tomar forma.',
+      fr: 'Quelque chose commence à prendre forme.',
+      de: 'Etwas beginnt, Form anzunehmen.',
+    },
+  },
+  {
+    total: 21,
+    l1: {
+      en: 'Twenty-one times you came back.',
+      pt: 'Vinte e uma vezes você voltou.',
+      es: 'Veintiún veces que volviste.',
+      fr: 'Vingt et une fois où tu es revenu.',
+      de: 'Einundzwanzig Mal bist du zurückgekehrt.',
+    },
+    l2: {
+      en: 'Three weeks of quiet presence.',
+      pt: 'Três semanas de presença quieta.',
+      es: 'Tres semanas de presencia tranquila.',
+      fr: 'Trois semaines de présence tranquille.',
+      de: 'Drei Wochen stiller Präsenz.',
+    },
+  },
+  {
+    total: 30,
+    l1: {
+      en: 'Thirty pauses — each one yours.',
+      pt: 'Trinta pausas — cada uma sua.',
+      es: 'Treinta pausas — cada una tuya.',
+      fr: 'Trente pauses — chacune à toi.',
+      de: 'Dreißig Pausen — jede davon gehört dir.',
+    },
+    l2: {
+      en: 'That number doesn\'t go away.',
+      pt: 'Esse número não vai embora.',
+      es: 'Ese número no desaparece.',
+      fr: 'Ce nombre ne disparaît pas.',
+      de: 'Diese Zahl geht nicht weg.',
+    },
+  },
+  {
+    total: 50,
+    l1: {
+      en: 'Fifty moments of checking in with yourself.',
+      pt: 'Cinquenta momentos de se conectar com você mesma.',
+      es: 'Cincuenta momentos de reconectar contigo.',
+      fr: 'Cinquante moments de connexion avec toi-même.',
+      de: 'Fünfzig Momente des Einchecken bei dir selbst.',
+    },
+    l2: {
+      en: 'One at a time.',
+      pt: 'Um de cada vez.',
+      es: 'Uno a la vez.',
+      fr: 'Un à la fois.',
+      de: 'Eins nach dem anderen.',
+    },
+  },
+  {
+    total: 75,
+    l1: {
+      en: 'Seventy-five times you made space for this.',
+      pt: 'Setenta e cinco vezes você criou espaço para isso.',
+      es: 'Setenta y cinco veces hiciste espacio para esto.',
+      fr: 'Soixante-quinze fois où tu as fait de la place pour ça.',
+      de: 'Fünfundsiebzig Mal hast du Raum dafür geschaffen.',
+    },
+    l2: {
+      en: 'That adds up to something.',
+      pt: 'Isso vai se somando.',
+      es: 'Eso va sumando.',
+      fr: 'Ça finit par compter.',
+      de: 'Das summiert sich zu etwas.',
+    },
+  },
+  {
+    total: 100,
+    l1: {
+      en: 'One hundred quiet check-ins.',
+      pt: 'Cem momentos de presença quieta.',
+      es: 'Cien momentos de presencia tranquila.',
+      fr: 'Cent moments de présence tranquille.',
+      de: 'Hundert stille Check-ins.',
+    },
+    l2: {
+      en: 'One hundred small pauses. One day at a time.',
+      pt: 'Cem pequenas pausas. Um dia de cada vez.',
+      es: 'Cien pequeñas pausas. Un día a la vez.',
+      fr: 'Cent petites pauses. Un jour à la fois.',
+      de: 'Hundert kleine Pausen. Einen Tag nach dem anderen.',
+    },
+  },
+  {
+    total: 150,
+    l1: {
+      en: 'A hundred and fifty returns.',
+      pt: 'Cento e cinquenta retornos.',
+      es: 'Ciento cincuenta regresos.',
+      fr: 'Cent cinquante retours.',
+      de: 'Hundertfünfzig Rückkehren.',
+    },
+    l2: {
+      en: 'The space is still here.',
+      pt: 'O espaço continua aqui.',
+      es: 'El espacio sigue aquí.',
+      fr: "L'espace est toujours là.",
+      de: 'Der Raum ist noch hier.',
+    },
+  },
+  {
+    total: 200,
+    l1: {
+      en: 'Two hundred moments, over time.',
+      pt: 'Duzentos momentos, ao longo do tempo.',
+      es: 'Doscientos momentos, con el tiempo.',
+      fr: 'Deux cents moments, au fil du temps.',
+      de: 'Zweihundert Momente, über die Zeit.',
+    },
+    l2: {
+      en: 'That is a lot of showing up.',
+      pt: 'Isso é muita presença.',
+      es: 'Eso es mucha presencia.',
+      fr: "C'est beaucoup de présence.",
+      de: 'Das ist viel Erscheinen.',
+    },
+  },
+  {
+    total: 300,
+    l1: {
+      en: 'Three hundred small pauses.',
+      pt: 'Trezentas pequenas pausas.',
+      es: 'Trescientas pequeñas pausas.',
+      fr: 'Trois cents petites pauses.',
+      de: 'Dreihundert kleine Pausen.',
+    },
+    l2: {
+      en: 'Still here.',
+      pt: 'Ainda aqui.',
+      es: 'Todavía aquí.',
+      fr: 'Toujours là.',
+      de: 'Noch hier.',
+    },
+  },
+  {
+    total: 365,
+    l1: {
+      en: 'Three hundred and sixty-five moments dedicated to yourself.',
+      pt: 'Trezentos e sessenta e cinco momentos dedicados a você mesma.',
+      es: 'Trescientos sesenta y cinco momentos dedicados a ti.',
+      fr: 'Trois cent soixante-cinq moments dédiés à toi.',
+      de: 'Dreihundertfünfundsechzig Momente, dir gewidmet.',
+    },
+    l2: {
+      en: 'A full year of coming back.',
+      pt: 'Um ano inteiro de voltar.',
+      es: 'Un año completo de volver.',
+      fr: 'Une année entière de retours.',
+      de: 'Ein volles Jahr des Zurückkommens.',
+    },
+  },
+];
+
+/**
+ * Returns quiet milestone copy for the Progress screen, or null.
+ * Fires only within a 3-day window of each milestone (total, total+1, total+2).
+ */
+export function getQuietMilestoneCopy(totalDays: number, lang: string): QuietMilestone | null {
+  const entry = QUIET_MILESTONES.find(
+    m => totalDays >= m.total && totalDays <= m.total + 2
+  );
+  if (!entry) return null;
+  return {
+    line1: qpick(entry.l1, lang),
+    line2: qpick(entry.l2, lang),
+  };
+}

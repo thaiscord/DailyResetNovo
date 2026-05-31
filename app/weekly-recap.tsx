@@ -34,6 +34,7 @@ import {
   getHowYouArrivedNote,
   getCategoryContextNote,
 } from '../utils/weeklyInsights';
+import { generateWeekNote } from '../utils/weekNote';
 
 // ─── Staggered fade-in ────────────────────────────────────────────────────────
 
@@ -558,6 +559,9 @@ export default function WeeklyRecapScreen() {
         {/* 10 — Looking Ahead */}
         <SectionLookingAhead insights={insights} lang={lang} weekNumber={recap.weekNumber} />
 
+        {/* 11 — A Note From Your Week */}
+        <SectionNoteFromWeek insights={insights} lang={lang} />
+
         {/* CTA */}
         <FadeIn delay={680}>
           <View style={styles.ctaSection}>
@@ -573,6 +577,38 @@ export default function WeeklyRecapScreen() {
         </FadeIn>
       </ScrollView>
     </View>
+  );
+}
+
+// ─── Section 11 — A Note From Your Week ──────────────────────────────────────
+
+function SectionNoteFromWeek({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title =
+    lang === 'pt' ? 'UMA NOTA DA SUA SEMANA' :
+    lang === 'es' ? 'UNA NOTA DE TU SEMANA' :
+    lang === 'fr' ? 'UNE NOTE DE TA SEMAINE' :
+    lang === 'de' ? 'EIN WOCHENRÜCKBLICK' :
+    'A NOTE FROM YOUR WEEK';
+
+  const note = generateWeekNote(insights, lang);
+  if (!note) return null;
+
+  return (
+    <FadeIn delay={760}>
+      <View style={styles.section}>
+        <SectionLabel>{title}</SectionLabel>
+        <View style={[styles.card, styles.weekNoteCard]}>
+          {note.lines.map((line, i) => (
+            <Text
+              key={i}
+              style={[styles.weekNoteLine, i > 0 && styles.weekNoteLineIndent]}
+            >
+              {line}
+            </Text>
+          ))}
+        </View>
+      </View>
+    </FadeIn>
   );
 }
 
@@ -935,4 +971,20 @@ const styles = StyleSheet.create({
   },
   skipBtn: { alignItems: 'center', paddingVertical: Spacing.sm },
   skipText: { fontSize: Typography.sizes.sm, color: Colors.textMuted },
+
+  // ── A Note From Your Week ────────────────────────────────────────────────────
+  weekNoteCard: {
+    borderColor: `${Colors.gold}22`,
+    backgroundColor: `${Colors.gold}06`,
+    gap: Spacing.sm,
+  },
+  weekNoteLine: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    lineHeight: 24,
+    fontStyle: 'italic',
+  },
+  weekNoteLineIndent: {
+    paddingTop: 2,
+  },
 });

@@ -39,6 +39,7 @@ import { useContentMemory } from '../../hooks/useContentMemory';
 import { getReflectionWithId } from '../../utils/contentSystem';
 import { getInsightForContext, shouldShowCompletionInsight } from '../../utils/socialProof';
 import { detectComebackState } from '../../utils/comebackSystem';
+import { getNoticedPattern } from '../../utils/noticedPattern';
 import {
   cancelInactivityNotifications,
   scheduleInactivityNotifications,
@@ -255,6 +256,16 @@ export default function TodayScreen() {
   const emotionalState = getEmotionalState(progress.streak, progress.completedDays, weeklyScore);
   const _returnedAfterAbsence = didReturnAfterAbsence(progress.completedDays, progress.currentDay);
   const comeback = detectComebackState(progress.completedByDate, progress.completedDays.length);
+
+  const noticedPattern = getNoticedPattern({
+    heavyDayCount: moodHistory.heavyDayCount,
+    moodTrend: moodHistory.trend,
+    weeklyScore,
+    streak: progress.streak,
+    totalDays: progress.completedDays.length,
+    comebackCount,
+    currentDay: progress.currentDay,
+  }, lang);
 
   // Retention routing: return experience → mantra selection → identity question
   // Must be declared AFTER comeback so the closure captures it correctly.
@@ -748,6 +759,23 @@ export default function TodayScreen() {
               })}
             />
           </Animated.View>
+        )}
+
+        {/* "What I've Noticed" — conditional pattern card */}
+        {noticedPattern && !completed && (
+          <View style={styles.noticedCard}>
+            <View style={styles.noticedDot} />
+            <View style={{ flex: 1, gap: 4 }}>
+              <Text style={styles.noticedLabel}>
+                {lang === 'pt' ? 'O QUE PERCEBI' :
+                 lang === 'es' ? 'LO QUE NOTÉ' :
+                 lang === 'fr' ? 'CE QUE J\'AI REMARQUÉ' :
+                 lang === 'de' ? 'WAS MIR AUFGEFALLEN IST' :
+                 'WHAT I\'VE NOTICED'}
+              </Text>
+              <Text style={styles.noticedText}>{noticedPattern}</Text>
+            </View>
+          </View>
         )}
 
         {/* Reset Ritual entry card — the emotional core feature */}
@@ -1574,6 +1602,43 @@ const styles = StyleSheet.create({
 
   quickRow: { flexDirection: 'row', marginHorizontal: Spacing.xl, marginTop: Spacing.lg, gap: Spacing.md },
   quickRowBottomSpacer: { height: Spacing.xxl },
+
+  // ── "What I've Noticed" card ────────────────────────────────────────────────
+  noticedCard: {
+    marginHorizontal: Spacing.xl,
+    marginTop: Spacing.md,
+    marginBottom: 4,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: Spacing.md,
+    backgroundColor: Colors.card,
+    borderRadius: Radii.xl,
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: 14,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: Colors.borderLight,
+  },
+  noticedDot: {
+    width: 3,
+    borderRadius: 2,
+    backgroundColor: Colors.textMuted,
+    alignSelf: 'stretch',
+    marginTop: 2,
+    opacity: 0.35,
+  },
+  noticedLabel: {
+    fontSize: 9,
+    fontWeight: Typography.weights.bold,
+    color: Colors.textMuted,
+    letterSpacing: 1.5,
+    opacity: 0.7,
+  },
+  noticedText: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    fontStyle: 'italic',
+    lineHeight: 20,
+  },
   quickCard: {
     flex: 1,
     flexDirection: 'row',
