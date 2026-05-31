@@ -1175,6 +1175,7 @@ function Section({ icon, title, content, open, onToggle, inputKey, inputPlacehol
           </View>
         </View>
         <Text style={cardStyles.sectionTitle}>{title}</Text>
+        {inputKey && <Ionicons name="create-outline" size={16} color={Colors.textMuted} />}
         <Animated.View style={{ transform: [{ rotate: chevronRotate }] }}>
           <Ionicons name="chevron-down" size={13} color={Colors.textMuted} style={{ opacity: 0.7 }} />
         </Animated.View>
