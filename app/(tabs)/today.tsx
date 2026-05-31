@@ -815,7 +815,7 @@ export default function TodayScreen() {
           <Ionicons name="chevron-forward" size={16} color={Colors.charcoal} />
         </AnimatedTouchable>
 
-        {/* Tomorrow Anticipation — always visible, creates pull toward next day */}
+        {/* Tomorrow Anticipation — only before completion */}
         {!completed && tomorrowData && (
           <TomorrowAnticipationCard
             tomorrow={tomorrowData}
@@ -824,6 +824,11 @@ export default function TodayScreen() {
             daysToNext={daysToNext}
             emotionalState={emotionalState}
           />
+        )}
+
+        {/* Tomorrow Continuity Card — after completion, no spoilers */}
+        {completed && (
+          <TomorrowContinuityCard seed={progress.currentDay} lang={lang} />
         )}
 
         {/* Finish button — inline in the scroll flow, appears after all reset content */}
@@ -1206,6 +1211,243 @@ function Section({ icon, title, content, open, onToggle, inputKey, inputPlacehol
   );
 }
 
+// ─── Tomorrow Continuity Card ─────────────────────────────────────────────────
+// Shown AFTER reset completion. No spoilers — only a quiet invitation to return.
+// 33 messages per language, rotating by currentDay seed.
+
+const TOMORROW_MSGS_PT = [
+  'Amanhã continua.',
+  'Algo pequeno espera você amanhã.',
+  'Nem todo progresso aparece no mesmo dia.',
+  'Há espaço para continuar.',
+  'Amanhã pode ser mais simples do que parece.',
+  'Continue quando estiver pronto.',
+  'O próximo momento vai estar aqui.',
+  'Um passo já é suficiente.',
+  'Amanhã já é seu.',
+  'Leve o tempo que precisar. Vai estar aqui.',
+  'Coisas pequenas se somam em silêncio.',
+  'Descanse. Amanhã já está reservado.',
+  'Não precisa correr. Só voltar.',
+  'Cada retorno importa, inclusive o de amanhã.',
+  'Você não precisa resolver tudo hoje.',
+  'O espaço continua aberto.',
+  'Amanhã não pede nada de você.',
+  'Um retorno quieto amanhã já é suficiente.',
+  'Sem pressão. Só uma porta aberta.',
+  'Algumas coisas se desenvolvem devagar. Tudo bem.',
+  'Amanhã é mais leve do que você imagina.',
+  'Descanse agora. O próximo passo vai estar lá.',
+  'Você já fez o suficiente hoje.',
+  'Amanhã pede só a sua presença.',
+  'O fio continua quando você voltar.',
+  'Nada se perde. Amanhã já espera.',
+  'Pequenos retornos constroem algo real.',
+  'Sempre tem amanhã, sem pressão.',
+  'Um novo momento vai estar aqui para você.',
+  'Volte no seu próprio ritmo.',
+  'A porta continua aberta.',
+  'Nada precisa ser decidido hoje.',
+  'Só aparecer. Isso sempre é suficiente.',
+];
+
+const TOMORROW_MSGS_EN = [
+  'Tomorrow continues.',
+  'Something small is waiting for you tomorrow.',
+  'Not all progress shows up the same day.',
+  "There's space to keep going.",
+  'Tomorrow can be simpler than it seems.',
+  "Come back when you're ready.",
+  'The next moment will be there.',
+  'One step is already enough.',
+  'Tomorrow is already yours.',
+  "Take your time. It'll be here.",
+  'Small things add up quietly.',
+  'Rest. Tomorrow is already set.',
+  'No need to rush. Just return.',
+  "Each return matters, including tomorrow's.",
+  "You don't have to figure it all out today.",
+  'The space stays open.',
+  "Tomorrow doesn't demand anything from you.",
+  'A quiet return tomorrow is enough.',
+  "No pressure — just an open door.",
+  "Some things unfold slowly. That's fine.",
+  "Tomorrow is lighter than you think.",
+  'Rest now. The next step is always there.',
+  "You've already done enough today.",
+  'Tomorrow asks for nothing but your presence.',
+  'The thread continues whenever you return.',
+  'Nothing is lost. Tomorrow is already waiting.',
+  'Small returns build something real.',
+  "There's always tomorrow, without pressure.",
+  'A new moment will be there for you.',
+  'Come back at your own pace.',
+  'The door stays open.',
+  'Nothing needs to be decided today.',
+  "Just arrive. That's always enough.",
+];
+
+const TOMORROW_MSGS_ES = [
+  'Mañana continúa.',
+  'Algo pequeño te espera mañana.',
+  'No todo el progreso aparece el mismo día.',
+  'Hay espacio para seguir.',
+  'Mañana puede ser más simple de lo que parece.',
+  'Continúa cuando estés listo.',
+  'El próximo momento estará ahí.',
+  'Un paso ya es suficiente.',
+  'Mañana ya es tuyo.',
+  'Tómate tu tiempo. Estará aquí.',
+  'Las cosas pequeñas se suman en silencio.',
+  'Descansa. Mañana ya está reservado.',
+  'No hace falta apresurarse. Solo volver.',
+  'Cada regreso importa, incluyendo el de mañana.',
+  'No tienes que resolverlo todo hoy.',
+  'El espacio sigue abierto.',
+  'Mañana no te pide nada.',
+  'Un regreso tranquilo mañana es suficiente.',
+  'Sin presión, solo una puerta abierta.',
+  'Algunas cosas se despliegan despacio. Está bien.',
+  'Mañana es más ligero de lo que crees.',
+  'Descansa ahora. El siguiente paso siempre estará.',
+  'Ya has hecho suficiente hoy.',
+  'Mañana solo pide tu presencia.',
+  'El hilo continúa cuando vuelvas.',
+  'Nada se pierde. Mañana ya espera.',
+  'Los pequeños regresos construyen algo real.',
+  'Siempre hay mañana, sin presión.',
+  'Un nuevo momento estará aquí para ti.',
+  'Vuelve a tu propio ritmo.',
+  'La puerta sigue abierta.',
+  'No hay nada que decidir hoy.',
+  'Solo aparecer. Eso siempre es suficiente.',
+];
+
+const TOMORROW_MSGS_FR = [
+  'Demain continue.',
+  "Quelque chose de petit t'attend demain.",
+  "Tout le progrès n'apparaît pas le même jour.",
+  'Il y a de la place pour continuer.',
+  "Demain peut être plus simple qu'il n'y paraît.",
+  'Continue quand tu seras prêt.',
+  'Le prochain moment sera là.',
+  'Un pas suffit déjà.',
+  'Demain est déjà à toi.',
+  'Prends ton temps. Ce sera là.',
+  "Les petites choses s'accumulent en silence.",
+  'Repose-toi. Demain est déjà réservé.',
+  'Pas besoin de se presser. Juste revenir.',
+  "Chaque retour compte, y compris celui de demain.",
+  "Tu n'as pas à tout régler aujourd'hui.",
+  "L'espace reste ouvert.",
+  "Demain ne te demande rien.",
+  'Un retour tranquille demain suffit.',
+  "Pas de pression — juste une porte ouverte.",
+  'Certaines choses se déroulent lentement. C\'est bien.',
+  'Demain est plus léger que tu ne le penses.',
+  'Repose-toi maintenant. La prochaine étape sera là.',
+  "Tu as déjà assez fait aujourd'hui.",
+  'Demain ne demande que ta présence.',
+  'Le fil continue quand tu reviendras.',
+  "Rien n'est perdu. Demain attend déjà.",
+  'Les petits retours construisent quelque chose de réel.',
+  'Il y a toujours demain, sans pression.',
+  'Un nouveau moment sera là pour toi.',
+  'Reviens à ton propre rythme.',
+  'La porte reste ouverte.',
+  "Rien ne doit être décidé aujourd'hui.",
+  "Juste arriver. C'est toujours suffisant.",
+];
+
+const TOMORROW_MSGS_DE = [
+  'Morgen geht es weiter.',
+  'Etwas Kleines wartet morgen auf dich.',
+  'Nicht jeder Fortschritt zeigt sich am selben Tag.',
+  'Es gibt Raum zum Weitermachen.',
+  'Morgen kann einfacher sein, als es scheint.',
+  'Komm zurück, wenn du bereit bist.',
+  'Der nächste Moment wird da sein.',
+  'Ein Schritt ist bereits genug.',
+  'Morgen gehört dir schon.',
+  'Nimm dir die Zeit, die du brauchst. Es wird hier sein.',
+  'Kleine Dinge summieren sich still.',
+  'Ruh dich aus. Morgen ist bereits reserviert.',
+  'Kein Grund zur Eile. Nur zurückkehren.',
+  'Jede Rückkehr zählt, auch die von morgen.',
+  'Du musst heute nicht alles lösen.',
+  'Der Raum bleibt offen.',
+  'Morgen fordert nichts von dir.',
+  'Eine ruhige Rückkehr morgen reicht.',
+  'Kein Druck — nur eine offene Tür.',
+  'Manche Dinge entfalten sich langsam. Das ist in Ordnung.',
+  'Morgen ist leichter, als du denkst.',
+  'Ruh dich jetzt aus. Der nächste Schritt ist immer da.',
+  'Du hast heute genug getan.',
+  'Morgen bittet nur um deine Anwesenheit.',
+  'Der Faden geht weiter, wenn du zurückkommst.',
+  'Nichts geht verloren. Morgen wartet bereits.',
+  'Kleine Rückkehren bauen etwas Echtes auf.',
+  'Es gibt immer morgen, ohne Druck.',
+  'Ein neuer Moment wird für dich da sein.',
+  'Komm in deinem eigenen Tempo zurück.',
+  'Die Tür bleibt offen.',
+  'Heute muss nichts entschieden werden.',
+  'Einfach erscheinen. Das ist immer genug.',
+];
+
+function TomorrowContinuityCard({ seed, lang }: { seed: number; lang: string }) {
+  const msgs = lang === 'pt' ? TOMORROW_MSGS_PT
+    : lang === 'es' ? TOMORROW_MSGS_ES
+    : lang === 'fr' ? TOMORROW_MSGS_FR
+    : lang === 'de' ? TOMORROW_MSGS_DE
+    : TOMORROW_MSGS_EN;
+
+  const message = msgs[Math.abs(seed) % msgs.length];
+  const eyebrow = lang === 'pt' ? 'AMANHÃ'
+    : lang === 'es' ? 'MAÑANA'
+    : lang === 'fr' ? 'DEMAIN'
+    : lang === 'de' ? 'MORGEN'
+    : 'TOMORROW';
+
+  return (
+    <View style={continuityCardStyles.card}>
+      <Text style={continuityCardStyles.eyebrow}>{eyebrow}</Text>
+      <Text style={continuityCardStyles.message}>{message}</Text>
+    </View>
+  );
+}
+
+const continuityCardStyles = StyleSheet.create({
+  card: {
+    marginHorizontal: Spacing.xl,
+    marginTop: Spacing.md,
+    backgroundColor: Colors.card,
+    borderRadius: Radii.xl,
+    padding: 20,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: Colors.borderLight,
+    gap: 8,
+    shadowColor: '#1C1C1C',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.05,
+    shadowRadius: 12,
+    elevation: 3,
+  },
+  eyebrow: {
+    fontSize: Typography.sizes.xs,
+    fontWeight: Typography.weights.bold,
+    color: Colors.gold,
+    letterSpacing: 2,
+  },
+  message: {
+    fontSize: Typography.sizes.base,
+    color: Colors.textSecondary,
+    lineHeight: 26,
+    fontStyle: 'italic',
+    letterSpacing: -0.1,
+  },
+});
+
 const _tomorrowCatLabel: Record<string, string> = {
   Focus: 'Focus', Rhythm: 'Rhythm', Discipline: 'Discipline',
   Courage: 'Courage', Momentum: 'Momentum', Calm: 'Calm',
@@ -1223,7 +1465,7 @@ const tomorrowCatBg: Record<string, string> = {
   Clarity: 'rgba(20,184,166,0.12)', Rest: 'rgba(123,140,200,0.12)',
 };
 
-function CompletedCard({ day, streak, totalDays: _totalDays, tomorrow, nextMilestone: _nextMilestone, daysToNext: _daysToNext, returnedAfterAbsence: _returnedAfterAbsence, checklistComplete: _checklistComplete, reflection, communityInsight, reflectionPromptId }: {
+function CompletedCard({ day, streak, totalDays: _totalDays, tomorrow: _tomorrow, nextMilestone: _nextMilestone, daysToNext: _daysToNext, returnedAfterAbsence: _returnedAfterAbsence, checklistComplete: _checklistComplete, reflection, communityInsight, reflectionPromptId }: {
   day: number;
   streak: number;
   totalDays: number;
@@ -1244,7 +1486,6 @@ function CompletedCard({ day, streak, totalDays: _totalDays, tomorrow, nextMiles
   const contextualMsg = null;
 
   return (
-    <>
     <View style={cardStyles.completedCard}>
 
       {/* ── Completion confirmation ──────────────────────────────── */}
@@ -1301,41 +1542,6 @@ function CompletedCard({ day, streak, totalDays: _totalDays, tomorrow, nextMiles
         </View>
       )}
     </View>
-
-    {/* ── Tomorrow's Reset — standalone modular card ────────── */}
-    {tomorrow ? (
-      <View style={cardStyles.tomorrowCard}>
-        <View style={cardStyles.tomorrowHeaderRow}>
-          <Text style={cardStyles.tomorrowEyebrow}>{cardT('today.tomorrow.eyebrow')}</Text>
-          <View style={[
-            cardStyles.tomorrowCatPill,
-            { backgroundColor: tomorrowCatBg[tomorrow.theme] }
-          ]}>
-            <View style={[cardStyles.tomorrowCatDot, { backgroundColor: tomorrowCatColor[tomorrow.theme] }]} />
-            <Text style={[cardStyles.tomorrowCatLabel, { color: tomorrowCatColor[tomorrow.theme] }]}>
-              {cardT('today.cat.' + tomorrow.theme)}
-            </Text>
-          </View>
-        </View>
-        <Text style={cardStyles.tomorrowTheme}>
-          {getCategoryTheme(tomorrow.theme as DailyCategory)}
-        </Text>
-        <Text style={cardStyles.tomorrowMessage} numberOfLines={2}>
-          {`"${tomorrow.home_card.headline.length > 65 ? tomorrow.home_card.headline.slice(0, 63) + '…' : tomorrow.home_card.headline}"`}
-        </Text>
-        <Text style={cardStyles.tomorrowNoPressure}>{cardT('today.tomorrow.nopressure')}</Text>
-      </View>
-    ) : (
-      <View style={cardStyles.tomorrowCard}>
-        <Text style={cardStyles.tomorrowEyebrow}>{cardT('today.tomorrow.continues.top')}</Text>
-        <Text style={cardStyles.tomorrowMessage}>{cardT('today.tomorrow.continues.msg')}</Text>
-        <View style={cardStyles.tomorrowRetentionRow}>
-          <View style={cardStyles.tomorrowRetentionDot} />
-          <Text style={cardStyles.tomorrowCta}>{cardT('today.tomorrow.continues.cta')}</Text>
-        </View>
-      </View>
-    )}
-  </>
   );
 }
 
