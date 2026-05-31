@@ -667,8 +667,7 @@ function YourHistorySection({
   return (
     <Animated.View style={{ opacity: fadeAnim, transform: [{ translateY }] }}>
       <Text style={styles.sectionTitle}>{t('progress.section.yourStory')}</Text>
-      {/* Weekly Recap — only show when user has ≥ 4 resets and ≥ 7 days */}
-      {totalDays >= 4 && currentDay >= 7 && (
+      {/* Weekly Recap — shown from Day 1 in progressive state */}
       <TouchableOpacity
         style={[styles.card, styles.historyNavCard, styles.weeklyRecapCard]}
         activeOpacity={0.82}
@@ -688,7 +687,6 @@ function YourHistorySection({
         </View>
         <Ionicons name="chevron-forward" size={14} color={Colors.gold} style={{ opacity: 0.5 }} />
       </TouchableOpacity>
-      )}
 
       {/* Quiet Reflections — secondary card: ivory surface, filled moon, entry count */}
       <TouchableOpacity
