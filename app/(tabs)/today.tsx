@@ -14,7 +14,7 @@ import { useHabits } from '../../hooks/useHabits';
 import { useWeeklyRecap } from '../../hooks/useWeeklyRecap';
 import { getItem, setItem, StorageKeys, getLocalDateKey } from '../../hooks/useStorage';
 import { saveDailyEntry, getDailyEntry, type DailyEntry } from '../../utils/dailyEntries';
-import { DAILY_STATE_OPTIONS, getDailyStateBanner, getAdaptiveWord, getAdaptiveDepth, getStateCategory, type DailyState } from '../../utils/dailyState';
+import { DAILY_STATE_OPTIONS, getDailyStateBanner, getAdaptiveWord, getAdaptiveDepth, getStateCategory, getBalancedHeadline, getBalancedSubtitle, type DailyState } from '../../utils/dailyState';
 import { CEREMONY_MILESTONES } from '../../utils/milestoneSystem';
 import { getActionPlaceholder } from '../../utils/writingPlaceholders';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../../theme';
@@ -541,7 +541,9 @@ export default function TodayScreen() {
             {/* Headline + streak badge */}
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
               <Text style={[styles.title, { flex: 1 }]}>
-                {getDynamicHeadline(emotionalState, progress.currentDay)}
+                {dailyState === 'balanced'
+                  ? getBalancedHeadline(progress.currentDay, lang)
+                  : getDynamicHeadline(emotionalState, progress.currentDay)}
               </Text>
               {progress.streak > 0 && (
                 <View style={{
@@ -568,7 +570,9 @@ export default function TodayScreen() {
               )}
             </View>
             <Text style={styles.subtitle}>
-              {t(SUBHEADLINE_KEYS[progress.currentDay % SUBHEADLINE_KEYS.length])}
+              {dailyState === 'balanced'
+                ? getBalancedSubtitle(progress.currentDay, lang)
+                : t(SUBHEADLINE_KEYS[progress.currentDay % SUBHEADLINE_KEYS.length])}
             </Text>
 
             {/* Mood check-in */}

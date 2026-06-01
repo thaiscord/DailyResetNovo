@@ -1,279 +1,227 @@
-Implement the following retention and personalization improvements in Daily Reset.
+AJUSTE DO MODO "EM EQUILÍBRIO" — TOPO TOTALMENTE CONTEXTUAL
 
-IMPORTANT:
-These features must feel human, quiet, thoughtful and emotionally intelligent.
+CONTEXTO
 
-They must NEVER feel:
+O novo estado emocional "Em equilíbrio" foi implementado com sucesso.
 
-* motivational
-* coach-like
-* productivity-focused
-* gamified
-* corporate
-* therapeutic/clinical
-* AI-generated
+A palavra do dia, os rituais, as reflexões e os conteúdos específicos estão funcionando bem.
 
-The goal is NOT to tell users what to do.
+Porém existe um ponto que ainda quebra a coerência emocional da experiência.
 
-The goal is to help users feel seen.
+Atualmente, quando o usuário seleciona "Em equilíbrio", o topo da tela continua utilizando títulos e subtítulos que pertencem à narrativa de recuperação.
 
-The Daily Reset experience should feel like:
-"A calm place that notices patterns gently."
+Exemplos:
 
----
+* "Você não está de volta ao zero."
+* "A versão de você que ainda está aqui já fez algo."
 
-FEATURE 1: "A Note From Your Week"
+Esses textos fazem sentido para alguém que está retornando após um período difícil.
 
-LOCATION:
-Weekly Recap screen.
+Mas não fazem sentido para alguém que selecionou "Em equilíbrio".
 
-PURPOSE:
-Transform weekly data into emotional meaning.
+O resultado é uma pequena desconexão emocional.
 
-This is NOT another statistics card.
+OBJETIVO
 
-This is NOT a summary of completed resets.
+Quando o usuário selecionar "Em equilíbrio", o topo deve utilizar uma narrativa própria.
 
-This is NOT motivational feedback.
+Uma narrativa focada em:
 
-It should appear as the final section of the Weekly Recap.
+* estabilidade
+* presença
+* continuidade
+* leveza
+* preservação do que está funcionando
 
-The card should generate a short personalized reflection based on:
+Não em recuperação.
 
-* most selected feelings
-* most selected mindset category
-* reset frequency
-* journal activity
-* changes compared to previous weeks
+Não em superação.
 
-The reflection should feel observational, not instructional.
+Não em reconstrução.
 
-Good examples:
+==================================================
+NOVA REGRA
+==========
 
-"This week felt heavier than the last one.
+Se estado emocional = "Em equilíbrio":
 
-You searched for calm more often than focus.
+Substituir completamente:
 
-Even on busy days, you still made space for yourself."
+* título principal
+* subtítulo cinza
 
----
+por conteúdos exclusivos do modo equilíbrio.
 
-"Low energy appeared often this week.
+Não reutilizar mensagens dos outros estados.
 
-You weren't looking for productivity.
+==================================================
+TÍTULOS
+=======
 
-You were looking for recovery."
+Gerar uma biblioteca ampla de títulos exclusivos.
 
----
+Direção emocional:
 
-"Compared to recent weeks, things seemed a little lighter.
+* humano
+* simples
+* elegante
+* acolhedor
+* observador
 
-You chose more focused mindsets and checked in more consistently."
+Evitar:
 
-Bad examples:
+* motivação
+* produtividade
+* autoajuda
+* linguagem terapêutica
 
-❌ Keep pushing.
-❌ You are improving.
-❌ Great job.
-❌ Stay strong.
-❌ You can do it.
-❌ Success comes from consistency.
+Exemplos de direção:
 
-Never use motivational language.
+"Nem tudo precisa mudar hoje."
 
-Never mention streaks.
+"Você pode continuar daqui."
 
-Never mention achievement.
+"Há espaço para simplesmente estar."
 
-The card should feel like a thoughtful observation.
+"Algumas coisas já encontraram ritmo."
 
----
+"O que está funcionando também merece atenção."
 
-FEATURE 2: "What I've Noticed"
+"Você não precisa acelerar."
 
-LOCATION:
-Home screen.
+"Hoje pode ser apenas um dia tranquilo."
 
-PURPOSE:
-Create surprise, personalization and emotional continuity.
+"Nem toda evolução faz barulho."
 
-IMPORTANT:
-This is NOT a permanent card.
+"Há valor em continuar."
 
-This card should appear only when there is a meaningful pattern to show.
+"Você não precisa consertar nada agora."
 
-If there is no meaningful observation, do not render the card.
+"Certas mudanças aparecem quando paramos de forçar."
 
-Do not force content.
+"O equilíbrio também precisa de cuidado."
 
-The card should use existing user data such as:
+==================================================
+SUBTÍTULOS
+==========
 
-* selected feelings
-* selected mindsets
-* reset times
-* reset frequency
-* journal usage
-* weekly/monthly trends
+Criar subtítulos exclusivos.
 
-Examples:
+Exemplos de direção:
 
-"You've been choosing 'Overwhelmed' quite often lately."
+"O ritmo pode continuar sem pressa."
 
----
+"Nem todo dia precisa ser reconstruído."
 
-"Most of your resets happened after work this week."
+"Você não precisa melhorar nada agora."
 
----
+"Hoje pode ser apenas um dia comum."
 
-"You tend to write more when you're carrying a lot mentally."
+"Há beleza em continuar."
 
----
+"Algumas coisas crescem em silêncio."
 
-"Rest has appeared more often than focus recently."
+"O que está leve também merece espaço."
 
----
+"Nem toda presença nasce da urgência."
 
-"You've checked in more frequently this week than last week."
+"Continuar também é uma escolha."
 
-Bad examples:
+==================================================
+COERÊNCIA COM OS DEMAIS ELEMENTOS
+=================================
 
-❌ You completed 3 resets.
-❌ You are doing amazing.
-❌ Keep going.
-❌ Great progress.
+Quando "Em equilíbrio" estiver selecionado:
 
-The card must reveal something.
+O topo deve conversar com:
 
-It should create the feeling:
+* palavra do dia
+* ritual
+* reflexão
+* card amanhã
+* resumo semanal
 
-"Oh. That's true."
+Toda a tela deve parecer parte da mesma narrativa emocional.
 
-The card should not appear every day.
+==================================================
+VARIAÇÃO
+========
 
-It should rotate naturally and only when meaningful observations exist.
+Não repetir os mesmos títulos frequentemente.
 
----
+Criar variedade suficiente para meses de uso.
 
-FEATURE 3: "Quiet Milestones"
+Misturar:
 
-PURPOSE:
-Celebrate meaningful moments without creating pressure.
+* estabilidade
+* leveza
+* continuidade
+* presença
+* cuidado
+* serenidade
+* ritmo
 
-IMPORTANT:
+==================================================
+INTERNACIONALIZAÇÃO (i18n)
+==========================
 
-Do NOT create streak culture.
+Aplicar a mesma lógica para:
 
-Do NOT create fear of losing progress.
+* Português (Brasil)
+* Inglês
+* Espanhol
+* Francês
+* Alemão
 
-Do NOT create urgency.
+IMPORTANTE
 
-Do NOT create notifications focused on streak protection.
+Não fazer tradução literal.
 
-The milestone should feel reflective.
+Cada idioma deve parecer escrito originalmente naquele idioma.
 
-Examples:
+Exemplos:
 
-"50 moments of pause."
+INGLÊS
 
----
+Não traduzir:
 
-"You've checked in with yourself 30 times."
+"Nem tudo precisa mudar hoje."
 
----
+Como:
 
-"100 minutes dedicated to yourself."
+"Not everything needs to change today."
 
----
+Se soar artificial no contexto.
 
-"Three months of showing up when you needed it."
+Adaptar para uma construção natural de um falante nativo.
 
----
+ESPANHOL
 
-"One hundred small pauses.
+Usar linguagem natural latino-americana.
 
-One day at a time."
+FRANCÊS
 
-Bad examples:
+Tom humano, elegante e discreto.
 
-❌ 30 DAY STREAK!
-❌ AMAZING WORK!
-❌ KEEP IT UP!
-❌ YOU'RE ON FIRE!
+ALEMÃO
 
-The emotional tone should remain calm and grounded.
+Tom claro, simples e natural.
 
-Milestones should appear occasionally and feel meaningful.
+==================================================
+RESULTADO ESPERADO
+==================
 
-Never overuse them.
+Quando o usuário selecionar "Em equilíbrio":
 
-LOCATION:
+A tela inteira deve transmitir:
 
-Progress screen only.
+"Você não precisa resolver nada agora.
+Você pode simplesmente cuidar do que já está funcionando."
 
-Do NOT place Quiet Milestones on the Home screen.
+Sem tom de coach.
 
-The Home screen is reserved for present-moment experiences and observations.
+Sem tom de recuperação.
 
-Quiet Milestones serve a different purpose and should live inside the user's longer-term journey.
+Sem tom de crise.
 
-This prevents overlap with "What I've Noticed".
-
-Feature roles must remain distinct:
-
-* What I've Noticed = discovery
-* A Note From Your Week = interpretation
-* Quiet Milestones = occasional recognition
-
-These features should complement each other rather than repeating the same information in different formats.
-
-Quiet Milestones should be rare.
-
-Do not show them too frequently.
-
-They should feel unexpected and meaningful.
-
-A milestone loses emotional value if users see one every few days.
-
-Prioritize quality over quantity.
-
-
----
-
-I18N REQUIREMENTS
-
-Supported languages:
-
-* English
-* Portuguese
-* Spanish
-* French
-* German
-
-IMPORTANT:
-
-Do NOT perform literal translations.
-
-Each language must sound natural to native speakers.
-
-Adapt tone and wording culturally.
-
-The emotional experience must remain identical across languages.
-
-Avoid language that sounds AI-generated or translated.
-
-Every generated message should feel like it was originally written in that language.
-
----
-
-FINAL RULE
-
-Before rendering any generated text, validate:
-
-1. Does this sound human?
-2. Does this avoid coaching?
-3. Does this avoid self-help clichés?
-4. Does this avoid productivity language?
-5. Does this reveal something meaningful?
-6. Would a burned-out person feel understood rather than evaluated?
-
-Only display content that passes all six checks.
+Apenas presença, continuidade e equilíbrio.

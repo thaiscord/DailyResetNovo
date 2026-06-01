@@ -419,3 +419,159 @@ export function getStateCategory(state: DailyState): string | null {
   if (!state) return null;
   return STATE_CATEGORY[state] ?? null;
 }
+
+// ─── Balanced state — headline & subtitle pools ────────────────────────────────
+// Shown at the top of the today screen instead of streak-based copy.
+
+const BALANCED_HEADLINES_PT = [
+  'Nem tudo precisa mudar hoje.',
+  'Você pode continuar daqui.',
+  'Há espaço para simplesmente estar.',
+  'Algumas coisas já encontraram ritmo.',
+  'O que está funcionando também merece atenção.',
+  'Você não precisa acelerar.',
+  'Hoje pode ser apenas um dia tranquilo.',
+  'Nem toda evolução faz barulho.',
+  'Há valor em continuar.',
+  'Você não precisa consertar nada agora.',
+  'Certas mudanças aparecem quando paramos de forçar.',
+  'O equilíbrio também precisa de cuidado.',
+];
+
+const BALANCED_HEADLINES_EN = [
+  'Some things have found their place.',
+  'You can keep going from here.',
+  'There\'s room to simply be here.',
+  'Some things have found their rhythm.',
+  'What\'s working also deserves attention.',
+  'You don\'t need to speed up.',
+  'Today can just be a quiet day.',
+  'Not every advance makes noise.',
+  'There is value in staying steady.',
+  'You don\'t have to fix anything right now.',
+  'Certain things shift when we stop forcing them.',
+  'Balance needs tending too.',
+];
+
+const BALANCED_HEADLINES_ES = [
+  'No todo tiene que cambiar hoy.',
+  'Puedes seguir desde aquí.',
+  'Hay espacio para simplemente estar.',
+  'Algunas cosas ya encontraron su ritmo.',
+  'Lo que funciona también merece atención.',
+  'No necesitas acelerar.',
+  'Hoy puede ser un día tranquilo.',
+  'No todo avance hace ruido.',
+  'Hay valor en continuar.',
+  'No necesitas arreglar nada ahora.',
+  'Ciertos cambios aparecen cuando dejamos de forzar.',
+  'El equilibrio también necesita cuidado.',
+];
+
+const BALANCED_HEADLINES_FR = [
+  'Certaines choses ont trouvé leur place.',
+  'Tu peux continuer à partir d\'ici.',
+  'Il y a de l\'espace pour simplement être là.',
+  'Certaines choses ont trouvé leur rythme.',
+  'Ce qui fonctionne mérite aussi de l\'attention.',
+  'Tu n\'as pas besoin d\'accélérer.',
+  'Aujourd\'hui peut juste être un jour calme.',
+  'Tout avancement ne fait pas de bruit.',
+  'Il y a de la valeur à continuer.',
+  'Tu n\'as rien à réparer maintenant.',
+  'Certaines choses changent quand on arrête de forcer.',
+  'L\'équilibre aussi a besoin d\'attention.',
+];
+
+const BALANCED_HEADLINES_DE = [
+  'Manches hat seinen Platz gefunden.',
+  'Du kannst von hier aus weitermachen.',
+  'Es gibt Raum, einfach hier zu sein.',
+  'Manches hat seinen Rhythmus gefunden.',
+  'Was funktioniert, verdient auch Aufmerksamkeit.',
+  'Du musst nicht schneller werden.',
+  'Heute kann einfach ein ruhiger Tag sein.',
+  'Nicht jeder Fortschritt macht Lärm.',
+  'Im Weitermachen liegt ein Wert.',
+  'Du musst gerade nichts reparieren.',
+  'Manches verändert sich, wenn wir aufhören zu zwingen.',
+  'Gleichgewicht braucht auch Pflege.',
+];
+
+const BALANCED_SUBTITLES_PT = [
+  'O ritmo pode continuar sem pressa.',
+  'Nem todo dia precisa ser reconstruído.',
+  'Você não precisa melhorar nada agora.',
+  'Hoje pode ser apenas um dia comum.',
+  'Há beleza em continuar.',
+  'Algumas coisas crescem em silêncio.',
+  'O que está leve também merece espaço.',
+  'Nem toda presença nasce da urgência.',
+  'Continuar também é uma escolha.',
+];
+
+const BALANCED_SUBTITLES_EN = [
+  'The rhythm can keep going without rushing.',
+  'Not every day needs to be rebuilt.',
+  'You don\'t have to improve anything today.',
+  'Today can just be an ordinary day.',
+  'There is something in simply continuing.',
+  'Some things grow quietly.',
+  'What feels light also deserves space.',
+  'Not all presence comes from urgency.',
+  'Continuing is also a choice.',
+];
+
+const BALANCED_SUBTITLES_ES = [
+  'El ritmo puede seguir sin prisa.',
+  'No todo día necesita reconstruirse.',
+  'No necesitas mejorar nada ahora.',
+  'Hoy puede ser solo un día común.',
+  'Hay algo en simplemente continuar.',
+  'Algunas cosas crecen en silencio.',
+  'Lo que está liviano también merece espacio.',
+  'No toda presencia nace de la urgencia.',
+  'Seguir también es una elección.',
+];
+
+const BALANCED_SUBTITLES_FR = [
+  'Le rythme peut continuer sans se précipiter.',
+  'Tout jour n\'a pas besoin d\'être reconstruit.',
+  'Tu n\'as rien à améliorer aujourd\'hui.',
+  'Aujourd\'hui peut juste être un jour ordinaire.',
+  'Il y a quelque chose à simplement continuer.',
+  'Certaines choses grandissent en silence.',
+  'Ce qui est léger mérite aussi de la place.',
+  'Toute présence ne naît pas de l\'urgence.',
+  'Continuer est aussi un choix.',
+];
+
+const BALANCED_SUBTITLES_DE = [
+  'Der Rhythmus kann ohne Eile weitergehen.',
+  'Nicht jeder Tag muss neu aufgebaut werden.',
+  'Du musst heute nichts verbessern.',
+  'Heute kann einfach ein gewöhnlicher Tag sein.',
+  'Im Weitermachen liegt etwas.',
+  'Manches wächst in der Stille.',
+  'Was leicht ist, verdient auch Raum.',
+  'Nicht alle Gegenwart entsteht aus Dringlichkeit.',
+  'Weiterzumachen ist auch eine Entscheidung.',
+];
+
+export function getBalancedHeadline(day: number, lang: string): string {
+  const pool = lang === 'es' ? BALANCED_HEADLINES_ES
+    : lang === 'pt' ? BALANCED_HEADLINES_PT
+    : lang === 'fr' ? BALANCED_HEADLINES_FR
+    : lang === 'de' ? BALANCED_HEADLINES_DE
+    : BALANCED_HEADLINES_EN;
+  return pool[day % pool.length];
+}
+
+export function getBalancedSubtitle(day: number, lang: string): string {
+  const pool = lang === 'es' ? BALANCED_SUBTITLES_ES
+    : lang === 'pt' ? BALANCED_SUBTITLES_PT
+    : lang === 'fr' ? BALANCED_SUBTITLES_FR
+    : lang === 'de' ? BALANCED_SUBTITLES_DE
+    : BALANCED_SUBTITLES_EN;
+  return pool[day % pool.length];
+}
