@@ -1239,7 +1239,7 @@ const BALANCED_PT: VariantLangConfig = {
   },
   return: {
     headline: 'Algo está funcionando.\nVale notar isso.',
-    subtext: '',
+    subtext: 'Isso também é um reset.',
     returnMessages: [
       'Dias tranquilos também contam.',
       'Nem todo cuidado nasce da dificuldade.',
@@ -1298,7 +1298,7 @@ const BALANCED_EN: VariantLangConfig = {
   },
   return: {
     headline: 'Something is working.\nThat\'s worth noticing.',
-    subtext: '',
+    subtext: 'This counts too.',
     returnMessages: [
       'Quiet days count too.',
       'Not all care comes from difficulty.',
@@ -1357,7 +1357,7 @@ const BALANCED_ES: VariantLangConfig = {
   },
   return: {
     headline: 'Algo está funcionando.\nVale notarlo.',
-    subtext: '',
+    subtext: 'Esto también cuenta.',
     returnMessages: [
       'Los días tranquilos también cuentan.',
       'No todo cuidado nace de la dificultad.',
@@ -1416,7 +1416,7 @@ const BALANCED_FR: VariantLangConfig = {
   },
   return: {
     headline: 'Quelque chose fonctionne.\nCela mérite d\'être remarqué.',
-    subtext: '',
+    subtext: 'Cela compte aussi.',
     returnMessages: [
       'Les jours calmes comptent aussi.',
       'Tout soin ne vient pas de la difficulté.',
@@ -1475,7 +1475,7 @@ const BALANCED_DE: VariantLangConfig = {
   },
   return: {
     headline: 'Etwas funktioniert.\nDas verdient es, bemerkt zu werden.',
-    subtext: '',
+    subtext: 'Das zählt auch.',
     returnMessages: [
       'Ruhige Tage zählen auch.',
       'Nicht alle Fürsorge kommt aus Schwierigkeit.',
