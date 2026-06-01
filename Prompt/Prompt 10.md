@@ -1,35 +1,106 @@
-Corrija a exibição do card "Resumo da Semana" na aba Progresso.
+Ajuste final da área "Mindset" para melhorar o ritmo visual e evitar excesso de elementos.
 
-Problema:
-Após o reset do Dia 1, o card "Resumo da Semana" desapareceu da aba Progresso.
-Isso não é ideal.
+IMPORTANTE:
+Não adicionar novos componentes.
+Não criar novos cards.
+Não alterar cores, identidade visual ou estrutura principal da tela.
+O objetivo é apenas refinar o espaçamento e a densidade visual.
 
-Comportamento desejado:
-O card "Resumo da Semana" deve aparecer desde o Dia 1 na aba Progresso, dentro da seção "Sua História".
+1. Reduzir a altura do bloco emocional contextual
 
-Antes de completar 7 resets:
-- Mostrar o card em estado "em andamento".
-- Mostrar progresso correto: 1/7, 2/7, 3/7 etc.
-- Não abrir o resumo completo ainda.
-- Não gerar interpretação semanal completa.
-- Não mostrar textos como se a semana já tivesse sido concluída.
+Atualmente, após a seleção de um estado emocional (Pressão, Nublado, Esgotamento, Baixa energia ou Ruído interno), o bloco contextual ocupa mais espaço vertical do que precisa.
 
-Ao tocar no card antes de 7/7:
-- Abrir a tela de Resumos Semanais em modo "semana em andamento".
-- Mostrar quantos retornos existem até agora.
-- Mostrar mensagem explicando que o primeiro resumo completo chega após 7 dias.
-- Não mostrar análise semanal completa antes de haver dados suficientes.
+Exemplo atual:
 
-Quando completar 7 resets:
-- O card deve mostrar 7/7.
-- O resumo semanal completo deve ser desbloqueado.
-- A tela de Resumos Semanais deve permitir abrir a Semana 1.
-- A contagem deve ser consistente com Hoje, Diário e Progresso.
+CHEGANDO COM · Baixa energia
 
-Importante:
-- Não esconder o card antes do Dia 7.
-- Não remover "Reflexões Silenciosas".
-- Não alterar layout geral da aba Progresso.
-- Apenas restaurar o card "Resumo da Semana" em estado progressivo.
-- Manter i18n em português, inglês, espanhol, francês e alemão.
-- Não gerar análise semanal completa antes de 7 resets concluídos.
+Hoje não precisa ser um dia de força.
+
+O bloco deve conter apenas:
+
+* Linha superior com o estado selecionado
+* Frase principal de acolhimento
+
+Remover qualquer texto complementar abaixo da frase principal.
+
+Exemplo desejado:
+
+CHEGANDO COM · Baixa energia
+
+Hoje não precisa ser um dia de força.
+
+Nada além disso.
+
+Objetivo:
+Tornar o bloco mais elegante, direto e leve visualmente.
+
+2. Aproximar o bloco emocional dos cards recomendados
+
+Após a frase principal existe um espaço vertical maior do que o necessário antes dos cards recomendados.
+
+Reduzir:
+
+* margin-bottom do bloco emocional
+* margin-top da seção seguinte
+
+A distância visual entre:
+
+"Hoje não precisa ser um dia de força."
+
+e
+
+primeiro card recomendado
+
+deve ficar entre 12px e 16px.
+
+Não deixar colado.
+Não deixar vazio.
+
+Objetivo:
+Criar continuidade visual e eliminar a sensação de espaço perdido.
+
+3. Revisar a densidade visual da área inteira
+
+A sequência visual deve ser:
+
+Como você está chegando agora?
+
+↓
+Estados emocionais
+
+↓
+Bloco emocional curto
+
+↓
+Cards recomendados
+
+↓
+Caminhos para voltar
+
+Cada etapa deve parecer conectada à próxima.
+
+Evitar grandes áreas vazias.
+
+Evitar sensação de múltiplos blocos competindo pela atenção.
+
+4. Não alterar
+
+* Card principal do insight do dia
+* Categorias (Foco, Calma, Coragem etc.)
+* Pergunta "Como você está chegando agora?"
+* Botões dos estados emocionais
+* Caminhos para voltar
+* Recovery do Burnout
+* Cores
+* Tipografia
+* Hierarquia visual existente
+
+Objetivo final:
+
+A tela deve transmitir calma, clareza e espaço mental.
+
+Menos conteúdo.
+Menos altura.
+Menos ruído.
+
+A sensação deve ser de uma pausa tranquila, não de uma página tentando mostrar muitas coisas ao mesmo tempo.

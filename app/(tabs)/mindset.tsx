@@ -928,10 +928,10 @@ export default function MindsetScreen() {
             {recommendationState === 'T' && selectedEmotion && (
               <View style={{
                 paddingHorizontal: Spacing.xl,
-                paddingVertical: 28,
+                paddingVertical: 20,
                 alignItems: 'center',
                 justifyContent: 'center',
-                minHeight: 150,
+                minHeight: 100,
                 gap: 0,
               }}>
                 <Text style={{
@@ -968,9 +968,9 @@ export default function MindsetScreen() {
             {/* ── ESTADO B: Cards recomendados ─────────────────────────────── */}
             {recommendationState === 'B' && selectedEmotion && (
               <Animated.View style={{ transform: [{ translateY: mindsetTranslateY }] }}><>
-                <View style={{ paddingHorizontal: Spacing.xl, marginBottom: 6 }}>
+                <View style={{ paddingHorizontal: Spacing.xl, marginBottom: 0 }}>
                   {/* Emotion indicator — discrete breadcrumb showing what was chosen */}
-                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5, marginBottom: 6 }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5, marginBottom: 4 }}>
                     <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: '#C9973A', opacity: 0.55 }} />
                     <Text style={{ fontSize: 10, color: '#C9973A', letterSpacing: 0.8, opacity: 0.75 }}>
                       {lang === 'pt' ? 'CHEGANDO COM' :
@@ -996,8 +996,8 @@ export default function MindsetScreen() {
                   showsHorizontalScrollIndicator={false}
                   data={recommendedCardsV2}
                   keyExtractor={item => item.id}
-                  contentContainerStyle={{ paddingHorizontal: Spacing.xl, paddingVertical: 6 }}
-                  style={{ marginTop: 14, marginBottom: 10 }}
+                  contentContainerStyle={{ paddingHorizontal: Spacing.xl, paddingTop: 2, paddingBottom: 6 }}
+                  style={{ marginTop: 12, marginBottom: 10 }}
                   ItemSeparatorComponent={() => <View style={{ width: 12 }} />}
                   renderItem={({ item }) => (
                     <TouchableOpacity
