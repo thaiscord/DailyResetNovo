@@ -62,14 +62,14 @@ interface ArriveLang {
 
 interface NoteLang {
   eyebrow: string;
-  headline: string;
+  noteQuestions: string[];   // rotated by day — one shown per session
 }
 
 interface VariantLangConfig {
   arrive: ArriveLang;
   focus: FocusStepLang[];
   recenter: RecenterLang;
-  return: ReturnLang;
+  return: ReturnLang & { returnMessages?: string[] };  // optional rotating pool
   breathe?: { eyebrow: string; headline: string; subtext: string };
   note?: NoteLang;
 }
@@ -1214,21 +1214,46 @@ const BALANCED_PT: VariantLangConfig = {
   ],
   note: {
     eyebrow: 'PERCEBA',
-    headline: 'O que ajudou você a chegar até aqui hoje?',
+    noteQuestions: [
+      'O que funcionou melhor do que você esperava hoje?',
+      'O que merece ser notado neste momento?',
+      'O que ajudou você a chegar até aqui hoje?',
+      'O que vale a pena continuar fazendo?',
+      'O que está sustentando esse ritmo?',
+      'O que você gostaria de preservar desta semana?',
+      'O que trouxe mais leveza para o seu dia?',
+      'O que está dando certo sem fazer barulho?',
+      'O que você percebe diferente em você hoje?',
+      'O que tem ajudado você a permanecer presente?',
+    ],
   },
   recenter: {
     eyebrow: 'LEVAR',
     headline: 'O que vale a pena levar para amanhã?',
     subtext: 'Escolha o que parece verdadeiro.',
     options: [
-      { id: 'presence',  label: 'Presença',          sub: '' },
-      { id: 'lightness', label: 'Leveza',             sub: '' },
-      { id: 'rhythm',    label: 'Ritmo',              sub: '' },
+      { id: 'presence',  label: 'Presença', sub: '' },
+      { id: 'lightness', label: 'Leveza',   sub: '' },
+      { id: 'rhythm',    label: 'Ritmo',    sub: '' },
     ],
   },
   return: {
     headline: 'Algo está funcionando.\nVale notar isso.',
-    subtext: 'Dias tranquilos também contam.',
+    subtext: '',
+    returnMessages: [
+      'Dias tranquilos também contam.',
+      'Nem todo cuidado nasce da dificuldade.',
+      'Você não precisa consertar nada agora.',
+      'Às vezes continuar já é suficiente.',
+      'O que está funcionando também merece atenção.',
+      'Há valor em permanecer.',
+      'Nem todo progresso faz barulho.',
+      'Algumas coisas importantes acontecem em silêncio.',
+      'O ritmo também se constrói nos dias comuns.',
+      'Hoje não precisava ser diferente para valer a pena.',
+      'Estar presente também é uma forma de cuidado.',
+      'Nem todo reset acontece depois de um dia difícil.',
+    ],
   },
 };
 
@@ -1236,7 +1261,7 @@ const BALANCED_EN: VariantLangConfig = {
   arrive: {
     eyebrow: 'BALANCE',
     headline: 'You can stay\nhere a moment.',
-    subtext: "Not every reset follows a difficult day.",
+    subtext: 'Not every reset follows a difficult day.',
   },
   focus: [
     {
@@ -1248,7 +1273,18 @@ const BALANCED_EN: VariantLangConfig = {
   ],
   note: {
     eyebrow: 'OBSERVE',
-    headline: 'What helped you get here today?',
+    noteQuestions: [
+      'What worked better than you expected today?',
+      'What deserves to be noticed right now?',
+      'What helped you get here today?',
+      'What\'s worth continuing?',
+      'What\'s sustaining this rhythm?',
+      'What would you like to preserve from this week?',
+      'What brought more ease to your day?',
+      'What\'s working quietly in the background?',
+      'What feels different about you today?',
+      'What\'s been helping you stay present?',
+    ],
   },
   recenter: {
     eyebrow: 'CARRY FORWARD',
@@ -1262,7 +1298,21 @@ const BALANCED_EN: VariantLangConfig = {
   },
   return: {
     headline: 'Something is working.\nThat\'s worth noticing.',
-    subtext: 'Quiet days count too.',
+    subtext: '',
+    returnMessages: [
+      'Quiet days count too.',
+      'Not all care comes from difficulty.',
+      'You don\'t have to fix anything right now.',
+      'Sometimes continuing is already enough.',
+      'What\'s working also deserves attention.',
+      'There is value in staying.',
+      'Not every advance makes noise.',
+      'Some important things happen quietly.',
+      'Rhythm also builds on ordinary days.',
+      'Today didn\'t need to be different to be worth it.',
+      'Being present is also a form of care.',
+      'Not every reset follows a difficult day.',
+    ],
   },
 };
 
@@ -1282,21 +1332,46 @@ const BALANCED_ES: VariantLangConfig = {
   ],
   note: {
     eyebrow: 'OBSERVA',
-    headline: '¿Qué te ayudó a llegar hasta aquí hoy?',
+    noteQuestions: [
+      '¿Qué funcionó mejor de lo que esperabas hoy?',
+      '¿Qué merece ser notado ahora mismo?',
+      '¿Qué te ayudó a llegar hasta aquí hoy?',
+      '¿Qué vale la pena seguir haciendo?',
+      '¿Qué está sosteniendo este ritmo?',
+      '¿Qué te gustaría preservar de esta semana?',
+      '¿Qué trajo más ligereza a tu día?',
+      '¿Qué está funcionando sin hacer ruido?',
+      '¿Qué percibes diferente en ti hoy?',
+      '¿Qué te ha ayudado a permanecer presente?',
+    ],
   },
   recenter: {
     eyebrow: 'LLEVAR',
     headline: '¿Qué vale la pena llevar a mañana?',
     subtext: 'Elige lo que te parece verdadero.',
     options: [
-      { id: 'presence',  label: 'Presencia',  sub: '' },
-      { id: 'lightness', label: 'Ligereza',   sub: '' },
-      { id: 'rhythm',    label: 'Ritmo',      sub: '' },
+      { id: 'presence',  label: 'Presencia', sub: '' },
+      { id: 'lightness', label: 'Ligereza',  sub: '' },
+      { id: 'rhythm',    label: 'Ritmo',     sub: '' },
     ],
   },
   return: {
     headline: 'Algo está funcionando.\nVale notarlo.',
-    subtext: 'Los días tranquilos también cuentan.',
+    subtext: '',
+    returnMessages: [
+      'Los días tranquilos también cuentan.',
+      'No todo cuidado nace de la dificultad.',
+      'No necesitas arreglar nada ahora.',
+      'A veces continuar ya es suficiente.',
+      'Lo que funciona también merece atención.',
+      'Hay valor en permanecer.',
+      'No todo avance hace ruido.',
+      'Algunas cosas importantes ocurren en silencio.',
+      'El ritmo también se construye en los días comunes.',
+      'Hoy no necesitaba ser diferente para valer la pena.',
+      'Estar presente también es una forma de cuidado.',
+      'No todo reset sigue a un día difícil.',
+    ],
   },
 };
 
@@ -1316,21 +1391,46 @@ const BALANCED_FR: VariantLangConfig = {
   ],
   note: {
     eyebrow: 'OBSERVE',
-    headline: "Qu'est-ce qui t'a aidé à arriver jusqu'ici aujourd'hui ?",
+    noteQuestions: [
+      "Qu'est-ce qui a mieux fonctionné que prévu aujourd'hui ?",
+      "Qu'est-ce qui mérite d'être remarqué en ce moment ?",
+      "Qu'est-ce qui t'a aidé à arriver jusqu'ici aujourd'hui ?",
+      "Qu'est-ce qui mérite d'être continué ?",
+      "Qu'est-ce qui soutient ce rythme ?",
+      "Qu'est-ce que tu aimerais préserver de cette semaine ?",
+      "Qu'est-ce qui a apporté plus de légèreté à ta journée ?",
+      "Qu'est-ce qui fonctionne discrètement ?",
+      "Qu'est-ce que tu perçois de différent en toi aujourd'hui ?",
+      "Qu'est-ce qui t'a aidé à rester présent ?",
+    ],
   },
   recenter: {
     eyebrow: 'EMPORTER',
     headline: "Qu'est-ce qui vaut la peine d'emporter demain ?",
     subtext: 'Choisis ce qui te semble juste.',
     options: [
-      { id: 'presence',  label: 'Présence',   sub: '' },
-      { id: 'lightness', label: 'Légèreté',   sub: '' },
-      { id: 'rhythm',    label: 'Rythme',     sub: '' },
+      { id: 'presence',  label: 'Présence',  sub: '' },
+      { id: 'lightness', label: 'Légèreté',  sub: '' },
+      { id: 'rhythm',    label: 'Rythme',    sub: '' },
     ],
   },
   return: {
     headline: 'Quelque chose fonctionne.\nCela mérite d\'être remarqué.',
-    subtext: 'Les jours calmes comptent aussi.',
+    subtext: '',
+    returnMessages: [
+      'Les jours calmes comptent aussi.',
+      'Tout soin ne vient pas de la difficulté.',
+      "Tu n'as rien à réparer maintenant.",
+      'Parfois, continuer suffit déjà.',
+      "Ce qui fonctionne mérite aussi de l'attention.",
+      'Il y a de la valeur à rester.',
+      'Tout avancement ne fait pas de bruit.',
+      'Certaines choses importantes se passent en silence.',
+      'Le rythme se construit aussi dans les jours ordinaires.',
+      "Aujourd'hui n'avait pas besoin d'être différent pour avoir de la valeur.",
+      'Être présent est aussi une forme de soin.',
+      'Tout reset ne suit pas une journée difficile.',
+    ],
   },
 };
 
@@ -1350,7 +1450,18 @@ const BALANCED_DE: VariantLangConfig = {
   ],
   note: {
     eyebrow: 'BEOBACHTE',
-    headline: 'Was hat dir heute geholfen, hierher zu kommen?',
+    noteQuestions: [
+      'Was hat heute besser funktioniert als erwartet?',
+      'Was verdient es gerade, bemerkt zu werden?',
+      'Was hat dir geholfen, heute hierher zu kommen?',
+      'Was ist es wert, weiterzumachen?',
+      'Was trägt diesen Rhythmus?',
+      'Was möchtest du von dieser Woche bewahren?',
+      'Was hat mehr Leichtigkeit in deinen Tag gebracht?',
+      'Was funktioniert still im Hintergrund?',
+      'Was nimmst du heute als anders an dir wahr?',
+      'Was hat dir geholfen, präsent zu bleiben?',
+    ],
   },
   recenter: {
     eyebrow: 'MITNEHMEN',
@@ -1364,7 +1475,21 @@ const BALANCED_DE: VariantLangConfig = {
   },
   return: {
     headline: 'Etwas funktioniert.\nDas verdient es, bemerkt zu werden.',
-    subtext: 'Ruhige Tage zählen auch.',
+    subtext: '',
+    returnMessages: [
+      'Ruhige Tage zählen auch.',
+      'Nicht alle Fürsorge kommt aus Schwierigkeit.',
+      'Du musst gerade nichts reparieren.',
+      'Manchmal ist Weitermachen bereits genug.',
+      'Was funktioniert, verdient auch Aufmerksamkeit.',
+      'Es hat einen Wert zu bleiben.',
+      'Nicht jeder Fortschritt macht Lärm.',
+      'Manche wichtigen Dinge geschehen still.',
+      'Rhythmus entsteht auch an gewöhnlichen Tagen.',
+      'Heute musste nicht anders sein, um es wert zu sein.',
+      'Präsent zu sein ist auch eine Form der Fürsorge.',
+      'Nicht jeder Reset folgt einem schweren Tag.',
+    ],
   },
 };
 
@@ -1443,10 +1568,13 @@ export function buildVariantRitualSteps(
       autoAdvanceMs: 0,
     };
 
+    const noteQuestions = cfg.note?.noteQuestions ?? [];
     const noteStep: RitualStep = {
       id: 'note',
       eyebrow: cfg.note?.eyebrow ?? '',
-      headline: cfg.note?.headline ?? '',
+      headline: noteQuestions.length > 0
+        ? noteQuestions[totalDays % noteQuestions.length]
+        : '',
       subtext: '',
       autoAdvanceMs: 0,
     };
@@ -1460,10 +1588,13 @@ export function buildVariantRitualSteps(
       intentionOptions: cfg.recenter.options,
     };
 
+    const returnMessages = cfg.return.returnMessages ?? [];
     const returnStep: RitualStep = {
       id: 'return',
       eyebrow: returnEyebrow,
-      headline: cfg.return.headline,
+      headline: returnMessages.length > 0
+        ? returnMessages[totalDays % returnMessages.length]
+        : cfg.return.headline,
       subtext: cfg.return.subtext,
       autoAdvanceMs: 0,
     };

@@ -478,11 +478,11 @@ function NoteInput({
   const isFrLang = lang === 'fr';
   const isDeLang = lang === 'de';
 
-  const placeholder = isEs ? '¿Qué te ayudó a llegar hasta aquí hoy?' :
-                      isPt ? 'O que ajudou você a chegar até aqui hoje?' :
-                      isFrLang ? "Qu'est-ce qui t'a aidé à arriver jusqu'ici aujourd'hui ?" :
-                      isDeLang ? 'Was hat dir heute geholfen, hierher zu kommen?' :
-                                 'What helped you get here today?';
+  const placeholder = isEs ? 'Escribe algo...' :
+                      isPt ? 'Escreva aqui...' :
+                      isFrLang ? 'Écris quelque chose...' :
+                      isDeLang ? 'Schreib etwas...' :
+                                 'Write something...';
 
   const saveLabel = isEs ? 'Guardar →' : isPt ? 'Guardar →' : isFrLang ? 'Garder →' : isDeLang ? 'Speichern →' : 'Save →';
   const savedLabel = isEs ? 'Guardado.' : isPt ? 'Guardado.' : isFrLang ? 'Gardé.' : isDeLang ? 'Gespeichert.' : 'Noted.';
@@ -1180,11 +1180,42 @@ export default function ResetRitualScreen() {
               <Text style={styles.returnBtnText}>{(() => {
               if (ritualVariant === 'balanced') {
                 const opts =
-                  lang === 'pt' ? ['Levar isso comigo', 'Continuar com isso', 'Seguir no meu ritmo'] :
-                  lang === 'es' ? ['Llevar esto conmigo', 'Continuar con esto', 'Seguir en mi ritmo'] :
-                  lang === 'fr' ? ['Emporter ça avec moi', 'Continuer avec ça', 'Garder mon rythme'] :
-                  lang === 'de' ? ['Das mitnehmen', 'Damit weitermachen', 'In meinem Rhythmus bleiben'] :
-                                  ['Take this with me', 'Keep going with this', 'Stay in my rhythm'];
+                  lang === 'pt' ? [
+                    'Levar isso comigo',
+                    'Continuar com isso',
+                    'Seguir nesse ritmo',
+                    'Levar essa presença',
+                    'Continuar daqui',
+                    'Seguir com leveza',
+                  ] : lang === 'es' ? [
+                    'Llevar esto conmigo',
+                    'Continuar con esto',
+                    'Seguir en mi ritmo',
+                    'Llevar esta presencia',
+                    'Continuar desde aquí',
+                    'Seguir con ligereza',
+                  ] : lang === 'fr' ? [
+                    'Emporter ça avec moi',
+                    'Continuer avec ça',
+                    'Garder mon rythme',
+                    'Porter cette présence',
+                    "Continuer d'ici",
+                    'Avancer légèrement',
+                  ] : lang === 'de' ? [
+                    'Das mitnehmen',
+                    'Damit weitermachen',
+                    'In meinem Rhythmus bleiben',
+                    'Diese Präsenz tragen',
+                    'Von hier aus weitermachen',
+                    'Leicht weitergehen',
+                  ] : [
+                    'Take this with me',
+                    'Keep going with this',
+                    'Stay in my rhythm',
+                    'Carry this presence',
+                    'Continue from here',
+                    'Move forward lightly',
+                  ];
                 return opts[progress.currentDay % opts.length];
               }
               return lang === 'es' ? 'Lleva esta calma contigo' : lang === 'pt' ? 'Leve essa calma com você' : lang === 'fr' ? 'Emporte ce calme avec toi' : lang === 'de' ? 'Nimm diese Ruhe mit dir' : 'Carry this with you';
