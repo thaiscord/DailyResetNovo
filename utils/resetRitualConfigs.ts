@@ -15,7 +15,8 @@ export type RitualVariant =
   | 'bodyRest'
   | 'releaseTension'
   | 'presentMoment'
-  | 'softReset';
+  | 'softReset'
+  | 'balanced';
 
 // ─── Mood → variant mapping ───────────────────────────────────────────────────
 
@@ -27,6 +28,7 @@ export function getRitualByMood(state: DailyState | null): RitualVariant {
     overwhelmed: 'releaseTension',
     unclear:     'presentMoment',
     drained:     'softReset',
+    balanced:    'balanced',
   };
   return map[state] ?? 'breathing';
 }
@@ -58,12 +60,18 @@ interface ArriveLang {
   subtext: string;
 }
 
+interface NoteLang {
+  eyebrow: string;
+  headline: string;
+}
+
 interface VariantLangConfig {
   arrive: ArriveLang;
-  focus: [FocusStepLang, FocusStepLang, FocusStepLang];
+  focus: FocusStepLang[];
   recenter: RecenterLang;
   return: ReturnLang;
   breathe?: { eyebrow: string; headline: string; subtext: string };
+  note?: NoteLang;
 }
 
 // ─── Slow Thoughts — for "racing" ────────────────────────────────────────────
@@ -1188,6 +1196,178 @@ const SOFT_RESET_DE: VariantLangConfig = {
   },
 };
 
+// ─── Balanced — for "balanced" ───────────────────────────────────────────────
+
+const BALANCED_PT: VariantLangConfig = {
+  arrive: {
+    eyebrow: 'EQUILÍBRIO',
+    headline: 'Você pode\npermanecer aqui um momento.',
+    subtext: 'Nem todo reset acontece depois de um dia difícil.',
+  },
+  focus: [
+    {
+      eyebrow: 'ATENÇÃO',
+      headline: 'Perceber o que está funcionando\ntambém é cuidado.',
+      centerText: 'Note.',
+      subtext: 'Sem necessidade de agir. Apenas observe.',
+    },
+  ],
+  note: {
+    eyebrow: 'PERCEBA',
+    headline: 'O que ajudou você a chegar até aqui hoje?',
+  },
+  recenter: {
+    eyebrow: 'LEVAR',
+    headline: 'O que vale a pena levar para amanhã?',
+    subtext: 'Escolha o que parece verdadeiro.',
+    options: [
+      { id: 'presence',  label: 'Presença',          sub: '' },
+      { id: 'lightness', label: 'Leveza',             sub: '' },
+      { id: 'rhythm',    label: 'Ritmo',              sub: '' },
+    ],
+  },
+  return: {
+    headline: 'Algo está funcionando.\nVale notar isso.',
+    subtext: 'Dias tranquilos também contam.',
+  },
+};
+
+const BALANCED_EN: VariantLangConfig = {
+  arrive: {
+    eyebrow: 'BALANCE',
+    headline: 'You can stay\nhere a moment.',
+    subtext: "Not every reset follows a difficult day.",
+  },
+  focus: [
+    {
+      eyebrow: 'NOTICE',
+      headline: 'Noticing what\'s working\nis also a form of care.',
+      centerText: 'Notice.',
+      subtext: 'No action needed. Just observe.',
+    },
+  ],
+  note: {
+    eyebrow: 'OBSERVE',
+    headline: 'What helped you get here today?',
+  },
+  recenter: {
+    eyebrow: 'CARRY FORWARD',
+    headline: 'What\'s worth taking into tomorrow?',
+    subtext: 'Choose what feels true.',
+    options: [
+      { id: 'presence',  label: 'Presence',  sub: '' },
+      { id: 'lightness', label: 'Lightness', sub: '' },
+      { id: 'rhythm',    label: 'Rhythm',    sub: '' },
+    ],
+  },
+  return: {
+    headline: 'Something is working.\nThat\'s worth noticing.',
+    subtext: 'Quiet days count too.',
+  },
+};
+
+const BALANCED_ES: VariantLangConfig = {
+  arrive: {
+    eyebrow: 'EQUILIBRIO',
+    headline: 'Puedes quedarte\naquí un momento.',
+    subtext: 'No todo reset ocurre después de un día difícil.',
+  },
+  focus: [
+    {
+      eyebrow: 'ATENCIÓN',
+      headline: 'Notar lo que funciona\ntambién es cuidado.',
+      centerText: 'Nota.',
+      subtext: 'Sin necesidad de actuar. Solo observa.',
+    },
+  ],
+  note: {
+    eyebrow: 'OBSERVA',
+    headline: '¿Qué te ayudó a llegar hasta aquí hoy?',
+  },
+  recenter: {
+    eyebrow: 'LLEVAR',
+    headline: '¿Qué vale la pena llevar a mañana?',
+    subtext: 'Elige lo que te parece verdadero.',
+    options: [
+      { id: 'presence',  label: 'Presencia',  sub: '' },
+      { id: 'lightness', label: 'Ligereza',   sub: '' },
+      { id: 'rhythm',    label: 'Ritmo',      sub: '' },
+    ],
+  },
+  return: {
+    headline: 'Algo está funcionando.\nVale notarlo.',
+    subtext: 'Los días tranquilos también cuentan.',
+  },
+};
+
+const BALANCED_FR: VariantLangConfig = {
+  arrive: {
+    eyebrow: 'ÉQUILIBRE',
+    headline: 'Tu peux rester\nlà un moment.',
+    subtext: 'Tout reset ne suit pas une journée difficile.',
+  },
+  focus: [
+    {
+      eyebrow: 'ATTENTION',
+      headline: 'Remarquer ce qui fonctionne\nest aussi une forme de soin.',
+      centerText: 'Remarque.',
+      subtext: 'Aucune action requise. Observe seulement.',
+    },
+  ],
+  note: {
+    eyebrow: 'OBSERVE',
+    headline: "Qu'est-ce qui t'a aidé à arriver jusqu'ici aujourd'hui ?",
+  },
+  recenter: {
+    eyebrow: 'EMPORTER',
+    headline: "Qu'est-ce qui vaut la peine d'emporter demain ?",
+    subtext: 'Choisis ce qui te semble juste.',
+    options: [
+      { id: 'presence',  label: 'Présence',   sub: '' },
+      { id: 'lightness', label: 'Légèreté',   sub: '' },
+      { id: 'rhythm',    label: 'Rythme',     sub: '' },
+    ],
+  },
+  return: {
+    headline: 'Quelque chose fonctionne.\nCela mérite d\'être remarqué.',
+    subtext: 'Les jours calmes comptent aussi.',
+  },
+};
+
+const BALANCED_DE: VariantLangConfig = {
+  arrive: {
+    eyebrow: 'GLEICHGEWICHT',
+    headline: 'Du kannst hier\neinen Moment bleiben.',
+    subtext: 'Nicht jeder Reset folgt einem schweren Tag.',
+  },
+  focus: [
+    {
+      eyebrow: 'AUFMERKSAMKEIT',
+      headline: 'Zu bemerken, was funktioniert,\nist auch eine Form der Fürsorge.',
+      centerText: 'Bemerke.',
+      subtext: 'Keine Aktion nötig. Nur beobachten.',
+    },
+  ],
+  note: {
+    eyebrow: 'BEOBACHTE',
+    headline: 'Was hat dir heute geholfen, hierher zu kommen?',
+  },
+  recenter: {
+    eyebrow: 'MITNEHMEN',
+    headline: 'Was ist es wert, in den morgigen Tag mitzunehmen?',
+    subtext: 'Wähle, was sich stimmig anfühlt.',
+    options: [
+      { id: 'presence',  label: 'Gegenwart',    sub: '' },
+      { id: 'lightness', label: 'Leichtigkeit', sub: '' },
+      { id: 'rhythm',    label: 'Rhythmus',     sub: '' },
+    ],
+  },
+  return: {
+    headline: 'Etwas funktioniert.\nDas verdient es, bemerkt zu werden.',
+    subtext: 'Ruhige Tage zählen auch.',
+  },
+};
+
 // ─── Config lookup ─────────────────────────────────────────────────────────────
 
 const VARIANT_CONFIGS: Record<
@@ -1199,6 +1379,7 @@ const VARIANT_CONFIGS: Record<
   releaseTension: { pt: RELEASE_TENSION_PT,   en: RELEASE_TENSION_EN,   es: RELEASE_TENSION_ES,   fr: RELEASE_TENSION_FR,   de: RELEASE_TENSION_DE },
   presentMoment:  { pt: PRESENT_MOMENT_PT,    en: PRESENT_MOMENT_EN,    es: PRESENT_MOMENT_ES,    fr: PRESENT_MOMENT_FR,    de: PRESENT_MOMENT_DE },
   softReset:      { pt: SOFT_RESET_PT,        en: SOFT_RESET_EN,        es: SOFT_RESET_ES,        fr: SOFT_RESET_FR,        de: SOFT_RESET_DE },
+  balanced:       { pt: BALANCED_PT,          en: BALANCED_EN,          es: BALANCED_ES,          fr: BALANCED_FR,          de: BALANCED_DE },
 };
 
 // ─── Builder ──────────────────────────────────────────────────────────────────
@@ -1222,6 +1403,74 @@ export function buildVariantRitualSteps(
   // For the default breathing ritual, delegate to the existing builder
   if (variant === 'breathing') {
     return buildRitualSteps(profile, hour, streak, daysMissed, lang);
+  }
+
+  // ── Balanced ritual — unique flow: arrive → focus → note → recenter → return
+  if (variant === 'balanced') {
+    const depth   = getDepth(totalDays);
+    const langKey = lang === 'pt' ? 'pt' : lang === 'es' ? 'es' : lang === 'fr' ? 'fr' : lang === 'de' ? 'de' : 'en';
+    const cfg     = VARIANT_CONFIGS.balanced[langKey];
+
+    let streakNote: string | undefined;
+    if (streak >= 3) {
+      if (lang === 'pt') streakNote = `Dia ${streak} — você continua voltando.`;
+      else if (lang === 'es') streakNote = `Día ${streak} — sigues volviendo.`;
+      else if (lang === 'fr') streakNote = `Jour ${streak} — tu continues à revenir.`;
+      else if (lang === 'de') streakNote = `Tag ${streak} — du kommst immer wieder zurück.`;
+      else streakNote = `Day ${streak} — you keep coming back.`;
+    }
+
+    const returnEyebrow =
+      lang === 'pt' || lang === 'es' ? 'RESET COMPLETO' :
+      lang === 'fr' ? 'RESET TERMINÉ' :
+      lang === 'de' ? 'RESET ABGESCHLOSSEN' : 'RESET COMPLETE';
+
+    const arriveStep: RitualStep = {
+      id: 'arrive',
+      eyebrow: cfg.arrive.eyebrow,
+      headline: cfg.arrive.headline,
+      subtext: cfg.arrive.subtext,
+      autoAdvanceMs: 4000,
+      streakNote,
+    };
+
+    const focusStep: RitualStep = {
+      id: 'focus',
+      eyebrow: cfg.focus[0].eyebrow,
+      headline: cfg.focus[0].headline,
+      centerText: cfg.focus[0].centerText,
+      subtext: cfg.focus[0].subtext,
+      autoAdvanceMs: 0,
+    };
+
+    const noteStep: RitualStep = {
+      id: 'note',
+      eyebrow: cfg.note?.eyebrow ?? '',
+      headline: cfg.note?.headline ?? '',
+      subtext: '',
+      autoAdvanceMs: 0,
+    };
+
+    const recenterStep: RitualStep = {
+      id: 'recenter',
+      eyebrow: cfg.recenter.eyebrow,
+      headline: cfg.recenter.headline,
+      subtext: cfg.recenter.subtext,
+      autoAdvanceMs: 0,
+      intentionOptions: cfg.recenter.options,
+    };
+
+    const returnStep: RitualStep = {
+      id: 'return',
+      eyebrow: returnEyebrow,
+      headline: cfg.return.headline,
+      subtext: cfg.return.subtext,
+      autoAdvanceMs: 0,
+    };
+
+    if (depth === 'new')      return [arriveStep, focusStep, noteStep, recenterStep, returnStep];
+    if (depth === 'returning') return [arriveStep, noteStep, recenterStep, returnStep];
+    return [arriveStep, recenterStep, returnStep];
   }
 
   const depth   = getDepth(totalDays);

@@ -431,6 +431,98 @@ function ReleaseInput({
   );
 }
 
+// ─── Note input (optional write — balanced ritual) ────────────────────────────
+
+function NoteInput({
+  active,
+  onAdvance,
+  lang,
+}: {
+  active: boolean;
+  onAdvance: () => void;
+  lang?: string;
+}) {
+  const [text, setText] = useState('');
+  const [saved, setSaved] = useState(false);
+  const wrapOpacity  = useRef(new Animated.Value(0)).current;
+  const wrapTy       = useRef(new Animated.Value(12)).current;
+  const savedOpacity = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    if (!active) return;
+    Animated.parallel([
+      Animated.timing(wrapOpacity, {
+        toValue: 1, duration: 700, delay: 800,
+        easing: Easing.out(Easing.cubic), useNativeDriver: true,
+      }),
+      Animated.timing(wrapTy, {
+        toValue: 0, duration: 700, delay: 800,
+        easing: Easing.out(Easing.cubic), useNativeDriver: true,
+      }),
+    ]).start();
+  }, [active]);
+
+  const handleSave = useCallback(() => {
+    if (saved || !text.trim()) return;
+    Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    setSaved(true);
+    Animated.timing(savedOpacity, {
+      toValue: 0.55, duration: 700,
+      easing: Easing.out(Easing.cubic), useNativeDriver: true,
+    }).start();
+    setTimeout(onAdvance, 2000);
+  }, [saved, text, onAdvance, savedOpacity]);
+
+  const isEs = lang === 'es';
+  const isPt = lang === 'pt';
+  const isFrLang = lang === 'fr';
+  const isDeLang = lang === 'de';
+
+  const placeholder = isEs ? '¿Qué te ayudó a llegar hasta aquí hoy?' :
+                      isPt ? 'O que ajudou você a chegar até aqui hoje?' :
+                      isFrLang ? "Qu'est-ce qui t'a aidé à arriver jusqu'ici aujourd'hui ?" :
+                      isDeLang ? 'Was hat dir heute geholfen, hierher zu kommen?' :
+                                 'What helped you get here today?';
+
+  const saveLabel = isEs ? 'Guardar →' : isPt ? 'Guardar →' : isFrLang ? 'Garder →' : isDeLang ? 'Speichern →' : 'Save →';
+  const savedLabel = isEs ? 'Guardado.' : isPt ? 'Guardado.' : isFrLang ? 'Gardé.' : isDeLang ? 'Gespeichert.' : 'Noted.';
+
+  if (saved) {
+    return (
+      <Animated.Text style={[styles.releaseGoneText, { opacity: savedOpacity }]}>
+        {savedLabel}
+      </Animated.Text>
+    );
+  }
+
+  return (
+    <Animated.View style={[styles.releaseInputWrap, { opacity: wrapOpacity, transform: [{ translateY: wrapTy }] }]}>
+      <TextInput
+        style={styles.releaseInput}
+        placeholder={placeholder}
+        placeholderTextColor="rgba(255,255,255,0.18)"
+        value={text}
+        onChangeText={setText}
+        multiline
+        maxLength={200}
+        keyboardAppearance="dark"
+        returnKeyType="done"
+        blurOnSubmit
+        onSubmitEditing={handleSave}
+      />
+      {text.trim().length > 0 && (
+        <TouchableOpacity
+          style={styles.releaseLetGoBtn}
+          onPress={handleSave}
+          activeOpacity={0.7}
+        >
+          <Text style={styles.releaseLetGoBtnText}>{saveLabel}</Text>
+        </TouchableOpacity>
+      )}
+    </Animated.View>
+  );
+}
+
 // ─── Word-by-word reveal (reflect headline) ───────────────────────────────────
 
 function WordReveal({ text, active }: { text: string; active: boolean }) {
@@ -819,6 +911,7 @@ export default function ResetRitualScreen() {
   const isRecenter  = currentStep?.id === 'recenter';
   const isBreathe   = currentStep?.id === 'breathe';
   const isFocus     = currentStep?.id === 'focus';
+  const isNote      = currentStep?.id === 'note';
 
   // Use step-specific intention options when provided (mood-based rituals), else fall back to default
   const activeIntentionOptions = useMemo(
@@ -894,7 +987,14 @@ export default function ResetRitualScreen() {
     setSelectedIntention(id);
     setIntention(id as RitualIntention);
 
-    const phrases =
+    const balancedPhrases =
+      lang === 'pt' ? ['Isso vale notar.', 'Faz sentido levar isso.', 'Você pode manter isso.', 'Bom continuar com isso.'] :
+      lang === 'es' ? ['Vale la pena guardarlo.', 'Tiene sentido llevarlo.', 'Puedes mantener eso.', 'Bien continuar con esto.'] :
+      lang === 'fr' ? ['Ça vaut la peine de le garder.', 'Ça a du sens de l\'emporter.', 'Tu peux garder ça.', 'Bien de continuer avec ça.'] :
+      lang === 'de' ? ['Das ist es wert, es zu behalten.', 'Es macht Sinn, das mitzunehmen.', 'Das kannst du festhalten.', 'Gut, damit weiterzumachen.'] :
+                      ['That\'s worth keeping.', 'Good to carry that forward.', 'You can hold onto this.', 'That makes sense.'];
+
+    const phrases = ritualVariant === 'balanced' ? balancedPhrases :
       lang === 'pt' ? [
         'Tudo bem começar por aí.',
         'Isso já é suficiente.',
@@ -1052,6 +1152,14 @@ export default function ResetRitualScreen() {
                   active={!transitioning}
                 />
               )}
+
+              {currentStep.id === 'note' && (
+                <NoteInput
+                  active={!transitioning}
+                  onAdvance={advance}
+                  lang={lang}
+                />
+              )}
             </StepContent>
           )}
         </Animated.View>
@@ -1069,7 +1177,18 @@ export default function ResetRitualScreen() {
               end={{ x: 1, y: 1 }}
               style={styles.returnBtnInner}
             >
-              <Text style={styles.returnBtnText}>{lang === 'es' ? 'Lleva esta calma contigo' : lang === 'pt' ? 'Leve essa calma com você' : lang === 'fr' ? 'Emporte ce calme avec toi' : lang === 'de' ? 'Nimm diese Ruhe mit dir' : 'Carry this with you'}</Text>
+              <Text style={styles.returnBtnText}>{(() => {
+              if (ritualVariant === 'balanced') {
+                const opts =
+                  lang === 'pt' ? ['Levar isso comigo', 'Continuar com isso', 'Seguir no meu ritmo'] :
+                  lang === 'es' ? ['Llevar esto conmigo', 'Continuar con esto', 'Seguir en mi ritmo'] :
+                  lang === 'fr' ? ['Emporter ça avec moi', 'Continuer avec ça', 'Garder mon rythme'] :
+                  lang === 'de' ? ['Das mitnehmen', 'Damit weitermachen', 'In meinem Rhythmus bleiben'] :
+                                  ['Take this with me', 'Keep going with this', 'Stay in my rhythm'];
+                return opts[progress.currentDay % opts.length];
+              }
+              return lang === 'es' ? 'Lleva esta calma contigo' : lang === 'pt' ? 'Leve essa calma com você' : lang === 'fr' ? 'Emporte ce calme avec toi' : lang === 'de' ? 'Nimm diese Ruhe mit dir' : 'Carry this with you';
+            })()}</Text>
             </LinearGradient>
           </TouchableOpacity>
         ) : isRecenter ? null : isFocus ? (

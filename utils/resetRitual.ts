@@ -14,7 +14,8 @@ export type RitualStepId =
   | 'recenter'
   | 'reflect'
   | 'return'
-  | 'focus';   // text-only action step for mood-based ritual variants
+  | 'focus'    // text-only action step for mood-based ritual variants
+  | 'note';    // optional write step for the balanced ritual
 
 export interface RitualStep {
   id: RitualStepId;
