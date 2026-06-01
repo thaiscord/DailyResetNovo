@@ -1,244 +1,106 @@
-REFINAMENTO DA NARRATIVA DIÁRIA — TOPO DA TELA, SUBTÍTULOS, CARD "AMANHÃ" E VARIEDADE EMOCIONAL
-
-Faça uma revisão completa da narrativa diária do Daily Reset.
-
-O objetivo NÃO é adicionar novas funcionalidades.
-
-O objetivo é elevar a qualidade emocional da escrita para que o aplicativo pareça cada vez mais humano, pessoal e vivo conforme os dias avançam.
-
-A experiência deve transmitir a sensação de que o app está percebendo uma evolução gradual da pessoa, e não apenas exibindo frases bonitas aleatórias.
-
-1. REESTRUTURAR COMPLETAMENTE OS TEXTOS DO TOPO DA TELA
-
-Hoje muitos títulos funcionam isoladamente, mas ainda soam como frases inspiracionais genéricas.
-
-Exemplos:
-
-"Mesmo um progresso silencioso ainda é progresso."
-"Pequenos passos. Eles vão somando."
-"Ainda aqui. Ainda em movimento."
-
-Essas frases não estão erradas.
-
-Mas não parecem específicas daquele dia.
-
-Não parecem responder ao momento da jornada.
-
-Não parecem observar algo real sobre a pessoa.
-
-Quero que os títulos passem a funcionar como observações humanas.
-
-Devem soar como alguém percebendo algo que está acontecendo.
-
-Exemplos do tom desejado:
-
-"Você voltou. Isso conta."
-"Nem todo avanço faz barulho."
-"Hoje bastava aparecer."
-"Você não está começando do zero."
-"Ainda não está resolvido. E tudo bem."
-"Algumas coisas levam mais de um dia."
-"O que parecia impossível há alguns dias já não parece igual."
-"Seu ritmo não desapareceu."
-"Você está voltando a confiar em si."
-
-Não copiar esses exemplos.
-
-Usá-los apenas como referência de direção.
-
-2. FAZER COM QUE O TOPO EVOLUA JUNTO COM A JORNADA
-
-Os textos dos dias precisam refletir a fase da pessoa.
-
-Exemplo:
-
-Dias iniciais:
-
-acolhimento
-sobrevivência
-pausa
-reaparecer
-
-Primeira semana:
-
-consistência
-ritmo
-presença
-
-Segunda semana:
-
-confiança
-clareza
-coragem
-
-Semanas seguintes:
-
-autonomia
-reconstrução
-fortalecimento
-
-Os títulos devem transmitir essa progressão.
-
-O usuário deve sentir que existe uma história avançando.
-
-3. REESCREVER TODOS OS SUBTÍTULOS CINZA
-
-Problema atual:
-
-Muitas vezes o subtítulo repete exatamente a mesma ideia do título.
-
-Exemplo:
-
-Título:
-" Ainda aqui. Ainda em movimento."
-
-Subtítulo:
-" Aparecer já é tudo."
-
-Os dois textos dizem praticamente a mesma coisa.
-
-Isso desperdiça espaço narrativo.
-
-Nova regra:
-
-O subtítulo deve complementar o título.
-
-Nunca repetir a mesma mensagem.
-
-Ele deve aprofundar a observação.
-
-Exemplos de estrutura:
-
-Título:
-"Algo está se assentando em você."
-
-Subtítulo:
-"Algumas mudanças chegam devagar demais para serem vistas no mesmo dia."
-
-Ou:
-
-Título:
-"Você voltou."
-
-Subtítulo:
-"Mesmo quando parecia mais fácil desistir."
-
-Ou:
-
-Título:
-"Seu ritmo não desapareceu."
-
-Subtítulo:
-"Ele só estava esperando espaço para reaparecer."
-
-O usuário deve sentir profundidade.
-
-Não repetição.
-
-4. REVISAR TODOS OS CARDS "AMANHÃ"
-
-Atualmente alguns cards "Amanhã" funcionam bem.
-
-Outros parecem frases temporárias ou genéricas.
-
-Exemplos que precisam ser evitados:
-
-"O próximo reset chega quando você voltar."
-frases excessivamente neutras
-frases que encerram a experiência sem emoção
-
-O card "Amanhã" deve:
-
-encerrar o dia com suavidade
-gerar continuidade
-gerar curiosidade leve
-reforçar segurança emocional
-
-Sem criar ansiedade.
-
-Sem criar urgência.
-
-Sem parecer notificação de aplicativo.
-
-Deve soar como:
-
-"Há espaço para continuar amanhã."
-
-e não como:
-
-"Volte amanhã para desbloquear algo."
-
-Revisar todos os textos desta seção.
-
-5. AUMENTAR A VARIEDADE EMOCIONAL DA EXPERIÊNCIA
-
-Hoje muitos conteúdos giram ao redor de:
-
-continuar
-aparecer
-descansar
-pequenos passos
-
-Esses temas devem permanecer.
-
-Mas a experiência precisa ganhar mais amplitude emocional.
-
-Distribuir ao longo dos dias emoções como:
-
-alívio
-coragem
-confiança
-curiosidade
-aceitação
-leveza
-orgulho silencioso
-presença
-esperança tranquila
-autonomia
-paciência
-gentileza consigo mesmo
-recuperação
-reconexão
-clareza
-estabilidade emocional
-
-Evitar repetição excessiva dos mesmos conceitos.
-
-6. REGRA MAIS IMPORTANTE
-
-Nenhum texto deve soar:
-
-coach
-autoajuda genérica
-frase de Instagram
-frase motivacional clichê
-terapia artificial
-IA escrevendo para parecer profunda
-
-Todos os textos devem soar como observações humanas simples, honestas e emocionalmente verdadeiras.
-
-O usuário deve sentir:
-
-"Isso parece ter sido escrito para alguém vivendo exatamente este momento."
-
-Essa é a sensação que deve guiar toda a revisão.
-
-7. INTERNACIONALIZAÇÃO (i18n)
-
-Após revisar todos os textos:
-
-atualizar todas as traduções
-inglês
-espanhol
-francês
-alemão
-
-Não fazer traduções literais.
-
-Adaptar cada idioma para soar natural para um falante nativo.
-
-Preservar emoção, contexto e humanidade.
-
-O resultado final deve parecer escrito originalmente em cada idioma.
-
-Faça a revisão completa de todos os textos existentes relacionados ao topo da tela, subtítulos, card "Amanhã" e progressão emocional da jornada, mantendo consistência com toda a narrativa já construída no Daily Reset.
+Faça apenas estes ajustes na aba Mindset / Reflexões, sem alterar a estrutura geral, sem mexer na aba Hoje, Progresso, Diário, Reset Ritual ou i18n fora do necessário.
+
+1. Compactar o bloco contextual que aparece depois que a pessoa seleciona um estado emocional em “Como você está chegando agora?”
+Hoje esse bloco fica alto demais. Reduza aproximadamente 20% a 25% do espaçamento vertical interno e externo.
+O texto deve ficar mais próximo, com menos respiro entre:
+- “Chegando com • [estado]”
+- título principal
+- subtítulo
+- cards recomendados
+
+Exemplo visual desejado:
+“Chegando com • Baixa energia”
+“Leveza primeiro.”
+“Para quando o ritmo desacelerou.”
+
+Sem grandes espaços vazios entre essas linhas.
+
+2. Adicionar um pequeno rótulo acima dos cards recomendados depois que a pessoa seleciona um estado emocional.
+Esse rótulo deve deixar claro que aqueles cards foram sugeridos para o momento dela.
+
+Usar em PT-BR:
+“Pode ajudar hoje”
+
+Estilo:
+- pequeno
+- discreto
+- caixa alta ou letter spacing leve, seguindo o padrão visual do app
+- cor cinza suave ou dourado discreto
+- sem parecer botão
+- sem ocupar muito espaço
+
+Aplicar também no i18n, com adaptação natural, não tradução literal:
+EN: “Might help today”
+ES: “Puede ayudar hoy”
+FR: “Ça peut aider aujourd’hui”
+DE: “Könnte heute helfen”
+
+3. Corrigir o estado vazio antes da pessoa escolher uma emoção.
+Quando nenhuma opção estiver selecionada em “Como você está chegando agora?”, não deve aparecer espaço reservado, card vazio, sugestão solta nem botão perdido.
+
+Antes da escolha, mostrar apenas uma mensagem limpa e centralizada/discreta:
+
+PT-BR:
+“Escolha como você está chegando agora.
+Cada estado abre caminhos diferentes.”
+
+EN:
+“Choose how you’re arriving right now.
+Each state opens a different path.”
+
+ES:
+“Elige cómo llegas ahora.
+Cada estado abre un camino distinto.”
+
+FR:
+“Choisis comment tu arrives maintenant.
+Chaque état ouvre un chemin différent.”
+
+DE:
+“Wähle, wie du gerade ankommst.
+Jeder Zustand öffnet einen anderen Weg.”
+
+Assim que a pessoa selecionar uma emoção, esconder essa mensagem e mostrar o bloco contextual com o rótulo “Pode ajudar hoje” + cards recomendados.
+
+4. Aumentar o tempo de leitura do texto intermediário que aparece depois da seleção emocional.
+Hoje, quando a pessoa seleciona um estado como “Baixa energia”, o texto tipo:
+“Hoje é sobre o que realmente importa.”
+“Nem todos os dias foram feitos para render...”
+some rápido demais.
+
+Ajustar para:
+- entrada suave com fade/slide leve
+- permanecer visível por tempo suficiente para leitura confortável
+- duração mínima visível: 4,5 a 5 segundos
+- se o texto tiver duas linhas ou mais, usar 5,5 a 6 segundos
+- não acelerar automaticamente se a pessoa não tocar
+- permitir que a pessoa role normalmente sem travar a tela
+- manter a sensação calma e premium
+
+Não transformar em modal.
+Não adicionar botão.
+Não deixar lento demais.
+Apenas melhorar o tempo de permanência e leitura.
+
+5. Garantir que tudo continue funcionando com i18n.
+Nenhum texto fixo direto no componente.
+Usar as chaves de tradução existentes ou criar novas chaves organizadas.
+Verificar PT-BR, EN, ES, FR e DE.
+As frases devem soar naturais para nativos, não tradução literal.
+
+6. Não alterar:
+- cards “Caminhos para voltar”
+- card “Seu espaço particular”
+- aba Progresso
+- aba Hoje
+- resumo semanal
+- lógica de reset
+- contadores
+- design geral
+- cores principais
+- navbar
+
+Objetivo final:
+A aba Mindset deve ficar mais compacta, clara e intencional:
+antes de escolher emoção, limpa e sem espaços estranhos;
+depois de escolher emoção, com acolhimento legível, recomendações claras e tempo suficiente para a pessoa ler.

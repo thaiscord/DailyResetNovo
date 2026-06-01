@@ -571,7 +571,10 @@ export default function MindsetScreen() {
             }).start(() => {
               if (animSeqToken.current !== token) return;
 
-              // Phase 5 — hold phrase long enough to absorb it (1100ms).
+              // Phase 5 — hold long enough for comfortable reading.
+              // Multi-line body text gets extra time (5500ms vs 4500ms).
+              const bodyText = TRANSITION_BODY[lang]?.[emotionKey] ?? TRANSITION_BODY['en']?.[emotionKey] ?? '';
+              const holdMs = bodyText.includes('\n') ? 5500 : 4500;
               setTimeout(() => {
                 if (animSeqToken.current !== token) return;
 
@@ -603,7 +606,7 @@ export default function MindsetScreen() {
                     ]).start();
                   }, 16);
                 });
-              }, 1100);
+              }, holdMs);
             });
           }, 0);
         });
@@ -858,6 +861,23 @@ export default function MindsetScreen() {
                     {t('mindset.foryou.question')}
                   </Text>
                 </Animated.View>
+                {/* Pre-selection hint — clean, centered, hidden once emotion is tapped */}
+                {!pendingEmotion && (
+                  <Text style={{
+                    fontSize: 12,
+                    color: 'rgba(61,53,48,0.38)',
+                    textAlign: 'center',
+                    lineHeight: 19,
+                    fontStyle: 'italic',
+                    marginBottom: 14,
+                  }}>
+                    {lang === 'pt' ? 'Escolha como você está chegando agora.\nCada estado abre caminhos diferentes.' :
+                     lang === 'es' ? 'Elige cómo llegas ahora.\nCada estado abre un camino distinto.' :
+                     lang === 'fr' ? 'Choisis comment tu arrives maintenant.\nChaque état ouvre un chemin différent.' :
+                     lang === 'de' ? 'Wähle, wie du gerade ankommst.\nJeder Zustand öffnet einen anderen Weg.' :
+                                     "Choose how you're arriving right now.\nEach state opens a different path."}
+                  </Text>
+                )}
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
                   {EMOTIONS.map((emotion, idx) => {
                     const emoRadius = [20, 18, 19, 18, 20][idx] ?? 18;
@@ -948,9 +968,9 @@ export default function MindsetScreen() {
             {/* ── ESTADO B: Cards recomendados ─────────────────────────────── */}
             {recommendationState === 'B' && selectedEmotion && (
               <Animated.View style={{ transform: [{ translateY: mindsetTranslateY }] }}><>
-                <View style={{ paddingHorizontal: Spacing.xl, marginBottom: 12 }}>
+                <View style={{ paddingHorizontal: Spacing.xl, marginBottom: 6 }}>
                   {/* Emotion indicator — discrete breadcrumb showing what was chosen */}
-                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5, marginBottom: 10 }}>
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5, marginBottom: 6 }}>
                     <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: '#C9973A', opacity: 0.55 }} />
                     <Text style={{ fontSize: 10, color: '#C9973A', letterSpacing: 0.8, opacity: 0.75 }}>
                       {lang === 'pt' ? 'CHEGANDO COM' :
@@ -961,7 +981,7 @@ export default function MindsetScreen() {
                       <Text style={{ fontWeight: '600' }}>{t('mindset.emotion.' + selectedEmotion)}</Text>
                     </Text>
                   </View>
-                  <Text style={{ fontSize: 13, fontWeight: '600', color: '#3D3530', marginBottom: 4, fontStyle: 'italic' }}>
+                  <Text style={{ fontSize: 13, fontWeight: '600', color: '#3D3530', marginBottom: 2, fontStyle: 'italic' }}>
                     {lang === 'pt'
                       ? EMOTION_ADAPTIVE_PT[selectedEmotion].eyebrow
                       : lang === 'es'
@@ -974,13 +994,28 @@ export default function MindsetScreen() {
                     {t('mindset.emotion.' + selectedEmotion + '.sub')}
                   </Text>
                 </View>
+                {/* "Pode ajudar hoje" label — small, discrete, above cards */}
+                <Text style={{
+                  paddingHorizontal: Spacing.xl,
+                  fontSize: 10,
+                  fontWeight: '600',
+                  letterSpacing: 1.2,
+                  color: 'rgba(90,82,77,0.45)',
+                  marginBottom: 4,
+                }}>
+                  {lang === 'pt' ? 'PODE AJUDAR HOJE' :
+                   lang === 'es' ? 'PUEDE AYUDAR HOY' :
+                   lang === 'fr' ? "ÇA PEUT AIDER AUJOURD'HUI" :
+                   lang === 'de' ? 'KÖNNTE HEUTE HELFEN' :
+                                   'MIGHT HELP TODAY'}
+                </Text>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
                   data={recommendedCardsV2}
                   keyExtractor={item => item.id}
-                  contentContainerStyle={{ paddingHorizontal: Spacing.xl, paddingVertical: 10 }}
-                  style={{ marginBottom: 16 }}
+                  contentContainerStyle={{ paddingHorizontal: Spacing.xl, paddingVertical: 6 }}
+                  style={{ marginBottom: 10 }}
                   ItemSeparatorComponent={() => <View style={{ width: 12 }} />}
                   renderItem={({ item }) => (
                     <TouchableOpacity
