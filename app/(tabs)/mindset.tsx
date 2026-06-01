@@ -230,36 +230,44 @@ const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
 
 // ─── Adaptive emotional copy per emotion state ────────────────────────────────
 const EMOTION_ADAPTIVE_PT: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'Nem tudo precisa da sua atenção agora.',              hint: 'O peso não precisa ser carregado sozinho.' },
-  numb:        { eyebrow: 'Algumas respostas aparecem quando o ritmo desacelera.', hint: 'Às vezes o silêncio já faz espaço.' },
-  frustrated:  { eyebrow: 'Você não precisa recuperar tudo hoje.',               hint: 'O peso mental também pede espaço.' },
-  low_energy:  { eyebrow: 'Hoje não precisa ser um dia de força.',               hint: 'Sem pressão. Só presença.' },
-  anxious:     { eyebrow: 'Nem todo pensamento precisa de resposta.',            hint: 'O ruído diminui. O espaço continua aqui.' },
-  balanced:    { eyebrow: 'Você não precisa consertar nada agora.',             hint: 'Presença também é cuidado.' },
+  overwhelmed: { eyebrow: 'Parece que muita coisa pede atenção agora.',  hint: 'O peso não precisa ser carregado sozinho.' },
+  numb:        { eyebrow: 'Nem tudo precisa estar claro agora.',          hint: 'Às vezes o silêncio já faz espaço.' },
+  frustrated:  { eyebrow: 'Faz sentido que o ritmo esteja assim.',        hint: 'O peso mental também pede espaço.' },
+  low_energy:  { eyebrow: 'Hoje talvez peça um ritmo diferente.',         hint: 'Sem pressão. Só presença.' },
+  anxious:     { eyebrow: 'Tem bastante coisa passando por aí.',          hint: 'O ruído diminui. O espaço continua aqui.' },
+  balanced:    { eyebrow: 'Há espaço para seguir com calma.',             hint: 'Presença também é cuidado.' },
 };
 const EMOTION_ADAPTIVE_EN: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'Not everything needs your attention right now.',    hint: 'The pressure doesn\'t have to be carried alone.' },
-  numb:        { eyebrow: 'Some answers come when the pace slows down.',       hint: 'Sometimes silence makes room.' },
-  frustrated:  { eyebrow: 'You don\'t need to recover everything today.',     hint: 'Mental weight also needs room to breathe.' },
-  low_energy:  { eyebrow: 'Today doesn\'t need to be a day of strength.',     hint: 'No pressure. Just presence.' },
-  anxious:     { eyebrow: 'Not every thought needs an answer.',               hint: 'The noise quiets. The space remains.' },
-  balanced:    { eyebrow: "You don't need to fix anything right now.",        hint: 'Presence is also care.' },
+  overwhelmed: { eyebrow: 'It seems a lot is asking for attention.',          hint: 'The pressure doesn\'t have to be carried alone.' },
+  numb:        { eyebrow: 'Not everything needs to be clear right now.',      hint: 'Sometimes silence makes room.' },
+  frustrated:  { eyebrow: 'It makes sense the pace feels off.',              hint: 'Mental weight also needs room to breathe.' },
+  low_energy:  { eyebrow: 'Today might just call for a different pace.',      hint: 'No pressure. Just presence.' },
+  anxious:     { eyebrow: 'There\'s quite a bit going on right now.',         hint: 'The noise quiets. The space remains.' },
+  balanced:    { eyebrow: 'There\'s room to keep going gently.',             hint: 'Presence is also care.' },
 };
 const EMOTION_ADAPTIVE_ES: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'No todo necesita tu atención ahora.',         hint: 'El peso no necesita cargarse solo.' },
-  numb:        { eyebrow: 'Algunas respuestas llegan cuando el ritmo baja.', hint: 'A veces el silencio ya abre espacio.' },
-  frustrated:  { eyebrow: 'No tienes que recuperarte de todo hoy.',      hint: 'El peso también necesita su espacio.' },
-  low_energy:  { eyebrow: 'Hoy no tiene que ser un día de fuerza.',      hint: 'Solo presencia. Nada más.' },
-  anxious:     { eyebrow: 'No todo pensamiento necesita respuesta.',     hint: 'El ruido se aquieta. El espacio sigue aquí.' },
-  balanced:    { eyebrow: 'No necesitas arreglar nada ahora.',           hint: 'La presencia también es cuidado.' },
+  overwhelmed: { eyebrow: 'Parece que muchas cosas piden atención ahora.',   hint: 'El peso no necesita cargarse solo.' },
+  numb:        { eyebrow: 'No todo necesita estar claro ahora.',              hint: 'A veces el silencio ya abre espacio.' },
+  frustrated:  { eyebrow: 'Tiene sentido que el ritmo esté así.',            hint: 'El peso también necesita su espacio.' },
+  low_energy:  { eyebrow: 'Hoy quizás pide un ritmo diferente.',             hint: 'Solo presencia. Nada más.' },
+  anxious:     { eyebrow: 'Hay bastante pasando por ahí ahora mismo.',       hint: 'El ruido se aquieta. El espacio sigue aquí.' },
+  balanced:    { eyebrow: 'Hay espacio para seguir con calma.',              hint: 'La presencia también es cuidado.' },
+};
+const EMOTION_ADAPTIVE_FR: Record<EmotionKey, { eyebrow: string; hint: string }> = {
+  overwhelmed: { eyebrow: 'Il y a beaucoup qui demande de l\'attention.',    hint: 'La pression n\'a pas à être portée seul.' },
+  numb:        { eyebrow: 'Tout n\'a pas besoin d\'être clair maintenant.',  hint: 'Parfois le silence fait de la place.' },
+  frustrated:  { eyebrow: 'C\'est normal que le rythme soit ainsi.',         hint: 'Le poids intérieur a aussi besoin d\'espace.' },
+  low_energy:  { eyebrow: 'Aujourd\'hui demande peut-être un autre rythme.', hint: 'Sans pression. Juste présence.' },
+  anxious:     { eyebrow: 'Il y a beaucoup qui se passe là en ce moment.',   hint: 'Le bruit s\'apaise. L\'espace reste.' },
+  balanced:    { eyebrow: 'Il y a de l\'espace pour continuer sereinement.', hint: 'La présence est aussi un soin.' },
 };
 const EMOTION_ADAPTIVE_DE: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'Nicht alles braucht jetzt deine Aufmerksamkeit.',  hint: 'Der Druck muss nicht alleine getragen werden.' },
-  numb:        { eyebrow: 'Manche Antworten kommen, wenn das Tempo sinkt.',   hint: 'Manchmal schafft Stille Raum.' },
-  frustrated:  { eyebrow: 'Du musst heute nicht alles aufholen.',             hint: 'Innere Schwere braucht auch Platz zum Atmen.' },
-  low_energy:  { eyebrow: 'Heute muss kein starker Tag sein.',                hint: 'Kein Druck. Nur Präsenz.' },
-  anxious:     { eyebrow: 'Nicht jeder Gedanke braucht eine Antwort.',        hint: 'Das Rauschen wird leiser. Der Raum bleibt.' },
-  balanced:    { eyebrow: 'Du musst gerade nichts verändern.',                hint: 'Präsenz ist auch Fürsorge.' },
+  overwhelmed: { eyebrow: 'Einiges fordert gerade deine Aufmerksamkeit.',    hint: 'Der Druck muss nicht alleine getragen werden.' },
+  numb:        { eyebrow: 'Nicht alles muss gerade klar sein.',              hint: 'Manchmal schafft Stille Raum.' },
+  frustrated:  { eyebrow: 'Das Tempo darf gerade so sein.',                  hint: 'Innere Schwere braucht auch Platz zum Atmen.' },
+  low_energy:  { eyebrow: 'Heute verlangt vielleicht ein anderes Tempo.',    hint: 'Kein Druck. Nur Präsenz.' },
+  anxious:     { eyebrow: 'Da ist gerade einiges im Gange.',                 hint: 'Das Rauschen wird leiser. Der Raum bleibt.' },
+  balanced:    { eyebrow: 'Es gibt Raum, ruhig weiterzugehen.',              hint: 'Präsenz ist auch Fürsorge.' },
 };
 
 // ─── Emotional pause interludes — every 5 cards (Problem 3) ──────────────────
@@ -997,12 +1005,10 @@ export default function MindsetScreen() {
                     </Text>
                   </View>
                   <Text style={{ fontSize: 13, fontWeight: '600', color: '#3D3530', fontStyle: 'italic' }}>
-                    {lang === 'pt'
-                      ? EMOTION_ADAPTIVE_PT[selectedEmotion].eyebrow
-                      : lang === 'es'
-                      ? EMOTION_ADAPTIVE_ES[selectedEmotion].eyebrow
-                      : lang === 'de'
-                      ? EMOTION_ADAPTIVE_DE[selectedEmotion].eyebrow
+                    {lang === 'pt' ? EMOTION_ADAPTIVE_PT[selectedEmotion].eyebrow
+                      : lang === 'es' ? EMOTION_ADAPTIVE_ES[selectedEmotion].eyebrow
+                      : lang === 'fr' ? EMOTION_ADAPTIVE_FR[selectedEmotion].eyebrow
+                      : lang === 'de' ? EMOTION_ADAPTIVE_DE[selectedEmotion].eyebrow
                       : EMOTION_ADAPTIVE_EN[selectedEmotion].eyebrow}
                   </Text>
                 </View>
