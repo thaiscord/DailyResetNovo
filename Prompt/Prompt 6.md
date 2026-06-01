@@ -1,208 +1,256 @@
-AJUSTE APENAS OS CARDS "RITUAL DE RESET" E "AMANHÃ".
+QUERO FAZER DOIS AJUSTES ESPECÍFICOS NA ABA PROGRESS.
 
-NÃO alterar layout geral.
-NÃO alterar cores.
-NÃO alterar espaçamentos.
-NÃO alterar tamanho dos cards.
+NÃO ALTERAR:
 
-Objetivo:
-Aumentar curiosidade, sensação de personalização e vontade de continuar usando o app.
+* Seu Primeiro Sinal
+* Padrões Percebidos
+* Linha de Reconstrução
+* Seu Espaço Particular
+* Resumo Semanal
+* Reflexões Silenciosas
+* Sinais do Caminho
+* Layout geral da tela
+* Paleta visual
+* Espaçamentos principais
 
----
+O objetivo é apenas melhorar:
 
-1. CARD "RITUAL DE RESET"
+1. Ritmo da Semana
+2. Sinais Reais
 
----
+sem modificar o restante da experiência.
 
-Hoje o card está muito genérico:
+──────────────────────────────
 
-Título:
-"Ritual de Reset"
+AJUSTE 1 — RITMO DA SEMANA
 
-Subtítulo:
-"Um momento calmo para voltar para si."
+Hoje o card está repetindo informações já mostradas em:
 
-O problema é que ele não comunica valor imediato nem cria motivo para clicar.
+* Seu Primeiro Sinal
+* Sinais Reais
+* Linha de Reconstrução
 
-Manter o título:
-"Ritual de Reset"
+O usuário acaba lendo várias vezes:
 
-Mas substituir o subtítulo fixo por subtítulos curtos e dinâmicos.
+"Você voltou."
 
-Gerar uma rotação de mensagens.
+Quero que o card Ritmo da Semana deixe de repetir e passe a mostrar contexto.
 
-Exemplos:
+Manter o visual atual.
 
-* Seu reset está pronto.
-* Um momento criado para hoje.
-* Dois minutos para desacelerar.
-* Um pequeno retorno para você.
-* Seu próximo passo está aqui.
-* Um exercício para este momento.
-* Feito para a mente que você escolheu hoje.
-* Um minuto pode mudar o ritmo.
-* Um espaço para respirar antes de continuar.
-* Algo simples para fazer agora.
-* Seu momento de pausa está esperando.
-* Um reset baseado em como você está hoje.
-* Menos ruído. Mais presença.
-* Um exercício para voltar ao presente.
-* Seu momento começa aqui.
+Manter o círculo.
 
-Regras:
+Manter a identidade visual.
 
-* Máximo de 45 caracteres.
-* Nunca usar tom de coach.
-* Nunca usar urgência artificial.
-* Nunca usar exclamações.
-* Nunca usar promessas exageradas.
-* Deve parecer humano, simples e acolhedor.
+Alterar apenas o conteúdo.
 
-O subtítulo deve mudar conforme o estado emocional selecionado sempre que possível.
+──────────────────────────────
+
+PARA USUÁRIOS ENTRE 1 E 6 DIAS
+
+Centro do círculo:
+
+"1 dia"
+"2 dias"
+"3 dias"
+etc.
+
+Remover:
+
+"Você voltou"
+
+e
+
+"presença registrada"
+
+do centro.
+
+──────────────────────────────
+
+Texto principal ao lado:
+
+Dia 1:
+
+"Primeiro retorno registrado."
+
+Dia 2:
+
+"Dois retornos já deixaram marca."
+
+Dia 3:
+
+"Um ritmo discreto começou a aparecer."
+
+Dia 4:
+
+"Você continua reaparecendo."
+
+Dia 5:
+
+"Os retornos estão começando a se conectar."
+
+Dia 6:
+
+"Algo está ficando mais familiar."
+
+──────────────────────────────
+
+Subtexto complementar:
+
+"Os padrões aparecem aos poucos."
+
+ou
+
+"Ainda é cedo para conclusões."
+
+ou
+
+"O ritmo costuma surgir antes da confiança."
+
+ou
+
+"Os sinais ficam mais claros com o tempo."
+
+Variar dinamicamente.
+
+──────────────────────────────
+
+OBJETIVO
+
+O card deve responder:
+
+"O que esse número significa?"
+
+e não apenas mostrar que existe um número.
+
+──────────────────────────────
+
+AJUSTE 2 — SINAIS REAIS
+
+Os cards atuais estão bons.
+
+Mas alguns conceitos parecem avançados demais para o Dia 1.
 
 Exemplo:
 
-Mente acelerada:
-"Dois minutos para desacelerar."
+"Constância mais presente"
 
-Com cansaço:
-"Um espaço para respirar."
+No primeiro retorno ainda é cedo para falar em constância.
 
-Sem clareza:
-"Um exercício para organizar a mente."
+Quero que os primeiros dias usem sinais menores e mais observáveis.
 
-Sobrecarregado:
-"Menos peso por alguns minutos."
+──────────────────────────────
 
-Sem energia:
-"Sem pressão. Só presença."
+DIA 1
 
----
+Card 1
 
-2. CARD "AMANHÃ"
+Título:
 
----
+"Você voltou"
 
-Hoje o card ficou genérico demais:
+Texto:
 
-"Algo pequeno espera você amanhã."
+"Hoje existiu um retorno."
 
-Ele perdeu personalidade.
+──────────────────────────────
 
-Objetivo:
-Criar curiosidade sem revelar o conteúdo do próximo reset.
+Card 2
 
-O card NÃO deve mostrar:
+Título:
 
-* número do próximo dia
-* nome da próxima categoria
-* frase do próximo reset
-* conteúdo do próximo reset
+"Mais presença"
 
-Mas deve sugerir continuidade.
+Texto:
 
-Criar uma rotação de mensagens curtas.
+"Você abriu um pequeno espaço."
 
-Exemplos:
+──────────────────────────────
 
-* Amanhã continua daqui.
-* Há algo guardado para amanhã.
-* O próximo passo aparece quando você voltar.
-* Seu ritmo continua amanhã.
-* Uma nova pausa espera você.
-* Amanhã tem seu próprio momento.
-* O próximo reset chega quando você voltar.
-* Nem tudo precisa acontecer hoje.
-* Amanhã também conta.
-* Algo novo se abre amanhã.
-* Um pequeno espaço continua amanhã.
-* O próximo momento ainda está fechado.
-* Amanhã tem outra página.
-* Há mais do que parece.
-* O caminho continua no seu ritmo.
+Card 3
 
-Regras:
+Título:
 
-* Máximo de 60 caracteres.
-* Não revelar conteúdo futuro.
-* Não revelar categoria futura.
-* Não revelar dia futuro.
-* Não usar frases motivacionais.
-* Não usar tom de produtividade.
-* Deve despertar curiosidade leve.
+"Um começo"
 
----
+Texto:
 
-3. PERSONALIZAÇÃO
+"Algo começou a reaparecer."
 
----
+──────────────────────────────
 
-Se possível, usar o estágio do usuário para variar as mensagens.
+DIA 2 A 6
 
-Dias 1–3:
-sensação de começo.
+Permitir variações como:
 
-Dias 4–7:
-sensação de continuidade.
+"Você apareceu"
+"Você continuou"
+"Mais presença"
+"Pequenos sinais"
+"Algo permaneceu"
+"Um ritmo leve"
+"Um retorno a mais"
+"Você voltou de novo"
 
-Dias 8–30:
-sensação de construção silenciosa.
+Sempre com textos curtos.
 
-30+ dias:
-sensação de profundidade e permanência.
+Máximo:
 
-A experiência deve parecer viva e evoluir com o tempo, sem parecer repetitiva.
----
+1 linha de título
+2 linhas de descrição
 
-4. INTERNACIONALIZAÇÃO (OBRIGATÓRIO)
+──────────────────────────────
 
----
+REGRAS IMPORTANTES
 
-Todos os novos textos dos cards "Ritual de Reset" e "Amanhã" devem utilizar o sistema de i18n existente do app.
+Não usar:
 
-NÃO deixar nenhuma string hardcoded.
+* Parabéns
+* Você conseguiu
+* Continue firme
+* Orgulho
+* Vitória
+* Conquista
+* Jornada incrível
+* Transformação
 
-Adicionar traduções completas para:
+Não utilizar linguagem coach.
 
-* Português
+Não utilizar linguagem terapêutica.
+
+Não utilizar celebrações exageradas.
+
+O tom deve ser:
+
+* humano
+* observacional
+* calmo
+* elegante
+* minimalista
+
+Como se o aplicativo estivesse apenas percebendo sinais reais.
+
+──────────────────────────────
+
+INTERNACIONALIZAÇÃO (OBRIGATÓRIO)
+
+Aplicar para:
+
+* Português (Brasil)
 * Inglês
 * Espanhol
 * Francês
 * Alemão
 
-IMPORTANTE:
+NÃO fazer tradução literal.
 
-Não fazer tradução literal.
+Cada idioma deve parecer escrito originalmente por um nativo.
 
-Adaptar cada frase para soar natural para um falante nativo.
+Manter:
 
-O objetivo é manter a mesma sensação emocional e não as mesmas palavras.
+* naturalidade
+* simplicidade
+* tom humano
+* tom observacional
 
-Exemplo:
-
-PT:
-"Amanhã continua daqui."
-
-EN:
-"Tomorrow picks up where you left off."
-
-ES:
-"Mañana continúa a tu ritmo."
-
-FR:
-"Demain reprend doucement le fil."
-
-DE:
-"Morgen geht es in deinem Tempo weiter."
-
-Cada idioma deve soar humano, acolhedor e natural.
-
-Verificar que:
-
-* Expo Go utiliza as traduções corretas.
-* Web utiliza as traduções corretas.
-* Não existem fallbacks inesperados para inglês.
-* Não existem misturas de idiomas na mesma tela.
-* Os textos mudam corretamente ao trocar o idioma no app.
-
-Executar auditoria completa para garantir que os cards "Ritual de Reset" e "Amanhã" estejam 100% compatíveis com o sistema de internacionalização existente.
+Sem aparência de tradução automática.

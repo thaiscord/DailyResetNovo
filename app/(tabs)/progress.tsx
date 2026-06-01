@@ -133,7 +133,7 @@ function ProgressHero({ fadeAnim, seed }: { fadeAnim: Animated.Value; seed: numb
 
 function WeeklyRhythmCard({
   percent,
-  totalDays: _totalDays,
+  totalDays,
   hasData,
   fadeAnim,
 }: {
@@ -142,7 +142,8 @@ function WeeklyRhythmCard({
   hasData: boolean;
   fadeAnim: Animated.Value;
 }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
+  const isEarlyUser = totalDays >= 1 && totalDays <= 6;
   const breathScale    = useRef(new Animated.Value(1)).current;
   const glowOpacity    = useRef(new Animated.Value(0.08)).current;
   const innerGlowOpacity = useRef(new Animated.Value(0.05)).current;
@@ -183,11 +184,99 @@ function WeeklyRhythmCard({
             <Animated.View style={[styles.ringInnerGlow, { opacity: innerGlowOpacity }]} />
             <RingProgress percent={percent} size={100} strokeWidth={7} />
             <View style={styles.ringCenter}>
-              <Text style={styles.ringReturnText}>{t('progress2.rhythm.returnMain')}</Text>
-              <Text style={styles.ringLabel}>{t('progress2.rhythm.returnLabel')}</Text>
+              {isEarlyUser ? (
+                <>
+                  <Text style={[styles.ringReturnText, { fontSize: 15, lineHeight: 18 }]}>{totalDays}</Text>
+                  <Text style={styles.ringLabel}>{
+                    lang === 'pt' ? (totalDays === 1 ? 'dia' : 'dias') :
+                    lang === 'es' ? (totalDays === 1 ? 'día' : 'días') :
+                    lang === 'fr' ? (totalDays === 1 ? 'jour' : 'jours') :
+                    lang === 'de' ? (totalDays === 1 ? 'Tag' : 'Tage') :
+                                    (totalDays === 1 ? 'day' : 'days')
+                  }</Text>
+                </>
+              ) : (
+                <>
+                  <Text style={styles.ringReturnText}>{t('progress2.rhythm.returnMain')}</Text>
+                  <Text style={styles.ringLabel}>{t('progress2.rhythm.returnLabel')}</Text>
+                </>
+              )}
             </View>
           </Animated.View>
-          <Text style={styles.rhythmDescription}>{t('progress2.rhythm.tagline')}</Text>
+          {isEarlyUser ? (() => {
+            const dayMessages =
+              lang === 'pt' ? [
+                'Primeiro retorno registrado.',
+                'Dois retornos já deixaram marca.',
+                'Um ritmo discreto começou a aparecer.',
+                'Você continua reaparecendo.',
+                'Os retornos estão começando a se conectar.',
+                'Algo está ficando mais familiar.',
+              ] : lang === 'es' ? [
+                'Primer retorno registrado.',
+                'Dos retornos ya dejaron marca.',
+                'Un ritmo discreto comenzó a aparecer.',
+                'Sigues reapareciendo.',
+                'Los retornos están empezando a conectarse.',
+                'Algo se está volviendo más familiar.',
+              ] : lang === 'fr' ? [
+                'Premier retour enregistré.',
+                'Deux retours ont déjà laissé une trace.',
+                'Un rythme discret a commencé à apparaître.',
+                'Tu continues de revenir.',
+                'Les retours commencent à se connecter.',
+                'Quelque chose devient plus familier.',
+              ] : lang === 'de' ? [
+                'Erste Rückkehr verzeichnet.',
+                'Zwei Rückkehren haben bereits eine Spur hinterlassen.',
+                'Ein leiser Rhythmus begann zu erscheinen.',
+                'Du tauchst immer wieder auf.',
+                'Die Rückkehren beginnen sich zu verbinden.',
+                'Etwas wird vertrauter.',
+              ] : [
+                'First return registered.',
+                'Two returns have already left a mark.',
+                'A quiet rhythm started to appear.',
+                'You keep showing up.',
+                'The returns are starting to connect.',
+                'Something is becoming more familiar.',
+              ];
+            const subtexts =
+              lang === 'pt' ? [
+                'Os padrões aparecem aos poucos.',
+                'Ainda é cedo para conclusões.',
+                'O ritmo costuma surgir antes da confiança.',
+                'Os sinais ficam mais claros com o tempo.',
+              ] : lang === 'es' ? [
+                'Los patrones aparecen poco a poco.',
+                'Todavía es pronto para sacar conclusiones.',
+                'El ritmo suele surgir antes que la confianza.',
+                'Las señales se aclaran con el tiempo.',
+              ] : lang === 'fr' ? [
+                'Les motifs apparaissent peu à peu.',
+                'Il est encore tôt pour des conclusions.',
+                'Le rythme apparaît souvent avant la confiance.',
+                'Les signaux deviennent plus clairs avec le temps.',
+              ] : lang === 'de' ? [
+                'Muster erscheinen langsam.',
+                'Es ist noch zu früh für Schlussfolgerungen.',
+                'Rhythmus entsteht oft vor dem Vertrauen.',
+                'Signale werden mit der Zeit klarer.',
+              ] : [
+                'Patterns emerge slowly.',
+                "It's still early for conclusions.",
+                'Rhythm tends to appear before confidence.',
+                'Signals become clearer with time.',
+              ];
+            return (
+              <View style={{ flex: 1, gap: 6 }}>
+                <Text style={styles.rhythmDescription}>{dayMessages[totalDays - 1]}</Text>
+                <Text style={styles.rhythmSubtext}>{subtexts[(totalDays - 1) % subtexts.length]}</Text>
+              </View>
+            );
+          })() : (
+            <Text style={styles.rhythmDescription}>{t('progress2.rhythm.tagline')}</Text>
+          )}
         </View>
       ) : (
         <>
@@ -301,15 +390,112 @@ function SignalCard({ title, text, index }: { title: string; text: string; index
   );
 }
 
-function RealSignalsSection({ hasData, fadeAnim }: { hasData: boolean; fadeAnim: Animated.Value }) {
-  const { t } = useLanguage();
+// Day-1 specific signal cards — human, minimal, early-stage appropriate
+const DAY1_SIGNALS: Record<string, Array<{ title: string; text: string }>> = {
+  pt: [
+    { title: 'Você voltou',   text: 'Hoje existiu um retorno.' },
+    { title: 'Mais presença', text: 'Você abriu um pequeno espaço.' },
+    { title: 'Um começo',     text: 'Algo começou a reaparecer.' },
+  ],
+  en: [
+    { title: 'You came back',  text: 'A return happened today.' },
+    { title: 'More presence',  text: 'You opened a small space.' },
+    { title: 'A beginning',    text: 'Something started to reappear.' },
+  ],
+  es: [
+    { title: 'Volviste',      text: 'Hoy hubo un retorno.' },
+    { title: 'Más presencia', text: 'Abriste un pequeño espacio.' },
+    { title: 'Un comienzo',   text: 'Algo empezó a reaparecer.' },
+  ],
+  fr: [
+    { title: 'Tu es revenu',     text: "Un retour a eu lieu aujourd'hui." },
+    { title: 'Plus de présence', text: "Tu t'es fait un petit espace." },
+    { title: 'Un début',         text: 'Quelque chose a commencé à réapparaître.' },
+  ],
+  de: [
+    { title: 'Du bist zurück', text: 'Heute geschah eine Rückkehr.' },
+    { title: 'Mehr Präsenz',   text: 'Du hast einen kleinen Raum geöffnet.' },
+    { title: 'Ein Anfang',     text: 'Etwas begann wieder zu erscheinen.' },
+  ],
+};
+
+// Days 2–6 signal pool — 8 cards per language, 3 shown at a time, seeded by day
+const EARLY_SIGNAL_POOL: Record<string, Array<{ title: string; text: string }>> = {
+  pt: [
+    { title: 'Você apareceu',      text: 'Mais um retorno aconteceu.' },
+    { title: 'Você continuou',     text: 'A continuidade começa assim.' },
+    { title: 'Mais presença',      text: 'Você criou espaço para si.' },
+    { title: 'Pequenos sinais',    text: 'Sinais discretos também contam.' },
+    { title: 'Algo permaneceu',    text: 'Algo se manteve.' },
+    { title: 'Um ritmo leve',      text: 'Uma leveza começou a aparecer.' },
+    { title: 'Um retorno a mais',  text: 'Cada retorno se soma.' },
+    { title: 'Você voltou de novo', text: 'Você voltou mais uma vez.' },
+  ],
+  en: [
+    { title: 'You showed up',       text: 'One more return happened.' },
+    { title: 'You continued',       text: 'Continuity starts like this.' },
+    { title: 'More presence',       text: 'You made space for yourself.' },
+    { title: 'Small signals',       text: 'Quiet signals count too.' },
+    { title: 'Something stayed',    text: 'Something held.' },
+    { title: 'A gentle rhythm',     text: 'A lightness started to appear.' },
+    { title: 'One more return',     text: 'Each return adds up.' },
+    { title: 'You came back again', text: 'You returned once more.' },
+  ],
+  es: [
+    { title: 'Apareciste',         text: 'Otro retorno ocurrió.' },
+    { title: 'Continuaste',        text: 'La continuidad empieza así.' },
+    { title: 'Más presencia',      text: 'Te diste espacio.' },
+    { title: 'Señales pequeñas',   text: 'Las señales discretas también cuentan.' },
+    { title: 'Algo permaneció',    text: 'Algo se mantuvo.' },
+    { title: 'Un ritmo ligero',    text: 'Una ligereza comenzó a aparecer.' },
+    { title: 'Un retorno más',     text: 'Cada retorno suma.' },
+    { title: 'Volviste de nuevo',  text: 'Regresaste una vez más.' },
+  ],
+  fr: [
+    { title: "Tu t'es montré",             text: 'Un retour de plus a eu lieu.' },
+    { title: 'Tu as continué',             text: 'La continuité commence ainsi.' },
+    { title: 'Plus de présence',           text: "Tu t'es fait de l'espace." },
+    { title: 'Petits signaux',             text: 'Les signaux discrets comptent aussi.' },
+    { title: 'Quelque chose est resté',    text: 'Quelque chose a tenu.' },
+    { title: 'Un rythme léger',            text: 'Une légèreté a commencé à apparaître.' },
+    { title: 'Un retour de plus',          text: "Chaque retour s'additionne." },
+    { title: 'Tu es revenu encore',        text: 'Tu es revenu une fois de plus.' },
+  ],
+  de: [
+    { title: 'Du hast dich gezeigt',   text: 'Eine weitere Rückkehr geschah.' },
+    { title: 'Du hast weitergemacht',  text: 'Kontinuität beginnt so.' },
+    { title: 'Mehr Präsenz',           text: 'Du hast dir Raum gemacht.' },
+    { title: 'Kleine Zeichen',         text: 'Stille Zeichen zählen auch.' },
+    { title: 'Etwas blieb',            text: 'Etwas hielt stand.' },
+    { title: 'Ein leichter Rhythmus',  text: 'Eine Leichtigkeit begann zu erscheinen.' },
+    { title: 'Eine Rückkehr mehr',     text: 'Jede Rückkehr summiert sich.' },
+    { title: 'Du bist wieder zurück',  text: 'Du bist noch einmal zurückgekehrt.' },
+  ],
+};
+
+function RealSignalsSection({ hasData, totalDays, fadeAnim }: { hasData: boolean; totalDays: number; fadeAnim: Animated.Value }) {
+  const { t, lang } = useLanguage();
   if (!hasData) return null;
 
-  const signals = [
-    { title: t('progress2.signals.return.title'), text: t('progress2.signals.return.text') },
-    { title: t('progress2.signals.presence.title'), text: t('progress2.signals.presence.text') },
-    { title: t('progress2.signals.stability.title'), text: t('progress2.signals.stability.text') },
-  ];
+  let signals: Array<{ title: string; text: string }>;
+
+  if (totalDays === 1) {
+    signals = DAY1_SIGNALS[lang] ?? DAY1_SIGNALS.en;
+  } else if (totalDays >= 2 && totalDays <= 6) {
+    const pool = EARLY_SIGNAL_POOL[lang] ?? EARLY_SIGNAL_POOL.en;
+    const s = totalDays;
+    signals = [
+      pool[s % pool.length],
+      pool[(s + 2) % pool.length],
+      pool[(s + 5) % pool.length],
+    ];
+  } else {
+    signals = [
+      { title: t('progress2.signals.return.title'),    text: t('progress2.signals.return.text') },
+      { title: t('progress2.signals.presence.title'),  text: t('progress2.signals.presence.text') },
+      { title: t('progress2.signals.stability.title'), text: t('progress2.signals.stability.text') },
+    ];
+  }
 
   return (
     <Animated.View style={{ opacity: fadeAnim }}>
@@ -854,7 +1040,7 @@ export default function ProgressScreen() {
         <SilentReward totalDays={totalDays} fadeAnim={heroFade} />
         <FirstSignalsBlock totalDays={totalDays} fadeAnim={heroFade} />
         <WeeklyRhythmCard percent={presencePercent} totalDays={totalDays} hasData={hasData} fadeAnim={rhythmFade} />
-        <RealSignalsSection hasData={hasData} fadeAnim={signalsFade} />
+        <RealSignalsSection hasData={hasData} totalDays={totalDays} fadeAnim={signalsFade} />
         <PatternsSection seed={patternSeed} hasData={hasData} fadeAnim={patternsFade} />
         <RebuildingTimeline totalDays={totalDays} fadeAnim={timelineFade} />
         <QuietSummary
@@ -1017,6 +1203,13 @@ const styles = StyleSheet.create({
     fontSize: Typography.sizes.sm,
     color: Colors.textSecondary,
     lineHeight: 20,
+  },
+  rhythmSubtext: {
+    flex: 1,
+    fontSize: 11,
+    color: Colors.textMuted,
+    lineHeight: 16,
+    fontStyle: 'italic',
   },
   rhythmEmptyTitle: {
     fontSize: Typography.sizes.base,
