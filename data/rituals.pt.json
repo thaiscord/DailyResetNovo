@@ -4,7 +4,7 @@
     "title": "Toda jornada começa aqui.",
     "home_card_headline": "Hoje não precisa ser perfeito. Só precisa ser seu.",
     "today_action_content": "Escreva 3 coisas que estão pedindo sua atenção agora. Risque as duas menos importantes. A que sobrar — essa é a sua para hoje.",
-    "why_it_matters_content": "A clareza também é autocuidado. Você não precisa resolver tudo hoje.",
+    "why_it_matters_content": "Quando você escreve três coisas e risca duas, a que sobra para de parecer opção e começa a parecer direção. Só isso já muda como o dia anda.",
     "reflection_content": "O que tem sido mais difícil de começar?"
   },
   {
@@ -12,7 +12,7 @@
     "title": "Você voltou.",
     "home_card_headline": "Você voltou. Isso já é algo real.",
     "today_action_content": "Escreva uma frase sobre algo que você está esperando — mesmo algo pequeno. Às vezes, lembrar do que ainda pode acontecer já muda a direção do dia.",
-    "why_it_matters_content": "Começar o dia com ao menos um pensamento voltado ao futuro muda o sistema nervoso. É pequeno, e é real.",
+    "why_it_matters_content": "Quando existe algo para esperar, o dia costuma parecer menos pesado. Mesmo uma frase pequena sobre algo que ainda pode acontecer muda o tom com que você entra nas horas seguintes.",
     "reflection_content": "O que fez você voltar hoje?"
   },
   {
@@ -20,7 +20,7 @@
     "title": "Uma respiração muda mais do que você pensa.",
     "home_card_headline": "Uma respiração muda mais do que você pensa. Venha descobrir.",
     "today_action_content": "Programe um timer de 2 minutos. Respire devagar. Quando os pensamentos chegarem, deixe-os passar. Você não está resolvendo nada — só respirando.",
-    "why_it_matters_content": "A respiração lenta ativa a resposta de calma do corpo. Dois minutos são suficientes para mudar seu estado. Você não precisa acreditar — só tente uma vez.",
+    "why_it_matters_content": "Dois minutos respirando devagar é quase nada. Mas a maioria das pessoas percebe que o ambiente parece um pouco diferente depois — um pouco mais quieto, um pouco mais administrável.",
     "reflection_content": "Em que momento do dia sua respiração fica curta sem você perceber?"
   },
   {
@@ -28,7 +28,7 @@
     "title": "Você não precisa carregar tudo.",
     "home_card_headline": "Você não precisa carregar tudo hoje. Algo pode esperar.",
     "today_action_content": "Escreva uma coisa que te preocupa e que você não pode controlar. Dobre o papel ou feche a nota. Coloque de lado. Ela ainda vai estar lá depois — mas você não precisa carregá-la agora.",
-    "why_it_matters_content": "Nomear o que você não pode controlar — e fisicamente colocá-lo de lado — interrompe o ciclo da preocupação. Não vai resolver o problema. Mas dá ao seu sistema nervoso um descanso.",
+    "why_it_matters_content": "Tem algo no ato de escrever e fechar a nota que permite parar de ensaiar a preocupação. Ela ainda está lá — mas você não está mais sendo quem a segura no ar.",
     "reflection_content": "O que você está carregando agora que nunca concordou em levar?"
   },
   {
@@ -36,7 +36,7 @@
     "title": "Seu corpo está te dizendo algo.",
     "home_card_headline": "Seu corpo está tentando dizer algo. Hoje, escute.",
     "today_action_content": "Em algum momento hoje, pare e faça uma varredura lenta pelo seu corpo, da cabeça aos pés. Nomeie três sensações que você percebe — sem tentar consertá-las.",
-    "why_it_matters_content": "A maioria do esgotamento vive no corpo muito antes de a mente reconhecer. Perceber sem consertar é o primeiro passo para entender o que você realmente precisa.",
+    "why_it_matters_content": "O corpo costuma saber das coisas antes de o restante de você perceber. Parar para notar o que ele está carregando — sem tentar resolver — costuma ser o primeiro momento honesto do dia.",
     "reflection_content": "Que sensação física você continua ignorando?"
   },
   {
@@ -44,7 +44,7 @@
     "title": "Você é suficiente para hoje.",
     "home_card_headline": "Você é suficiente para hoje. Isso não é pouca coisa.",
     "today_action_content": "Diga em voz alta ou escreva: 'Estou fazendo o suficiente para onde estou agora.' Perceba como isso cai — sem discutir com isso.",
-    "why_it_matters_content": "O crítico interno é mais alto quando você já está exausta. Nomear sua suficiência — mesmo com relutância — interrompe o ciclo de esgotamento.",
+    "why_it_matters_content": "Dizer isso em voz alta — mesmo sem acreditar completamente — dá menos espaço para a outra voz. Você não precisa sentir para dizer. Dizer muitas vezes é como você começa a sentir.",
     "reflection_content": "Quem te disse que você precisava ser mais do que é?"
   },
   {
@@ -52,7 +52,7 @@
     "title": "Algo mudou quietamente.",
     "home_card_headline": "Uma semana. Algo quieto já mudou.",
     "today_action_content": "Olhe para os últimos 7 dias. Escreva uma coisa que te surpreendeu sobre você mesma — uma coisa que fez e não tinha certeza que faria.",
-    "why_it_matters_content": "Sete dias voltando é mais do que a maioria consegue. Perceber o que mudou — mesmo que pouco — reforça por que vale continuar na segunda semana.",
+    "why_it_matters_content": "Sete dias voltando não é pouca coisa. Escrever uma coisa que te surpreendeu torna a mudança real — em vez de algo que você vaguamente suspeita estar acontecendo.",
     "reflection_content": "O que você sabe sobre si mesma agora que não sabia sete dias atrás?"
   },
   {
@@ -60,7 +60,7 @@
     "title": "Sua atenção vale a pena proteger.",
     "home_card_headline": "Sua atenção é o que você tem de mais valioso. Proteja.",
     "today_action_content": "Escolha uma janela de 5 minutos hoje. Feche tudo exceto o que você está fazendo. Sem notificações. Só aquilo por esses 5 minutos.",
-    "why_it_matters_content": "Cada notificação custa mais do que o tempo de lê-la — ela fragmenta o foco que leva minutos para se reconstruir. Uma janela protegida muda como o dia inteiro se sente.",
+    "why_it_matters_content": "Cinco minutos onde nada pode te interromper é mais raro do que parece. A maioria das pessoas nota que essa janela pequena devolve algo que tinham esquecido — a sensação de estar no controle da própria atenção.",
     "reflection_content": "O que rouba sua atenção com mais frequência sem que você perceba?"
   },
   {
@@ -68,7 +68,7 @@
     "title": "Uma coisa. Só isso.",
     "home_card_headline": "A sensação de sobrecarga diminui quando você nomeia uma coisa só.",
     "today_action_content": "Escreva sua tarefa mais importante em um papel. Coloque em algum lugar visível. Comece por ela.",
-    "why_it_matters_content": "O cérebro sustenta bem uma única intenção clara. Quando você adiciona mais, ele se fragmenta. Uma prioridade nomeada muda não só o que você faz — mas como você se sente fazendo.",
+    "why_it_matters_content": "Escrever a coisa mais importante em um papel e colocar onde você pode ver é diferente de mantê-la na cabeça. O dia passa a ter um lugar para onde apontar.",
     "reflection_content": "O que você diz para se justificar de pegar muitas coisas de uma vez?"
   },
   {
@@ -76,7 +76,7 @@
     "title": "O barulho sempre vai estar lá.",
     "home_card_headline": "O barulho não vai desaparecer. Você também não.",
     "today_action_content": "Faça uma coisa em direção a algo que importa para você — algo que leve menos de 5 minutos. Não porque as condições estão certas. Só porque você pode.",
-    "why_it_matters_content": "Esperar as condições perfeitas é uma forma silenciosa de evitar. Agir em condições imperfeitas constrói um tipo diferente de confiança.",
+    "why_it_matters_content": "Cinco minutos em direção a algo que importa — enquanto o barulho ainda está lá — te mostra algo valioso: que você não precisa que ele pare antes. Esse entendimento vale mais do que os cinco minutos.",
     "reflection_content": "Que barulho você tem usado como razão para esperar?"
   },
   {
@@ -84,7 +84,7 @@
     "title": "Ritmos pequenos viram âncoras.",
     "home_card_headline": "Ritmos pequenos importam. Você pode ir mais devagar.",
     "today_action_content": "Encontre uma pausa de 5 minutos hoje. Sente em algum lugar diferente do usual, olhe pela janela ou deite. Não faça nada útil nesses 5 minutos.",
-    "why_it_matters_content": "O sistema nervoso não se regenera no meio da corrida — ele se regenera nas pausas. Mesmo 5 minutos de quietude real têm um efeito mensurável em como você funciona no resto do dia.",
+    "why_it_matters_content": "Cinco minutos sem fazer nada útil — sentada em algum lugar diferente, olhando pela janela — é mais difícil de se dar do que parece. Mas quando você dá, o resto do dia tende a parecer menos sem trégua.",
     "reflection_content": "Quando o descanso começou a parecer algo que você precisava merecer?"
   },
   {
@@ -92,7 +92,7 @@
     "title": "Descansar não é retroceder.",
     "home_card_headline": "Descansar não é retroceder. É como você continua.",
     "today_action_content": "Pegue 3 minutos para não fazer nada. Sem celular. Sem revisar o que passou. Só descanse no silêncio.",
-    "why_it_matters_content": "A transição de ativo para descanso é onde muitas pessoas travam — rolando a tela em vez de se recuperar. Três minutos de quietude real fecha essa brecha e diz ao seu corpo que está seguro.",
+    "why_it_matters_content": "Três minutos sem fazer nada é diferente de três minutos rolando a tela. Um deles deixa você parar de verdade. O outro só adia quando você vai parar.",
     "reflection_content": "O que você diz para si mesma sobre como o descanso deveria parecer? Isso é realmente verdade?"
   },
   {
@@ -100,7 +100,7 @@
     "title": "Você pode confiar nos passos pequenos.",
     "home_card_headline": "Você não precisa ver o caminho todo. Só o próximo passo.",
     "today_action_content": "Escreva uma coisa que você tem adiado porque não tem certeza de que vai funcionar. Depois dê um pequeno passo em direção a ela — não tudo. Só um passo.",
-    "why_it_matters_content": "A clareza raramente chega antes do passo — ela chega depois. O ato de se mover é o que torna o caminho visível.",
+    "why_it_matters_content": "Um passo pequeno em direção a algo que você tem evitado costuma fazer ele parecer diferente do que parecia de longe. Não necessariamente mais fácil — só mais real, e menos como um muro.",
     "reflection_content": "O que você faria diferente se confiasse um pouco mais no processo?"
   },
   {
@@ -108,7 +108,7 @@
     "title": "Você tem sido mais constante do que imagina.",
     "home_card_headline": "Duas semanas voltando. Isso é disciplina de verdade.",
     "today_action_content": "Escreva uma nota breve para você mesma: o que você percebeu, o que mudou, do que você se orgulha em silêncio — mesmo que esse orgulho pareça pequeno.",
-    "why_it_matters_content": "Reconhecer o que você construiu não é vaidade — são dados. Mostra ao seu cérebro que o esforço está criando algo real. Isso torna continuar menos abstrato.",
+    "why_it_matters_content": "Escrever uma nota para você mesma sobre o que mudou — mesmo coisas pequenas — faz as últimas duas semanas parecerem algo real, e não só algo que aconteceu com você.",
     "reflection_content": "O que você aprendeu sobre si mesma nas últimas duas semanas?"
   },
   {
@@ -116,7 +116,7 @@
     "title": "Você está se tornando alguém.",
     "home_card_headline": "Você está se tornando alguém. Não de uma vez. Em silêncio.",
     "today_action_content": "Escreva o nome de uma pessoa que você respeita. Escreva uma qualidade que ela tem. Escreva uma maneira pequena de praticar essa qualidade hoje.",
-    "why_it_matters_content": "A identidade não muda pela compreensão — muda pela ação. Praticar uma qualidade, mesmo de forma imperfeita, cria novos padrões sobre quem você está se tornando.",
+    "why_it_matters_content": "Escolher uma qualidade que você admira em alguém e encontrar um jeito pequeno de praticá-la hoje não é imitação. É uma decisão silenciosa sobre quem você está escolhendo ser.",
     "reflection_content": "Em quem você está se tornando que ainda não se deu permissão de ser?"
   },
   {
@@ -124,7 +124,7 @@
     "title": "Aparecer é coragem.",
     "home_card_headline": "Aparecer é o ato corajoso. Mesmo quando é difícil.",
     "today_action_content": "Faça uma coisa hoje que gere um leve desconforto. Não algo imprudente — só levemente fora da sua zona de conforto. Nomeie antes de fazer.",
-    "why_it_matters_content": "Coragem não é a ausência do medo — é a decisão de se mover apesar dele. Cada pequeno ato de coragem reconfigura sua relação com o desconforto com o tempo.",
+    "why_it_matters_content": "Nomear o que você está prestes a fazer antes de fazer — mesmo algo pequeno que te deixa desconfortável — muda o ato. Ele vira uma escolha, não só algo que aconteceu.",
     "reflection_content": "O que você está evitando por medo e chamando de outra coisa?"
   },
   {
@@ -132,7 +132,7 @@
     "title": "A distância entre antes e agora.",
     "home_card_headline": "A distância é menor do que parece. Você já está atravessando.",
     "today_action_content": "Escreva uma coisa que você não conseguia fazer 30 dias atrás que consegue hoje — mesmo algo pequeno. Escreva com clareza.",
-    "why_it_matters_content": "O progresso raramente é visível enquanto acontece. Nomeá-lo ativamente fecha a brecha entre o esforço e a crença — e faz valer a pena continuar.",
+    "why_it_matters_content": "Nem todo avanço faz barulho. Escrever uma coisa que você consegue fazer agora e não conseguia antes coloca algo real no papel — algo que estava acontecendo quieto, quer você tivesse percebido ou não.",
     "reflection_content": "Que mudança em você mesma você ainda não reconheceu como sua?"
   },
   {
@@ -140,7 +140,7 @@
     "title": "Você sabe mais do que pensa.",
     "home_card_headline": "Você já sabe a resposta. Hoje é para confiar nela.",
     "today_action_content": "Pergunte a si mesma: 'O que eu sei que deveria fazer e continuo não fazendo?' Escreva a resposta. Depois dê um pequeno passo em direção a isso — só um.",
-    "why_it_matters_content": "A maioria das pessoas não carece de clareza — resiste a ela porque agir requer mudança. Nomear o que você sabe converte entendimento em ação.",
+    "why_it_matters_content": "A maioria das pessoas já sabe o que deveria fazer. Escrever e dar um passo pequeno em direção a isso é como você para de só saber e começa a realmente fazer.",
     "reflection_content": "O que você sabe há muito tempo e continua adiando?"
   },
   {
@@ -148,7 +148,7 @@
     "title": "A clareza vem depois do caos.",
     "home_card_headline": "A clareza não substitui o caos. Ela convive com ele.",
     "today_action_content": "Escreva 3 coisas sobre as quais você está confusa agora. Depois circule a que mais importa. Comece por ela — mesmo com um passo pequeno.",
-    "why_it_matters_content": "A sobrecarga prospera na vagueza. Nomear o que não está claro e priorizar dentro disso reduz a carga cognitiva. Você não resolve tudo — você sabe o que importa primeiro.",
+    "why_it_matters_content": "Três coisas escritas, uma circulada — isso é completamente diferente de três coisas girando na sua cabeça. A névoa não desaparece. Mas uma coisa fica visível através dela.",
     "reflection_content": "O que ficaria mais claro se você parasse de tentar segurar tudo de uma vez?"
   },
   {
@@ -156,7 +156,7 @@
     "title": "Ações pequenas se somam em silêncio.",
     "home_card_headline": "Ações pequenas se acumulam. Você está mais à frente do que enxerga.",
     "today_action_content": "Pense em um hábito que você construiu nos últimos 20 dias — mesmo um pequeno. Escreva no que esse hábito pode se tornar silenciosamente em um ano.",
-    "why_it_matters_content": "O crescimento composto é invisível no curto prazo e inegável no longo prazo. Nomear o que está sendo construído ativa o sistema de recompensa do cérebro e faz valer a pena continuar.",
+    "why_it_matters_content": "Um hábito que parece pequeno hoje pode ser algo completamente diferente em um ano. Parar para vê-lo — e escrever para onde ele pode ir — é o que impede coisas pequenas de continuarem invisíveis.",
     "reflection_content": "Que progresso silencioso você tem estado ocupada demais para notar?"
   },
   {
@@ -164,7 +164,7 @@
     "title": "21 dias. Você é diferente agora.",
     "home_card_headline": "21 dias. Você não é mais a mesma pessoa que começou.",
     "today_action_content": "Escreva uma mensagem para você mesma da perspectiva do Dia 1. O que essa pessoa pensaria do lugar onde você está agora?",
-    "why_it_matters_content": "Cartas de perspectiva mostram a distância que você percorreu — uma distância que é invisível de onde você está parada agora.",
+    "why_it_matters_content": "Escrever da perspectiva do Dia 1 te coloca fora de você mesma por um momento. De lá, às vezes dá para ver o que três semanas voltando todos os dias realmente parecem — que é mais do que parece por dentro.",
     "reflection_content": "Em quem você tem se tornado nessas três semanas?"
   },
   {
@@ -172,7 +172,7 @@
     "title": "Proteja o que está funcionando.",
     "home_card_headline": "Você construiu algo que vale a pena proteger. Cuide hoje.",
     "today_action_content": "Identifique um hábito ou prática dos últimos 22 dias que está funcionando. Escreva uma coisa específica que você vai fazer para protegê-lo esta semana.",
-    "why_it_matters_content": "Crescer exige não só construir, mas proteger. A maioria dos bons hábitos não morre por falta de esforço, mas por exposição desprotegida às mesmas condições que criaram o problema.",
+    "why_it_matters_content": "A maioria das coisas que estavam funcionando param não porque você deixou de se importar, mas porque parou de proteger ativamente. Um plano específico para esta semana é o que transforma cuidado em continuidade.",
     "reflection_content": "O que está funcionando na sua vida agora que você ainda não reconheceu por completo?"
   },
   {
@@ -180,7 +180,7 @@
     "title": "Profundidade antes da velocidade.",
     "home_card_headline": "Quem vai fundo chega mais longe. Profundidade antes de velocidade.",
     "today_action_content": "Escolha uma tarefa hoje e dedique 5 minutos extras a ela. Não para perfeccioná-la — para entendê-la mais plenamente do que você normalmente faria.",
-    "why_it_matters_content": "Velocidade cria produção. Profundidade cria compreensão. Na recuperação do esgotamento, profundidade também é uma forma de descanso — pede que você vá mais devagar e esteja presente com o que faz.",
+    "why_it_matters_content": "Cinco minutos a mais em uma tarefa — não para terminar mais rápido, mas para entendê-la melhor — muda como é fazer ela. Correr por tudo tem seu próprio tipo de cansaço.",
     "reflection_content": "Em que parte da sua vida a velocidade tem custado mais do que você admitiu?"
   },
   {
@@ -188,7 +188,7 @@
     "title": "Quem vai devagar chega mais longe.",
     "home_card_headline": "Quem vai devagar chega mais longe. Permita-se ficar quieta.",
     "today_action_content": "Encontre 5 minutos de silêncio completo hoje — sem música, sem podcast, sem barulho de fundo. Só sente e esteja. Sem nada a realizar.",
-    "why_it_matters_content": "O barulho crônico mantém o sistema nervoso em alerta de baixo nível. Cinco minutos de silêncio deliberado são fisiologicamente diferentes do silêncio distraído. Seu cérebro precisa disso.",
+    "why_it_matters_content": "Cinco minutos sem música, sem podcast, sem barulho de fundo é uma coisa incomum de se dar. A maioria das pessoas acha estranho no começo, depois surpreendentemente tranquilizador — como um cômodo que finalmente parou de zumbir.",
     "reflection_content": "Quando foi a última vez que você ficou em silêncio de verdade sem sentir que deveria estar fazendo algo?"
   },
   {
@@ -196,7 +196,7 @@
     "title": "Ainda suficiente. Sempre suficiente.",
     "home_card_headline": "Ainda suficiente. Sempre foi.",
     "today_action_content": "Escreva: 'Sou suficiente para hoje porque ___.' Complete com algo verdadeiro — mesmo algo pequeno. Não discuta com o que você escreveu.",
-    "why_it_matters_content": "A suficiência não é um sentimento que vem naturalmente sob estresse — exige reconhecimento ativo. Escrever ancora a crença de uma maneira que só pensar raramente consegue.",
+    "why_it_matters_content": "Completar a frase 'Sou suficiente para hoje porque ___' faz você encontrar o motivo real. Esse motivo costuma ser verdadeiro. E uma vez escrito, fica mais difícil de ignorar.",
     "reflection_content": "De onde veio a ideia de que você não era suficiente?"
   },
   {
@@ -204,7 +204,7 @@
     "title": "Todo retorno é um começo.",
     "home_card_headline": "Todo retorno é um começo. Este também conta.",
     "today_action_content": "Pense em algo ao qual você voltou depois de parar — um hábito, uma relação consigo mesma, uma intenção. Escreva o que voltar te ensinou.",
-    "why_it_matters_content": "Voltar não é fracasso — é a prática em si. A distância entre ir e voltar é onde mora a maior parte do crescimento. Entender isso muda como você vê os tropeços.",
+    "why_it_matters_content": "Lembrar de algo que você voltou depois de parar — e escrever o que o retorno te ensinou — muda como a pausa parece. Ela para de ser um fracasso e começa a ser parte de como você aprende.",
     "reflection_content": "A que você sempre volta, não importa quantas vezes tenha se afastado?"
   },
   {
@@ -212,7 +212,7 @@
     "title": "Isso já é a sua prática.",
     "home_card_headline": "Isso não é mais algo que você está construindo. É quem você é.",
     "today_action_content": "Escreva: 'Sou alguém que ___.' Complete com um hábito ou qualidade que agora é genuinamente verdadeiro sobre você — não o que você quer ser, o que você já é.",
-    "why_it_matters_content": "A linguagem baseada em identidade cria a mudança de comportamento mais duradoura. 'Sou alguém que...' une o comportamento ao autoconceito de uma forma que metas e resoluções não conseguem.",
+    "why_it_matters_content": "Escrever 'Sou alguém que ___' com algo que já é genuinamente verdadeiro muda a frase de um desejo para um fato. A sensação é diferente — mais quieta, mais assentada.",
     "reflection_content": "O que é verdade sobre você agora que não era verdade há 27 dias?"
   },
   {
@@ -220,7 +220,7 @@
     "title": "Quase um mês. Sinta isso.",
     "home_card_headline": "Quase um mês se escolhendo cada dia. Isso não é pouca coisa.",
     "today_action_content": "Escreva uma coisa da qual você se orgulha dos últimos 28 dias. Não minimize. Escreva com clareza e deixe ser verdade.",
-    "why_it_matters_content": "Orgulho não é arrogância — é reconhecimento preciso. Dizer do que você se orgulha, sem qualificar imediatamente, é um ato difícil mas importante de reconhecimento próprio.",
+    "why_it_matters_content": "Escrever uma coisa da qual você se orgulha — com clareza, sem minimizar — é mais difícil do que parece. A maioria das pessoas suaviza antes mesmo de terminar de escrever. Deixa ser o que é.",
     "reflection_content": "O que 28 dias aparecendo diz sobre quem você é?"
   },
   {
@@ -228,7 +228,7 @@
     "title": "Amanhã você terá feito isso.",
     "home_card_headline": "Amanhã você terá feito isso. Hoje é o passo que chega lá.",
     "today_action_content": "Escreva uma mensagem para a pessoa que você será amanhã — depois de completar 30 dias. O que você quer que ela saiba?",
-    "why_it_matters_content": "Escrever para o seu eu futuro gera impulso e cria um compromisso psicológico. Você não está só continuando um hábito — está cumprindo uma promessa para si mesma.",
+    "why_it_matters_content": "Escrever para a pessoa que você vai ser amanhã — depois de trinta dias — faz o passo que você está dando hoje parecer que é para alguém real. Normalmente é.",
     "reflection_content": "Como é estar a um dia de concluir algo que você começou?"
   },
   {
@@ -236,7 +236,7 @@
     "title": "Trinta dias se escolhendo.",
     "home_card_headline": "Trinta dias se escolhendo cada dia. Isso é permanente.",
     "today_action_content": "Escreva uma nota breve para quem vai começar o Dia 1 no próximo mês. Conte uma coisa que essa pessoa precisa saber — de quem esteve onde ela está começando.",
-    "why_it_matters_content": "Ensinar é como consolidamos o que aprendemos. Escrever essa nota clarifica sua própria jornada — e cria algo generoso a partir do que você construiu.",
+    "why_it_matters_content": "Escrever uma coisa para quem vai começar o Dia 1 no próximo mês transforma tudo que você passou em algo que pode ser útil para alguém. É uma relação diferente com o que você acabou de fazer.",
     "reflection_content": "Quem você é agora que não era há 30 dias?"
   }
 ]

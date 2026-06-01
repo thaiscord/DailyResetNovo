@@ -57,7 +57,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Growth requires expanding your targets as you grow."
+      "content": "Setting one new goal based on what month one taught you is different from guessing at the start. You know more now. Let the goal reflect that."
     },
     "reflection": {
       "title": "Reflection",
@@ -129,7 +129,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Naming what matters — and acting on it before the noise — is the whole practice."
+      "content": "Protecting time for your single most important habit before distraction arrives is harder than it sounds — and more effective than almost anything else you could do with those same minutes."
     },
     "reflection": {
       "title": "Reflection",
@@ -201,7 +201,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "The space between stimulus and response is where your power lives."
+      "content": "Noticing a reactive moment before responding to it — even once today — is a completely different experience from letting it run on autopilot. That gap is where things start to change."
     },
     "reflection": {
       "title": "Reflection",
@@ -273,7 +273,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Clear weekly goals eliminate decision fatigue and drift."
+      "content": "Writing the three outcomes you want from the week before it starts changes the week. Not because the list is magic — but because the week now has somewhere to go."
     },
     "reflection": {
       "title": "Reflection",
@@ -345,7 +345,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Shallow work feels busy. Deep work creates results."
+      "content": "Ninety minutes of uninterrupted work on something that truly matters is different from four hours of fragmented effort. The quiet focus at the end of it feels different too."
     },
     "reflection": {
       "title": "Reflection",
@@ -417,7 +417,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Your social environment has a direct impact on your mindset and habits."
+      "content": "Sitting with the question of who energizes you versus who drains you — without judgment — can clarify something you have been sensing for a while but not quite saying out loud."
     },
     "reflection": {
       "title": "Reflection",
@@ -489,7 +489,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Perfectionism is procrastination in disguise."
+      "content": "Sending the imperfect thing — the email, the project, the message — and having it out in the world is almost always better than the version still sitting in your head waiting to be ready."
     },
     "reflection": {
       "title": "Reflection",
@@ -561,7 +561,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Physical discipline creates the mental resilience for everything else."
+      "content": "Moving your body for thirty minutes with intention — not as punishment — changes how the rest of the day feels. The way you treat the vehicle affects everything riding inside it."
     },
     "reflection": {
       "title": "Reflection",
@@ -633,7 +633,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Time awareness is the foundation of real productivity."
+      "content": "Auditing where your hours actually went over three days — honestly — usually surfaces a few surprises. That knowledge changes how you plan the next ones."
     },
     "reflection": {
       "title": "Reflection",
@@ -705,7 +705,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Strategic thinking requires mental space that busyness prevents."
+      "content": "Fifteen minutes with no inputs — just thinking — is almost uncomfortable at first. But it is often where the clearer things come. The thoughts that matter tend to arrive when you stop filling every gap."
     },
     "reflection": {
       "title": "Reflection",
@@ -777,7 +777,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Identity-based habits create permanent change."
+      "content": "Identifying a habit that currently contradicts who you want to become — and naming a replacement — makes the mismatch harder to ignore. That awareness is usually what starts the change."
     },
     "reflection": {
       "title": "Reflection",
@@ -849,7 +849,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Recognizing growth makes you want to grow more."
+      "content": "Listing five specific ways you've changed since Day 1 makes the evidence undeniable. Six weeks of returning is not abstract anymore — it has a shape."
     },
     "reflection": {
       "title": "Reflection",
@@ -921,7 +921,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Empowering questions create empowering actions."
+      "content": "Replacing 'why is this so hard' with 'what can I learn from this' changes what you look for. And what you look for tends to be what you find."
     },
     "reflection": {
       "title": "Reflection",
@@ -993,7 +993,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Naming an emotion reduces its power over your behavior."
+      "content": "Writing down an emotion you have been resisting or avoiding gives it somewhere to go without requiring you to act on it. Sometimes that is enough to take the edge off."
     },
     "reflection": {
       "title": "Reflection",
@@ -1065,7 +1065,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Courage is a muscle. The more you use it, the stronger it gets."
+      "content": "Forty-five days in, doing something your past self would have avoided proves a point — not to anyone else, but to you. That kind of proof compounds."
     },
     "reflection": {
       "title": "Reflection",
@@ -1137,7 +1137,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Every 'yes' to the wrong thing is a 'no' to your goals."
+      "content": "Saying no to one request or distraction today that doesn't belong in your priorities is a quiet act of self-respect. It keeps the important things from being crowded out."
     },
     "reflection": {
       "title": "Reflection",
@@ -1209,7 +1209,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Sustainable output requires deliberate restoration."
+      "content": "Scheduling a full day of recovery without guilt — and actually taking it — changes what the following days feel like. It is not a break from the work. It is part of what makes the work possible."
     },
     "reflection": {
       "title": "Reflection",
@@ -1281,7 +1281,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Speaking your progress out loud makes it more real and motivating."
+      "content": "Telling someone where you are on your main goal — even briefly — makes the goal more real. Things shared tend to get taken more seriously, including by you."
     },
     "reflection": {
       "title": "Reflection",
@@ -1353,7 +1353,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Small additions to a strong foundation create compound growth."
+      "content": "Seven weeks in, adding one small thing to a morning routine that is already working is not pressure — it is a natural next step. Small additions on top of something solid tend to stick."
     },
     "reflection": {
       "title": "Reflection",
@@ -1425,7 +1425,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Helping others reconnects you to your own strength."
+      "content": "Writing encouragement to someone who is struggling — from fifty days in — comes from a different place than it would have before. You have something real to offer now."
     },
     "reflection": {
       "title": "Reflection",
@@ -1497,7 +1497,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Beginning is the hardest part. Once started, things tend to move."
+      "content": "Starting with the one task you always delay — before anything else — removes the weight it accumulates throughout the day. Once it is done, everything else sits a little lighter."
     },
     "reflection": {
       "title": "Reflection",
@@ -1569,7 +1569,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Pre-decision protects you from reactive attention."
+      "content": "Writing your single non-negotiable focus before opening anything else takes the decision out of the morning rush. The day now has a priority, not just tasks."
     },
     "reflection": {
       "title": "Reflection",
@@ -1641,7 +1641,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Self-leadership is the foundation of all other leadership."
+      "content": "Choosing one area where you have been inconsistent and making a specific plan to recommit — not a vague intention — is what actually changes the pattern."
     },
     "reflection": {
       "title": "Reflection",
@@ -1713,7 +1713,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Identity shapes behavior more than any willpower or strategy."
+      "content": "Writing a counter-story to a limiting belief — one based on actual evidence — does something a pep talk cannot. It shows you that the belief was never the full picture."
     },
     "reflection": {
       "title": "Reflection",
@@ -1785,7 +1785,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "An empty mind thinks clearly. An overloaded mind stalls."
+      "content": "Writing every thought, worry, task and idea out of your head gives them somewhere to go. What is on paper no longer needs to be held in memory — and what is freed up can actually think."
     },
     "reflection": {
       "title": "Reflection",
@@ -1857,7 +1857,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Visual reminders anchor your future self into your daily actions."
+      "content": "Eight weeks in, putting a visual reminder of where you are headed somewhere you will actually see it keeps the next thirty days connected to the previous fifty-six."
     },
     "reflection": {
       "title": "Reflection",
@@ -1929,7 +1929,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Gradual challenge keeps growth happening."
+      "content": "Making one daily habit slightly harder or more intentional — not to punish yourself, but to keep it honest — is what stops good habits from slowly turning into empty routines."
     },
     "reflection": {
       "title": "Reflection",
@@ -2001,7 +2001,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Courage is the foundation of every major life change."
+      "content": "Taking the smallest possible step toward something that consistently scares you makes the fear slightly smaller each time. Not gone — just smaller."
     },
     "reflection": {
       "title": "Reflection",
@@ -2073,7 +2073,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Reclaiming your attention is reclaiming your life."
+      "content": "One full hour without checking social media or messages — not forever, just once — makes visible how often you would normally have reached for it. That awareness tends to stick."
     },
     "reflection": {
       "title": "Reflection",
@@ -2145,7 +2145,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Writing your identity into existence is a powerful act of commitment."
+      "content": "Two months in, writing a description of the person you are choosing to become is not wishful thinking anymore. It is closer to a record of something already in motion."
     },
     "reflection": {
       "title": "Reflection",
@@ -2217,7 +2217,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Daily skill-building is the fastest path to expertise."
+      "content": "Forty-five minutes learning a skill tied to your biggest goal — not passively, but actively — adds up differently than general browsing. Sixty-one days of that is something."
     },
     "reflection": {
       "title": "Reflection",
@@ -2289,7 +2289,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Breaking difficulty into small steps makes it navigable."
+      "content": "Finding your biggest current pressure point and writing three small steps toward it makes it stop being a wall. The three steps don't fix it — but they make it something you can move through."
     },
     "reflection": {
       "title": "Reflection",
@@ -2361,7 +2361,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Progress measured is progress sustained."
+      "content": "A mid-point review across five key areas gives you something specific: a clearer picture of where you actually are, not where you imagine you are. The two are usually different."
     },
     "reflection": {
       "title": "Reflection",
@@ -2433,7 +2433,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Habits are invisible decisions that run on autopilot — unless you examine them."
+      "content": "Auditing the most repeated daily behavior and asking whether it is aligned with who you want to become is a more honest question than most people are willing to sit with."
     },
     "reflection": {
       "title": "Reflection",
@@ -2505,7 +2505,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Hiding your struggles amplifies them. Sharing them reduces their power."
+      "content": "Sharing one honest struggle with someone you trust — not the polished version, the real one — tends to make it smaller. Things carried alone usually grow. Things said out loud often don't."
     },
     "reflection": {
       "title": "Reflection",
@@ -2577,7 +2577,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Doing hard things becomes your identity — and then they stop being hard."
+      "content": "Doing the one thing you have been rating a 9 or 10 in difficulty changes its number. Not all at once — but once you have done it, you can no longer tell yourself you cannot."
     },
     "reflection": {
       "title": "Reflection",
@@ -2649,7 +2649,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "What gets scheduled gets done."
+      "content": "Taking one important thing from your future plans and scheduling it concretely today closes the gap between wanting to do it and actually doing it. A plan with a time becomes something different."
     },
     "reflection": {
       "title": "Reflection",
@@ -2721,7 +2721,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Living below your standards creates internal conflict and low self-esteem."
+      "content": "Writing five personal standards and rating how well you are honoring each one makes visible a gap that vague discomfort often points to but never names. Named gaps are easier to close."
     },
     "reflection": {
       "title": "Reflection",
@@ -2793,7 +2793,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Deep presence builds trust and self-awareness simultaneously."
+      "content": "Being fully present in every conversation — no phone, no mental escape — is rarer than we think. People feel it when you are. And so do you."
     },
     "reflection": {
       "title": "Reflection",
@@ -3225,7 +3225,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Celebrating milestones with identity-aligned actions solidifies who you're becoming."
+      "content": "Celebrating day 75 by doing something that represents who you are now — rather than who you used to be — marks the distance traveled in a way that sticks."
     },
     "reflection": {
       "title": "Reflection",
@@ -3297,7 +3297,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Creative expression reduces stress and unlocks problem-solving capacity."
+      "content": "Twenty minutes on a creative pursuit with no pressure for outcome is a different kind of rest — the kind where something in you gets to breathe without being useful."
     },
     "reflection": {
       "title": "Reflection",
@@ -3369,7 +3369,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Tolerating what bothers you is a slow leak on your energy and self-respect."
+      "content": "Addressing one thing you have been tolerating — even a small one — releases something that has been quietly using up energy. Most people are surprised by how much lighter it feels."
     },
     "reflection": {
       "title": "Reflection",
@@ -3441,7 +3441,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Your interpretation of events directly shapes your emotional state and decisions."
+      "content": "Reframing three current challenges as opportunities is not pretending things are fine. It is asking a different question and finding out what you can actually do with what is there."
     },
     "reflection": {
       "title": "Reflection",
@@ -3513,7 +3513,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Holding onto things that drain you blocks the space for what will elevate you."
+      "content": "Ending one commitment or habit that no longer fits who you are becoming creates actual space — not just in time, but in how you feel about what remains."
     },
     "reflection": {
       "title": "Reflection",
@@ -3585,7 +3585,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Tracking external proof builds internal conviction."
+      "content": "Writing down three ways the world has responded positively to your changes makes the ripple visible. Eighty days of showing up has affected more than just you."
     },
     "reflection": {
       "title": "Reflection",
@@ -3657,7 +3657,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Mental hygiene is the most overlooked performance skill."
+      "content": "Asking 'is this true, is this useful' for each negative thought that arises today interrupts the pattern rather than following it automatically. That pause is the whole practice."
     },
     "reflection": {
       "title": "Reflection",
@@ -3729,7 +3729,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Stillness creates the mental space that busyness consistently prevents."
+      "content": "Fifteen quiet minutes of doing nothing — sitting, breathing, letting thoughts arrive without acting on them — is different from fifteen minutes of rest by distraction. The clarity that follows is usually different too."
     },
     "reflection": {
       "title": "Reflection",
@@ -3801,7 +3801,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Your circle determines your trajectory more than your talent."
+      "content": "Finding or strengthening one relationship with someone who shares your values changes the texture of what the work feels like — less alone, more possible."
     },
     "reflection": {
       "title": "Reflection",
@@ -3873,7 +3873,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Reflecting on what you've learned turns experience into something lasting."
+      "content": "Writing twelve lessons from eighty-four days turns what you lived through into something you can carry forward. Twelve weeks of experience deserves more than a passing sense of 'I've changed.'"
     },
     "reflection": {
       "title": "Reflection",
@@ -3945,7 +3945,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Self-integrity builds the deepest form of confidence."
+      "content": "Making one promise to yourself today and keeping it — no matter how small — is how you build the kind of trust with yourself that holds when things get hard."
     },
     "reflection": {
       "title": "Reflection",
@@ -4017,7 +4017,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Most problems are symptoms. Root causes are where real change happens."
+      "content": "Asking 'why' five times about something important tends to lead somewhere unexpected — usually to something smaller and more actionable than the original problem looked like."
     },
     "reflection": {
       "title": "Reflection",
@@ -4089,7 +4089,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Documenting your resilience builds evidence of your capability."
+      "content": "Writing about one hard thing you survived that made you stronger turns the past into evidence rather than weight. That is a different way to carry it."
     },
     "reflection": {
       "title": "Reflection",
@@ -4161,7 +4161,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "How you close the day quietly shapes how the next one opens."
+      "content": "A simple three-step wind-down routine — written out and tried tonight — changes how tomorrow starts. The morning inherits whatever the evening leaves behind."
     },
     "reflection": {
       "title": "Reflection",
@@ -4233,7 +4233,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Clarity in relationships reduces emotional friction and builds trust."
+      "content": "Having an honest conversation about an unmet expectation — rather than continuing to hold it silently — usually brings something to rest that has been quietly creating distance."
     },
     "reflection": {
       "title": "Reflection",
@@ -4305,7 +4305,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Noticing progress is part of sustaining it."
+      "content": "Ninety days of returning again and again — and doing something to mark it — makes this real in a way that going straight to day ninety-one does not. Some milestones deserve a moment."
     },
     "reflection": {
       "title": "Reflection",
@@ -4377,7 +4377,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Depth creates mastery. Breadth creates busyness."
+      "content": "Choosing one area to go all-in on for the next ninety days — and not adding more to it — is harder than it sounds. But what you give everything to tends to become something."
     },
     "reflection": {
       "title": "Reflection",
@@ -4449,7 +4449,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Choosing what to prioritize is how focus becomes real."
+      "content": "Identifying one habit or activity to reduce for thirty days — to make space for what matters — is a practical act of prioritization. You cannot add without first creating room."
     },
     "reflection": {
       "title": "Reflection",
@@ -4521,7 +4521,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Character built in private is the most durable kind."
+      "content": "Doing one act of excellence today that no one will ever see or know about — and doing it well anyway — is a different kind of practice. It builds something that does not depend on being watched."
     },
     "reflection": {
       "title": "Reflection",
@@ -4593,7 +4593,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Sustainable rhythm outperforms bursts of effort followed by burnout."
+      "content": "Recommitting to your core habit with less intensity but more consistency — instead of waiting for the perfect high-effort day — is what makes it last past ninety days."
     },
     "reflection": {
       "title": "Reflection",
@@ -4665,7 +4665,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "What you consume shapes what you believe is possible for yourself."
+      "content": "Replacing twenty minutes of passive content with something intentional — a book, a podcast, quiet reflection — changes what your mind spends the rest of the day chewing on."
     },
     "reflection": {
       "title": "Reflection",
@@ -4737,7 +4737,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Finding the gift in difficulty is an advanced mindset skill."
+      "content": "Finding something to be genuinely grateful for in your most frustrating current situation changes how you hold it — not by pretending it is fine, but by refusing to let it be only one thing."
     },
     "reflection": {
       "title": "Reflection",
@@ -4809,7 +4809,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Protecting your rituals, even one at a time, is how steadiness is built."
+      "content": "Doing one part of your daily routine today with complete presence — no shortcuts — shows you which parts still have something in them and which ones have become automatic in the empty way."
     },
     "reflection": {
       "title": "Reflection",
@@ -4881,7 +4881,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Strategic self-care is a performance strategy, not a reward."
+      "content": "Knowing what genuinely restores your energy — not just distracts you — and scheduling it deliberately is a different kind of planning. It treats your capacity as something worth maintaining."
     },
     "reflection": {
       "title": "Reflection",
@@ -4953,7 +4953,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Naming your values makes them easier to return to when things get hard."
+      "content": "Writing down who you are becoming — what you value, what grounds you, what you want to protect — gives ninety-nine days of returning a name and a shape. That name matters on the difficult days."
     },
     "reflection": {
       "title": "Reflection",
@@ -5025,7 +5025,7 @@ export const dailyResetsExtended: Ritual[] = [
     },
     "why_it_matters": {
       "title": "Why it matters",
-      "content": "Day 100 is not the finish line. It is proof that you can go the distance."
+      "content": "One hundred days of returning, and today doing something bold that represents the person you have been building — not who you were, who you are now. That is a different kind of day."
     },
     "reflection": {
       "title": "Reflection",

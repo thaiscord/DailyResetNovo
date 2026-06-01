@@ -872,7 +872,9 @@ export default function ProfileScreen() {
                 <View style={styles.transformStatDivider} />
                 <View style={styles.transformStat}>
                   <Text style={styles.transformStatNum}>{progress.bestStreak}</Text>
-                  <Text style={styles.transformStatLabel}>{t('profile.stat.bestStreak')}</Text>
+                  <Text style={styles.transformStatLabel}>
+                    {progress.bestStreak <= 1 ? t('profile.stat.firstReturn') : t('profile.stat.bestStreak')}
+                  </Text>
                 </View>
                 <View style={styles.transformStatDivider} />
                 <View style={styles.transformStat}>
@@ -1811,7 +1813,7 @@ const styles = StyleSheet.create({
     borderRadius: Radii.xl,
     padding: Spacing.base,
     borderWidth: 1,
-    borderColor: 'rgba(201,168,76,0.09)',
+    borderColor: 'rgba(201,168,76,0.22)',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -1837,8 +1839,9 @@ const styles = StyleSheet.create({
   },
   profileJourneyLabel: {
     fontSize: Typography.sizes.sm,
-    fontWeight: Typography.weights.semibold,
+    fontWeight: Typography.weights.bold,
     color: Colors.textPrimary,
+    letterSpacing: -0.1,
   },
   profileJourneyDesc: {
     fontSize: Typography.sizes.xs,
