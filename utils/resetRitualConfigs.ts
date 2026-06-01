@@ -655,8 +655,8 @@ const SOFT_RESET_PT: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'Você voltou do jeito que dava.',
-    subtext: 'Nem tudo precisa voltar de uma vez.',
+    headline: 'Hoje, o suficiente já conta.',
+    subtext: 'Você não precisa correr para voltar.',
   },
 };
 
@@ -697,8 +697,8 @@ const SOFT_RESET_EN: VariantLangConfig = {
     ],
   },
   return: {
-    headline: "You came back the way you could.",
-    subtext: 'Small still rebuilds.',
+    headline: "Today, enough is enough.",
+    subtext: "You don't have to rush your way back.",
   },
 };
 
@@ -739,8 +739,8 @@ const SOFT_RESET_ES: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'Volviste como pudiste.',
-    subtext: 'Poco también reconstruye.',
+    headline: 'Hoy, lo suficiente ya cuenta.',
+    subtext: 'No tienes que apresurarte para volver.',
   },
 };
 
@@ -969,8 +969,8 @@ const SOFT_RESET_FR: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'Tu es revenu comme tu pouvais.',
-    subtext: 'Un pas à la fois suffit déjà.',
+    headline: "Aujourd'hui, faire assez suffit.",
+    subtext: "Tu n'as pas besoin de te précipiter pour revenir.",
   },
 };
 
@@ -1191,8 +1191,8 @@ const SOFT_RESET_DE: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'Du bist so zurückgekehrt, wie es ging.',
-    subtext: 'Klein baut auch wieder auf.',
+    headline: 'Heute reicht das, was möglich ist.',
+    subtext: 'Du musst nicht hetzen, um zurückzukommen.',
   },
 };
 
