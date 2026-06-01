@@ -775,11 +775,13 @@ function PrivateSpaceCard({
 
   const [text, setText]         = useState('');
   const [isFocused, setFocused] = useState(false);
-  const [feedbackKey, setFeedbackKey] = useState<'kept' | 'released' | null>(null);
-  const [dailyPrompt, setDailyPrompt] = useState('');
+  const [feedbackKey, setFeedbackKey]     = useState<'kept' | 'released' | null>(null);
+  const [showSecondary, setShowSecondary] = useState(false);
+  const [dailyPrompt, setDailyPrompt]     = useState('');
 
   const borderAnim     = useRef(new Animated.Value(0)).current;
   const feedbackAnim   = useRef(new Animated.Value(0)).current;
+  const secondaryAnim  = useRef(new Animated.Value(0)).current;
   const restingOpacity = useRef(new Animated.Value(0)).current;
   const textFadeAnim   = useRef(new Animated.Value(1)).current;
 
@@ -798,19 +800,41 @@ function PrivateSpaceCard({
 
   const showFeedback = useCallback((key: 'kept' | 'released') => {
     setFeedbackKey(key);
+    setShowSecondary(false);
     feedbackAnim.setValue(0);
+    secondaryAnim.setValue(0);
     restingOpacity.setValue(0);
-    Animated.sequence([
-      Animated.timing(feedbackAnim, { toValue: 1, duration: 400, useNativeDriver: true }),
-      Animated.delay(2200),
-      Animated.timing(feedbackAnim, { toValue: 0, duration: 600, useNativeDriver: true }),
-    ]).start(() => setFeedbackKey(null));
+
+    if (key === 'kept') {
+      // Phase 1: primary "Guardado em silêncio." → fade in, hold ~3s, fade out
+      Animated.sequence([
+        Animated.timing(feedbackAnim, { toValue: 1, duration: 400, useNativeDriver: true }),
+        Animated.delay(2800),
+        Animated.timing(feedbackAnim, { toValue: 0, duration: 500, useNativeDriver: true }),
+      ]).start(() => {
+        setFeedbackKey(null);
+        // Phase 2: secondary "Você pode voltar quando quiser."
+        setShowSecondary(true);
+        Animated.sequence([
+          Animated.timing(secondaryAnim, { toValue: 1, duration: 500, useNativeDriver: true }),
+          Animated.delay(2500),
+          Animated.timing(secondaryAnim, { toValue: 0, duration: 700, useNativeDriver: true }),
+        ]).start(() => setShowSecondary(false));
+      });
+    } else {
+      Animated.sequence([
+        Animated.timing(feedbackAnim, { toValue: 1, duration: 400, useNativeDriver: true }),
+        Animated.delay(2200),
+        Animated.timing(feedbackAnim, { toValue: 0, duration: 600, useNativeDriver: true }),
+      ]).start(() => setFeedbackKey(null));
+    }
+
     Animated.sequence([
       Animated.timing(restingOpacity, { toValue: 1, duration: 700, useNativeDriver: false }),
       Animated.delay(1800),
       Animated.timing(restingOpacity, { toValue: 0, duration: 1000, useNativeDriver: false }),
     ]).start();
-  }, [feedbackAnim, restingOpacity]);
+  }, [feedbackAnim, secondaryAnim, restingOpacity]);
 
   const handleAction = useCallback(async (type: 'kept' | 'released') => {
     const trimmed = text.trim();
@@ -881,6 +905,11 @@ function PrivateSpaceCard({
           {feedbackKey === 'kept'
             ? t('progress2.space.feedback.kept')
             : t('progress2.space.feedback.released')}
+        </Animated.Text>
+      )}
+      {showSecondary && (
+        <Animated.Text style={[styles.spaceSavedSecondary, { opacity: secondaryAnim }]}>
+          {t('progress2.space.feedback.return')}
         </Animated.Text>
       )}
     </Animated.View>
@@ -1522,6 +1551,14 @@ const styles = StyleSheet.create({
     color: Colors.gold,
     fontStyle: 'italic' as const,
     letterSpacing: 0.3,
+  },
+  spaceSavedSecondary: {
+    alignSelf: 'flex-end' as const,
+    marginTop: 3,
+    fontSize: 10,
+    color: Colors.textMuted,
+    fontStyle: 'italic' as const,
+    letterSpacing: 0.2,
   },
 
   // Weekly recap card
