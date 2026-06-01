@@ -199,6 +199,78 @@ function WeeklyRhythmCard({
   );
 }
 
+// ─── FirstSignalsBlock ────────────────────────────────────────────────────────
+// Shown on days 1–7 only. Human, observational, seed-varied by day count.
+
+function FirstSignalsBlock({ totalDays, fadeAnim }: { totalDays: number; fadeAnim: Animated.Value }) {
+  const { lang } = useLanguage();
+  if (totalDays < 1 || totalDays > 7) return null;
+
+  const seed = totalDays - 1;
+
+  const titles =
+    lang === 'pt' ? ['Seu primeiro sinal.', 'Algo pequeno começou.', 'Um sinal.'] :
+    lang === 'es' ? ['Tu primera señal.', 'Algo pequeño comenzó.', 'Una señal.'] :
+    lang === 'fr' ? ['Ton premier signal.', 'Quelque chose a commencé.', 'Un signal.'] :
+    lang === 'de' ? ['Dein erstes Zeichen.', 'Etwas Kleines begann.', 'Ein Zeichen.'] :
+                    ['Your first signal.', 'Something small began.', 'A sign.'];
+
+  const messages =
+    lang === 'pt' ? [
+      'Você abriu espaço para si hoje.',
+      'Algo mudou o suficiente para você voltar.',
+      'Hoje existiu um momento só seu.',
+      'Você interrompeu o automático por alguns minutos.',
+      'Seu ritmo ainda é pequeno. Mas ele existe.',
+      'Você apareceu.',
+      'Pequeno também conta.',
+    ] : lang === 'es' ? [
+      'Abriste espacio para ti hoy.',
+      'Algo cambió lo suficiente para que volvieras.',
+      'Hoy hubo un momento solo tuyo.',
+      'Interrumpiste el piloto automático por unos minutos.',
+      'Tu ritmo todavía es pequeño. Pero existe.',
+      'Apareciste.',
+      'Lo pequeño también cuenta.',
+    ] : lang === 'fr' ? [
+      "Tu t'es fait de la place aujourd'hui.",
+      "Quelque chose a changé suffisamment pour te faire revenir.",
+      "Aujourd'hui, il y a eu un moment rien qu'à toi.",
+      "Tu as interrompu l'automatique quelques minutes.",
+      "Ton rythme est encore petit. Mais il existe.",
+      "Tu t'es montré.",
+      "Le petit compte aussi.",
+    ] : lang === 'de' ? [
+      'Du hast dir heute Raum gemacht.',
+      'Etwas hat sich genug verändert, um dich zurückzubringen.',
+      'Heute gab es einen Moment, der nur dir gehörte.',
+      'Du hast das Automatische für ein paar Minuten unterbrochen.',
+      'Dein Rhythmus ist noch klein. Aber er existiert.',
+      'Du hast dich gezeigt.',
+      'Kleines zählt auch.',
+    ] : [
+      'You made space for yourself today.',
+      'Something shifted enough to bring you back.',
+      'Today had a moment that was just yours.',
+      'You interrupted the automatic for a few minutes.',
+      'Your rhythm is still small. But it exists.',
+      'You showed up.',
+      'Small counts too.',
+    ];
+
+  return (
+    <Animated.View style={{ opacity: fadeAnim }}>
+      <View style={styles.firstSignalsCard}>
+        <View style={styles.firstSignalsDot} />
+        <View style={{ flex: 1, gap: 5 }}>
+          <Text style={styles.firstSignalsTitle}>{titles[seed % titles.length]}</Text>
+          <Text style={styles.firstSignalsText}>{messages[seed % messages.length]}</Text>
+        </View>
+      </View>
+    </Animated.View>
+  );
+}
+
 // ─── RealSignalsSection ───────────────────────────────────────────────────────
 
 const SIGNAL_MARKS = ['radio-button-off-outline', 'ellipse-outline', 'git-commit-outline'] as const;
@@ -358,12 +430,12 @@ function RebuildingTimeline({ totalDays, fadeAnim }: { totalDays: number; fadeAn
   const translateY = fadeAnim.interpolate({ inputRange: [0, 1], outputRange: [10, 0] });
 
   const milestones = [
-    { day: 1,  key: 'progress2.timeline.day1',  reached: totalDays >= 1 },
-    { day: 7,  key: 'progress2.timeline.day7',  reached: totalDays >= 7 },
-    { day: 14, key: 'progress2.timeline.day14', reached: totalDays >= 14 },
-    { day: 30, key: 'progress2.timeline.day30', reached: totalDays >= 30 },
-    { day: 60, key: 'progress2.timeline.day60', reached: totalDays >= 60 },
-    { day: 90, key: 'progress2.timeline.day90', reached: totalDays >= 90 },
+    { day: 1,  titleKey: 'progress2.timeline.day1.title',  key: 'progress2.timeline.day1',  reached: totalDays >= 1 },
+    { day: 7,  titleKey: 'progress2.timeline.day7.title',  key: 'progress2.timeline.day7',  reached: totalDays >= 7 },
+    { day: 14, titleKey: 'progress2.timeline.day14.title', key: 'progress2.timeline.day14', reached: totalDays >= 14 },
+    { day: 30, titleKey: 'progress2.timeline.day30.title', key: 'progress2.timeline.day30', reached: totalDays >= 30 },
+    { day: 60, titleKey: 'progress2.timeline.day60.title', key: 'progress2.timeline.day60', reached: totalDays >= 60 },
+    { day: 90, titleKey: 'progress2.timeline.day90.title', key: 'progress2.timeline.day90', reached: totalDays >= 90 },
   ];
 
   const firstUnreachedIdx = milestones.findIndex(m => !m.reached);
@@ -391,7 +463,7 @@ function RebuildingTimeline({ totalDays, fadeAnim }: { totalDays: number; fadeAn
                   m.reached && styles.timelineDayReached,
                   isFar && styles.timelineDayFar,
                 ]}>
-                  {m.day === 1 ? 'Dia 1' : `${m.day} dias`}
+                  {t(m.titleKey)}
                 </Text>
                 <Text style={[
                   styles.timelineText,
@@ -780,6 +852,7 @@ export default function ProgressScreen() {
       >
         <ProgressHero fadeAnim={heroFade} seed={patternSeed} />
         <SilentReward totalDays={totalDays} fadeAnim={heroFade} />
+        <FirstSignalsBlock totalDays={totalDays} fadeAnim={heroFade} />
         <WeeklyRhythmCard percent={presencePercent} totalDays={totalDays} hasData={hasData} fadeAnim={rhythmFade} />
         <RealSignalsSection hasData={hasData} fadeAnim={signalsFade} />
         <PatternsSection seed={patternSeed} hasData={hasData} fadeAnim={patternsFade} />
@@ -1003,6 +1076,41 @@ const styles = StyleSheet.create({
   },
 
   // Patterns
+  // First Signals Block (days 1–7)
+  firstSignalsCard: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: Spacing.md,
+    backgroundColor: Colors.card,
+    borderRadius: Radii.xl,
+    paddingHorizontal: Spacing.lg,
+    paddingVertical: 14,
+    marginBottom: Spacing.md,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: `${Colors.gold}18`,
+    ...Shadows.card,
+  },
+  firstSignalsDot: {
+    width: 3,
+    borderRadius: 2,
+    backgroundColor: Colors.gold,
+    alignSelf: 'stretch',
+    opacity: 0.45,
+    marginTop: 2,
+  },
+  firstSignalsTitle: {
+    fontSize: Typography.sizes.sm,
+    fontWeight: Typography.weights.semibold,
+    color: Colors.textPrimary,
+    letterSpacing: 0.1,
+  },
+  firstSignalsText: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    lineHeight: 20,
+    fontStyle: 'italic',
+  },
+
   patternCard: {
     backgroundColor: Colors.card,
     borderRadius: Radii.lg,

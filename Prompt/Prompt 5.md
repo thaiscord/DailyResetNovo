@@ -1,137 +1,222 @@
-Aplique os seguintes ajustes na tela "Hoje" após a conclusão do reset.
+Quero realizar apenas dois ajustes na aba Progress.
 
-OBJETIVO
+NÃO alterar:
 
-1. Aumentar a curiosidade para o retorno no dia seguinte.
-2. Dar mais destaque ao Ritual de Reset, que é uma das funcionalidades centrais do produto.
-3. Não alterar a identidade visual, paleta de cores ou estilo do app.
-4. Não criar novas telas.
+Seu Espaço Particular
+Resumos Semanais
+Reflexões Silenciosas
+Sinais do Caminho
+Layout geral da tela
+Design visual existente
 
-──────────────────────────────
+O objetivo é melhorar exclusivamente a experiência emocional dos primeiros dias de uso.
 
-AJUSTE 1 — REPOSICIONAR OS BLOCOS
+1. TRANSFORMAR O DIA 1 EM UMA EXPERIÊNCIA MAIS SIGNIFICATIVA
 
-Após o usuário concluir o reset do dia, reorganizar a ordem dos componentes.
+Hoje os blocos iniciais da Progress mostram principalmente números e estados.
 
-ORDEM ATUAL
+Visualmente está correto.
 
-1. Card principal
-2. Momento para refletir
-3. Reset de amanhã
-4. Ritual de Reset
+Mas emocionalmente ainda não comunica que algo real aconteceu.
 
-NOVA ORDEM
+Quero substituir a lógica de "estatísticas do primeiro dia" por "primeiros sinais percebidos".
 
-1. Card principal
-2. Ritual de Reset
-3. Momento para refletir
-4. Reset de amanhã
+O tom deve continuar:
 
-Justificativa:
+humano
+calmo
+observacional
+sem autoajuda
+sem coaching
+sem celebração exagerada
+sem gamificação infantil
 
-O Ritual de Reset é uma das experiências mais exclusivas do Daily Reset e deve aparecer antes dos elementos secundários.
+A sensação deve ser:
 
-A intenção é que o usuário enxergue primeiro a ação prática e emocional do dia, e só depois os elementos complementares.
+"Algo pequeno já começou."
 
-Não alterar o design do card do Ritual.
-Não alterar cores.
-Não alterar tamanho.
-Somente reposicionar.
+NOVO BLOCO DE PRIMEIROS SINAIS
 
-──────────────────────────────
+Nos primeiros dias (1–7 dias), exibir mensagens adaptativas como:
 
-AJUSTE 2 — REFORMULAR O CARD "RESET DE AMANHÃ"
+Dia 1:
 
-O card atual revela conteúdo demais sobre o próximo dia.
+Título:
 
-Exemplo atual:
+"Seu primeiro sinal."
 
-"Amanhã começa o Dia 2."
-"Você voltou. Isso já é algo real."
+Texto:
 
-Isso reduz curiosidade e transforma o card em um spoiler.
+"Você abriu espaço para si hoje."
 
-O novo card deve funcionar como um convite para voltar amanhã.
+Outras possíveis variações:
 
-REGRAS
+"Algo mudou o suficiente para você voltar."
 
-* Não mostrar o título do próximo reset.
-* Não mostrar a frase principal do próximo reset.
-* Não revelar o conteúdo do próximo dia.
-* Não entregar a categoria do próximo reset.
-* Não mostrar textos específicos do dia seguinte.
+"Hoje existiu um momento só seu."
 
-O card deve apenas sugerir continuidade.
+"Você interrompeu o automático por alguns minutos."
 
-──────────────────────────────
+"Seu ritmo ainda é pequeno. Mas ele existe."
 
-NOVO COMPORTAMENTO
+"Você apareceu."
 
-Exibir uma mensagem curta, humana e aberta.
+As mensagens devem variar dinamicamente.
 
-Exemplos de referência de tom:
+Nunca repetir sempre a mesma frase.
 
-"Amanhã continua."
+SINAIS REAIS
 
-"Algo pequeno espera você amanhã."
+Manter a seção.
 
-"Nem todo progresso aparece no mesmo dia."
+Mas permitir que os cards reflitam observações humanas.
 
-"Há espaço para continuar."
+Exemplos:
 
-"Você não precisa terminar tudo hoje."
+"Você voltou"
 
-"A próxima etapa chega no seu tempo."
+"Você criou um pequeno espaço."
 
-"Amanhã pode ser mais simples do que parece."
+"Mais presença"
 
-"Continue quando estiver pronto."
+"Você desacelerou por alguns minutos."
 
-Esses exemplos servem apenas como referência de tom.
+"Um retorno"
 
-──────────────────────────────
+"Hoje não passou despercebido."
 
-IMPLEMENTAÇÃO
+"Continuidade"
 
-Criar uma coleção de mensagens para o card de amanhã.
+"Algo em você decidiu continuar."
 
-* Pelo menos 30 variações.
-* Tom humano.
-* Calmo.
-* Sem linguagem de coach.
-* Sem promessas.
-* Sem pressão.
-* Sem urgência.
-* Sem culpa.
+Esses textos devem ser gerados conforme os dados reais do usuário.
 
-As mensagens devem rotacionar naturalmente.
+2. MELHORAR A LINHA DE RECONSTRUÇÃO
 
-──────────────────────────────
+Manter o visual atual.
 
-IMPORTANTE
+Manter os marcos:
 
-Manter compatibilidade completa com i18n.
+Dia 1
+7 dias
+14 dias
+30 dias
+60 dias
+90 dias
 
-Criar versões nativas para:
+Não alterar layout.
 
-* Português
-* Inglês
-* Espanhol
-* Francês
-* Alemão
+Não alterar posicionamento.
 
-Não fazer traduções literais.
+Não alterar design.
 
-Cada idioma deve soar natural para um falante nativo.
+Alterar apenas os textos.
 
-──────────────────────────────
+Substituir os textos atuais pelos seguintes:
 
-VALIDAÇÃO
+DIA 1
 
-Após implementar:
+Título:
 
-* Rodar npx expo export -p web
-* Corrigir qualquer erro de build
-* Garantir que a nova ordem dos componentes esteja correta
-* Garantir que o card "Reset de amanhã" não revele conteúdo do próximo dia
-* Garantir funcionamento em todos os idiomas
+"Você começou."
+
+Texto:
+
+"Algo mudou o suficiente para você estar aqui."
+
+7 DIAS
+
+Título:
+
+"Primeiros sinais."
+
+Texto:
+
+"Um ritmo começou a aparecer."
+
+14 DIAS
+
+Título:
+
+"Menos esforço."
+
+Texto:
+
+"Seu retorno começou a parecer mais natural."
+
+30 DIAS
+
+Título:
+
+"Uma base."
+
+Texto:
+
+"Você construiu algo que continua existindo entre os dias."
+
+60 DIAS
+
+Título:
+
+"Mais estabilidade."
+
+Texto:
+
+"Seu progresso deixou de depender de dias perfeitos."
+
+90 DIAS
+
+Título:
+
+"Presença construída."
+
+Texto:
+
+"Você criou uma relação mais constante consigo mesmo."
+
+REGRAS IMPORTANTES
+
+Não utilizar:
+
+"Parabéns"
+"Você conseguiu"
+"Você venceu"
+"Continue firme"
+"Orgulho"
+"Jornada incrível"
+"Transformação"
+
+Não utilizar linguagem de coach.
+
+Não utilizar linguagem terapêutica.
+
+Não utilizar frases motivacionais genéricas.
+
+Tudo deve soar como observação humana.
+
+Como se o aplicativo estivesse apenas percebendo o que aconteceu.
+
+INTERNACIONALIZAÇÃO (OBRIGATÓRIO)
+
+Aplicar também para:
+
+Português (Brasil)
+Inglês
+Espanhol
+Francês
+Alemão
+
+NÃO fazer tradução literal.
+
+Cada idioma deve parecer escrito originalmente por um nativo.
+
+Preservar:
+
+tom humano
+tom observacional
+tom calmo
+tom minimalista
+
+As frases devem soar naturais em cada cultura e não como texto traduzido por IA.
+
+Esse ajuste deve ser pequeno visualmente, mas aumentar significativamente a sensação de progresso real durante os primeiros 7 dias de uso.
