@@ -1218,6 +1218,13 @@ export default function ResetRitualScreen() {
                   ];
                 return opts[progress.currentDay % opts.length];
               }
+              if (ritualVariant === 'releaseTension') {
+                return lang === 'pt' ? 'Leve só o que cabe hoje'
+                  : lang === 'es' ? 'Lleva solo lo que cabe hoy'
+                  : lang === 'fr' ? "Ne garde que l'essentiel pour aujourd'hui"
+                  : lang === 'de' ? 'Nimm nur mit, was heute zählt'
+                  : 'Carry only what matters today';
+              }
               return lang === 'es' ? 'Lleva esta calma contigo' : lang === 'pt' ? 'Leve essa calma com você' : lang === 'fr' ? 'Emporte ce calme avec toi' : lang === 'de' ? 'Nimm diese Ruhe mit dir' : 'Carry this with you';
             })()}</Text>
             </LinearGradient>

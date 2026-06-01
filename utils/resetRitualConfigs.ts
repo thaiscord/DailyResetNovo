@@ -349,7 +349,7 @@ const BODY_REST_ES: VariantLangConfig = {
 
 const RELEASE_TENSION_PT: VariantLangConfig = {
   arrive: {
-    eyebrow: 'SOLTE',
+    eyebrow: 'DEIXE IR',
     headline: 'Nem tudo precisa\ncaber hoje.',
     subtext: 'Um pouco de espaço já muda o peso.',
   },
@@ -362,8 +362,8 @@ const RELEASE_TENSION_PT: VariantLangConfig = {
     },
     {
       eyebrow: 'ALÍVIO',
-      headline: 'Solte o que não cabe\nno agora.',
-      centerText: 'Solte.',
+      headline: 'Deixe passar o que\nnão cabe agora.',
+      centerText: 'Deixe.',
       subtext: 'Nem tudo precisa ser carregado hoje.',
     },
     {
@@ -374,7 +374,7 @@ const RELEASE_TENSION_PT: VariantLangConfig = {
     },
   ],
   breathe: {
-    eyebrow: 'SOLTE',
+    eyebrow: 'RESPIRE',
     headline: 'O ar que sai\nleva o que não precisa ficar.',
     subtext: 'Apenas respire.',
   },
@@ -396,7 +396,7 @@ const RELEASE_TENSION_PT: VariantLangConfig = {
 
 const RELEASE_TENSION_EN: VariantLangConfig = {
   arrive: {
-    eyebrow: 'RELEASE',
+    eyebrow: 'LET GO',
     headline: 'Not everything needs\nto fit in today.',
     subtext: 'A little space already changes the weight.',
   },
@@ -409,8 +409,8 @@ const RELEASE_TENSION_EN: VariantLangConfig = {
     },
     {
       eyebrow: 'RELIEF',
-      headline: "Let go of what\ndoesn't fit right now.",
-      centerText: 'Release.',
+      headline: "Let pass what\ndoesn't fit right now.",
+      centerText: 'Let go.',
       subtext: "Not everything needs to be carried today.",
     },
     {
@@ -421,7 +421,7 @@ const RELEASE_TENSION_EN: VariantLangConfig = {
     },
   ],
   breathe: {
-    eyebrow: 'RELEASE',
+    eyebrow: 'BREATHE',
     headline: "The breath out\ncarries what need not stay.",
     subtext: 'Just breathe.',
   },
@@ -443,7 +443,7 @@ const RELEASE_TENSION_EN: VariantLangConfig = {
 
 const RELEASE_TENSION_ES: VariantLangConfig = {
   arrive: {
-    eyebrow: 'SUELTA',
+    eyebrow: 'DEJA IR',
     headline: 'No todo necesita\ncaber hoy.',
     subtext: 'Un poco de espacio ya cambia el peso.',
   },
@@ -456,8 +456,8 @@ const RELEASE_TENSION_ES: VariantLangConfig = {
     },
     {
       eyebrow: 'ALIVIO',
-      headline: 'Suelta lo que no\ncabe en el ahora.',
-      centerText: 'Suéltalo.',
+      headline: 'Deja pasar lo que\nno cabe ahora.',
+      centerText: 'Deja ir.',
       subtext: 'No todo necesita cargarse hoy.',
     },
     {
@@ -468,7 +468,7 @@ const RELEASE_TENSION_ES: VariantLangConfig = {
     },
   ],
   breathe: {
-    eyebrow: 'SUELTA',
+    eyebrow: 'RESPIRA',
     headline: 'El aire que sale\nlleva lo que no debe quedar.',
     subtext: 'Solo respira.',
   },
@@ -841,7 +841,7 @@ const BODY_REST_FR: VariantLangConfig = {
 
 const RELEASE_TENSION_FR: VariantLangConfig = {
   arrive: {
-    eyebrow: 'RELÂCHE',
+    eyebrow: 'LAISSE ALLER',
     headline: 'Tout n\'a pas besoin\nde tenir dans aujourd\'hui.',
     subtext: 'Un peu d\'espace change déjà le poids.',
   },
@@ -854,8 +854,8 @@ const RELEASE_TENSION_FR: VariantLangConfig = {
     },
     {
       eyebrow: 'SOULAGEMENT',
-      headline: 'Laisse aller ce qui\nne tient pas dans l\'instant.',
-      centerText: 'Relâche.',
+      headline: 'Laisse passer ce qui\nne tient pas maintenant.',
+      centerText: 'Laisse aller.',
       subtext: 'Tout n\'a pas besoin d\'être porté aujourd\'hui.',
     },
     {
@@ -866,7 +866,7 @@ const RELEASE_TENSION_FR: VariantLangConfig = {
     },
   ],
   breathe: {
-    eyebrow: 'RELÂCHE',
+    eyebrow: 'RESPIRE',
     headline: 'L\'air qui sort\nemporte ce qui n\'a pas besoin de rester.',
     subtext: 'Respire seulement.',
   },
@@ -1067,7 +1067,7 @@ const BODY_REST_DE: VariantLangConfig = {
 
 const RELEASE_TENSION_DE: VariantLangConfig = {
   arrive: {
-    eyebrow: 'LOSLASSEN',
+    eyebrow: 'FREIRAUM',
     headline: 'Nicht alles muss\nheute Platz finden.',
     subtext: 'Ein bisschen Raum verändert bereits das Gewicht.',
   },
@@ -1080,8 +1080,8 @@ const RELEASE_TENSION_DE: VariantLangConfig = {
     },
     {
       eyebrow: 'ERLEICHTERUNG',
-      headline: 'Lass los, was\ngerade keinen Platz hat.',
-      centerText: 'Loslassen.',
+      headline: 'Lass vorbei, was\ngerade keinen Platz hat.',
+      centerText: 'Weglegen.',
       subtext: 'Nicht alles muss heute getragen werden.',
     },
     {
@@ -1092,7 +1092,7 @@ const RELEASE_TENSION_DE: VariantLangConfig = {
     },
   ],
   breathe: {
-    eyebrow: 'LOSLASSEN',
+    eyebrow: 'ATMEN',
     headline: 'Der Atem trägt,\nwas nicht bleiben muss.',
     subtext: 'Nur atmen.',
   },
