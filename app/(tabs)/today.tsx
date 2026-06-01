@@ -57,6 +57,7 @@ import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { getProfileBanner, getHeavyMoodAdaptiveBanner } from '../../utils/emotionalProfile';
 import { useLanguage } from '../../hooks/useLanguage';
 import { useRitualIntention } from '../../hooks/useRitualIntention';
+import { useReflections } from '../../hooks/useReflections';
 import { getIntentionBanner } from '../../utils/ritualIntention';
 import { useMilestones } from '../../hooks/useMilestones';
 import {
@@ -1310,6 +1311,11 @@ function CompletedCard({ day, streak, totalDays: _totalDays, tomorrow: _tomorrow
   const { t: cardT } = useLanguage();
   const msg    = getCompletionMessage(streak, day);
   const phrase = getStreakPhrase(streak, day);
+  const { entries: reflEntries } = useReflections();
+  const todayKey = getLocalDateKey();
+  const hasReflectionAnswer = reflEntries.some(e =>
+    e.date === todayKey && (!reflectionPromptId || e.promptId === reflectionPromptId)
+  );
 
   const contextualMsg = null;
 
@@ -1357,6 +1363,9 @@ function CompletedCard({ day, streak, totalDays: _totalDays, tomorrow: _tomorrow
           <View style={cardStyles.reflectionRowInner}>
             <Text style={cardStyles.reflectionEyebrow}>{cardT('today.reflect.eyebrow')}</Text>
             <Text style={cardStyles.reflectionPrompt}>{`"${reflection}"`}</Text>
+            {hasReflectionAnswer && (
+              <Text style={cardStyles.reflectionDone}>{cardT('today.reflect.done')}</Text>
+            )}
           </View>
           <Ionicons name="create-outline" size={16} color={Colors.textMuted} />
         </TouchableOpacity>
@@ -1905,6 +1914,12 @@ const cardStyles = StyleSheet.create({
     color: Colors.textSecondary,
     fontStyle: 'italic',
     lineHeight: 20,
+  },
+  reflectionDone: {
+    fontSize: 11,
+    fontWeight: '500',
+    color: Colors.textMuted,
+    marginTop: 2,
   },
   communityRow: {
     flexDirection: 'row',
