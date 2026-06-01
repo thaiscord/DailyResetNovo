@@ -251,13 +251,13 @@ const BODY_REST_PT: VariantLangConfig = {
     subtext: 'Hoje pode ser mais leve.',
     options: [
       { id: 'pause', label: 'Pausar',            sub: '' },
-      { id: 'water', label: 'Água',              sub: '' },
+      { id: 'water', label: 'Beber água',        sub: '' },
       { id: 'rest',  label: 'Descansar um pouco', sub: '' },
     ],
   },
   return: {
     headline: 'Você não precisou se forçar.',
-    subtext: 'Fazer menos também é cuidado.',
+    subtext: 'Você não precisa carregar tudo hoje.',
   },
 };
 
@@ -292,14 +292,14 @@ const BODY_REST_EN: VariantLangConfig = {
     headline: 'What would be gentler right now?',
     subtext: 'Today can be lighter.',
     options: [
-      { id: 'pause', label: 'Pause',        sub: '' },
-      { id: 'water', label: 'Water',        sub: '' },
-      { id: 'rest',  label: 'Rest a little', sub: '' },
+      { id: 'pause', label: 'Pause',            sub: '' },
+      { id: 'water', label: 'Drink some water', sub: '' },
+      { id: 'rest',  label: 'Rest a little',    sub: '' },
     ],
   },
   return: {
     headline: "You didn't have to push today.",
-    subtext: 'Doing less can also be care.',
+    subtext: "You don't have to carry everything today.",
   },
 };
 
@@ -335,13 +335,13 @@ const BODY_REST_ES: VariantLangConfig = {
     subtext: 'Hoy puede ser más ligero.',
     options: [
       { id: 'pause', label: 'Pausar',            sub: '' },
-      { id: 'water', label: 'Agua',              sub: '' },
+      { id: 'water', label: 'Beber agua',        sub: '' },
       { id: 'rest',  label: 'Descansar un poco', sub: '' },
     ],
   },
   return: {
     headline: 'No tuviste que forzarte hoy.',
-    subtext: 'Hacer menos también es cuidado.',
+    subtext: 'No tienes que cargar con todo hoy.',
   },
 };
 
@@ -826,14 +826,14 @@ const BODY_REST_FR: VariantLangConfig = {
     headline: 'Qu\'est-ce qui serait plus doux maintenant ?',
     subtext: 'Aujourd\'hui peut être plus léger.',
     options: [
-      { id: 'pause', label: 'Faire une pause',   sub: '' },
-      { id: 'water', label: 'Un verre d\'eau',   sub: '' },
-      { id: 'rest',  label: 'Se reposer un peu', sub: '' },
+      { id: 'pause', label: 'Faire une pause',        sub: '' },
+      { id: 'water', label: 'Boire un verre d\'eau', sub: '' },
+      { id: 'rest',  label: 'Se reposer un peu',     sub: '' },
     ],
   },
   return: {
     headline: 'Tu n\'as pas eu à te forcer aujourd\'hui.',
-    subtext: 'Faire moins peut aussi être du soin.',
+    subtext: 'Tu n\'as pas à tout porter aujourd\'hui.',
   },
 };
 
@@ -1061,7 +1061,7 @@ const BODY_REST_DE: VariantLangConfig = {
   },
   return: {
     headline: 'Du musstest dich heute nicht zwingen.',
-    subtext: 'Weniger tun ist auch Fürsorge.',
+    subtext: 'Du musst heute nicht alles tragen.',
   },
 };
 
