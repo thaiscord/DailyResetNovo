@@ -1,102 +1,191 @@
-AJUSTAR APENAS O CARD "AMANHÃ".
-
-NÃO alterar nenhum outro card.
-NÃO alterar textos.
-NÃO alterar lógica.
-NÃO alterar i18n.
-NÃO alterar o conteúdo dinâmico já implementado.
+MELHORIA DA EXPERIÊNCIA DA ABA MINDSET
 
 Objetivo:
-Melhorar a hierarquia visual e deixar o card mais elegante, premium e equilibrado.
 
-PROBLEMA ATUAL
+Aprimorar a experiência emocional da seção "Como você está chegando agora?" sem adicionar novos sistemas, novos cards ou aumentar a complexidade da tela.
 
-Após remover os spoilers do próximo reset, o card ficou muito vazio.
+O foco é tornar a escolha emocional mais presente, mais personalizada e preencher o espaço visual atualmente vazio entre a seleção emocional e a seção "Caminhos para Voltar".
 
-Como existe apenas uma frase curta dentro dele, o texto ganhou destaque excessivo e visualmente compete com o card principal.
+IMPORTANTE:
 
-Hoje a frase parece grande demais para a importância do elemento.
+* Não alterar a estrutura geral da tela.
+* Não adicionar gráficos.
+* Não adicionar estatísticas.
+* Não adicionar novos cards de categorias.
+* Não alterar os cards de "Caminhos para Voltar".
+* Não alterar a identidade visual existente.
+* Não utilizar linguagem de coach.
+* Não utilizar frases motivacionais genéricas.
+* Não utilizar tom terapêutico exagerado.
+* Manter o tom humano, calmo, observador e acolhedor.
 
-O card "Amanhã" deve parecer um teaser discreto e não um conteúdo principal.
+---
 
-AJUSTES VISUAIS
+1. DESTACAR A ESCOLHA FEITA PELA PESSOA
 
-1. REDUZIR O TAMANHO DA FRASE PRINCIPAL
+Hoje a pessoa seleciona:
+
+* Pressão
+* Nublado
+* Esgotamento
+* Baixa energia
+* Ruído interno
+
+Mas após a seleção a escolha praticamente desaparece da experiência.
+
+Adicionar um pequeno indicador visual discreto logo abaixo da seleção:
+
+Exemplos:
+
+"Hoje você chegou com: Pressão"
+
+ou
+
+"Estado percebido: Pressão"
+
+ou
+
+"Você escolheu: Pressão"
+
+O texto deve:
+
+* ser discreto
+* pequeno
+* elegante
+* alinhado à identidade do app
+* parecer uma observação, não um diagnóstico
+
+Esse texto deve mudar dinamicamente conforme a opção escolhida.
+
+---
+
+2. TRANSFORMAR A FRASE INTERMEDIÁRIA EM UM MINI BLOCO DE ACOLHIMENTO
+
+Hoje existe apenas uma frase isolada.
 
 Exemplo:
 
-Atual:
-"Amanhã abre a próxima página."
+"Nem tudo precisa da sua atenção agora."
 
-Reduzir aproximadamente entre 20% e 25%.
+Isso gera um espaço visual vazio e pouco significado.
 
-O objetivo é que a frase seja claramente secundária em relação:
+Transformar essa área em um pequeno bloco editorial.
 
-* ao título principal da tela
-* ao card principal do reset
-* ao Ritual de Reset
+Estrutura:
 
-A frase deve parecer uma observação suave e não um headline.
+Título curto
 
-2. AUMENTAR O RESPIRO INTERNO
+*
 
-Aumentar levemente o padding vertical do card.
+texto complementar de 1 ou 2 linhas
 
-O conteúdo deve respirar mais.
+Exemplo para PRESSÃO:
 
-O card deve transmitir calma e espaço.
+Nem tudo precisa da sua atenção agora.
 
-3. MELHORAR A HIERARQUIA
+Você não precisa resolver tudo hoje.
+Escolha apenas uma coisa para carregar pelos próximos minutos.
 
-Manter:
+---
 
-AMANHÃ
+Exemplo para ESGOTAMENTO:
 
-como elemento visual dominante do card.
+Seu corpo está pedindo outra velocidade.
 
-A frase dinâmica deve ter peso visual menor.
+Talvez este seja um momento para recuperar energia,
+não para exigir mais de si.
 
-Hierarquia desejada:
+---
 
-AMANHÃ
-(destaque)
+Exemplo para BAIXA ENERGIA:
 
-frase dinâmica
-(secundária)
+Menos força também é informação.
 
-4. NÃO ADICIONAR MAIS TEXTO
+Nem todos os dias foram feitos para render.
+Alguns existem apenas para continuar.
 
-Não inserir subtítulos.
+---
 
-Não inserir descrições.
+Exemplo para NUBLADO:
 
-Não inserir ícones.
+Você não precisa enxergar tudo agora.
 
-Não inserir categorias.
+Clareza costuma aparecer depois que o ritmo diminui.
 
-Não inserir informações do próximo reset.
+---
 
-O minimalismo atual está correto.
+Exemplo para RUÍDO INTERNO:
 
-Apenas refinar proporções.
+Nem todo pensamento precisa de resposta.
 
-5. RESULTADO ESPERADO
+Algumas coisas ficam mais leves quando deixam de ser perseguidas.
 
-O card deve transmitir:
+---
 
-* curiosidade
-* continuidade
-* leveza
-* elegância
+3. MELHORAR O APROVEITAMENTO VISUAL DO ESPAÇO
 
-sem competir visualmente com o card principal ou com o Ritual de Reset.
+Após a seleção emocional:
 
-A sensação deve ser:
+Mostrar:
 
-"Existe algo amanhã."
+* indicador da escolha feita
+* mini bloco de acolhimento
 
-e não
+Isso deve ocupar o espaço atualmente vazio antes de "Caminhos para Voltar".
 
-"Olhe para mim agora."
+A tela deve parecer intencionalmente preenchida e não apenas conter uma frase solta.
 
-Realizar apenas ajustes de tipografia, espaçamento e hierarquia visual.
+---
+
+4. PERSONALIZAÇÃO REAL
+
+Cada estado emocional deve possuir:
+
+* título próprio
+* texto próprio
+* micro mensagem própria
+
+Nada genérico.
+
+Nada compartilhado entre estados.
+
+A pessoa deve perceber que o aplicativo respondeu exatamente ao que ela escolheu.
+
+---
+
+5. INTERNACIONALIZAÇÃO
+
+Aplicar em:
+
+* Português
+* Inglês
+* Espanhol
+* Francês
+* Alemão
+
+IMPORTANTE:
+
+Não fazer tradução literal.
+
+Adaptar culturalmente cada texto.
+
+Cada idioma deve soar natural para um falante nativo.
+
+Preservar:
+
+* tom humano
+* tom calmo
+* simplicidade
+* ausência de linguagem coach
+
+---
+
+RESULTADO ESPERADO
+
+Após selecionar um estado emocional:
+
+1. A pessoa vê claramente qual estado escolheu.
+2. Recebe um pequeno bloco de acolhimento personalizado.
+3. A área intermediária deixa de parecer vazia.
+4. A experiência parece mais inteligente e personalizada.
+5. A transição para "Caminhos para Voltar" se torna mais natural e significativa.

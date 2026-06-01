@@ -177,6 +177,46 @@ const TRANSITION_MESSAGES: Record<string, Record<EmotionKey, string>> = {
   },
 };
 
+// ─── Transition editorial body — complements the title phrase ────────────────
+// One or two grounded lines per emotion. Never coaching, never generic.
+const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
+  en: {
+    overwhelmed: "You don't need to solve everything today.\nChoose just one thing to carry for the next few minutes.",
+    numb:        "Clarity tends to appear after the pace slows down.",
+    frustrated:  "This might be a moment for recovery,\nnot for demanding more of yourself.",
+    low_energy:  "Not every day was made to be productive.\nSome exist just to continue.",
+    anxious:     "Some things become lighter when they stop being chased.",
+  },
+  pt: {
+    overwhelmed: 'Você não precisa resolver tudo hoje.\nEscolha apenas uma coisa para carregar pelos próximos minutos.',
+    numb:        'A clareza costuma aparecer depois que o ritmo diminui.',
+    frustrated:  'Talvez este seja um momento para recuperar energia,\nnão para exigir mais de si.',
+    low_energy:  'Nem todos os dias foram feitos para render.\nAlguns existem apenas para continuar.',
+    anxious:     'Algumas coisas ficam mais leves quando deixam de ser perseguidas.',
+  },
+  es: {
+    overwhelmed: 'No necesitas resolver todo hoy.\nElige solo una cosa para los próximos minutos.',
+    numb:        'La claridad suele aparecer después de que el ritmo disminuye.',
+    frustrated:  'Quizás este sea un momento para recuperar energía,\nno para exigirte más.',
+    low_energy:  'No todos los días están hechos para rendir.\nAlgunos existen solo para continuar.',
+    anxious:     'Algunas cosas se vuelven más ligeras cuando dejan de ser perseguidas.',
+  },
+  fr: {
+    overwhelmed: "Tu n'as pas besoin de tout résoudre aujourd'hui.\nChoisis juste une chose pour les prochaines minutes.",
+    numb:        'La clarté apparaît souvent après que le rythme ralentit.',
+    frustrated:  "C'est peut-être un moment pour récupérer de l'énergie,\npas pour t'en demander davantage.",
+    low_energy:  "Tous les jours ne sont pas faits pour être productifs.\nCertains existent juste pour continuer.",
+    anxious:     "Certaines choses deviennent plus légères quand on arrête de les chercher.",
+  },
+  de: {
+    overwhelmed: 'Du musst heute nicht alles lösen.\nWähle nur eine Sache für die nächsten Minuten.',
+    numb:        'Klarheit erscheint oft, nachdem das Tempo nachlässt.',
+    frustrated:  'Vielleicht ist dies ein Moment zum Erholen,\nnicht um mehr von dir zu verlangen.',
+    low_energy:  'Nicht jeder Tag ist zum Leisten gemacht.\nManche existieren nur, um weiterzumachen.',
+    anxious:     'Manche Dinge werden leichter, wenn man sie nicht mehr verfolgt.',
+  },
+};
+
 // ─── Adaptive emotional copy per emotion state ────────────────────────────────
 const EMOTION_ADAPTIVE_PT: Record<EmotionKey, { eyebrow: string; hint: string }> = {
   overwhelmed: { eyebrow: 'Para respirar um pouco.',    hint: 'O peso não precisa ser carregado sozinho.' },
@@ -864,18 +904,19 @@ export default function MindsetScreen() {
               </View>
             )}
 
-            {/* ── ESTADO T: Mensagem de transição ──────────────────────────── */}
+            {/* ── ESTADO T: Bloco editorial de transição ───────────────────── */}
             {recommendationState === 'T' && selectedEmotion && (
               <View style={{
                 paddingHorizontal: Spacing.xl,
-                paddingVertical: 32,
+                paddingVertical: 28,
                 alignItems: 'center',
                 justifyContent: 'center',
-                minHeight: 130,
+                minHeight: 150,
+                gap: 0,
               }}>
                 <Text style={{
                   fontSize: 16,
-                  fontWeight: '400',
+                  fontWeight: '500',
                   color: '#5A524D',
                   textAlign: 'center',
                   lineHeight: 26,
@@ -885,6 +926,22 @@ export default function MindsetScreen() {
                   {TRANSITION_MESSAGES[lang]?.[selectedEmotion]
                     ?? TRANSITION_MESSAGES['en']![selectedEmotion]}
                 </Text>
+                <View style={{
+                  width: 4, height: 4, borderRadius: 2,
+                  backgroundColor: '#C9973A', opacity: 0.35,
+                  marginVertical: 14,
+                }} />
+                <Text style={{
+                  fontSize: 13,
+                  fontWeight: '400',
+                  color: 'rgba(61,53,48,0.50)',
+                  textAlign: 'center',
+                  lineHeight: 20,
+                  letterSpacing: 0.1,
+                }}>
+                  {TRANSITION_BODY[lang]?.[selectedEmotion]
+                    ?? TRANSITION_BODY['en']![selectedEmotion]}
+                </Text>
               </View>
             )}
 
@@ -892,6 +949,18 @@ export default function MindsetScreen() {
             {recommendationState === 'B' && selectedEmotion && (
               <Animated.View style={{ transform: [{ translateY: mindsetTranslateY }] }}><>
                 <View style={{ paddingHorizontal: Spacing.xl, marginBottom: 12 }}>
+                  {/* Emotion indicator — discrete breadcrumb showing what was chosen */}
+                  <View style={{ flexDirection: 'row', alignItems: 'center', gap: 5, marginBottom: 10 }}>
+                    <View style={{ width: 5, height: 5, borderRadius: 3, backgroundColor: '#C9973A', opacity: 0.55 }} />
+                    <Text style={{ fontSize: 10, color: '#C9973A', letterSpacing: 0.8, opacity: 0.75 }}>
+                      {lang === 'pt' ? 'CHEGANDO COM' :
+                       lang === 'es' ? 'LLEGANDO CON' :
+                       lang === 'fr' ? 'TU ARRIVES AVEC' :
+                       lang === 'de' ? 'DU KOMMST MIT' : 'ARRIVING WITH'}
+                      {' · '}
+                      <Text style={{ fontWeight: '600' }}>{t('mindset.emotion.' + selectedEmotion)}</Text>
+                    </Text>
+                  </View>
                   <Text style={{ fontSize: 13, fontWeight: '600', color: '#3D3530', marginBottom: 4, fontStyle: 'italic' }}>
                     {lang === 'pt'
                       ? EMOTION_ADAPTIVE_PT[selectedEmotion].eyebrow
