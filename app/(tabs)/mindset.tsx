@@ -128,11 +128,12 @@ const categoryIndexMap = buildCategoryIndexMap();
 
 // Emoções diárias → categoria recomendada
 const EMOTIONS = [
-  { key: 'overwhelmed' as const, label: 'Pressure',      cat: 'Calm',   subtitle: 'For when everything feels like too much.' },
-  { key: 'numb'        as const, label: 'Foggy',         cat: 'Rhythm', subtitle: 'For when the mind goes quiet.' },
-  { key: 'frustrated'  as const, label: 'Overwhelm',     cat: 'Rhythm', subtitle: 'For when everything becomes too much to hold.' },
-  { key: 'low_energy'  as const, label: 'Low energy',    cat: 'Calm',   subtitle: 'For when the pace has slowed.' },
-  { key: 'anxious'     as const, label: 'Inner noise',   cat: 'Calm',   subtitle: "For when the noise doesn't stop." },
+  { key: 'overwhelmed' as const, label: 'Pressure',      cat: 'Calm',    subtitle: 'For when everything feels like too much.' },
+  { key: 'numb'        as const, label: 'Foggy',         cat: 'Rhythm',  subtitle: 'For when the mind goes quiet.' },
+  { key: 'frustrated'  as const, label: 'Overwhelm',     cat: 'Rhythm',  subtitle: 'For when everything becomes too much to hold.' },
+  { key: 'low_energy'  as const, label: 'Low energy',    cat: 'Calm',    subtitle: 'For when the pace has slowed.' },
+  { key: 'anxious'     as const, label: 'Inner noise',   cat: 'Calm',    subtitle: "For when the noise doesn't stop." },
+  { key: 'balanced'    as const, label: 'Balanced',      cat: 'Focus',   subtitle: 'For when things are feeling right.' },
 ];
 type EmotionKey = typeof EMOTIONS[number]['key'];
 
@@ -146,6 +147,7 @@ const TRANSITION_MESSAGES: Record<string, Record<EmotionKey, string>> = {
     frustrated:  "You don't have to carry everything today.",
     low_energy:  'Today is about what matters most.',
     anxious:     "You don't need to follow every thought.",
+    balanced:    "Today doesn't need to be different from how it already is.",
   },
   pt: {
     overwhelmed: 'Nem tudo precisa da sua atenção agora.',
@@ -153,6 +155,7 @@ const TRANSITION_MESSAGES: Record<string, Record<EmotionKey, string>> = {
     frustrated:  'Você não precisa carregar tudo hoje.',
     low_energy:  'Hoje é sobre o que realmente importa.',
     anxious:     'Você não precisa seguir cada pensamento.',
+    balanced:    'Hoje não precisa ser diferente de como já está.',
   },
   es: {
     overwhelmed: 'No todo necesita tu atención ahora.',
@@ -160,6 +163,7 @@ const TRANSITION_MESSAGES: Record<string, Record<EmotionKey, string>> = {
     frustrated:  'No tienes que cargar con todo hoy.',
     low_energy:  'Hoy es sobre lo que más importa.',
     anxious:     'No tienes que seguir cada pensamiento.',
+    balanced:    'Hoy no necesita ser diferente de cómo ya es.',
   },
   fr: {
     overwhelmed: "Tout n'a pas besoin de ton attention maintenant.",
@@ -167,6 +171,7 @@ const TRANSITION_MESSAGES: Record<string, Record<EmotionKey, string>> = {
     frustrated:  "Tu n'as pas à tout porter aujourd'hui.",
     low_energy:  "Ce qui compte vraiment, c'est aujourd'hui.",
     anxious:     "Tu n'as pas à suivre chaque pensée.",
+    balanced:    "Aujourd'hui n'a pas besoin d'être différent de ce qu'il est.",
   },
   de: {
     overwhelmed: 'Nicht alles braucht gerade deine Aufmerksamkeit.',
@@ -174,6 +179,7 @@ const TRANSITION_MESSAGES: Record<string, Record<EmotionKey, string>> = {
     frustrated:  'Du musst heute nicht alles tragen.',
     low_energy:  'Heute geht es um das, was wirklich zählt.',
     anxious:     'Du musst nicht jedem Gedanken folgen.',
+    balanced:    'Heute muss nicht anders sein, als es ist.',
   },
 };
 
@@ -186,6 +192,7 @@ const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
     frustrated:  "This might be a moment for recovery,\nnot for demanding more of yourself.",
     low_energy:  "Not every day was made to be productive.\nSome exist just to continue.",
     anxious:     "Some things become lighter when they stop being chased.",
+    balanced:    "Some days arrive without anything to fix.\nPresence is a practice too.",
   },
   pt: {
     overwhelmed: 'Você não precisa resolver tudo hoje.\nEscolha apenas uma coisa para carregar pelos próximos minutos.',
@@ -193,6 +200,7 @@ const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
     frustrated:  'Talvez este seja um momento para recuperar energia,\nnão para exigir mais de si.',
     low_energy:  'Nem todos os dias foram feitos para render.\nAlguns existem apenas para continuar.',
     anxious:     'Algumas coisas ficam mais leves quando deixam de ser perseguidas.',
+    balanced:    'Alguns dias chegam sem nada para resolver.\nPresença também é uma prática.',
   },
   es: {
     overwhelmed: 'No necesitas resolver todo hoy.\nElige solo una cosa para los próximos minutos.',
@@ -200,6 +208,7 @@ const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
     frustrated:  'Quizás este sea un momento para recuperar energía,\nno para exigirte más.',
     low_energy:  'No todos los días están hechos para rendir.\nAlgunos existen solo para continuar.',
     anxious:     'Algunas cosas se vuelven más ligeras cuando dejan de ser perseguidas.',
+    balanced:    'Algunos días llegan sin nada que resolver.\nLa presencia también es una práctica.',
   },
   fr: {
     overwhelmed: "Tu n'as pas besoin de tout résoudre aujourd'hui.\nChoisis juste une chose pour les prochaines minutes.",
@@ -207,6 +216,7 @@ const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
     frustrated:  "C'est peut-être un moment pour récupérer de l'énergie,\npas pour t'en demander davantage.",
     low_energy:  "Tous les jours ne sont pas faits pour être productifs.\nCertains existent juste pour continuer.",
     anxious:     "Certaines choses deviennent plus légères quand on arrête de les chercher.",
+    balanced:    "Certains jours arrivent sans rien à résoudre.\nLa présence est aussi une pratique.",
   },
   de: {
     overwhelmed: 'Du musst heute nicht alles lösen.\nWähle nur eine Sache für die nächsten Minuten.',
@@ -214,6 +224,7 @@ const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
     frustrated:  'Vielleicht ist dies ein Moment zum Erholen,\nnicht um mehr von dir zu verlangen.',
     low_energy:  'Nicht jeder Tag ist zum Leisten gemacht.\nManche existieren nur, um weiterzumachen.',
     anxious:     'Manche Dinge werden leichter, wenn man sie nicht mehr verfolgt.',
+    balanced:    'Manche Tage kommen ohne etwas, das gelöst werden muss.\nPräsenz ist auch eine Praxis.',
   },
 };
 
@@ -224,6 +235,7 @@ const EMOTION_ADAPTIVE_PT: Record<EmotionKey, { eyebrow: string; hint: string }>
   frustrated:  { eyebrow: 'Você não precisa recuperar tudo hoje.',               hint: 'O peso mental também pede espaço.' },
   low_energy:  { eyebrow: 'Hoje não precisa ser um dia de força.',               hint: 'Sem pressão. Só presença.' },
   anxious:     { eyebrow: 'Nem todo pensamento precisa de resposta.',            hint: 'O ruído diminui. O espaço continua aqui.' },
+  balanced:    { eyebrow: 'Você não precisa consertar nada agora.',             hint: 'Presença também é cuidado.' },
 };
 const EMOTION_ADAPTIVE_EN: Record<EmotionKey, { eyebrow: string; hint: string }> = {
   overwhelmed: { eyebrow: 'Not everything needs your attention right now.',    hint: 'The pressure doesn\'t have to be carried alone.' },
@@ -231,6 +243,7 @@ const EMOTION_ADAPTIVE_EN: Record<EmotionKey, { eyebrow: string; hint: string }>
   frustrated:  { eyebrow: 'You don\'t need to recover everything today.',     hint: 'Mental weight also needs room to breathe.' },
   low_energy:  { eyebrow: 'Today doesn\'t need to be a day of strength.',     hint: 'No pressure. Just presence.' },
   anxious:     { eyebrow: 'Not every thought needs an answer.',               hint: 'The noise quiets. The space remains.' },
+  balanced:    { eyebrow: "You don't need to fix anything right now.",        hint: 'Presence is also care.' },
 };
 const EMOTION_ADAPTIVE_ES: Record<EmotionKey, { eyebrow: string; hint: string }> = {
   overwhelmed: { eyebrow: 'No todo necesita tu atención ahora.',         hint: 'El peso no necesita cargarse solo.' },
@@ -238,6 +251,7 @@ const EMOTION_ADAPTIVE_ES: Record<EmotionKey, { eyebrow: string; hint: string }>
   frustrated:  { eyebrow: 'No tienes que recuperarte de todo hoy.',      hint: 'El peso también necesita su espacio.' },
   low_energy:  { eyebrow: 'Hoy no tiene que ser un día de fuerza.',      hint: 'Solo presencia. Nada más.' },
   anxious:     { eyebrow: 'No todo pensamiento necesita respuesta.',     hint: 'El ruido se aquieta. El espacio sigue aquí.' },
+  balanced:    { eyebrow: 'No necesitas arreglar nada ahora.',           hint: 'La presencia también es cuidado.' },
 };
 const EMOTION_ADAPTIVE_DE: Record<EmotionKey, { eyebrow: string; hint: string }> = {
   overwhelmed: { eyebrow: 'Nicht alles braucht jetzt deine Aufmerksamkeit.',  hint: 'Der Druck muss nicht alleine getragen werden.' },
@@ -245,6 +259,7 @@ const EMOTION_ADAPTIVE_DE: Record<EmotionKey, { eyebrow: string; hint: string }>
   frustrated:  { eyebrow: 'Du musst heute nicht alles aufholen.',             hint: 'Innere Schwere braucht auch Platz zum Atmen.' },
   low_energy:  { eyebrow: 'Heute muss kein starker Tag sein.',                hint: 'Kein Druck. Nur Präsenz.' },
   anxious:     { eyebrow: 'Nicht jeder Gedanke braucht eine Antwort.',        hint: 'Das Rauschen wird leiser. Der Raum bleibt.' },
+  balanced:    { eyebrow: 'Du musst gerade nichts verändern.',                hint: 'Präsenz ist auch Fürsorge.' },
 };
 
 // ─── Emotional pause interludes — every 5 cards (Problem 3) ──────────────────
@@ -871,11 +886,11 @@ export default function MindsetScreen() {
                     fontStyle: 'italic',
                     marginBottom: 14,
                   }}>
-                    {lang === 'pt' ? 'Escolha como você está chegando agora.\nCada estado abre caminhos diferentes.' :
-                     lang === 'es' ? 'Elige cómo llegas ahora.\nCada estado abre un camino distinto.' :
-                     lang === 'fr' ? 'Choisis comment tu arrives maintenant.\nChaque état ouvre un chemin différent.' :
-                     lang === 'de' ? 'Wähle, wie du gerade ankommst.\nJeder Zustand öffnet einen anderen Weg.' :
-                                     "Choose how you're arriving right now.\nEach state opens a different path."}
+                    {lang === 'pt' ? 'Você não precisa acertar.\nEscolha apenas o que parece mais próximo de como está agora.' :
+                     lang === 'es' ? 'No tienes que acertar.\nElige lo que se sienta más cercano a cómo estás ahora.' :
+                     lang === 'fr' ? "Tu n'as pas besoin d'avoir raison.\nChoisis ce qui te semble le plus proche de comment tu te sens." :
+                     lang === 'de' ? 'Du musst es nicht genau treffen.\nWähle nur, was sich deinem Zustand am nächsten anfühlt.' :
+                                     "You don't have to get it right.\nJust pick what feels closest to how you are right now."}
                   </Text>
                 )}
                 <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 10, justifyContent: 'center' }}>
