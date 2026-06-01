@@ -1,34 +1,151 @@
-Corrija a inconsistência de contagem no Resumo da Semana.
+Faça uma simplificação da experiência da seção “Como você está chegando agora?” na aba Mindset.
 
-Problema:
-A aba Progresso mostra 7 retornos percebidos e 7 presenças, mas o card "Resumo da Semana" mostra "Seis dias" e a tela de resumos semanais mostra 6/7.
+Objetivo:
+Reduzir a sensação de excesso de informação e deixar a tela mais leve, elegante, premium e calma.
 
-Isso está errado.
+IMPORTANTE:
+Não alterar layout geral da página.
+Não alterar os cards “Caminhos para voltar”.
+Não alterar a reflexão principal do topo.
+Não alterar a navegação.
+Não alterar cores principais.
+Não alterar i18n existente.
 
-O Weekly Recap deve usar a mesma fonte de verdade dos resets concluídos usada pelos outros cards de progresso.
+-----------------------------------
+1. SIMPLIFICAR O BLOCO CONTEXTUAL
+-----------------------------------
 
-Regras:
-- Se existem 7 resets concluídos na semana atual, o card deve mostrar 7/7.
-- O texto do card deve dizer "Sete dias" ou equivalente, não "Seis dias".
-- A tela "Resumos Semanais" deve mostrar 7 retornos até agora, não 6.
-- Não contar apenas dias anteriores.
-- Não excluir o dia atual se o reset de hoje já foi finalizado.
-- Não usar índice começando em zero.
-- Não usar "quiet days" ou "dias quietos" como substituto de resets concluídos.
-- A contagem deve ser baseada em completed resets únicos por data dentro da semana atual.
+Hoje, após selecionar uma emoção, aparecem:
 
-Verificar e corrigir:
-- app/(tabs)/progress.tsx
-- app/weekly-recap.tsx
-- utils/weeklyInsights.ts
-- qualquer função auxiliar responsável por calcular weekly recap/current week progress.
+- CHEGANDO COM • [estado]
+- título contextual
+- subtítulo contextual
+- rótulo “PODE AJUDAR HOJE”
+- card recomendado
 
-Depois testar os cenários:
-1. Dia 1 concluído → 1/7
-2. Dia 6 concluído → 6/7
-3. Dia 7 concluído → 7/7
-4. Antes do primeiro reset da semana → não contar como concluído
-5. Após finalizar o reset do dia atual → incluir o dia atual imediatamente
+Isso gera camadas demais.
 
-Não alterar layout, design, cores ou textos fora do necessário para corrigir a contagem.
-Manter i18n funcionando.
+Reduzir para apenas:
+
+CHEGANDO COM • [estado]
+
++ UMA única frase contextual
+
++ card recomendado
+
+Remover completamente:
+
+- segunda frase explicativa
+- textos redundantes
+- qualquer explicação longa
+- qualquer bloco de apoio que repita a mesma ideia
+
+A experiência deve parecer mais silenciosa.
+
+-----------------------------------
+2. REMOVER O TEXTO “PODE AJUDAR HOJE”
+-----------------------------------
+
+Remover o rótulo:
+
+“PODE AJUDAR HOJE”
+
+Os cards recomendados devem aparecer naturalmente logo abaixo da frase contextual.
+
+O usuário entende a relação sem precisar de explicação extra.
+
+Menos texto.
+Menos ruído.
+Mais confiança no design.
+
+-----------------------------------
+3. USAR FRASES MAIS CURTAS
+-----------------------------------
+
+Substituir o modelo atual por frases únicas.
+
+Exemplos de direção:
+
+Pressão:
+“Nem tudo precisa da sua atenção agora.”
+
+Baixa energia:
+“Hoje não precisa ser um dia de força.”
+
+Esgotamento:
+“Você não precisa recuperar tudo hoje.”
+
+Ruído interno:
+“Nem todo pensamento precisa de resposta.”
+
+Nublado:
+“Algumas respostas aparecem quando o ritmo desacelera.”
+
+As frases devem:
+
+- ser humanas
+- ser curtas
+- não parecer terapia
+- não parecer coaching
+- não parecer autoajuda
+- não explicar demais
+
+Máximo ideal:
+1 frase.
+
+-----------------------------------
+4. AJUSTAR ESPAÇAMENTO
+-----------------------------------
+
+Após a frase contextual:
+
+adicionar aproximadamente 12px a 16px antes dos cards recomendados.
+
+Objetivo:
+
+criar respiro visual sem criar blocos separados.
+
+-----------------------------------
+5. ESTADO VAZIO
+-----------------------------------
+
+Manter a melhoria já implementada:
+
+“Escolha como você está chegando agora.
+Cada estado abre caminhos diferentes.”
+
+Mas reduzir levemente sua presença visual:
+
+- fonte um pouco menor
+- menor contraste
+- aparência mais discreta
+
+Deve funcionar apenas como orientação inicial.
+
+-----------------------------------
+6. FILOSOFIA DE DESIGN
+-----------------------------------
+
+A tela não deve parecer:
+
+“muitas coisas tentando me ajudar”.
+
+A tela deve parecer:
+
+“algumas coisas cuidadosamente escolhidas”.
+
+Priorizar:
+
+- clareza
+- silêncio visual
+- elegância
+- espaço respirável
+- menos explicação
+- mais confiança
+
+Regra principal:
+
+Se existir dúvida entre adicionar ou remover texto,
+remover texto.
+
+O resultado final deve transmitir calma imediatamente ao abrir a tela.

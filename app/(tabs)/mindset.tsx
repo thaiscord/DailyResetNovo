@@ -219,32 +219,32 @@ const TRANSITION_BODY: Record<string, Record<EmotionKey, string>> = {
 
 // ─── Adaptive emotional copy per emotion state ────────────────────────────────
 const EMOTION_ADAPTIVE_PT: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'Para respirar um pouco.',    hint: 'O peso não precisa ser carregado sozinho.' },
-  numb:        { eyebrow: 'Para momentos assim.',       hint: 'Às vezes o silêncio já faz espaço.' },
-  frustrated:  { eyebrow: 'Para desacelerar.',          hint: 'O peso mental também pede espaço.' },
-  low_energy:  { eyebrow: 'Leveza primeiro.',           hint: 'Sem pressão. Só presença.' },
-  anxious:     { eyebrow: 'Um pouco de calma.',         hint: 'O ruído diminui. O espaço continua aqui.' },
+  overwhelmed: { eyebrow: 'Nem tudo precisa da sua atenção agora.',              hint: 'O peso não precisa ser carregado sozinho.' },
+  numb:        { eyebrow: 'Algumas respostas aparecem quando o ritmo desacelera.', hint: 'Às vezes o silêncio já faz espaço.' },
+  frustrated:  { eyebrow: 'Você não precisa recuperar tudo hoje.',               hint: 'O peso mental também pede espaço.' },
+  low_energy:  { eyebrow: 'Hoje não precisa ser um dia de força.',               hint: 'Sem pressão. Só presença.' },
+  anxious:     { eyebrow: 'Nem todo pensamento precisa de resposta.',            hint: 'O ruído diminui. O espaço continua aqui.' },
 };
 const EMOTION_ADAPTIVE_EN: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'For a moment to breathe.',   hint: 'The pressure doesn\'t have to be carried alone.' },
-  numb:        { eyebrow: 'For moments like this.',     hint: 'Sometimes silence makes room.' },
-  frustrated:  { eyebrow: 'To slow down a little.',    hint: 'Mental weight also needs room to breathe.' },
-  low_energy:  { eyebrow: 'Lightness first.',           hint: 'No pressure. Just presence.' },
-  anxious:     { eyebrow: 'A little calm.',             hint: 'The noise quiets. The space remains.' },
+  overwhelmed: { eyebrow: 'Not everything needs your attention right now.',    hint: 'The pressure doesn\'t have to be carried alone.' },
+  numb:        { eyebrow: 'Some answers come when the pace slows down.',       hint: 'Sometimes silence makes room.' },
+  frustrated:  { eyebrow: 'You don\'t need to recover everything today.',     hint: 'Mental weight also needs room to breathe.' },
+  low_energy:  { eyebrow: 'Today doesn\'t need to be a day of strength.',     hint: 'No pressure. Just presence.' },
+  anxious:     { eyebrow: 'Not every thought needs an answer.',               hint: 'The noise quiets. The space remains.' },
 };
 const EMOTION_ADAPTIVE_ES: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'Para respirar un momento.',   hint: 'El peso no necesita cargarse solo.' },
-  numb:        { eyebrow: 'Para momentos así.',           hint: 'A veces el silencio ya abre espacio.' },
-  frustrated:  { eyebrow: 'Para desacelerar.',            hint: 'El peso también necesita su espacio.' },
-  low_energy:  { eyebrow: 'Sin prisa.',                   hint: 'Solo presencia. Nada más.' },
-  anxious:     { eyebrow: 'Un poco de calma.',            hint: 'El ruido se aquieta. El espacio sigue aquí.' },
+  overwhelmed: { eyebrow: 'No todo necesita tu atención ahora.',         hint: 'El peso no necesita cargarse solo.' },
+  numb:        { eyebrow: 'Algunas respuestas llegan cuando el ritmo baja.', hint: 'A veces el silencio ya abre espacio.' },
+  frustrated:  { eyebrow: 'No tienes que recuperarte de todo hoy.',      hint: 'El peso también necesita su espacio.' },
+  low_energy:  { eyebrow: 'Hoy no tiene que ser un día de fuerza.',      hint: 'Solo presencia. Nada más.' },
+  anxious:     { eyebrow: 'No todo pensamiento necesita respuesta.',     hint: 'El ruido se aquieta. El espacio sigue aquí.' },
 };
 const EMOTION_ADAPTIVE_DE: Record<EmotionKey, { eyebrow: string; hint: string }> = {
-  overwhelmed: { eyebrow: 'Für einen Moment zum Durchatmen.',  hint: 'Der Druck muss nicht alleine getragen werden.' },
-  numb:        { eyebrow: 'Für Momente wie diesen.',           hint: 'Manchmal schafft Stille Raum.' },
-  frustrated:  { eyebrow: 'Um ein wenig langsamer zu werden.', hint: 'Innere Schwere braucht auch Platz zum Atmen.' },
-  low_energy:  { eyebrow: 'Leichtigkeit zuerst.',              hint: 'Kein Druck. Nur Präsenz.' },
-  anxious:     { eyebrow: 'Ein bisschen Ruhe.',                hint: 'Das Rauschen wird leiser. Der Raum bleibt.' },
+  overwhelmed: { eyebrow: 'Nicht alles braucht jetzt deine Aufmerksamkeit.',  hint: 'Der Druck muss nicht alleine getragen werden.' },
+  numb:        { eyebrow: 'Manche Antworten kommen, wenn das Tempo sinkt.',   hint: 'Manchmal schafft Stille Raum.' },
+  frustrated:  { eyebrow: 'Du musst heute nicht alles aufholen.',             hint: 'Innere Schwere braucht auch Platz zum Atmen.' },
+  low_energy:  { eyebrow: 'Heute muss kein starker Tag sein.',                hint: 'Kein Druck. Nur Präsenz.' },
+  anxious:     { eyebrow: 'Nicht jeder Gedanke braucht eine Antwort.',        hint: 'Das Rauschen wird leiser. Der Raum bleibt.' },
 };
 
 // ─── Emotional pause interludes — every 5 cards (Problem 3) ──────────────────
@@ -864,10 +864,10 @@ export default function MindsetScreen() {
                 {/* Pre-selection hint — clean, centered, hidden once emotion is tapped */}
                 {!pendingEmotion && (
                   <Text style={{
-                    fontSize: 12,
-                    color: 'rgba(61,53,48,0.38)',
+                    fontSize: 11,
+                    color: 'rgba(61,53,48,0.28)',
                     textAlign: 'center',
-                    lineHeight: 19,
+                    lineHeight: 18,
                     fontStyle: 'italic',
                     marginBottom: 14,
                   }}>
@@ -981,7 +981,7 @@ export default function MindsetScreen() {
                       <Text style={{ fontWeight: '600' }}>{t('mindset.emotion.' + selectedEmotion)}</Text>
                     </Text>
                   </View>
-                  <Text style={{ fontSize: 13, fontWeight: '600', color: '#3D3530', marginBottom: 2, fontStyle: 'italic' }}>
+                  <Text style={{ fontSize: 13, fontWeight: '600', color: '#3D3530', fontStyle: 'italic' }}>
                     {lang === 'pt'
                       ? EMOTION_ADAPTIVE_PT[selectedEmotion].eyebrow
                       : lang === 'es'
@@ -990,32 +990,14 @@ export default function MindsetScreen() {
                       ? EMOTION_ADAPTIVE_DE[selectedEmotion].eyebrow
                       : EMOTION_ADAPTIVE_EN[selectedEmotion].eyebrow}
                   </Text>
-                  <Text style={{ fontSize: 12, color: 'rgba(61,53,48,0.5)', lineHeight: 18 }}>
-                    {t('mindset.emotion.' + selectedEmotion + '.sub')}
-                  </Text>
                 </View>
-                {/* "Pode ajudar hoje" label — small, discrete, above cards */}
-                <Text style={{
-                  paddingHorizontal: Spacing.xl,
-                  fontSize: 10,
-                  fontWeight: '600',
-                  letterSpacing: 1.2,
-                  color: 'rgba(90,82,77,0.45)',
-                  marginBottom: 4,
-                }}>
-                  {lang === 'pt' ? 'PODE AJUDAR HOJE' :
-                   lang === 'es' ? 'PUEDE AYUDAR HOY' :
-                   lang === 'fr' ? "ÇA PEUT AIDER AUJOURD'HUI" :
-                   lang === 'de' ? 'KÖNNTE HEUTE HELFEN' :
-                                   'MIGHT HELP TODAY'}
-                </Text>
                 <FlatList
                   horizontal
                   showsHorizontalScrollIndicator={false}
                   data={recommendedCardsV2}
                   keyExtractor={item => item.id}
                   contentContainerStyle={{ paddingHorizontal: Spacing.xl, paddingVertical: 6 }}
-                  style={{ marginBottom: 10 }}
+                  style={{ marginTop: 14, marginBottom: 10 }}
                   ItemSeparatorComponent={() => <View style={{ width: 12 }} />}
                   renderItem={({ item }) => (
                     <TouchableOpacity
