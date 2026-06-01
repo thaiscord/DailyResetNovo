@@ -518,7 +518,7 @@ const PRESENT_MOMENT_PT: VariantLangConfig = {
   ],
   recenter: {
     eyebrow: 'UMA INTENÇÃO',
-    headline: 'Qual direção parece possível agora?',
+    headline: 'Qual parece mais leve agora?',
     subtext: 'Só o próximo passo.',
     options: [
       { id: 'small',    label: 'Recomeçar pequeno',   sub: '' },
@@ -527,8 +527,8 @@ const PRESENT_MOMENT_PT: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'Você está aqui.',
-    subtext: 'Um passo de cada vez já basta.',
+    headline: 'Você não precisa enxergar tudo agora.',
+    subtext: 'A próxima coisa já é suficiente.',
   },
 };
 
@@ -560,7 +560,7 @@ const PRESENT_MOMENT_EN: VariantLangConfig = {
   ],
   recenter: {
     eyebrow: 'ONE INTENTION',
-    headline: 'What direction feels possible right now?',
+    headline: 'What feels lighter right now?',
     subtext: 'Just the next step.',
     options: [
       { id: 'small',    label: 'Start small',     sub: '' },
@@ -569,8 +569,8 @@ const PRESENT_MOMENT_EN: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'You are here.',
-    subtext: 'One step at a time is already enough.',
+    headline: "You don't need to see everything right now.",
+    subtext: 'The next step is enough.',
   },
 };
 
@@ -602,7 +602,7 @@ const PRESENT_MOMENT_ES: VariantLangConfig = {
   ],
   recenter: {
     eyebrow: 'UNA INTENCIÓN',
-    headline: '¿Qué dirección parece posible ahora?',
+    headline: '¿Qué se siente más ligero ahora?',
     subtext: 'Solo el próximo paso.',
     options: [
       { id: 'small',    label: 'Empezar pequeño',      sub: '' },
@@ -611,8 +611,8 @@ const PRESENT_MOMENT_ES: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'Estás aquí.',
-    subtext: 'Un paso a la vez ya es suficiente.',
+    headline: 'No necesitas verlo todo ahora.',
+    subtext: 'Lo siguiente ya es suficiente.',
   },
 };
 
@@ -916,7 +916,7 @@ const PRESENT_MOMENT_FR: VariantLangConfig = {
   ],
   recenter: {
     eyebrow: 'UNE INTENTION',
-    headline: 'Quelle direction semble possible maintenant ?',
+    headline: 'Qu\'est-ce qui semble plus léger maintenant ?',
     subtext: 'Seulement le prochain pas.',
     options: [
       { id: 'small',    label: 'Commencer petit', sub: '' },
@@ -925,8 +925,8 @@ const PRESENT_MOMENT_FR: VariantLangConfig = {
     ],
   },
   return: {
-    headline: 'Tu es là.',
-    subtext: 'Un pas à la fois suffit déjà.',
+    headline: 'Tu n\'as pas besoin de tout voir maintenant.',
+    subtext: 'La prochaine étape suffit.',
   },
 };
 
@@ -1140,17 +1140,17 @@ const PRESENT_MOMENT_DE: VariantLangConfig = {
   ],
   recenter: {
     eyebrow: 'EINE ABSICHT',
-    headline: 'Welche Richtung erscheint gerade möglich?',
+    headline: 'Was fühlt sich gerade leichter an?',
     subtext: 'Nur der nächste Schritt.',
     options: [
-      { id: 'small',    label: 'Klein anfangen',     sub: '' },
+      { id: 'small',    label: 'Klein anfangen',       sub: '' },
       { id: 'step',     label: 'Ein einfacher Schritt', sub: '' },
-      { id: 'organize', label: 'Langsam ordnen',      sub: '' },
+      { id: 'organize', label: 'Langsam ordnen',        sub: '' },
     ],
   },
   return: {
-    headline: 'Du bist hier.',
-    subtext: 'Ein Schritt nach dem anderen ist bereits genug.',
+    headline: 'Du musst jetzt nicht alles sehen.',
+    subtext: 'Der nächste Schritt reicht.',
   },
 };
 
