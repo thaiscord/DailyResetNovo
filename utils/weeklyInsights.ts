@@ -225,6 +225,7 @@ const STATE_LABELS: Record<string, Record<string, string>> = {
   overwhelmed: { en: 'Overwhelmed',  pt: 'Sobrecarregado',   es: 'Todo se siente mucho',  fr: 'Trop plein',       de: 'Überwältigt'       },
   unclear:     { en: 'Unfocused',    pt: 'Sem clareza',      es: 'Sin claridad',          fr: 'Flou',             de: 'Unklar'            },
   drained:     { en: 'Low Energy',   pt: 'Sem energia',      es: 'Sin energía',           fr: 'Peu d\'énergie',   de: 'Wenig Energie'     },
+  balanced:    { en: 'In Balance',   pt: 'Em equilíbrio',    es: 'En equilibrio',         fr: 'En équilibre',     de: 'Im Gleichgewicht'  },
 };
 // Color for each state dot
 export const STATE_DOT_COLOR: Record<string, string> = {
@@ -233,6 +234,7 @@ export const STATE_DOT_COLOR: Record<string, string> = {
   overwhelmed: '#B87560',
   unclear:     '#7A8FA8',
   drained:     '#A89060',
+  balanced:    '#7A9A82',
 };
 export function getStateLabel(state: string, lang: string): string {
   const entry = STATE_LABELS[state];
