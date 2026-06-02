@@ -60,6 +60,8 @@ export const StorageKeys = {
   // Private space prompts
   SPACE_PROMPT_TODAY: 'space_prompt_today_v1',
   SPACE_PROMPT_HISTORY: 'space_prompt_history_v1',
+  // Path memories — tracks which memories have been surfaced
+  PATH_MEMORY_SEEN: 'path_memory_seen_v1',
 };
 
 /**

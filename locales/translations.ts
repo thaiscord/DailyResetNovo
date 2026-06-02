@@ -287,6 +287,15 @@ const en: TranslationMap = {
   'qr.echo.6':        'Some thoughts ask to be heard more than solved.',
   'qr.echo.7':        "You've been here for yourself.",
 
+  // ── Path Memories ─────────────────────────────────────────────────────────
+  'memory.label':          'FROM YOUR PATH',
+  'memory.header.days':    '{{n}} days ago you wrote:',
+  'memory.header.week':    'A week ago you wrote:',
+  'memory.header.weeks':   '{{n}} weeks ago you wrote:',
+  'memory.header.month':   'About a month ago you left this:',
+  'memory.header.older':   'You once left this here:',
+  'memory.header.space':   'From your private space:',
+
   // ── Progress — private space ──────────────────────────────────────────────
   'progress.privatespace.eyebrow':        'YOUR PRIVATE SPACE',
   'progress.privatespace.headline':       "A quiet place to unload what's heavy.",
@@ -1941,6 +1950,15 @@ const es: TranslationMap = {
   'qr.echo.5':       'Un pensamiento suave se quedó contigo.',
   'qr.echo.6':       'Algunos pensamientos piden ser escuchados más que resueltos.',
   'qr.echo.7':       'Has estado aquí para ti mismo.',
+
+  // ── Memorias del Camino ───────────────────────────────────────────────────
+  'memory.label':          'DE TU CAMINO',
+  'memory.header.days':    'Hace {{n}} días escribiste:',
+  'memory.header.week':    'Hace una semana escribiste:',
+  'memory.header.weeks':   'Hace {{n}} semanas escribiste:',
+  'memory.header.month':   'Hace cerca de un mes dejaste esto:',
+  'memory.header.older':   'En algún momento dejaste esto aquí:',
+  'memory.header.space':   'Desde tu espacio privado:',
 
   // ── Progress — private space ──────────────────────────────────────────────
   'progress.privatespace.eyebrow':        'TU ESPACIO PRIVADO',
@@ -3641,6 +3659,15 @@ const fr: TranslationMap = {
   'qr.echo.5':        'Une pensée douce est restée avec toi.',
   'qr.echo.6':        "Certaines pensées demandent à être entendues plus que résolues.",
   'qr.echo.7':        'Tu as été présent pour toi-même.',
+
+  // ── Mémoires du Chemin ────────────────────────────────────────────────────
+  'memory.label':          'DE TON CHEMIN',
+  'memory.header.days':    'Il y a {{n}} jours tu as écrit :',
+  'memory.header.week':    'Il y a une semaine tu as écrit :',
+  'memory.header.weeks':   'Il y a {{n}} semaines tu as écrit :',
+  'memory.header.month':   "Il y a environ un mois tu as laissé ceci :",
+  'memory.header.older':   'Tu as laissé ceci ici autrefois :',
+  'memory.header.space':   'Depuis ton espace privé :',
 
   // ── Progress — private space ──────────────────────────────────────────────
   'progress.privatespace.eyebrow':        'TON ESPACE PRIVÉ',
@@ -6234,6 +6261,15 @@ const de: TranslationMap = {
   'qr.echo.6':        'Manche Gedanken wollen gehört, nicht gelöst werden.',
   'qr.echo.7':        'Du bist für dich selbst da gewesen.',
 
+  // ── Erinnerungen des Weges ────────────────────────────────────────────────
+  'memory.label':          'AUS DEINEM WEG',
+  'memory.header.days':    'Vor {{n}} Tagen hast du geschrieben:',
+  'memory.header.week':    'Vor einer Woche hast du geschrieben:',
+  'memory.header.weeks':   'Vor {{n}} Wochen hast du geschrieben:',
+  'memory.header.month':   'Vor etwa einem Monat hast du dies hinterlassen:',
+  'memory.header.older':   'Einmal hast du dies hier hinterlassen:',
+  'memory.header.space':   'Aus deinem privaten Raum:',
+
   // ── Progress — private space ──────────────────────────────────────────────
   'progress.privatespace.eyebrow':        'DEIN PRIVATER RAUM',
   'progress.privatespace.headline':       'Ein ruhiger Ort, um abzulegen, was schwer ist.',
@@ -8771,6 +8807,15 @@ const pt: TranslationMap = {
   'qr.echo.5':        'Um pensamento suave ficou com você.',
   'qr.echo.6':        'Alguns pensamentos pedem para ser ouvidos, não resolvidos.',
   'qr.echo.7':        'Você tem estado aqui por si mesmo.',
+
+  // Memórias do Caminho
+  'memory.label':          'DO SEU CAMINHO',
+  'memory.header.days':    'Há {{n}} dias você escreveu:',
+  'memory.header.week':    'Uma semana atrás você escreveu:',
+  'memory.header.weeks':   'Há {{n}} semanas você escreveu:',
+  'memory.header.month':   'Há cerca de um mês você deixou isto aqui:',
+  'memory.header.older':   'Em algum momento você deixou isto aqui:',
+  'memory.header.space':   'Do seu espaço particular:',
 
   // Progress — espaço particular
   'progress.privatespace.eyebrow':        'SEU ESPAÇO PARTICULAR',

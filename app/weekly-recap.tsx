@@ -157,6 +157,129 @@ function SectionSmallMoments({ insights, lang }: { insights: WeekInsights; lang:
   );
 }
 
+// ─── Section 3b — Connecting the Dots ───────────────────────────────────────
+// Generates 2–3 short sentences that connect the week's real events.
+// Data-driven, template-based, never interpretive.
+
+function getConnectionLines(insights: WeekInsights, lang: string): string[] {
+  const lines: string[] = [];
+
+  // Line 1 — arrival state / mood
+  if (insights.dominantState) {
+    const state = getStateLabel(insights.dominantState, lang).toLowerCase();
+    const l1: Record<string, string> = {
+      pt: `Você chegou esta semana sentindo ${state}.`,
+      en: `You arrived this week feeling ${state}.`,
+      es: `Llegaste esta semana sintiéndote ${state}.`,
+      fr: `Tu es arrivé cette semaine en te sentant ${state}.`,
+      de: `Du bist diese Woche mit dem Gefühl ${state} angekommen.`,
+    };
+    lines.push(l1[lang] ?? l1.en);
+  } else if (insights.dominantMood) {
+    const mood = getMoodLabel(insights.dominantMood, lang).toLowerCase();
+    const l1: Record<string, string> = {
+      pt: `Os dias pareceram ${mood} por aqui.`,
+      en: `The days felt ${mood} this time.`,
+      es: `Los días se sintieron ${mood} esta vez.`,
+      fr: `Les jours ont semblé ${mood} cette fois.`,
+      de: `Die Tage fühlten sich ${mood} diesmal an.`,
+    };
+    lines.push(l1[lang] ?? l1.en);
+  }
+
+  // Line 2 — return count
+  const n = insights.resetsCompleted;
+  if (n > 0) {
+    const l2: Record<string, string> =
+      n === 7
+        ? { pt: 'Você voltou todos os dias.', en: 'You returned every day.', es: 'Volviste todos los días.', fr: 'Tu es revenu chaque jour.', de: 'Du bist jeden Tag zurückgekehrt.' }
+        : n >= 5
+        ? { pt: `Você voltou ${n} vezes.`, en: `You showed up ${n} times.`, es: `Te mostraste ${n} veces.`, fr: `Tu es revenu ${n} fois.`, de: `Du bist ${n} Mal zurückgekehrt.` }
+        : n === 1
+        ? { pt: 'Você voltou uma vez.', en: 'You came back once.', es: 'Volviste una vez.', fr: 'Tu es revenu une fois.', de: 'Du bist einmal zurückgekehrt.' }
+        : { pt: `Você voltou ${n} vezes.`, en: `You came back ${n} times.`, es: `Regresaste ${n} veces.`, fr: `Tu es revenu ${n} fois.`, de: `Du bist ${n} Mal zurückgekehrt.` };
+    lines.push(l2[lang] ?? l2.en);
+  }
+
+  // Line 3 — dominant theme or highlight
+  if (insights.topCategories.length > 0) {
+    const cat = getCategoryLabel(insights.topCategories[0], lang);
+    const l3: Record<string, string> = {
+      pt: `${cat} apareceu com mais frequência.`,
+      en: `${cat} kept coming back.`,
+      es: `${cat} siguió apareciendo.`,
+      fr: `${cat} est revenu le plus souvent.`,
+      de: `${cat} tauchte am häufigsten auf.`,
+    };
+    lines.push(l3[lang] ?? l3.en);
+  } else if (insights.highlight) {
+    const l3: Record<string, string> = {
+      pt: 'Algo ficou registrado ao longo do caminho.',
+      en: 'Something stayed along the way.',
+      es: 'Algo se quedó en el camino.',
+      fr: 'Quelque chose est resté en chemin.',
+      de: 'Etwas ist unterwegs geblieben.',
+    };
+    lines.push(l3[lang] ?? l3.en);
+  }
+
+  // Line 4 — mood arc (only if meaningful)
+  if (insights.trendDirection === 'improved' && lines.length < 4) {
+    const l4: Record<string, string> = {
+      pt: 'Algo mudou ao longo do caminho.',
+      en: 'Something shifted along the way.',
+      es: 'Algo cambió en el camino.',
+      fr: 'Quelque chose a changé en chemin.',
+      de: 'Etwas hat sich unterwegs verändert.',
+    };
+    lines.push(l4[lang] ?? l4.en);
+  }
+
+  return lines.slice(0, 3);
+}
+
+function SectionConnections({ insights, lang }: { insights: WeekInsights; lang: string }) {
+  const title: Record<string, string> = {
+    pt: 'COMO A SEMANA SE CONECTOU',
+    en: 'HOW THE WEEK CONNECTED',
+    es: 'CÓMO SE CONECTÓ LA SEMANA',
+    fr: 'LES FILS DE LA SEMAINE',
+    de: 'WIE DIE WOCHE ZUSAMMENHING',
+  };
+
+  const lines = getConnectionLines(insights, lang);
+  if (lines.length < 2) return null;
+
+  return (
+    <FadeIn delay={230}>
+      <View style={styles.section}>
+        <SectionLabel>{title[lang] ?? title.en}</SectionLabel>
+        <View style={[styles.card, connectionCardStyle]}>
+          {lines.map((line, i) => (
+            <View key={i} style={i > 0 ? connectionLineGap : undefined}>
+              <Text style={connectionLineStyle}>{line}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+const connectionCardStyle = {
+  gap: 0 as const,
+};
+const connectionLineStyle = {
+  fontSize: 14,
+  color: '#5A524A',
+  lineHeight: 24 as const,
+  fontStyle: 'italic' as const,
+  letterSpacing: 0.1,
+};
+const connectionLineGap = {
+  marginTop: 10,
+};
+
 // ─── Section 4 — How You Arrived ─────────────────────────────────────────────
 // Prefers real daily state check-ins (Racing Mind, Tired, Overwhelmed…).
 // Falls back to mood data (Difficult, Steady, Lighter) when no state data exists.
@@ -543,6 +666,11 @@ export default function WeeklyRecapScreen() {
 
         {/* 3 — Small Moments */}
         <SectionSmallMoments insights={insights} lang={lang} />
+
+        {/* 3b — Connecting the Dots */}
+        {insights.resetsCompleted >= 2 && (
+          <SectionConnections insights={insights} lang={lang} />
+        )}
 
         {/* 4 — How You Arrived */}
         {(insights.stateTotal > 0 || insights.moodTotal > 0) && <SectionMood insights={insights} lang={lang} weekNumber={recap.weekNumber} />}

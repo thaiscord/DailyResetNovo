@@ -23,6 +23,7 @@ import { useSpaceReflections, type ReflectionEntry } from '../../hooks/useSpaceR
 import { useLanguage } from '../../hooks/useLanguage';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { selectPrivateSpacePrompt } from '../../utils/privateSpacePrompts';
+import { usePathMemory, type PathMemory } from '../../hooks/usePathMemory';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../../theme';
 
 // ─── Animated SVG Circle ──────────────────────────────────────────────────────
@@ -1006,6 +1007,7 @@ export default function ProgressScreen() {
   const isTablet = screenWidth >= 768;
   const { progress, weeklyScore, comebackCount, reload } = useProgress();
   const { totalEntries, saveEntry } = useSpaceReflections();
+  const { memory: pathMemory } = usePathMemory();
 
   // On web, start at 1 (fully visible) so there's no staggered pop-in on tab switch.
   const FADE_INIT = Platform.OS === 'web' ? 1 : 0;
@@ -1017,9 +1019,10 @@ export default function ProgressScreen() {
   const patternsFade = useRef(new Animated.Value(FADE_INIT)).current;
   const timelineFade = useRef(new Animated.Value(FADE_INIT)).current;
   const summaryFade  = useRef(new Animated.Value(FADE_INIT)).current;
+  const memoryFade   = useRef(new Animated.Value(FADE_INIT)).current;
 
   const runEntranceAnimations = useCallback(() => {
-    [heroFade, rhythmFade, signalsFade, patternsFade, timelineFade, summaryFade, spaceFade, historyFade].forEach(a => a.setValue(0));
+    [heroFade, rhythmFade, signalsFade, patternsFade, timelineFade, summaryFade, memoryFade, spaceFade, historyFade].forEach(a => a.setValue(0));
     Animated.stagger(100, [
       Animated.timing(heroFade,     { toValue: 1, duration: 600, useNativeDriver: true }),
       Animated.timing(rhythmFade,   { toValue: 1, duration: 600, useNativeDriver: true }),
@@ -1027,6 +1030,7 @@ export default function ProgressScreen() {
       Animated.timing(patternsFade, { toValue: 1, duration: 600, useNativeDriver: true }),
       Animated.timing(timelineFade, { toValue: 1, duration: 600, useNativeDriver: true }),
       Animated.timing(summaryFade,  { toValue: 1, duration: 600, useNativeDriver: true }),
+      Animated.timing(memoryFade,   { toValue: 1, duration: 600, useNativeDriver: true }),
       Animated.timing(spaceFade,    { toValue: 1, duration: 600, useNativeDriver: true }),
       Animated.timing(historyFade,  { toValue: 1, duration: 600, useNativeDriver: true }),
     ]).start();
@@ -1049,8 +1053,7 @@ export default function ProgressScreen() {
     return Math.min(100, Math.round((totalDays / activeDays) * 100));
   }, [totalDays, progress.currentDay, hasData]);
 
-  const weeksInMotion = Math.max(0, Math.floor(totalDays / 7));
-  const returnDays    = Math.max(comebackCount, progress.streak);
+  const returnDays = Math.max(comebackCount, progress.streak);
   const patternSeed   = totalDays + weeklyScore;
 
   return (
@@ -1079,6 +1082,9 @@ export default function ProgressScreen() {
           weeks={progress.bestStreak}
           fadeAnim={summaryFade}
         />
+        {pathMemory && totalDays >= 7 && (
+          <PathMemoryCard memory={pathMemory} fadeAnim={memoryFade} />
+        )}
         <PrivateSpaceCard
           saveEntry={saveEntry}
           streak={progress.streak}
@@ -1098,6 +1104,78 @@ export default function ProgressScreen() {
     </SafeAreaView>
   );
 }
+
+// ─── PathMemoryCard ──────────────────────────────────────────────────────────
+
+function memoryHeaderKey(memory: PathMemory): string {
+  if (memory.source === 'space') return 'memory.header.space';
+  if (memory.daysAgo === 7)      return 'memory.header.week';
+  if (memory.daysAgo < 28)      return 'memory.header.days';
+  if (memory.daysAgo < 70)      return 'memory.header.month';
+  const weeks = Math.floor(memory.daysAgo / 7);
+  return weeks < 12 ? 'memory.header.weeks' : 'memory.header.older';
+}
+
+function PathMemoryCard({
+  memory,
+  fadeAnim,
+}: {
+  memory: PathMemory;
+  fadeAnim: Animated.Value;
+}) {
+  const { t } = useLanguage();
+  const translateY = fadeAnim.interpolate({ inputRange: [0, 1], outputRange: [10, 0] });
+
+  const key  = memoryHeaderKey(memory);
+  const vars = memory.daysAgo < 28
+    ? { n: memory.daysAgo }
+    : { n: Math.floor(memory.daysAgo / 7) };
+  const header  = t(key, vars);
+  const preview = memory.text.length > 180
+    ? memory.text.slice(0, 177) + '…'
+    : memory.text;
+
+  return (
+    <Animated.View style={{ opacity: fadeAnim, transform: [{ translateY }] }}>
+      <Text style={styles.sectionTitle}>{t('memory.label')}</Text>
+      <View style={[styles.card, memStyles.card]}>
+        <Text style={memStyles.header}>{header}</Text>
+        {memory.prompt ? (
+          <Text style={memStyles.prompt}>{`"${memory.prompt}"`}</Text>
+        ) : null}
+        <Text style={memStyles.quote}>{`"${preview}"`}</Text>
+      </View>
+    </Animated.View>
+  );
+}
+
+const memStyles = StyleSheet.create({
+  card: {
+    borderColor: 'rgba(201,151,58,0.12)',
+    backgroundColor: 'rgba(201,151,58,0.04)',
+    gap: 12,
+  },
+  header: {
+    fontSize: Typography.sizes.xs,
+    fontWeight: Typography.weights.bold,
+    color: Colors.gold,
+    letterSpacing: 0.6,
+    opacity: 0.8,
+  },
+  prompt: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    fontStyle: 'italic',
+    lineHeight: 18,
+  },
+  quote: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    lineHeight: 24,
+    fontStyle: 'italic',
+    letterSpacing: 0.1,
+  },
+});
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
