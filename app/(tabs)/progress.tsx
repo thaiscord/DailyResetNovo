@@ -1076,7 +1076,7 @@ export default function ProgressScreen() {
           resets={totalDays}
           journal={totalEntries}
           returnDays={returnDays}
-          weeks={weeksInMotion}
+          weeks={progress.bestStreak}
           fadeAnim={summaryFade}
         />
         <PrivateSpaceCard

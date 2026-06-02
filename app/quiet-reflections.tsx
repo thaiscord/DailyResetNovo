@@ -12,15 +12,15 @@ import { useLanguage } from '../hooks/useLanguage';
 
 type ClearMindEntry = Pick<ReflectionEntry, 'text' | 'date' | 'prompt'>;
 
-const ECHOES = [
-  "You've been carrying a lot quietly.",
-  "You keep returning anyway.",
-  "Some things are better held than solved.",
-  "Not everything heavy needs fixing right now.",
-  "You showed up for yourself, quietly.",
-  "One gentle thought stayed with you.",
-  "Some thoughts ask to be heard more than solved.",
-  "You've been here for yourself.",
+const ECHO_KEYS = [
+  'qr.echo.0',
+  'qr.echo.1',
+  'qr.echo.2',
+  'qr.echo.3',
+  'qr.echo.4',
+  'qr.echo.5',
+  'qr.echo.6',
+  'qr.echo.7',
 ];
 
 function fmt(s: string): string {
@@ -130,7 +130,8 @@ export default function QuietReflectionsScreen() {
   const older   = all.slice(3);
   const hasMore = older.length > 0;
   const total   = all.length;
-  const topEcho = total >= 3 ? ECHOES[total % ECHOES.length] : null;
+  const topEchoKey = total >= 3 ? ECHO_KEYS[total % ECHO_KEYS.length] : null;
+  const topEcho = topEchoKey ? t(topEchoKey) : null;
   const groups  = groupEntries(older, groupLabels);
 
   return (
