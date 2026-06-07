@@ -1,0 +1,643 @@
+{
+  "theme": "Repos",
+  "user_state": "Épuisé. À bout. Culpabilité d'avoir besoin de s'arrêter. Confondre le repos avec la paresse.",
+  "core_need": "Permission de s'arrêter sans culpabilité.",
+  "emotional_tone": "Doux. Lent. Bienveillant.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "rest_arr_1",
+        "heading": "Tu as la permission de t'arrêter.",
+        "subheading": "Pas plus tard. Maintenant. Avant de l'avoir mérité. Parce que le repos ne se mérite pas."
+      },
+      {
+        "id": "rest_arr_2",
+        "heading": "Le repos n'est pas la paresse.",
+        "subheading": "C'est ainsi que le corps reconstruit ce que l'épuisement a pris."
+      },
+      {
+        "id": "rest_arr_3",
+        "heading": "Tu fonctionnes à vide.",
+        "subheading": "Ce n'est pas un défaut de caractère. C'est l'état honnête de quelqu'un qui en a fait trop."
+      },
+      {
+        "id": "rest_arr_4",
+        "heading": "S'arrêter n'est pas abandonner.",
+        "subheading": "C'est une façon d'avancer à sa manière."
+      },
+      {
+        "id": "rest_arr_5",
+        "heading": "La culpabilité de se reposer n'est pas la vérité.",
+        "subheading": "C'est une histoire d'une culture qui a confondu l'épuisement avec la vertu."
+      },
+      {
+        "id": "rest_arr_6",
+        "heading": "Tu n'as pas à le gagner.",
+        "subheading": "Le repos n'est pas une récompense. C'est une nécessité."
+      },
+      {
+        "id": "rest_arr_7",
+        "heading": "Le corps te dit quelque chose.",
+        "subheading": "Tu as ignoré ce signal. Aujourd'hui, tu peux l'écouter."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "rest_rel_1",
+        "heading": "Que dit la culpabilité ?",
+        "subheading": "Écris-le exactement. Puis nous verrons si c'est vrai.",
+        "field_placeholder": "Ce que dit en toi la partie qui se sent coupable de se reposer..."
+      },
+      {
+        "id": "rest_rel_2",
+        "heading": "Que portes-tu qui n'est pas à toi ?",
+        "subheading": "La responsabilité a une limite. Que tiens-tu au-delà de la tienne ?",
+        "field_placeholder": "Quelles obligations ou préoccupations tu portes qui appartiennent à quelqu'un d'autre ou à une situation..."
+      },
+      {
+        "id": "rest_rel_3",
+        "heading": "Qu'est-ce que tu as fait plutôt que de te reposer ?",
+        "subheading": "Nomme les substituts. Le scroll, le surmenage, l'agitation permanente.",
+        "field_placeholder": "Ce que tu as fait au lieu de vraiment t'arrêter..."
+      },
+      {
+        "id": "rest_rel_4",
+        "heading": "Depuis combien de temps es-tu épuisé ?",
+        "subheading": "Dis-le honnêtement. Le chiffre compte.",
+        "field_placeholder": "Quand t'es-tu senti vraiment reposé pour la dernière fois..."
+      },
+      {
+        "id": "rest_rel_5",
+        "heading": "Que faudrait-il poser pour vraiment te reposer ?",
+        "subheading": "Pas pour toujours. Juste pour aujourd'hui.",
+        "field_placeholder": "Ce que tu devrais lâcher pour te permettre de t'arrêter..."
+      },
+      {
+        "id": "rest_rel_6",
+        "heading": "Comment se sent l'épuisement ?",
+        "subheading": "Dans le corps, pas seulement dans l'esprit. Décris-le.",
+        "field_placeholder": "Où l'épuisement se loge-t-il dans ton corps en ce moment..."
+      },
+      {
+        "id": "rest_rel_7",
+        "heading": "Que crains-tu qu'il se passe si tu t'arrêtes ?",
+        "subheading": "La liste est souvent plus courte que la peur ne le suggère.",
+        "field_placeholder": "Ce que tu crois qui s'effondrera si tu te reposes aujourd'hui..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "rest_br_1",
+        "heading": "Une respiration qui ne demande rien.",
+        "instruction": "Inspire lentement. Expire avec un soupir doux. Sans effort. Sans but. Juste cette respiration."
+      },
+      {
+        "id": "rest_br_2",
+        "heading": "Laisse le corps tout expirer.",
+        "instruction": "Inspire doucement. En expirant, laisse tout tomber. Épaules, mâchoire, mains. Tout."
+      },
+      {
+        "id": "rest_br_3",
+        "heading": "La respiration de quelqu'un qui s'est arrêté.",
+        "instruction": "Lente. Large. Sans hâte. Respire comme si la journée n'avait plus d'exigences. Juste pour ce moment."
+      },
+      {
+        "id": "rest_br_4",
+        "heading": "Repose-toi dans la respiration.",
+        "instruction": "Quatre temps en inspirant. Six temps en expirant. Deux fois. Sens le corps devenir plus lourd et plus calme."
+      },
+      {
+        "id": "rest_br_5",
+        "heading": "Amollis-toi complètement.",
+        "instruction": "Inspire et laisse tout monter. Expire et laisse tout redescendre. Sans retenir. Juste lâcher."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "rest_mom_1",
+        "heading": "De quoi ton corps a-t-il le plus besoin en ce moment ?"
+      },
+      {
+        "id": "rest_mom_2",
+        "heading": "À quoi ressemblerait un vrai repos pour toi aujourd'hui ?"
+      },
+      {
+        "id": "rest_mom_3",
+        "heading": "Qu'est-ce que tu peux poser sans que tout s'effondre ?"
+      },
+      {
+        "id": "rest_mom_4",
+        "heading": "À quoi ressemble s'arrêter pour toi, concrètement ?"
+      },
+      {
+        "id": "rest_mom_5",
+        "heading": "Qu'est-ce qui t'a épuisé et que tu n'as pas encore nommé ?"
+      },
+      {
+        "id": "rest_mom_6",
+        "heading": "Comment se sentirait une version reposée de toi, de l'intérieur ?"
+      },
+      {
+        "id": "rest_mom_7",
+        "heading": "Quelle est la chose la plus restauratrice que tu pourrais faire dans la prochaine heure ?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "rest_comp_1",
+        "heading": "Tu t'es arrêté.",
+        "subheading": "C'est la pratique. Pas le plan. Le vrai arrêt."
+      },
+      {
+        "id": "rest_comp_2",
+        "heading": "Le repos a eu lieu.",
+        "subheading": "La culpabilité n'a pas gagné aujourd'hui. Remarque-le."
+      },
+      {
+        "id": "rest_comp_3",
+        "heading": "Tu as donné à ton corps ce qu'il demandait.",
+        "subheading": "Ce n'est pas de l'indulgence. C'est du soin."
+      },
+      {
+        "id": "rest_comp_4",
+        "heading": "Le monde ne s'est pas effondré.",
+        "subheading": "Il le fait rarement. Le repos est souvent plus sûr que la peur ne le dit."
+      },
+      {
+        "id": "rest_comp_5",
+        "heading": "Tu as écouté.",
+        "subheading": "La partie de toi qui demandait à s'arrêter. Aujourd'hui, tu l'as entendue."
+      },
+      {
+        "id": "rest_comp_6",
+        "heading": "La récupération est en cours.",
+        "subheading": "Lentement. Sous la surface. Tu lui as donné les conditions dont elle avait besoin."
+      },
+      {
+        "id": "rest_comp_7",
+        "heading": "Tu as choisi le repos.",
+        "subheading": "Plutôt que la culpabilité. Plutôt que la productivité. Plutôt que ce que tu penses devoir faire. C'était un vrai choix."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "rest_hc_1",
+      "headline": "Le repos ne se gagne pas. Il est nécessaire.",
+      "subheadline": "Tu n'as pas à le mériter d'abord."
+    },
+    {
+      "id": "rest_hc_2",
+      "headline": "La culpabilité ne dit pas la vérité.",
+      "subheadline": "Elle répète une histoire qu'on t'a apprise. Cette histoire n'est pas la tienne."
+    },
+    {
+      "id": "rest_hc_3",
+      "headline": "Être épuisé n'est pas un échec moral.",
+      "subheadline": "C'est ce qui arrive quand on donne plus qu'on ne reçoit."
+    },
+    {
+      "id": "rest_hc_4",
+      "headline": "S'arrêter n'est pas le contraire de vivre.",
+      "subheadline": "C'en est une partie. Pas une pause hors de la vie."
+    },
+    {
+      "id": "rest_hc_5",
+      "headline": "Ton corps a demandé.",
+      "subheadline": "Tu l'as ignoré. Aujourd'hui, tu n'as pas à le faire."
+    },
+    {
+      "id": "rest_hc_6",
+      "headline": "Le repos n'a rien à prouver.",
+      "subheadline": "Sa valeur n'est pas dans ce qu'il te permet de faire ensuite. Elle est dans ce que tu es maintenant."
+    },
+    {
+      "id": "rest_hc_7",
+      "headline": "Tu peux t'arrêter avant de t'effondrer.",
+      "subheadline": "Tu n'as pas à attendre d'être à bout. La permission est déjà là."
+    },
+    {
+      "id": "rest_hc_8",
+      "headline": "L'épuisement confondu avec la vertu reste de l'épuisement.",
+      "subheadline": "L'appeler dévouement ne change pas ce que c'est."
+    },
+    {
+      "id": "rest_hc_9",
+      "headline": "Ce que tu appelles paresse, c'est de la récupération.",
+      "subheadline": "Ce n'est pas la même chose."
+    },
+    {
+      "id": "rest_hc_10",
+      "headline": "Quelque chose doit revenir. Pas pour les autres. Pour toi.",
+      "subheadline": "Tu as donné depuis un endroit qui était déjà bas."
+    },
+    {
+      "id": "rest_hc_11",
+      "headline": "Le corps se reconstruit pendant le repos.",
+      "subheadline": "Pas pendant le travail. Pendant le repos. Il n'y a rien de mal à ça."
+    },
+    {
+      "id": "rest_hc_12",
+      "headline": "Tu peux t'arrêter maintenant, tant que c'est encore ton choix.",
+      "subheadline": "Le corps n'oublie pas ce qu'il a demandé."
+    },
+    {
+      "id": "rest_hc_13",
+      "headline": "Tu n'es pas en retard.",
+      "subheadline": "Tu es épuisé. C'est un problème différent avec une solution différente."
+    },
+    {
+      "id": "rest_hc_14",
+      "headline": "Permission accordée.",
+      "subheadline": "De t'arrêter. De te reposer. De faire moins que ce que tu penses devoir faire. Aujourd'hui."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "rest_act_1",
+      "content": "Allonge-toi vingt minutes. Sans téléphone. Sans avoir besoin de dormir. Juste à l'horizontale.",
+      "why": "Quelques minutes à l'horizontale changent quelque chose dans le corps. Le corps sait quoi en faire."
+    },
+    {
+      "id": "rest_act_2",
+      "content": "Supprime une obligation de la liste d'aujourd'hui qui n'est pas vraiment nécessaire.",
+      "why": "L'épuisement se perpétue souvent en faisant plus que ce que la situation exige."
+    },
+    {
+      "id": "rest_act_3",
+      "content": "Mange quelque chose lentement. Assis. Sans écran. Savoure.",
+      "why": "Manger lentement est sa propre forme de retour. Le corps en ressent la différence."
+    },
+    {
+      "id": "rest_act_4",
+      "content": "Dis à quelqu'un que tu es fatigué et que tu as besoin de soutien aujourd'hui.",
+      "why": "Le dire à voix haute à quelqu'un change ce que ça fait de le porter. Quelque chose se transforme quand c'est témoin."
+    },
+    {
+      "id": "rest_act_5",
+      "content": "Dors 30 minutes plus tôt ce soir. Décide-le maintenant.",
+      "why": "Décider à l'avance supprime la négociation nocturne avec soi-même."
+    },
+    {
+      "id": "rest_act_6",
+      "content": "Fais une promenade lente. Sans écouteurs. Sans podcast. Marche simplement.",
+      "why": "Marcher sans rien qui joue est son propre type de silence. Le corps bouge et quelque chose d'autre s'apaise."
+    },
+    {
+      "id": "rest_act_7",
+      "content": "Prends un bain ou une douche sans te presser. Laisse l'eau être la seule chose.",
+      "why": "L'eau et la chaleur ont une façon d'adoucir ce que la journée a durci. Le corps s'en souvient."
+    },
+    {
+      "id": "rest_act_8",
+      "content": "Annule quelque chose d'optionnel aujourd'hui. Reprends ce temps pour toi.",
+      "why": "Le repos exige du temps libéré. Libérer du temps exige la permission d'annuler."
+    },
+    {
+      "id": "rest_act_9",
+      "content": "Assieds-toi dehors dix minutes. Sans rien faire de productif.",
+      "why": "Quelque chose change quand tu es dehors sans avoir besoin de faire quoi que ce soit. Même quelques minutes."
+    },
+    {
+      "id": "rest_act_10",
+      "content": "Lis quelque chose par plaisir. Pas de l'information. Pas de la productivité. Du plaisir.",
+      "why": "L'esprit épuisé oublie souvent que le plaisir est sa propre raison. Il n'a pas à gagner quoi que ce soit pour compter."
+    },
+    {
+      "id": "rest_act_11",
+      "content": "Dis non à une demande à laquelle tu veux dire non.",
+      "why": "Chaque oui qui n'est pas sincère coûte quelque chose. Dire non à ce qui t'épuise est une forme de soin."
+    },
+    {
+      "id": "rest_act_12",
+      "content": "Reste en silence cinq minutes. Sans stimulus. Juste le calme.",
+      "why": "Le silence est rare pour la plupart des personnes épuisées. Il demande très peu et rend beaucoup."
+    },
+    {
+      "id": "rest_act_13",
+      "content": "Délègue une tâche que tu fais parce que tu ne fais pas confiance aux autres.",
+      "why": "Le contrôle et l'épuisement sont souvent le même problème."
+    },
+    {
+      "id": "rest_act_14",
+      "content": "Laisse la vaisselle, le linge ou une petite tâche à demain. Consciemment.",
+      "why": "Choisir de laisser quelque chose pour plus tard est différent de la négligence. C'est un acte de soin."
+    },
+    {
+      "id": "rest_act_15",
+      "content": "Fais une sieste si tu peux. Même vingt minutes.",
+      "why": "Le court sommeil est du vrai sommeil. Le corps n'a pas besoin de beaucoup d'invitation pour commencer à récupérer."
+    },
+    {
+      "id": "rest_act_16",
+      "content": "Éteins les actualités et les réseaux sociaux pour le reste de la journée.",
+      "why": "La consommation chronique d'informations est une source cachée d'épuisement."
+    },
+    {
+      "id": "rest_act_17",
+      "content": "Écris tout ce que tu essaies de garder dans ta tête. Puis ferme la liste.",
+      "why": "Ce qui reste dans la tête devient plus lourd à mesure que le temps passe. L'écrire le met ailleurs."
+    },
+    {
+      "id": "rest_act_18",
+      "content": "Fais une chose aujourd'hui qui est entièrement pour ton plaisir. Une seule.",
+      "why": "L'épuisement s'approfondit quand le plaisir est toujours différé. Tu peux avoir quelque chose qui n'est que pour toi."
+    },
+    {
+      "id": "rest_act_19",
+      "content": "Demande à quelqu'un d'autre de gérer quelque chose que tu gères habituellement seul.",
+      "why": "L'indépendance et l'épuisement sont souvent le même choix."
+    },
+    {
+      "id": "rest_act_20",
+      "content": "Donne-toi une heure sans agenda. Même pas le repos comme objectif. Juste libre.",
+      "why": "Le repos programmé avec des objectifs n'est pas un repos complet. Le temps vraiment libre est sa propre catégorie."
+    },
+    {
+      "id": "rest_act_21",
+      "content": "Mange quelque chose qui demande un effort minimal. Offre-toi ça aujourd'hui.",
+      "why": "La préparation des repas épuise de l'énergie. La réduire n'est pas de la paresse. C'est du soin."
+    },
+    {
+      "id": "rest_act_22",
+      "content": "Baisse les lumières. Adoucis l'environnement. Laisse le corps savoir que le rythme change.",
+      "why": "Une lumière douce change la sensation d'une pièce. Le corps le remarque, même si l'esprit ne le fait pas."
+    },
+    {
+      "id": "rest_act_23",
+      "content": "Demande-toi : 'Quel est le minimum que je dois faire aujourd'hui pour aller bien ?' Fais juste ça.",
+      "why": "Faire moins n'est pas échouer. C'est ce que la journée a demandé."
+    },
+    {
+      "id": "rest_act_24",
+      "content": "Regarde quelque chose de léger et facile. Sans culpabilité.",
+      "why": "Le divertissement est une forme légitime de repos. La culpabilité consomme plus d'énergie que ce que tu regardes."
+    },
+    {
+      "id": "rest_act_25",
+      "content": "Écris une liste de ce que tu as accompli cette semaine. Pas ce qui reste. Ce qui est fait.",
+      "why": "L'esprit épuisé a tendance à ne voir que ce qui reste. Écrire ce qui est fait change l'image."
+    },
+    {
+      "id": "rest_act_26",
+      "content": "Passe vingt minutes en conversation avec quelqu'un qui te restaure.",
+      "why": "Toute compagnie ne te laisse pas au même endroit. Certaines personnes restaurent. Trouve-en une aujourd'hui."
+    },
+    {
+      "id": "rest_act_27",
+      "content": "Porte des vêtements confortables aujourd'hui. Fais-en une vraie priorité.",
+      "why": "Le confort physique n'est pas une petite chose. Il change la façon dont le corps entier se sent dans une journée."
+    },
+    {
+      "id": "rest_act_28",
+      "content": "Dis 'j'ai besoin de me reposer aujourd'hui' à voix haute. À toi-même, ou à quelqu'un.",
+      "why": "Nommer un besoin est la première étape pour y répondre."
+    },
+    {
+      "id": "rest_act_29",
+      "content": "Ferme les yeux cinq minutes. Où que tu sois. Ferme-les simplement.",
+      "why": "Retirer ce que les yeux absorbent change quelque chose. Même brièvement."
+    },
+    {
+      "id": "rest_act_30",
+      "content": "Écris ce que le repos t'a donné par le passé. Comment tu t'es senti. Ce qui est revenu.",
+      "why": "Le souvenir d'avoir été reposé peut te rappeler que ça valait la peine de choisir."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "rest_ref_1",
+      "content": "Quand t'es-tu senti vraiment reposé pour la dernière fois ? Qu'est-ce qui était différent à ce moment-là ?"
+    },
+    {
+      "id": "rest_ref_2",
+      "content": "Quelle histoire te racontes-tu sur les personnes qui se reposent sans culpabilité ?"
+    },
+    {
+      "id": "rest_ref_3",
+      "content": "Qu'est-ce que forcer tes limites t'a réellement apporté ?"
+    },
+    {
+      "id": "rest_ref_4",
+      "content": "Qu'est-ce que tu te permettrais d'arrêter si tu croyais que le repos est légitime ?"
+    },
+    {
+      "id": "rest_ref_5",
+      "content": "Comment se sent ton corps en ce moment ? Depuis combien de temps est-il ainsi ?"
+    },
+    {
+      "id": "rest_ref_6",
+      "content": "Où as-tu appris que le repos devait se gagner ?"
+    },
+    {
+      "id": "rest_ref_7",
+      "content": "Qu'as-tu peur qui s'effondre si tu ralentis ?"
+    },
+    {
+      "id": "rest_ref_8",
+      "content": "Qu'est-ce que tu as fait plutôt que te reposer ? Est-ce que ça fonctionne ?"
+    },
+    {
+      "id": "rest_ref_9",
+      "content": "Qu'est-ce que ça dirait de toi si tu choisissais le repos aujourd'hui ?"
+    },
+    {
+      "id": "rest_ref_10",
+      "content": "Comment l'épuisement se ressent-il dans ton corps, pas dans ton esprit ?"
+    },
+    {
+      "id": "rest_ref_11",
+      "content": "Qui dans ta vie traite le repos comme quelque chose de légitime ? Qu'est-ce que tu remarques chez ces personnes ?"
+    },
+    {
+      "id": "rest_ref_12",
+      "content": "Que dirais-tu à quelqu'un que tu aimes qui serait aussi épuisé que toi ?"
+    },
+    {
+      "id": "rest_ref_13",
+      "content": "Quelle est une chose que tu fais par obligation et que tu pourrais arrêter ?"
+    },
+    {
+      "id": "rest_ref_14",
+      "content": "Que fait ton corps quand on lui permet d'être immobile ? Qu'est-ce qu'il relâche ?"
+    },
+    {
+      "id": "rest_ref_15",
+      "content": "Quelle est la différence entre la paresse et l'épuisement ? Lequel est-ce ?"
+    },
+    {
+      "id": "rest_ref_16",
+      "content": "Qu'est-ce que tu as ignoré pour continuer ?"
+    },
+    {
+      "id": "rest_ref_17",
+      "content": "Comment se ressent le fait d'être vraiment reposé pour toi ? T'en souviens-tu ?"
+    },
+    {
+      "id": "rest_ref_18",
+      "content": "Qu'est-ce que l'idée d'être vraiment reposé soulève en toi ? Comment serait-ce d'imaginer ça ?"
+    },
+    {
+      "id": "rest_ref_19",
+      "content": "Quelle est la description la plus honnête de depuis combien de temps tu fonctionnes à vide ?"
+    },
+    {
+      "id": "rest_ref_20",
+      "content": "Qu'est-ce que tu évites de ressentir en restant occupé ?"
+    },
+    {
+      "id": "rest_ref_21",
+      "content": "Comment le repos s'est-il ressenti par le passé, ce que tu as oublié ?"
+    },
+    {
+      "id": "rest_ref_22",
+      "content": "Que dois-tu arrêter de faire pour vraiment récupérer ?"
+    },
+    {
+      "id": "rest_ref_23",
+      "content": "Que signifie la restauration pour toi, concrètement ? Quelles activités, environnements ou conditions ?"
+    },
+    {
+      "id": "rest_ref_24",
+      "content": "Quel est le coût de continuer sans repos ? Pas comme calcul — juste comme un regard honnête."
+    },
+    {
+      "id": "rest_ref_25",
+      "content": "À quoi ressemblerait la vie si tu protégeais le repos comme tu protèges tes obligations ?"
+    },
+    {
+      "id": "rest_ref_26",
+      "content": "Quelle est la voix qui dit que tu ne mérites pas le repos ? D'où vient-elle ?"
+    },
+    {
+      "id": "rest_ref_27",
+      "content": "Quel est le minimum que tu dois faire aujourd'hui pour aller bien ? Juste le minimum."
+    },
+    {
+      "id": "rest_ref_28",
+      "content": "Qu'est-ce qui changerait si tu acceptais que le repos n'est pas une récompense mais une nécessité ?"
+    },
+    {
+      "id": "rest_ref_29",
+      "content": "Quand le repos s'est-il senti possible sans culpabilité pour la dernière fois ?"
+    },
+    {
+      "id": "rest_ref_30",
+      "content": "Que protégerais-tu en premier si tu décidais que ta récupération compte, simplement ?"
+    }
+  ],
+
+  "words": [
+    { "id": "rest_w_1",  "word": "HALTE",       "meaning": "Pas échouer. Pas abandonner. S'arrêter. Avec intention." },
+    { "id": "rest_w_2",  "word": "RESTAURER",   "meaning": "Ce qui se passe quand tu donnes au corps ce que l'épuisement a pris." },
+    { "id": "rest_w_3",  "word": "PERMETTRE",   "meaning": "Permets l'arrêt. Permets le repos. Permets le besoin." },
+    { "id": "rest_w_4",  "word": "LENTEMENT",   "meaning": "Le rythme que ton corps a demandé." },
+    { "id": "rest_w_5",  "word": "RECEVOIR",    "meaning": "Tu as donné. Aujourd'hui, reçois quelque chose." },
+    { "id": "rest_w_6",  "word": "ASSEZ",       "meaning": "Le repos n'attend pas d'être assez. Il est déjà disponible pour toi." },
+    { "id": "rest_w_7",  "word": "LÂCHER",      "meaning": "Ce que le corps attendait de faire." },
+    { "id": "rest_w_8",  "word": "SILENCE",     "meaning": "Sans exigence. Sans agenda. Juste le silence." },
+    { "id": "rest_w_9",  "word": "DOUX",        "meaning": "Adoucis le rythme. Adoucis l'exigence. Adoucis l'attente." },
+    { "id": "rest_w_10", "word": "PROFOND",     "meaning": "Le type de repos qui va sous la surface." },
+    { "id": "rest_w_11", "word": "LOURD",       "meaning": "Quand le corps devient lourd, il te dit quelque chose." },
+    { "id": "rest_w_12", "word": "PLONGER",     "meaning": "Plonge dans le repos. Tu n'as pas à le mériter d'abord." },
+    { "id": "rest_w_13", "word": "GUÉRIR",      "meaning": "Ce que fait le corps quand tu lui donnes la permission de s'arrêter." },
+    { "id": "rest_w_14", "word": "REVENIR",     "meaning": "Reviens à toi-même. De ce don incessant vers l'extérieur." },
+    { "id": "rest_w_15", "word": "RECONSTRUIRE","meaning": "Ce qui se passe dans le corps quand l'effort peut faire une pause." },
+    { "id": "rest_w_16", "word": "DESCENDRE",   "meaning": "Ralentis. Allonge-toi. Respire vers le bas. Laisse les choses se poser." },
+    { "id": "rest_w_17", "word": "PLEIN",       "meaning": "Pas vide et fonctionnant en automatique. Plein. C'est vers ça que la récupération se dirige." },
+    { "id": "rest_w_18", "word": "REFAIRE",     "meaning": "Ce dont le corps a besoin quand il fonctionne au minimum. Pas pour la production — juste pour lui-même." },
+    { "id": "rest_w_19", "word": "IMMOBILE",    "meaning": "Reste immobile un moment. Le monde peut attendre." },
+    { "id": "rest_w_20", "word": "S'APAISER",   "meaning": "Entre dans la pause en douceur. Cela n'a pas à être abrupt." },
+    { "id": "rest_w_21", "word": "VEILLER",     "meaning": "Prends soin de toi comme tu prends soin de tout le reste." },
+    { "id": "rest_w_22", "word": "PAUSE",       "meaning": "Avant la prochaine chose. La pause est là où la récupération commence." },
+    { "id": "rest_w_23", "word": "LARGE",       "meaning": "La respiration s'élargit quand le corps sent qu'il peut s'arrêter." },
+    { "id": "rest_w_24", "word": "TENDRE",      "meaning": "Sois tendre avec la partie de toi qui est épuisée." },
+    { "id": "rest_w_25", "word": "ESPACE",      "meaning": "Donne-toi de l'espace. Pas du temps pour produire. De l'espace." },
+    { "id": "rest_w_26", "word": "ÉCOUTER",     "meaning": "Ton corps a demandé. Aujourd'hui, écoute-le." },
+    { "id": "rest_w_27", "word": "ATTENDRE",    "meaning": "Les tâches peuvent attendre. Le corps attend déjà." },
+    { "id": "rest_w_28", "word": "OUVERT",      "meaning": "Ouvert à recevoir. Ouvert à ralentir. Ouvert au repos." },
+    { "id": "rest_w_29", "word": "S'ACCORDER",  "meaning": "Tu dois te l'accorder. Le repos n'est pas automatique. Tu le choisis." },
+    { "id": "rest_w_30", "word": "PETIT",       "meaning": "Un petit repos reste du repos. Dix minutes comptent." },
+    { "id": "rest_w_31", "word": "EN SÉCURITÉ", "meaning": "Tu es suffisamment en sécurité pour t'arrêter. Pour l'instant. Pour aujourd'hui." },
+    { "id": "rest_w_32", "word": "SE POSER",    "meaning": "Laisse le corps se poser. Dans le fauteuil. Sur le sol." },
+    { "id": "rest_w_33", "word": "ACCORDER",    "meaning": "Accorde-toi cela. La permission est à toi de donner." },
+    { "id": "rest_w_34", "word": "ANCRE",       "meaning": "Le repos est une ancre. Il te maintient connecté à ce dont tu as vraiment besoin." },
+    { "id": "rest_w_35", "word": "ESSENTIEL",   "meaning": "L'essentiel aujourd'hui. C'est suffisant." },
+    { "id": "rest_w_36", "word": "REVENDIQUER", "meaning": "Revendique le repos. Il t'appartient." },
+    { "id": "rest_w_37", "word": "FRAIS",       "meaning": "La fraîcheur de s'arrêter. La baisse de température quand l'effort se termine." },
+    { "id": "rest_w_38", "word": "DÉNOUER",     "meaning": "Laisse la tension de l'effort quitter lentement le corps." },
+    { "id": "rest_w_39", "word": "APAISER",     "meaning": "Apaise la partie de toi qui a couru trop longtemps." },
+    { "id": "rest_w_40", "word": "SOL",         "meaning": "Le sol te tient. Tu n'as pas à te tenir toi-même." },
+    { "id": "rest_w_41", "word": "GRÂCE",       "meaning": "Repose-toi avec grâce. Sans l'explication. Sans les excuses." },
+    { "id": "rest_w_42", "word": "SOUTENU",     "meaning": "Laisse-toi être soutenu. Par le fauteuil. Par le lit. Par le sol." },
+    { "id": "rest_w_43", "word": "INSPIRER",    "meaning": "Inspire lentement. Le corps se souvient comment récupérer." },
+    { "id": "rest_w_44", "word": "REJOINDRE",   "meaning": "Rejoins la partie de toi qui sait déjà qu'elle a besoin de s'arrêter." },
+    { "id": "rest_w_45", "word": "GARDER",      "meaning": "Garde quelque chose pour toi aujourd'hui. Tout ne va pas vers l'extérieur." },
+    { "id": "rest_w_46", "word": "MOINS",       "meaning": "Moins est suffisant maintenant. Moins est guérison." },
+    { "id": "rest_w_47", "word": "CICATRISER",  "meaning": "Le corps cicatrise quand tu arrêtes de te déchirer." },
+    { "id": "rest_w_48", "word": "NEUTRE",      "meaning": "Neutre est un état valide. Ni épuisé. Ni en performance. Neutre." },
+    { "id": "rest_w_49", "word": "OFFRIR",      "meaning": "Offre-toi le repos que tu as donné à tout le reste." },
+    { "id": "rest_w_50", "word": "CADENCE",     "meaning": "Trouve une cadence qui ne te coûte pas autant. Plus lente que l'actuelle." },
+    { "id": "rest_w_51", "word": "CHUT",        "meaning": "Une version plus douce du silence. Le chut d'une pièce où le repos est enfin possible." },
+    { "id": "rest_w_52", "word": "ENTIER",      "meaning": "Reposé est la direction de entier. C'est la raison." }
+  ],
+
+  "notification_pool": [
+    { "id": "rest_n_1",  "copy": "Le repos ne se gagne pas. Il est nécessaire.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_2",  "copy": "Tu as la permission de t'arrêter aujourd'hui.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_3",  "copy": "La culpabilité ne dit pas la vérité.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_4",  "copy": "Ton corps a demandé. Aujourd'hui, écoute-le.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_5",  "copy": "Être épuisé n'est pas un échec moral.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_6",  "copy": "S'arrêter fait partie de ce qui te garde humain.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_7",  "copy": "Ce dont tu as besoin pour récupérer aujourd'hui, c'est du repos.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_8",  "copy": "Le minimum est suffisant aujourd'hui.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_9",  "copy": "Redonne-toi du temps aujourd'hui.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_10", "copy": "Ce que tu appelles paresse, c'est de la récupération.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_11", "copy": "Dis non à une chose aujourd'hui. Une seule.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_12", "copy": "Tu n'as pas à mériter le repos.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_13", "copy": "Ralentis. La permission est déjà là.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_14", "copy": "Une heure sans agenda. C'est suffisant.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_15", "copy": "Le repos, c'est ce que fait le corps quand tu lui en donnes l'occasion.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_16", "copy": "Qu'est-ce que tu peux lâcher aujourd'hui ?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_17", "copy": "Annule quelque chose d'optionnel aujourd'hui.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_18", "copy": "Tu n'es pas en retard. Tu es épuisé.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_19", "copy": "Permission accordée de faire moins aujourd'hui.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_20", "copy": "Vingt minutes allongé change quelque chose.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_21", "copy": "Le monde n'a pas besoin de ton épuisement.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_22", "copy": "Repose-toi aujourd'hui. Pas pour demain. Pour maintenant.", "mood_weight": { "dark": 0.5, "half": 0.3, "full": 0.2 } },
+    { "id": "rest_n_23", "copy": "Ferme les yeux cinq minutes maintenant.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_24", "copy": "Tu fonctionnes à vide. Quelque chose doit revenir.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_25", "copy": "Ce dont ton corps a le plus besoin aujourd'hui, c'est du repos.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_26", "copy": "Reçois quelque chose aujourd'hui. Tu as donné.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_27", "copy": "Reposé est la direction de entier.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_28", "copy": "Arrête-toi parce que tu peux. C'est le choix.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "rest_ev_1",  "content": "T'es-tu reposé aujourd'hui ? Sinon, qu'est-ce qui s'est mis en travers ?" },
+    { "id": "rest_ev_2",  "content": "De quoi ton corps avait-il le plus besoin aujourd'hui que tu lui as donné ou non ?" },
+    { "id": "rest_ev_3",  "content": "Quelle culpabilité est apparue en te reposant aujourd'hui ? D'où vient-elle ?" },
+    { "id": "rest_ev_4",  "content": "Qu'as-tu lâché aujourd'hui que tu pensais avoir besoin ?" },
+    { "id": "rest_ev_5",  "content": "Que signifierait vraiment donner à ton corps le sommeil dont il a besoin cette nuit ?" },
+    { "id": "rest_ev_6",  "content": "Qu'est-ce qui t'a le plus épuisé aujourd'hui ? Y a-t-il quelque chose qui peut changer ?" },
+    { "id": "rest_ev_7",  "content": "Qu'as-tu fait pour te restaurer aujourd'hui, même quelque chose de petit ?" },
+    { "id": "rest_ev_8",  "content": "Que te dirais-tu ce soir qui rendrait le sommeil plus facile ?" },
+    { "id": "rest_ev_9",  "content": "Que dois-tu poser avant de dormir ? Ce qui ne vaut pas la peine d'être porté pendant la nuit ?" },
+    { "id": "rest_ev_10", "content": "S'arrêter s'est-il senti possible aujourd'hui ? Qu'est-ce qui l'a rendu plus facile ou plus difficile ?" },
+    { "id": "rest_ev_11", "content": "Quelle a été la chose la plus restauratrice qui s'est produite aujourd'hui, même brièvement ?" },
+    { "id": "rest_ev_12", "content": "De quoi as-tu besoin cette nuit pour te réveiller en sentant que quelque chose s'est allégé ?" },
+    { "id": "rest_ev_13", "content": "Y a-t-il quelque chose à quoi tu as dit oui aujourd'hui qui méritait un non ?" },
+    { "id": "rest_ev_14", "content": "Que ferais-tu différemment demain pour te donner plus de place pour respirer ?" }
+  ]
+
+}

@@ -35,6 +35,46 @@ const COMEBACK: CommunityInsight[] = [
   { text: 'Momentum doesn\'t disappear. It waits.', context: 'comeback' },
 ];
 
+const COMEBACK_PT: CommunityInsight[] = [
+  { text: 'Muitas pessoas recomeçam mais de uma vez. Voltar é a prática.', context: 'comeback' },
+  { text: 'A consistência raramente é perfeita. O que importa é que você voltou.', context: 'comeback' },
+  { text: 'A maioria das pessoas perde dias. Muito poucas param completamente.', context: 'comeback' },
+  { text: 'Voltar depois de uma semana difícil é mais comum do que se imagina.', context: 'comeback' },
+  { text: 'O impulso cresce com o retorno constante, não com a perfeição.', context: 'comeback' },
+  { text: 'O progresso se constrói com o retorno, não com a perfeição.', context: 'comeback' },
+  { text: 'O impulso não desaparece. Ele espera.', context: 'comeback' },
+];
+
+const COMEBACK_ES: CommunityInsight[] = [
+  { text: 'Muchas personas reconstruyen el impulso varias veces. Volver es la práctica.', context: 'comeback' },
+  { text: 'La constancia rara vez es perfecta. Lo que importa es que volviste.', context: 'comeback' },
+  { text: 'La mayoría de las personas pierde días. Muy pocas se detienen por completo.', context: 'comeback' },
+  { text: 'Volver después de una semana difícil es más común de lo que se cree.', context: 'comeback' },
+  { text: 'El impulso crece con el regreso constante, no con la perfección.', context: 'comeback' },
+  { text: 'El progreso se construye con el regreso, no con la perfección.', context: 'comeback' },
+  { text: 'El impulso no desaparece. Espera.', context: 'comeback' },
+];
+
+const COMEBACK_FR: CommunityInsight[] = [
+  { text: 'Beaucoup de gens reconstruisent leur élan plusieurs fois. Revenir, c\'est la pratique.', context: 'comeback' },
+  { text: 'La régularité est rarement parfaite. Ce qui compte, c\'est que tu sois revenu.', context: 'comeback' },
+  { text: 'La plupart des gens manquent des jours. Très peu s\'arrêtent complètement.', context: 'comeback' },
+  { text: 'Revenir après une semaine difficile est plus courant qu\'on ne le croit.', context: 'comeback' },
+  { text: 'L\'élan grandit par le retour constant, pas par la perfection.', context: 'comeback' },
+  { text: 'Le progrès se construit par le retour, pas par la perfection.', context: 'comeback' },
+  { text: 'L\'élan ne disparaît pas. Il attend.', context: 'comeback' },
+];
+
+const COMEBACK_DE: CommunityInsight[] = [
+  { text: 'Viele Menschen bauen ihren Schwung mehrmals auf. Zurückzukehren ist die Übung.', context: 'comeback' },
+  { text: 'Beständigkeit ist selten perfekt. Was zählt, ist, dass du zurückgekehrt bist.', context: 'comeback' },
+  { text: 'Die meisten Menschen verpassen Tage. Sehr wenige hören ganz auf.', context: 'comeback' },
+  { text: 'Nach einer schweren Woche zurückzukehren ist häufiger als man denkt.', context: 'comeback' },
+  { text: 'Schwung wächst durch beständige Rückkehr, nicht durch Perfektion.', context: 'comeback' },
+  { text: 'Fortschritt entsteht durch Rückkehr, nicht durch Perfektion.', context: 'comeback' },
+  { text: 'Schwung verschwindet nicht. Er wartet.', context: 'comeback' },
+];
+
 const MILESTONE: CommunityInsight[] = [
   { text: 'Thousands have felt exactly this moment.', context: 'milestone' },
   { text: 'Most users notice the shift right around here.', context: 'milestone' },
@@ -113,12 +153,22 @@ const RECAP_ES: CommunityInsight[] = [
 ];
 
 const ALL_INSIGHTS_ES: Partial<Record<InsightContext, CommunityInsight[]>> = {
+  comeback:   COMEBACK_ES,
   completion: COMPLETION_ES,
   recap:      RECAP_ES,
 };
 
 const ALL_INSIGHTS_PT: Partial<Record<InsightContext, CommunityInsight[]>> = {
+  comeback:   COMEBACK_PT,
   completion: COMPLETION_PT,
+};
+
+const ALL_INSIGHTS_FR: Partial<Record<InsightContext, CommunityInsight[]>> = {
+  comeback: COMEBACK_FR,
+};
+
+const ALL_INSIGHTS_DE: Partial<Record<InsightContext, CommunityInsight[]>> = {
+  comeback: COMEBACK_DE,
 };
 
 // ─── Selector ─────────────────────────────────────────────────────────────────
@@ -136,13 +186,21 @@ export function getInsightForContext(
   seed: number,
   lang?: string,
 ): CommunityInsight {
-  if (lang === 'es') {
-    const esPool = ALL_INSIGHTS_ES[context];
-    if (esPool) return pick(esPool, seed);
-  }
   if (lang === 'pt') {
-    const ptPool = ALL_INSIGHTS_PT[context];
-    if (ptPool) return pick(ptPool, seed);
+    const pool = ALL_INSIGHTS_PT[context];
+    if (pool) return pick(pool, seed);
+  }
+  if (lang === 'es') {
+    const pool = ALL_INSIGHTS_ES[context];
+    if (pool) return pick(pool, seed);
+  }
+  if (lang === 'fr') {
+    const pool = ALL_INSIGHTS_FR[context];
+    if (pool) return pick(pool, seed);
+  }
+  if (lang === 'de') {
+    const pool = ALL_INSIGHTS_DE[context];
+    if (pool) return pick(pool, seed);
   }
   const pool = ALL_INSIGHTS[context] ?? GENERAL;
   return pick(pool, seed);

@@ -1,0 +1,553 @@
+{
+  "theme": "Clarity",
+  "user_state": "Confundido. Con la mente nublada. No puede ver el próximo paso. Demasiadas opciones o ninguna dirección clara. Agotamiento de decisiones. Se siente perdido dentro de su propia vida.",
+  "core_need": "Simplicidad. Una cosa clara.",
+  "emotional_tone": "Limpio. Quieto. Iluminador.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "clarity_arr_1",
+        "heading": "La niebla es real.",
+        "subheading": "No es permanente. Es el estado que precede a la claridad."
+      },
+      {
+        "id": "clarity_arr_2",
+        "heading": "No necesitas verlo todo.",
+        "subheading": "Necesitas ver lo siguiente. Solo lo siguiente."
+      },
+      {
+        "id": "clarity_arr_3",
+        "heading": "Pensar más no ha traído la respuesta.",
+        "subheading": "La claridad viene de detenerse, no de esforzarse más."
+      },
+      {
+        "id": "clarity_arr_4",
+        "heading": "Lo simple es la dirección.",
+        "subheading": "No simple porque sea fácil. Simple porque todo lo demás ya se intentó."
+      },
+      {
+        "id": "clarity_arr_5",
+        "heading": "No estás perdido.",
+        "subheading": "Estás entre dos momentos de claridad. Es un lugar real. Ya has estado aquí antes."
+      },
+      {
+        "id": "clarity_arr_6",
+        "heading": "La confusión es información.",
+        "subheading": "Te está diciendo algo sobre lo que todavía no está resuelto. Eso es útil."
+      },
+      {
+        "id": "clarity_arr_7",
+        "heading": "Una cosa clara.",
+        "subheading": "Eso es todo lo que necesitas ahora. No un plan. Una cosa clara."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "clarity_rel_1",
+        "heading": "¿Sobre qué estás confundido?",
+        "subheading": "Escríbelo sin intentar resolverlo. Solo describe la niebla.",
+        "field_placeholder": "Describe la confusión de la manera más clara que puedas, sin buscar la respuesta..."
+      },
+      {
+        "id": "clarity_rel_2",
+        "heading": "¿Cuáles son todas las opciones que estás sosteniendo?",
+        "subheading": "Haz una lista. Fuera de la cabeza, ocupan menos espacio.",
+        "field_placeholder": "Todas las opciones, decisiones o direcciones que compiten en tu mente ahora..."
+      },
+      {
+        "id": "clarity_rel_3",
+        "heading": "¿Qué ya sabes?",
+        "subheading": "No lo que no tienes certeza. Lo que sabes con certeza.",
+        "field_placeholder": "Lo que ya es claro, incluso en medio de la niebla..."
+      },
+      {
+        "id": "clarity_rel_4",
+        "heading": "¿Qué estás pensando en exceso?",
+        "subheading": "Nombra lo que has estado rodeando por demasiado tiempo.",
+        "field_placeholder": "La decisión o situación a la que más has vuelto sin encontrar resolución..."
+      },
+      {
+        "id": "clarity_rel_5",
+        "heading": "¿Cómo se siente la niebla en tu cuerpo?",
+        "subheading": "La confusión no es solo mental. ¿Dónde la sientes?",
+        "field_placeholder": "Dónde en tu cuerpo vive la confusión o la incertidumbre..."
+      },
+      {
+        "id": "clarity_rel_6",
+        "heading": "¿Qué ayudaría más ahora?",
+        "subheading": "No la respuesta completa. Solo lo que ayudaría más, ahora.",
+        "field_placeholder": "Si una cosa pudiera cambiar, ¿cuál sería..."
+      },
+      {
+        "id": "clarity_rel_7",
+        "heading": "¿Qué desearías que alguien te dijera?",
+        "subheading": "Escríbelo. A menudo es lo que ya sabes.",
+        "field_placeholder": "¿Qué respuesta estás buscando que quizás ya tienes..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "clarity_br_1",
+        "heading": "Una respiración para despejar.",
+        "instruction": "Inhala por la nariz. Exhala lentamente por la boca. Imagina exhalar la niebla. Tres veces."
+      },
+      {
+        "id": "clarity_br_2",
+        "heading": "Desacelera el pensamiento.",
+        "instruction": "Inhala por cuatro tiempos. Sostén por dos. Exhala por seis. Repite. La mente se calma cuando el cuerpo se calma."
+      },
+      {
+        "id": "clarity_br_3",
+        "heading": "Deja que la respiración reinicie.",
+        "instruction": "Cierra los ojos. Respira naturalmente. Enfócate solo en la sensación de respirar. Nada más. Un minuto."
+      },
+      {
+        "id": "clarity_br_4",
+        "heading": "Vacía la mente en la exhalación.",
+        "instruction": "Inhala suavemente. Exhala completamente. Al exhalar, deja que los pensamientos se suelten con la respiración. Cuatro ciclos."
+      },
+      {
+        "id": "clarity_br_5",
+        "heading": "Llega aquí primero.",
+        "instruction": "Antes de intentar ver con claridad, llega aquí completamente. Tres respiraciones lentas. Totalmente en este momento."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "clarity_mom_1",
+        "heading": "¿Cuál es la única cosa que necesita volverse clara hoy?"
+      },
+      {
+        "id": "clarity_mom_2",
+        "heading": "¿Qué sabes en realidad, aunque no puedas ver el panorama completo?"
+      },
+      {
+        "id": "clarity_mom_3",
+        "heading": "¿Cuál es la versión más simple del próximo paso?"
+      },
+      {
+        "id": "clarity_mom_4",
+        "heading": "¿Qué harías si confiaras en lo que ya sabes?"
+      },
+      {
+        "id": "clarity_mom_5",
+        "heading": "¿Qué puedes simplificar ahora, en este momento?"
+      },
+      {
+        "id": "clarity_mom_6",
+        "heading": "¿Qué decisión lleva más tiempo esperando claridad?"
+      },
+      {
+        "id": "clarity_mom_7",
+        "heading": "¿Cuál es la cosa más pequeña y clara que puedes ver desde donde estás?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "clarity_comp_1",
+        "heading": "Algo se aclaró.",
+        "subheading": "Quizás no todo. Algo. Así es como llega la claridad."
+      },
+      {
+        "id": "clarity_comp_2",
+        "heading": "Te detuviste y la niebla se movió.",
+        "subheading": "Pensar más no era la respuesta. Esto sí."
+      },
+      {
+        "id": "clarity_comp_3",
+        "heading": "Una cosa clara.",
+        "subheading": "La encontraste. O estás más cerca. Cualquiera de los dos es avance."
+      },
+      {
+        "id": "clarity_comp_4",
+        "heading": "La niebla es más delgada ahora.",
+        "subheading": "No desapareció. Solo la visibilidad suficiente para dar el próximo paso."
+      },
+      {
+        "id": "clarity_comp_5",
+        "heading": "Simplificaste.",
+        "subheading": "Esa es la práctica entera. Es suficiente."
+      },
+      {
+        "id": "clarity_comp_6",
+        "heading": "Te quedaste con el malestar de no saber.",
+        "subheading": "Eso exige más de lo que la gente imagina. Algo suele moverse después de sentarse con ello."
+      },
+      {
+        "id": "clarity_comp_7",
+        "heading": "Suficientemente claro para avanzar.",
+        "subheading": "Eso es todo lo que la claridad necesita ser. No certeza. Suficientemente claro."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "clarity_hc_1",
+      "headline": "Pensar más no ha funcionado.",
+      "subheadline": "La claridad viene de detenerse, no de esforzarse más."
+    },
+    {
+      "id": "clarity_hc_2",
+      "headline": "No necesitas verlo todo.",
+      "subheadline": "Solo el próximo paso. Eso es suficiente para comenzar."
+    },
+    {
+      "id": "clarity_hc_3",
+      "headline": "Lo simple es lo que queda después de eliminar todo lo innecesario.",
+      "subheadline": "Eso suele estar más cerca de lo que parece ahora."
+    },
+    {
+      "id": "clarity_hc_4",
+      "headline": "La niebla no es permanente.",
+      "subheadline": "Cada vez que has estado aquí, algo eventualmente se aclaró."
+    },
+    {
+      "id": "clarity_hc_5",
+      "headline": "El agotamiento de decisiones es real.",
+      "subheadline": "La mente necesita menos puertas abiertas hoy. Una o dos es suficiente."
+    },
+    {
+      "id": "clarity_hc_6",
+      "headline": "Ya sabes más de lo que la niebla sugiere.",
+      "subheadline": "¿Qué sabes con certeza ahora?"
+    },
+    {
+      "id": "clarity_hc_7",
+      "headline": "Una cosa clara es suficiente para comenzar.",
+      "subheadline": "No necesitas el mapa completo. Solo el próximo giro."
+    },
+    {
+      "id": "clarity_hc_8",
+      "headline": "La confusión es información.",
+      "subheadline": "Te dice que algo todavía no está resuelto. Eso es útil."
+    },
+    {
+      "id": "clarity_hc_9",
+      "headline": "La respuesta probablemente está más cerca de la superficie de lo que parece.",
+      "subheadline": "Las preguntas más claras tienden a revelar respuestas más simples."
+    },
+    {
+      "id": "clarity_hc_10",
+      "headline": "No estás perdido.",
+      "subheadline": "Estás entre dos momentos claros. Ese es un lugar real y temporal."
+    },
+    {
+      "id": "clarity_hc_11",
+      "headline": "Escríbelo. Fuera de la cabeza, se hace más pequeño.",
+      "subheadline": "La niebla por dentro es más densa que la niebla en el papel."
+    },
+    {
+      "id": "clarity_hc_12",
+      "headline": "Deja de intentar verlo todo.",
+      "subheadline": "Ve los próximos metros. Empieza ahí."
+    },
+    {
+      "id": "clarity_hc_13",
+      "headline": "¿Qué harías si ya supieras la respuesta?",
+      "subheadline": "Esa pregunta a veces revela que ya la sabes."
+    },
+    {
+      "id": "clarity_hc_14",
+      "headline": "La claridad no es certeza.",
+      "subheadline": "Es suficiente ver el próximo paso. Eso es todo lo que se necesita."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "clarity_act_1",
+      "content": "Escribe todo lo que estás intentando descifrar ahora. Todo.",
+      "why": "La mente confundida sostiene demasiado a la vez. Escribirlo separa los hilos."
+    },
+    {
+      "id": "clarity_act_2",
+      "content": "Tacha todo en tu lista que no necesita una decisión hoy.",
+      "why": "El agotamiento de decisiones lo alimenta el volumen. Reducir la lista activa restaura la claridad."
+    },
+    {
+      "id": "clarity_act_3",
+      "content": "Pregúntate: '¿Qué ya sé sobre esto?' Escribe la respuesta.",
+      "why": "La niebla a menudo oscurece lo que ya sabes. Traer lo conocido a la superficie despeja espacio."
+    },
+    {
+      "id": "clarity_act_4",
+      "content": "Simplifica la pregunta. Escríbela en diez palabras o menos.",
+      "why": "Cuando la pregunta no está clara, la respuesta se mantiene oculta. Las preguntas cortas son más precisas."
+    },
+    {
+      "id": "clarity_act_5",
+      "content": "Escribe dos opciones para la decisión en que estás atascado. Rodea la que tu instinto prefiere.",
+      "why": "Dos opciones hacen visible la elección. El instinto suele aparecer cuando el camino está tan claro."
+    },
+    {
+      "id": "clarity_act_6",
+      "content": "Aléjate del problema por 20 minutos. Haz algo físico.",
+      "why": "La mente a menudo encuentra lo que buscaba solo después de que dejas de buscar."
+    },
+    {
+      "id": "clarity_act_7",
+      "content": "Escribe una lista de lo que realmente te importa. Luego mira la decisión desde ahí.",
+      "why": "La mayor parte de la confusión se disuelve cuando recuerdas lo que realmente importa."
+    },
+    {
+      "id": "clarity_act_8",
+      "content": "Pregunta a alguien de confianza: '¿Qué harías en mi lugar?' Escucha sin defenderte.",
+      "why": "Una perspectiva externa a menudo ve lo que la proximidad oscurece."
+    },
+    {
+      "id": "clarity_act_9",
+      "content": "Escribe: 'Estoy confundido sobre ___ porque ___.' Completa los dos espacios.",
+      "why": "Nombrar la fuente de la confusión a menudo disuelve parte de ella."
+    },
+    {
+      "id": "clarity_act_10",
+      "content": "Reduce tu lista activa a tres elementos. Solo tres.",
+      "why": "La sobrecarga crece cuando la lista crece. Tres cosas es suficiente para sostener a la vez."
+    },
+    {
+      "id": "clarity_act_11",
+      "content": "Deja reposar la decisión en que estás atascado. Anota volver a ella mañana.",
+      "why": "El sueño es cuando el cerebro consolida información y a menudo resuelve lo que la vigilia no puede."
+    },
+    {
+      "id": "clarity_act_12",
+      "content": "Escribe la decisión que más estás evitando tomar. Luego escribe de qué tienes miedo.",
+      "why": "El miedo es a menudo lo que crea niebla. Nombrar el miedo es el comienzo de la claridad."
+    },
+    {
+      "id": "clarity_act_13",
+      "content": "Apaga todos los estímulos por 30 minutos. Sin podcasts, música ni contenido.",
+      "why": "Los estímulos constantes impiden a la mente procesar lo que ya tiene."
+    },
+    {
+      "id": "clarity_act_14",
+      "content": "Dibuja un diagrama simple del problema. Cajas y flechas. Sin palabras.",
+      "why": "Verlo como una forma en lugar de palabras cambia cómo la mente sostiene el problema."
+    },
+    {
+      "id": "clarity_act_15",
+      "content": "Escribe tu respuesta instintiva a la pregunta que has estado pensando en exceso. Solo el primer pensamiento.",
+      "why": "La primera respuesta suele ser la correcta antes de que el miedo y el análisis la compliquen."
+    },
+    {
+      "id": "clarity_act_16",
+      "content": "Escribe lo que le dirías a un amigo confundido exactamente con esto.",
+      "why": "El consejo a otros suele ser más sabio que el consejo a uno mismo. Úsalo."
+    },
+    {
+      "id": "clarity_act_17",
+      "content": "Reduce tus compromisos de esta semana en uno. Escribe ahora para reprogramar o declinar.",
+      "why": "La niebla mental a menudo se levanta cuando una cosa sale de tu plato."
+    },
+    {
+      "id": "clarity_act_18",
+      "content": "Escribe lo que no necesitas decidir ahora. Ponlo a un lado. Lo que queda es más pequeño.",
+      "why": "La mente carga más de lo que necesita. Nombrar lo que puede soltarse crea espacio para lo que importa."
+    },
+    {
+      "id": "clarity_act_19",
+      "content": "Di en voz alta: 'No necesito saberlo todo. Solo necesito saber esta única cosa.'",
+      "why": "Decirlo en voz alta hace real el permiso. La voz confirma lo que la mente todavía no ha aceptado."
+    },
+    {
+      "id": "clarity_act_20",
+      "content": "Date un plazo para la decisión atascada. Incluso uno inventado.",
+      "why": "Las decisiones abiertas permanecen abiertas. Un plazo le da a la mente permiso para llegar a algún lugar."
+    },
+    {
+      "id": "clarity_act_21",
+      "content": "Escribe una lista de pros y contras para la decisión. Luego ignórala y observa tu reacción instintiva.",
+      "why": "Las listas de pros y contras a menudo aclaran al mostrar en qué lado esperabas aterrizar."
+    },
+    {
+      "id": "clarity_act_22",
+      "content": "Camina afuera sin auriculares. Deja que la mente divague sin dirección.",
+      "why": "Algo a menudo se suelta cuando el cuerpo se mueve y la mente no tiene ninguna tarea."
+    },
+    {
+      "id": "clarity_act_23",
+      "content": "Imagina vivir con cada opción por un momento. ¿Cómo se siente cada una dentro del cuerpo?",
+      "why": "El cuerpo a menudo responde a futuros imaginados antes de que la mente haya decidido. Esa respuesta es información."
+    },
+    {
+      "id": "clarity_act_24",
+      "content": "Identifica una cosa que sabes con certeza. Dilo en voz alta. Empieza desde ahí.",
+      "why": "Empezar por lo que ya está claro siempre es posible. Incluso cuando nada más lo está."
+    },
+    {
+      "id": "clarity_act_25",
+      "content": "Escribe libremente por 10 minutos. Sin estructura. Solo escribe lo que está en tu cabeza.",
+      "why": "La escritura libre exterioriza el ruido interno y a menudo trae a la superficie una claridad inesperada."
+    },
+    {
+      "id": "clarity_act_26",
+      "content": "¿Hay alguna cosa que podrías decidir hoy que haría varias otras cosas más fáciles?",
+      "why": "Algunas decisiones llevan otras dentro de ellas. Encontrar esa puede hacer que el resto se sienta más liviano."
+    },
+    {
+      "id": "clarity_act_27",
+      "content": "Pregunta: '¿En seis meses, esta decisión importará?' Si sí, ve despacio. Si no, decide ahora.",
+      "why": "El tiempo cambia el peso de las cosas. Una visión de seis meses a menudo muestra cuánto espacio hay realmente."
+    },
+    {
+      "id": "clarity_act_28",
+      "content": "Escribe tres cosas que actualmente están claras. Enfócate solo en esas hoy.",
+      "why": "Actuar sobre lo que está claro siempre está disponible, incluso cuando el panorama mayor está nublado."
+    },
+    {
+      "id": "clarity_act_29",
+      "content": "Pospón una decisión no urgente hasta la próxima semana. Escríbela y ciérrala.",
+      "why": "No todo necesita decidirse hoy. Escribirlo deja que la mente suelte lo que está sosteniendo."
+    },
+    {
+      "id": "clarity_act_30",
+      "content": "Escribe una frase: 'Lo más importante ahora es ___.' Completa el espacio. Confía en ella.",
+      "why": "Una frase puede contener más verdad que una larga lista. La limitación fuerza a emerger lo que realmente importa."
+    }
+  ],
+
+  "reflections": [
+    { "id": "clarity_ref_1",  "content": "¿Sobre qué estás más confundido ahora? ¿Puedes describir la niebla?" },
+    { "id": "clarity_ref_2",  "content": "¿Qué ya sabes con certeza, aunque no puedas ver el panorama completo?" },
+    { "id": "clarity_ref_3",  "content": "¿Cuándo en el pasado estuviste tan confundido y la claridad eventualmente llegó? ¿Qué ayudó?" },
+    { "id": "clarity_ref_4",  "content": "¿Y si la pregunta misma necesita cambiar?" },
+    { "id": "clarity_ref_5",  "content": "¿Qué simplificaría más tu situación actual si pudieras cambiar una cosa?" },
+    { "id": "clarity_ref_6",  "content": "¿Qué estás manteniendo abierto que podría decidirse o liberarse hoy?" },
+    { "id": "clarity_ref_7",  "content": "¿Cuál es la decisión que has estado evitando? ¿Qué hay debajo de esa evitación?" },
+    { "id": "clarity_ref_8",  "content": "¿Cómo se vería una vida más simple para ti ahora?" },
+    { "id": "clarity_ref_9",  "content": "¿Qué ha permanecido poco claro a pesar de todo tu pensamiento sobre ello?" },
+    { "id": "clarity_ref_10", "content": "¿Qué harías si dejaras de esperar certeza?" },
+    { "id": "clarity_ref_11", "content": "¿Cuál es una cosa que se aclaró para ti recientemente, y cómo ocurrió?" },
+    { "id": "clarity_ref_12", "content": "¿De qué te protege la confusión de tener que decidir?" },
+    { "id": "clarity_ref_13", "content": "¿Qué está diciendo tu instinto que tu análisis sigue ignorando?" },
+    { "id": "clarity_ref_14", "content": "¿Qué harías si supieras que la decisión no tiene que ser perfecta?" },
+    { "id": "clarity_ref_15", "content": "¿Cuáles son tres cosas sobre las que podrías dejar de pensar hoy y que te devolverían espacio?" },
+    { "id": "clarity_ref_16", "content": "¿Qué información todavía estás esperando que quizás nunca llegue?" },
+    { "id": "clarity_ref_17", "content": "¿Cuál es la manera más simple de decir lo que realmente quieres?" },
+    { "id": "clarity_ref_18", "content": "¿Qué se siente innecesariamente complicado en tu vida ahora?" },
+    { "id": "clarity_ref_19", "content": "Cuando imaginas que la niebla se levanta, ¿qué ves al otro lado?" },
+    { "id": "clarity_ref_20", "content": "¿Qué sigues rodeando que quizás te esté diciendo algo?" },
+    { "id": "clarity_ref_21", "content": "¿A qué claridad le tienes miedo? ¿Qué te exigiría?" },
+    { "id": "clarity_ref_22", "content": "¿Cómo se siente la mente clara en tu cuerpo, no en tu mente?" },
+    { "id": "clarity_ref_23", "content": "¿Qué harías diferente si confiaras más en tu propio juicio?" },
+    { "id": "clarity_ref_24", "content": "¿Qué estás complicando en exceso que podría ser simple?" },
+    { "id": "clarity_ref_25", "content": "¿Qué ha permanecido constante en tus valores aunque todo lo demás haya sido poco claro?" },
+    { "id": "clarity_ref_26", "content": "¿Qué le dirías a alguien tan confundido como tú estás ahora?" },
+    { "id": "clarity_ref_27", "content": "¿Cómo se sentiría tomar la decisión y dejar de decidir?" },
+    { "id": "clarity_ref_28", "content": "¿Cuál es el costo de seguir manteniendo esta pregunta abierta?" },
+    { "id": "clarity_ref_29", "content": "¿Qué necesitas dejar de consumir o de absorber para dejar que la claridad emerja?" },
+    { "id": "clarity_ref_30", "content": "¿Qué única cosa, si estuviera clara, haría el resto más fácil?" }
+  ],
+
+  "words": [
+    { "id": "clarity_w_1",  "word": "CLARO",       "meaning": "No es la ausencia de niebla. Es la capacidad de ver lo que importa." },
+    { "id": "clarity_w_2",  "word": "SIMPLE",      "meaning": "El otro lado de lo complicado. Vale la pena encontrarlo." },
+    { "id": "clarity_w_3",  "word": "VER",         "meaning": "Ver aunque sea una cosa con claridad es suficiente para empezar." },
+    { "id": "clarity_w_4",  "word": "DIRECTO",     "meaning": "La pregunta directa a menudo revela la respuesta directa." },
+    { "id": "clarity_w_5",  "word": "LIMPIO",      "meaning": "Una pregunta limpia. Una decisión limpia. Un próximo paso limpio." },
+    { "id": "clarity_w_6",  "word": "REDUCIR",     "meaning": "Reduce las opciones. Reduce las elecciones. Ve lo que queda." },
+    { "id": "clarity_w_7",  "word": "QUIETO",      "meaning": "La claridad requiere quietud. No más estímulo. Más quietud." },
+    { "id": "clarity_w_8",  "word": "LUZ",         "meaning": "La calidad de las cosas cuando la niebla finalmente se mueve." },
+    { "id": "clarity_w_9",  "word": "SABER",       "meaning": "Sabes más de lo que la niebla sugiere. Confía en eso." },
+    { "id": "clarity_w_10", "word": "ABIERTO",     "meaning": "Una mente abierta se detiene antes de llenarse demasiado. Vacía antes de recibir." },
+    { "id": "clarity_w_11", "word": "UNO",         "meaning": "Una cosa clara. No todo. Una." },
+    { "id": "clarity_w_12", "word": "QUITAR",      "meaning": "Quita lo innecesario. Ve cuál es la pregunta de verdad." },
+    { "id": "clarity_w_13", "word": "PAUSA",       "meaning": "La claridad que buscas a menudo llega en la pausa." },
+    { "id": "clarity_w_14", "word": "SILENCIO",    "meaning": "La señal de claridad es silenciosa. El ruido tiene que detenerse primero." },
+    { "id": "clarity_w_15", "word": "VERDAD",      "meaning": "Lo que es verdad, separado de lo que se teme o se espera." },
+    { "id": "clarity_w_16", "word": "DECIDIR",     "meaning": "La niebla a menudo se levanta en el momento en que decides. Antes de eso, raramente." },
+    { "id": "clarity_w_17", "word": "MENOS",       "meaning": "Menos información, menos opciones, listas más cortas. Menos revela más." },
+    { "id": "clarity_w_18", "word": "FOCO",        "meaning": "No en todo. En la única cosa poco clara que más importa." },
+    { "id": "clarity_w_19", "word": "PASO",        "meaning": "Solo el próximo paso. No necesitas ver todo el camino." },
+    { "id": "clarity_w_20", "word": "CONFIAR",     "meaning": "Confía en lo que sabes. Incluso antes de saberlo todo." },
+    { "id": "clarity_w_21", "word": "ESTRECHAR",   "meaning": "Estrecha la pregunta. La respuesta vive en un espacio más pequeño." },
+    { "id": "clarity_w_22", "word": "EMERGER",     "meaning": "La claridad emerge. No puedes forzarla. Puedes crear espacio para ella." },
+    { "id": "clarity_w_23", "word": "ESPERAR",     "meaning": "A veces la claridad requiere espera. Eso no es pasividad." },
+    { "id": "clarity_w_24", "word": "ENCONTRAR",   "meaning": "La claridad es encontrable. No siempre rápidamente. Pero encontrable." },
+    { "id": "clarity_w_25", "word": "PRECISO",     "meaning": "Una pregunta precisa corta lo que una vaga no puede." },
+    { "id": "clarity_w_26", "word": "CONTORNO",    "meaning": "Esboza la forma del problema antes de rellenar los detalles. La forma ya suele ser más clara." },
+    { "id": "clarity_w_27", "word": "ESPACIO",     "meaning": "La claridad necesita espacio. Deja de llenarlo y puede llegar." },
+    { "id": "clarity_w_28", "word": "SENCILLO",    "meaning": "Dilo de manera sencilla. Incluso a ti mismo. La sencillez es una forma de claridad." },
+    { "id": "clarity_w_29", "word": "DESCANSO",    "meaning": "El sueño y el descanso producen más claridad que más análisis." },
+    { "id": "clarity_w_30", "word": "BORDE",       "meaning": "Encuentra el borde de la niebla. ¿Qué puedes ver desde ahí?" },
+    { "id": "clarity_w_31", "word": "BRILLO",      "meaning": "Un punto brillante en la niebla es suficiente para navegar." },
+    { "id": "clarity_w_32", "word": "ESENCIA",     "meaning": "Ve a la esencia de la pregunta. La complejidad suele ser solo una capa." },
+    { "id": "clarity_w_33", "word": "NOMBRAR",     "meaning": "Nómbralo claramente antes de intentar resolverlo. El nombre correcto cambia lo que estás viendo." },
+    { "id": "clarity_w_34", "word": "SUFICIENTE",  "meaning": "Claridad suficiente para avanzar. Ese es el objetivo. No toda la claridad." },
+    { "id": "clarity_w_35", "word": "EXACTO",      "meaning": "Lo exacto es más claro que lo aproximado. Nombra la cosa exactamente." },
+    { "id": "clarity_w_36", "word": "FRESCO",      "meaning": "Una perspectiva fresca. Un paseo. Un descanso. Algo nuevo." },
+    { "id": "clarity_w_37", "word": "BASE",        "meaning": "Mantente en lo que sabes antes de alcanzar lo que no sabes." },
+    { "id": "clarity_w_38", "word": "ESCUCHAR",    "meaning": "Escucha lo que tu instinto ha estado diciendo a través del ruido." },
+    { "id": "clarity_w_39", "word": "HONESTO",     "meaning": "Honesto sobre lo que no sabes. Ahí es donde vive la claridad." },
+    { "id": "clarity_w_40", "word": "SOLO",        "meaning": "Solo esta pregunta. No todo el territorio. Solo esta." },
+    { "id": "clarity_w_41", "word": "CONSERVAR",   "meaning": "Conserva solo lo que importa. Descarta el resto sin culpa." },
+    { "id": "clarity_w_42", "word": "INCLINAR",    "meaning": "Inclínate hacia la respuesta que tu instinto ya tiene." },
+    { "id": "clarity_w_43", "word": "ENCONTRARSE", "meaning": "Encuéntrate con la confusión. Siéntate con ella. Tiene algo que decir." },
+    { "id": "clarity_w_44", "word": "NOMBRADO",    "meaning": "Lo que no tiene nombre no puede atenderse. Nómbralo." },
+    { "id": "clarity_w_45", "word": "ORDEN",       "meaning": "Pon las cosas en orden. Antes de decidir. Antes de actuar." },
+    { "id": "clarity_w_46", "word": "LITERAL",     "meaning": "Dilo literalmente. La pregunta literal a menudo contiene la respuesta literal." },
+    { "id": "clarity_w_47", "word": "INTERNO",     "meaning": "La respuesta es interna. Ya la tienes. Ve hacia adentro." },
+    { "id": "clarity_w_48", "word": "RESOLVER",    "meaning": "Resuelve la única cosa que está creando más niebla." },
+    { "id": "clarity_w_49", "word": "CORTO",       "meaning": "Lista más corta. Pregunta más corta. Menos tiempo hasta la claridad." },
+    { "id": "clarity_w_50", "word": "FINO",        "meaning": "La niebla se adelgaza cuando dejas de añadirle." },
+    { "id": "clarity_w_51", "word": "DESCUBRIR",   "meaning": "Descubre lo que ya sabes pero que está enterrado bajo el ruido." },
+    { "id": "clarity_w_52", "word": "PERSPECTIVA", "meaning": "Una perspectiva diferente del mismo problema cambia lo que ves." }
+  ],
+
+  "notification_pool": [
+    { "id": "clarity_n_1",  "copy": "No necesitas verlo todo. Solo el próximo paso.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_2",  "copy": "Pensar más no ha despejado esto. Intenta parar.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_3",  "copy": "Una cosa clara es suficiente para empezar.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_4",  "copy": "La niebla es temporal. Ya has estado aquí antes.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_5",  "copy": "Lo simple está al otro lado de lo complicado.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_6",  "copy": "¿Qué ya sabes? Empieza por ahí.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_7",  "copy": "La confusión es información. ¿Qué te está diciendo?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_8",  "copy": "Reduce la lista. Tres elementos. Adelante.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_9",  "copy": "Tu instinto ha estado intentando decir algo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_10", "copy": "Nombra la confusión. Se hace más pequeña cuando se nombra.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_11", "copy": "Aléjate por 20 minutos. Algo a menudo cambia.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_12", "copy": "¿Qué harías si ya supieras la respuesta?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_13", "copy": "El agotamiento de decisiones es real. Decide menos cosas hoy.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_14", "copy": "La cosa más clara que puedes ver ahora — actúa sobre eso.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_15", "copy": "Escríbelo. La niebla es más densa por dentro.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_16", "copy": "No certeza. Solo suficiente para dar un paso.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_17", "copy": "Haz una versión más simple de la pregunta.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_18", "copy": "No estás perdido. Entre dos momentos de claridad.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_19", "copy": "¿Qué puedes dejar de mantener abierto ahora?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_20", "copy": "La versión simple suele estar más cerca de lo correcto.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_21", "copy": "Menos estímulos, más claridad. Apaga algo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_22", "copy": "Confía en lo que sabes. Aunque no sea todo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_23", "copy": "La claridad suele llegar después de la decisión, no antes.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_24", "copy": "Simplifica una cosa hoy.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_25", "copy": "¿Cuál es la pregunta real bajo la niebla?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_26", "copy": "Deja de buscar todo. Busca una cosa.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_27", "copy": "La niebla se adelgaza cuando dejas de añadirle.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_28", "copy": "¿Qué harías si confiaras en tu instinto?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "clarity_ev_1",  "content": "¿Qué se aclaró hoy? Aunque sea un poco." },
+    { "id": "clarity_ev_2",  "content": "¿Qué decisión has estado evitando que podría tomarse esta noche?" },
+    { "id": "clarity_ev_3",  "content": "¿Dónde encontraste el pensamiento más claro hoy? ¿Qué lo creó?" },
+    { "id": "clarity_ev_4",  "content": "¿Qué simplificarías mañana si pudieras?" },
+    { "id": "clarity_ev_5",  "content": "¿Qué pregunta quedó sin resolver hoy? ¿Vale la pena cargarla durante la noche?" },
+    { "id": "clarity_ev_6",  "content": "¿Qué descubriste hoy que no esperabas?" },
+    { "id": "clarity_ev_7",  "content": "¿Qué permaneció nublado todo el día? ¿Qué podría ayudar a despejarlo?" },
+    { "id": "clarity_ev_8",  "content": "¿Qué decisión abierta podrías cerrar ahora, aunque sea de manera imperfecta?" },
+    { "id": "clarity_ev_9",  "content": "¿Qué sabías hoy que no estabas confiando?" },
+    { "id": "clarity_ev_10", "content": "¿Cuál es la cosa más importante sobre la que necesitas claridad mañana?" },
+    { "id": "clarity_ev_11", "content": "¿Qué se complicó hoy sin necesidad?" },
+    { "id": "clarity_ev_12", "content": "¿Qué reveló el detenerte y dar un paso atrás hoy?" },
+    { "id": "clarity_ev_13", "content": "¿Qué haría mañana más simple?" },
+    { "id": "clarity_ev_14", "content": "¿Cuál es una cosa sobre la que puedes dejar de pensar esta noche y simplemente dejar ser?" }
+  ]
+
+}

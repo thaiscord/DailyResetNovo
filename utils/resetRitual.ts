@@ -296,7 +296,7 @@ function getArriveMessage(
       headline = 'Nada se ha perdido.\nEstás aquí.';
       subtext  = 'Volver es todo.';
     } else if (daysMissed >= 1) {
-      headline = 'Estuviste un tiempo fuera.\nBienvenida de vuelta.';
+      headline = 'Estuviste un tiempo fuera.\nHas vuelto.';
       subtext  = 'Este es el regreso. Eso cuenta.';
     } else if (hour < 12) {
       headline = 'Puedes\nhacer una pausa.';
@@ -317,7 +317,7 @@ function getArriveMessage(
       headline = 'Nada está perdido.\nVocê está aqui.';
       subtext  = 'Voltar é tudo.';
     } else if (daysMissed >= 1) {
-      headline = 'Você ficou um tempo fora.\nBem-vindo de volta.';
+      headline = 'Você ficou um tempo fora.\nQue bom te ver.';
       subtext  = 'Esse é o retorno. Isso conta.';
     } else if (hour < 12) {
       headline = 'Você pode\nparar um momento.';

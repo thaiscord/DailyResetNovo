@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useEffect, useCallback, useMemo } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   Animated, Easing,
@@ -13,7 +13,12 @@ import { useLanguage } from '../hooks/useLanguage';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
 import {
   WeeklyRecapData,
+  getJourneyStartDate,
+  getCurrentJourneyWeekIndex,
+  getJourneyWeekStart,
+  countResetsInJourneyWeek,
 } from '../utils/weeklyRecap';
+import { getAppNow } from '../utils/appDate';
 
 // ─── Staggered fade-in ────────────────────────────────────────────────────────
 function FadeIn({ delay = 0, children }: { delay?: number; children: React.ReactNode }) {
@@ -39,17 +44,17 @@ function currentWeekLine(n: number, lang: string): string {
     return 'The week is still taking shape.';
   }
   if (n === 1) {
-    if (lang === 'pt') return 'Um retorno até agora.';
-    if (lang === 'es') return 'Un regreso hasta ahora.';
-    if (lang === 'fr') return 'Un retour jusqu\'ici.';
-    if (lang === 'de') return 'Eine Rückkehr bisher.';
-    return 'One return so far.';
+    if (lang === 'pt') return 'Um retorno nesta semana.';
+    if (lang === 'es') return 'Un regreso esta semana.';
+    if (lang === 'fr') return 'Un retour cette semaine.';
+    if (lang === 'de') return 'Eine Rückkehr diese Woche.';
+    return 'One return this week.';
   }
-  if (lang === 'pt') return `${n} retornos até agora.`;
-  if (lang === 'es') return `${n} regresos hasta ahora.`;
-  if (lang === 'fr') return `${n} retours jusqu'ici.`;
-  if (lang === 'de') return `${n} Rückkehren bisher.`;
-  return `${n} returns so far.`;
+  if (lang === 'pt') return `${n} retornos nesta semana.`;
+  if (lang === 'es') return `${n} regresos esta semana.`;
+  if (lang === 'fr') return `${n} retours cette semaine.`;
+  if (lang === 'de') return `${n} Rückkehren diese Woche.`;
+  return `${n} returns this week.`;
 }
 
 function CurrentWeekCard({ weeklyScore }: { weeklyScore: number }) {
@@ -194,11 +199,16 @@ export default function WeeklyRecapHistoryScreen() {
   const totalCompleted = progress.completedDays.length;
   const hasAnyData     = totalCompleted > 0;
 
-  // Single source of truth: first 7 resets use totalCompleted so the count
-  // matches the Progress tab's QuietSummary regardless of calendar week
-  // boundaries. After 7+ resets a full recap exists; switch to weeklyScore
-  // so the card tracks the current calendar-week progress correctly.
-  const displayCount = totalCompleted <= 7 ? totalCompleted : weeklyScore;
+  // Journey week score: how many resets completed in the current 7-day window
+  // starting from the user's first ever reset day.
+  const journeyWeekScore = useMemo(() => {
+    if (totalCompleted === 0) return 0;
+    const now = getAppNow();
+    const journeyStart = getJourneyStartDate(progress.completedByDate);
+    const currentWeekIndex = getCurrentJourneyWeekIndex(journeyStart, now);
+    const currentWeekStart = getJourneyWeekStart(journeyStart, currentWeekIndex);
+    return countResetsInJourneyWeek(progress.completedByDate, currentWeekStart);
+  }, [progress.completedByDate, totalCompleted]);
 
   return (
     <View style={styles.root}>
@@ -225,7 +235,7 @@ export default function WeeklyRecapHistoryScreen() {
 
         {/* Current week preview — always shown if there's any activity */}
         {hasAnyData && (
-          <CurrentWeekCard weeklyScore={displayCount} />
+          <CurrentWeekCard weeklyScore={journeyWeekScore} />
         )}
 
         {sortedRecaps.length === 0 ? (

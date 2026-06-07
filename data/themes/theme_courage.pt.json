@@ -1,0 +1,643 @@
+{
+  "theme": "Coragem",
+  "user_state": "Com medo. Em evitação. Sabe o que precisa fazer, mas está paralisado. Confunde medo com incapacidade.",
+  "core_need": "Permissão para agir de forma imperfeita.",
+  "emotional_tone": "Acolhedor. Honesto. Discretamente corajoso.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "courage_arr_1",
+        "heading": "Você está com medo. Isso é honesto.",
+        "subheading": "Medo e movimento para frente não são opostos. Eles podem existir ao mesmo tempo."
+      },
+      {
+        "id": "courage_arr_2",
+        "heading": "Pronto não é um sentimento.",
+        "subheading": "É uma escolha. Você pode escolher antes de sentir que está pronto."
+      },
+      {
+        "id": "courage_arr_3",
+        "heading": "O medo é real.",
+        "subheading": "E também é a sua capacidade de caminhar junto com ele. Os dois são verdadeiros."
+      },
+      {
+        "id": "courage_arr_4",
+        "heading": "Você esperou se sentir pronto.",
+        "subheading": "Essa sensação não veio. E essa espera tem um peso próprio. O próximo pequeno passo não precisa de prontidão."
+      },
+      {
+        "id": "courage_arr_5",
+        "heading": "Imperfeito e feito.",
+        "subheading": "Isso é sempre mais útil do que perfeito e esperando."
+      },
+      {
+        "id": "courage_arr_6",
+        "heading": "A evitação está cobrando um preço.",
+        "subheading": "Não porque você é fraco. Mas porque o medo tem tomado as decisões."
+      },
+      {
+        "id": "courage_arr_7",
+        "heading": "Um passo.",
+        "subheading": "Não tudo de uma vez. Não com certeza. Só um passo, com o medo do lado."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "courage_rel_1",
+        "heading": "Do que você tem medo?",
+        "subheading": "Nomeie diretamente. O medo vago é mais difícil de atravessar do que o medo com nome.",
+        "field_placeholder": "O que especificamente você teme que vai acontecer..."
+      },
+      {
+        "id": "courage_rel_2",
+        "heading": "O que você está evitando?",
+        "subheading": "Não por quê. Apenas o quê. Nomeie a coisa em si.",
+        "field_placeholder": "A coisa que você tem contornado em vez de fazer..."
+      },
+      {
+        "id": "courage_rel_3",
+        "heading": "O que o medo está pedindo para proteger?",
+        "subheading": "Ele está guardando algo. O que ele acha que está em risco?",
+        "field_placeholder": "Do que o medo está tentando te proteger..."
+      },
+      {
+        "id": "courage_rel_4",
+        "heading": "O que você faria se não tivesse medo?",
+        "subheading": "Escreva. Essa é a direção.",
+        "field_placeholder": "Sem o medo, qual seria o seu próximo passo..."
+      },
+      {
+        "id": "courage_rel_5",
+        "heading": "O que a evitação já custou até agora?",
+        "subheading": "Sem culpa. Só honestidade.",
+        "field_placeholder": "O que a espera já te custou até agora..."
+      },
+      {
+        "id": "courage_rel_6",
+        "heading": "A pior versão que você está imaginando.",
+        "subheading": "Escreva. Depois observe com que frequência exatamente isso aconteceu antes.",
+        "field_placeholder": "Descreva o pior cenário que sua mente está construindo..."
+      },
+      {
+        "id": "courage_rel_7",
+        "heading": "O que você já sabe que precisa fazer?",
+        "subheading": "Você sabe. Coloque aqui.",
+        "field_placeholder": "A coisa que você já sabe, mas ainda não está fazendo..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "courage_br_1",
+        "heading": "Respire como alguém que já decidiu.",
+        "instruction": "Inspire devagar. Segure brevemente. Expire longamente. O corpo segue a respiração em direção à estabilidade."
+      },
+      {
+        "id": "courage_br_2",
+        "heading": "A respiração antes do passo.",
+        "instruction": "Uma inspiração completa. Uma expiração completa. Depois mova. Só isso."
+      },
+      {
+        "id": "courage_br_3",
+        "heading": "Estável.",
+        "instruction": "Quatro tempos para entrar. Quatro para segurar. Quatro para sair. Repita. A coragem vive em uma respiração estável."
+      },
+      {
+        "id": "courage_br_4",
+        "heading": "Respire pela resistência.",
+        "instruction": "O corpo se contrai antes de agir. Respire em direção à contração. Três vezes."
+      },
+      {
+        "id": "courage_br_5",
+        "heading": "Enraíze antes de ir.",
+        "instruction": "Sinta os pés no chão. Respire uma vez, completamente. Depois dê o primeiro passo."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "courage_mom_1",
+        "heading": "Qual é a única coisa que você tem evitado?"
+      },
+      {
+        "id": "courage_mom_2",
+        "heading": "Qual é a menor versão do passo que você teme?"
+      },
+      {
+        "id": "courage_mom_3",
+        "heading": "Como seria uma ação imperfeita hoje?"
+      },
+      {
+        "id": "courage_mom_4",
+        "heading": "O que o medo está protegendo? O que ele acha que está guardando?"
+      },
+      {
+        "id": "courage_mom_5",
+        "heading": "Qual é um pequeno passo que você poderia dar hoje, mesmo com o medo do lado?"
+      },
+      {
+        "id": "courage_mom_6",
+        "heading": "O que você faria se soubesse que tudo ficaria bem?"
+      },
+      {
+        "id": "courage_mom_7",
+        "heading": "A coisa que você já sabe que precisa fazer. Nomeie."
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "courage_comp_1",
+        "heading": "Você caminhou junto com o medo.",
+        "subheading": "Isso não é ausência de coragem. É exatamente o que coragem é."
+      },
+      {
+        "id": "courage_comp_2",
+        "heading": "Imperfeito e feito.",
+        "subheading": "Você fez. O medo estava lá. E você foi assim mesmo."
+      },
+      {
+        "id": "courage_comp_3",
+        "heading": "Você escolheu seguir em frente.",
+        "subheading": "Não porque era fácil. Porque você decidiu que importava mais."
+      },
+      {
+        "id": "courage_comp_4",
+        "heading": "O passo aconteceu.",
+        "subheading": "Pequeno ou grande. Perfeito ou torto. Aconteceu. Isso conta."
+      },
+      {
+        "id": "courage_comp_5",
+        "heading": "Você estava com medo.",
+        "subheading": "E foi assim mesmo. Isso é algo para levar com você."
+      },
+      {
+        "id": "courage_comp_6",
+        "heading": "O pronto nunca chegou.",
+        "subheading": "Você foi sem ele. Isso é a definição da coisa."
+      },
+      {
+        "id": "courage_comp_7",
+        "heading": "Você apareceu para a coisa.",
+        "subheading": "Não para a versão onde tudo correu perfeitamente. Para a coisa real."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "courage_hc_1",
+      "headline": "Pronto é uma decisão, não um sentimento.",
+      "subheadline": "Você pode decidir antes de sentir que está pronto."
+    },
+    {
+      "id": "courage_hc_2",
+      "headline": "O medo é real, e o próximo passo também.",
+      "subheadline": "Os dois são verdadeiros ao mesmo tempo."
+    },
+    {
+      "id": "courage_hc_3",
+      "headline": "Esperar para se sentir pronto tem um peso próprio.",
+      "subheadline": "Um pequeno movimento, mesmo imperfeito, é mais leve do que ficar parado."
+    },
+    {
+      "id": "courage_hc_4",
+      "headline": "Ação imperfeita é sempre melhor do que espera perfeita.",
+      "subheadline": "A distância entre os dois é onde a evitação mora."
+    },
+    {
+      "id": "courage_hc_5",
+      "headline": "Você não está evitando porque é fraco.",
+      "subheadline": "Você está evitando porque o medo está tomando as decisões."
+    },
+    {
+      "id": "courage_hc_6",
+      "headline": "O menor passo ainda é um passo.",
+      "subheadline": "A direção importa mais do que a distância."
+    },
+    {
+      "id": "courage_hc_7",
+      "headline": "Algo em você já sabe a direção.",
+      "subheadline": "O próximo passo não precisa ser a resposta completa."
+    },
+    {
+      "id": "courage_hc_8",
+      "headline": "Coragem não é ausência de medo.",
+      "subheadline": "É se mover junto com ele. É isso que você está fazendo."
+    },
+    {
+      "id": "courage_hc_9",
+      "headline": "A coisa que você está evitando sabe que você está por perto.",
+      "subheadline": "Você tem dado voltas ao redor. Hoje você pode se aproximar um pouco mais."
+    },
+    {
+      "id": "courage_hc_10",
+      "headline": "O resultado não é a única coisa.",
+      "subheadline": "O ato de escolher também é alguma coisa."
+    },
+    {
+      "id": "courage_hc_11",
+      "headline": "Medo e movimento para frente podem coexistir.",
+      "subheadline": "Você não precisa esperar o medo ir embora."
+    },
+    {
+      "id": "courage_hc_12",
+      "headline": "Feito de forma imperfeita ainda é feito.",
+      "subheadline": "O perfeccionismo mantém a porta fechada. A ação imperfeita a abre."
+    },
+    {
+      "id": "courage_hc_13",
+      "headline": "Um passo não é a coisa toda.",
+      "subheadline": "É só o passo. Só isso está sendo pedido."
+    },
+    {
+      "id": "courage_hc_14",
+      "headline": "O medo tem controlado a agenda.",
+      "subheadline": "Hoje você pode retomar um item dessa agenda."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "courage_act_1",
+      "content": "Escreva a única coisa que você tem evitado. Só nomeie. Nenhum plano ainda.",
+      "why": "Nomear traz para fora da imaginação, onde é maior, para a realidade."
+    },
+    {
+      "id": "courage_act_2",
+      "content": "Faça os primeiros 5% da tarefa que está evitando. Nada mais.",
+      "why": "Começar é a barreira. O primeiro passo é sempre mais difícil do que o segundo."
+    },
+    {
+      "id": "courage_act_3",
+      "content": "Mande a mensagem, faça a ligação ou escreva o e-mail que está adiando.",
+      "why": "A comunicação adiada custa mais em ansiedade do que o desconforto de enviar."
+    },
+    {
+      "id": "courage_act_4",
+      "content": "Escreva: 'O que eu temo é ___. O que eu vou fazer assim mesmo é ___.'",
+      "why": "Segurar as duas verdades ao mesmo tempo é como você atravessa em vez de contornar."
+    },
+    {
+      "id": "courage_act_5",
+      "content": "Conte para uma pessoa sobre a coisa que está evitando. Apenas o fato de que está evitando.",
+      "why": "Dizer em voz alta reduz a vergonha que reforça a evitação."
+    },
+    {
+      "id": "courage_act_6",
+      "content": "Coloque a coisa evitada na sua agenda para hoje. Reserve um tempo.",
+      "why": "Intenção sem agendamento raramente vira ação. Trate como um compromisso."
+    },
+    {
+      "id": "courage_act_7",
+      "content": "Faça a coisa difícil primeiro. Antes de checar mensagens, e-mail ou notificações.",
+      "why": "A tarefa evitada cresce quando você enfrenta tudo o mais antes dela."
+    },
+    {
+      "id": "courage_act_8",
+      "content": "Escreva o pior resultado realista de dar o passo. Depois escreva: 'E eu conseguiria lidar com isso.'",
+      "why": "O pior cenário imaginado é quase sempre algo com o qual você conseguiria lidar. Torná-lo concreto reduz seu poder."
+    },
+    {
+      "id": "courage_act_9",
+      "content": "Configure um timer de dois minutos. Trabalhe na tarefa temida só até ele tocar.",
+      "why": "Dois minutos quase sempre são suficientes para provar que você consegue começar."
+    },
+    {
+      "id": "courage_act_10",
+      "content": "Peça ajuda com a coisa que você tem tentado resolver sozinho.",
+      "why": "Pedir ajuda é uma forma de coragem. O isolamento reforça a evitação."
+    },
+    {
+      "id": "courage_act_11",
+      "content": "Escreva três momentos em que você fez algo difícil sem se sentir pronto antes.",
+      "why": "Evidência de coragem passada é o argumento mais sólido contra o medo atual."
+    },
+    {
+      "id": "courage_act_12",
+      "content": "Tome a decisão que você tem adiado. Não a perfeita. A próxima.",
+      "why": "Uma decisão tomada, mesmo imperfeita, custa menos do que uma não tomada."
+    },
+    {
+      "id": "courage_act_13",
+      "content": "Escreva uma frase sobre o que você quer. Não o que acha realista. O que você quer.",
+      "why": "O medo frequentemente silencia o querer. Nomear restaura a direção."
+    },
+    {
+      "id": "courage_act_14",
+      "content": "Faça uma coisa hoje que exija que outras pessoas te vejam.",
+      "why": "Ser visto é frequentemente o que a evitação está protegendo silenciosamente. Um pequeno momento de visibilidade muda o que parece possível."
+    },
+    {
+      "id": "courage_act_15",
+      "content": "Escreva o primeiro motivo que o medo dá para não dar o passo. Depois pergunte: isso é verdade de fato?",
+      "why": "Nomear o argumento do medo e questioná-lo suavemente muda quanto espaço ele ocupa."
+    },
+    {
+      "id": "courage_act_16",
+      "content": "Vá ao lugar ou abra a coisa que está evitando. Só chegue. Nada mais ainda.",
+      "why": "Chegar fisicamente muda o estado interno. A presença é seu próprio tipo de progresso."
+    },
+    {
+      "id": "courage_act_17",
+      "content": "Escreva uma carta para você mesmo daqui a um ano, imaginando que deu o passo.",
+      "why": "A perspectiva futura reduz o peso que o momento presente está carregando."
+    },
+    {
+      "id": "courage_act_18",
+      "content": "Peça desculpas por algo que você tem evitado pedir desculpas.",
+      "why": "O pavor de pedir desculpas é quase sempre mais duradouro do que o pedido de desculpas em si."
+    },
+    {
+      "id": "courage_act_19",
+      "content": "Levante a mão, a voz ou a sua ideia no próximo momento disponível.",
+      "why": "Pequenos momentos de ser visto tendem a tornar o próximo um pouco mais fácil."
+    },
+    {
+      "id": "courage_act_20",
+      "content": "Escreva o que você realmente pensa. Sobre a coisa difícil. Sua opinião real.",
+      "why": "Suprimir uma visão real custa energia e alimenta a evitação."
+    },
+    {
+      "id": "courage_act_21",
+      "content": "Diga não para a coisa que você concordou por medo de decepcionar alguém.",
+      "why": "Um sim baseado no medo não é generosidade. Um não honesto é sua própria forma de coragem."
+    },
+    {
+      "id": "courage_act_22",
+      "content": "Comece o projeto antes de estar perfeito. Escreva o rascunho, entregue a versão bruta.",
+      "why": "Esperar pelo perfeito é geralmente esperar por um sentimento que não vai chegar antes de você começar."
+    },
+    {
+      "id": "courage_act_23",
+      "content": "Escreva sobre o medo como se fosse uma voz separada. O que ele diz? Depois escreva o que você sabe ser verdade junto com isso.",
+      "why": "Dar uma voz ao medo fora de você cria alguma distância. Dessa distância, fica mais fácil ver o que ele realmente é."
+    },
+    {
+      "id": "courage_act_24",
+      "content": "Dê o passo que você temia em um contexto menor primeiro.",
+      "why": "Uma versão menor do mesmo passo te mostra como é a sensação de fazê-lo. Isso muda como a versão maior parece."
+    },
+    {
+      "id": "courage_act_25",
+      "content": "Diga a verdade sobre algo que você tem suavizado.",
+      "why": "Suavizar o que é verdadeiro vai custando algo aos poucos. Um momento de honestidade, mesmo pequeno, restaura algo."
+    },
+    {
+      "id": "courage_act_26",
+      "content": "Publique, envie ou compartilhe a coisa que você tem guardado.",
+      "why": "A barreira entre feito e enviado é frequentemente só o medo de ser visto."
+    },
+    {
+      "id": "courage_act_27",
+      "content": "Estabeleça um limite que você tem tido medo de estabelecer.",
+      "why": "Limites protegem o que importa. O medo de estabelecê-los abre mão do que importa."
+    },
+    {
+      "id": "courage_act_28",
+      "content": "Escreva o que você diria para um amigo que está enfrentando exatamente o que você está enfrentando.",
+      "why": "O conselho que você dá livremente para os outros é geralmente o que você mais precisa."
+    },
+    {
+      "id": "courage_act_29",
+      "content": "Faça a coisa de um jeito que você sabe ser imperfeito. Deixe o imperfeito ser suficiente.",
+      "why": "A imperfeição não é a barreira. A crença de que a imperfeição não é permitida é. Isso remove essa crença."
+    },
+    {
+      "id": "courage_act_30",
+      "content": "Comprometa-se em voz alta: 'Vou fazer ___ hoje, mesmo tendo medo.'",
+      "why": "Dizer em voz alta muda algo. A voz torna real de um jeito que ficar só na mente não consegue."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "courage_ref_1",
+      "content": "Do que você tem mais medo agora? Consegue nomear especificamente?"
+    },
+    {
+      "id": "courage_ref_2",
+      "content": "O que você tentaria hoje se se desse permissão para fazer mal feito?"
+    },
+    {
+      "id": "courage_ref_3",
+      "content": "O que a evitação tem custado? Silenciosamente, ao longo do tempo?"
+    },
+    {
+      "id": "courage_ref_4",
+      "content": "Quando você agiu apesar do medo antes? O que aconteceu?"
+    },
+    {
+      "id": "courage_ref_5",
+      "content": "Qual é a menor versão do passo temido que você poderia dar hoje?"
+    },
+    {
+      "id": "courage_ref_6",
+      "content": "O que seu medo diz que vai acontecer se você der o passo?"
+    },
+    {
+      "id": "courage_ref_7",
+      "content": "Qual é a coisa real que você está protegendo ao ficar onde está?"
+    },
+    {
+      "id": "courage_ref_8",
+      "content": "O que você diria para alguém que você ama que estivesse enfrentando exatamente o que você está enfrentando?"
+    },
+    {
+      "id": "courage_ref_9",
+      "content": "Qual é a diferença entre a história que o medo conta e o que é realmente verdadeiro?"
+    },
+    {
+      "id": "courage_ref_10",
+      "content": "O que seria mais pesado de carregar: ter tentado, mesmo que mal, ou ter ficado onde está?"
+    },
+    {
+      "id": "courage_ref_11",
+      "content": "O que estar pronto realmente exige? Essa exigência é real?"
+    },
+    {
+      "id": "courage_ref_12",
+      "content": "Qual parte de você já sabe o que fazer?"
+    },
+    {
+      "id": "courage_ref_13",
+      "content": "O que aconteceria se o medo se revelasse errado?"
+    },
+    {
+      "id": "courage_ref_14",
+      "content": "Quem você já viu agir apesar do medo? O que isso te ensinou?"
+    },
+    {
+      "id": "courage_ref_15",
+      "content": "Como tem sido a espera? Como é sentir no corpo ficar aqui mais um dia?"
+    },
+    {
+      "id": "courage_ref_16",
+      "content": "Como seria uma ação imperfeita para a coisa que você está evitando?"
+    },
+    {
+      "id": "courage_ref_17",
+      "content": "Do que o medo está te protegendo que talvez você não precise de proteção?"
+    },
+    {
+      "id": "courage_ref_18",
+      "content": "O que você começaria se soubesse que era permitido começar mal?"
+    },
+    {
+      "id": "courage_ref_19",
+      "content": "Como a evitação tem afetado seu corpo? Seu sono? Seu foco?"
+    },
+    {
+      "id": "courage_ref_20",
+      "content": "O que parece diferente em você quando dá um passo apesar do medo?"
+    },
+    {
+      "id": "courage_ref_21",
+      "content": "O que você quer tanto que o medo de falhar nisso é tão forte assim?"
+    },
+    {
+      "id": "courage_ref_22",
+      "content": "O que você tem ensaiado na cabeça em vez de fazer?"
+    },
+    {
+      "id": "courage_ref_23",
+      "content": "Como seria movimento para frente hoje? Não eventualmente. Hoje."
+    },
+    {
+      "id": "courage_ref_24",
+      "content": "O que você faria se ninguém estivesse olhando e o julgamento não fosse possível?"
+    },
+    {
+      "id": "courage_ref_25",
+      "content": "O que você sabe sobre o medo que seu eu do passado não sabia?"
+    },
+    {
+      "id": "courage_ref_26",
+      "content": "Qual é a coisa mais corajosa e pequena que você poderia fazer hoje?"
+    },
+    {
+      "id": "courage_ref_27",
+      "content": "O que significaria sobre você se desse o passo e as coisas fossem mal?"
+    },
+    {
+      "id": "courage_ref_28",
+      "content": "O que significaria para você se essa situação ficasse exatamente como está?"
+    },
+    {
+      "id": "courage_ref_29",
+      "content": "O que o medo está tentando preservar? Está funcionando?"
+    },
+    {
+      "id": "courage_ref_30",
+      "content": "Imagine dar o passo. Como isso parece por dentro? O que acontece primeiro?"
+    }
+  ],
+
+  "words": [
+    { "id": "courage_w_1",  "word": "PASSO",      "meaning": "Um passo junto com o medo. Essa é a prática inteira." },
+    { "id": "courage_w_2",  "word": "EM FRENTE",  "meaning": "Não rápido. Não longe. Em frente." },
+    { "id": "courage_w_3",  "word": "HONESTO",    "meaning": "O medo é real. Nomeie honestamente. É daí que começa." },
+    { "id": "courage_w_4",  "word": "ESCOLHER",   "meaning": "Pronto é uma escolha. Você pode escolher antes de sentir." },
+    { "id": "courage_w_5",  "word": "OUSADO",     "meaning": "Ousadia silenciosa. O tipo que acontece sem plateia." },
+    { "id": "courage_w_6",  "word": "APESAR",     "meaning": "Apesar do medo. Não depois que ele vai embora." },
+    { "id": "courage_w_7",  "word": "REAL",       "meaning": "O medo é real. E o próximo passo também. Os dois são reais." },
+    { "id": "courage_w_8",  "word": "INICIAR",    "meaning": "Não terminar. Não conseguir. Iniciar." },
+    { "id": "courage_w_9",  "word": "MOVER",      "meaning": "O movimento muda o estado interno. Comece pelo corpo." },
+    { "id": "courage_w_10", "word": "CONFIAR",    "meaning": "Confie no que você já fez antes. Você fez coisas difíceis." },
+    { "id": "courage_w_11", "word": "DECIDIR",    "meaning": "A decisão é o ato. Tome-a." },
+    { "id": "courage_w_12", "word": "FICAR",      "meaning": "Fique com o desconforto um pouco mais. Ele alivia." },
+    { "id": "courage_w_13", "word": "ENCARAR",    "meaning": "Vire-se em direção à coisa. Não dentro dela. Em direção a ela." },
+    { "id": "courage_w_14", "word": "ARRISCAR",   "meaning": "Não imprudência. O risco de ser visto fazendo algo real." },
+    { "id": "courage_w_15", "word": "AGORA",      "meaning": "A espera nunca ia produzir o pronto. Agora é tão bom momento quanto qualquer outro." },
+    { "id": "courage_w_16", "word": "ABERTO",     "meaning": "Aberto para o resultado. Pode não ser o que o medo previu." },
+    { "id": "courage_w_17", "word": "SABER",      "meaning": "Algo em você já sabe a direção. Ele tem tentado te dizer." },
+    { "id": "courage_w_18", "word": "VOZ",        "meaning": "Diga o que é verdadeiro. Mesmo que a voz trema." },
+    { "id": "courage_w_19", "word": "OUSAR",      "meaning": "Não de forma grandiosa. Silenciosamente. Faça." },
+    { "id": "courage_w_20", "word": "PERSISTIR",  "meaning": "Após a falsa largada. Após o tropeço. Persista." },
+    { "id": "courage_w_21", "word": "APARECER",   "meaning": "Apareça para a coisa. Completamente. Sem a armadura." },
+    { "id": "courage_w_22", "word": "PEQUENO",    "meaning": "Coragem pequena ainda conta. Um pequeno ato muda como o próximo parece." },
+    { "id": "courage_w_23", "word": "SUFICIENTE", "meaning": "Você é suficiente para dar o próximo passo. Só o próximo." },
+    { "id": "courage_w_24", "word": "ATRAVESSAR", "meaning": "Atravessar o medo, não contorná-lo." },
+    { "id": "courage_w_25", "word": "PRESSIONAR", "meaning": "Pressione suavemente contra a resistência. Ela costuma ceder." },
+    { "id": "courage_w_26", "word": "PRONTO",     "meaning": "Pronto é o que acontece quando você começa. Não antes." },
+    { "id": "courage_w_27", "word": "PRIMEIRO",   "meaning": "O primeiro é sempre o mais difícil. Isso não significa parar." },
+    { "id": "courage_w_28", "word": "DECLARAR",   "meaning": "Declare o que você quer. Diga em voz alta. Mesmo que baixinho." },
+    { "id": "courage_w_29", "word": "VISTO",      "meaning": "Ser visto fazendo um trabalho imperfeito ainda é ser visto." },
+    { "id": "courage_w_30", "word": "FALAR",      "meaning": "O que você não tem dito. Fale." },
+    { "id": "courage_w_31", "word": "RUMO",       "meaning": "Ainda não chegou. Rumo. A direção é suficiente." },
+    { "id": "courage_w_32", "word": "CORAJOSO",   "meaning": "Corajoso não é ausência de medo. É a próxima frase." },
+    { "id": "courage_w_33", "word": "AGIR",       "meaning": "O ato em si muda as coisas. Não o plano para o ato." },
+    { "id": "courage_w_34", "word": "SEGURAR",    "meaning": "Segure o medo e a intenção de avançar ao mesmo tempo." },
+    { "id": "courage_w_35", "word": "LIDERAR",    "meaning": "Deixe a ação liderar. O resto frequentemente segue." },
+    { "id": "courage_w_36", "word": "ERGUER",     "meaning": "Não acima dela. Com ela. Erga-se junto com a dificuldade." },
+    { "id": "courage_w_37", "word": "RESPOSTA",   "meaning": "A única resposta para a evitação é o pequeno sim." },
+    { "id": "courage_w_38", "word": "TENTATIVA",  "meaning": "A tentativa é o ato inteiro. Não o resultado. A tentativa." },
+    { "id": "courage_w_39", "word": "CLARO",      "meaning": "Claro sobre o que você quer. Mesmo que o caminho não esteja." },
+    { "id": "courage_w_40", "word": "DIRETO",     "meaning": "O caminho direto costuma ser mais curto do que o caminho da evitação." },
+    { "id": "courage_w_41", "word": "INTEIRO",    "meaning": "Apareça completamente. Não polido. Completamente." },
+    { "id": "courage_w_42", "word": "ENRAIZADO",  "meaning": "Coragem enraizada. Não energia frenética. Quieta e enraizada." },
+    { "id": "courage_w_43", "word": "INTENÇÃO",   "meaning": "Tenha intenção. Depois encontre a menor forma de começar. Intenção é o início, não o todo." },
+    { "id": "courage_w_44", "word": "INCLINAR",   "meaning": "Incline-se levemente para a dificuldade. Só um pouco. Só hoje." },
+    { "id": "courage_w_45", "word": "IMPORTAR",   "meaning": "A coisa que você está evitando importa para você. É por isso que é difícil." },
+    { "id": "courage_w_46", "word": "NOMEAR",     "meaning": "Nomeie o medo. Nomeado, ele é menor do que imaginado." },
+    { "id": "courage_w_47", "word": "LUGAR",      "meaning": "Coloque-se no lugar onde a coisa pode acontecer." },
+    { "id": "courage_w_48", "word": "QUIETO",     "meaning": "Coragem quieta. Sem anúncio. Só o ato." },
+    { "id": "courage_w_49", "word": "COMEÇAR",    "meaning": "Comece antes de estar pronto. É assim que sempre funcionou." },
+    { "id": "courage_w_50", "word": "VERDADEIRO", "meaning": "Faça a coisa que é honesta. Mesmo quando a versão mais fácil é tentadora." },
+    { "id": "courage_w_51", "word": "DISPOSTO",   "meaning": "Disposto a ter medo e ir assim mesmo. Isso é tudo que se precisa." },
+    { "id": "courage_w_52", "word": "SIM",        "meaning": "Um sim. Para a coisa certa. Apesar do medo dizendo não." }
+  ],
+
+  "notification_pool": [
+    { "id": "courage_n_1",  "copy": "Algo em você já sabe a direção. Hoje é um bom dia para ouvir.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_2",  "copy": "Medo e movimento para frente podem coexistir.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_3",  "copy": "Pronto é uma decisão, não um sentimento.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_4",  "copy": "Um passo junto com o medo. Só um.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_5",  "copy": "O que você está evitando ainda está esperando.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_6",  "copy": "O primeiro passo é a barreira inteira.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_7",  "copy": "Imperfeito e feito ganha de perfeito e esperando.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_8",  "copy": "O medo tem tomado decisões por você.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_9",  "copy": "Você já fez coisas difíceis antes. Isso não mudou.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_10", "copy": "Comece mal. Isso ainda é começar.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_11", "copy": "A coisa que você teme é menor quando você começa.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_12", "copy": "Como seria um pequeno passo hoje, mesmo com o medo aqui?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_13", "copy": "O custo da evitação também é um custo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_14", "copy": "Nomeie o medo. Depois nomeie o passo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_15", "copy": "Dois minutos na tarefa evitada. Só dois.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_16", "copy": "Você tem dado voltas ao redor. Aproxime-se um pouco hoje.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_17", "copy": "Corajoso é só a próxima frase.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_18", "copy": "Não tudo de uma vez. Só a primeira parte.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_19", "copy": "Em frente, não perfeito.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_20", "copy": "A coisa evitada fica mais pesada com o tempo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_21", "copy": "Diga a coisa que você não tem dito.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_22", "copy": "Um pequeno sim ainda é um sim.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_23", "copy": "O medo não é evidência de incapacidade.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_24", "copy": "Faça de forma imperfeita. Ainda conta.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_25", "copy": "Você não está evitando porque não consegue.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_26", "copy": "O próximo passo é mais simples do que o medo diz.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_27", "copy": "Como seria hoje se você fosse assim mesmo?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_28", "copy": "A coragem não chega primeiro. Você chega.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "courage_ev_1",  "content": "O que você fez hoje que o medo mandou não fazer?" },
+    { "id": "courage_ev_2",  "content": "O que você ainda está evitando? O que seria necessário para começar amanhã?" },
+    { "id": "courage_ev_3",  "content": "Quando você se sentiu mais com medo hoje? O que você fez com isso?" },
+    { "id": "courage_ev_4",  "content": "Que coisa imperfeita você fez hoje da qual está feliz?" },
+    { "id": "courage_ev_5",  "content": "Onde você escolheu seguir em frente hoje, mesmo que um pouco?" },
+    { "id": "courage_ev_6",  "content": "O que você disse que quase não disse?" },
+    { "id": "courage_ev_7",  "content": "Como a evitação se sente no seu corpo no final de um dia?" },
+    { "id": "courage_ev_8",  "content": "Como foi o dia de hoje? O que seria diferente amanhã se você desse um pequeno passo?" },
+    { "id": "courage_ev_9",  "content": "Qual é uma coisa pequena que você fez hoje que exigiu coragem?" },
+    { "id": "courage_ev_10", "content": "Que medo acabou sendo menor do que você esperava hoje?" },
+    { "id": "courage_ev_11", "content": "O que você aprendeu sobre si mesmo ao tentar a coisa difícil?" },
+    { "id": "courage_ev_12", "content": "O que seria diferente se você agisse em uma coisa pequena amanhã?" },
+    { "id": "courage_ev_13", "content": "Do que você tem orgulho de hoje, mesmo que levemente?" },
+    { "id": "courage_ev_14", "content": "Qual é a primeira coisa que você vai fazer amanhã com o medo ainda presente?" }
+  ]
+
+}

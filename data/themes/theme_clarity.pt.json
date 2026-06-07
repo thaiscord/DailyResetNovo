@@ -1,0 +1,553 @@
+{
+  "theme": "Clarity",
+  "user_state": "Confuso. Nebuloso. Não consegue ver o próximo passo. Muitas opções ou nenhuma direção clara. Fadiga de decisão. Se sente perdido dentro da própria vida.",
+  "core_need": "Simplicidade. Uma coisa clara.",
+  "emotional_tone": "Limpo. Quieto. Iluminador.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "clarity_arr_1",
+        "heading": "A névoa é real.",
+        "subheading": "Ela não é permanente. É o estado que antecede a clareza."
+      },
+      {
+        "id": "clarity_arr_2",
+        "heading": "Você não precisa ver tudo.",
+        "subheading": "Você precisa ver a próxima coisa. Só a próxima."
+      },
+      {
+        "id": "clarity_arr_3",
+        "heading": "Pensar mais não trouxe a resposta.",
+        "subheading": "A clareza vem de parar, não de forçar mais."
+      },
+      {
+        "id": "clarity_arr_4",
+        "heading": "O simples é a direção.",
+        "subheading": "Não simples porque é fácil. Simples porque tudo o mais já foi tentado."
+      },
+      {
+        "id": "clarity_arr_5",
+        "heading": "Você não está perdido.",
+        "subheading": "Você está entre dois momentos de clareza. Esse é um lugar real. Você já esteve aqui antes."
+      },
+      {
+        "id": "clarity_arr_6",
+        "heading": "A confusão é informação.",
+        "subheading": "Ela está dizendo algo sobre o que ainda não está resolvido. Isso é útil."
+      },
+      {
+        "id": "clarity_arr_7",
+        "heading": "Uma coisa clara.",
+        "subheading": "É tudo o que você precisa agora. Não um plano. Uma coisa clara."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "clarity_rel_1",
+        "heading": "Sobre o que você está confuso?",
+        "subheading": "Escreva sem tentar resolver. Só descreva a névoa.",
+        "field_placeholder": "Descreva a confusão da forma mais clara que puder, sem buscar a resposta..."
+      },
+      {
+        "id": "clarity_rel_2",
+        "heading": "Quais são todas as opções que você está carregando?",
+        "subheading": "Liste-as. Fora da cabeça, elas ocupam menos espaço.",
+        "field_placeholder": "Todas as opções, decisões ou direções disputando espaço na sua mente agora..."
+      },
+      {
+        "id": "clarity_rel_3",
+        "heading": "O que você já sabe?",
+        "subheading": "Não o que você não tem certeza. O que você sabe com certeza.",
+        "field_placeholder": "O que já está claro, mesmo em meio à névoa..."
+      },
+      {
+        "id": "clarity_rel_4",
+        "heading": "O que você está pensando demais?",
+        "subheading": "Nomeie o que você tem circulado por tempo demais.",
+        "field_placeholder": "A decisão ou situação à qual você mais voltou sem encontrar resolução..."
+      },
+      {
+        "id": "clarity_rel_5",
+        "heading": "Como a névoa se sente no seu corpo?",
+        "subheading": "A confusão não é só mental. Onde você a sente?",
+        "field_placeholder": "Onde no seu corpo a confusão ou incerteza vive..."
+      },
+      {
+        "id": "clarity_rel_6",
+        "heading": "O que ajudaria mais agora?",
+        "subheading": "Não a resposta completa. Só o que ajudaria mais, agora.",
+        "field_placeholder": "Se uma coisa pudesse mudar, o que seria..."
+      },
+      {
+        "id": "clarity_rel_7",
+        "heading": "O que você gostaria que alguém lhe dissesse?",
+        "subheading": "Escreva. Muitas vezes é o que você já sabe.",
+        "field_placeholder": "Qual resposta você está buscando que talvez já tenha..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "clarity_br_1",
+        "heading": "Uma respiração para limpar.",
+        "instruction": "Inspire pelo nariz. Expire lentamente pela boca. Imagine expirar a névoa. Três vezes."
+      },
+      {
+        "id": "clarity_br_2",
+        "heading": "Desacelere o pensamento.",
+        "instruction": "Inspire por quatro tempos. Segure por dois. Expire por seis. Repita. A mente desacelera quando o corpo desacelera."
+      },
+      {
+        "id": "clarity_br_3",
+        "heading": "Deixe a respiração resetar.",
+        "instruction": "Feche os olhos. Respire naturalmente. Foque apenas na sensação de respirar. Nada mais. Um minuto."
+      },
+      {
+        "id": "clarity_br_4",
+        "heading": "Esvazie a mente na expiração.",
+        "instruction": "Inspire suavemente. Expire por completo. Na expiração, deixe os pensamentos se soltarem com a respiração. Quatro ciclos."
+      },
+      {
+        "id": "clarity_br_5",
+        "heading": "Chegue aqui primeiro.",
+        "instruction": "Antes de tentar enxergar com clareza, chegue aqui completamente. Três respirações lentas. Totalmente neste momento."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "clarity_mom_1",
+        "heading": "Qual é a única coisa que precisa se tornar clara hoje?"
+      },
+      {
+        "id": "clarity_mom_2",
+        "heading": "O que você realmente sabe, mesmo sem ver o quadro todo?"
+      },
+      {
+        "id": "clarity_mom_3",
+        "heading": "Qual é a versão mais simples do próximo passo?"
+      },
+      {
+        "id": "clarity_mom_4",
+        "heading": "O que você faria se confiasse no que já sabe?"
+      },
+      {
+        "id": "clarity_mom_5",
+        "heading": "O que você pode simplificar agora, neste momento?"
+      },
+      {
+        "id": "clarity_mom_6",
+        "heading": "Qual decisão espera há mais tempo por clareza?"
+      },
+      {
+        "id": "clarity_mom_7",
+        "heading": "Qual é a menor coisa clara que você consegue ver de onde está?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "clarity_comp_1",
+        "heading": "Algo se clarificou.",
+        "subheading": "Talvez não tudo. Algo. É assim que a clareza chega."
+      },
+      {
+        "id": "clarity_comp_2",
+        "heading": "Você parou e a névoa se moveu.",
+        "subheading": "Pensar mais não era a resposta. Isso era."
+      },
+      {
+        "id": "clarity_comp_3",
+        "heading": "Uma coisa clara.",
+        "subheading": "Você a encontrou. Ou está mais perto. Os dois são progresso."
+      },
+      {
+        "id": "clarity_comp_4",
+        "heading": "A névoa está mais fina agora.",
+        "subheading": "Não foi embora. Só o suficiente para dar o próximo passo."
+      },
+      {
+        "id": "clarity_comp_5",
+        "heading": "Você simplificou.",
+        "subheading": "Essa é a prática inteira. É suficiente."
+      },
+      {
+        "id": "clarity_comp_6",
+        "heading": "Você ficou com o desconforto de não saber.",
+        "subheading": "Isso exige mais do que as pessoas percebem. Algo geralmente se move depois de sentar com isso."
+      },
+      {
+        "id": "clarity_comp_7",
+        "heading": "Claro o suficiente para avançar.",
+        "subheading": "É tudo o que a clareza precisa ser. Não certeza. Claro o suficiente."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "clarity_hc_1",
+      "headline": "Pensar mais não tem funcionado.",
+      "subheadline": "A clareza vem de parar, não de forçar mais."
+    },
+    {
+      "id": "clarity_hc_2",
+      "headline": "Você não precisa ver tudo.",
+      "subheadline": "Só o próximo passo. Isso é suficiente para começar."
+    },
+    {
+      "id": "clarity_hc_3",
+      "headline": "O simples é o que resta depois que tudo o desnecessário é removido.",
+      "subheadline": "Geralmente está mais perto do que parece agora."
+    },
+    {
+      "id": "clarity_hc_4",
+      "headline": "A névoa não é permanente.",
+      "subheadline": "Toda vez que você esteve aqui, algo eventualmente ficou claro."
+    },
+    {
+      "id": "clarity_hc_5",
+      "headline": "A fadiga de decisão é real.",
+      "subheadline": "A mente precisa de menos portas abertas hoje. Uma ou duas é suficiente."
+    },
+    {
+      "id": "clarity_hc_6",
+      "headline": "Você já sabe mais do que a névoa sugere.",
+      "subheadline": "O que você sabe com certeza agora?"
+    },
+    {
+      "id": "clarity_hc_7",
+      "headline": "Uma coisa clara é suficiente para começar.",
+      "subheadline": "Você não precisa do mapa inteiro. Só a próxima curva."
+    },
+    {
+      "id": "clarity_hc_8",
+      "headline": "Confusão é informação.",
+      "subheadline": "Ela está dizendo que algo ainda não está resolvido. Isso é útil."
+    },
+    {
+      "id": "clarity_hc_9",
+      "headline": "A resposta provavelmente está mais perto da superfície do que parece.",
+      "subheadline": "Perguntas mais claras tendem a revelar respostas mais simples."
+    },
+    {
+      "id": "clarity_hc_10",
+      "headline": "Você não está perdido.",
+      "subheadline": "Você está entre dois momentos claros. Esse é um lugar real e temporário."
+    },
+    {
+      "id": "clarity_hc_11",
+      "headline": "Escreva. Fora da cabeça, fica menor.",
+      "subheadline": "A névoa por dentro é mais densa do que a névoa no papel."
+    },
+    {
+      "id": "clarity_hc_12",
+      "headline": "Pare de tentar ver tudo.",
+      "subheadline": "Veja os próximos três metros. Comece por aí."
+    },
+    {
+      "id": "clarity_hc_13",
+      "headline": "O que você faria se já soubesse a resposta?",
+      "subheadline": "Essa pergunta às vezes revela que você já sabe."
+    },
+    {
+      "id": "clarity_hc_14",
+      "headline": "Clareza não é certeza.",
+      "subheadline": "É suficiente ver o próximo passo. Isso é tudo o que é necessário."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "clarity_act_1",
+      "content": "Escreva tudo o que você está tentando descobrir agora. Tudo.",
+      "why": "A mente confusa carrega muitas coisas ao mesmo tempo. Escrever separa os fios."
+    },
+    {
+      "id": "clarity_act_2",
+      "content": "Risque tudo na sua lista que não precisa de uma decisão hoje.",
+      "why": "A fadiga de decisão é alimentada pelo volume. Reduzir a lista ativa restaura a clareza."
+    },
+    {
+      "id": "clarity_act_3",
+      "content": "Pergunte a si mesmo: 'O que eu já sei sobre isso?' Escreva a resposta.",
+      "why": "A névoa frequentemente obscurece o que você já sabe. Trazer o conhecido à tona abre espaço."
+    },
+    {
+      "id": "clarity_act_4",
+      "content": "Simplifique a pergunta. Escreva em dez palavras ou menos.",
+      "why": "Quando a pergunta está confusa, a resposta permanece escondida. Perguntas curtas são mais precisas."
+    },
+    {
+      "id": "clarity_act_5",
+      "content": "Escreva duas opções para a decisão em que está travado. Circule a que seu instinto inclina.",
+      "why": "Duas opções tornam a escolha visível. O instinto geralmente aparece quando o caminho está tão claro."
+    },
+    {
+      "id": "clarity_act_6",
+      "content": "Se afaste do problema por 20 minutos. Faça algo físico.",
+      "why": "A mente frequentemente encontra o que estava buscando só depois que você para de buscar."
+    },
+    {
+      "id": "clarity_act_7",
+      "content": "Escreva uma lista do que realmente importa para você. Depois olhe para a decisão a partir daí.",
+      "why": "A maior parte da confusão se dissolve quando você se lembra do que realmente importa."
+    },
+    {
+      "id": "clarity_act_8",
+      "content": "Pergunte a alguém de confiança: 'O que você faria no meu lugar?' Ouça sem se defender.",
+      "why": "Uma perspectiva externa frequentemente vê o que a proximidade obscurece."
+    },
+    {
+      "id": "clarity_act_9",
+      "content": "Escreva: 'Estou confuso sobre ___ porque ___.' Preencha os dois espaços.",
+      "why": "Nomear a fonte da confusão frequentemente dissolve parte dela."
+    },
+    {
+      "id": "clarity_act_10",
+      "content": "Reduza sua lista ativa para três itens. Só três.",
+      "why": "A sobrecarga cresce quando a lista cresce. Três coisas é suficiente para carregar de uma vez."
+    },
+    {
+      "id": "clarity_act_11",
+      "content": "Durma com a decisão em que está travado. Faça uma nota para voltar a ela amanhã.",
+      "why": "O sono é quando o cérebro consolida informações e frequentemente resolve o que a vigília não consegue."
+    },
+    {
+      "id": "clarity_act_12",
+      "content": "Escreva a decisão que você mais está evitando tomar. Depois escreva do que você tem medo.",
+      "why": "O medo é frequentemente o que cria névoa. Nomear o medo é o começo da clareza."
+    },
+    {
+      "id": "clarity_act_13",
+      "content": "Desligue todos os estímulos por 30 minutos. Sem podcasts, música ou conteúdo.",
+      "why": "Estímulos constantes impedem a mente de processar o que já tem."
+    },
+    {
+      "id": "clarity_act_14",
+      "content": "Desenhe um diagrama simples do problema. Caixas e setas. Sem palavras.",
+      "why": "Ver como uma forma em vez de palavras muda como a mente sustenta o problema."
+    },
+    {
+      "id": "clarity_act_15",
+      "content": "Escreva sua resposta instintiva para a pergunta que você tem pensado demais. Só o primeiro pensamento.",
+      "why": "A primeira resposta é frequentemente a certa antes que o medo e a análise a compliquem."
+    },
+    {
+      "id": "clarity_act_16",
+      "content": "Escreva o que você diria a um amigo confuso exatamente com isso.",
+      "why": "O conselho aos outros é frequentemente mais sábio do que o conselho para nós mesmos. Use isso."
+    },
+    {
+      "id": "clarity_act_17",
+      "content": "Reduza seus compromissos desta semana em um. Mande uma mensagem agora para remarcar ou recusar.",
+      "why": "A névoa mental frequentemente se dissipa quando uma coisa sai do seu prato."
+    },
+    {
+      "id": "clarity_act_18",
+      "content": "Escreva o que você não precisa decidir agora. Coloque de lado. O que resta é menor.",
+      "why": "A mente carrega mais do que precisa. Nomear o que pode ser pousado abre espaço para o que importa."
+    },
+    {
+      "id": "clarity_act_19",
+      "content": "Diga em voz alta: 'Eu não preciso saber tudo. Só preciso saber esta única coisa.'",
+      "why": "Dizer em voz alta torna a permissão real. A voz confirma o que a mente ainda não aceitou."
+    },
+    {
+      "id": "clarity_act_20",
+      "content": "Dê a si mesmo um prazo para a decisão travada. Mesmo um inventado.",
+      "why": "Decisões abertas permanecem abertas. Um prazo dá à mente permissão para chegar a algum lugar."
+    },
+    {
+      "id": "clarity_act_21",
+      "content": "Escreva uma lista de prós e contras para a decisão. Depois ignore-a e observe sua reação instintiva.",
+      "why": "Listas de prós e contras frequentemente clarificam ao mostrar em qual lado você estava esperando aterrissar."
+    },
+    {
+      "id": "clarity_act_22",
+      "content": "Caminhe lá fora sem fones de ouvido. Deixe a mente vagar sem direção.",
+      "why": "Algo frequentemente se solta quando o corpo se move e a mente não tem nenhuma tarefa."
+    },
+    {
+      "id": "clarity_act_23",
+      "content": "Imagine viver com cada opção por um momento. Como cada uma se sente dentro do corpo?",
+      "why": "O corpo frequentemente responde a futuros imaginados antes que a mente tenha decidido. Essa resposta é informação."
+    },
+    {
+      "id": "clarity_act_24",
+      "content": "Identifique uma coisa que você sabe com certeza. Diga em voz alta. Comece a partir daí.",
+      "why": "Começar pelo que já está claro é sempre possível. Mesmo quando nada mais está."
+    },
+    {
+      "id": "clarity_act_25",
+      "content": "Escreva livremente por 10 minutos. Sem estrutura. Só escreva o que está na sua cabeça.",
+      "why": "A escrita livre externaliza o ruído interno e frequentemente traz à tona uma clareza inesperada."
+    },
+    {
+      "id": "clarity_act_26",
+      "content": "Existe alguma coisa que você poderia decidir hoje que tornaria várias outras coisas mais fáceis?",
+      "why": "Algumas decisões carregam outras dentro delas. Encontrar essa pode tornar o resto mais leve."
+    },
+    {
+      "id": "clarity_act_27",
+      "content": "Pergunte: 'Em seis meses, essa decisão importará?' Se sim, vá devagar. Se não, decida agora.",
+      "why": "O tempo muda o peso das coisas. Uma visão de seis meses frequentemente mostra quanto espaço realmente existe."
+    },
+    {
+      "id": "clarity_act_28",
+      "content": "Escreva três coisas que estão atualmente claras. Foque só nelas hoje.",
+      "why": "Agir sobre o que está claro está sempre disponível, mesmo quando o quadro maior está nebuloso."
+    },
+    {
+      "id": "clarity_act_29",
+      "content": "Adie uma decisão não urgente para a próxima semana. Escreva e feche.",
+      "why": "Nem tudo precisa ser decidido hoje. Escrever deixa a mente soltar o que está carregando."
+    },
+    {
+      "id": "clarity_act_30",
+      "content": "Escreva uma frase: 'A coisa mais importante agora é ___.' Preencha o espaço. Confie nela.",
+      "why": "Uma frase pode conter mais verdade do que uma longa lista. A restrição força o que realmente importa a emergir."
+    }
+  ],
+
+  "reflections": [
+    { "id": "clarity_ref_1",  "content": "Com o que você está mais confuso agora? Você consegue descrever a névoa?" },
+    { "id": "clarity_ref_2",  "content": "O que você já sabe com certeza, mesmo sem ver o quadro todo?" },
+    { "id": "clarity_ref_3",  "content": "Quando no passado você estava tão confuso e a clareza eventualmente chegou? O que ajudou?" },
+    { "id": "clarity_ref_4",  "content": "E se a própria pergunta precisar mudar?" },
+    { "id": "clarity_ref_5",  "content": "O que simplificaria mais sua situação atual se você pudesse mudar uma coisa?" },
+    { "id": "clarity_ref_6",  "content": "O que você está mantendo em aberto que poderia ser decidido ou liberado hoje?" },
+    { "id": "clarity_ref_7",  "content": "Qual é a decisão que você tem evitado? O que está embaixo dessa evitação?" },
+    { "id": "clarity_ref_8",  "content": "Como seria uma vida mais simples para você agora?" },
+    { "id": "clarity_ref_9",  "content": "O que permaneceu pouco claro apesar de todo o seu pensamento sobre isso?" },
+    { "id": "clarity_ref_10", "content": "O que você faria se parasse de esperar por certeza?" },
+    { "id": "clarity_ref_11", "content": "Qual é uma coisa que ficou clara para você recentemente, e como aconteceu?" },
+    { "id": "clarity_ref_12", "content": "Do que a confusão te protege de ter que decidir?" },
+    { "id": "clarity_ref_13", "content": "O que seu instinto está dizendo que sua análise continua ignorando?" },
+    { "id": "clarity_ref_14", "content": "O que você faria se soubesse que a decisão não precisava ser perfeita?" },
+    { "id": "clarity_ref_15", "content": "Quais são três coisas com que você poderia parar de pensar hoje e que lhe devolveriam espaço?" },
+    { "id": "clarity_ref_16", "content": "Que informação você ainda está esperando que talvez nunca chegue?" },
+    { "id": "clarity_ref_17", "content": "Qual é a forma mais simples de dizer o que você realmente quer?" },
+    { "id": "clarity_ref_18", "content": "O que parece desnecessariamente complicado na sua vida agora?" },
+    { "id": "clarity_ref_19", "content": "Quando você imagina a névoa se dissipando, o que vê do outro lado?" },
+    { "id": "clarity_ref_20", "content": "O que você continua circulando que talvez esteja lhe dizendo algo?" },
+    { "id": "clarity_ref_21", "content": "Que clareza você tem medo de ter? O que ela exigiria de você?" },
+    { "id": "clarity_ref_22", "content": "Como a mente clara se sente no seu corpo, não na sua mente?" },
+    { "id": "clarity_ref_23", "content": "O que você faria de diferente se confiasse mais no seu próprio julgamento?" },
+    { "id": "clarity_ref_24", "content": "O que você está complicando demais que poderia ser simples?" },
+    { "id": "clarity_ref_25", "content": "O que permaneceu constante nos seus valores mesmo enquanto todo o resto estava pouco claro?" },
+    { "id": "clarity_ref_26", "content": "O que você diria a outra pessoa tão confusa quanto você está agora?" },
+    { "id": "clarity_ref_27", "content": "Como seria tomar a decisão e parar de decidir?" },
+    { "id": "clarity_ref_28", "content": "Qual é o custo de continuar mantendo essa questão em aberto?" },
+    { "id": "clarity_ref_29", "content": "O que você precisa parar de consumir ou de absorver para deixar a clareza emergir?" },
+    { "id": "clarity_ref_30", "content": "Qual única coisa, se clara, tornaria o resto mais fácil?" }
+  ],
+
+  "words": [
+    { "id": "clarity_w_1",  "word": "CLARO",      "meaning": "Não é a ausência de névoa. É a capacidade de ver o que importa." },
+    { "id": "clarity_w_2",  "word": "SIMPLES",     "meaning": "O outro lado do complicado. Vale a pena encontrar." },
+    { "id": "clarity_w_3",  "word": "VER",         "meaning": "Ver mesmo uma coisa com clareza é suficiente para começar." },
+    { "id": "clarity_w_4",  "word": "DIRETO",      "meaning": "A pergunta direta frequentemente revela a resposta direta." },
+    { "id": "clarity_w_5",  "word": "LIMPO",       "meaning": "Uma pergunta limpa. Uma decisão limpa. Um próximo passo limpo." },
+    { "id": "clarity_w_6",  "word": "REDUZIR",     "meaning": "Reduza as opções. Reduza as escolhas. Veja o que resta." },
+    { "id": "clarity_w_7",  "word": "QUIETO",      "meaning": "A clareza exige quietude. Não mais estímulo. Mais quietude." },
+    { "id": "clarity_w_8",  "word": "LUZ",         "meaning": "A qualidade das coisas quando a névoa finalmente se move." },
+    { "id": "clarity_w_9",  "word": "SABER",       "meaning": "Você sabe mais do que a névoa sugere. Confie nisso." },
+    { "id": "clarity_w_10", "word": "ABERTO",      "meaning": "Uma mente aberta para antes de encher demais. Vazia antes de receber." },
+    { "id": "clarity_w_11", "word": "UM",          "meaning": "Uma coisa clara. Não tudo. Uma." },
+    { "id": "clarity_w_12", "word": "TIRAR",       "meaning": "Tire o desnecessário. Veja qual é a pergunta de verdade." },
+    { "id": "clarity_w_13", "word": "PAUSA",       "meaning": "A clareza que você busca frequentemente chega na pausa." },
+    { "id": "clarity_w_14", "word": "SILÊNCIO",    "meaning": "O sinal de clareza é silencioso. O ruído precisa parar primeiro." },
+    { "id": "clarity_w_15", "word": "VERDADE",     "meaning": "O que é verdade, separado do que é temido ou esperado." },
+    { "id": "clarity_w_16", "word": "DECIDIR",     "meaning": "A névoa frequentemente se levanta no momento em que você decide. Antes disso, raramente." },
+    { "id": "clarity_w_17", "word": "MENOS",       "meaning": "Menos informação, menos opções, listas mais curtas. Menos revela mais." },
+    { "id": "clarity_w_18", "word": "FOCO",        "meaning": "Não em tudo. Na única coisa pouco clara que mais importa." },
+    { "id": "clarity_w_19", "word": "PASSO",       "meaning": "Só o próximo passo. Você não precisa ver o caminho todo." },
+    { "id": "clarity_w_20", "word": "CONFIAR",     "meaning": "Confie no que você sabe. Mesmo antes de saber tudo." },
+    { "id": "clarity_w_21", "word": "ESTREITAR",   "meaning": "Estreite a pergunta. A resposta vive em um espaço menor." },
+    { "id": "clarity_w_22", "word": "EMERGIR",     "meaning": "A clareza emerge. Você não pode forçá-la. Pode criar espaço para ela." },
+    { "id": "clarity_w_23", "word": "ESPERAR",     "meaning": "Às vezes a clareza exige espera. Isso não é passividade." },
+    { "id": "clarity_w_24", "word": "ENCONTRAR",   "meaning": "A clareza é encontrável. Nem sempre rapidamente. Mas encontrável." },
+    { "id": "clarity_w_25", "word": "PRECISO",     "meaning": "Uma pergunta precisa corta o que uma vaga não consegue." },
+    { "id": "clarity_w_26", "word": "CONTORNO",    "meaning": "Esboce a forma do problema antes de preencher os detalhes. A forma frequentemente já é mais clara." },
+    { "id": "clarity_w_27", "word": "ESPAÇO",      "meaning": "A clareza precisa de espaço. Pare de preencher o espaço e ela pode chegar." },
+    { "id": "clarity_w_28", "word": "SINGELO",     "meaning": "Diga de forma simples. Mesmo para si mesmo. A simplicidade é uma forma de clareza." },
+    { "id": "clarity_w_29", "word": "DESCANSO",    "meaning": "O sono e o descanso produzem mais clareza do que mais análise." },
+    { "id": "clarity_w_30", "word": "BORDA",       "meaning": "Encontre a borda da névoa. O que você consegue ver a partir daí?" },
+    { "id": "clarity_w_31", "word": "BRILHO",      "meaning": "Um ponto de brilho na névoa é suficiente para navegar." },
+    { "id": "clarity_w_32", "word": "ESSÊNCIA",    "meaning": "Vá à essência da pergunta. A complexidade é geralmente uma casca." },
+    { "id": "clarity_w_33", "word": "NOMEAR",      "meaning": "Nomeie claramente antes de tentar resolver. O nome certo muda o que você está olhando." },
+    { "id": "clarity_w_34", "word": "SUFICIENTE",  "meaning": "Clareza suficiente para avançar. Esse é o objetivo. Não toda a clareza." },
+    { "id": "clarity_w_35", "word": "EXATO",       "meaning": "O exato é mais claro do que o aproximado. Nomeie a coisa exatamente." },
+    { "id": "clarity_w_36", "word": "NOVO",        "meaning": "Uma perspectiva nova. Uma caminhada. Um sono. Algo diferente." },
+    { "id": "clarity_w_37", "word": "BASE",        "meaning": "Fique no que você sabe antes de alcançar o que não sabe." },
+    { "id": "clarity_w_38", "word": "OUVIR",       "meaning": "Ouça o que seu instinto tem dito através do ruído." },
+    { "id": "clarity_w_39", "word": "HONESTO",     "meaning": "Honesto sobre o que você não sabe. É aí que a clareza vive." },
+    { "id": "clarity_w_40", "word": "APENAS",      "meaning": "Apenas esta pergunta. Não o território todo. Apenas esta." },
+    { "id": "clarity_w_41", "word": "MANTER",      "meaning": "Mantenha só o que importa. Descarte o resto sem culpa." },
+    { "id": "clarity_w_42", "word": "INCLINAR",    "meaning": "Incline-se para a resposta que seu instinto já tem." },
+    { "id": "clarity_w_43", "word": "ACOLHER",     "meaning": "Acolha a confusão. Sente-se com ela. Ela tem algo a dizer." },
+    { "id": "clarity_w_44", "word": "NOMEADO",     "meaning": "O que não tem nome não pode ser tratado. Nomeie." },
+    { "id": "clarity_w_45", "word": "ORDEM",       "meaning": "Coloque as coisas em ordem. Antes de decidir. Antes de agir." },
+    { "id": "clarity_w_46", "word": "LITERAL",     "meaning": "Diga de forma literal. A pergunta literal frequentemente carrega a resposta literal." },
+    { "id": "clarity_w_47", "word": "INTERNO",     "meaning": "A resposta é interna. Você já a tem. Vá para dentro." },
+    { "id": "clarity_w_48", "word": "RESOLVER",    "meaning": "Resolva a única coisa que está criando mais névoa." },
+    { "id": "clarity_w_49", "word": "CURTO",       "meaning": "Lista mais curta. Pergunta mais curta. Menos tempo até a clareza." },
+    { "id": "clarity_w_50", "word": "FINO",        "meaning": "A névoa afina quando você para de acrescentar a ela." },
+    { "id": "clarity_w_51", "word": "REVELAR",     "meaning": "Revele o que você já sabe mas que está enterrado sob o ruído." },
+    { "id": "clarity_w_52", "word": "PERSPECTIVA", "meaning": "Uma perspectiva diferente do mesmo problema muda o que você vê." }
+  ],
+
+  "notification_pool": [
+    { "id": "clarity_n_1",  "copy": "Você não precisa ver tudo. Só o próximo passo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_2",  "copy": "Pensar mais não limpou isso. Tente parar.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_3",  "copy": "Uma coisa clara é suficiente para começar.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_4",  "copy": "A névoa é temporária. Você já esteve aqui antes.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_5",  "copy": "O simples está do outro lado do complicado.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_6",  "copy": "O que você já sabe? Comece por aí.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_7",  "copy": "A confusão é informação. O que ela está dizendo?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_8",  "copy": "Reduza a lista. Três itens. Vai.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_9",  "copy": "Seu instinto tem tentado dizer algo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_10", "copy": "Nomeie a confusão. Ela diminui quando nomeada.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_11", "copy": "Afaste-se por 20 minutos. Algo frequentemente muda.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_12", "copy": "O que você faria se já soubesse a resposta?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_13", "copy": "A fadiga de decisão é real. Decida menos coisas hoje.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_14", "copy": "A coisa mais clara que você consegue ver agora — aja sobre ela.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_15", "copy": "Escreva. A névoa é mais densa por dentro.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_16", "copy": "Não certeza. Só o suficiente para dar um passo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_17", "copy": "Faça uma versão mais simples da pergunta.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_18", "copy": "Você não está perdido. Entre dois momentos de clareza.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_19", "copy": "O que você pode parar de manter em aberto agora?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_20", "copy": "A versão simples geralmente está mais perto do correto.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_21", "copy": "Menos estímulos, mais clareza. Desligue algo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_22", "copy": "Confie no que você sabe. Mesmo que não seja tudo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_23", "copy": "A clareza geralmente vem depois da decisão, não antes.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_24", "copy": "Simplifique uma coisa hoje.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_25", "copy": "Qual é a pergunta real sob a névoa?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_26", "copy": "Pare de buscar tudo. Busque uma coisa.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_27", "copy": "A névoa afina quando você para de acrescentar a ela.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_28", "copy": "O que você faria se confiasse no seu instinto?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "clarity_ev_1",  "content": "O que ficou mais claro hoje? Mesmo que um pouco." },
+    { "id": "clarity_ev_2",  "content": "Qual decisão você tem evitado que poderia ser tomada esta noite?" },
+    { "id": "clarity_ev_3",  "content": "Onde você encontrou o pensamento mais claro hoje? O que criou isso?" },
+    { "id": "clarity_ev_4",  "content": "O que você simplificaria amanhã se pudesse?" },
+    { "id": "clarity_ev_5",  "content": "Que pergunta ficou sem resposta hoje? Vale a pena carregá-la pela noite?" },
+    { "id": "clarity_ev_6",  "content": "O que você descobriu hoje que não esperava?" },
+    { "id": "clarity_ev_7",  "content": "O que ficou nebuloso o dia todo? O que poderia ajudar a clarear?" },
+    { "id": "clarity_ev_8",  "content": "Que decisão em aberto você poderia fechar agora, mesmo imperfeita?" },
+    { "id": "clarity_ev_9",  "content": "O que você sabia hoje que não estava confiando?" },
+    { "id": "clarity_ev_10", "content": "Qual é a coisa mais importante sobre a qual você precisa de clareza amanhã?" },
+    { "id": "clarity_ev_11", "content": "O que se complicou hoje sem precisar?" },
+    { "id": "clarity_ev_12", "content": "O que parar e dar um passo atrás revelou para você hoje?" },
+    { "id": "clarity_ev_13", "content": "O que tornaria amanhã mais simples?" },
+    { "id": "clarity_ev_14", "content": "Qual é uma coisa sobre a qual você pode parar de pensar esta noite e simplesmente deixar ser?" }
+  ]
+
+}

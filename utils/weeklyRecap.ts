@@ -92,6 +92,140 @@ export function countResetsInCalendarWeek(
   return count;
 }
 
+/**
+ * Returns all Mon-Sun calendar weeks strictly before the current week
+ * that have at least one completion in completedByDate.
+ * Sorted chronologically, oldest Monday first.
+ */
+export function getPastCompletedWeeks(
+  completedByDate: Record<string, true>,
+): Array<{ monday: Date; mondayKey: string; count: number }> {
+  const now = getAppNow();
+  const currentMondayKey = getLocalDateKey(getWeekMonday(now));
+
+  const seen = new Map<string, Date>();
+  for (const dateKey of Object.keys(completedByDate)) {
+    const d = new Date(dateKey + 'T00:00:00');
+    const monday = getWeekMonday(d);
+    const mondayKey = getLocalDateKey(monday);
+    if (mondayKey < currentMondayKey && !seen.has(mondayKey)) {
+      seen.set(mondayKey, monday);
+    }
+  }
+
+  return Array.from(seen.entries())
+    .map(([mondayKey, monday]) => ({
+      monday,
+      mondayKey,
+      count: countResetsInCalendarWeek(completedByDate, monday),
+    }))
+    .sort((a, b) => a.mondayKey.localeCompare(b.mondayKey));
+}
+
+// ─── Journey Week Utilities ───────────────────────────────────────────────────
+
+/**
+ * Returns the journey start date — the first date the user ever completed a reset.
+ * Falls back to today if completedByDate is empty.
+ */
+export function getJourneyStartDate(completedByDate: Record<string, true>): Date {
+  const keys = Object.keys(completedByDate).sort();
+  if (keys.length === 0) {
+    const d = getAppNow();
+    d.setHours(0, 0, 0, 0);
+    return d;
+  }
+  const [y, m, dy] = keys[0].split('-').map(Number);
+  return new Date(y, m - 1, dy, 0, 0, 0, 0);
+}
+
+/**
+ * Returns the start date of journey week N (1-based).
+ * Week 1 starts on journeyStart; Week 2 = journeyStart + 7 days, etc.
+ */
+export function getJourneyWeekStart(journeyStart: Date, weekIndex: number): Date {
+  const d = new Date(journeyStart);
+  d.setDate(journeyStart.getDate() + (weekIndex - 1) * 7);
+  d.setHours(0, 0, 0, 0);
+  return d;
+}
+
+/**
+ * Returns the current journey week index (1-based).
+ * Days 0–6 from journeyStart = Week 1; Days 7–13 = Week 2; etc.
+ */
+export function getCurrentJourneyWeekIndex(
+  journeyStart: Date,
+  now: Date = getAppNow(),
+): number {
+  const msPerDay = 24 * 60 * 60 * 1000;
+  const startOfJourney = new Date(journeyStart);
+  startOfJourney.setHours(0, 0, 0, 0);
+  const startOfNow = new Date(now);
+  startOfNow.setHours(0, 0, 0, 0);
+  const daysSinceStart = Math.max(
+    0,
+    Math.floor((startOfNow.getTime() - startOfJourney.getTime()) / msPerDay),
+  );
+  return Math.floor(daysSinceStart / 7) + 1;
+}
+
+/**
+ * Count how many days in a 7-day journey week have a completion.
+ * weekStart can be any weekday — not required to be a Monday.
+ */
+export function countResetsInJourneyWeek(
+  completedByDate: Record<string, true>,
+  weekStart: Date,
+): number {
+  let count = 0;
+  for (let i = 0; i < 7; i++) {
+    const d = new Date(weekStart);
+    d.setDate(weekStart.getDate() + i);
+    if (completedByDate[getLocalDateKey(d)]) count++;
+  }
+  return count;
+}
+
+/**
+ * Human-readable date range for a journey week, e.g. "Jun 1 – Jun 7".
+ */
+export function getJourneyWeekDateLabel(weekStart: Date): string {
+  const weekEnd = new Date(weekStart);
+  weekEnd.setDate(weekStart.getDate() + 6);
+  const M = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+  return `${M[weekStart.getMonth()]} ${weekStart.getDate()} – ${M[weekEnd.getMonth()]} ${weekEnd.getDate()}`;
+}
+
+/**
+ * Returns all journey weeks strictly before the current week that have at least
+ * one completion. Sorted chronologically, earliest week first.
+ */
+export function getPastJourneyWeeks(
+  completedByDate: Record<string, true>,
+  journeyStart: Date,
+): Array<{ weekIndex: number; weekStart: Date; weekStartKey: string; count: number }> {
+  const now = getAppNow();
+  const currentWeekIndex = getCurrentJourneyWeekIndex(journeyStart, now);
+  const result: Array<{
+    weekIndex: number;
+    weekStart: Date;
+    weekStartKey: string;
+    count: number;
+  }> = [];
+
+  for (let i = 1; i < currentWeekIndex; i++) {
+    const weekStart = getJourneyWeekStart(journeyStart, i);
+    const count = countResetsInJourneyWeek(completedByDate, weekStart);
+    if (count > 0) {
+      result.push({ weekIndex: i, weekStart, weekStartKey: getLocalDateKey(weekStart), count });
+    }
+  }
+
+  return result;
+}
+
 // ─── Date Helpers (legacy — kept for backward compatibility) ──────────────────
 
 /** Returns an array of YYYY-MM-DD keys for the last N days (inclusive of today). */

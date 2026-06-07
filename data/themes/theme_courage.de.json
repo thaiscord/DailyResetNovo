@@ -1,0 +1,643 @@
+{
+  "theme": "Mut",
+  "user_state": "Verängstigt. Ausweichend. Weiß, was getan werden muss, aber ist gelähmt. Verwechselt Angst mit Unfähigkeit.",
+  "core_need": "Die Erlaubnis, unvollkommen zu handeln.",
+  "emotional_tone": "Warm. Ehrlich. Leise mutig.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "courage_arr_1",
+        "heading": "Du hast Angst. Das ist ehrlich.",
+        "subheading": "Angst und Vorwärtsbewegung sind keine Gegensätze. Sie können gleichzeitig bestehen."
+      },
+      {
+        "id": "courage_arr_2",
+        "heading": "Bereit sein ist kein Gefühl.",
+        "subheading": "Es ist eine Entscheidung. Du kannst sie treffen, bevor das Gefühl kommt."
+      },
+      {
+        "id": "courage_arr_3",
+        "heading": "Die Angst ist real.",
+        "subheading": "Deine Fähigkeit, mit ihr voranzugehen, ist es auch. Beides ist wahr."
+      },
+      {
+        "id": "courage_arr_4",
+        "heading": "Du hast gewartet, dich bereit zu fühlen.",
+        "subheading": "Dieses Gefühl kam nicht. Und dieses Warten hat sein eigenes Gewicht. Der nächste kleine Schritt braucht keine Bereitschaft."
+      },
+      {
+        "id": "courage_arr_5",
+        "heading": "Unvollkommen und erledigt.",
+        "subheading": "Das ist immer nützlicher als perfekt und wartend."
+      },
+      {
+        "id": "courage_arr_6",
+        "heading": "Das Ausweichen kostet dich etwas.",
+        "subheading": "Nicht weil du schwach bist. Sondern weil die Angst die Entscheidungen getroffen hat."
+      },
+      {
+        "id": "courage_arr_7",
+        "heading": "Ein Schritt.",
+        "subheading": "Nicht alles auf einmal. Nicht mit Gewissheit. Nur ein Schritt, mit der Angst daneben."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "courage_rel_1",
+        "heading": "Wovor hast du Angst?",
+        "subheading": "Nenn es direkt. Die vage Angst ist schwerer zu durchqueren als die benannte.",
+        "field_placeholder": "Was befürchtest du konkret, dass passieren wird..."
+      },
+      {
+        "id": "courage_rel_2",
+        "heading": "Was weichst du aus?",
+        "subheading": "Nicht warum. Nur was. Nenn die Sache selbst.",
+        "field_placeholder": "Die Sache, um die du herumgehst, statt sie zu tun..."
+      },
+      {
+        "id": "courage_rel_3",
+        "heading": "Was bittet die Angst dich zu schützen?",
+        "subheading": "Sie bewacht etwas. Was glaubt sie, steht auf dem Spiel?",
+        "field_placeholder": "Wovor versucht die Angst dich zu schützen..."
+      },
+      {
+        "id": "courage_rel_4",
+        "heading": "Was würdest du tun, wenn du keine Angst hättest?",
+        "subheading": "Schreib es. Das ist die Richtung.",
+        "field_placeholder": "Ohne die Angst, was wäre dein nächster Schritt..."
+      },
+      {
+        "id": "courage_rel_5",
+        "heading": "Was hat das Ausweichen dich bereits gekostet?",
+        "subheading": "Keine Schuld. Nur Ehrlichkeit.",
+        "field_placeholder": "Was hat das Warten dich bisher gekostet..."
+      },
+      {
+        "id": "courage_rel_6",
+        "heading": "Die schlimmste Version, die du dir vorstellst.",
+        "subheading": "Schreib sie auf. Dann bemerke, wie oft genau das schon passiert ist.",
+        "field_placeholder": "Beschreibe das schlimmste Szenario, das dein Kopf entwirft..."
+      },
+      {
+        "id": "courage_rel_7",
+        "heading": "Was weißt du bereits, dass du tun musst?",
+        "subheading": "Du weißt es. Nenn es hier.",
+        "field_placeholder": "Die Sache, die du bereits weißt, aber noch nicht tust..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "courage_br_1",
+        "heading": "Atme wie jemand, der bereits entschieden hat.",
+        "instruction": "Langsam einatmen. Kurz halten. Lang ausatmen. Der Körper folgt dem Atem in die Ruhe."
+      },
+      {
+        "id": "courage_br_2",
+        "heading": "Der Atemzug vor dem Schritt.",
+        "instruction": "Ein vollständiges Einatmen. Ein vollständiges Ausatmen. Dann bewege dich. Nur das."
+      },
+      {
+        "id": "courage_br_3",
+        "heading": "Stabil.",
+        "instruction": "Vier Zählungen einatmen. Vier halten. Vier ausatmen. Wiederholen. Mut lebt in ruhigem Atem."
+      },
+      {
+        "id": "courage_br_4",
+        "heading": "Atme durch den Widerstand.",
+        "instruction": "Der Körper spannt sich vor dem Handeln an. Atme in die Anspannung. Drei Mal."
+      },
+      {
+        "id": "courage_br_5",
+        "heading": "Verwurzele dich, bevor du gehst.",
+        "instruction": "Spüre deine Füße auf dem Boden. Atme einmal vollständig. Dann mach den ersten Schritt."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "courage_mom_1",
+        "heading": "Was ist die einzige Sache, der du ausgewichen bist?"
+      },
+      {
+        "id": "courage_mom_2",
+        "heading": "Was ist die kleinste Version des Schrittes, den du fürchtest?"
+      },
+      {
+        "id": "courage_mom_3",
+        "heading": "Wie würde eine unvollkommene Handlung heute aussehen?"
+      },
+      {
+        "id": "courage_mom_4",
+        "heading": "Was schützt die Angst? Was glaubt sie zu bewachen?"
+      },
+      {
+        "id": "courage_mom_5",
+        "heading": "Was ist ein kleiner Schritt, den du heute tun könntest, auch mit der Angst daneben?"
+      },
+      {
+        "id": "courage_mom_6",
+        "heading": "Was würdest du tun, wenn du wüsstest, dass alles gut wird?"
+      },
+      {
+        "id": "courage_mom_7",
+        "heading": "Die Sache, von der du bereits weißt, dass du sie tun musst. Nenn sie."
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "courage_comp_1",
+        "heading": "Du bist mit der Angst vorangegangen.",
+        "subheading": "Das ist nicht die Abwesenheit von Mut. Das ist genau das, was er ist."
+      },
+      {
+        "id": "courage_comp_2",
+        "heading": "Unvollkommen und erledigt.",
+        "subheading": "Du hast es getan. Die Angst war da. Und du bist trotzdem gegangen."
+      },
+      {
+        "id": "courage_comp_3",
+        "heading": "Du hast dich entschieden, voranzugehen.",
+        "subheading": "Nicht weil es leicht war. Weil du entschieden hast, dass es mehr zählt."
+      },
+      {
+        "id": "courage_comp_4",
+        "heading": "Der Schritt ist passiert.",
+        "subheading": "Klein oder groß. Perfekt oder holprig. Er ist passiert. Das zählt."
+      },
+      {
+        "id": "courage_comp_5",
+        "heading": "Du hattest Angst.",
+        "subheading": "Und du hast es trotzdem getan. Das ist etwas, das du mit dir tragen kannst."
+      },
+      {
+        "id": "courage_comp_6",
+        "heading": "Bereit sein ist nie gekommen.",
+        "subheading": "Du bist ohne es gegangen. Das ist die Definition der Sache."
+      },
+      {
+        "id": "courage_comp_7",
+        "heading": "Du hast dich der Sache gestellt.",
+        "subheading": "Nicht der Version, in der alles perfekt lief. Der echten Sache."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "courage_hc_1",
+      "headline": "Bereit sein ist eine Entscheidung, kein Gefühl.",
+      "subheadline": "Du kannst dich entscheiden, bevor das Gefühl kommt."
+    },
+    {
+      "id": "courage_hc_2",
+      "headline": "Die Angst ist real, und der nächste Schritt auch.",
+      "subheadline": "Beides ist gleichzeitig wahr."
+    },
+    {
+      "id": "courage_hc_3",
+      "headline": "Auf das Bereit-Gefühl zu warten hat sein eigenes Gewicht.",
+      "subheadline": "Eine kleine Bewegung, auch unvollkommen, ist leichter als stillzustehen."
+    },
+    {
+      "id": "courage_hc_4",
+      "headline": "Unvollkommenes Handeln ist immer besser als perfektes Warten.",
+      "subheadline": "Der Raum dazwischen ist dort, wo das Ausweichen lebt."
+    },
+    {
+      "id": "courage_hc_5",
+      "headline": "Du weichst nicht aus, weil du schwach bist.",
+      "subheadline": "Du weichst aus, weil die Angst die Entscheidungen getroffen hat."
+    },
+    {
+      "id": "courage_hc_6",
+      "headline": "Der kleinste Schritt ist immer noch ein Schritt.",
+      "subheadline": "Die Richtung zählt mehr als die Distanz."
+    },
+    {
+      "id": "courage_hc_7",
+      "headline": "Etwas in dir kennt bereits die Richtung.",
+      "subheadline": "Der nächste Schritt muss nicht die vollständige Antwort sein."
+    },
+    {
+      "id": "courage_hc_8",
+      "headline": "Mut ist nicht die Abwesenheit von Angst.",
+      "subheadline": "Es ist das Vorankommen mit ihr. Das ist es, was du tust."
+    },
+    {
+      "id": "courage_hc_9",
+      "headline": "Die Sache, der du ausweichst, weiß, dass du in der Nähe bist.",
+      "subheadline": "Du hast sie umkreist. Heute kannst du ein wenig näherkommen."
+    },
+    {
+      "id": "courage_hc_10",
+      "headline": "Das Ergebnis ist nicht das Einzige.",
+      "subheadline": "Der Akt des Wählens ist auch etwas."
+    },
+    {
+      "id": "courage_hc_11",
+      "headline": "Angst und Vorwärtsbewegung können koexistieren.",
+      "subheadline": "Du musst nicht warten, bis die Angst weg ist."
+    },
+    {
+      "id": "courage_hc_12",
+      "headline": "Unvollkommen gemacht ist immer noch gemacht.",
+      "subheadline": "Perfektionismus hält die Tür geschlossen. Unvollkommenes Handeln öffnet sie."
+    },
+    {
+      "id": "courage_hc_13",
+      "headline": "Ein Schritt ist nicht alles.",
+      "subheadline": "Es ist nur der Schritt. Das ist alles, was verlangt wird."
+    },
+    {
+      "id": "courage_hc_14",
+      "headline": "Die Angst hat den Zeitplan bestimmt.",
+      "subheadline": "Heute kannst du einen Punkt davon zurückholen."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "courage_act_1",
+      "content": "Schreib die eine Sache auf, der du ausgewichen bist. Nenn sie nur. Noch kein Plan.",
+      "why": "Sie zu benennen holt sie aus der Vorstellung, wo sie größer ist, in die Realität."
+    },
+    {
+      "id": "courage_act_2",
+      "content": "Erledige die ersten 5 % der Aufgabe, der du ausweichst. Nichts mehr.",
+      "why": "Anfangen ist die Hürde. Der erste Schritt ist immer schwieriger als der zweite."
+    },
+    {
+      "id": "courage_act_3",
+      "content": "Sende die Nachricht, tätige den Anruf oder schreibe die E-Mail, die du verschoben hast.",
+      "why": "Verschobene Kommunikation kostet mehr an Angst als das Unbehagen des Sendens."
+    },
+    {
+      "id": "courage_act_4",
+      "content": "Schreib: 'Wovor ich Angst habe, ist ___. Was ich trotzdem tun werde, ist ___.'",
+      "why": "Beide Wahrheiten gleichzeitig zu halten, ist der Weg, hindurchzugehen statt herumzugehen."
+    },
+    {
+      "id": "courage_act_5",
+      "content": "Erzähl einer Person von der Sache, der du ausweichst. Nur die Tatsache, dass du ausweichst.",
+      "why": "Es laut auszusprechen reduziert die Scham, die das Ausweichen verstärkt."
+    },
+    {
+      "id": "courage_act_6",
+      "content": "Plane die vermiedene Sache heute in deinen Kalender ein. Blockiere die Zeit.",
+      "why": "Absicht ohne Planung wird selten zur Handlung. Behandle es wie einen Termin."
+    },
+    {
+      "id": "courage_act_7",
+      "content": "Erledige die schwierige Sache zuerst. Bevor du Nachrichten, E-Mails oder Benachrichtigungen prüfst.",
+      "why": "Die vermiedene Aufgabe wächst, wenn du zuerst alles andere erledigst."
+    },
+    {
+      "id": "courage_act_8",
+      "content": "Schreib das schlimmste realistische Ergebnis auf, wenn du den Schritt machst. Dann schreib: 'Und damit könnte ich leben.'",
+      "why": "Das vorgestellte schlimmste Szenario ist fast immer etwas, womit du leben könntest. Es konkret zu machen, reduziert seine Macht."
+    },
+    {
+      "id": "courage_act_9",
+      "content": "Stelle einen Zwei-Minuten-Timer. Arbeite an der gefürchteten Aufgabe nur bis er klingelt.",
+      "why": "Zwei Minuten reichen fast immer, um zu zeigen, dass du anfangen kannst."
+    },
+    {
+      "id": "courage_act_10",
+      "content": "Bitte um Hilfe bei der Sache, die du alleine zu bewältigen versucht hast.",
+      "why": "Um Hilfe bitten ist eine Form von Mut. Isolation verstärkt das Ausweichen."
+    },
+    {
+      "id": "courage_act_11",
+      "content": "Schreib drei Mal auf, wo du etwas Schwieriges getan hast, ohne dich vorher bereit zu fühlen.",
+      "why": "Der Beweis vergangenen Mutes ist das stärkste Argument gegen die aktuelle Angst."
+    },
+    {
+      "id": "courage_act_12",
+      "content": "Triff die Entscheidung, die du verschoben hast. Nicht die perfekte. Die nächste.",
+      "why": "Eine getroffene Entscheidung, auch eine unvollkommene, kostet weniger als eine nicht getroffene."
+    },
+    {
+      "id": "courage_act_13",
+      "content": "Schreib einen Satz darüber, was du willst. Nicht was du für realistisch hältst. Was du willst.",
+      "why": "Angst bringt das Wollen oft zum Schweigen. Es zu benennen stellt die Richtung wieder her."
+    },
+    {
+      "id": "courage_act_14",
+      "content": "Tu heute etwas, das erfordert, dass andere Menschen dich sehen.",
+      "why": "Gesehen zu werden ist oft das, was das Ausweichen leise schützt. Ein kleiner Moment der Sichtbarkeit verändert, was möglich erscheint."
+    },
+    {
+      "id": "courage_act_15",
+      "content": "Schreib den ersten Grund auf, den die Angst gibt, den Schritt nicht zu machen. Dann frage: Stimmt das wirklich?",
+      "why": "Das Argument der Angst zu benennen und sanft zu hinterfragen, verändert den Raum, den es einnimmt."
+    },
+    {
+      "id": "courage_act_16",
+      "content": "Geh an den Ort oder öffne die Sache, der du ausgewichen bist. Nur ankommen. Noch nichts mehr.",
+      "why": "Physisch anzukommen verändert den inneren Zustand. Anwesenheit ist ihre eigene Art von Fortschritt."
+    },
+    {
+      "id": "courage_act_17",
+      "content": "Schreib einen Brief an dich selbst aus einem Jahr in der Zukunft, vorausgesetzt, du hast den Schritt gemacht.",
+      "why": "Die Zukunftsperspektive reduziert das Gewicht, das der gegenwärtige Moment trägt."
+    },
+    {
+      "id": "courage_act_18",
+      "content": "Entschuldige dich für etwas, wofür du es vermieden hast, dich zu entschuldigen.",
+      "why": "Das Schrecken vor einer Entschuldigung dauert fast immer länger als die Entschuldigung selbst."
+    },
+    {
+      "id": "courage_act_19",
+      "content": "Hebe die Hand, die Stimme oder deine Idee im nächsten verfügbaren Moment.",
+      "why": "Kleine Momente des Gesehen-Werdens machen den nächsten ein wenig leichter."
+    },
+    {
+      "id": "courage_act_20",
+      "content": "Schreib auf, was du wirklich denkst. Über die schwierige Sache. Deine echte Meinung.",
+      "why": "Eine echte Meinung zu unterdrücken kostet Energie und nährt das Ausweichen."
+    },
+    {
+      "id": "courage_act_21",
+      "content": "Sage Nein zu der Sache, der du aus Angst, jemanden zu enttäuschen, zugestimmt hast.",
+      "why": "Ein angstbasiertes Ja ist keine Großzügigkeit. Ein ehrliches Nein ist seine eigene Form von Mut."
+    },
+    {
+      "id": "courage_act_22",
+      "content": "Beginne das Projekt, bevor es perfekt ist. Schreib den Entwurf, reiche die grobe Version ein.",
+      "why": "Auf Perfektion zu warten bedeutet meist, auf ein Gefühl zu warten, das nicht kommen wird, bevor du anfängst."
+    },
+    {
+      "id": "courage_act_23",
+      "content": "Schreib über die Angst, als wäre sie eine separate Stimme. Was sagt sie? Schreib dann auf, was du daneben als wahr weißt.",
+      "why": "Der Angst außerhalb von dir eine Stimme zu geben, schafft etwas Abstand. Aus diesem Abstand ist es leichter zu sehen, was sie wirklich ist."
+    },
+    {
+      "id": "courage_act_24",
+      "content": "Mache den Schritt, den du gefürchtet hast, zuerst in einem kleineren Rahmen.",
+      "why": "Eine kleinere Version desselben Schrittes zeigt dir, wie es sich anfühlt, ihn zu machen. Das verändert, wie die größere Version erscheint."
+    },
+    {
+      "id": "courage_act_25",
+      "content": "Sag die Wahrheit über etwas, das du abgemildert hast.",
+      "why": "Was wahr ist abzumildern kostet nach und nach etwas. Ein Moment der Ehrlichkeit, auch ein kleiner, stellt etwas wieder her."
+    },
+    {
+      "id": "courage_act_26",
+      "content": "Veröffentliche, sende oder teile die Sache, die du zurückgehalten hast.",
+      "why": "Die Hürde zwischen erledigt und gesendet ist oft nur die Angst, gesehen zu werden."
+    },
+    {
+      "id": "courage_act_27",
+      "content": "Setze eine Grenze, die zu setzen du Angst hattest.",
+      "why": "Grenzen schützen, was zählt. Die Angst, sie zu setzen, gibt ab, was zählt."
+    },
+    {
+      "id": "courage_act_28",
+      "content": "Schreib auf, was du einem Freund sagen würdest, der genau dem gegenübersteht, was du gegenüberstellst.",
+      "why": "Der Rat, den du anderen frei gibst, ist meist das, was du am meisten brauchst."
+    },
+    {
+      "id": "courage_act_29",
+      "content": "Tu die Sache auf eine Art, von der du weißt, dass sie unvollkommen ist. Lass Unvollkommenheit genug sein.",
+      "why": "Unvollkommenheit ist nicht die Hürde. Der Glaube, dass Unvollkommenheit nicht erlaubt ist, ist es. Das beseitigt diesen Glauben."
+    },
+    {
+      "id": "courage_act_30",
+      "content": "Verpflichte dich laut: 'Ich werde ___ heute tun, auch wenn ich Angst habe.'",
+      "why": "Es laut auszusprechen verändert etwas. Die Stimme macht es real auf eine Art, die im Kopf zu bleiben nicht kann."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "courage_ref_1",
+      "content": "Wovor hast du gerade am meisten Angst? Kannst du es konkret benennen?"
+    },
+    {
+      "id": "courage_ref_2",
+      "content": "Was würdest du heute versuchen, wenn du dir erlaubst, es schlecht zu machen?"
+    },
+    {
+      "id": "courage_ref_3",
+      "content": "Was hat das Ausweichen dich gekostet? Leise, über die Zeit."
+    },
+    {
+      "id": "courage_ref_4",
+      "content": "Wann hast du trotz Angst gehandelt? Was ist passiert?"
+    },
+    {
+      "id": "courage_ref_5",
+      "content": "Was ist die kleinste Version des gefürchteten Schrittes, die du heute machen könntest?"
+    },
+    {
+      "id": "courage_ref_6",
+      "content": "Was sagt dir deine Angst, was passieren wird, wenn du den Schritt machst?"
+    },
+    {
+      "id": "courage_ref_7",
+      "content": "Was ist die echte Sache, die du schützt, indem du dort bleibst, wo du bist?"
+    },
+    {
+      "id": "courage_ref_8",
+      "content": "Was würdest du jemandem sagen, den du liebst, der genau dem gegenübersteht, was du erlebst?"
+    },
+    {
+      "id": "courage_ref_9",
+      "content": "Was ist der Unterschied zwischen der Geschichte, die die Angst erzählt, und dem, was wirklich wahr ist?"
+    },
+    {
+      "id": "courage_ref_10",
+      "content": "Was wäre schwerer zu tragen: versucht zu haben, auch schlecht, oder dort geblieben zu sein, wo du bist?"
+    },
+    {
+      "id": "courage_ref_11",
+      "content": "Was erfordert Bereit-Sein wirklich? Ist diese Anforderung real?"
+    },
+    {
+      "id": "courage_ref_12",
+      "content": "Welcher Teil von dir weiß bereits, was zu tun ist?"
+    },
+    {
+      "id": "courage_ref_13",
+      "content": "Was würde passieren, wenn die Angst sich als falsch herausstellte?"
+    },
+    {
+      "id": "courage_ref_14",
+      "content": "Wen hast du trotz Angst handeln sehen? Was hat dich das gelehrt?"
+    },
+    {
+      "id": "courage_ref_15",
+      "content": "Wie war das Warten? Wie fühlt es sich im Körper an, noch einen Tag hier zu bleiben?"
+    },
+    {
+      "id": "courage_ref_16",
+      "content": "Wie würde eine unvollkommene Handlung für die Sache aussehen, der du ausweichst?"
+    },
+    {
+      "id": "courage_ref_17",
+      "content": "Wovor schützt dich die Angst, wobei du vielleicht keinen Schutz brauchst?"
+    },
+    {
+      "id": "courage_ref_18",
+      "content": "Was würdest du beginnen, wenn du wüsstest, dass es erlaubt ist, schlecht anzufangen?"
+    },
+    {
+      "id": "courage_ref_19",
+      "content": "Wie hat das Ausweichen deinen Körper beeinflusst? Deinen Schlaf? Deine Konzentration?"
+    },
+    {
+      "id": "courage_ref_20",
+      "content": "Was fühlt sich in dir anders an, wenn du trotz der Angst einen Schritt machst?"
+    },
+    {
+      "id": "courage_ref_21",
+      "content": "Was willst du so sehr, dass die Angst, darin zu scheitern, so stark ist?"
+    },
+    {
+      "id": "courage_ref_22",
+      "content": "Was hast du in deinem Kopf geprobt, anstatt es zu tun?"
+    },
+    {
+      "id": "courage_ref_23",
+      "content": "Wie würde Vorwärtsbewegung heute aussehen? Nicht irgendwann. Heute."
+    },
+    {
+      "id": "courage_ref_24",
+      "content": "Was würdest du tun, wenn niemand zuschaut und Urteil nicht möglich wäre?"
+    },
+    {
+      "id": "courage_ref_25",
+      "content": "Was weißt du über Angst, was dein früheres Ich nicht wusste?"
+    },
+    {
+      "id": "courage_ref_26",
+      "content": "Was ist die mutigste und kleinste Sache, die du heute tun könntest?"
+    },
+    {
+      "id": "courage_ref_27",
+      "content": "Was würde es über dich bedeuten, wenn du den Schritt machst und es schlecht läuft?"
+    },
+    {
+      "id": "courage_ref_28",
+      "content": "Was würde es für dich bedeuten, wenn diese Situation genau so bleibt, wie sie ist?"
+    },
+    {
+      "id": "courage_ref_29",
+      "content": "Was versucht die Angst zu bewahren? Funktioniert das?"
+    },
+    {
+      "id": "courage_ref_30",
+      "content": "Stell dir vor, den Schritt zu machen. Wie fühlt sich das von innen an? Was passiert zuerst?"
+    }
+  ],
+
+  "words": [
+    { "id": "courage_w_1",  "word": "SCHRITT",     "meaning": "Ein Schritt mit der Angst. Das ist die ganze Praxis." },
+    { "id": "courage_w_2",  "word": "VORWÄRTS",    "meaning": "Nicht schnell. Nicht weit. Vorwärts." },
+    { "id": "courage_w_3",  "word": "EHRLICH",     "meaning": "Die Angst ist real. Benenn sie ehrlich. Da fängt es an." },
+    { "id": "courage_w_4",  "word": "WÄHLEN",      "meaning": "Bereit sein ist eine Wahl. Du kannst wählen, bevor du es fühlst." },
+    { "id": "courage_w_5",  "word": "BEHERZT",     "meaning": "Stille Beherztheit. Die Art, die ohne Publikum geschieht." },
+    { "id": "courage_w_6",  "word": "TROTZDEM",    "meaning": "Trotz der Angst. Nicht nachdem sie gegangen ist." },
+    { "id": "courage_w_7",  "word": "ECHT",        "meaning": "Die Angst ist echt. Der nächste Schritt auch. Beides ist echt." },
+    { "id": "courage_w_8",  "word": "BEGINNEN",    "meaning": "Nicht fertigstellen. Nicht gewinnen. Beginnen." },
+    { "id": "courage_w_9",  "word": "BEWEGEN",     "meaning": "Bewegung verändert den inneren Zustand. Fang mit dem Körper an." },
+    { "id": "courage_w_10", "word": "VERTRAUEN",   "meaning": "Vertraue dem, was du zuvor getan hast. Du hast schwierige Dinge getan." },
+    { "id": "courage_w_11", "word": "ENTSCHEIDEN", "meaning": "Die Entscheidung ist der Akt. Triff sie." },
+    { "id": "courage_w_12", "word": "BLEIBEN",     "meaning": "Bleib mit dem Unbehagen etwas länger. Es lässt nach." },
+    { "id": "courage_w_13", "word": "HINSCHAUEN",  "meaning": "Wende dich der Sache zu. Nicht hinein. Hin zu ihr." },
+    { "id": "courage_w_14", "word": "RISIKO",      "meaning": "Keine Leichtsinnigkeit. Das Risiko, beim Tun von etwas Echtem gesehen zu werden." },
+    { "id": "courage_w_15", "word": "JETZT",       "meaning": "Das Warten hätte nie Bereitheit erzeugt. Jetzt ist ein genauso guter Moment wie jeder andere." },
+    { "id": "courage_w_16", "word": "OFFEN",       "meaning": "Offen für das Ergebnis. Es ist vielleicht nicht das, was die Angst vorhergesagt hat." },
+    { "id": "courage_w_17", "word": "WISSEN",      "meaning": "Etwas in dir kennt bereits die Richtung. Es versucht, es dir zu sagen." },
+    { "id": "courage_w_18", "word": "STIMME",      "meaning": "Sag, was wahr ist. Auch wenn die Stimme zittert." },
+    { "id": "courage_w_19", "word": "WAGEN",       "meaning": "Nicht grandios. Leise. Tu es." },
+    { "id": "courage_w_20", "word": "BEHARREN",    "meaning": "Nach dem Fehlstart. Nach dem Stolpern. Beharr." },
+    { "id": "courage_w_21", "word": "ZEIGEN",      "meaning": "Zeig dich für die Sache. Vollständig. Ohne Rüstung." },
+    { "id": "courage_w_22", "word": "KLEIN",       "meaning": "Kleiner Mut zählt auch. Ein kleiner Akt verändert, wie der nächste erscheint." },
+    { "id": "courage_w_23", "word": "GENUG",       "meaning": "Du bist genug, um den nächsten Schritt zu machen. Nur den nächsten." },
+    { "id": "courage_w_24", "word": "HINDURCH",    "meaning": "Hindurch die Angst, nicht darum herum." },
+    { "id": "courage_w_25", "word": "DRÜCKEN",     "meaning": "Drücke sanft gegen den Widerstand. Er gibt oft nach." },
+    { "id": "courage_w_26", "word": "BEREIT",      "meaning": "Bereit sein ist das, was passiert, wenn du anfängst. Nicht davor." },
+    { "id": "courage_w_27", "word": "ERST",        "meaning": "Der erste ist immer der schwierigste. Das bedeutet nicht aufhören." },
+    { "id": "courage_w_28", "word": "ANSPRECHEN",  "meaning": "Sprich aus, was du willst. Sag es laut. Auch leise." },
+    { "id": "courage_w_29", "word": "GESEHEN",     "meaning": "Gesehen zu werden bei unvollkommener Arbeit ist immer noch gesehen zu werden." },
+    { "id": "courage_w_30", "word": "SPRECHEN",    "meaning": "Was du nicht gesagt hast. Sprich es aus." },
+    { "id": "courage_w_31", "word": "HINZU",       "meaning": "Noch nicht dort. Hinzu. Die Richtung reicht." },
+    { "id": "courage_w_32", "word": "MUTIG",       "meaning": "Mutig ist nicht die Abwesenheit von Angst. Es ist der nächste Satz." },
+    { "id": "courage_w_33", "word": "HANDELN",     "meaning": "Der Akt selbst verändert Dinge. Nicht der Plan für den Akt." },
+    { "id": "courage_w_34", "word": "HALTEN",      "meaning": "Halte die Angst und die Vorwärtsabsicht gleichzeitig." },
+    { "id": "courage_w_35", "word": "VORANGEHEN",  "meaning": "Lass die Handlung vorangehen. Der Rest folgt oft." },
+    { "id": "courage_w_36", "word": "AUFSTEHEN",   "meaning": "Nicht darüber hinaus. Mit ihr. Steh mit der Schwierigkeit auf." },
+    { "id": "courage_w_37", "word": "ANTWORT",     "meaning": "Die einzige Antwort auf das Ausweichen ist das kleine Ja." },
+    { "id": "courage_w_38", "word": "VERSUCH",     "meaning": "Der Versuch ist der ganze Akt. Nicht das Ergebnis. Der Versuch." },
+    { "id": "courage_w_39", "word": "KLAR",        "meaning": "Klar darüber, was du willst. Auch wenn der Weg es nicht ist." },
+    { "id": "courage_w_40", "word": "DIREKT",      "meaning": "Der direkte Weg ist normalerweise kürzer als der Ausweichweg." },
+    { "id": "courage_w_41", "word": "GANZ",        "meaning": "Zeig dich vollständig. Nicht poliert. Vollständig." },
+    { "id": "courage_w_42", "word": "GEERDET",     "meaning": "Geerdeteter Mut. Keine hektische Energie. Ruhig und geerdet." },
+    { "id": "courage_w_43", "word": "ABSICHT",     "meaning": "Habe die Absicht. Dann finde den kleinsten Weg, anzufangen. Absicht ist der Beginn, nicht das Ganze." },
+    { "id": "courage_w_44", "word": "LEHNEN",      "meaning": "Lehne dich leicht zur Schwierigkeit hin. Nur ein bisschen. Nur heute." },
+    { "id": "courage_w_45", "word": "BEDEUTEN",    "meaning": "Die Sache, der du ausweichst, bedeutet dir etwas. Deshalb ist es schwer." },
+    { "id": "courage_w_46", "word": "BENENNEN",    "meaning": "Benenn die Angst. Benannt ist sie kleiner als vorgestellt." },
+    { "id": "courage_w_47", "word": "ORT",         "meaning": "Begib dich an den Ort, wo die Sache passieren kann." },
+    { "id": "courage_w_48", "word": "LEISE",       "meaning": "Leiser Mut. Keine Ankündigung. Nur der Akt." },
+    { "id": "courage_w_49", "word": "ANFANGEN",    "meaning": "Fang an, bevor du bereit bist. So hat es immer funktioniert." },
+    { "id": "courage_w_50", "word": "WAHR",        "meaning": "Tu die ehrliche Sache. Auch wenn die leichtere Version verlockend ist." },
+    { "id": "courage_w_51", "word": "WILLENS",     "meaning": "Willens, Angst zu haben und trotzdem zu gehen. Das ist alles, was es braucht." },
+    { "id": "courage_w_52", "word": "JA",          "meaning": "Ein Ja. Für die richtige Sache. Obwohl die Angst Nein sagt." }
+  ],
+
+  "notification_pool": [
+    { "id": "courage_n_1",  "copy": "Etwas in dir kennt bereits die Richtung. Heute ist ein guter Tag zum Zuhören.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_2",  "copy": "Angst und Vorwärtsbewegung können koexistieren.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_3",  "copy": "Bereit sein ist eine Entscheidung, kein Gefühl.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_4",  "copy": "Ein Schritt mit der Angst. Nur einer.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_5",  "copy": "Was du vermeidest, wartet noch.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_6",  "copy": "Der erste Schritt ist die ganze Hürde.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_7",  "copy": "Unvollkommen und erledigt schlägt perfekt und wartend.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_8",  "copy": "Die Angst hat Entscheidungen für dich getroffen.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_9",  "copy": "Du hast schon schwierige Dinge getan. Das hat sich nicht geändert.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_10", "copy": "Fang schlecht an. Das ist immer noch anfangen.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_11", "copy": "Die Sache, die du fürchtest, ist kleiner, wenn du anfängst.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_12", "copy": "Wie würde ein kleiner Schritt heute aussehen, auch mit der Angst dabei?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_13", "copy": "Die Kosten des Ausweichens sind auch Kosten.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_14", "copy": "Benenn die Angst. Dann benenn den Schritt.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_15", "copy": "Zwei Minuten an der vermiedenen Aufgabe. Nur zwei.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_16", "copy": "Du hast sie umkreist. Komm heute ein bisschen näher.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_17", "copy": "Mutig ist nur der nächste Satz.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_18", "copy": "Nicht alles auf einmal. Nur den ersten Teil.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_19", "copy": "Vorwärts, nicht perfekt.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_20", "copy": "Die vermiedene Sache wird mit der Zeit schwerer.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_21", "copy": "Sag die Sache, die du nicht gesagt hast.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_22", "copy": "Ein kleines Ja ist immer noch ein Ja.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_23", "copy": "Angst ist kein Beweis für Unfähigkeit.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_24", "copy": "Tu es unvollkommen. Das zählt trotzdem.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_25", "copy": "Du weichst nicht aus, weil du nicht kannst.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_26", "copy": "Der nächste Schritt ist einfacher als die Angst sagt.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_27", "copy": "Wie würde heute aussehen, wenn du trotzdem gingest?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_28", "copy": "Der Mut kommt nicht zuerst. Du kommst zuerst.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "courage_ev_1",  "content": "Was hast du heute getan, was die Angst dir gesagt hat, nicht zu tun?" },
+    { "id": "courage_ev_2",  "content": "Was vermeidest du noch? Was wäre nötig, um morgen anzufangen?" },
+    { "id": "courage_ev_3",  "content": "Wann hattest du heute am meisten Angst? Was hast du damit gemacht?" },
+    { "id": "courage_ev_4",  "content": "Was unvollkommenes hast du heute getan, worüber du froh bist?" },
+    { "id": "courage_ev_5",  "content": "Wo hast du heute gewählt, voranzugehen, auch nur ein wenig?" },
+    { "id": "courage_ev_6",  "content": "Was hast du gesagt, das du fast nicht gesagt hättest?" },
+    { "id": "courage_ev_7",  "content": "Wie fühlt sich das Ausweichen in deinem Körper am Ende eines Tages an?" },
+    { "id": "courage_ev_8",  "content": "Wie war der heutige Tag? Was wäre morgen anders, wenn du einen kleinen Schritt machen würdest?" },
+    { "id": "courage_ev_9",  "content": "Was ist eine kleine Sache, die du heute getan hast, die Mut erforderte?" },
+    { "id": "courage_ev_10", "content": "Welche Angst stellte sich heute als kleiner heraus als erwartet?" },
+    { "id": "courage_ev_11", "content": "Was hast du über dich gelernt, als du die schwierige Sache versucht hast?" },
+    { "id": "courage_ev_12", "content": "Was wäre anders, wenn du morgen bei einer kleinen Sache handelst?" },
+    { "id": "courage_ev_13", "content": "Worauf bist du heute stolz, auch nur ein wenig?" },
+    { "id": "courage_ev_14", "content": "Was ist das Erste, was du morgen tun wirst, mit der Angst noch da?" }
+  ]
+
+}

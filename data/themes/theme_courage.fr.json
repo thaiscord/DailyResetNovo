@@ -1,0 +1,643 @@
+{
+  "theme": "Courage",
+  "user_state": "Apeuré. Dans l'évitement. Sait ce qu'il doit faire mais est paralysé. Confond la peur avec l'incapacité.",
+  "core_need": "La permission d'agir de façon imparfaite.",
+  "emotional_tone": "Chaleureux. Honnête. Discrètement courageux.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "courage_arr_1",
+        "heading": "Tu as peur. C'est honnête.",
+        "subheading": "La peur et le mouvement vers l'avant ne sont pas opposés. Ils peuvent coexister."
+      },
+      {
+        "id": "courage_arr_2",
+        "heading": "Être prêt n'est pas un sentiment.",
+        "subheading": "C'est un choix. Tu peux choisir avant que le sentiment arrive."
+      },
+      {
+        "id": "courage_arr_3",
+        "heading": "La peur est réelle.",
+        "subheading": "Ta capacité à avancer avec elle l'est aussi. Les deux sont vrais."
+      },
+      {
+        "id": "courage_arr_4",
+        "heading": "Tu as attendu de te sentir prêt.",
+        "subheading": "Ce sentiment n'est pas venu. Et cette attente a son propre poids. Le prochain petit pas n'exige pas d'être prêt."
+      },
+      {
+        "id": "courage_arr_5",
+        "heading": "Imparfait et accompli.",
+        "subheading": "C'est toujours plus utile que parfait et en attente."
+      },
+      {
+        "id": "courage_arr_6",
+        "heading": "L'évitement a un coût.",
+        "subheading": "Pas parce que tu es faible. Mais parce que la peur a pris les décisions."
+      },
+      {
+        "id": "courage_arr_7",
+        "heading": "Un pas.",
+        "subheading": "Pas tout d'un coup. Pas avec certitude. Juste un pas, avec la peur à côté."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "courage_rel_1",
+        "heading": "De quoi as-tu peur ?",
+        "subheading": "Nomme-le directement. La peur vague est plus difficile à traverser que la peur nommée.",
+        "field_placeholder": "De quoi as-tu spécifiquement peur qu'il arrive..."
+      },
+      {
+        "id": "courage_rel_2",
+        "heading": "Qu'est-ce que tu évites ?",
+        "subheading": "Pas pourquoi. Juste quoi. Nomme la chose elle-même.",
+        "field_placeholder": "La chose que tu contournes plutôt que de faire..."
+      },
+      {
+        "id": "courage_rel_3",
+        "heading": "Que te demande de protéger la peur ?",
+        "subheading": "Elle garde quelque chose. Qu'est-ce qu'elle pense être en jeu ?",
+        "field_placeholder": "De quoi la peur essaie-t-elle de te protéger..."
+      },
+      {
+        "id": "courage_rel_4",
+        "heading": "Que ferais-tu si tu n'avais pas peur ?",
+        "subheading": "Écris-le. C'est la direction.",
+        "field_placeholder": "Sans la peur, quel serait ton prochain pas..."
+      },
+      {
+        "id": "courage_rel_5",
+        "heading": "Qu'est-ce que l'évitement t'a déjà coûté ?",
+        "subheading": "Sans culpabilité. Juste honnêteté.",
+        "field_placeholder": "Qu'est-ce que l'attente t'a coûté jusqu'ici..."
+      },
+      {
+        "id": "courage_rel_6",
+        "heading": "La pire version que tu imagines.",
+        "subheading": "Écris-la. Puis remarque à quelle fréquence cela s'est déjà produit.",
+        "field_placeholder": "Décris le pire scénario que ton esprit construit..."
+      },
+      {
+        "id": "courage_rel_7",
+        "heading": "Qu'est-ce que tu sais déjà que tu dois faire ?",
+        "subheading": "Tu le sais. Nomme-le ici.",
+        "field_placeholder": "La chose que tu sais déjà, et que tu ne fais toujours pas..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "courage_br_1",
+        "heading": "Respire comme quelqu'un qui a décidé.",
+        "instruction": "Inspire lentement. Retiens brièvement. Expire longuement. Le corps suit la respiration vers la stabilité."
+      },
+      {
+        "id": "courage_br_2",
+        "heading": "La respiration avant le pas.",
+        "instruction": "Une inspiration complète. Une expiration complète. Puis bouge. Juste ça."
+      },
+      {
+        "id": "courage_br_3",
+        "heading": "Stable.",
+        "instruction": "Quatre temps à l'entrée. Quatre pour retenir. Quatre à la sortie. Répète. Le courage vit dans une respiration stable."
+      },
+      {
+        "id": "courage_br_4",
+        "heading": "Respire à travers la résistance.",
+        "instruction": "Le corps se contracte avant d'agir. Respire vers la contraction. Trois fois."
+      },
+      {
+        "id": "courage_br_5",
+        "heading": "Ancre-toi avant d'y aller.",
+        "instruction": "Sens tes pieds sur le sol. Respire une fois, pleinement. Puis fais le premier pas."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "courage_mom_1",
+        "heading": "Quelle est la seule chose que tu as évitée ?"
+      },
+      {
+        "id": "courage_mom_2",
+        "heading": "Quelle est la plus petite version du pas que tu redoutes ?"
+      },
+      {
+        "id": "courage_mom_3",
+        "heading": "À quoi ressemblerait une action imparfaite aujourd'hui ?"
+      },
+      {
+        "id": "courage_mom_4",
+        "heading": "Que protège la peur ? Qu'est-ce qu'elle croit garder ?"
+      },
+      {
+        "id": "courage_mom_5",
+        "heading": "Quel est un petit pas que tu pourrais faire aujourd'hui, même avec la peur à côté ?"
+      },
+      {
+        "id": "courage_mom_6",
+        "heading": "Que ferais-tu si tu savais que tout irait bien ?"
+      },
+      {
+        "id": "courage_mom_7",
+        "heading": "La chose que tu sais déjà que tu dois faire. Nomme-la."
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "courage_comp_1",
+        "heading": "Tu t'es déplacé avec la peur.",
+        "subheading": "Ce n'est pas l'absence de courage. C'est exactement ce que c'est."
+      },
+      {
+        "id": "courage_comp_2",
+        "heading": "Imparfait et accompli.",
+        "subheading": "Tu l'as fait. La peur était là. Et tu y es allé quand même."
+      },
+      {
+        "id": "courage_comp_3",
+        "heading": "Tu as choisi d'avancer.",
+        "subheading": "Pas parce que c'était facile. Parce que tu as décidé que ça comptait davantage."
+      },
+      {
+        "id": "courage_comp_4",
+        "heading": "Le pas a eu lieu.",
+        "subheading": "Petit ou grand. Parfait ou brouillon. Il a eu lieu. Ça compte."
+      },
+      {
+        "id": "courage_comp_5",
+        "heading": "Tu avais peur.",
+        "subheading": "Et tu l'as fait quand même. C'est quelque chose à porter avec toi."
+      },
+      {
+        "id": "courage_comp_6",
+        "heading": "Être prêt n'est jamais arrivé.",
+        "subheading": "Tu y es allé sans ça. C'est la définition de la chose."
+      },
+      {
+        "id": "courage_comp_7",
+        "heading": "Tu t'es présenté pour la chose.",
+        "subheading": "Pas pour la version où tout s'est passé parfaitement. Pour la vraie chose."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "courage_hc_1",
+      "headline": "Être prêt est une décision, pas un sentiment.",
+      "subheadline": "Tu peux décider avant que le sentiment arrive."
+    },
+    {
+      "id": "courage_hc_2",
+      "headline": "La peur est réelle, et le prochain pas l'est aussi.",
+      "subheadline": "Les deux sont vrais en même temps."
+    },
+    {
+      "id": "courage_hc_3",
+      "headline": "Attendre de se sentir prêt a son propre poids.",
+      "subheadline": "Un petit mouvement, même imparfait, est plus léger que rester immobile."
+    },
+    {
+      "id": "courage_hc_4",
+      "headline": "L'action imparfaite vaut toujours mieux que l'attente parfaite.",
+      "subheadline": "L'espace entre les deux est là où vit l'évitement."
+    },
+    {
+      "id": "courage_hc_5",
+      "headline": "Tu n'évites pas parce que tu es faible.",
+      "subheadline": "Tu évites parce que la peur a pris les décisions."
+    },
+    {
+      "id": "courage_hc_6",
+      "headline": "Le plus petit pas est encore un pas.",
+      "subheadline": "La direction compte plus que la distance."
+    },
+    {
+      "id": "courage_hc_7",
+      "headline": "Quelque chose en toi connaît déjà la direction.",
+      "subheadline": "Le prochain pas n'a pas besoin d'être la réponse complète."
+    },
+    {
+      "id": "courage_hc_8",
+      "headline": "Le courage n'est pas l'absence de peur.",
+      "subheadline": "C'est avancer avec elle. C'est ce que tu fais."
+    },
+    {
+      "id": "courage_hc_9",
+      "headline": "La chose que tu évites sait que tu es proche.",
+      "subheadline": "Tu en fais le tour depuis un moment. Aujourd'hui tu peux t'en approcher un peu."
+    },
+    {
+      "id": "courage_hc_10",
+      "headline": "Le résultat n'est pas la seule chose.",
+      "subheadline": "L'acte de choisir est aussi quelque chose."
+    },
+    {
+      "id": "courage_hc_11",
+      "headline": "La peur et le mouvement vers l'avant peuvent coexister.",
+      "subheadline": "Tu n'as pas à attendre que la peur parte."
+    },
+    {
+      "id": "courage_hc_12",
+      "headline": "Fait imparfaitement, c'est quand même fait.",
+      "subheadline": "Le perfectionnisme garde la porte fermée. L'action imparfaite l'ouvre."
+    },
+    {
+      "id": "courage_hc_13",
+      "headline": "Un pas, ce n'est pas tout.",
+      "subheadline": "C'est juste le pas. C'est tout ce qui est demandé."
+    },
+    {
+      "id": "courage_hc_14",
+      "headline": "La peur a géré l'agenda.",
+      "subheadline": "Aujourd'hui tu peux reprendre un élément de cet agenda."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "courage_act_1",
+      "content": "Écris la seule chose que tu as évitée. Juste nomme-la. Pas de plan encore.",
+      "why": "La nommer la sort de l'imagination, où elle est plus grande, pour l'amener dans la réalité."
+    },
+    {
+      "id": "courage_act_2",
+      "content": "Fais les premiers 5 % de la tâche que tu évites. Rien de plus.",
+      "why": "Commencer est la barrière. Le premier pas est toujours plus difficile que le deuxième."
+    },
+    {
+      "id": "courage_act_3",
+      "content": "Envoie le message, passe l'appel ou écris l'e-mail que tu as retardé.",
+      "why": "La communication reportée coûte plus en anxiété que le malaise d'envoyer."
+    },
+    {
+      "id": "courage_act_4",
+      "content": "Écris : 'Ce que je crains est ___. Ce que je vais faire quand même est ___.'",
+      "why": "Tenir les deux vérités simultanément, c'est ainsi que tu traverses plutôt que tu contournes."
+    },
+    {
+      "id": "courage_act_5",
+      "content": "Parle à une personne de la chose que tu évites. Juste le fait que tu l'évites.",
+      "why": "Le dire à voix haute réduit la honte qui renforce l'évitement."
+    },
+    {
+      "id": "courage_act_6",
+      "content": "Programme la chose évitée dans ton agenda aujourd'hui. Bloque le temps.",
+      "why": "L'intention sans agenda devient rarement action. Traite-la comme un rendez-vous."
+    },
+    {
+      "id": "courage_act_7",
+      "content": "Fais la chose difficile en premier. Avant de vérifier les messages, les e-mails ou les notifications.",
+      "why": "La tâche évitée grossit quand tu t'occupes de tout le reste avant."
+    },
+    {
+      "id": "courage_act_8",
+      "content": "Écris le pire résultat réaliste de faire le pas. Puis écris : 'Et je pourrais vivre avec ça.'",
+      "why": "Le pire scénario imaginé est presque toujours quelque chose avec lequel tu pourrais vivre. Le rendre concret réduit son pouvoir."
+    },
+    {
+      "id": "courage_act_9",
+      "content": "Mets un minuteur de deux minutes. Travaille sur la tâche redoutée jusqu'à ce qu'il sonne.",
+      "why": "Deux minutes suffisent presque toujours à prouver que tu peux commencer."
+    },
+    {
+      "id": "courage_act_10",
+      "content": "Demande de l'aide pour la chose que tu as essayé de gérer seul.",
+      "why": "Demander de l'aide est une forme de courage. L'isolement renforce l'évitement."
+    },
+    {
+      "id": "courage_act_11",
+      "content": "Écris trois fois où tu as fait quelque chose de difficile sans te sentir prêt avant.",
+      "why": "La preuve du courage passé est l'argument le plus solide contre la peur actuelle."
+    },
+    {
+      "id": "courage_act_12",
+      "content": "Prends la décision que tu as reportée. Pas la parfaite. La prochaine.",
+      "why": "Une décision prise, même imparfaite, coûte moins qu'une décision non prise."
+    },
+    {
+      "id": "courage_act_13",
+      "content": "Écris une phrase sur ce que tu veux. Pas ce que tu penses être réaliste. Ce que tu veux.",
+      "why": "La peur réduit souvent le désir au silence. Le nommer restaure la direction."
+    },
+    {
+      "id": "courage_act_14",
+      "content": "Fais quelque chose aujourd'hui qui demande que d'autres te voient.",
+      "why": "Être vu est souvent ce que l'évitement protège discrètement. Un petit moment de visibilité change ce qui semble possible."
+    },
+    {
+      "id": "courage_act_15",
+      "content": "Écris la première raison que la peur donne pour ne pas faire le pas. Puis demande : est-ce vraiment vrai ?",
+      "why": "Nommer l'argument de la peur et le questionner doucement change l'espace qu'il occupe."
+    },
+    {
+      "id": "courage_act_16",
+      "content": "Va à l'endroit ou ouvre la chose que tu as évitée. Juste arriver. Rien de plus encore.",
+      "why": "Arriver physiquement change l'état intérieur. La présence est son propre type de progrès."
+    },
+    {
+      "id": "courage_act_17",
+      "content": "Écris une lettre à toi-même dans un an, en supposant que tu as fait le pas.",
+      "why": "La perspective future réduit le poids que le moment présent porte."
+    },
+    {
+      "id": "courage_act_18",
+      "content": "Excuse-toi pour quelque chose que tu as évité de faire.",
+      "why": "La crainte de s'excuser est presque toujours plus durable que l'excuse elle-même."
+    },
+    {
+      "id": "courage_act_19",
+      "content": "Lève la main, la voix ou ton idée au prochain moment disponible.",
+      "why": "Les petits moments d'être vu tendent à rendre le suivant un peu plus facile."
+    },
+    {
+      "id": "courage_act_20",
+      "content": "Écris ce que tu penses vraiment. Sur la chose difficile. Ton vrai avis.",
+      "why": "Supprimer un vrai point de vue coûte de l'énergie et nourrit l'évitement."
+    },
+    {
+      "id": "courage_act_21",
+      "content": "Dis non à la chose que tu as acceptée par peur de décevoir quelqu'un.",
+      "why": "Un oui basé sur la peur n'est pas de la générosité. Un non honnête est sa propre forme de courage."
+    },
+    {
+      "id": "courage_act_22",
+      "content": "Commence le projet avant qu'il soit parfait. Écris le brouillon, soumets la version brute.",
+      "why": "Attendre le parfait, c'est généralement attendre un sentiment qui n'arrivera pas avant de commencer."
+    },
+    {
+      "id": "courage_act_23",
+      "content": "Écris sur la peur comme si c'était une voix séparée. Que dit-elle ? Puis écris ce que tu sais être vrai à côté.",
+      "why": "Donner une voix à la peur en dehors de toi crée une certaine distance. De cette distance, il est plus facile de voir ce qu'elle est vraiment."
+    },
+    {
+      "id": "courage_act_24",
+      "content": "Fais le pas que tu redoutais dans un contexte plus petit d'abord.",
+      "why": "Une version plus petite du même pas te montre ce que ça fait de le faire. Ça change comment la version plus grande apparaît."
+    },
+    {
+      "id": "courage_act_25",
+      "content": "Dis la vérité sur quelque chose que tu as adouci.",
+      "why": "Adoucir ce qui est vrai coûte quelque chose peu à peu. Un moment d'honnêteté, même petit, restaure quelque chose."
+    },
+    {
+      "id": "courage_act_26",
+      "content": "Publie, envoie ou partage la chose que tu retenais.",
+      "why": "La barrière entre fait et envoyé est souvent seulement la peur d'être vu."
+    },
+    {
+      "id": "courage_act_27",
+      "content": "Pose une limite que tu avais peur de poser.",
+      "why": "Les limites protègent ce qui compte. La peur de les poser abandonne ce qui compte."
+    },
+    {
+      "id": "courage_act_28",
+      "content": "Écris ce que tu dirais à un ami qui ferait face exactement à ce que tu vis.",
+      "why": "Le conseil que tu donnes librement aux autres est généralement ce dont tu as le plus besoin."
+    },
+    {
+      "id": "courage_act_29",
+      "content": "Fais la chose d'une façon que tu sais être imparfaite. Laisse l'imparfait être suffisant.",
+      "why": "L'imperfection n'est pas la barrière. La croyance que l'imperfection n'est pas permise l'est. Ceci enlève cette croyance."
+    },
+    {
+      "id": "courage_act_30",
+      "content": "Engage-toi à voix haute : 'Je vais faire ___ aujourd'hui, même si j'ai peur.'",
+      "why": "Le dire à voix haute change quelque chose. La voix le rend réel d'une façon que rester dans la tête ne peut pas."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "courage_ref_1",
+      "content": "De quoi as-tu le plus peur en ce moment ? Peux-tu le nommer précisément ?"
+    },
+    {
+      "id": "courage_ref_2",
+      "content": "Qu'essaierais-tu aujourd'hui si tu te donnais la permission de le faire mal ?"
+    },
+    {
+      "id": "courage_ref_3",
+      "content": "Qu'est-ce que l'évitement t'a coûté ? Silencieusement, avec le temps."
+    },
+    {
+      "id": "courage_ref_4",
+      "content": "Quand as-tu agi malgré la peur auparavant ? Que s'est-il passé ?"
+    },
+    {
+      "id": "courage_ref_5",
+      "content": "Quelle est la plus petite version du pas redouté que tu pourrais faire aujourd'hui ?"
+    },
+    {
+      "id": "courage_ref_6",
+      "content": "Que te dit ta peur qu'il va se passer si tu fais le pas ?"
+    },
+    {
+      "id": "courage_ref_7",
+      "content": "Quelle est la vraie chose que tu protèges en restant là où tu es ?"
+    },
+    {
+      "id": "courage_ref_8",
+      "content": "Que dirais-tu à quelqu'un que tu aimes qui ferait face exactement à ce que tu vis ?"
+    },
+    {
+      "id": "courage_ref_9",
+      "content": "Quelle est la différence entre l'histoire que raconte la peur et ce qui est vraiment vrai ?"
+    },
+    {
+      "id": "courage_ref_10",
+      "content": "Qu'est-ce qui serait plus lourd à porter : avoir essayé, même mal, ou être resté là où tu es ?"
+    },
+    {
+      "id": "courage_ref_11",
+      "content": "Qu'exige vraiment le fait d'être prêt ? Cette exigence est-elle réelle ?"
+    },
+    {
+      "id": "courage_ref_12",
+      "content": "Quelle partie de toi sait déjà quoi faire ?"
+    },
+    {
+      "id": "courage_ref_13",
+      "content": "Que se passerait-il si la peur s'avérait fausse ?"
+    },
+    {
+      "id": "courage_ref_14",
+      "content": "Qui as-tu vu agir malgré la peur ? Qu'est-ce que ça t'a appris ?"
+    },
+    {
+      "id": "courage_ref_15",
+      "content": "Comment a été l'attente ? Qu'est-ce que ça fait dans le corps de rester ici ?"
+    },
+    {
+      "id": "courage_ref_16",
+      "content": "À quoi ressemblerait une action imparfaite pour la chose que tu évites ?"
+    },
+    {
+      "id": "courage_ref_17",
+      "content": "De quoi la peur te protège-t-elle dont tu n'as peut-être pas besoin d'être protégé ?"
+    },
+    {
+      "id": "courage_ref_18",
+      "content": "Que commencerais-tu si tu savais qu'il était permis de commencer mal ?"
+    },
+    {
+      "id": "courage_ref_19",
+      "content": "Comment l'évitement a-t-il affecté ton corps ? Ton sommeil ? Ta concentration ?"
+    },
+    {
+      "id": "courage_ref_20",
+      "content": "Qu'est-ce qui te semble différent en toi quand tu fais un pas malgré la peur ?"
+    },
+    {
+      "id": "courage_ref_21",
+      "content": "Qu'est-ce que tu veux tellement que la peur d'y échouer est si forte ?"
+    },
+    {
+      "id": "courage_ref_22",
+      "content": "Qu'est-ce que tu as répété dans ta tête au lieu de faire ?"
+    },
+    {
+      "id": "courage_ref_23",
+      "content": "À quoi ressemblerait le mouvement vers l'avant aujourd'hui ? Pas éventuellement. Aujourd'hui."
+    },
+    {
+      "id": "courage_ref_24",
+      "content": "Que ferais-tu si personne ne regardait et que le jugement n'était pas possible ?"
+    },
+    {
+      "id": "courage_ref_25",
+      "content": "Qu'est-ce que tu sais sur la peur que ton passé ne savait pas ?"
+    },
+    {
+      "id": "courage_ref_26",
+      "content": "Quelle est la chose la plus courageuse et la plus petite que tu pourrais faire aujourd'hui ?"
+    },
+    {
+      "id": "courage_ref_27",
+      "content": "Qu'est-ce que ça signifierait sur toi si tu faisais le pas et que ça se passait mal ?"
+    },
+    {
+      "id": "courage_ref_28",
+      "content": "Qu'est-ce que ça signifierait pour toi si cette situation restait exactement comme elle est ?"
+    },
+    {
+      "id": "courage_ref_29",
+      "content": "Qu'est-ce que la peur essaie de préserver ? Est-ce que ça fonctionne ?"
+    },
+    {
+      "id": "courage_ref_30",
+      "content": "Imagine faire le pas. Comment ça se passe de l'intérieur ? Que se passe-t-il en premier ?"
+    }
+  ],
+
+  "words": [
+    { "id": "courage_w_1",  "word": "PAS",         "meaning": "Un pas avec la peur. C'est toute la pratique." },
+    { "id": "courage_w_2",  "word": "EN AVANT",    "meaning": "Pas vite. Pas loin. En avant." },
+    { "id": "courage_w_3",  "word": "HONNÊTE",     "meaning": "La peur est réelle. Nomme-la honnêtement. C'est là que ça commence." },
+    { "id": "courage_w_4",  "word": "CHOISIR",     "meaning": "Être prêt est un choix. Tu peux choisir avant de le ressentir." },
+    { "id": "courage_w_5",  "word": "AUDACIEUX",   "meaning": "Une audace tranquille. Celle qui arrive sans public." },
+    { "id": "courage_w_6",  "word": "MALGRÉ",      "meaning": "Malgré la peur. Pas après qu'elle parte." },
+    { "id": "courage_w_7",  "word": "RÉEL",        "meaning": "La peur est réelle. Le prochain pas l'est aussi. Les deux sont réels." },
+    { "id": "courage_w_8",  "word": "COMMENCER",   "meaning": "Pas finir. Pas réussir. Commencer." },
+    { "id": "courage_w_9",  "word": "BOUGER",      "meaning": "Le mouvement change l'état intérieur. Commence par le corps." },
+    { "id": "courage_w_10", "word": "CONFIANCE",   "meaning": "Fais confiance à ce que tu as fait avant. Tu as fait des choses difficiles." },
+    { "id": "courage_w_11", "word": "DÉCIDER",     "meaning": "La décision est l'acte. Prends-la." },
+    { "id": "courage_w_12", "word": "RESTER",      "meaning": "Reste avec l'inconfort un peu plus longtemps. Il s'apaise." },
+    { "id": "courage_w_13", "word": "AFFRONTER",   "meaning": "Tourne-toi vers la chose. Pas dans elle. Vers elle." },
+    { "id": "courage_w_14", "word": "RISQUE",      "meaning": "Pas l'imprudence. Le risque d'être vu en faisant quelque chose de vrai." },
+    { "id": "courage_w_15", "word": "MAINTENANT",  "meaning": "L'attente n'allait jamais produire le prêt. Maintenant est un aussi bon moment que n'importe quel autre." },
+    { "id": "courage_w_16", "word": "OUVERT",      "meaning": "Ouvert au résultat. Il ne sera peut-être pas ce que la peur a prédit." },
+    { "id": "courage_w_17", "word": "SAVOIR",      "meaning": "Quelque chose en toi connaît déjà la direction. Il essaie de te le dire." },
+    { "id": "courage_w_18", "word": "VOIX",        "meaning": "Dis ce qui est vrai. Même si la voix tremble." },
+    { "id": "courage_w_19", "word": "OSER",        "meaning": "Pas de façon grandiose. Tranquillement. Fais-le." },
+    { "id": "courage_w_20", "word": "PERSISTER",   "meaning": "Après le faux départ. Après la chute. Persiste." },
+    { "id": "courage_w_21", "word": "APPARAÎTRE",  "meaning": "Apparais pour la chose. Entièrement. Sans l'armure." },
+    { "id": "courage_w_22", "word": "PETIT",       "meaning": "Le petit courage compte aussi. Un petit acte change comment le suivant paraît." },
+    { "id": "courage_w_23", "word": "SUFFISANT",   "meaning": "Tu es suffisant pour faire le prochain pas. Juste le prochain." },
+    { "id": "courage_w_24", "word": "À TRAVERS",   "meaning": "À travers la peur, pas autour." },
+    { "id": "courage_w_25", "word": "POUSSER",     "meaning": "Pousse doucement contre la résistance. Elle cède souvent." },
+    { "id": "courage_w_26", "word": "PRÊT",        "meaning": "Être prêt, c'est ce qui arrive quand tu commences. Pas avant." },
+    { "id": "courage_w_27", "word": "PREMIER",     "meaning": "Le premier est toujours le plus difficile. Ça ne veut pas dire arrêter." },
+    { "id": "courage_w_28", "word": "DÉCLARER",    "meaning": "Déclare ce que tu veux. Dis-le à voix haute. Même doucement." },
+    { "id": "courage_w_29", "word": "VU",          "meaning": "Être vu en faisant un travail imparfait, c'est quand même être vu." },
+    { "id": "courage_w_30", "word": "PARLER",      "meaning": "Ce que tu n'as pas dit. Dis-le." },
+    { "id": "courage_w_31", "word": "VERS",        "meaning": "Pas encore là. Vers. La direction suffit." },
+    { "id": "courage_w_32", "word": "COURAGEUX",   "meaning": "Courageux n'est pas l'absence de peur. C'est la prochaine phrase." },
+    { "id": "courage_w_33", "word": "AGIR",        "meaning": "L'acte lui-même change les choses. Pas le plan pour l'acte." },
+    { "id": "courage_w_34", "word": "TENIR",       "meaning": "Tiens la peur et l'intention d'avancer en même temps." },
+    { "id": "courage_w_35", "word": "AVANCER",     "meaning": "Laisse l'action avancer. Le reste suit souvent." },
+    { "id": "courage_w_36", "word": "S'ÉLEVER",    "meaning": "Pas au-dessus. Avec. Élève-toi avec la difficulté." },
+    { "id": "courage_w_37", "word": "RÉPONDRE",    "meaning": "La seule réponse à l'évitement est le petit oui." },
+    { "id": "courage_w_38", "word": "TENTER",      "meaning": "La tentative est tout l'acte. Pas le résultat. La tentative." },
+    { "id": "courage_w_39", "word": "CLAIR",       "meaning": "Clair sur ce que tu veux. Même si le chemin ne l'est pas." },
+    { "id": "courage_w_40", "word": "DIRECT",      "meaning": "Le chemin direct est généralement plus court que le chemin de l'évitement." },
+    { "id": "courage_w_41", "word": "ENTIER",      "meaning": "Présente-toi entièrement. Pas poli. Entièrement." },
+    { "id": "courage_w_42", "word": "ANCRÉ",       "meaning": "Un courage ancré. Pas d'énergie frénétique. Tranquille et ancré." },
+    { "id": "courage_w_43", "word": "INTENTION",   "meaning": "Aie l'intention. Puis trouve la plus petite façon de commencer. L'intention est le début, pas le tout." },
+    { "id": "courage_w_44", "word": "PENCHER",     "meaning": "Penche-toi légèrement vers la difficulté. Juste un peu. Juste aujourd'hui." },
+    { "id": "courage_w_45", "word": "COMPTER",     "meaning": "La chose que tu évites compte pour toi. C'est pour ça que c'est difficile." },
+    { "id": "courage_w_46", "word": "NOMMER",      "meaning": "Nomme la peur. Nommée, elle est plus petite qu'imaginé." },
+    { "id": "courage_w_47", "word": "PLACE",       "meaning": "Mets-toi à l'endroit où la chose peut se passer." },
+    { "id": "courage_w_48", "word": "SILENCIEUX",  "meaning": "Un courage silencieux. Sans annonce. Juste l'acte." },
+    { "id": "courage_w_49", "word": "DÉBUTER",     "meaning": "Commence avant d'être prêt. C'est ainsi que ça a toujours fonctionné." },
+    { "id": "courage_w_50", "word": "VRAI",        "meaning": "Fais la chose qui est honnête. Même quand la version plus facile est tentante." },
+    { "id": "courage_w_51", "word": "DISPOSÉ",     "meaning": "Disposé à avoir peur et y aller quand même. C'est tout ce qu'il faut." },
+    { "id": "courage_w_52", "word": "OUI",         "meaning": "Un oui. À la bonne chose. Malgré la peur qui dit non." }
+  ],
+
+  "notification_pool": [
+    { "id": "courage_n_1",  "copy": "Quelque chose en toi connaît déjà la direction. Aujourd'hui est un bon jour pour écouter.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_2",  "copy": "La peur et le mouvement vers l'avant peuvent coexister.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_3",  "copy": "Être prêt est une décision, pas un sentiment.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_4",  "copy": "Un pas avec la peur. Juste un.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_5",  "copy": "Ce que tu évites attend encore.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_6",  "copy": "Le premier pas est toute la barrière.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_7",  "copy": "Imparfait et fait vaut mieux que parfait et en attente.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_8",  "copy": "La peur a pris des décisions pour toi.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_9",  "copy": "Tu as déjà fait des choses difficiles. Ça n'a pas changé.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_10", "copy": "Commence mal. C'est quand même commencer.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_11", "copy": "La chose que tu crains est plus petite quand tu commences.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_12", "copy": "À quoi ressemblerait un petit pas aujourd'hui, même avec la peur là ?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_13", "copy": "Le coût de l'évitement est aussi un coût.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_14", "copy": "Nomme la peur. Puis nomme le pas.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_15", "copy": "Deux minutes sur la tâche évitée. Juste deux.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_16", "copy": "Tu en fais le tour depuis un moment. Rapproche-toi aujourd'hui.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_17", "copy": "Courageux, c'est juste la prochaine phrase.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_18", "copy": "Pas tout d'un coup. Juste la première partie.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_19", "copy": "En avant, pas parfait.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_20", "copy": "La chose évitée devient plus lourde avec le temps.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_21", "copy": "Dis la chose que tu n'as pas dite.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_22", "copy": "Un petit oui reste un oui.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_23", "copy": "La peur n'est pas une preuve d'incapacité.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_24", "copy": "Fais-le imparfaitement. Ça compte quand même.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_25", "copy": "Tu n'évites pas parce que tu ne peux pas.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_26", "copy": "Le prochain pas est plus simple que ce que dit la peur.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "courage_n_27", "copy": "À quoi ressemblerait aujourd'hui si tu y allais quand même ?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "courage_n_28", "copy": "Le courage n'arrive pas en premier. C'est toi qui arrives.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "courage_ev_1",  "content": "Qu'as-tu fait aujourd'hui que la peur t'avait dit de ne pas faire ?" },
+    { "id": "courage_ev_2",  "content": "Qu'évites-tu encore ? Que faudrait-il pour commencer demain ?" },
+    { "id": "courage_ev_3",  "content": "Quand as-tu eu le plus peur aujourd'hui ? Qu'as-tu fait avec ça ?" },
+    { "id": "courage_ev_4",  "content": "Quelle chose imparfaite as-tu faite aujourd'hui dont tu es content ?" },
+    { "id": "courage_ev_5",  "content": "Où as-tu choisi d'avancer aujourd'hui, même un peu ?" },
+    { "id": "courage_ev_6",  "content": "Qu'as-tu dit que tu n'as presque pas dit ?" },
+    { "id": "courage_ev_7",  "content": "Comment l'évitement se ressent-il dans ton corps à la fin d'une journée ?" },
+    { "id": "courage_ev_8",  "content": "Comment s'est passée la journée ? Qu'est-ce qui serait différent demain si tu faisais un petit pas ?" },
+    { "id": "courage_ev_9",  "content": "Quelle est une petite chose que tu as faite aujourd'hui qui a demandé du courage ?" },
+    { "id": "courage_ev_10", "content": "Quelle peur s'est avérée plus petite que prévu aujourd'hui ?" },
+    { "id": "courage_ev_11", "content": "Qu'as-tu appris sur toi en essayant la chose difficile ?" },
+    { "id": "courage_ev_12", "content": "Qu'est-ce qui serait différent si tu agissais sur une petite chose demain ?" },
+    { "id": "courage_ev_13", "content": "De quoi es-tu fier aujourd'hui, même légèrement ?" },
+    { "id": "courage_ev_14", "content": "Quelle est la première chose que tu feras demain avec la peur encore là ?" }
+  ]
+
+}

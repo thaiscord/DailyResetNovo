@@ -1,0 +1,553 @@
+{
+  "theme": "Impulso",
+  "user_state": "Travado. Sabe o que fazer mas não está se movendo. Já começou antes e parou. Duvida da própria capacidade de seguir em frente. Precisa de uma pequena vitória.",
+  "core_need": "Prova de que consegue começar de novo.",
+  "emotional_tone": "Energia gentil. Para frente. Enraizado.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "momentum_arr_1",
+        "heading": "O menor passo ainda conta.",
+        "subheading": "Você não precisa voltar com tudo. Pode voltar com uma ação."
+      },
+      {
+        "id": "momentum_arr_2",
+        "heading": "Você já começou antes.",
+        "subheading": "A capacidade não foi embora. O começo está disponível de novo agora."
+      },
+      {
+        "id": "momentum_arr_3",
+        "heading": "Travado não é o mesmo que parado.",
+        "subheading": "Travado significa que você ainda quer se mover. Isso é algo."
+      },
+      {
+        "id": "momentum_arr_4",
+        "heading": "Uma ação cria a próxima.",
+        "subheading": "Você não precisa da sequência toda. Precisa apenas da primeira."
+      },
+      {
+        "id": "momentum_arr_5",
+        "heading": "O espaço entre saber e fazer.",
+        "subheading": "Você está de pé nele. Uma pequena ação pode começar a fechá-lo."
+      },
+      {
+        "id": "momentum_arr_6",
+        "heading": "Pequenas vitórias ainda são vitórias.",
+        "subheading": "O corpo não distingue pequeno de grande. Ele registra o feito."
+      },
+      {
+        "id": "momentum_arr_7",
+        "heading": "A prontidão costuma chegar com o começo.",
+        "subheading": "Algo em você geralmente se acomoda quando você já começou. Costuma ser assim."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "momentum_rel_1",
+        "heading": "O que tem te mantido travado?",
+        "subheading": "Nomeie sem julgamento. Sem culpa. Apenas clareza.",
+        "field_placeholder": "O que tem estado no caminho de avançar..."
+      },
+      {
+        "id": "momentum_rel_2",
+        "heading": "Que crença sobre você está tornando isso mais difícil?",
+        "subheading": "Escreva exatamente como ela soa. Depois olhe para o que você realmente sabe ser verdade sobre si mesmo.",
+        "field_placeholder": "A crença que você carrega sobre sua capacidade de avançar..."
+      },
+      {
+        "id": "momentum_rel_3",
+        "heading": "Pelo que você tem esperado?",
+        "subheading": "Nomeie. Às vezes, nomear revela que nunca ia chegar.",
+        "field_placeholder": "O que você espera antes de poder começar..."
+      },
+      {
+        "id": "momentum_rel_4",
+        "heading": "O que você carrega da última vez que parou?",
+        "subheading": "A vergonha de parar costuma ser mais pesada do que o trabalho em si.",
+        "field_placeholder": "Quais sentimentos sobre paradas anteriores você traz para este momento..."
+      },
+      {
+        "id": "momentum_rel_5",
+        "heading": "Qual é o menor começo possível?",
+        "subheading": "Escreva a menor ação que ainda valeria a pena.",
+        "field_placeholder": "A menor versão de começar que ainda faz as coisas andarem..."
+      },
+      {
+        "id": "momentum_rel_6",
+        "heading": "O que você já fez?",
+        "subheading": "Não o que ainda falta. O que você já fez. Escreva.",
+        "field_placeholder": "Liste o que você já completou, já tentou, já fez..."
+      },
+      {
+        "id": "momentum_rel_7",
+        "heading": "O que significa avançar para você hoje?",
+        "subheading": "Não em algum momento. Hoje. Como seria avançar agora?",
+        "field_placeholder": "Descreva como seria avançar hoje especificamente..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "momentum_br_1",
+        "heading": "Respire em direção ao movimento.",
+        "instruction": "Inspire devagar, crescendo. Expire com energia — mais longa e mais cheia do que a inspiração. O corpo se prepara."
+      },
+      {
+        "id": "momentum_br_2",
+        "heading": "A respiração antes de começar.",
+        "instruction": "Uma respiração deliberada. Inspire por quatro. Expire por quatro. Depois a primeira ação. Logo após a expiração."
+      },
+      {
+        "id": "momentum_br_3",
+        "heading": "Respiração constante para movimento constante.",
+        "instruction": "Não rápida. Uniforme e lenta. O tipo de respiração que diz: isso é sustentável."
+      },
+      {
+        "id": "momentum_br_4",
+        "heading": "Redefina com a respiração.",
+        "instruction": "Três respirações. A cada expiração, solte a última vez que parou. Você está começando agora."
+      },
+      {
+        "id": "momentum_br_5",
+        "heading": "Construa gentilmente.",
+        "instruction": "Inspire por três. Expire por três. Inspire por quatro. Expire por quatro. O movimento se constrói devagar."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "momentum_mom_1",
+        "heading": "Qual é a menor ação possível que você pode tomar agora?"
+      },
+      {
+        "id": "momentum_mom_2",
+        "heading": "Qual é a única coisa que faria você sentir que avançou hoje?"
+      },
+      {
+        "id": "momentum_mom_3",
+        "heading": "Qual é o primeiro passo — não o plano, apenas o primeiro passo?"
+      },
+      {
+        "id": "momentum_mom_4",
+        "heading": "Como seria estar pronto hoje, mesmo em uma versão pequena?"
+      },
+      {
+        "id": "momentum_mom_5",
+        "heading": "Nomeie uma ação que você tem adiado. Apenas o nome."
+      },
+      {
+        "id": "momentum_mom_6",
+        "heading": "O que você começaria se soubesse que imperfeito é aceitável?"
+      },
+      {
+        "id": "momentum_mom_7",
+        "heading": "O que tem esperado que você retorne a ele?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "momentum_comp_1",
+        "heading": "Você começou de novo.",
+        "subheading": "Essa é toda a vitória de hoje. Você começou."
+      },
+      {
+        "id": "momentum_comp_2",
+        "heading": "Algo se moveu.",
+        "subheading": "Não precisa ser longe. Se moveu. É aí que o movimento começa."
+      },
+      {
+        "id": "momentum_comp_3",
+        "heading": "Você demonstrou algo hoje.",
+        "subheading": "A capacidade de começar ainda está em você. Você acabou de mostrar isso."
+      },
+      {
+        "id": "momentum_comp_4",
+        "heading": "Pequena vitória. Vitória real.",
+        "subheading": "O tamanho não determina se vale. Vale."
+      },
+      {
+        "id": "momentum_comp_5",
+        "heading": "Você atravessou o espaço.",
+        "subheading": "Entre saber e fazer. Mesmo que um pouco. É isso que hoje foi."
+      },
+      {
+        "id": "momentum_comp_6",
+        "heading": "É assim que começa — com um passo.",
+        "subheading": "Você deu esse passo. Isso muda como o próximo parece."
+      },
+      {
+        "id": "momentum_comp_7",
+        "heading": "O corpo se lembra de como se mover.",
+        "subheading": "Você deu a ele a chance de lembrar. Isso vale alguma coisa."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "momentum_hc_1",
+      "headline": "O menor passo ainda é movimento.",
+      "subheadline": "A direção importa mais do que a distância agora."
+    },
+    {
+      "id": "momentum_hc_2",
+      "headline": "Você já começou antes.",
+      "subheadline": "A capacidade está intacta. A permissão é a única peça que falta."
+    },
+    {
+      "id": "momentum_hc_3",
+      "headline": "Travado não é o mesmo que parado.",
+      "subheadline": "Você ainda quer se mover. Essa é a evidência que você precisa."
+    },
+    {
+      "id": "momentum_hc_4",
+      "headline": "Uma ação cria a próxima.",
+      "subheadline": "O segundo passo tende a vir mais naturalmente. O primeiro abre a porta."
+    },
+    {
+      "id": "momentum_hc_5",
+      "headline": "O espaço entre saber e fazer é onde a parte difícil vive.",
+      "subheadline": "Estar aqui não é falhar. Um pequeno movimento dentro dele é suficiente."
+    },
+    {
+      "id": "momentum_hc_6",
+      "headline": "Uma pequena vitória muda o que você acredita sobre si mesmo.",
+      "subheadline": "É por isso que importa. Não pelo resultado. Pela evidência."
+    },
+    {
+      "id": "momentum_hc_7",
+      "headline": "Você não está atrasado.",
+      "subheadline": "Você está começando de onde está. É o único lugar de onde alguém começa."
+    },
+    {
+      "id": "momentum_hc_8",
+      "headline": "A vergonha de parar é mais pesada do que o trabalho.",
+      "subheadline": "Coloque a vergonha de lado primeiro. Depois comece."
+    },
+    {
+      "id": "momentum_hc_9",
+      "headline": "A sensação de estar pronto costuma vir depois de começar.",
+      "subheadline": "Algo geralmente se acomoda quando você já começou. Nem sempre de imediato. Mas vem."
+    },
+    {
+      "id": "momentum_hc_10",
+      "headline": "A última vez que você parou não determina essa vez.",
+      "subheadline": "Cada começo é seu próprio evento."
+    },
+    {
+      "id": "momentum_hc_11",
+      "headline": "Movimento em qualquer velocidade ainda é movimento.",
+      "subheadline": "Devagar conta. Imperfeito conta. Começar conta."
+    },
+    {
+      "id": "momentum_hc_12",
+      "headline": "A menor versão da tarefa é uma versão válida.",
+      "subheadline": "A menor versão ainda conta. Toda ela conta."
+    },
+    {
+      "id": "momentum_hc_13",
+      "headline": "Hoje não precisa compensar ontem.",
+      "subheadline": "Hoje só precisa ser hoje."
+    },
+    {
+      "id": "momentum_hc_14",
+      "headline": "A primeira ação carrega a maior parte do peso.",
+      "subheadline": "O que tende a vir depois parece um pouco mais leve."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "momentum_act_1",
+      "content": "Faça os primeiros dois minutos da tarefa que você tem evitado. Use um timer.",
+      "why": "Começar é a barreira. Dois minutos mostram que você consegue. Muitas vezes, você continua além dos dois."
+    },
+    {
+      "id": "momentum_act_2",
+      "content": "Escreva três coisas que você já fez essa semana. Não o que ainda falta. O que foi feito.",
+      "why": "A mente travada foca no espaço que falta. A evidência do que foi feito restaura a proporção."
+    },
+    {
+      "id": "momentum_act_3",
+      "content": "Conclua uma tarefa pequena e satisfatória agora. Mesmo que não seja a mais importante.",
+      "why": "Algo muda quando algo é terminado, mesmo algo pequeno. Deixe essa mudança te carregar."
+    },
+    {
+      "id": "momentum_act_4",
+      "content": "Envie o e-mail, faça a ligação ou escreva a mensagem que está esperando.",
+      "why": "Resolver um item de comunicação travado alivia o peso que fica em segundo plano."
+    },
+    {
+      "id": "momentum_act_5",
+      "content": "Escreva um plano para as próximas 48 horas. Três itens por dia. Apenas três.",
+      "why": "Um plano curto e realista tem mais chance de ser iniciado do que um plano completo."
+    },
+    {
+      "id": "momentum_act_6",
+      "content": "Anuncie sua intenção para uma pessoa. 'Vou fazer ___ hoje.'",
+      "why": "Dizer para alguém muda o que parece fazer — ou não fazer — isso."
+    },
+    {
+      "id": "momentum_act_7",
+      "content": "Abra o documento, aplicativo ou espaço de trabalho do projeto travado. Apenas abra.",
+      "why": "A presença física ou digital muitas vezes inicia a ação que a preparação mental não inicia."
+    },
+    {
+      "id": "momentum_act_8",
+      "content": "Configure um timer para 10 minutos. Trabalhe na tarefa até ele tocar. Depois decida se continua.",
+      "why": "Dez minutos é pequeno o suficiente para se comprometer quando a motivação está baixa."
+    },
+    {
+      "id": "momentum_act_9",
+      "content": "Organize seu espaço físico antes de começar. Limpe a mesa. Prepare o ambiente.",
+      "why": "Um espaço limpo muda como o trabalho parece antes de você começar. Algo no ambiente importa mais do que parece."
+    },
+    {
+      "id": "momentum_act_10",
+      "content": "Escreva uma frase sobre como será quando terminar. Depois comece a se mover em direção a isso.",
+      "why": "Quando você consegue ver como será o fim, o primeiro passo em direção a ele se torna possível de imaginar."
+    },
+    {
+      "id": "momentum_act_11",
+      "content": "Identifique a tarefa que, se feita, abriria várias outras. Faça essa.",
+      "why": "Algumas tarefas, quando feitas, abrem outras. Se houver uma assim na sua lista, vale a pena começar por ela."
+    },
+    {
+      "id": "momentum_act_12",
+      "content": "Remova um item da sua lista fazendo agora. O mais fácil.",
+      "why": "Terminar algo — qualquer coisa — muda como o resto da lista parece."
+    },
+    {
+      "id": "momentum_act_13",
+      "content": "Crie uma 'lista do feito' ao lado da sua lista de afazeres. Escreva tudo que você concluir.",
+      "why": "Acompanhar o que foi feito cria evidência visível de movimento que a lista de afazeres esconde."
+    },
+    {
+      "id": "momentum_act_14",
+      "content": "Trabalhe em um lugar diferente hoje. Café, biblioteca, outro cômodo.",
+      "why": "Um lugar diferente pode parecer uma versão diferente da tarefa. Às vezes essa mudança é suficiente para começar."
+    },
+    {
+      "id": "momentum_act_15",
+      "content": "Divida a próxima tarefa em cinco etapas. Faça apenas a primeira etapa hoje.",
+      "why": "Tarefas grandes travam porque a mente vê o todo. Etapas são iniciáveis."
+    },
+    {
+      "id": "momentum_act_16",
+      "content": "Defina uma recompensa para quando terminar a tarefa. Algo específico. Algo hoje.",
+      "why": "Ter algo para esperar no final torna o começo um pouco menos pesado."
+    },
+    {
+      "id": "momentum_act_17",
+      "content": "Escreva por que a tarefa importa para você. Não por que você deveria fazê-la. Por que ela realmente importa.",
+      "why": "Fazer porque realmente importa para você parece completamente diferente de fazer porque você sente que deveria. O primeiro tende a durar."
+    },
+    {
+      "id": "momentum_act_18",
+      "content": "Peça a alguém para trabalhar ao seu lado em silêncio por uma hora.",
+      "why": "Algo sobre ter outra pessoa por perto facilita o começo. A tarefa parece menos solitária."
+    },
+    {
+      "id": "momentum_act_19",
+      "content": "Coloque uma música que você associa a trabalhar bem. Deixe ela te levar.",
+      "why": "Sons familiares podem mudar como uma tarefa parece antes de você sequer começar."
+    },
+    {
+      "id": "momentum_act_20",
+      "content": "Escreva: 'A menor versão desta tarefa que ainda vale é ___.' Faça isso.",
+      "why": "A menor versão é um começo real. Não há hierarquia de quanto é suficiente para contar."
+    },
+    {
+      "id": "momentum_act_21",
+      "content": "Reveja o que você conquistou semana passada. Mesmo uma coisa. Deixe isso ser a evidência.",
+      "why": "Travado muitas vezes significa esquecer o progresso que veio antes da parada."
+    },
+    {
+      "id": "momentum_act_22",
+      "content": "Agende a primeira tarefa de amanhã essa noite. Escreva o horário exato.",
+      "why": "Quando a primeira tarefa de amanhã já está decidida, a manhã não precisa te convencer. A decisão já foi tomada."
+    },
+    {
+      "id": "momentum_act_23",
+      "content": "Escreva uma coisa que você gostaria de fazer hoje se a pressão em torno dela fosse menor. Apenas a coisa em si.",
+      "why": "Às vezes nomear o que você realmente gostaria de fazer — sem o peso da obrigação — é onde o retorno começa."
+    },
+    {
+      "id": "momentum_act_24",
+      "content": "Acompanhe hoje. Escreva cada pequena tarefa concluída, por menor que seja.",
+      "why": "A evidência de movimento, mesmo pequeno, muda a sensação interna de estar travado."
+    },
+    {
+      "id": "momentum_act_25",
+      "content": "Mova seu corpo por cinco minutos antes de começar. Caminhe, alongue ou fique de pé.",
+      "why": "O movimento físico muda algo antes mesmo de a tarefa começar."
+    },
+    {
+      "id": "momentum_act_26",
+      "content": "Identifique o que te parou da última vez. Escreva uma coisa que tornaria mais fácil desta vez.",
+      "why": "Entender a última parada é clareza protetora para este começo."
+    },
+    {
+      "id": "momentum_act_27",
+      "content": "Baixe o padrão. Permita bom o suficiente. Comece em bom o suficiente.",
+      "why": "O perfeccionismo é muitas vezes a razão oculta por trás da paralisia. Bom o suficiente abre a porta."
+    },
+    {
+      "id": "momentum_act_28",
+      "content": "Escreva uma coisa sobre você mesmo que você está pronto para dizer sim de novo. Algo pequeno.",
+      "why": "O que a paralisia custa tende a se resolver sozinho. O que importa é encontrar um caminho de volta — um pequeno sim de cada vez."
+    },
+    {
+      "id": "momentum_act_29",
+      "content": "Diga para si mesmo: 'Esse é o momento em que começo de novo.' E então comece.",
+      "why": "Nomear um momento como o ponto de virada faz dele um. A linguagem molda o que vem a seguir."
+    },
+    {
+      "id": "momentum_act_30",
+      "content": "Conte de cinco para baixo. Deixe a contagem em si ser o começo.",
+      "why": "Um pequeno ritual antes de começar pode ser toda a permissão que o momento precisa."
+    }
+  ],
+
+  "reflections": [
+    { "id": "momentum_ref_1",  "content": "O que tem te mantido travado? Você consegue nomear?" },
+    { "id": "momentum_ref_2",  "content": "Como começar parece no seu corpo? O que acontece logo antes de você se frear?" },
+    { "id": "momentum_ref_3",  "content": "Como seria uma pequena vitória hoje? O que mudaria em como o dia parece?" },
+    { "id": "momentum_ref_4",  "content": "Quando você já começou após uma longa parada? O que te colocou em movimento?" },
+    { "id": "momentum_ref_5",  "content": "O que você acredita sobre sua capacidade de seguir em frente agora? Essa crença é baseada em evidências recentes, ou em evidências mais antigas?" },
+    { "id": "momentum_ref_6",  "content": "O que seria diferente na sua vida se você avançasse hoje?" },
+    { "id": "momentum_ref_7",  "content": "Pelo que você está esperando que pode nunca chegar?" },
+    { "id": "momentum_ref_8",  "content": "Como seria a menor versão de progresso agora?" },
+    { "id": "momentum_ref_9",  "content": "Que vergonha de paradas anteriores você está carregando para essa tentativa?" },
+    { "id": "momentum_ref_10", "content": "Qual é o espaço entre o que você sabe e o que você está fazendo?" },
+    { "id": "momentum_ref_11", "content": "Como é estar pronto para você? Quando você sentiu isso?" },
+    { "id": "momentum_ref_12", "content": "O que você precisaria acreditar sobre si mesmo para começar hoje?" },
+    { "id": "momentum_ref_13", "content": "Do que a paralisia tem te protegido de sentir?" },
+    { "id": "momentum_ref_14", "content": "Qual é a razão real de isso continuar não acontecendo? Não a superficial — a que fica por baixo." },
+    { "id": "momentum_ref_15", "content": "Qual é uma ação que tornaria amanhã um pouco mais fácil do que hoje?" },
+    { "id": "momentum_ref_16", "content": "Como é bom o suficiente para esta tarefa? Você consegue mirar nisso?" },
+    { "id": "momentum_ref_17", "content": "O que você diria a alguém que estivesse travado exatamente pelo mesmo tempo que você?" },
+    { "id": "momentum_ref_18", "content": "Que evidência existe de que você consegue seguir em frente, mesmo que já tenha parado antes?" },
+    { "id": "momentum_ref_19", "content": "Como é o movimento quando você o encontra? Qual é a qualidade dessa sensação?" },
+    { "id": "momentum_ref_20", "content": "Qual tem sido o custo de esperar? Não em resultado. Em como você se sente sobre si mesmo." },
+    { "id": "momentum_ref_21", "content": "Qual é uma coisa que você poderia fazer hoje que faria você se sentir você mesmo de novo?" },
+    { "id": "momentum_ref_22", "content": "Quando você sentiu mais movimento antes, o que era diferente naquela época?" },
+    { "id": "momentum_ref_23", "content": "Qual parte da tarefa você realmente quer fazer? Comece por aí." },
+    { "id": "momentum_ref_24", "content": "O que tornaria o começo de amanhã mais fácil do que o de hoje?" },
+    { "id": "momentum_ref_25", "content": "Como é avançar? Não o destino. A sensação de se mover." },
+    { "id": "momentum_ref_26", "content": "Do que você tem mais medo de descobrir se começar?" },
+    { "id": "momentum_ref_27", "content": "Se você imaginasse dar um pequeno passo essa semana, como seria por dentro?" },
+    { "id": "momentum_ref_28", "content": "Qual é uma coisa que você terminou recentemente que não esperava terminar?" },
+    { "id": "momentum_ref_29", "content": "O que tornaria esta tarefa genuinamente valendo começar, para você especificamente?" },
+    { "id": "momentum_ref_30", "content": "Como seria começar se o resultado não importasse?" }
+  ],
+
+  "words": [
+    { "id": "momentum_w_1",  "word": "AVANÇAR",    "meaning": "Não rápido. Não longe. Avançar. Na direção certa." },
+    { "id": "momentum_w_2",  "word": "COMEÇAR",    "meaning": "A palavra que abre a porta. Não precisa ser dita em voz alta para funcionar." },
+    { "id": "momentum_w_3",  "word": "INICIAR",    "meaning": "Não terminar. Não perfeito. Iniciar." },
+    { "id": "momentum_w_4",  "word": "MOVER",      "meaning": "Movimento em qualquer direção constrói a capacidade de mais." },
+    { "id": "momentum_w_5",  "word": "PEQUENO",    "meaning": "Pequeno não é menos. Pequeno é como o movimento começa." },
+    { "id": "momentum_w_6",  "word": "AGORA",      "meaning": "Este momento é tão bom quanto qualquer outro. Aqui, se você estiver disposto." },
+    { "id": "momentum_w_7",  "word": "CONSTRUIR",  "meaning": "O movimento se constrói. Não se chega nele. Ele é construído." },
+    { "id": "momentum_w_8",  "word": "PASSO",      "meaning": "Um passo. O próximo passo aparece depois que você der este." },
+    { "id": "momentum_w_9",  "word": "FEITO",      "meaning": "Feito é algo. Perfeito muitas vezes é uma razão para esperar." },
+    { "id": "momentum_w_10", "word": "DE NOVO",    "meaning": "Você pode começar de novo. A capacidade não expira." },
+    { "id": "momentum_w_11", "word": "SÓ",         "meaning": "Uma tarefa. Um começo. Hoje." },
+    { "id": "momentum_w_12", "word": "PROVA",      "meaning": "A única prova de que você consegue começar é começar. Essa é a evidência." },
+    { "id": "momentum_w_13", "word": "ROLAR",      "meaning": "Uma vez em movimento, continuar é mais fácil do que começar." },
+    { "id": "momentum_w_14", "word": "IMPULSO",    "meaning": "Não forte. Não rápido. Um suave impulso para começar a rolar." },
+    { "id": "momentum_w_15", "word": "CARREGAR",   "meaning": "Carregue a pequena vitória para frente. Deixe ela pesar mais do que a paralisia." },
+    { "id": "momentum_w_16", "word": "APARECER",   "meaning": "Apareça. Esse é o começo de todo aparecer que virá." },
+    { "id": "momentum_w_17", "word": "AGIR",       "meaning": "Uma pequena ação pode mover algo que a reflexão sozinha nem sempre consegue alcançar." },
+    { "id": "momentum_w_18", "word": "FECHAR",     "meaning": "Feche o espaço. Entre saber e fazer. Hoje." },
+    { "id": "momentum_w_19", "word": "PRIMEIRO",   "meaning": "A primeira ação é o portão inteiro. Uma vez atravessado, o resto se abre." },
+    { "id": "momentum_w_20", "word": "VITÓRIA",    "meaning": "Pequena vitória. Vitória real. Ambas são vitórias." },
+    { "id": "momentum_w_21", "word": "SUFICIENTE", "meaning": "Suficiente para começar. Suficiente para tentar. Suficiente agora." },
+    { "id": "momentum_w_22", "word": "RETORNAR",   "meaning": "Retorne à coisa. A coisa ainda está lá. Você pode retornar." },
+    { "id": "momentum_w_23", "word": "SUBIR",      "meaning": "Saia da paralisia. Mesmo que um pouco. Mesmo hoje." },
+    { "id": "momentum_w_24", "word": "COMPROMETER","meaning": "Comprometa-se com o passo. Não com o todo. Apenas com o passo." },
+    { "id": "momentum_w_25", "word": "ABRIR",      "meaning": "Abra o documento. Abra a porta. Aberto é um começo." },
+    { "id": "momentum_w_26", "word": "TENTAR",     "meaning": "Tentar não é falhar. Tentar é a primeira forma de fazer." },
+    { "id": "momentum_w_27", "word": "COBRIR",     "meaning": "Cubra terreno. Mesmo um passo conta como movimento." },
+    { "id": "momentum_w_28", "word": "APROXIMAR",  "meaning": "Mova-se em direção à primeira resistência. Ela frequentemente cede quando você se aproxima." },
+    { "id": "momentum_w_29", "word": "ALCANÇAR",   "meaning": "Alcance a próxima coisa. Mesmo antes de ter certeza." },
+    { "id": "momentum_w_30", "word": "FAÍSCA",     "meaning": "A primeira ação é a faísca. Tudo se segue a partir dela." },
+    { "id": "momentum_w_31", "word": "CONFIAR",    "meaning": "Confie que começar vai parecer melhor do que não começar." },
+    { "id": "momentum_w_32", "word": "PRÓXIMO",    "meaning": "Qual é a próxima coisa? Não todas as coisas. Apenas a próxima." },
+    { "id": "momentum_w_33", "word": "MILÍMETRO",  "meaning": "Avance um milímetro. Milímetros viram metros. Metros viram distância." },
+    { "id": "momentum_w_34", "word": "LANÇAR",     "meaning": "Comece o esforço. Fazê-lo começar é o todo do primeiro ato." },
+    { "id": "momentum_w_35", "word": "CONSTANTE",  "meaning": "Ritmo constante é seu próprio tipo de avanço. Lento e sustentável." },
+    { "id": "momentum_w_36", "word": "DECIDIR",    "meaning": "Decida começar. Essa decisão é a maior parte do trabalho." },
+    { "id": "momentum_w_37", "word": "SIM",        "meaning": "O sim que encerra a paralisia. Diga uma vez." },
+    { "id": "momentum_w_38", "word": "INICIAR",    "meaning": "Iniciar é aceitar que ação imperfeita ainda é ação." },
+    { "id": "momentum_w_39", "word": "DIRETO",     "meaning": "Ação direta muitas vezes leva menos do que dar voltas em torno dela." },
+    { "id": "momentum_w_40", "word": "CRIAR",      "meaning": "Crie a evidência. Uma ação é suficiente para começar." },
+    { "id": "momentum_w_41", "word": "FLUIR",      "meaning": "O fluxo segue o começar. Não o contrário." },
+    { "id": "momentum_w_42", "word": "ENRAIZAR",   "meaning": "Movimento enraizado. Não frenético. Sustentável e enraizado." },
+    { "id": "momentum_w_43", "word": "MANTER",     "meaning": "Mantenha a intenção. Depois aja sobre ela." },
+    { "id": "momentum_w_44", "word": "IMPACTO",    "meaning": "Mesmo pequeno impacto é impacto. Não espere por um grande." },
+    { "id": "momentum_w_45", "word": "CONTINUAR",  "meaning": "Continue quando puder, depois de ter começado. Mesmo devagar." },
+    { "id": "momentum_w_46", "word": "LEVANTAR",   "meaning": "Levante o primeiro peso. O segundo é mais leve." },
+    { "id": "momentum_w_47", "word": "IMPORTAR",   "meaning": "O pequeno começo importa. Mais do que parece." },
+    { "id": "momentum_w_48", "word": "UM",         "meaning": "Uma ação. Uma tarefa. Um começo. Um." },
+    { "id": "momentum_w_49", "word": "COLOCAR",    "meaning": "Coloque-se à frente do trabalho. Depois comece." },
+    { "id": "momentum_w_50", "word": "RÁPIDO",     "meaning": "Comece. Depois encontre seu ritmo. Devagar ainda é começar." },
+    { "id": "momentum_w_51", "word": "REAL",       "meaning": "Movimento real. Mesmo pequeno. Real." },
+    { "id": "momentum_w_52", "word": "TRABALHO",   "meaning": "O trabalho se torna real com o começo. Planejar também pode ser parte de chegar lá." }
+  ],
+
+  "notification_pool": [
+    { "id": "momentum_n_1",  "copy": "O menor passo ainda conta.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_2",  "copy": "Você já começou antes. A capacidade está intacta.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_3",  "copy": "Dois minutos na tarefa travada. Apenas dois.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_4",  "copy": "Travado não é parado. Você ainda quer se mover.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_5",  "copy": "Uma ação cria a próxima. Comece de algum lugar.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_6",  "copy": "A prontidão vem depois de começar. Não antes.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_7",  "copy": "Uma pequena vitória hoje. Esse é o objetivo todo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_8",  "copy": "Abra a coisa. Apenas abra. Esse é o passo um.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_9",  "copy": "Você não está atrasado. Está começando de onde está.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_10", "copy": "Qual é a menor versão de começar?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_11", "copy": "Feito é algo. Perfeito muitas vezes é uma razão para esperar.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_12", "copy": "Nomeie uma coisa que você pode terminar hoje.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_13", "copy": "A última parada não determina este começo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_14", "copy": "Movimento imperfeito ainda te faz avançar.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_15", "copy": "Dê a si mesmo um momento. Depois tente.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_16", "copy": "Qual pequena coisa hoje pode te contar algo verdadeiro sobre o que você é capaz?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_17", "copy": "Hoje não precisa compensar ontem.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_18", "copy": "Movimento em qualquer velocidade ainda conta.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_19", "copy": "Configure um timer de 10 minutos. Trabalhe até ele tocar.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_20", "copy": "A vergonha de parar não é a verdade.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_21", "copy": "Uma pequena coisa feita muda a sensação.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_22", "copy": "Você sabe a direção. Um pequeno movimento por aí.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_23", "copy": "Bom o suficiente para começar é bom o suficiente.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_24", "copy": "Para frente, não perfeito. Esse é o objetivo de hoje.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_25", "copy": "O que faria você se sentir você mesmo de novo hoje?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_26", "copy": "O primeiro passo muda algo. Ele está lá quando você estiver pronto.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_27", "copy": "Dizer para alguém pode ajudar a tornar real.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_28", "copy": "Esse é o momento em que você começa de novo.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "momentum_ev_1",  "content": "O que você fez avançar hoje, mesmo que um pouco?" },
+    { "id": "momentum_ev_2",  "content": "Qual pequena vitória aconteceu hoje que você pode estar subestimando?" },
+    { "id": "momentum_ev_3",  "content": "O que atrapalhou começar hoje? Foi externo ou interno?" },
+    { "id": "momentum_ev_4",  "content": "O que tornaria o começo de amanhã mais fácil do que o de hoje?" },
+    { "id": "momentum_ev_5",  "content": "Você aprendeu algo hoje sobre sua capacidade de começar?" },
+    { "id": "momentum_ev_6",  "content": "Como seria o próximo pequeno passo amanhã?" },
+    { "id": "momentum_ev_7",  "content": "Onde o movimento pareceu possível hoje, mesmo que brevemente?" },
+    { "id": "momentum_ev_8",  "content": "Qual é a razão real de a paralisia continuar?" },
+    { "id": "momentum_ev_9",  "content": "Quando você sentiu mais movimento antes, como foi essa sensação?" },
+    { "id": "momentum_ev_10", "content": "O que você completou hoje que merece reconhecimento?" },
+    { "id": "momentum_ev_11", "content": "O que você começaria amanhã se começar fosse fácil?" },
+    { "id": "momentum_ev_12", "content": "Do que a paralisia tem te protegido de enfrentar?" },
+    { "id": "momentum_ev_13", "content": "Qual é uma coisa que você está feliz de ter feito hoje?" },
+    { "id": "momentum_ev_14", "content": "Qual é uma pequena coisa que você pode tentar amanhã?" }
+  ]
+
+}

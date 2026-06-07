@@ -1,0 +1,553 @@
+{
+  "theme": "Aufbruch",
+  "user_state": "Stillstand. Weiß, was zu tun ist, aber bewegt sich nicht. Hat schon früher angefangen und aufgehört. Zweifelt an der eigenen Fähigkeit, durchzuhalten. Braucht einen kleinen Erfolg.",
+  "core_need": "Den Beweis, dass er wieder anfangen kann.",
+  "emotional_tone": "Sanfte Energie. Vorwärts. Geerdet.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "momentum_arr_1",
+        "heading": "Der kleinste Schritt zählt trotzdem.",
+        "subheading": "Du musst nicht mit voller Kraft zurückkehren. Eine einzige Handlung reicht."
+      },
+      {
+        "id": "momentum_arr_2",
+        "heading": "Du hast schon früher angefangen.",
+        "subheading": "Die Fähigkeit ist nicht weg. Das Anfangen ist jetzt wieder möglich."
+      },
+      {
+        "id": "momentum_arr_3",
+        "heading": "Blockiert ist nicht dasselbe wie aufgehört.",
+        "subheading": "Blockiert sein bedeutet, dass du dich noch bewegen willst. Das ist etwas."
+      },
+      {
+        "id": "momentum_arr_4",
+        "heading": "Eine Handlung schafft die nächste.",
+        "subheading": "Du brauchst nicht die ganze Abfolge. Du brauchst nur die erste."
+      },
+      {
+        "id": "momentum_arr_5",
+        "heading": "Der Raum zwischen Wissen und Tun.",
+        "subheading": "Du stehst darin. Eine kleine Handlung kann beginnen, ihn zu schließen."
+      },
+      {
+        "id": "momentum_arr_6",
+        "heading": "Kleine Erfolge sind trotzdem Erfolge.",
+        "subheading": "Der Körper unterscheidet nicht zwischen klein und groß. Er registriert das Getane."
+      },
+      {
+        "id": "momentum_arr_7",
+        "heading": "Die Bereitschaft kommt oft mit dem Anfangen.",
+        "subheading": "Etwas in dir beruhigt sich meist, sobald du begonnen hast. So läuft es meistens."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "momentum_rel_1",
+        "heading": "Was hat dich blockiert gehalten?",
+        "subheading": "Nenn es ohne Urteil. Kein Vorwurf. Nur Klarheit.",
+        "field_placeholder": "Was dem Vorankommen im Weg stand..."
+      },
+      {
+        "id": "momentum_rel_2",
+        "heading": "Welche Überzeugung über dich selbst macht das schwerer?",
+        "subheading": "Schreib sie genau so, wie sie klingt. Dann schau, was du wirklich weißt, das wahr ist über dich.",
+        "field_placeholder": "Die Überzeugung, die du über deine Fähigkeit, voranzukommen, trägst..."
+      },
+      {
+        "id": "momentum_rel_3",
+        "heading": "Worauf hast du gewartet?",
+        "subheading": "Nenn es. Manchmal zeigt das Benennen, dass es nie kommen würde.",
+        "field_placeholder": "Worauf du wartest, bevor du anfangen kannst..."
+      },
+      {
+        "id": "momentum_rel_4",
+        "heading": "Was trägst du von dem letzten Mal, als du aufgehört hast?",
+        "subheading": "Die Scham des Aufhörens ist oft schwerer als die Arbeit selbst.",
+        "field_placeholder": "Welche Gefühle über frühere Stopps du in diesen Moment trägst..."
+      },
+      {
+        "id": "momentum_rel_5",
+        "heading": "Was ist der kleinstmögliche Anfang?",
+        "subheading": "Schreib die winzigste Handlung, die trotzdem zählen würde.",
+        "field_placeholder": "Die kleinste Version des Anfangens, die trotzdem etwas bewegt..."
+      },
+      {
+        "id": "momentum_rel_6",
+        "heading": "Was hast du bereits getan?",
+        "subheading": "Nicht was noch fehlt. Was du bereits getan hast. Schreib es.",
+        "field_placeholder": "Führe auf, was du bereits abgeschlossen, bereits versucht, bereits getan hast..."
+      },
+      {
+        "id": "momentum_rel_7",
+        "heading": "Was bedeutet Vorankommen heute für dich?",
+        "subheading": "Nicht irgendwann. Heute. Wie würde Vorankommen gerade aussehen?",
+        "field_placeholder": "Beschreibe, wie Vorankommen heute konkret aussehen würde..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "momentum_br_1",
+        "heading": "Atme in Richtung Bewegung.",
+        "instruction": "Einatmen langsam, aufbauend. Ausatmen mit Energie — länger und voller als das Einatmen. Der Körper bereitet sich vor."
+      },
+      {
+        "id": "momentum_br_2",
+        "heading": "Der Atemzug vor dem Anfangen.",
+        "instruction": "Ein bewusstes Atmen. Einatmen für vier. Ausatmen für vier. Dann die erste Handlung. Direkt nach dem Ausatmen."
+      },
+      {
+        "id": "momentum_br_3",
+        "heading": "Gleichmäßiges Atmen für gleichmäßige Bewegung.",
+        "instruction": "Nicht schnell. Gleichmäßig und langsam. Die Art des Atmens, die sagt: das ist nachhaltig."
+      },
+      {
+        "id": "momentum_br_4",
+        "heading": "Setze dich mit dem Atem neu.",
+        "instruction": "Drei Atemzüge. Mit jedem Ausatmen, lass das letzte Mal los, als du aufgehört hast. Du fängst jetzt an."
+      },
+      {
+        "id": "momentum_br_5",
+        "heading": "Baue sanft auf.",
+        "instruction": "Einatmen für drei. Ausatmen für drei. Einatmen für vier. Ausatmen für vier. Die Bewegung baut sich langsam auf."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "momentum_mom_1",
+        "heading": "Was ist die kleinstmögliche Handlung, die du gerade tun kannst?"
+      },
+      {
+        "id": "momentum_mom_2",
+        "heading": "Was eine Ding würde dich fühlen lassen, dass du heute vorangekommen bist?"
+      },
+      {
+        "id": "momentum_mom_3",
+        "heading": "Was ist der allererste Schritt — nicht der Plan, nur der erste Schritt?"
+      },
+      {
+        "id": "momentum_mom_4",
+        "heading": "Wie würde sich 'fertig' heute anfühlen, auch in einer kleinen Version?"
+      },
+      {
+        "id": "momentum_mom_5",
+        "heading": "Nenn eine Handlung, die du aufgeschoben hast. Nur den Namen."
+      },
+      {
+        "id": "momentum_mom_6",
+        "heading": "Was würdest du beginnen, wenn du wüsstest, dass Unvollkommenheit in Ordnung ist?"
+      },
+      {
+        "id": "momentum_mom_7",
+        "heading": "Was wartet darauf, dass du zu ihm zurückkehrst?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "momentum_comp_1",
+        "heading": "Du hast wieder angefangen.",
+        "subheading": "Das ist der ganze Sieg heute. Du hast angefangen."
+      },
+      {
+        "id": "momentum_comp_2",
+        "heading": "Etwas hat sich bewegt.",
+        "subheading": "Es muss nicht weit sein. Es hat sich bewegt. Dort beginnt die Bewegung."
+      },
+      {
+        "id": "momentum_comp_3",
+        "heading": "Du hast heute etwas gezeigt.",
+        "subheading": "Die Fähigkeit anzufangen ist noch in dir. Du hast sie gerade gezeigt."
+      },
+      {
+        "id": "momentum_comp_4",
+        "heading": "Kleiner Sieg. Echter Sieg.",
+        "subheading": "Die Größe bestimmt nicht, ob es zählt. Es zählt."
+      },
+      {
+        "id": "momentum_comp_5",
+        "heading": "Du hast den Raum überbrückt.",
+        "subheading": "Zwischen Wissen und Tun. Auch wenn nur ein bisschen. Das war heute."
+      },
+      {
+        "id": "momentum_comp_6",
+        "heading": "So beginnt es — mit einem Schritt.",
+        "subheading": "Du hast ihn gemacht. Das verändert, wie der nächste aussieht."
+      },
+      {
+        "id": "momentum_comp_7",
+        "heading": "Der Körper erinnert sich, wie man sich bewegt.",
+        "subheading": "Du hast ihm die Chance gegeben, sich zu erinnern. Das ist etwas wert."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "momentum_hc_1",
+      "headline": "Der kleinste Schritt ist trotzdem Bewegung.",
+      "subheadline": "Die Richtung zählt gerade mehr als die Entfernung."
+    },
+    {
+      "id": "momentum_hc_2",
+      "headline": "Du hast schon früher angefangen.",
+      "subheadline": "Die Fähigkeit ist intakt. Die Erlaubnis ist das einzige fehlende Stück."
+    },
+    {
+      "id": "momentum_hc_3",
+      "headline": "Blockiert ist nicht dasselbe wie aufgehört.",
+      "subheadline": "Du willst dich noch bewegen. Das ist der Beweis, den du brauchst."
+    },
+    {
+      "id": "momentum_hc_4",
+      "headline": "Eine Handlung schafft die nächste.",
+      "subheadline": "Der zweite Schritt kommt tendenziell natürlicher. Der erste öffnet die Tür."
+    },
+    {
+      "id": "momentum_hc_5",
+      "headline": "Der Raum zwischen Wissen und Tun — da lebt das Schwierige.",
+      "subheadline": "Dort zu sein ist kein Versagen. Eine kleine Bewegung von innen heraus reicht."
+    },
+    {
+      "id": "momentum_hc_6",
+      "headline": "Ein kleiner Sieg verändert, was du über dich selbst glaubst.",
+      "subheadline": "Deshalb zählt er. Nicht für das Ergebnis. Für den Beweis."
+    },
+    {
+      "id": "momentum_hc_7",
+      "headline": "Du bist nicht im Rückstand.",
+      "subheadline": "Du fängst dort an, wo du bist. Das ist der einzige Ort, von dem jemand anfängt."
+    },
+    {
+      "id": "momentum_hc_8",
+      "headline": "Die Scham des Aufhörens ist schwerer als die Arbeit.",
+      "subheadline": "Leg die Scham zuerst ab. Dann fang an."
+    },
+    {
+      "id": "momentum_hc_9",
+      "headline": "Das Gefühl der Bereitschaft kommt oft nach dem Start.",
+      "subheadline": "Etwas beruhigt sich meist, sobald du begonnen hast. Nicht immer sofort. Aber es kommt."
+    },
+    {
+      "id": "momentum_hc_10",
+      "headline": "Das letzte Mal, als du aufgehört hast, bestimmt nicht dieses Mal.",
+      "subheadline": "Jeder Anfang ist sein eigenes Ereignis."
+    },
+    {
+      "id": "momentum_hc_11",
+      "headline": "Bewegung in jeder Geschwindigkeit ist trotzdem Bewegung.",
+      "subheadline": "Langsam zählt. Unvollkommen zählt. Anfangen zählt."
+    },
+    {
+      "id": "momentum_hc_12",
+      "headline": "Die kleinste Version der Aufgabe ist eine gültige Version.",
+      "subheadline": "Die kleinste Version zählt trotzdem. Die ganze."
+    },
+    {
+      "id": "momentum_hc_13",
+      "headline": "Heute muss nicht für gestern kompensieren.",
+      "subheadline": "Heute muss nur heute sein."
+    },
+    {
+      "id": "momentum_hc_14",
+      "headline": "Die erste Handlung trägt den größten Teil des Gewichts.",
+      "subheadline": "Was danach kommt, fühlt sich tendenziell ein wenig leichter an."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "momentum_act_1",
+      "content": "Mach die ersten zwei Minuten der Aufgabe, die du vermieden hast. Stell einen Timer.",
+      "why": "Anfangen ist die Barriere. Zwei Minuten zeigen, dass du es kannst. Oft machst du danach weiter."
+    },
+    {
+      "id": "momentum_act_2",
+      "content": "Schreib drei Dinge auf, die du diese Woche bereits erledigt hast. Nicht was noch aussteht. Was getan ist.",
+      "why": "Der blockierte Geist konzentriert sich auf die Lücke. Der Beweis des Erledigten stellt die Proportion wieder her."
+    },
+    {
+      "id": "momentum_act_3",
+      "content": "Erledige jetzt eine kleine, befriedigende Aufgabe. Auch wenn es nicht die wichtige ist.",
+      "why": "Etwas verändert sich, wenn etwas fertig ist, auch etwas Kleines. Lass diese Veränderung dich tragen."
+    },
+    {
+      "id": "momentum_act_4",
+      "content": "Schick die E-Mail, mach den Anruf oder schreib die Nachricht, die gewartet hat.",
+      "why": "Eine blockierte Kommunikation zu lösen, befreit das Gewicht, das im Hintergrund bleibt."
+    },
+    {
+      "id": "momentum_act_5",
+      "content": "Schreib einen Plan für die nächsten 48 Stunden. Drei Dinge pro Tag. Nur drei.",
+      "why": "Ein kurzer, realistischer Plan hat mehr Chancen gestartet zu werden als ein vollständiger."
+    },
+    {
+      "id": "momentum_act_6",
+      "content": "Kündige deine Absicht einer Person an. 'Ich werde heute ___ machen.'",
+      "why": "Es jemandem zu sagen, verändert, wie es sich anfühlt, es zu tun — oder nicht zu tun."
+    },
+    {
+      "id": "momentum_act_7",
+      "content": "Öffne das Dokument, die Anwendung oder den Arbeitsbereich des blockierten Projekts. Öffne es einfach.",
+      "why": "Physische oder digitale Präsenz initiiert oft die Handlung, die mentale Vorbereitung nicht initiiert."
+    },
+    {
+      "id": "momentum_act_8",
+      "content": "Stell einen 10-Minuten-Timer. Arbeite an der Aufgabe, bis er klingelt. Entscheide dann, ob du weitermachst.",
+      "why": "Zehn Minuten ist klein genug, um sich zu verpflichten, wenn die Motivation gering ist."
+    },
+    {
+      "id": "momentum_act_9",
+      "content": "Ordne deinen physischen Raum, bevor du anfängst. Räum den Schreibtisch frei. Bereite die Umgebung vor.",
+      "why": "Ein aufgeräumter Raum verändert, wie sich die Arbeit anfühlt, bevor du angefangen hast. Etwas in der Umgebung zählt mehr, als es aussieht."
+    },
+    {
+      "id": "momentum_act_10",
+      "content": "Schreib einen Satz darüber, wie es aussieht, wenn du fertig bist. Dann fang an, dich darauf zuzubewegen.",
+      "why": "Wenn du sehen kannst, wie das Ende aussieht, wird der erste Schritt darauf zu möglich vorzustellen."
+    },
+    {
+      "id": "momentum_act_11",
+      "content": "Identifiziere die eine Aufgabe, die, wenn erledigt, mehrere andere öffnen würde. Tu diese.",
+      "why": "Manche Aufgaben, wenn sie erledigt sind, öffnen andere. Wenn es eine solche auf deiner Liste gibt, lohnt es sich, dort anzufangen."
+    },
+    {
+      "id": "momentum_act_12",
+      "content": "Entferne ein Element von deiner Liste, indem du es jetzt erledigst. Das einfachste.",
+      "why": "Etwas zu beenden — irgendetwas — verändert, wie sich der Rest der Liste anfühlt."
+    },
+    {
+      "id": "momentum_act_13",
+      "content": "Erstelle eine 'Erledigtliste' neben deiner Aufgabenliste. Schreib alles auf, was du abschließt.",
+      "why": "Das Verfolgen des Erledigten schafft sichtbaren Beweis der Bewegung, den die Aufgabenliste versteckt."
+    },
+    {
+      "id": "momentum_act_14",
+      "content": "Arbeite heute an einem anderen Ort. Café, Bibliothek, anderes Zimmer.",
+      "why": "Ein anderer Ort kann sich wie eine andere Version der Aufgabe anfühlen. Manchmal reicht diese Veränderung zum Anfangen."
+    },
+    {
+      "id": "momentum_act_15",
+      "content": "Teile die nächste Aufgabe in fünf Schritte auf. Tu heute nur den ersten Schritt.",
+      "why": "Große Aufgaben blockieren, weil der Geist das Ganze sieht. Schritte sind startbar."
+    },
+    {
+      "id": "momentum_act_16",
+      "content": "Lege eine Belohnung fest, wenn du die Aufgabe beendet hast. Etwas Konkretes. Etwas heute.",
+      "why": "Etwas zu haben, worauf man sich am Ende freut, macht den Anfang ein wenig weniger schwer."
+    },
+    {
+      "id": "momentum_act_17",
+      "content": "Schreib, warum die Aufgabe für dich zählt. Nicht warum du sie tun solltest. Warum sie wirklich zählt.",
+      "why": "Es zu tun, weil es wirklich für dich zählt, fühlt sich vollkommen anders an als es zu tun, weil du das Gefühl hast, du solltest. Das Erste neigt dazu zu bleiben."
+    },
+    {
+      "id": "momentum_act_18",
+      "content": "Bitte jemanden, eine Stunde lang schweigend neben dir zu arbeiten.",
+      "why": "Etwas daran, eine andere Person in der Nähe zu haben, macht das Anfangen leichter. Die Aufgabe fühlt sich weniger isoliert an."
+    },
+    {
+      "id": "momentum_act_19",
+      "content": "Leg Musik auf, die du mit gutem Arbeiten verbindest. Lass dich davon tragen.",
+      "why": "Vertraute Klänge können verändern, wie sich eine Aufgabe anfühlt, bevor du überhaupt angefangen hast."
+    },
+    {
+      "id": "momentum_act_20",
+      "content": "Schreib: 'Die kleinste Version dieser Aufgabe, die noch zählt, ist ___.' Tu das.",
+      "why": "Die kleinste Version ist ein echter Anfang. Es gibt keine Hierarchie, wie viel genug ist, um zu zählen."
+    },
+    {
+      "id": "momentum_act_21",
+      "content": "Überprüfe, was du letzte Woche erreicht hast. Auch nur eine Sache. Lass das die Beweise sein.",
+      "why": "Blockiert zu sein bedeutet oft, den Fortschritt zu vergessen, der dem Stopp vorausging."
+    },
+    {
+      "id": "momentum_act_22",
+      "content": "Plane die erste Aufgabe von morgen heute Abend. Schreib die genaue Uhrzeit.",
+      "why": "Wenn die erste Aufgabe von morgen bereits entschieden ist, muss der Morgen dich nicht überzeugen. Die Entscheidung ist bereits getroffen."
+    },
+    {
+      "id": "momentum_act_23",
+      "content": "Schreib eine Sache, die du heute gern tun würdest, wenn der Druck darum kleiner wäre. Nur die Sache selbst.",
+      "why": "Manchmal ist das Benennen, was du wirklich gern tun würdest — ohne das Gewicht der Verpflichtung — der Ort, wo die Rückkehr beginnt."
+    },
+    {
+      "id": "momentum_act_24",
+      "content": "Verfolge heute. Schreib jede kleine erledigte Aufgabe auf, egal wie klein.",
+      "why": "Der Beweis der Bewegung, auch kleiner, verändert das innere Gefühl des Blockiertseins."
+    },
+    {
+      "id": "momentum_act_25",
+      "content": "Bewege deinen Körper fünf Minuten, bevor du anfängst. Geh, strecke dich oder steh auf.",
+      "why": "Körperliche Bewegung verändert etwas, bevor die Aufgabe überhaupt beginnt."
+    },
+    {
+      "id": "momentum_act_26",
+      "content": "Identifiziere, was dich letztes Mal aufgehalten hat. Schreib eine Sache, die es diesmal leichter machen würde.",
+      "why": "Den letzten Stopp zu verstehen ist schützende Klarheit für diesen Anfang."
+    },
+    {
+      "id": "momentum_act_27",
+      "content": "Senk den Maßstab. Erlaube gut genug. Fang bei gut genug an.",
+      "why": "Perfektionismus ist oft der verborgene Grund hinter dem Blockiertsein. Gut genug öffnet die Tür."
+    },
+    {
+      "id": "momentum_act_28",
+      "content": "Schreib eine Sache über dich selbst, der du wieder bereit bist, ja zu sagen. Etwas Kleines.",
+      "why": "Was das Blockiertsein kostet, löst sich tendenziell von selbst. Was zählt, ist einen Weg zurück zu finden — ein kleines Ja nach dem anderen."
+    },
+    {
+      "id": "momentum_act_29",
+      "content": "Sag dir selbst: 'Das ist der Moment, in dem ich wieder anfange.' Und dann fang an.",
+      "why": "Einen Moment als Wendepunkt zu benennen, macht ihn zu einem. Sprache gestaltet, was als nächstes kommt."
+    },
+    {
+      "id": "momentum_act_30",
+      "content": "Zähle von fünf herunter. Lass den Countdown selbst der Anfang sein.",
+      "why": "Ein kleines Ritual vor dem Anfangen kann die ganze Erlaubnis sein, die der Moment braucht."
+    }
+  ],
+
+  "reflections": [
+    { "id": "momentum_ref_1",  "content": "Was hat dich blockiert gehalten? Kannst du es benennen?" },
+    { "id": "momentum_ref_2",  "content": "Wie fühlt sich Anfangen in deinem Körper an? Was passiert kurz bevor du dich aufhältst?" },
+    { "id": "momentum_ref_3",  "content": "Wie würde sich ein kleiner Erfolg heute anfühlen? Was würde sich daran ändern, wie sich der Tag anfühlt?" },
+    { "id": "momentum_ref_4",  "content": "Wann hast du nach einer langen Blockade schon mal angefangen? Was hat dich in Bewegung gebracht?" },
+    { "id": "momentum_ref_5",  "content": "Was glaubst du über deine Fähigkeit, durchzuhalten, gerade jetzt? Ist dieser Glaube auf aktuellen oder älteren Beweisen aufgebaut?" },
+    { "id": "momentum_ref_6",  "content": "Was wäre anders in deinem Leben, wenn du heute vorankommst?" },
+    { "id": "momentum_ref_7",  "content": "Worauf wartest du, das vielleicht nicht kommen wird?" },
+    { "id": "momentum_ref_8",  "content": "Wie würde die kleinste Version von Fortschritt gerade aussehen?" },
+    { "id": "momentum_ref_9",  "content": "Welche Scham von früheren Stopps trägst du in diesen Versuch?" },
+    { "id": "momentum_ref_10", "content": "Was ist der Raum zwischen dem, was du weißt, und dem, was du tust?" },
+    { "id": "momentum_ref_11", "content": "Wie fühlt sich Bereitschaft für dich an? Wann hast du sie gespürt?" },
+    { "id": "momentum_ref_12", "content": "Was müsstest du über dich glauben, um heute anzufangen?" },
+    { "id": "momentum_ref_13", "content": "Wovor hat dich das Blockiertsein geschützt zu fühlen?" },
+    { "id": "momentum_ref_14", "content": "Was ist der echte Grund, warum das immer wieder nicht passiert? Nicht der oberflächliche — der darunter." },
+    { "id": "momentum_ref_15", "content": "Was ist eine Handlung, die morgen ein wenig leichter machen würde als heute?" },
+    { "id": "momentum_ref_16", "content": "Wie sieht gut genug für diese Aufgabe aus? Kannst du stattdessen darauf zielen?" },
+    { "id": "momentum_ref_17", "content": "Was würdest du jemandem sagen, der genauso lange blockiert ist wie du?" },
+    { "id": "momentum_ref_18", "content": "Welche Beweise gibt es, dass du durchhalten kannst, auch wenn du früher aufgehört hast?" },
+    { "id": "momentum_ref_19", "content": "Wie fühlt sich Bewegung an, wenn du sie findest? Was ist die Qualität dieses Gefühls?" },
+    { "id": "momentum_ref_20", "content": "Was war der Preis des Wartens? Nicht im Ergebnis. Darin, wie du dich über dich selbst fühlst." },
+    { "id": "momentum_ref_21", "content": "Was ist eine Sache, die du heute tun könntest, die dich wieder wie du selbst fühlen lassen würde?" },
+    { "id": "momentum_ref_22", "content": "Als du früher mehr Bewegung gespürt hast, was war damals anders?" },
+    { "id": "momentum_ref_23", "content": "Welchen Teil der Aufgabe willst du wirklich tun? Fang dort an." },
+    { "id": "momentum_ref_24", "content": "Was würde den Anfang von morgen leichter machen als den von heute?" },
+    { "id": "momentum_ref_25", "content": "Wie fühlt sich Vorankommen an? Nicht das Ziel. Das Gefühl des Bewegens." },
+    { "id": "momentum_ref_26", "content": "Was hast du am meisten Angst zu entdecken, wenn du anfängst?" },
+    { "id": "momentum_ref_27", "content": "Wenn du dir vorstellst, diese Woche einen kleinen Schritt zu machen, wie würde sich das von innen anfühlen?" },
+    { "id": "momentum_ref_28", "content": "Was ist eine Sache, die du kürzlich abgeschlossen hast, die du nicht erwartet hast abzuschließen?" },
+    { "id": "momentum_ref_29", "content": "Was würde diese Aufgabe wirklich wert machen anzufangen, für dich speziell?" },
+    { "id": "momentum_ref_30", "content": "Wie würde sich Anfangen anfühlen, wenn das Ergebnis keine Rolle spielt?" }
+  ],
+
+  "words": [
+    { "id": "momentum_w_1",  "word": "VORWÄRTS",       "meaning": "Nicht schnell. Nicht weit. Vorwärts. In die richtige Richtung." },
+    { "id": "momentum_w_2",  "word": "BEGINNEN",       "meaning": "Das Wort, das die Tür öffnet. Es muss nicht laut gesagt werden, um zu wirken." },
+    { "id": "momentum_w_3",  "word": "STARTEN",        "meaning": "Nicht beenden. Nicht perfekt. Starten." },
+    { "id": "momentum_w_4",  "word": "BEWEGEN",        "meaning": "Bewegung in jede Richtung baut die Kapazität für mehr auf." },
+    { "id": "momentum_w_5",  "word": "KLEIN",          "meaning": "Klein ist nicht weniger. Klein ist, wie Bewegung beginnt." },
+    { "id": "momentum_w_6",  "word": "JETZT",          "meaning": "Dieser Moment ist so gut wie jeder andere. Hier, wenn du bereit bist." },
+    { "id": "momentum_w_7",  "word": "AUFBAUEN",       "meaning": "Bewegung baut sich auf. Man kommt nicht dazu an. Man baut sie." },
+    { "id": "momentum_w_8",  "word": "SCHRITT",        "meaning": "Ein Schritt. Der nächste erscheint, nachdem du diesen gemacht hast." },
+    { "id": "momentum_w_9",  "word": "GETAN",          "meaning": "Getan ist etwas. Perfekt ist oft ein Grund zu warten." },
+    { "id": "momentum_w_10", "word": "WIEDER",         "meaning": "Du kannst wieder anfangen. Die Fähigkeit läuft nicht ab." },
+    { "id": "momentum_w_11", "word": "EINFACH",        "meaning": "Eine Aufgabe. Ein Anfang. Heute." },
+    { "id": "momentum_w_12", "word": "BEWEIS",         "meaning": "Der einzige Beweis, dass du anfangen kannst, ist anzufangen. Das ist die Evidenz." },
+    { "id": "momentum_w_13", "word": "ROLLEN",         "meaning": "Einmal in Bewegung, ist Weitermachen leichter als Anfangen." },
+    { "id": "momentum_w_14", "word": "ANTRIEB",        "meaning": "Nicht stark. Nicht schnell. Ein sanfter Antrieb, um ins Rollen zu kommen." },
+    { "id": "momentum_w_15", "word": "TRAGEN",         "meaning": "Trag den kleinen Sieg mit dir. Lass ihn mehr wiegen als das Blockiertsein." },
+    { "id": "momentum_w_16", "word": "AUFTAUCHEN",     "meaning": "Tauche auf. Das ist der Anfang aller weiteren Male." },
+    { "id": "momentum_w_17", "word": "HANDELN",        "meaning": "Eine kleine Handlung kann etwas bewegen, das Reflexion allein nicht immer erreicht." },
+    { "id": "momentum_w_18", "word": "ÜBERBRÜCKEN",    "meaning": "Überbrücke den Raum. Zwischen Wissen und Tun. Heute." },
+    { "id": "momentum_w_19", "word": "ERSTER",         "meaning": "Die erste Handlung ist das ganze Tor. Einmal hindurch öffnet sich der Rest." },
+    { "id": "momentum_w_20", "word": "SIEG",           "meaning": "Kleiner Sieg. Echter Sieg. Beide sind Siege." },
+    { "id": "momentum_w_21", "word": "GENUG",          "meaning": "Genug, um anzufangen. Genug, um zu versuchen. Genug jetzt." },
+    { "id": "momentum_w_22", "word": "ZURÜCKKEHREN",   "meaning": "Kehr zur Sache zurück. Die Sache ist noch da. Du kannst zurückkehren." },
+    { "id": "momentum_w_23", "word": "ERHEBEN",        "meaning": "Erhebe dich aus dem Stillstand. Auch nur ein wenig. Auch heute." },
+    { "id": "momentum_w_24", "word": "VERPFLICHTEN",   "meaning": "Verpflichte dich zum Schritt. Nicht zum Ganzen. Nur zum Schritt." },
+    { "id": "momentum_w_25", "word": "ÖFFNEN",         "meaning": "Öffne das Dokument. Öffne die Tür. Offen ist ein Anfang." },
+    { "id": "momentum_w_26", "word": "VERSUCHEN",      "meaning": "Versuchen ist kein Scheitern. Versuchen ist die erste Form des Tuns." },
+    { "id": "momentum_w_27", "word": "ABDECKEN",       "meaning": "Decke Gelände ab. Selbst ein Schritt zählt als Bewegung." },
+    { "id": "momentum_w_28", "word": "NÄHERN",         "meaning": "Bewege dich auf den ersten Widerstand zu. Er lässt oft nach, wenn du nah kommst." },
+    { "id": "momentum_w_29", "word": "ERREICHEN",      "meaning": "Erreiche die nächste Sache. Auch bevor du sicher bist." },
+    { "id": "momentum_w_30", "word": "FUNKE",          "meaning": "Die erste Handlung ist der Funke. Alles folgt daraus." },
+    { "id": "momentum_w_31", "word": "VERTRAUEN",      "meaning": "Vertraue darauf, dass Anfangen sich besser anfühlen wird als Nicht-Anfangen." },
+    { "id": "momentum_w_32", "word": "NÄCHSTES",       "meaning": "Was ist das Nächste? Nicht alle Dinge. Nur das Nächste." },
+    { "id": "momentum_w_33", "word": "MILLIMETER",     "meaning": "Rück einen Millimeter vor. Millimeter werden Meter. Meter werden Distanz." },
+    { "id": "momentum_w_34", "word": "UNTERNEHMEN",    "meaning": "Unternimm die Anstrengung. Sie in Gang zu bringen ist der ganze erste Akt." },
+    { "id": "momentum_w_35", "word": "BESTÄNDIG",      "meaning": "Beständiges Tempo ist sein eigenes Vorwärtskommen. Langsam und nachhaltig." },
+    { "id": "momentum_w_36", "word": "ENTSCHEIDEN",    "meaning": "Entscheide anzufangen. Diese Entscheidung ist der größte Teil der Arbeit." },
+    { "id": "momentum_w_37", "word": "JA",             "meaning": "Das Ja, das den Stillstand beendet. Sag es einmal." },
+    { "id": "momentum_w_38", "word": "INITIIEREN",     "meaning": "Initiieren bedeutet zu akzeptieren, dass unvollkommene Handlung trotzdem Handlung ist." },
+    { "id": "momentum_w_39", "word": "DIREKT",         "meaning": "Direkte Handlung braucht oft weniger als drum herumgehen." },
+    { "id": "momentum_w_40", "word": "ERSCHAFFEN",     "meaning": "Erschaffe den Beweis. Eine Handlung reicht, um ihn zu beginnen." },
+    { "id": "momentum_w_41", "word": "FLIESSEN",       "meaning": "Fluss folgt dem Anfangen. Nicht umgekehrt." },
+    { "id": "momentum_w_42", "word": "ERDEN",          "meaning": "Geerdetete Bewegung. Nicht gehetzt. Nachhaltig und geerdet." },
+    { "id": "momentum_w_43", "word": "FESTHALTEN",     "meaning": "Halte die Absicht fest. Dann handle danach." },
+    { "id": "momentum_w_44", "word": "WIRKUNG",        "meaning": "Auch kleine Wirkung ist Wirkung. Warte nicht auf die große." },
+    { "id": "momentum_w_45", "word": "WEITERMACHEN",   "meaning": "Mach weiter, wenn du kannst, nachdem du angefangen hast. Auch langsam." },
+    { "id": "momentum_w_46", "word": "HEBEN",          "meaning": "Heb das erste Gewicht. Das zweite ist leichter." },
+    { "id": "momentum_w_47", "word": "BEDEUTEN",       "meaning": "Der kleine Anfang bedeutet etwas. Mehr als es aussieht." },
+    { "id": "momentum_w_48", "word": "EINS",           "meaning": "Eine Handlung. Eine Aufgabe. Ein Anfang. Eins." },
+    { "id": "momentum_w_49", "word": "POSITIONIEREN",  "meaning": "Positioniere dich vor der Arbeit. Dann fang an." },
+    { "id": "momentum_w_50", "word": "LOSLEGEN",       "meaning": "Leg los. Dann finde deinen Rhythmus. Langsam ist trotzdem anfangen." },
+    { "id": "momentum_w_51", "word": "ECHT",           "meaning": "Echte Bewegung. Auch klein. Echt." },
+    { "id": "momentum_w_52", "word": "ARBEIT",         "meaning": "Die Arbeit wird durch Anfangen real. Planen kann auch Teil des Ankommens sein." }
+  ],
+
+  "notification_pool": [
+    { "id": "momentum_n_1",  "copy": "Der kleinste Schritt zählt trotzdem.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_2",  "copy": "Du hast schon früher angefangen. Die Fähigkeit ist intakt.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_3",  "copy": "Zwei Minuten an der blockierten Aufgabe. Nur zwei.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_4",  "copy": "Blockiert ist nicht aufgehört. Du willst dich noch bewegen.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_5",  "copy": "Eine Handlung schafft die nächste. Fang irgendwo an.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_6",  "copy": "Die Bereitschaft kommt nach dem Anfangen. Nicht davor.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_7",  "copy": "Ein kleiner Erfolg heute. Das ist das ganze Ziel.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_8",  "copy": "Öffne die Sache. Öffne sie einfach. Das ist Schritt eins.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_9",  "copy": "Du bist nicht im Rückstand. Du fängst von hier aus an.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_10", "copy": "Was ist die kleinste Version von Anfangen?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_11", "copy": "Getan ist etwas. Perfekt ist oft ein Grund zu warten.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_12", "copy": "Nenn eine Sache, die du heute beenden kannst.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_13", "copy": "Der letzte Stopp bestimmt nicht diesen Anfang.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_14", "copy": "Unvollkommene Bewegung bringt dich trotzdem voran.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_15", "copy": "Gib dir einen Moment. Dann versuch es.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_16", "copy": "Was könnte dir eine kleine Sache heute Wahres über das sagen, was du kannst?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_17", "copy": "Heute muss nicht für gestern kompensieren.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_18", "copy": "Bewegung in jeder Geschwindigkeit zählt noch.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_19", "copy": "Stell einen 10-Minuten-Timer. Arbeite, bis er klingelt.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_20", "copy": "Die Scham des Aufhörens ist nicht die Wahrheit.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "momentum_n_21", "copy": "Eine kleine getane Sache verändert das Gefühl.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_22", "copy": "Du kennst die Richtung. Eine kleine Bewegung dahin.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_23", "copy": "Gut genug zum Anfangen ist gut genug.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_24", "copy": "Vorwärts, nicht perfekt. Das ist das Ziel heute.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_25", "copy": "Was würde dich heute wieder wie du selbst fühlen lassen?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "momentum_n_26", "copy": "Der erste Schritt verändert etwas. Er ist da, wenn du bereit bist.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_27", "copy": "Es jemandem zu sagen, kann helfen, es real werden zu lassen.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "momentum_n_28", "copy": "Das ist der Moment, in dem du wieder anfängst.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "momentum_ev_1",  "content": "Was hast du heute voranbewegt, auch nur ein bisschen?" },
+    { "id": "momentum_ev_2",  "content": "Welcher kleine Erfolg ist heute passiert, den du vielleicht unterschätzt?" },
+    { "id": "momentum_ev_3",  "content": "Was stand heute dem Anfangen im Weg? War es äußerlich oder innerlich?" },
+    { "id": "momentum_ev_4",  "content": "Was würde den Anfang von morgen leichter machen als den von heute?" },
+    { "id": "momentum_ev_5",  "content": "Hast du heute etwas über deine Fähigkeit zu beginnen gelernt?" },
+    { "id": "momentum_ev_6",  "content": "Wie würde der nächste kleine Schritt morgen aussehen?" },
+    { "id": "momentum_ev_7",  "content": "Wo fühlte sich Bewegung heute möglich an, auch nur kurz?" },
+    { "id": "momentum_ev_8",  "content": "Was ist der echte Grund, warum die Blockade weitergeht?" },
+    { "id": "momentum_ev_9",  "content": "Als du früher mehr Bewegung gespürt hast, wie hat sich das angefühlt?" },
+    { "id": "momentum_ev_10", "content": "Was hast du heute abgeschlossen, das Anerkennung verdient?" },
+    { "id": "momentum_ev_11", "content": "Was würdest du morgen anfangen, wenn Anfangen leicht wäre?" },
+    { "id": "momentum_ev_12", "content": "Wovor hat dich das Blockiertsein geschützt, sich zu stellen?" },
+    { "id": "momentum_ev_13", "content": "Was ist eine Sache, die du heute getan zu haben froh bist?" },
+    { "id": "momentum_ev_14", "content": "Was ist eine kleine Sache, die du morgen versuchen könntest?" }
+  ]
+
+}

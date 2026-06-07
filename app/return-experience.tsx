@@ -3,7 +3,7 @@
 // System 5 from the retention spec.
 // Tone: no guilt, no catching up, no shame. Just welcome.
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import {
   View, Text, StyleSheet, TouchableOpacity,
   Animated, Easing, Dimensions, StatusBar,
@@ -12,6 +12,12 @@ import { useRouter, useLocalSearchParams } from 'expo-router';
 import * as Haptics from 'expo-haptics';
 import { Colors, Typography, Spacing, Radii } from '../theme';
 import { useLanguage } from '../hooks/useLanguage';
+import { getItem, StorageKeys } from '../hooks/useStorage';
+import {
+  shouldShowMantraOnReturn,
+  recordMantraReturnShown,
+  mantraReturnVariant,
+} from '../utils/mantraEcho';
 
 const { width } = Dimensions.get('window');
 
@@ -30,8 +36,11 @@ export default function ReturnExperienceScreen() {
   const extra = daysMissed >= 30 ? t('return.30plus.extra') : undefined;
   const button = t('return.cta');
 
-  const fadeAnim  = useRef(new Animated.Value(0)).current;
-  const slideAnim = useRef(new Animated.Value(24)).current;
+  const [mantraText, setMantraText] = useState<string | null>(null);
+
+  const fadeAnim      = useRef(new Animated.Value(0)).current;
+  const slideAnim     = useRef(new Animated.Value(24)).current;
+  const mantraFadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -46,6 +55,21 @@ export default function ReturnExperienceScreen() {
       }),
     ]).start();
   }, []);
+
+  useEffect(() => {
+    shouldShowMantraOnReturn(daysMissed).then(async (show) => {
+      if (!show) return;
+      const mantra = await getItem<string | null>(StorageKeys.PERSONAL_MANTRA, null);
+      if (!mantra) return;
+      const variant = mantraReturnVariant(daysMissed);
+      setMantraText(t(`mantra.return.v${variant}` as any, { mantra }));
+      await recordMantraReturnShown();
+      Animated.timing(mantraFadeAnim, {
+        toValue: 1, duration: 600, delay: 900,
+        easing: Easing.out(Easing.cubic), useNativeDriver: true,
+      }).start();
+    });
+  }, [daysMissed]);
 
   const handleContinue = () => {
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
@@ -70,6 +94,13 @@ export default function ReturnExperienceScreen() {
 
         {extra && (
           <Text style={styles.extra}>{extra}</Text>
+        )}
+
+        {mantraText && (
+          <Animated.View style={[returnMantraStyles.container, { opacity: mantraFadeAnim }]}>
+            <View style={returnMantraStyles.divider} />
+            <Text style={returnMantraStyles.text}>{mantraText}</Text>
+          </Animated.View>
         )}
 
         <TouchableOpacity
@@ -140,5 +171,27 @@ const styles = StyleSheet.create({
     fontWeight: Typography.weights.semibold,
     color: Colors.white,
     letterSpacing: 0.2,
+  },
+});
+
+const returnMantraStyles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+    gap: Spacing.lg,
+    paddingHorizontal: Spacing.sm,
+  },
+  divider: {
+    width: 28,
+    height: 1,
+    backgroundColor: Colors.border,
+    opacity: 0.6,
+  },
+  text: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textMuted,
+    textAlign: 'center',
+    lineHeight: 24,
+    fontStyle: 'italic',
+    letterSpacing: 0.1,
   },
 });

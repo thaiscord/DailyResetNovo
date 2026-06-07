@@ -1,0 +1,553 @@
+{
+  "theme": "Clarity",
+  "user_state": "Confus. L'esprit brumeux. Incapable de voir le prochain pas. Trop d'options ou aucune direction claire. Fatigue décisionnelle. Se sent perdu à l'intérieur de sa propre vie.",
+  "core_need": "Simplicité. Une chose claire.",
+  "emotional_tone": "Clair. Calme. Éclairant.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "clarity_arr_1",
+        "heading": "Le brouillard est réel.",
+        "subheading": "Il n'est pas permanent. C'est l'état qui précède la clarté."
+      },
+      {
+        "id": "clarity_arr_2",
+        "heading": "Tu n'as pas besoin de tout voir.",
+        "subheading": "Tu as besoin de voir la prochaine chose. Juste la prochaine."
+      },
+      {
+        "id": "clarity_arr_3",
+        "heading": "Penser davantage n'a pas apporté de réponse.",
+        "subheading": "La clarté vient de s'arrêter, pas de forcer."
+      },
+      {
+        "id": "clarity_arr_4",
+        "heading": "Le simple est la direction.",
+        "subheading": "Pas simple parce que c'est facile. Simple parce que tout le reste a déjà été essayé."
+      },
+      {
+        "id": "clarity_arr_5",
+        "heading": "Tu n'es pas perdu.",
+        "subheading": "Tu es entre deux moments de clarté. C'est un endroit réel. Tu y as déjà été."
+      },
+      {
+        "id": "clarity_arr_6",
+        "heading": "La confusion est une information.",
+        "subheading": "Elle te dit quelque chose sur ce qui n'est pas encore résolu. C'est utile."
+      },
+      {
+        "id": "clarity_arr_7",
+        "heading": "Une seule chose claire.",
+        "subheading": "C'est tout ce dont tu as besoin maintenant. Pas un plan. Une chose claire."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "clarity_rel_1",
+        "heading": "Sur quoi es-tu confus ?",
+        "subheading": "Écris-le sans essayer de résoudre. Décris seulement le brouillard.",
+        "field_placeholder": "Décris la confusion aussi clairement que tu peux, sans chercher la réponse..."
+      },
+      {
+        "id": "clarity_rel_2",
+        "heading": "Quelles sont toutes les options que tu portes ?",
+        "subheading": "Fais-en la liste. En dehors de la tête, elles prennent moins de place.",
+        "field_placeholder": "Toutes les options, décisions ou directions qui se disputent ton esprit maintenant..."
+      },
+      {
+        "id": "clarity_rel_3",
+        "heading": "Qu'est-ce que tu sais déjà ?",
+        "subheading": "Pas ce dont tu n'es pas sûr. Ce que tu sais avec certitude.",
+        "field_placeholder": "Ce qui est déjà clair, même au milieu du brouillard..."
+      },
+      {
+        "id": "clarity_rel_4",
+        "heading": "À quoi penses-tu trop ?",
+        "subheading": "Nomme ce que tu n'as pas cessé de tourner en rond depuis trop longtemps.",
+        "field_placeholder": "La décision ou situation à laquelle tu es le plus souvent revenu sans résolution..."
+      },
+      {
+        "id": "clarity_rel_5",
+        "heading": "Comment le brouillard se ressent-il dans ton corps ?",
+        "subheading": "La confusion n'est pas seulement mentale. Où la ressens-tu ?",
+        "field_placeholder": "Où dans ton corps vit la confusion ou l'incertitude..."
+      },
+      {
+        "id": "clarity_rel_6",
+        "heading": "Qu'est-ce qui aiderait le plus maintenant ?",
+        "subheading": "Pas la réponse complète. Seulement ce qui aiderait le plus, maintenant.",
+        "field_placeholder": "Si une chose pouvait changer, laquelle serait-ce..."
+      },
+      {
+        "id": "clarity_rel_7",
+        "heading": "Qu'aimerais-tu que quelqu'un te dise ?",
+        "subheading": "Écris-le. C'est souvent ce que tu sais déjà.",
+        "field_placeholder": "Quelle réponse cherches-tu que tu as peut-être déjà..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "clarity_br_1",
+        "heading": "Une respiration pour se dégager.",
+        "instruction": "Inspire par le nez. Longue expiration par la bouche. Imagine expirer le brouillard. Trois fois."
+      },
+      {
+        "id": "clarity_br_2",
+        "heading": "Ralentis la pensée.",
+        "instruction": "Inspire sur quatre temps. Retiens sur deux. Expire sur six. Répète. L'esprit ralentit quand le corps ralentit."
+      },
+      {
+        "id": "clarity_br_3",
+        "heading": "Laisse la respiration repartir à zéro.",
+        "instruction": "Ferme les yeux. Respire naturellement. Concentre-toi seulement sur la sensation de respirer. Rien d'autre. Une minute."
+      },
+      {
+        "id": "clarity_br_4",
+        "heading": "Vide l'esprit avec l'expiration.",
+        "instruction": "Inspire doucement. Expire complètement. En expirant, laisse les pensées se libérer avec le souffle. Quatre cycles."
+      },
+      {
+        "id": "clarity_br_5",
+        "heading": "Arrive ici d'abord.",
+        "instruction": "Avant d'essayer de voir clairement, arrive ici complètement. Trois respirations lentes. Entièrement dans cet instant."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "clarity_mom_1",
+        "heading": "Quelle est la seule chose qui doit devenir claire aujourd'hui ?"
+      },
+      {
+        "id": "clarity_mom_2",
+        "heading": "Que sais-tu vraiment, même si tu ne peux pas voir l'ensemble ?"
+      },
+      {
+        "id": "clarity_mom_3",
+        "heading": "Quelle est la version la plus simple du prochain pas ?"
+      },
+      {
+        "id": "clarity_mom_4",
+        "heading": "Que ferais-tu si tu faisais confiance à ce que tu sais déjà ?"
+      },
+      {
+        "id": "clarity_mom_5",
+        "heading": "Que peux-tu simplifier maintenant, en ce moment ?"
+      },
+      {
+        "id": "clarity_mom_6",
+        "heading": "Quelle décision attend la clarté depuis le plus longtemps ?"
+      },
+      {
+        "id": "clarity_mom_7",
+        "heading": "Quelle est la plus petite chose claire que tu peux voir d'où tu te trouves ?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "clarity_comp_1",
+        "heading": "Quelque chose s'est éclairci.",
+        "subheading": "Peut-être pas tout. Quelque chose. C'est ainsi que la clarté arrive."
+      },
+      {
+        "id": "clarity_comp_2",
+        "heading": "Tu t'es arrêté et le brouillard a bougé.",
+        "subheading": "Penser davantage n'était pas la réponse. C'était ça."
+      },
+      {
+        "id": "clarity_comp_3",
+        "heading": "Une chose claire.",
+        "subheading": "Tu l'as trouvée. Ou tu t'en rapproches. Les deux sont des progrès."
+      },
+      {
+        "id": "clarity_comp_4",
+        "heading": "Le brouillard est plus mince maintenant.",
+        "subheading": "Il n'a pas disparu. Juste assez de visibilité pour faire le prochain pas."
+      },
+      {
+        "id": "clarity_comp_5",
+        "heading": "Tu as simplifié.",
+        "subheading": "C'est toute la pratique. C'est suffisant."
+      },
+      {
+        "id": "clarity_comp_6",
+        "heading": "Tu es resté avec l'inconfort de ne pas savoir.",
+        "subheading": "Ça demande plus que les gens ne le réalisent. Quelque chose se déplace souvent après être resté assis avec ça."
+      },
+      {
+        "id": "clarity_comp_7",
+        "heading": "Assez clair pour avancer.",
+        "subheading": "C'est tout ce que la clarté a besoin d'être. Pas de certitude. Assez clair."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "clarity_hc_1",
+      "headline": "Penser davantage n'a pas fonctionné.",
+      "subheadline": "La clarté vient de s'arrêter, pas de forcer."
+    },
+    {
+      "id": "clarity_hc_2",
+      "headline": "Tu n'as pas besoin de tout voir.",
+      "subheadline": "Seulement le prochain pas. C'est suffisant pour commencer."
+    },
+    {
+      "id": "clarity_hc_3",
+      "headline": "Le simple est ce qui reste après avoir enlevé tout le superflu.",
+      "subheadline": "C'est généralement plus proche que ça ne le semble maintenant."
+    },
+    {
+      "id": "clarity_hc_4",
+      "headline": "Le brouillard n'est pas permanent.",
+      "subheadline": "Chaque fois que tu as été ici, quelque chose a fini par s'éclaircir."
+    },
+    {
+      "id": "clarity_hc_5",
+      "headline": "La fatigue décisionnelle est réelle.",
+      "subheadline": "L'esprit a besoin de moins de portes ouvertes aujourd'hui. Une ou deux, c'est suffisant."
+    },
+    {
+      "id": "clarity_hc_6",
+      "headline": "Tu sais déjà plus que le brouillard ne le suggère.",
+      "subheadline": "Que sais-tu avec certitude maintenant ?"
+    },
+    {
+      "id": "clarity_hc_7",
+      "headline": "Une chose claire suffit pour commencer.",
+      "subheadline": "Tu n'as pas besoin de toute la carte. Juste le prochain tournant."
+    },
+    {
+      "id": "clarity_hc_8",
+      "headline": "La confusion est une information.",
+      "subheadline": "Elle te dit que quelque chose n'est pas encore résolu. C'est utile."
+    },
+    {
+      "id": "clarity_hc_9",
+      "headline": "La réponse est probablement plus proche de la surface qu'il n'y paraît.",
+      "subheadline": "Les questions plus claires tendent à révéler des réponses plus simples."
+    },
+    {
+      "id": "clarity_hc_10",
+      "headline": "Tu n'es pas perdu.",
+      "subheadline": "Tu es entre deux moments clairs. C'est un endroit réel et temporaire."
+    },
+    {
+      "id": "clarity_hc_11",
+      "headline": "Écris-le. En dehors de la tête, ça devient plus petit.",
+      "subheadline": "Le brouillard à l'intérieur est plus dense que le brouillard sur le papier."
+    },
+    {
+      "id": "clarity_hc_12",
+      "headline": "Arrête d'essayer de tout voir.",
+      "subheadline": "Vois les prochains mètres. Commence par là."
+    },
+    {
+      "id": "clarity_hc_13",
+      "headline": "Que ferais-tu si tu savais déjà la réponse ?",
+      "subheadline": "Cette question révèle parfois que tu la sais."
+    },
+    {
+      "id": "clarity_hc_14",
+      "headline": "La clarté n'est pas la certitude.",
+      "subheadline": "Il suffit de voir le prochain pas. C'est tout ce qui est nécessaire."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "clarity_act_1",
+      "content": "Écris tout ce que tu essaies de comprendre maintenant. Tout.",
+      "why": "L'esprit confus porte trop de choses en même temps. Les écrire sépare les fils."
+    },
+    {
+      "id": "clarity_act_2",
+      "content": "Barre tout ce qui ne nécessite pas de décision aujourd'hui sur ta liste.",
+      "why": "La fatigue décisionnelle est alimentée par le volume. Réduire la liste active restaure la clarté."
+    },
+    {
+      "id": "clarity_act_3",
+      "content": "Demande-toi : 'Que sais-je déjà sur ceci ?' Écris la réponse.",
+      "why": "Le brouillard obscurcit souvent ce que tu sais déjà. Faire remonter le connu libère de l'espace."
+    },
+    {
+      "id": "clarity_act_4",
+      "content": "Simplifie la question. Écris-la en dix mots ou moins.",
+      "why": "Quand la question est floue, la réponse reste cachée. Les questions courtes sont plus précises."
+    },
+    {
+      "id": "clarity_act_5",
+      "content": "Écris deux options pour la décision sur laquelle tu es bloqué. Entoure celle vers laquelle ton instinct penche.",
+      "why": "Deux options rendent le choix visible. L'instinct se manifeste souvent quand le chemin est aussi clair."
+    },
+    {
+      "id": "clarity_act_6",
+      "content": "Éloigne-toi du problème pendant 20 minutes. Fais quelque chose de physique.",
+      "why": "L'esprit trouve souvent ce qu'il cherchait seulement après que tu as arrêté de chercher."
+    },
+    {
+      "id": "clarity_act_7",
+      "content": "Écris une liste de ce qui compte vraiment pour toi. Puis regarde la décision depuis là.",
+      "why": "La plupart de la confusion se dissout quand tu te rappelles ce qui compte vraiment."
+    },
+    {
+      "id": "clarity_act_8",
+      "content": "Demande à quelqu'un de confiance : 'Que ferais-tu à ma place ?' Écoute sans te défendre.",
+      "why": "Une perspective extérieure voit souvent ce que la proximité obscurcit."
+    },
+    {
+      "id": "clarity_act_9",
+      "content": "Écris : 'Je suis confus à propos de ___ parce que ___.' Remplis les deux blancs.",
+      "why": "Nommer la source de la confusion en dissout souvent une partie."
+    },
+    {
+      "id": "clarity_act_10",
+      "content": "Réduis ta liste active à trois éléments. Seulement trois.",
+      "why": "La surcharge grandit avec la liste. Trois choses, c'est assez pour tenir à la fois."
+    },
+    {
+      "id": "clarity_act_11",
+      "content": "Dors avec la décision sur laquelle tu es bloqué. Note de l'y revenir demain.",
+      "why": "Le sommeil est le moment où le cerveau consolide les informations et résout souvent ce que l'éveil ne peut pas."
+    },
+    {
+      "id": "clarity_act_12",
+      "content": "Écris la décision que tu évites le plus de prendre. Puis écris ce dont tu as peur.",
+      "why": "La peur est souvent ce qui crée le brouillard. Nommer la peur, c'est le début de la clarté."
+    },
+    {
+      "id": "clarity_act_13",
+      "content": "Coupe tous les stimuli pendant 30 minutes. Sans podcasts, musique ni contenu.",
+      "why": "Les stimuli constants empêchent l'esprit de traiter ce qu'il a déjà."
+    },
+    {
+      "id": "clarity_act_14",
+      "content": "Dessine un diagramme simple du problème. Des boîtes et des flèches. Sans mots.",
+      "why": "Le voir comme une forme plutôt qu'en mots change la façon dont l'esprit tient le problème."
+    },
+    {
+      "id": "clarity_act_15",
+      "content": "Écris ta réponse instinctive à la question sur laquelle tu réfléchis trop. Seulement la première pensée.",
+      "why": "La première réponse est souvent la bonne avant que la peur et l'analyse ne la compliquent."
+    },
+    {
+      "id": "clarity_act_16",
+      "content": "Écris ce que tu dirais à un ami confus exactement par la même chose.",
+      "why": "Les conseils aux autres sont souvent plus sages que les conseils à soi-même. Utilise ça."
+    },
+    {
+      "id": "clarity_act_17",
+      "content": "Réduis tes engagements de cette semaine d'un. Écris maintenant pour reporter ou décliner.",
+      "why": "Le brouillard mental se lève souvent quand une chose est retirée de ton assiette."
+    },
+    {
+      "id": "clarity_act_18",
+      "content": "Écris ce que tu n'as pas besoin de décider maintenant. Mets-le de côté. Ce qui reste est plus petit.",
+      "why": "L'esprit porte plus qu'il n'en a besoin. Nommer ce qu'on peut poser crée de la place pour ce qui compte."
+    },
+    {
+      "id": "clarity_act_19",
+      "content": "Dis à voix haute : 'Je n'ai pas besoin de tout savoir. J'ai juste besoin de savoir cette seule chose.'",
+      "why": "Le dire à voix haute rend la permission réelle. La voix confirme ce que l'esprit n'a pas encore accepté."
+    },
+    {
+      "id": "clarity_act_20",
+      "content": "Donne-toi une échéance pour la décision bloquée. Même une inventée.",
+      "why": "Les décisions ouvertes restent ouvertes. Une échéance donne à l'esprit la permission d'arriver quelque part."
+    },
+    {
+      "id": "clarity_act_21",
+      "content": "Écris une liste de pour et contre pour la décision. Puis ignore-la et observe ta réaction instinctive.",
+      "why": "Les listes de pour et contre clarifient souvent en te montrant de quel côté tu espérais atterrir."
+    },
+    {
+      "id": "clarity_act_22",
+      "content": "Marche dehors sans écouteurs. Laisse l'esprit vagabonder sans direction.",
+      "why": "Quelque chose se relâche souvent quand le corps bouge et que l'esprit n'a aucune tâche."
+    },
+    {
+      "id": "clarity_act_23",
+      "content": "Imagine vivre avec chaque option un moment. Comment chacune se ressent-elle à l'intérieur du corps ?",
+      "why": "Le corps répond souvent aux futurs imaginés avant que l'esprit n'ait décidé. Cette réponse est une information."
+    },
+    {
+      "id": "clarity_act_24",
+      "content": "Identifie une chose que tu sais avec certitude. Dis-la à voix haute. Commence à partir de là.",
+      "why": "Commencer par ce qui est déjà clair est toujours possible. Même quand rien d'autre ne l'est."
+    },
+    {
+      "id": "clarity_act_25",
+      "content": "Écris librement pendant 10 minutes. Sans structure. Écris juste ce qui est dans ta tête.",
+      "why": "L'écriture libre extériorise le bruit intérieur et fait souvent émerger une clarté inattendue."
+    },
+    {
+      "id": "clarity_act_26",
+      "content": "Y a-t-il une chose que tu pourrais décider aujourd'hui qui rendrait plusieurs autres choses plus faciles ?",
+      "why": "Certaines décisions en portent d'autres en elles. Trouver celle-là peut rendre le reste plus léger."
+    },
+    {
+      "id": "clarity_act_27",
+      "content": "Demande : 'Dans six mois, cette décision comptera-t-elle ?' Si oui, ralentis. Si non, décide maintenant.",
+      "why": "Le temps change le poids des choses. Une perspective à six mois montre souvent combien d'espace il y a vraiment."
+    },
+    {
+      "id": "clarity_act_28",
+      "content": "Écris trois choses qui sont actuellement claires. Concentre-toi seulement sur elles aujourd'hui.",
+      "why": "Agir sur ce qui est clair est toujours disponible, même quand l'ensemble est dans le brouillard."
+    },
+    {
+      "id": "clarity_act_29",
+      "content": "Reporte une décision non urgente à la semaine prochaine. Écris-la et ferme-la.",
+      "why": "Tout n'a pas besoin d'être décidé aujourd'hui. L'écrire laisse l'esprit relâcher ce qu'il tient."
+    },
+    {
+      "id": "clarity_act_30",
+      "content": "Écris une phrase : 'La chose la plus importante maintenant est ___.' Remplis le blanc. Fais-lui confiance.",
+      "why": "Une phrase peut contenir plus de vérité qu'une longue liste. La contrainte force ce qui compte vraiment à émerger."
+    }
+  ],
+
+  "reflections": [
+    { "id": "clarity_ref_1",  "content": "Sur quoi es-tu le plus confus maintenant ? Peux-tu décrire le brouillard ?" },
+    { "id": "clarity_ref_2",  "content": "Que sais-tu déjà avec certitude, même si tu ne peux pas voir l'ensemble ?" },
+    { "id": "clarity_ref_3",  "content": "Quand dans le passé étais-tu aussi confus et la clarté est-elle finalement venue ? Qu'est-ce qui a aidé ?" },
+    { "id": "clarity_ref_4",  "content": "Et si la question elle-même avait besoin de changer ?" },
+    { "id": "clarity_ref_5",  "content": "Qu'est-ce qui simplifierait le plus ta situation actuelle si tu pouvais changer une chose ?" },
+    { "id": "clarity_ref_6",  "content": "Que gardes-tu ouvert qui pourrait être décidé ou libéré aujourd'hui ?" },
+    { "id": "clarity_ref_7",  "content": "Quelle est la décision que tu as évitée ? Qu'est-ce qui se cache sous cette évitement ?" },
+    { "id": "clarity_ref_8",  "content": "À quoi ressemblerait une vie plus simple pour toi maintenant ?" },
+    { "id": "clarity_ref_9",  "content": "Qu'est-ce qui est resté flou malgré toute ta réflexion à ce sujet ?" },
+    { "id": "clarity_ref_10", "content": "Que ferais-tu si tu cessais d'attendre la certitude ?" },
+    { "id": "clarity_ref_11", "content": "Quelle est une chose qui s'est clarifiée pour toi récemment, et comment cela s'est-il produit ?" },
+    { "id": "clarity_ref_12", "content": "De quoi la confusion te protège-t-elle d'avoir à décider ?" },
+    { "id": "clarity_ref_13", "content": "Que dit ton instinct que ton analyse continue d'ignorer ?" },
+    { "id": "clarity_ref_14", "content": "Que ferais-tu si tu savais que la décision n'avait pas à être parfaite ?" },
+    { "id": "clarity_ref_15", "content": "Quelles sont trois choses à propos desquelles tu pourrais cesser de penser aujourd'hui et qui te rendraient de l'espace ?" },
+    { "id": "clarity_ref_16", "content": "Quelle information attends-tu encore qui ne viendra peut-être jamais ?" },
+    { "id": "clarity_ref_17", "content": "Quelle est la façon la plus simple de dire ce que tu veux vraiment ?" },
+    { "id": "clarity_ref_18", "content": "Qu'est-ce qui semble inutilement compliqué dans ta vie en ce moment ?" },
+    { "id": "clarity_ref_19", "content": "Quand tu imagines que le brouillard se lève, que vois-tu de l'autre côté ?" },
+    { "id": "clarity_ref_20", "content": "Qu'est-ce que tu continues à tourner en rond autour qui pourrait te dire quelque chose ?" },
+    { "id": "clarity_ref_21", "content": "De quelle clarté as-tu peur ? Que t'exigerait-elle ?" },
+    { "id": "clarity_ref_22", "content": "Comment l'esprit clair se ressent-il dans ton corps, pas dans ta tête ?" },
+    { "id": "clarity_ref_23", "content": "Que ferais-tu différemment si tu faisais davantage confiance à ton propre jugement ?" },
+    { "id": "clarity_ref_24", "content": "Qu'est-ce que tu compliques trop qui pourrait être simple ?" },
+    { "id": "clarity_ref_25", "content": "Qu'est-ce qui est resté constant dans tes valeurs même si tout le reste était peu clair ?" },
+    { "id": "clarity_ref_26", "content": "Que dirais-tu à quelqu'un d'autre aussi confus que tu l'es maintenant ?" },
+    { "id": "clarity_ref_27", "content": "Comment cela se sentirait-il de prendre la décision et d'arrêter de décider ?" },
+    { "id": "clarity_ref_28", "content": "Quel est le coût de continuer à garder cette question ouverte ?" },
+    { "id": "clarity_ref_29", "content": "Que dois-tu cesser de consommer ou d'absorber pour laisser la clarté émerger ?" },
+    { "id": "clarity_ref_30", "content": "Quelle unique chose, si elle était claire, rendrait le reste plus facile ?" }
+  ],
+
+  "words": [
+    { "id": "clarity_w_1",  "word": "CLAIR",      "meaning": "Pas l'absence de brouillard. La capacité de voir ce qui compte." },
+    { "id": "clarity_w_2",  "word": "SIMPLE",     "meaning": "L'autre côté du compliqué. Ça vaut la peine de le trouver." },
+    { "id": "clarity_w_3",  "word": "VOIR",       "meaning": "Voir même une seule chose clairement suffit pour commencer." },
+    { "id": "clarity_w_4",  "word": "DIRECT",     "meaning": "La question directe révèle souvent la réponse directe." },
+    { "id": "clarity_w_5",  "word": "NET",        "meaning": "Une question nette. Une décision nette. Un prochain pas net." },
+    { "id": "clarity_w_6",  "word": "RÉDUIRE",    "meaning": "Réduis les options. Réduis les choix. Vois ce qui reste." },
+    { "id": "clarity_w_7",  "word": "CALME",      "meaning": "La clarté requiert le calme. Pas plus de bruit. Plus de calme." },
+    { "id": "clarity_w_8",  "word": "LUMIÈRE",    "meaning": "La qualité des choses quand le brouillard se déplace enfin." },
+    { "id": "clarity_w_9",  "word": "SAVOIR",     "meaning": "Tu sais plus que le brouillard ne le suggère. Fais-lui confiance." },
+    { "id": "clarity_w_10", "word": "OUVERT",     "meaning": "Un esprit ouvert s'arrête avant de trop se remplir. Vide avant de recevoir." },
+    { "id": "clarity_w_11", "word": "UN",         "meaning": "Une chose claire. Pas tout. Une." },
+    { "id": "clarity_w_12", "word": "DÉPOUILLER", "meaning": "Dépouille l'inutile. Vois quelle est vraiment la question." },
+    { "id": "clarity_w_13", "word": "PAUSE",      "meaning": "La clarté que tu cherches arrive souvent dans la pause." },
+    { "id": "clarity_w_14", "word": "SILENCE",    "meaning": "Le signal de la clarté est silencieux. Le bruit doit d'abord s'arrêter." },
+    { "id": "clarity_w_15", "word": "VRAI",       "meaning": "Ce qui est vrai, séparé de ce qui est craint ou espéré." },
+    { "id": "clarity_w_16", "word": "DÉCIDER",    "meaning": "Le brouillard se lève souvent au moment où tu décides. Avant ça, rarement." },
+    { "id": "clarity_w_17", "word": "MOINS",      "meaning": "Moins d'informations, moins d'options, des listes plus courtes. Moins révèle plus." },
+    { "id": "clarity_w_18", "word": "FOCUS",      "meaning": "Pas sur tout. Sur la seule chose floue qui compte le plus." },
+    { "id": "clarity_w_19", "word": "PAS",        "meaning": "Juste le prochain pas. Tu n'as pas besoin de voir tout le chemin." },
+    { "id": "clarity_w_20", "word": "CONFIANCE",  "meaning": "Fais confiance à ce que tu sais. Même avant de tout savoir." },
+    { "id": "clarity_w_21", "word": "RESSERRER",  "meaning": "Resserre la question. La réponse vit dans un espace plus petit." },
+    { "id": "clarity_w_22", "word": "ÉMERGER",    "meaning": "La clarté émerge. Tu ne peux pas la forcer. Tu peux lui faire de la place." },
+    { "id": "clarity_w_23", "word": "ATTENDRE",   "meaning": "Parfois la clarté demande d'attendre. Ce n'est pas de la passivité." },
+    { "id": "clarity_w_24", "word": "TROUVER",    "meaning": "La clarté est trouvable. Pas toujours vite. Mais trouvable." },
+    { "id": "clarity_w_25", "word": "PRÉCIS",     "meaning": "Une question précise tranche là où une vague ne peut pas." },
+    { "id": "clarity_w_26", "word": "CONTOUR",    "meaning": "Esquisse la forme du problème avant de remplir les détails. La forme est souvent déjà plus claire." },
+    { "id": "clarity_w_27", "word": "ESPACE",     "meaning": "La clarté a besoin d'espace. Cesse de le remplir et elle peut arriver." },
+    { "id": "clarity_w_28", "word": "ÉPURÉ",      "meaning": "Dis-le simplement. Même à toi-même. La simplicité est une forme de clarté." },
+    { "id": "clarity_w_29", "word": "REPOS",      "meaning": "Le sommeil et le repos produisent plus de clarté que toute analyse supplémentaire." },
+    { "id": "clarity_w_30", "word": "LISIÈRE",    "meaning": "Trouve la lisière du brouillard. Que peux-tu voir depuis là ?" },
+    { "id": "clarity_w_31", "word": "ÉCLAT",      "meaning": "Un point lumineux dans le brouillard suffit pour naviguer." },
+    { "id": "clarity_w_32", "word": "CŒUR",       "meaning": "Va au cœur de la question. La complexité n'est souvent qu'une enveloppe." },
+    { "id": "clarity_w_33", "word": "NOMMER",     "meaning": "Nomme-le clairement avant d'essayer de le résoudre. Le bon nom change ce que tu regardes." },
+    { "id": "clarity_w_34", "word": "ASSEZ",      "meaning": "Assez de clarté pour avancer. C'est l'objectif. Pas tout." },
+    { "id": "clarity_w_35", "word": "EXACT",      "meaning": "L'exact est plus clair que l'approximatif. Nomme la chose exactement." },
+    { "id": "clarity_w_36", "word": "NOUVEAU",    "meaning": "Une perspective nouvelle. Une marche. Un sommeil. Quelque chose de différent." },
+    { "id": "clarity_w_37", "word": "ANCRAGE",    "meaning": "Ancre-toi dans ce que tu sais avant d'atteindre ce que tu ne sais pas." },
+    { "id": "clarity_w_38", "word": "ÉCOUTER",    "meaning": "Écoute ce que ton instinct dit à travers le bruit." },
+    { "id": "clarity_w_39", "word": "HONNÊTE",    "meaning": "Honnête sur ce que tu ne sais pas. C'est là que la clarté vit." },
+    { "id": "clarity_w_40", "word": "JUSTE",      "meaning": "Juste cette question. Pas tout le territoire. Juste celle-ci." },
+    { "id": "clarity_w_41", "word": "GARDER",     "meaning": "Garde seulement ce qui compte. Écarte le reste sans culpabilité." },
+    { "id": "clarity_w_42", "word": "PENCHER",    "meaning": "Penche-toi vers la réponse que ton instinct a déjà." },
+    { "id": "clarity_w_43", "word": "RENCONTRER", "meaning": "Rencontre la confusion. Assieds-toi avec elle. Elle a quelque chose à dire." },
+    { "id": "clarity_w_44", "word": "NOMMÉ",      "meaning": "Ce qui n'a pas de nom ne peut pas être traité. Nomme-le." },
+    { "id": "clarity_w_45", "word": "ORDRE",      "meaning": "Mets les choses en ordre. Avant de décider. Avant d'agir." },
+    { "id": "clarity_w_46", "word": "LITTÉRAL",   "meaning": "Dis-le littéralement. La question littérale contient souvent la réponse littérale." },
+    { "id": "clarity_w_47", "word": "INTÉRIEUR",  "meaning": "La réponse est intérieure. Tu l'as déjà. Va vers l'intérieur." },
+    { "id": "clarity_w_48", "word": "RÉSOUDRE",   "meaning": "Résous la seule chose qui crée le plus de brouillard." },
+    { "id": "clarity_w_49", "word": "COURT",      "meaning": "Liste plus courte. Question plus courte. Moins de temps jusqu'à la clarté." },
+    { "id": "clarity_w_50", "word": "MINCE",      "meaning": "Le brouillard s'amincit quand tu cesses d'y ajouter." },
+    { "id": "clarity_w_51", "word": "RÉVÉLER",    "meaning": "Révèle ce que tu sais déjà mais qui est enfoui sous le bruit." },
+    { "id": "clarity_w_52", "word": "REGARD",     "meaning": "Un regard différent sur le même problème change ce que tu vois." }
+  ],
+
+  "notification_pool": [
+    { "id": "clarity_n_1",  "copy": "Tu n'as pas besoin de tout voir. Juste le prochain pas.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_2",  "copy": "Penser davantage n'a rien éclairci. Essaie de t'arrêter.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_3",  "copy": "Une chose claire suffit pour commencer.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_4",  "copy": "Le brouillard est temporaire. Tu as déjà été ici.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_5",  "copy": "Le simple est de l'autre côté du compliqué.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_6",  "copy": "Que sais-tu déjà ? Commence par là.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_7",  "copy": "La confusion est une information. Que te dit-elle ?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_8",  "copy": "Réduis la liste. Trois éléments. Vas-y.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_9",  "copy": "Ton instinct a essayé de dire quelque chose.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_10", "copy": "Nomme la confusion. Elle rétrécit quand on la nomme.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_11", "copy": "Éloigne-toi pendant 20 minutes. Quelque chose change souvent.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_12", "copy": "Que ferais-tu si tu connaissais déjà la réponse ?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_13", "copy": "La fatigue décisionnelle est réelle. Décide moins de choses aujourd'hui.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_14", "copy": "La chose la plus claire que tu vois maintenant — agis dessus.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_15", "copy": "Écris-le. Le brouillard est plus dense à l'intérieur.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_16", "copy": "Pas de certitude. Juste assez pour faire un pas.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_17", "copy": "Pose une version plus simple de la question.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_18", "copy": "Tu n'es pas perdu. Entre deux moments de clarté.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_19", "copy": "Qu'est-ce que tu peux cesser de garder ouvert maintenant ?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_20", "copy": "La version simple est généralement plus proche de juste.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_21", "copy": "Moins de stimuli, plus de clarté. Éteins quelque chose.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_22", "copy": "Fais confiance à ce que tu sais. Même si ce n'est pas tout.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_23", "copy": "La clarté vient généralement après la décision, pas avant.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_24", "copy": "Simplifie une chose aujourd'hui.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_25", "copy": "Quelle est la vraie question sous le brouillard ?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_26", "copy": "Arrête de tout chercher. Cherche une chose.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_27", "copy": "Le brouillard s'amincit quand tu cesses d'y ajouter.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_28", "copy": "Que ferais-tu si tu faisais confiance à ton instinct ?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "clarity_ev_1",  "content": "Qu'est-ce qui s'est éclairci aujourd'hui ? Même légèrement." },
+    { "id": "clarity_ev_2",  "content": "Quelle décision as-tu évitée qui pourrait être prise ce soir ?" },
+    { "id": "clarity_ev_3",  "content": "Où as-tu trouvé la pensée la plus claire aujourd'hui ? Qu'est-ce qui l'a créé ?" },
+    { "id": "clarity_ev_4",  "content": "Qu'est-ce que tu simplifierais demain si tu pouvais ?" },
+    { "id": "clarity_ev_5",  "content": "Quelle question est restée non résolue aujourd'hui ? Vaut-il la peine de la porter pendant la nuit ?" },
+    { "id": "clarity_ev_6",  "content": "Qu'as-tu découvert aujourd'hui que tu n'attendais pas ?" },
+    { "id": "clarity_ev_7",  "content": "Qu'est-ce qui est resté dans le brouillard toute la journée ? Qu'est-ce qui pourrait aider à l'éclaircir ?" },
+    { "id": "clarity_ev_8",  "content": "Quelle décision ouverte pourrais-tu fermer maintenant, même imparfaitement ?" },
+    { "id": "clarity_ev_9",  "content": "Que savais-tu aujourd'hui en quoi tu n'avais pas confiance ?" },
+    { "id": "clarity_ev_10", "content": "Quelle est la chose la plus importante sur laquelle tu as besoin de clarté demain ?" },
+    { "id": "clarity_ev_11", "content": "Qu'est-ce qui s'est compliqué aujourd'hui sans en avoir besoin ?" },
+    { "id": "clarity_ev_12", "content": "Qu'a révélé le fait de s'arrêter et de prendre du recul aujourd'hui ?" },
+    { "id": "clarity_ev_13", "content": "Qu'est-ce qui rendrait demain plus simple ?" },
+    { "id": "clarity_ev_14", "content": "Quelle est une chose sur laquelle tu peux cesser de penser ce soir et simplement laisser être ?" }
+  ]
+
+}

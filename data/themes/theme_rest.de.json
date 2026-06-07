@@ -1,0 +1,643 @@
+{
+  "theme": "Ruhe",
+  "user_state": "Erschöpft. Am Ende der Kräfte. Schuldgefühle, aufhören zu müssen. Erschöpfung mit Faulheit verwechseln.",
+  "core_need": "Erlaubnis, ohne Schuldgefühle anzuhalten.",
+  "emotional_tone": "Sanft. Langsam. Erlaubend.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "rest_arr_1",
+        "heading": "Du hast die Erlaubnis, anzuhalten.",
+        "subheading": "Nicht irgendwann. Jetzt. Bevor du es verdient hast. Weil Ruhe sich nicht verdient werden muss."
+      },
+      {
+        "id": "rest_arr_2",
+        "heading": "Ruhe ist nicht Faulheit.",
+        "subheading": "So baut der Körper wieder auf, was die Erschöpfung genommen hat."
+      },
+      {
+        "id": "rest_arr_3",
+        "heading": "Du läufst auf Reserve.",
+        "subheading": "Das ist kein Charakterfehler. Das ist der ehrliche Zustand eines Menschen, der zu viel getragen hat."
+      },
+      {
+        "id": "rest_arr_4",
+        "heading": "Anhalten ist nicht aufgeben.",
+        "subheading": "Es ist ein Vorwärtskommen auf seine eigene Art."
+      },
+      {
+        "id": "rest_arr_5",
+        "heading": "Das Schuldgefühl beim Ausruhen ist nicht die Wahrheit.",
+        "subheading": "Es ist eine Geschichte aus einer Kultur, die Erschöpfung mit Tugend verwechselt hat."
+      },
+      {
+        "id": "rest_arr_6",
+        "heading": "Du musst dir das nicht erst verdienen.",
+        "subheading": "Ruhe ist keine Belohnung. Sie ist eine Notwendigkeit."
+      },
+      {
+        "id": "rest_arr_7",
+        "heading": "Der Körper sagt dir etwas.",
+        "subheading": "Du hast das Signal übergangen. Heute kannst du zuhören."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "rest_rel_1",
+        "heading": "Was sagt das Schuldgefühl?",
+        "subheading": "Schreib es genau auf. Dann schauen wir, ob es stimmt.",
+        "field_placeholder": "Was sagt der Teil von dir, der sich schuldig fühlt, wenn er sich ausruht..."
+      },
+      {
+        "id": "rest_rel_2",
+        "heading": "Was trägst du, das nicht deins ist?",
+        "subheading": "Verantwortung hat eine Grenze. Was hältst du darüber hinaus?",
+        "field_placeholder": "Welche Verpflichtungen oder Sorgen trägst du, die jemand anderem oder einer anderen Situation gehören..."
+      },
+      {
+        "id": "rest_rel_3",
+        "heading": "Was hast du statt Ruhe getan?",
+        "subheading": "Nenn die Ersatzmittel. Das Scrollen, die Überarbeitung, die ständige Beschäftigung.",
+        "field_placeholder": "Was hast du getan statt wirklich innezuhalten..."
+      },
+      {
+        "id": "rest_rel_4",
+        "heading": "Wie lange bist du schon erschöpft?",
+        "subheading": "Sag es ehrlich. Die Zahl ist wichtig.",
+        "field_placeholder": "Wann hast du dich das letzte Mal wirklich ausgeruht gefühlt..."
+      },
+      {
+        "id": "rest_rel_5",
+        "heading": "Was müsstest du loslassen, um wirklich zu ruhen?",
+        "subheading": "Nicht für immer. Nur für heute.",
+        "field_placeholder": "Was müsstest du loslassen, um dir zu erlauben innezuhalten..."
+      },
+      {
+        "id": "rest_rel_6",
+        "heading": "Wie fühlt sich die Erschöpfung an?",
+        "subheading": "Im Körper, nicht nur im Kopf. Beschreib es.",
+        "field_placeholder": "Wo lebt die Erschöpfung gerade in deinem Körper..."
+      },
+      {
+        "id": "rest_rel_7",
+        "heading": "Was befürchtest du, wenn du anhältst?",
+        "subheading": "Die Liste ist meist kürzer, als die Angst vermuten lässt.",
+        "field_placeholder": "Was glaubst du, wird auseinanderbrechen, wenn du dich heute ausruhst..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "rest_br_1",
+        "heading": "Ein Atemzug, der nichts fordert.",
+        "instruction": "Langsam einatmen. Mit einem stillen Seufzen ausatmen. Kein Aufwand. Kein Ziel. Nur dieser Atem."
+      },
+      {
+        "id": "rest_br_2",
+        "heading": "Lass den Körper alles ausatmen.",
+        "instruction": "Sanft einatmen. Beim Ausatmen alles fallen lassen. Schultern, Kiefer, Hände. Alles."
+      },
+      {
+        "id": "rest_br_3",
+        "heading": "Der Atem von jemandem, der angehalten hat.",
+        "instruction": "Langsam. Weit. Ohne Eile. Atme, als hätte der Tag keine Anforderungen mehr. Nur für diesen Moment."
+      },
+      {
+        "id": "rest_br_4",
+        "heading": "Ruh dich im Atemzug aus.",
+        "instruction": "Vier Zählzeiten einatmen. Sechs Zählzeiten ausatmen. Zweimal. Spür, wie der Körper schwerer und stiller wird."
+      },
+      {
+        "id": "rest_br_5",
+        "heading": "Vollständig weich werden.",
+        "instruction": "Einatmen und alles aufsteigen lassen. Ausatmen und alles fallen lassen. Nichts festhalten. Nur loslassen."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "rest_mom_1",
+        "heading": "Was braucht dein Körper gerade am meisten?"
+      },
+      {
+        "id": "rest_mom_2",
+        "heading": "Wie würde echte Ruhe für dich heute aussehen?"
+      },
+      {
+        "id": "rest_mom_3",
+        "heading": "Was kannst du loslassen, ohne dass alles auseinanderfällt?"
+      },
+      {
+        "id": "rest_mom_4",
+        "heading": "Wie sieht Innehalten für dich konkret aus?"
+      },
+      {
+        "id": "rest_mom_5",
+        "heading": "Was hat dich erschöpft, das du noch nicht benannt hast?"
+      },
+      {
+        "id": "rest_mom_6",
+        "heading": "Wie würde sich eine ausgeruhte Version von dir von innen anfühlen?"
+      },
+      {
+        "id": "rest_mom_7",
+        "heading": "Was wäre das Erholsamste, was du in der nächsten Stunde tun könntest?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "rest_comp_1",
+        "heading": "Du hast angehalten.",
+        "subheading": "Das ist die Übung. Nicht der Plan. Das wirkliche Innehalten."
+      },
+      {
+        "id": "rest_comp_2",
+        "heading": "Die Ruhe hat stattgefunden.",
+        "subheading": "Das Schuldgefühl hat heute nicht gewonnen. Bemerke das."
+      },
+      {
+        "id": "rest_comp_3",
+        "heading": "Du hast dem Körper gegeben, was er gefragt hat.",
+        "subheading": "Das ist nicht Nachgiebigkeit. Das ist Fürsorge."
+      },
+      {
+        "id": "rest_comp_4",
+        "heading": "Die Welt ist nicht auseinandergefallen.",
+        "subheading": "Das passiert selten. Ruhe ist meistens sicherer, als die Angst sagt."
+      },
+      {
+        "id": "rest_comp_5",
+        "heading": "Du hast zugehört.",
+        "subheading": "Dem Teil von dir, der gebeten hat innezuhalten. Heute hast du ihn gehört."
+      },
+      {
+        "id": "rest_comp_6",
+        "heading": "Die Erholung findet statt.",
+        "subheading": "Langsam. Unter der Oberfläche. Du hast ihr die Bedingungen gegeben, die sie brauchte."
+      },
+      {
+        "id": "rest_comp_7",
+        "heading": "Du hast dich für Ruhe entschieden.",
+        "subheading": "Statt für das Schuldgefühl. Statt für Produktivität. Statt für das, was du glaubst tun zu sollen. Das war eine echte Entscheidung."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "rest_hc_1",
+      "headline": "Ruhe wird nicht verdient. Sie ist notwendig.",
+      "subheadline": "Du musst sie dir nicht erst verdienen."
+    },
+    {
+      "id": "rest_hc_2",
+      "headline": "Das Schuldgefühl sagt nicht die Wahrheit.",
+      "subheadline": "Es wiederholt eine Geschichte, die man dir beigebracht hat. Diese Geschichte ist nicht deine."
+    },
+    {
+      "id": "rest_hc_3",
+      "headline": "Erschöpft zu sein ist kein moralisches Versagen.",
+      "subheadline": "Es ist das, was passiert, wenn du mehr gibst, als du wieder auffüllst."
+    },
+    {
+      "id": "rest_hc_4",
+      "headline": "Anhalten ist nicht das Gegenteil von Leben.",
+      "subheadline": "Es ist Teil davon. Keine Pause vom Leben."
+    },
+    {
+      "id": "rest_hc_5",
+      "headline": "Dein Körper hat gefragt.",
+      "subheadline": "Du hast es übergangen. Heute musst du das nicht."
+    },
+    {
+      "id": "rest_hc_6",
+      "headline": "Ruhe muss nichts beweisen.",
+      "subheadline": "Ihr Wert liegt nicht darin, was sie dir danach ermöglicht. Er liegt in dem, was du gerade jetzt bist."
+    },
+    {
+      "id": "rest_hc_7",
+      "headline": "Du darfst aufhören, bevor du zusammenbrichst.",
+      "subheadline": "Du musst nicht warten, bis du abbrichst. Die Erlaubnis ist schon da."
+    },
+    {
+      "id": "rest_hc_8",
+      "headline": "Erschöpfung, die mit Tugend verwechselt wird, ist immer noch Erschöpfung.",
+      "subheadline": "Es Hingabe zu nennen, ändert nichts daran, was es ist."
+    },
+    {
+      "id": "rest_hc_9",
+      "headline": "Was du Faulheit nennst, ist Erholung.",
+      "subheadline": "Das ist nicht dasselbe."
+    },
+    {
+      "id": "rest_hc_10",
+      "headline": "Etwas muss zurückkommen. Nicht für andere. Für dich.",
+      "subheadline": "Du hast von einem Ort gegeben, der schon niedrig war."
+    },
+    {
+      "id": "rest_hc_11",
+      "headline": "Der Körper erholt sich während der Ruhe.",
+      "subheadline": "Nicht während der Arbeit. Während der Ruhe. Da ist nichts falsch daran."
+    },
+    {
+      "id": "rest_hc_12",
+      "headline": "Du kannst jetzt innehalten, solange es noch deine Wahl ist.",
+      "subheadline": "Der Körper vergisst nicht, was er gefragt hat."
+    },
+    {
+      "id": "rest_hc_13",
+      "headline": "Du bist nicht im Rückstand.",
+      "subheadline": "Du bist erschöpft. Das ist ein anderes Problem mit einer anderen Lösung."
+    },
+    {
+      "id": "rest_hc_14",
+      "headline": "Erlaubnis erteilt.",
+      "subheadline": "Innezuhalten. Sich auszuruhen. Weniger zu tun, als du glaubst zu sollen. Heute."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "rest_act_1",
+      "content": "Leg dich zwanzig Minuten hin. Kein Handy. Kein Schlaf nötig. Einfach waagerecht.",
+      "why": "Schon wenige Minuten in der Waagerechten verändern etwas im Körper. Der Körper weiß, wie er das nutzt."
+    },
+    {
+      "id": "rest_act_2",
+      "content": "Streiche eine Verpflichtung von der heutigen Liste, die nicht wirklich notwendig ist.",
+      "why": "Erschöpfung wird oft dadurch aufrechterhalten, dass man mehr tut, als die Situation erfordert."
+    },
+    {
+      "id": "rest_act_3",
+      "content": "Iss etwas langsam. Sitz hin. Kein Bildschirm. Schmeck es.",
+      "why": "Langsam essen ist seine eigene Art von Rückkehr. Der Körper spürt den Unterschied."
+    },
+    {
+      "id": "rest_act_4",
+      "content": "Sag einer Person, dass du müde bist und heute Unterstützung brauchst.",
+      "why": "Es laut jemandem zu sagen, verändert, wie es sich anfühlt, es zu tragen. Etwas verändert sich, wenn es bezeugt wird."
+    },
+    {
+      "id": "rest_act_5",
+      "content": "Schlaf heute Nacht 30 Minuten früher. Entscheide das jetzt.",
+      "why": "Im Voraus zu entscheiden, beseitigt die nächtliche Verhandlung mit sich selbst."
+    },
+    {
+      "id": "rest_act_6",
+      "content": "Mach einen langsamen Spaziergang. Keine Kopfhörer. Kein Podcast. Einfach gehen.",
+      "why": "Ohne etwas im Ohr zu gehen, ist seine eigene Art von Stille. Der Körper bewegt sich und etwas anderes beruhigt sich."
+    },
+    {
+      "id": "rest_act_7",
+      "content": "Nimm ein Bad oder eine Dusche ohne Eile. Lass das Wasser das Einzige sein.",
+      "why": "Wasser und Wärme haben eine Art, das zu erweichen, was der Tag gehärtet hat. Der Körper erinnert sich."
+    },
+    {
+      "id": "rest_act_8",
+      "content": "Sag heute etwas Optionales ab. Gib dir die Zeit zurück.",
+      "why": "Ruhe braucht freie Zeit. Zeit freizumachen erfordert die Erlaubnis, abzusagen."
+    },
+    {
+      "id": "rest_act_9",
+      "content": "Sitz zehn Minuten draußen. Tu nichts Produktives.",
+      "why": "Etwas verändert sich, wenn du draußen bist, ohne etwas tun zu müssen. Auch nur wenige Minuten."
+    },
+    {
+      "id": "rest_act_10",
+      "content": "Lies etwas zum Vergnügen. Nicht zur Information. Nicht zur Produktivität. Zum Vergnügen.",
+      "why": "Der erschöpfte Geist vergisst oft, dass Freude ihr eigener Grund ist. Sie muss nichts verdienen, um zu zählen."
+    },
+    {
+      "id": "rest_act_11",
+      "content": "Sag Nein zu einer Bitte, zu der du Nein sagen möchtest.",
+      "why": "Jedes Ja, das nicht aufrichtig ist, kostet etwas. Zu dem Nein zu sagen, was dich erschöpft, ist eine Form der Fürsorge."
+    },
+    {
+      "id": "rest_act_12",
+      "content": "Sitz fünf Minuten in der Stille. Kein Reiz. Nur Ruhe.",
+      "why": "Stille ist für die meisten erschöpften Menschen selten. Sie fordert sehr wenig und gibt viel zurück."
+    },
+    {
+      "id": "rest_act_13",
+      "content": "Delegiere eine Aufgabe, die du machst, weil du anderen nicht traust.",
+      "why": "Kontrolle und Erschöpfung sind oft dasselbe Problem."
+    },
+    {
+      "id": "rest_act_14",
+      "content": "Lass Geschirr, Wäsche oder eine kleine Aufgabe bewusst bis morgen.",
+      "why": "Sich zu entscheiden, etwas loszulassen, ist anders als Vernachlässigung. Es ist ein Akt der Fürsorge."
+    },
+    {
+      "id": "rest_act_15",
+      "content": "Mach ein Nickerchen, wenn du kannst. Auch nur zwanzig Minuten.",
+      "why": "Kurzer Schlaf ist echter Schlaf. Der Körper braucht nicht viel Einladung, um mit der Erholung zu beginnen."
+    },
+    {
+      "id": "rest_act_16",
+      "content": "Schalte Nachrichten und soziale Medien für den Rest des Tages aus.",
+      "why": "Chronischer Informationskonsum ist eine verborgene Quelle der Erschöpfung."
+    },
+    {
+      "id": "rest_act_17",
+      "content": "Schreib alles auf, was du im Kopf zu halten versuchst. Dann schließ die Liste.",
+      "why": "Was im Kopf bleibt, wird schwerer, je länger es dort bleibt. Es aufzuschreiben, bringt es woanders hin."
+    },
+    {
+      "id": "rest_act_18",
+      "content": "Tu heute eine Sache, die vollständig für dein eigenes Vergnügen ist. Eine Sache.",
+      "why": "Erschöpfung vertieft sich, wenn Freude immer aufgeschoben wird. Du darfst etwas haben, das nur für dich ist."
+    },
+    {
+      "id": "rest_act_19",
+      "content": "Bitte jemanden, etwas zu übernehmen, das du normalerweise allein erledigst.",
+      "why": "Unabhängigkeit und Erschöpfung sind oft dieselbe Wahl."
+    },
+    {
+      "id": "rest_act_20",
+      "content": "Gib dir eine Stunde ohne Agenda. Nicht einmal Ruhe als Ziel. Einfach frei.",
+      "why": "Geplante Ruhe mit Zielen ist keine vollständige Ruhe. Echte freie Zeit ist ihre eigene Kategorie."
+    },
+    {
+      "id": "rest_act_21",
+      "content": "Iss etwas, das minimalen Aufwand erfordert. Gönn dir das heute.",
+      "why": "Kochen erschöpft Energie. Es zu reduzieren ist nicht Faulheit. Es ist Fürsorge."
+    },
+    {
+      "id": "rest_act_22",
+      "content": "Dimm das Licht. Mach die Umgebung sanfter. Lass den Körper wissen, dass sich das Tempo ändert.",
+      "why": "Sanftes Licht verändert das Gefühl eines Raumes. Der Körper bemerkt es, auch wenn der Kopf es nicht tut."
+    },
+    {
+      "id": "rest_act_23",
+      "content": "Frag dich: 'Was ist das Mindeste, das ich heute tun muss, um gut zu sein?' Tu genau das.",
+      "why": "Weniger zu tun ist kein Versagen. Es ist das, worum der Tag gebeten hat."
+    },
+    {
+      "id": "rest_act_24",
+      "content": "Schau dir etwas Leichtes und Einfaches an. Ohne Schuldgefühl.",
+      "why": "Unterhaltung ist eine legitime Form der Ruhe. Das Schuldgefühl kostet mehr Energie als das, was du schaust."
+    },
+    {
+      "id": "rest_act_25",
+      "content": "Schreib eine Liste von dem, was du diese Woche getan hast. Nicht was noch aussteht. Was erledigt ist.",
+      "why": "Der erschöpfte Geist neigt dazu, nur zu sehen, was noch aussteht. Das Erledigte aufzuschreiben, verändert das Bild."
+    },
+    {
+      "id": "rest_act_26",
+      "content": "Verbringe zwanzig Minuten im Gespräch mit jemandem, der dich wiederherstellt.",
+      "why": "Nicht jede Gesellschaft lässt dich am selben Ort. Manche Menschen stellen wieder her. Finde heute eine davon."
+    },
+    {
+      "id": "rest_act_27",
+      "content": "Trag heute bequeme Kleidung. Mach das zu einer echten Priorität.",
+      "why": "Körperliches Wohlbefinden ist keine Kleinigkeit. Es verändert, wie sich der ganze Körper an einem Tag anfühlt."
+    },
+    {
+      "id": "rest_act_28",
+      "content": "Sag laut 'ich muss mich heute ausruhen'. Zu dir selbst oder zu jemandem.",
+      "why": "Ein Bedürfnis zu benennen ist der erste Schritt, um es zu erfüllen."
+    },
+    {
+      "id": "rest_act_29",
+      "content": "Schließ die Augen fünf Minuten. Wo auch immer du bist. Einfach schließen.",
+      "why": "Was die Augen aufnehmen wegzunehmen, verändert etwas. Auch wenn es nur kurz ist."
+    },
+    {
+      "id": "rest_act_30",
+      "content": "Schreib auf, was Ruhe dir in der Vergangenheit gegeben hat. Wie du dich gefühlt hast. Was zurückgekehrt ist.",
+      "why": "Die Erinnerung, ausgeruht gewesen zu sein, kann dir zeigen, dass es wert war, es zu wählen."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "rest_ref_1",
+      "content": "Wann hast du dich das letzte Mal wirklich ausgeruht gefühlt? Was war damals anders?"
+    },
+    {
+      "id": "rest_ref_2",
+      "content": "Welche Geschichte erzählst du dir über Menschen, die sich ohne Schuldgefühle ausruhen?"
+    },
+    {
+      "id": "rest_ref_3",
+      "content": "Was hat es dir wirklich gebracht, über deine Grenzen zu gehen?"
+    },
+    {
+      "id": "rest_ref_4",
+      "content": "Was würdest du dir erlauben aufzuhören, wenn du glaubtest, dass Ruhe legitim ist?"
+    },
+    {
+      "id": "rest_ref_5",
+      "content": "Wie fühlt sich dein Körper gerade an? Wie lange fühlt er sich so an?"
+    },
+    {
+      "id": "rest_ref_6",
+      "content": "Wo hast du gelernt, dass Ruhe verdient werden muss?"
+    },
+    {
+      "id": "rest_ref_7",
+      "content": "Was befürchtest du, das auseinanderfällt, wenn du langsamer wirst?"
+    },
+    {
+      "id": "rest_ref_8",
+      "content": "Was hast du statt Ruhe getan? Funktioniert das?"
+    },
+    {
+      "id": "rest_ref_9",
+      "content": "Was würde es über dich aussagen, wenn du dich heute für Ruhe entscheidest?"
+    },
+    {
+      "id": "rest_ref_10",
+      "content": "Wie fühlt sich die Erschöpfung in deinem Körper an, nicht in deinem Kopf?"
+    },
+    {
+      "id": "rest_ref_11",
+      "content": "Wer in deinem Leben behandelt Ruhe als legitim? Was beobachtest du bei diesen Menschen?"
+    },
+    {
+      "id": "rest_ref_12",
+      "content": "Was würdest du jemandem sagen, den du liebst, der so erschöpft wäre wie du?"
+    },
+    {
+      "id": "rest_ref_13",
+      "content": "Was ist eine Sache, die du aus Verpflichtung tust und die du aufhören könntest?"
+    },
+    {
+      "id": "rest_ref_14",
+      "content": "Was tut dein Körper, wenn er stillsein darf? Was lässt er los?"
+    },
+    {
+      "id": "rest_ref_15",
+      "content": "Was ist der Unterschied zwischen Faulheit und Erschöpfung? Was ist das hier?"
+    },
+    {
+      "id": "rest_ref_16",
+      "content": "Was hast du übergangen, um weiterzumachen?"
+    },
+    {
+      "id": "rest_ref_17",
+      "content": "Wie fühlt sich wirklich ausgeruht sein für dich an? Erinnerst du dich?"
+    },
+    {
+      "id": "rest_ref_18",
+      "content": "Was löst die Vorstellung in dir aus, wirklich ausgeruht zu sein? Wie würde es sich anfühlen, das zu imaginieren?"
+    },
+    {
+      "id": "rest_ref_19",
+      "content": "Was ist die ehrlichste Beschreibung davon, wie lange du schon auf Reserve läufst?"
+    },
+    {
+      "id": "rest_ref_20",
+      "content": "Was vermeidest du zu fühlen, indem du beschäftigt bleibst?"
+    },
+    {
+      "id": "rest_ref_21",
+      "content": "Wie hat sich Ruhe in der Vergangenheit angefühlt, das du vergessen hast?"
+    },
+    {
+      "id": "rest_ref_22",
+      "content": "Was musst du aufhören zu tun, um dich wirklich zu erholen?"
+    },
+    {
+      "id": "rest_ref_23",
+      "content": "Was bedeutet Wiederherstellung für dich konkret? Welche Aktivitäten, Umgebungen oder Bedingungen?"
+    },
+    {
+      "id": "rest_ref_24",
+      "content": "Was kostet es, ohne Ruhe weiterzumachen? Nicht als Berechnung — nur als ehrlicher Blick."
+    },
+    {
+      "id": "rest_ref_25",
+      "content": "Wie würde das Leben aussehen, wenn du Ruhe so schützen würdest wie deine Verpflichtungen?"
+    },
+    {
+      "id": "rest_ref_26",
+      "content": "Was ist die Stimme, die sagt, du verdienst keine Ruhe? Woher kommt sie?"
+    },
+    {
+      "id": "rest_ref_27",
+      "content": "Was ist das Mindeste, das du heute tun musst, um gut zu sein? Nur das Mindeste."
+    },
+    {
+      "id": "rest_ref_28",
+      "content": "Was würde sich ändern, wenn du akzeptierst, dass Ruhe keine Belohnung ist, sondern eine Notwendigkeit?"
+    },
+    {
+      "id": "rest_ref_29",
+      "content": "Wann hat sich Ruhe zuletzt ohne Schuldgefühl möglich angefühlt?"
+    },
+    {
+      "id": "rest_ref_30",
+      "content": "Was würdest du zuerst schützen, wenn du entscheiden würdest, dass deine Erholung einfach zählt?"
+    }
+  ],
+
+  "words": [
+    { "id": "rest_w_1",  "word": "ANHALTEN",      "meaning": "Nicht scheitern. Nicht aufgeben. Anhalten. Mit Absicht." },
+    { "id": "rest_w_2",  "word": "ERNEUERN",      "meaning": "Was passiert, wenn du dem Körper gibst, was die Erschöpfung genommen hat." },
+    { "id": "rest_w_3",  "word": "ZULASSEN",      "meaning": "Lass das Innehalten zu. Lass die Ruhe zu. Lass das Bedürfnis zu." },
+    { "id": "rest_w_4",  "word": "LANGSAM",       "meaning": "Das Tempo, das dein Körper gefragt hat." },
+    { "id": "rest_w_5",  "word": "ANNEHMEN",      "meaning": "Du hast gegeben. Heute, nimm etwas an." },
+    { "id": "rest_w_6",  "word": "GENUG",         "meaning": "Ruhe wartet nicht auf genug. Sie ist bereits für dich da." },
+    { "id": "rest_w_7",  "word": "LOSLASSEN",     "meaning": "Was der Körper darauf gewartet hat zu tun." },
+    { "id": "rest_w_8",  "word": "STILLE",        "meaning": "Ohne Anforderung. Ohne Agenda. Nur Stille." },
+    { "id": "rest_w_9",  "word": "SANFT",         "meaning": "Mach das Tempo sanfter. Den Anspruch sanfter. Die Erwartung sanfter." },
+    { "id": "rest_w_10", "word": "TIEF",          "meaning": "Die Art von Ruhe, die unter die Oberfläche geht." },
+    { "id": "rest_w_11", "word": "SCHWER",        "meaning": "Wenn der Körper schwer wird, sagt er dir etwas." },
+    { "id": "rest_w_12", "word": "SINKEN",        "meaning": "Sinke in die Ruhe. Du musst sie dir nicht erst verdienen." },
+    { "id": "rest_w_13", "word": "HEILEN",        "meaning": "Was der Körper tut, wenn du ihm die Erlaubnis gibst innezuhalten." },
+    { "id": "rest_w_14", "word": "ZURÜCKKEHREN",  "meaning": "Kehr zu dir zurück. Von dem endlosen Geben nach außen." },
+    { "id": "rest_w_15", "word": "AUFBAUEN",      "meaning": "Was im Körper passiert, wenn dem Einsatz eine Pause erlaubt wird." },
+    { "id": "rest_w_16", "word": "NIEDER",        "meaning": "Langsamer werden. Hinlegen. Tief atmen. Die Dinge sich setzen lassen." },
+    { "id": "rest_w_17", "word": "VOLL",          "meaning": "Nicht leer und auf Autopilot. Voll. Das ist, wohin sich die Erholung bewegt." },
+    { "id": "rest_w_18", "word": "AUFFÜLLEN",     "meaning": "Was der Körper braucht, wenn er auf Reserve läuft. Nicht für die Leistung — nur für sich selbst." },
+    { "id": "rest_w_19", "word": "STILL",         "meaning": "Sei einen Moment still. Die Welt kann warten." },
+    { "id": "rest_w_20", "word": "LINDERN",       "meaning": "Gleite sanft in die Pause. Es muss nicht abrupt sein." },
+    { "id": "rest_w_21", "word": "PFLEGEN",       "meaning": "Pflege dich, so wie du alles andere pflegst." },
+    { "id": "rest_w_22", "word": "PAUSE",         "meaning": "Vor dem Nächsten. Die Pause ist da, wo die Erholung beginnt." },
+    { "id": "rest_w_23", "word": "WEIT",          "meaning": "Der Atem wird weiter, wenn der Körper fühlt, dass er innehalten kann." },
+    { "id": "rest_w_24", "word": "BEHUTSAM",      "meaning": "Sei behutsam mit dem Teil von dir, der erschöpft ist." },
+    { "id": "rest_w_25", "word": "RAUM",          "meaning": "Gib dir Raum. Nicht Zeit, um produktiv zu sein. Raum." },
+    { "id": "rest_w_26", "word": "ZUHÖREN",       "meaning": "Dein Körper hat gefragt. Heute, hör zu." },
+    { "id": "rest_w_27", "word": "WARTEN",        "meaning": "Die Aufgaben können warten. Der Körper wartet schon." },
+    { "id": "rest_w_28", "word": "OFFEN",         "meaning": "Offen für Empfangen. Offen für Verlangsamen. Offen für Ruhe." },
+    { "id": "rest_w_29", "word": "SICH GÖNNEN",   "meaning": "Du musst es dir gönnen. Ruhe ist nicht automatisch. Du wählst sie." },
+    { "id": "rest_w_30", "word": "KLEIN",         "meaning": "Kleine Ruhe ist immer noch Ruhe. Zehn Minuten zählen." },
+    { "id": "rest_w_31", "word": "SICHER",        "meaning": "Du bist sicher genug, um innezuhalten. Für jetzt. Für heute." },
+    { "id": "rest_w_32", "word": "ANKOMMEN",      "meaning": "Lass den Körper ankommen. Im Stuhl. Auf dem Boden." },
+    { "id": "rest_w_33", "word": "SCHENKEN",      "meaning": "Schenk dir das. Die Erlaubnis ist deine zu geben." },
+    { "id": "rest_w_34", "word": "ANKER",         "meaning": "Ruhe ist ein Anker. Sie hält dich verbunden mit dem, was du wirklich brauchst." },
+    { "id": "rest_w_35", "word": "EINFACH",       "meaning": "Das Mindeste heute. Das ist genug." },
+    { "id": "rest_w_36", "word": "HOLEN",         "meaning": "Hol dir die Ruhe. Sie gehört dir." },
+    { "id": "rest_w_37", "word": "KÜHL",          "meaning": "Die Kühle des Anhaltens. Der Temperaturabfall, wenn die Anstrengung endet." },
+    { "id": "rest_w_38", "word": "LÖSEN",         "meaning": "Lass die Spannung der Anstrengung langsam aus dem Körper weichen." },
+    { "id": "rest_w_39", "word": "BERUHIGEN",     "meaning": "Beruhige den Teil von dir, der zu lange gelaufen ist." },
+    { "id": "rest_w_40", "word": "BODEN",         "meaning": "Der Boden trägt dich. Du musst dich nicht selbst tragen." },
+    { "id": "rest_w_41", "word": "ANMUT",         "meaning": "Ruh dich mit Anmut aus. Ohne die Erklärung. Ohne die Entschuldigung." },
+    { "id": "rest_w_42", "word": "STÜTZEN",       "meaning": "Lass dich stützen. Vom Stuhl. Vom Bett. Vom Boden." },
+    { "id": "rest_w_43", "word": "EINATMEN",      "meaning": "Langsam einatmen. Der Körper erinnert sich, wie man sich erholt." },
+    { "id": "rest_w_44", "word": "VERBINDEN",     "meaning": "Verbinde dich mit dem Teil von dir, der schon weiß, dass er innehalten muss." },
+    { "id": "rest_w_45", "word": "BEWAHREN",      "meaning": "Bewahr heute etwas für dich. Nicht alles geht nach außen." },
+    { "id": "rest_w_46", "word": "WENIGER",       "meaning": "Weniger ist jetzt genug. Weniger ist Heilung." },
+    { "id": "rest_w_47", "word": "GESUNDEN",      "meaning": "Der Körper gesundet, wenn du aufhörst dich aufzureiben." },
+    { "id": "rest_w_48", "word": "NEUTRAL",       "meaning": "Neutral ist ein gültiger Zustand. Nicht erschöpft. Nicht leistend. Neutral." },
+    { "id": "rest_w_49", "word": "ANBIETEN",      "meaning": "Biete dir die Ruhe an, die du allem anderen gegeben hast." },
+    { "id": "rest_w_50", "word": "TAKT",          "meaning": "Finde einen Takt, der dich nicht so viel kostet. Langsamer als der jetzige." },
+    { "id": "rest_w_51", "word": "LEISE",         "meaning": "Eine sanftere Version der Stille. Das Leise eines Raumes, in dem Ruhe endlich möglich ist." },
+    { "id": "rest_w_52", "word": "GANZ",          "meaning": "Ausgeruht ist die Richtung von ganz. Das ist der Grund." }
+  ],
+
+  "notification_pool": [
+    { "id": "rest_n_1",  "copy": "Ruhe wird nicht verdient. Sie ist notwendig.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_2",  "copy": "Du hast heute die Erlaubnis innezuhalten.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_3",  "copy": "Das Schuldgefühl sagt nicht die Wahrheit.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_4",  "copy": "Dein Körper hat gefragt. Heute, hör zu.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_5",  "copy": "Erschöpft zu sein ist kein moralisches Versagen.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_6",  "copy": "Innehalten ist Teil dessen, was dich menschlich hält.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_7",  "copy": "Was du heute zur Erholung brauchst, ist Ruhe.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_8",  "copy": "Das Mindeste ist heute genug.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_9",  "copy": "Gib dir heute etwas Zeit zurück.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_10", "copy": "Was du Faulheit nennst, ist Erholung.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_11", "copy": "Sag heute zu einer Sache Nein. Nur einer.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_12", "copy": "Du musst dir die Ruhe nicht verdienen.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_13", "copy": "Werde langsamer. Die Erlaubnis ist schon da.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_14", "copy": "Eine Stunde ohne Agenda. Das reicht.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_15", "copy": "Ruhe ist das, was der Körper tut, wenn du ihm die Chance gibst.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_16", "copy": "Was kannst du heute loslassen?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_17", "copy": "Sag heute etwas Optionales ab.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_18", "copy": "Du bist nicht im Rückstand. Du bist erschöpft.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_19", "copy": "Erlaubnis erteilt, heute weniger zu tun.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_20", "copy": "Zwanzig Minuten hinlegen verändert etwas.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_21", "copy": "Die Welt braucht deine Erschöpfung nicht.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_22", "copy": "Ruh dich heute aus. Nicht wegen morgen. Wegen jetzt.", "mood_weight": { "dark": 0.5, "half": 0.3, "full": 0.2 } },
+    { "id": "rest_n_23", "copy": "Schließ jetzt fünf Minuten die Augen.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_24", "copy": "Du läufst auf Reserve. Etwas muss zurückkommen.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_25", "copy": "Was dein Körper heute am meisten braucht, ist Ruhe.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_26", "copy": "Nimm heute etwas an. Du hast gegeben.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_27", "copy": "Ausgeruht ist die Richtung von ganz.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_28", "copy": "Halte an, weil du kannst. Das ist die Wahl.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "rest_ev_1",  "content": "Hast du dich heute ausgeruht? Wenn nicht, was stand im Weg?" },
+    { "id": "rest_ev_2",  "content": "Was brauchte dein Körper heute am meisten, was du ihm gegeben hast oder nicht?" },
+    { "id": "rest_ev_3",  "content": "Welche Schuldgefühle kamen beim Ausruhen heute auf? Woher kommen sie?" },
+    { "id": "rest_ev_4",  "content": "Was hast du heute losgelassen, von dem du gedacht hast, du würdest es brauchen?" },
+    { "id": "rest_ev_5",  "content": "Was würde es bedeuten, deinem Körper heute Nacht wirklich den Schlaf zu geben, den er braucht?" },
+    { "id": "rest_ev_6",  "content": "Was hat dich heute am meisten erschöpft? Gibt es etwas, das sich ändern könnte?" },
+    { "id": "rest_ev_7",  "content": "Was hast du heute für deine Erholung getan, auch wenn es etwas Kleines war?" },
+    { "id": "rest_ev_8",  "content": "Was würdest du dir heute Nacht sagen, das den Schlaf leichter machen würde?" },
+    { "id": "rest_ev_9",  "content": "Was musst du vor dem Schlafen loslassen? Was ist es nicht wert, durch die Nacht zu tragen?" },
+    { "id": "rest_ev_10", "content": "Fühlte sich Innehalten heute möglich an? Was hat es leichter oder schwerer gemacht?" },
+    { "id": "rest_ev_11", "content": "Was war das Erholsamste, das heute passiert ist, auch wenn es nur kurz war?" },
+    { "id": "rest_ev_12", "content": "Was brauchst du heute Nacht, um aufzuwachen und zu fühlen, dass etwas leichter wurde?" },
+    { "id": "rest_ev_13", "content": "Gibt es etwas, dem du heute Ja gesagt hast, das ein Nein verdient hätte?" },
+    { "id": "rest_ev_14", "content": "Was würdest du morgen anders machen, um dir mehr Raum zum Atmen zu geben?" }
+  ]
+
+}

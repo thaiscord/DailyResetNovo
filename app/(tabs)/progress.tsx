@@ -24,6 +24,8 @@ import { useLanguage } from '../../hooks/useLanguage';
 import { useEmotionalProfile } from '../../hooks/useEmotionalProfile';
 import { selectPrivateSpacePrompt } from '../../utils/privateSpacePrompts';
 import { usePathMemory, type PathMemory } from '../../hooks/usePathMemory';
+import { getItem, StorageKeys } from '../../hooks/useStorage';
+import { shouldShowMantraInProgress, mantraProgressVariant } from '../../utils/mantraEcho';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../../theme';
 
 // ─── Animated SVG Circle ──────────────────────────────────────────────────────
@@ -1008,6 +1010,7 @@ export default function ProgressScreen() {
   const { progress, weeklyScore, comebackCount, reload } = useProgress();
   const { totalEntries, saveEntry } = useSpaceReflections();
   const { memory: pathMemory } = usePathMemory();
+  const [personalMantra, setPersonalMantra] = useState<string | null>(null);
 
   // On web, start at 1 (fully visible) so there's no staggered pop-in on tab switch.
   const FADE_INIT = Platform.OS === 'web' ? 1 : 0;
@@ -1039,6 +1042,7 @@ export default function ProgressScreen() {
 
   useFocusEffect(useCallback(() => {
     reload();
+    getItem<string | null>(StorageKeys.PERSONAL_MANTRA, null).then(setPersonalMantra);
     // On web, sections start at opacity 1 (FADE_INIT above). Replaying the
     // staggered entrance on every tab switch causes visible flicker — skip it.
     if (Platform.OS !== 'web') { runEntranceAnimations(); }
@@ -1084,6 +1088,9 @@ export default function ProgressScreen() {
         />
         {pathMemory && totalDays >= 7 && (
           <PathMemoryCard memory={pathMemory} fadeAnim={memoryFade} />
+        )}
+        {personalMantra && shouldShowMantraInProgress(totalDays) && (
+          <MantraEchoCard mantra={personalMantra} totalDays={totalDays} fadeAnim={memoryFade} />
         )}
         <PrivateSpaceCard
           saveEntry={saveEntry}
@@ -1174,6 +1181,52 @@ const memStyles = StyleSheet.create({
     lineHeight: 24,
     fontStyle: 'italic',
     letterSpacing: 0.1,
+  },
+});
+
+// ─── MantraEchoCard ───────────────────────────────────────────────────────────
+// Rare rotating card — ~25% of days, only after 14+ completed days.
+// Surfaces the personal mantra chosen at onboarding. Not a fixed element.
+
+function MantraEchoCard({
+  mantra,
+  totalDays,
+  fadeAnim,
+}: {
+  mantra: string;
+  totalDays: number;
+  fadeAnim: Animated.Value;
+}) {
+  const { t } = useLanguage();
+  const translateY = fadeAnim.interpolate({ inputRange: [0, 1], outputRange: [10, 0] });
+
+  const variant = mantraProgressVariant(totalDays);
+  const key = `mantra.progress.v${variant}` as const;
+  const body = t(key, { mantra });
+  const label = t('mantra.progress.label');
+
+  return (
+    <Animated.View style={{ opacity: fadeAnim, transform: [{ translateY }] }}>
+      <Text style={styles.sectionTitle}>{label}</Text>
+      <View style={[styles.card, mantraCardStyles.card]}>
+        <Text style={mantraCardStyles.body}>{body}</Text>
+      </View>
+    </Animated.View>
+  );
+}
+
+const mantraCardStyles = StyleSheet.create({
+  card: {
+    borderColor: 'rgba(201,151,58,0.10)',
+    backgroundColor: 'rgba(201,151,58,0.03)',
+  },
+  body: {
+    fontSize: Typography.sizes.sm,
+    color: Colors.textSecondary,
+    lineHeight: 24,
+    fontStyle: 'italic',
+    letterSpacing: 0.1,
+    textAlign: 'center',
   },
 });
 

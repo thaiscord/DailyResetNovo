@@ -1,0 +1,532 @@
+{
+  "theme": "Calma",
+  "user_state": "Ansiosa. Cuerpo en alerta. Corazón acelerado antes de que el día empiece. Con miedo de algo. Tensión física en el pecho o los hombros.",
+  "core_need": "Sentirse segura en su propio cuerpo.",
+  "emotional_tone": "Suave. Lento. Espacioso.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "calm_arr_1",
+        "heading": "La respiración ya está aquí.",
+        "subheading": "Llegó antes que la ansiedad. Se quedará después."
+      },
+      {
+        "id": "calm_arr_2",
+        "heading": "Tu cuerpo no es el problema.",
+        "subheading": "Está haciendo lo que hace cuando las cosas se sienten grandes. Eso está permitido."
+      },
+      {
+        "id": "calm_arr_3",
+        "heading": "No tienes que sentirte mejor todavía.",
+        "subheading": "Solo tienes que estar aquí. Esa es la instrucción completa."
+      },
+      {
+        "id": "calm_arr_4",
+        "heading": "La tensión en tu pecho es real.",
+        "subheading": "También lo es este momento. También lo es la respiración moviéndose por ti ahora."
+      },
+      {
+        "id": "calm_arr_5",
+        "heading": "Lento no es debilidad.",
+        "subheading": "Lento es cómo el cuerpo encuentra su camino de vuelta."
+      },
+      {
+        "id": "calm_arr_6",
+        "heading": "Estás segura ahora.",
+        "subheading": "No eventualmente. Ahora. Esta respiración. Este momento."
+      },
+      {
+        "id": "calm_arr_7",
+        "heading": "La ansiedad no decide lo que viene después.",
+        "subheading": "Tú sí. Y ahora mismo, has decidido estar aquí."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "calm_rel_1",
+        "heading": "¿Qué está sosteniendo tu cuerpo?",
+        "subheading": "Nombra la sensación física. No la historia. Solo dónde la sientes.",
+        "field_placeholder": "Dónde vive la ansiedad en tu cuerpo ahora mismo..."
+      },
+      {
+        "id": "calm_rel_2",
+        "heading": "¿Qué estás temiendo?",
+        "subheading": "Escríbelo. Fuera del cuerpo, tiene menos peso.",
+        "field_placeholder": "Lo que sigue dando vueltas en tu cabeza..."
+      },
+      {
+        "id": "calm_rel_3",
+        "heading": "El peso que trajiste.",
+        "subheading": "Déjalo aquí antes de empezar. Puedes recogerlo si lo necesitas.",
+        "field_placeholder": "Lo que estás cargando en este momento y que no pertenece a él..."
+      },
+      {
+        "id": "calm_rel_4",
+        "heading": "¿Qué dice la preocupación?",
+        "subheading": "Escríbelo exactamente como suena en tu cabeza. Luego observa: ¿cuánto de eso está pasando ahora mismo?",
+        "field_placeholder": "Lo que la voz ansiosa está diciendo ahora..."
+      },
+      {
+        "id": "calm_rel_5",
+        "heading": "¿Qué necesita salir del cuerpo?",
+        "subheading": "La tensión tiene palabras. Deja que las use aquí.",
+        "field_placeholder": "Lo que estás sosteniendo en los hombros, el pecho, la mandíbula ahora..."
+      },
+      {
+        "id": "calm_rel_6",
+        "heading": "La cosa que no puedes dejar de pensar.",
+        "subheading": "Dale un recipiente. Esta página. Aquí.",
+        "field_placeholder": "Lo que sigue en bucle en tu mente y a lo que tu cuerpo está respondiendo..."
+      },
+      {
+        "id": "calm_rel_7",
+        "heading": "¿Qué necesita escuchar tu cuerpo?",
+        "subheading": "Escríbelo. Aunque no se sienta verdad todavía.",
+        "field_placeholder": "Lo que te dirías si supieras que todo va a estar bien..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "calm_br_1",
+        "heading": "Desacelera la exhalación.",
+        "instruction": "Inhala por cuatro. Exhala por ocho. La exhalación larga activa el sistema de calma. Hazlo tres veces."
+      },
+      {
+        "id": "calm_br_2",
+        "heading": "Deja caer los hombros.",
+        "instruction": "Inhala suavemente. Al exhalar, deja que los hombros desciendan. Estaban más altos de lo que te dabas cuenta."
+      },
+      {
+        "id": "calm_br_3",
+        "heading": "Respira hacia el pecho.",
+        "instruction": "Coloca una mano en el pecho. Respira hacia ella. Siente cómo sube y baja. Cuatro respiraciones. Sin prisa."
+      },
+      {
+        "id": "calm_br_4",
+        "heading": "La respiración en caja.",
+        "instruction": "Inhala cuatro tiempos. Sostén cuatro. Exhala cuatro. Sostén cuatro. Repite. Cada ciclo le dice al cuerpo: seguro."
+      },
+      {
+        "id": "calm_br_5",
+        "heading": "Suelta la mandíbula.",
+        "instruction": "Inhala despacio. Al exhalar, afloja la mandíbula. Luego las manos. Luego la frente."
+      }
+    ],
+
+    "moment": [
+      { "id": "calm_mom_1", "heading": "¿Qué necesita tu cuerpo ahora mismo?" },
+      { "id": "calm_mom_2", "heading": "Nombra una cosa que tu cuerpo pueda soltar." },
+      { "id": "calm_mom_3", "heading": "¿Cómo se siente estar segura en tu cuerpo hoy?" },
+      { "id": "calm_mom_4", "heading": "¿Dónde estás cargando tensión ahora mismo?" },
+      { "id": "calm_mom_5", "heading": "¿Qué ayudaría a tu cuerpo a sentirse un poco menos tenso?" },
+      { "id": "calm_mom_6", "heading": "¿Cuál es una pequeña cosa que tu cuerpo está pidiendo?" },
+      { "id": "calm_mom_7", "heading": "¿Cómo se sentiría dejar caer los hombros?" }
+    ],
+
+    "completion": [
+      {
+        "id": "calm_comp_1",
+        "heading": "Volviste a ti.",
+        "subheading": "La ansiedad estaba alta. Te quedaste de todas formas."
+      },
+      {
+        "id": "calm_comp_2",
+        "heading": "La respiración estuvo aquí.",
+        "subheading": "Incluso cuando no se sentía suficiente. Estuvo aquí."
+      },
+      {
+        "id": "calm_comp_3",
+        "heading": "Te mostraste para tu propio cuerpo.",
+        "subheading": "Eso importa. Más de lo que sabes ahora mismo."
+      },
+      {
+        "id": "calm_comp_4",
+        "heading": "La tensión puede suavizarse.",
+        "subheading": "No toda a la vez. Pero le diste espacio para empezar."
+      },
+      {
+        "id": "calm_comp_5",
+        "heading": "Estuviste aquí.",
+        "subheading": "Por completo. Incluso en el malestar. Eso es suficiente."
+      },
+      {
+        "id": "calm_comp_6",
+        "heading": "Algo en el cuerpo recuerda.",
+        "subheading": "Cada vez que desacelas y respiras, le muestras un camino de regreso."
+      },
+      {
+        "id": "calm_comp_7",
+        "heading": "No huiste de esto.",
+        "subheading": "Te quedaste. Respiraste. Esa es la práctica completa."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "calm_hc_1",
+      "headline": "La ansiedad no está a cargo.",
+      "subheadline": "Es ruidosa. No es quien decide."
+    },
+    {
+      "id": "calm_hc_2",
+      "headline": "Tus hombros pueden caer.",
+      "subheadline": "Ahora mismo. Sin ninguna razón necesaria."
+    },
+    {
+      "id": "calm_hc_3",
+      "headline": "La respiración siempre está disponible.",
+      "subheadline": "Antes que todo lo demás, siempre está la respiración."
+    },
+    {
+      "id": "calm_hc_4",
+      "headline": "No tienes que sentirte mejor todavía.",
+      "subheadline": "Solo estar aquí ya es la práctica."
+    },
+    {
+      "id": "calm_hc_5",
+      "headline": "El cuerpo sabe cómo volver.",
+      "subheadline": "A veces solo necesita un poco menos de resistencia."
+    },
+    {
+      "id": "calm_hc_6",
+      "headline": "Lento es la velocidad correcta ahora.",
+      "subheadline": "No para siempre. Solo por este momento."
+    },
+    {
+      "id": "calm_hc_7",
+      "headline": "La tensión puede ceder.",
+      "subheadline": "Ha cedido antes. Vale la pena recordarlo."
+    },
+    {
+      "id": "calm_hc_8",
+      "headline": "Segura ahora.",
+      "subheadline": "No eventualmente. No cuando las cosas se calmen. Ahora."
+    },
+    {
+      "id": "calm_hc_9",
+      "headline": "El cuerpo no está roto.",
+      "subheadline": "Está respondiendo a lo que se siente grande. Eso es lo que hace."
+    },
+    {
+      "id": "calm_hc_10",
+      "headline": "Una respiración cambia algo.",
+      "subheadline": "No todo. Algo. Empieza ahí."
+    },
+    {
+      "id": "calm_hc_11",
+      "headline": "Puedes estar ansiosa y seguir atravesando el día.",
+      "subheadline": "Las dos cosas son verdad al mismo tiempo."
+    },
+    {
+      "id": "calm_hc_12",
+      "headline": "El cuerpo guarda lo que la mente no dice.",
+      "subheadline": "¿Qué está guardando por ti hoy?"
+    },
+    {
+      "id": "calm_hc_13",
+      "headline": "Espacioso.",
+      "subheadline": "Así es como se siente la calma. Hay espacio. Incluso aquí."
+    },
+    {
+      "id": "calm_hc_14",
+      "headline": "Este momento es pasable.",
+      "subheadline": "No fácil. No resuelto. Pero has atravesado momentos como este antes."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "calm_act_1",
+      "content": "Coloca una mano en el pecho. Respira hacia ella durante cuatro respiraciones lentas.",
+      "why": "El contacto físico con el propio cuerpo despierta la respuesta de calma más rápido que la respiración sola."
+    },
+    {
+      "id": "calm_act_2",
+      "content": "Encuentra la tensión en los hombros. Levántalos hacia las orejas al inhalar. Suéltalos al exhalar.",
+      "why": "Contraer y soltar los músculos intencionalmente ayuda a liberar la tensión física acumulada."
+    },
+    {
+      "id": "calm_act_3",
+      "content": "Bebe un vaso de agua completo despacio. Pruébalo. Siente la temperatura.",
+      "why": "La temperatura y la lentitud sacan al cuerpo del bucle en el que estaba atrapado. Algo en la sensación interrumpe la espiral."
+    },
+    {
+      "id": "calm_act_4",
+      "content": "Nombra cinco cosas que puedas ver ahora mismo. Di cada una en voz baja.",
+      "why": "Nombrar lo que es visible aleja la atención de la espiral interna y la lleva a la habitación. La habitación ya está aquí."
+    },
+    {
+      "id": "calm_act_5",
+      "content": "Sal dos minutos. Quédate quieta. Deja que el aire toque tu cara.",
+      "why": "El aire, la luz, el cielo abierto le recuerdan al cuerpo que el mundo es más grande que la preocupación. Incluso dos minutos cambian el marco."
+    },
+    {
+      "id": "calm_act_6",
+      "content": "Escribe el pensamiento ansioso exactamente como suena. Luego escribe: 'Esto es un pensamiento, no un hecho.'",
+      "why": "Externalizar y nombrar reduce el poder de un pensamiento sin exigirte que lo descartes."
+    },
+    {
+      "id": "calm_act_7",
+      "content": "Estira los brazos sobre la cabeza. Sostén durante cinco respiraciones. Deja que las costillas se expandan.",
+      "why": "El pecho y las costillas guardan ansiedad físicamente. La expansión crea espacio físico."
+    },
+    {
+      "id": "calm_act_8",
+      "content": "Suelta la mandíbula. Suelta las manos. Nota qué más estás sosteniendo.",
+      "why": "El cuerpo guarda ansiedad en lugares predecibles. Soltar una área señala seguridad."
+    },
+    {
+      "id": "calm_act_9",
+      "content": "Salpica agua fría en tus muñecas o cara.",
+      "why": "El agua fría pone al cuerpo en contacto directo con el presente. La sensación es inmediata y real. La mente sigue a la sensación."
+    },
+    {
+      "id": "calm_act_10",
+      "content": "Siéntate con los pies planos en el suelo. Presiónalo suavemente. Nota la sensación.",
+      "why": "Enraizarse por los pies activa la sensación de seguridad física."
+    },
+    {
+      "id": "calm_act_11",
+      "content": "Exhala por más tiempo del que inhalas. Prueba cuatro tiempos de inhalación y ocho de exhalación.",
+      "why": "Una exhalación más larga le dice al cuerpo que el momento ha pasado. El cuerpo escucha esa señal más de lo que la mayoría de las personas se da cuenta."
+    },
+    {
+      "id": "calm_act_12",
+      "content": "Nombra la emoción que estás sintiendo. No la historia. Solo el nombre.",
+      "why": "Algo cambia cuando un sentimiento tiene nombre. Se convierte en algo que puedes mirar, no en algo que te mira a través."
+    },
+    {
+      "id": "calm_act_13",
+      "content": "Ve a un rincón más tranquilo cinco minutos. Siéntate sin pantalla.",
+      "why": "Reducir lo que entra le da al cuerpo espacio para reorganizarse por sí mismo."
+    },
+    {
+      "id": "calm_act_14",
+      "content": "Prepara una bebida caliente despacio. Sostén la taza con ambas manos. Bebe sin mirar pantallas.",
+      "why": "El calor, el ritual y la ausencia de estimulación crean un ancla física."
+    },
+    {
+      "id": "calm_act_15",
+      "content": "Túmbate en el suelo tres minutos. Solo el suelo, tu espalda, el techo.",
+      "why": "Bajar físicamente el cuerpo puede reducir la sensación de amenaza."
+    },
+    {
+      "id": "calm_act_16",
+      "content": "Tararea suavemente un minuto. Cualquier sonido. Deja que vibre en tu pecho.",
+      "why": "La vibración en el pecho asienta algo. El cuerpo responde de formas difíciles de explicar y fáciles de sentir."
+    },
+    {
+      "id": "calm_act_17",
+      "content": "Escribe una lista de cosas que son verdaderas y seguras ahora. No tranquilizaciones. Cosas verdaderas.",
+      "why": "La mente ansiosa amplifica las amenazas. Las cosas concretas y verdaderas ofrecen contrapeso."
+    },
+    {
+      "id": "calm_act_18",
+      "content": "Camina despacio por la habitación. Sin destino. Solo movimiento.",
+      "why": "El cuerpo retiene la ansiedad quieto. Moverse —incluso muy despacio— le da un lugar adonde ir. La habitación es suficiente."
+    },
+    {
+      "id": "calm_act_19",
+      "content": "Cierra los ojos. Nota tres sonidos en la habitación. No los juzgues. Solo escúchalos.",
+      "why": "Prestar atención pasiva al sonido aleja la mente de los bucles internos."
+    },
+    {
+      "id": "calm_act_20",
+      "content": "Sostén algo frío o con textura en las manos durante treinta segundos.",
+      "why": "La interrupción sensorial trae al cuerpo al momento presente."
+    },
+    {
+      "id": "calm_act_21",
+      "content": "Escríbele a la ansiedad como si fuera una persona. Dile que la ves.",
+      "why": "La ansiedad parece más pequeña cuando tiene una forma fuera de ti. Escribirle crea esa forma. Se convierte en algo que mirar, no en algo dentro de lo cual estar."
+    },
+    {
+      "id": "calm_act_22",
+      "content": "Inhala por la nariz despacio. Exhala con los labios levemente fruncidos.",
+      "why": "La leve resistencia de los labios fruncidos desacelera la exhalación de forma natural. El cuerpo lo nota. El ritmo empieza a cambiar."
+    },
+    {
+      "id": "calm_act_23",
+      "content": "Afloja la ropa. Quítate los zapatos si puedes. Deja que el cuerpo tenga más espacio.",
+      "why": "La constricción física amplifica la ansiedad. Soltar físicamente tiene un efecto paralelo."
+    },
+    {
+      "id": "calm_act_24",
+      "content": "Di en voz alta: 'Estoy segura ahora.' Dilo despacio. Nota qué pasa.",
+      "why": "El cuerpo responde a las palabras dichas de forma diferente a los pensamientos. La seguridad declarada se siente un poco más."
+    },
+    {
+      "id": "calm_act_25",
+      "content": "Reduce una cosa que esté causando sobrecarga ahora: baja un volumen, cierra una pantalla, atenúa una luz.",
+      "why": "Menos que entra significa menos que procesar. Quitar una cosa crea un poco más de espacio. El cuerpo nota los pequeños cambios."
+    },
+    {
+      "id": "calm_act_26",
+      "content": "Pon el teléfono boca abajo veinte minutos. Sin revisar.",
+      "why": "La disponibilidad del teléfono crea vigilancia de fondo. Quitarlo crea descanso genuino."
+    },
+    {
+      "id": "calm_act_27",
+      "content": "Escríbete una frase amable sobre hoy. Una sola frase.",
+      "why": "La autocrítica amplifica la ansiedad. La autocompasión, aunque sea pequeña, la interrumpe."
+    },
+    {
+      "id": "calm_act_28",
+      "content": "Masajea tus manos dos minutos. Despacio. Nota cada dedo.",
+      "why": "El contacto suave con uno mismo calma y ancla la conciencia en el cuerpo."
+    },
+    {
+      "id": "calm_act_29",
+      "content": "Pregúntate: '¿Qué necesita mi cuerpo ahora?' Luego haz lo primero que surja.",
+      "why": "El cuerpo a menudo sabe antes que la mente. Preguntar es el inicio de escuchar."
+    },
+    {
+      "id": "calm_act_30",
+      "content": "Baja la voz cuando hables hoy. Desacelera las frases.",
+      "why": "El ritmo de la voz afecta el estado interno. Hablar despacio crea silencio por dentro."
+    }
+  ],
+
+  "reflections": [
+    { "id": "calm_ref_1",  "content": "¿Dónde en tu cuerpo está sentada la ansiedad ahora mismo? ¿Puedes describirla?" },
+    { "id": "calm_ref_2",  "content": "¿Cuándo fue la última vez que te sentiste físicamente tranquila? ¿Qué era diferente en ese momento?" },
+    { "id": "calm_ref_3",  "content": "¿Qué hace tu cuerpo cuando intenta protegerte?" },
+    { "id": "calm_ref_4",  "content": "¿Qué está diciendo la voz ansiosa que la parte más serena de ti no cree?" },
+    { "id": "calm_ref_5",  "content": "¿Qué pide tu cuerpo cuando la ansiedad está más alta?" },
+    { "id": "calm_ref_6",  "content": "¿Qué te ha ayudado antes a sentirte más segura en tu propio cuerpo?" },
+    { "id": "calm_ref_7",  "content": "¿Qué estás temiendo hoy, y cuánto de eso está pasando ahora mismo?" },
+    { "id": "calm_ref_8",  "content": "¿Qué le dirías a una amiga con el pecho apretado de ansiedad ahora mismo?" },
+    { "id": "calm_ref_9",  "content": "Cuando la ansiedad cede —aunque sea un poco— ¿qué notas primero?" },
+    { "id": "calm_ref_10", "content": "¿Qué intenta decirte tu cuerpo que tu mente está demasiado ruidosa para escuchar?" },
+    { "id": "calm_ref_11", "content": "¿Cómo se siente estar segura para ti? ¿Puedes nombrar un lugar, un momento, una sensación?" },
+    { "id": "calm_ref_12", "content": "¿Qué te estás diciendo que está pasando ahora versus lo que realmente está pasando?" },
+    { "id": "calm_ref_13", "content": "¿Qué parte del día de hoy te da más miedo? ¿Ese miedo ya está aquí, o todavía está por venir?" },
+    { "id": "calm_ref_14", "content": "¿Cómo se siente lento cuando te lo permites? ¿Qué surge?" },
+    { "id": "calm_ref_15", "content": "¿Qué ayudaría a tus hombros a bajar ahora mismo?" },
+    { "id": "calm_ref_16", "content": "¿De qué te ha impedido hacer la ansiedad que realmente querías hacer?" },
+    { "id": "calm_ref_17", "content": "¿Cuáles son tres cosas que son físicamente verdaderas y seguras ahora mismo?" },
+    { "id": "calm_ref_18", "content": "¿Cuándo fue la última vez que tu cuerpo se sintió espacioso? No necesariamente bien. Solo espacioso." },
+    { "id": "calm_ref_19", "content": "¿Cómo se sentiría dejar de luchar contra la ansiedad solo cinco minutos?" },
+    { "id": "calm_ref_20", "content": "¿Cuál es la versión más suave de lo que necesitas decirte hoy?" },
+    { "id": "calm_ref_21", "content": "¿Cómo está tu pecho ahora mismo? ¿Cómo se sentiría si se abriera un poco?" },
+    { "id": "calm_ref_22", "content": "¿La ansiedad te resulta familiar? ¿Cuándo la sentiste antes, y qué pasó?" },
+    { "id": "calm_ref_23", "content": "¿Qué estás intentando controlar ahora que no es realmente controlable?" },
+    { "id": "calm_ref_24", "content": "¿Cómo sería el descanso para tu cuerpo hoy? No dormir. Descansar." },
+    { "id": "calm_ref_25", "content": "¿Qué es una cosa que puedes dejar de monitorear unas horas hoy?" },
+    { "id": "calm_ref_26", "content": "¿Qué necesita tu cuerpo escuchar de ti que no ha escuchado recientemente?" },
+    { "id": "calm_ref_27", "content": "¿Cuántas veces volviste a la respiración hoy cuando la ansiedad aumentó?" },
+    { "id": "calm_ref_28", "content": "¿Qué estás permitiendo que se sienta grande y que quizás sea más pequeño de lo que parece?" },
+    { "id": "calm_ref_29", "content": "¿Cómo se siente la calma en tu cuerpo, no en tu mente?" },
+    { "id": "calm_ref_30", "content": "¿Qué cargaste hoy que no era tuyo para cargar?" }
+  ],
+
+  "words": [
+    { "id": "calm_w_1",  "word": "RESPIRAR",    "meaning": "No profundo. Solo completo. Los pulmones saben qué hacer." },
+    { "id": "calm_w_2",  "word": "SUAVE",       "meaning": "El cuerpo puede ser suave. Incluso hoy." },
+    { "id": "calm_w_3",  "word": "DESPACIO",    "meaning": "Esta es la velocidad correcta para un cuerpo que necesita descanso." },
+    { "id": "calm_w_4",  "word": "ABIERTO",     "meaning": "Pecho abierto. Mandíbula suelta. Manos abiertas. La ansiedad contrae." },
+    { "id": "calm_w_5",  "word": "ALIVIAR",     "meaning": "No resuelto. No arreglado. Solo aliviado." },
+    { "id": "calm_w_6",  "word": "AQUÍ",        "meaning": "Esta habitación. Esta respiración. Este momento. No el que estás temiendo." },
+    { "id": "calm_w_7",  "word": "ENRAIZAR",    "meaning": "Pies en el suelo. Cuerpo en el espacio. Presente en el mundo físico." },
+    { "id": "calm_w_8",  "word": "SEGURA",      "meaning": "Ahora mismo. No en general. Ahora mismo." },
+    { "id": "calm_w_9",  "word": "QUIETA",      "meaning": "El cuerpo no necesita más estímulo. Necesita quietud." },
+    { "id": "calm_w_10", "word": "ESPACIO",     "meaning": "Para respirar. Para sentir. Para estar sin tener que actuar." },
+    { "id": "calm_w_11", "word": "GENTIL",      "meaning": "Lo contrario de lo que exige la ansiedad. Elige gentil." },
+    { "id": "calm_w_12", "word": "SOLTAR",      "meaning": "Lo que los hombros han estado esperando hacer." },
+    { "id": "calm_w_13", "word": "RECIBIR",     "meaning": "Has estado dando. Recibe algo hoy. Incluso una respiración." },
+    { "id": "calm_w_14", "word": "SILENCIO",    "meaning": "No ausencia de sonido. La calidad de una habitación antes de que todo empiece." },
+    { "id": "calm_w_15", "word": "CUERPO",      "meaning": "No es el enemigo. Es la primera señal." },
+    { "id": "calm_w_16", "word": "PERMITIR",    "meaning": "Permite el sentimiento. Luchar cuesta más que sentirlo." },
+    { "id": "calm_w_17", "word": "HUNDIRSE",    "meaning": "En la silla. En el suelo. Deja que la gravedad te sostenga." },
+    { "id": "calm_w_18", "word": "CALIDEZ",     "meaning": "El calor le señala seguridad al cuerpo. Búscala." },
+    { "id": "calm_w_19", "word": "SENTIR",      "meaning": "No para resolver. No para analizar. Solo sentir y dejar pasar." },
+    { "id": "calm_w_20", "word": "PAUSA",       "meaning": "Antes de lo siguiente. Antes de la próxima respuesta. Pausa." },
+    { "id": "calm_w_21", "word": "OBSERVAR",    "meaning": "Observa la ansiedad como si fuera el clima. Tú no eres el clima." },
+    { "id": "calm_w_22", "word": "SOSTENER",    "meaning": "Sosténte a ti misma como sostendrías a alguien con dolor." },
+    { "id": "calm_w_23", "word": "CONFIAR",     "meaning": "Algo en el cuerpo ha ido encontrando el camino de vuelta mucho antes de que empezaras a ayudar. Aún conoce parte del recorrido." },
+    { "id": "calm_w_24", "word": "EXHALAR",     "meaning": "La exhalación activa la calma. Deja que sea más larga que la inhalación." },
+    { "id": "calm_w_25", "word": "VOLVER",      "meaning": "Al cuerpo. A la respiración. Al ahora." },
+    { "id": "calm_w_26", "word": "ASENTARSE",   "meaning": "Como sedimento en el agua. Con tiempo y quietud, se asienta." },
+    { "id": "calm_w_27", "word": "ABLANDARSE",  "meaning": "La mandíbula. Las manos. La creencia de que esto no puede pasar." },
+    { "id": "calm_w_28", "word": "PRESENTE",    "meaning": "No adelante. No atrás. Solo aquí. Donde realmente estás." },
+    { "id": "calm_w_29", "word": "ESCUCHAR",    "meaning": "Lo que el cuerpo está diciendo antes de que la mente lo sobreescriba." },
+    { "id": "calm_w_30", "word": "LEVEDAD",     "meaning": "Pequeña y clara. La calidad del momento después de una larga exhalación." },
+    { "id": "calm_w_31", "word": "AFLOJAR",     "meaning": "Encuentra dónde estás apretada. Suéltalo. Encuentra el siguiente lugar." },
+    { "id": "calm_w_32", "word": "NOTAR",       "meaning": "Nota sin etiquetar como malo. Solo nota." },
+    { "id": "calm_w_33", "word": "PASAR",       "meaning": "Ha pasado antes. Incluso cuando se sentía permanente. Cambió. Eso también es verdad." },
+    { "id": "calm_w_34", "word": "ANCLA",       "meaning": "La respiración es el ancla. Siempre está disponible." },
+    { "id": "calm_w_35", "word": "CEDER",       "meaning": "Cede a la lentitud. El cuerpo sabe cuándo dejar de resistir." },
+    { "id": "calm_w_36", "word": "PEQUEÑO",     "meaning": "Respiración pequeña. Acción pequeña. Alivio pequeño. Suficiente." },
+    { "id": "calm_w_37", "word": "TERNURA",     "meaning": "Sé tierna con la parte de ti que tiene miedo ahora mismo." },
+    { "id": "calm_w_38", "word": "INHALAR",     "meaning": "La primera mitad. El recogimiento. Espacio antes del soltar." },
+    { "id": "calm_w_39", "word": "SUELO",       "meaning": "Te está sosteniendo. No tienes que sostenerte hoy." },
+    { "id": "calm_w_40", "word": "EXPANDIR",    "meaning": "Lo que el pecho quiere hacer cuando se le permite." },
+    { "id": "calm_w_41", "word": "SIMPLE",      "meaning": "Ahora mismo, solo una cosa. Respira." },
+    { "id": "calm_w_42", "word": "RESTAURAR",   "meaning": "Cuando dejas de luchar, algo en el cuerpo empieza a encontrar su propio camino de vuelta. Siempre fue a ser así." },
+    { "id": "calm_w_43", "word": "CONOCIDO",    "meaning": "Conoces esta sensación. Ya has salido de ella antes. Lo harás de nuevo." },
+    { "id": "calm_w_44", "word": "BAJAR",       "meaning": "Baja la voz. Baja el ritmo. Baja la exigencia." },
+    { "id": "calm_w_45", "word": "DESCANSO",    "meaning": "No dormir. La calidad de un momento sin urgencia." },
+    { "id": "calm_w_46", "word": "OLA",         "meaning": "La ansiedad es una ola. No tienes que detenerla. Puedes atravesarla." },
+    { "id": "calm_w_47", "word": "CARGAR",      "meaning": "Estás cargando más de lo que dices. ¿Qué puede dejarse?" },
+    { "id": "calm_w_48", "word": "AHORA",       "meaning": "Solo este momento. No el siguiente. Solo ahora." },
+    { "id": "calm_w_49", "word": "RESPIRACIÓN", "meaning": "Lo único que estaba aquí antes que la ansiedad. Aún aquí." },
+    { "id": "calm_w_50", "word": "AMPLIO",      "meaning": "Abre el pecho bien. Dale espacio a los pulmones. Amplio es calma." },
+    { "id": "calm_w_51", "word": "VERDADERO",   "meaning": "Lo que es realmente verdad ahora mismo, separado de lo que se siente verdad." },
+    { "id": "calm_w_52", "word": "ATRAVESAR",   "meaning": "No por encima. No alrededor. El camino es a través. Y atravesar es posible." }
+  ],
+
+  "notification_pool": [
+    { "id": "calm_n_1",  "copy": "Tus hombros pueden caer ahora mismo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_2",  "copy": "La respiración sigue aquí. Úsala.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_3",  "copy": "No tienes que sentirte mejor todavía. Solo respira.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_4",  "copy": "La ansiedad está alta. Ella no está a cargo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_5",  "copy": "Desacelera. El cuerpo lo está pidiendo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_6",  "copy": "¿Qué necesita tu pecho ahora mismo?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_7",  "copy": "Una respiración lenta cambia algo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_8",  "copy": "Segura ahora. No eventualmente. Ahora.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_9",  "copy": "Suelta la mandíbula. Haz una respiración.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_10", "copy": "La tensión ha cedido antes. Eso no ha cambiado.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_11", "copy": "Enraíza los pies. Respira. Estás aquí.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_12", "copy": "Deja que la exhalación sea más larga que la inhalación.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_13", "copy": "El cuerpo ya ha encontrado el camino de vuelta antes. Conoce parte del recorrido.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_14", "copy": "Ya has sentido esto antes. Pasó.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_15", "copy": "Nada requiere tu tensión ahora mismo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_16", "copy": "Ablanda una cosa. Solo una.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_17", "copy": "El cuerpo está haciendo su trabajo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_18", "copy": "La ansiedad es el clima. Tú no eres el clima.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_19", "copy": "Cinco minutos de lento ya es algo. Empieza ahí.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_20", "copy": "Exhala por más tiempo del que inhalas.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_21", "copy": "¿Cómo se sentiría la calma hoy? Empieza ahí.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_22", "copy": "Puedes ir más despacio.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_23", "copy": "Prestar atención al cuerpo es una forma de amabilidad. Tiende a responder.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_24", "copy": "Tres respiraciones. Sin juicio. Solo tres.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_25", "copy": "La preocupación no es la realidad. Todavía no.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_26", "copy": "Chequea con tu cuerpo. ¿Qué necesita?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_27", "copy": "La calma sigue ahí, en algún lugar. Ha estado antes.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_28", "copy": "Una respiración. Luego la siguiente. Ese es el plan completo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "calm_ev_1",  "content": "¿Dónde apareció la ansiedad en tu cuerpo hoy? ¿Qué necesitaba?" },
+    { "id": "calm_ev_2",  "content": "¿Qué ayudó a tu cuerpo, aunque sea un poco, hoy?" },
+    { "id": "calm_ev_3",  "content": "¿Cuándo te sentiste más segura físicamente hoy? ¿Qué lo creó?" },
+    { "id": "calm_ev_4",  "content": "¿Qué cargaste hoy que era más pesado de lo que necesitaba ser?" },
+    { "id": "calm_ev_5",  "content": "¿La cosa que estabas temiendo esta mañana ocurrió? ¿Qué pasó realmente?" },
+    { "id": "calm_ev_6",  "content": "¿Qué pidió tu cuerpo hoy que realmente escuchaste?" },
+    { "id": "calm_ev_7",  "content": "¿Cuándo respiraste hoy y sentiste que cambiaba algo?" },
+    { "id": "calm_ev_8",  "content": "¿Qué harías diferente mañana para darle más apoyo a tu cuerpo?" },
+    { "id": "calm_ev_9",  "content": "¿Qué estabas sosteniendo en tu cuerpo al inicio del día? ¿Sigue ahí?" },
+    { "id": "calm_ev_10", "content": "¿Dónde sentiste calma, aunque sea brevemente, hoy?" },
+    { "id": "calm_ev_11", "content": "¿De qué te protegió la ansiedad hoy? ¿Fue útil esa protección?" },
+    { "id": "calm_ev_12", "content": "¿Qué se ablandó hoy? ¿En ti, en la situación, en cómo te sostuviste?" },
+    { "id": "calm_ev_13", "content": "¿Qué le está pidiendo tu cuerpo antes de dormir esta noche?" },
+    { "id": "calm_ev_14", "content": "¿Con qué fuiste gentil hoy? ¿Eso te incluyó a ti?" }
+  ]
+
+}

@@ -1,0 +1,643 @@
+{
+  "theme": "Descanso",
+  "user_state": "Agotado. Sin reservas. Culpa por necesitar detenerse. Confundiendo el descanso con la pereza.",
+  "core_need": "Permiso para detenerse sin culpa.",
+  "emotional_tone": "Suave. Lento. Permisivo.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "rest_arr_1",
+        "heading": "Tienes permiso para detenerte.",
+        "subheading": "No después. Ahora mismo. Antes de haberlo ganado. Porque el descanso no se gana."
+      },
+      {
+        "id": "rest_arr_2",
+        "heading": "Descanso no es pereza.",
+        "subheading": "Es cómo el cuerpo reconstruye lo que el agotamiento se llevó."
+      },
+      {
+        "id": "rest_arr_3",
+        "heading": "Estás funcionando al límite.",
+        "subheading": "Eso no es un defecto de carácter. Es el estado honesto de alguien que ha estado haciendo demasiado."
+      },
+      {
+        "id": "rest_arr_4",
+        "heading": "Detenerse no es rendirse.",
+        "subheading": "Es un avance a su manera."
+      },
+      {
+        "id": "rest_arr_5",
+        "heading": "La culpa por descansar no es la verdad.",
+        "subheading": "Es una historia de una cultura que confundió el agotamiento con la virtud."
+      },
+      {
+        "id": "rest_arr_6",
+        "heading": "No tienes que ganarte esto.",
+        "subheading": "El descanso no es una recompensa. Es una necesidad."
+      },
+      {
+        "id": "rest_arr_7",
+        "heading": "El cuerpo te está diciendo algo.",
+        "subheading": "Has estado ignorando la señal. Hoy, puedes escucharla."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "rest_rel_1",
+        "heading": "¿Qué dice la culpa?",
+        "subheading": "Escríbelo exactamente. Luego veremos si es verdad.",
+        "field_placeholder": "Lo que dice la parte de ti que se siente culpable por descansar..."
+      },
+      {
+        "id": "rest_rel_2",
+        "heading": "¿Qué estás cargando que no es tuyo?",
+        "subheading": "La responsabilidad tiene un límite. ¿Qué estás sosteniendo más allá del tuyo?",
+        "field_placeholder": "Qué obligaciones o preocupaciones cargas que pertenecen a otra persona o situación..."
+      },
+      {
+        "id": "rest_rel_3",
+        "heading": "¿Qué has estado haciendo en lugar de descansar?",
+        "subheading": "Nombra los sustitutos. El scroll, el exceso de trabajo, el movimiento constante.",
+        "field_placeholder": "Qué has estado haciendo en lugar de detenerte de verdad..."
+      },
+      {
+        "id": "rest_rel_4",
+        "heading": "¿Cuánto tiempo llevas agotado?",
+        "subheading": "Dilo con honestidad. El número importa.",
+        "field_placeholder": "Cuándo fue la última vez que te sentiste genuinamente descansado..."
+      },
+      {
+        "id": "rest_rel_5",
+        "heading": "¿Qué necesitarías soltar para descansar de verdad?",
+        "subheading": "No para siempre. Solo por hoy.",
+        "field_placeholder": "Qué necesitarías dejar ir para permitirte detenerte..."
+      },
+      {
+        "id": "rest_rel_6",
+        "heading": "¿Cómo se siente el agotamiento?",
+        "subheading": "En el cuerpo, no solo en la mente. Descríbelo.",
+        "field_placeholder": "Dónde vive el agotamiento en tu cuerpo ahora mismo..."
+      },
+      {
+        "id": "rest_rel_7",
+        "heading": "¿Qué temes que pasará si te detienes?",
+        "subheading": "La lista suele ser más corta de lo que el miedo sugiere.",
+        "field_placeholder": "Qué crees que se vendrá abajo si descansas hoy..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "rest_br_1",
+        "heading": "Una respiración que no pide nada.",
+        "instruction": "Inhala despacio. Exhala con un suspiro suave. Sin esfuerzo. Sin meta. Solo esta respiración."
+      },
+      {
+        "id": "rest_br_2",
+        "heading": "Deja que el cuerpo exhale todo.",
+        "instruction": "Inhala con suavidad. Al exhalar, deja caer todo. Hombros, mandíbula, manos. Todo."
+      },
+      {
+        "id": "rest_br_3",
+        "heading": "La respiración de alguien que se ha detenido.",
+        "instruction": "Lenta. Amplia. Sin prisa. Respira como si el día no tuviera más exigencias. Solo por este momento."
+      },
+      {
+        "id": "rest_br_4",
+        "heading": "Descansa en la respiración.",
+        "instruction": "Cuatro tiempos inhalando. Seis tiempos exhalando. Dos veces. Siente el cuerpo volviéndose más pesado y más quieto."
+      },
+      {
+        "id": "rest_br_5",
+        "heading": "Suavízate por completo.",
+        "instruction": "Inhala y deja que todo suba. Exhala y deja que todo caiga. Sin retener. Solo soltar."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "rest_mom_1",
+        "heading": "¿Qué necesita tu cuerpo más ahora mismo?"
+      },
+      {
+        "id": "rest_mom_2",
+        "heading": "¿Cómo sería un descanso genuino para ti hoy?"
+      },
+      {
+        "id": "rest_mom_3",
+        "heading": "¿Qué puedes soltar sin que todo se derrumbe?"
+      },
+      {
+        "id": "rest_mom_4",
+        "heading": "¿Cómo es detenerte para ti, específicamente?"
+      },
+      {
+        "id": "rest_mom_5",
+        "heading": "¿Qué te ha estado agotando que aún no has nombrado?"
+      },
+      {
+        "id": "rest_mom_6",
+        "heading": "¿Cómo se sentiría una versión descansada de ti, desde adentro?"
+      },
+      {
+        "id": "rest_mom_7",
+        "heading": "¿Qué es lo más restaurador que podrías hacer en la próxima hora?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "rest_comp_1",
+        "heading": "Te detuviste.",
+        "subheading": "Eso es la práctica. No el plan. El detenerse de verdad."
+      },
+      {
+        "id": "rest_comp_2",
+        "heading": "El descanso sucedió.",
+        "subheading": "La culpa no ganó hoy. Nótalo."
+      },
+      {
+        "id": "rest_comp_3",
+        "heading": "Le diste al cuerpo lo que pedía.",
+        "subheading": "Eso no es indulgencia. Es cuidado."
+      },
+      {
+        "id": "rest_comp_4",
+        "heading": "El mundo no se derrumbó.",
+        "subheading": "Rara vez lo hace. El descanso suele ser más seguro de lo que el miedo dice."
+      },
+      {
+        "id": "rest_comp_5",
+        "heading": "Escuchaste.",
+        "subheading": "A la parte de ti que ha estado pidiendo detenerse. Hoy, la oíste."
+      },
+      {
+        "id": "rest_comp_6",
+        "heading": "La recuperación está ocurriendo.",
+        "subheading": "Despacio. Bajo la superficie. Le diste las condiciones que necesitaba."
+      },
+      {
+        "id": "rest_comp_7",
+        "heading": "Elegiste descansar.",
+        "subheading": "Por encima de la culpa. De la productividad. De lo que crees que deberías estar haciendo. Esa fue una elección real."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "rest_hc_1",
+      "headline": "El descanso no se gana. Se necesita.",
+      "subheadline": "No tienes que merecerlo primero."
+    },
+    {
+      "id": "rest_hc_2",
+      "headline": "La culpa no está diciendo la verdad.",
+      "subheadline": "Está repitiendo una historia que te enseñaron. Esa historia no es tuya."
+    },
+    {
+      "id": "rest_hc_3",
+      "headline": "Estar agotado no es un fracaso moral.",
+      "subheadline": "Es lo que sucede cuando das más de lo que repones."
+    },
+    {
+      "id": "rest_hc_4",
+      "headline": "Detenerse no es lo opuesto a vivir.",
+      "subheadline": "Es parte de ello. No una pausa de la vida."
+    },
+    {
+      "id": "rest_hc_5",
+      "headline": "Tu cuerpo ha estado pidiendo.",
+      "subheadline": "Lo has estado ignorando. Hoy, no tienes que hacerlo."
+    },
+    {
+      "id": "rest_hc_6",
+      "headline": "El descanso no necesita demostrar nada.",
+      "subheadline": "Su valor no está en lo que te permite hacer después. Está en lo que eres ahora mismo."
+    },
+    {
+      "id": "rest_hc_7",
+      "headline": "Puedes detenerte antes de colapsar.",
+      "subheadline": "No tienes que esperar hasta romperte. El permiso ya está aquí."
+    },
+    {
+      "id": "rest_hc_8",
+      "headline": "El agotamiento confundido con virtud sigue siendo agotamiento.",
+      "subheadline": "Llamarlo dedicación no cambia lo que es."
+    },
+    {
+      "id": "rest_hc_9",
+      "headline": "Lo que llamas pereza es recuperación.",
+      "subheadline": "No son lo mismo."
+    },
+    {
+      "id": "rest_hc_10",
+      "headline": "Algo tiene que volver adentro. No para los demás. Para ti.",
+      "subheadline": "Has estado dando desde un lugar que ya estaba bajo."
+    },
+    {
+      "id": "rest_hc_11",
+      "headline": "El cuerpo se reconstruye durante el descanso.",
+      "subheadline": "No durante el trabajo. Durante el descanso. No hay nada malo en eso."
+    },
+    {
+      "id": "rest_hc_12",
+      "headline": "Puedes detenerte ahora, mientras detenerte aún es tu elección.",
+      "subheadline": "El cuerpo no olvida lo que ha estado pidiendo."
+    },
+    {
+      "id": "rest_hc_13",
+      "headline": "No estás atrasado.",
+      "subheadline": "Estás agotado. Es un problema diferente con una solución diferente."
+    },
+    {
+      "id": "rest_hc_14",
+      "headline": "Permiso concedido.",
+      "subheadline": "Para detenerte. Para descansar. Para hacer menos de lo que crees que deberías. Hoy."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "rest_act_1",
+      "content": "Recuéstate veinte minutos. Sin teléfono. Sin necesidad de dormir. Solo horizontal.",
+      "why": "Unos minutos en horizontal cambian algo en el cuerpo. El cuerpo sabe cómo usarlo."
+    },
+    {
+      "id": "rest_act_2",
+      "content": "Elimina una obligación de la lista de hoy que no es realmente necesaria.",
+      "why": "El agotamiento suele mantenerse haciendo más de lo que la situación requiere."
+    },
+    {
+      "id": "rest_act_3",
+      "content": "Come algo despacio. Sentado. Sin pantallas. Saboréalo.",
+      "why": "Comer despacio es su propio tipo de regreso. El cuerpo siente la diferencia."
+    },
+    {
+      "id": "rest_act_4",
+      "content": "Dile a alguien que estás cansado y que necesitas apoyo hoy.",
+      "why": "Decirlo en voz alta a alguien cambia lo que se siente al cargarlo. Algo se transforma cuando es presenciado."
+    },
+    {
+      "id": "rest_act_5",
+      "content": "Duerme 30 minutos más temprano esta noche. Decide eso ahora.",
+      "why": "Decidir con anticipación elimina la negociación nocturna contigo mismo."
+    },
+    {
+      "id": "rest_act_6",
+      "content": "Sal a caminar despacio. Sin auriculares. Sin podcast. Solo camina.",
+      "why": "Caminar sin nada sonando es su propio tipo de silencio. El cuerpo se mueve y algo más se asienta."
+    },
+    {
+      "id": "rest_act_7",
+      "content": "Date un baño o ducha sin apresurarte. Deja que el agua sea lo único.",
+      "why": "El agua y el calor tienen una forma de ablandar lo que el día endureció. El cuerpo recuerda."
+    },
+    {
+      "id": "rest_act_8",
+      "content": "Cancela algo opcional hoy. Devuélvete ese tiempo.",
+      "why": "El descanso requiere tiempo despejado. Despejar tiempo requiere el permiso de cancelar."
+    },
+    {
+      "id": "rest_act_9",
+      "content": "Siéntate afuera diez minutos. Sin hacer nada productivo.",
+      "why": "Algo cambia cuando estás fuera sin necesitar hacer nada. Aunque sean pocos minutos."
+    },
+    {
+      "id": "rest_act_10",
+      "content": "Lee algo por placer. No información. No productividad. Placer.",
+      "why": "La mente agotada suele olvidar que el disfrute es su propio motivo. No tiene que ganarse nada para valer."
+    },
+    {
+      "id": "rest_act_11",
+      "content": "Di que no a una solicitud a la que quieres decir que no.",
+      "why": "Cada sí que no es real cuesta algo. Decir no a lo que te drena es una forma de cuidado."
+    },
+    {
+      "id": "rest_act_12",
+      "content": "Siéntate en silencio cinco minutos. Sin estímulos. Solo quietud.",
+      "why": "El silencio es raro para la mayoría de las personas agotadas. Pide muy poco y devuelve mucho."
+    },
+    {
+      "id": "rest_act_13",
+      "content": "Delega una tarea que has estado haciendo porque no confías en que otros la hagan.",
+      "why": "El control y el agotamiento suelen ser el mismo problema."
+    },
+    {
+      "id": "rest_act_14",
+      "content": "Deja los platos, la ropa o una tarea menor para mañana. Conscientemente.",
+      "why": "Elegir dejar algo para después es diferente al descuido. Es un acto de cuidado."
+    },
+    {
+      "id": "rest_act_15",
+      "content": "Echa una siesta si puedes. Aunque sean veinte minutos.",
+      "why": "El sueño corto es sueño real. El cuerpo no necesita mucha invitación para comenzar a recuperarse."
+    },
+    {
+      "id": "rest_act_16",
+      "content": "Apaga las noticias y las redes sociales por el resto del día.",
+      "why": "El consumo crónico de información es una fuente oculta de agotamiento."
+    },
+    {
+      "id": "rest_act_17",
+      "content": "Escribe todo lo que estás intentando guardar en la cabeza. Luego cierra la lista.",
+      "why": "Lo que está en la cabeza se vuelve más pesado cuanto más tiempo permanece ahí. Escribirlo lo pone en otro lugar."
+    },
+    {
+      "id": "rest_act_18",
+      "content": "Haz una cosa hoy que sea enteramente para tu propio disfrute. Una sola cosa.",
+      "why": "El agotamiento se profundiza cuando el placer siempre se pospone. Puedes tener algo que sea solo tuyo."
+    },
+    {
+      "id": "rest_act_19",
+      "content": "Pide a alguien que se encargue de algo que normalmente manejas solo.",
+      "why": "La independencia y el agotamiento suelen ser la misma elección."
+    },
+    {
+      "id": "rest_act_20",
+      "content": "Date una hora sin agenda. Ni siquiera descansar como meta. Solo libre.",
+      "why": "El descanso programado con objetivos no es descanso pleno. El tiempo verdaderamente libre es su propia categoría."
+    },
+    {
+      "id": "rest_act_21",
+      "content": "Come algo que requiera esfuerzo mínimo. Date eso hoy.",
+      "why": "El trabajo de cocinar agota energía. Reducirlo no es pereza. Es cuidado."
+    },
+    {
+      "id": "rest_act_22",
+      "content": "Baja las luces. Suaviza el entorno. Deja que el cuerpo sepa que el ritmo está cambiando.",
+      "why": "La luz suave cambia la sensación del ambiente. El cuerpo lo nota, aunque la mente no."
+    },
+    {
+      "id": "rest_act_23",
+      "content": "Pregúntate: '¿Qué es lo mínimo que necesito hacer hoy para estar bien?' Haz solo eso.",
+      "why": "Hacer menos no es fallar. Es lo que el día pidió."
+    },
+    {
+      "id": "rest_act_24",
+      "content": "Ve algo ligero y fácil. Sin culpa.",
+      "why": "El entretenimiento es una forma legítima de descanso. La culpa consume más energía que lo que ves."
+    },
+    {
+      "id": "rest_act_25",
+      "content": "Escribe una lista de lo que has hecho esta semana. No lo que falta. Lo que está hecho.",
+      "why": "La mente agotada tiende a ver solo lo que queda. Escribir lo hecho cambia la imagen."
+    },
+    {
+      "id": "rest_act_26",
+      "content": "Pasa veinte minutos en conversación con alguien que te restaura.",
+      "why": "No toda compañía te deja en el mismo lugar. Algunas personas restauran. Encuentra una de ellas hoy."
+    },
+    {
+      "id": "rest_act_27",
+      "content": "Usa ropa cómoda hoy. Hazlo una prioridad real.",
+      "why": "La comodidad física no es cosa pequeña. Cambia cómo se siente el cuerpo a lo largo del día."
+    },
+    {
+      "id": "rest_act_28",
+      "content": "Di 'necesito descansar hoy' en voz alta. A ti mismo, o a alguien.",
+      "why": "Nombrar una necesidad es el primer paso para atenderla."
+    },
+    {
+      "id": "rest_act_29",
+      "content": "Cierra los ojos cinco minutos. Donde sea que estés. Solo ciérralos.",
+      "why": "Retirar lo que los ojos absorben cambia algo. Aunque sea brevemente."
+    },
+    {
+      "id": "rest_act_30",
+      "content": "Escribe lo que el descanso te ha dado en el pasado. Cómo te sentiste. Lo que volvió.",
+      "why": "El recuerdo de haber descansado puede recordarte que valió la pena elegirlo."
+    }
+  ],
+
+  "reflections": [
+    {
+      "id": "rest_ref_1",
+      "content": "¿Cuándo fue la última vez que te sentiste genuinamente descansado? ¿Qué era diferente en ese momento?"
+    },
+    {
+      "id": "rest_ref_2",
+      "content": "¿Qué historia te cuentas sobre las personas que descansan sin culpa?"
+    },
+    {
+      "id": "rest_ref_3",
+      "content": "¿Qué ha producido realmente para ti el hecho de forzar tus límites?"
+    },
+    {
+      "id": "rest_ref_4",
+      "content": "¿Qué te permitirías dejar de hacer si creyeras que el descanso es legítimo?"
+    },
+    {
+      "id": "rest_ref_5",
+      "content": "¿Cómo se siente tu cuerpo ahora mismo? ¿Cuánto tiempo lleva así?"
+    },
+    {
+      "id": "rest_ref_6",
+      "content": "¿Dónde aprendiste que el descanso tenía que ganarse?"
+    },
+    {
+      "id": "rest_ref_7",
+      "content": "¿Qué temes que se derrumbe si reduces el ritmo?"
+    },
+    {
+      "id": "rest_ref_8",
+      "content": "¿Qué has estado haciendo en lugar de descansar? ¿Está funcionando?"
+    },
+    {
+      "id": "rest_ref_9",
+      "content": "¿Qué significaría sobre ti elegir descansar hoy?"
+    },
+    {
+      "id": "rest_ref_10",
+      "content": "¿Cómo se siente el agotamiento en tu cuerpo, no en tu mente?"
+    },
+    {
+      "id": "rest_ref_11",
+      "content": "¿Quién en tu vida trata el descanso como algo legítimo? ¿Qué notas en esas personas?"
+    },
+    {
+      "id": "rest_ref_12",
+      "content": "¿Qué le dirías a alguien que quieres que estuviera tan agotado como tú?"
+    },
+    {
+      "id": "rest_ref_13",
+      "content": "¿Cuál es una cosa que has estado haciendo por obligación que podrías dejar de hacer?"
+    },
+    {
+      "id": "rest_ref_14",
+      "content": "¿Qué hace tu cuerpo cuando se le permite estar quieto? ¿Qué suelta?"
+    },
+    {
+      "id": "rest_ref_15",
+      "content": "¿Cuál es la diferencia entre pereza y agotamiento? ¿Cuál es este?"
+    },
+    {
+      "id": "rest_ref_16",
+      "content": "¿Qué has estado ignorando para seguir?"
+    },
+    {
+      "id": "rest_ref_17",
+      "content": "¿Cómo se siente estar genuinamente descansado para ti? ¿Lo recuerdas?"
+    },
+    {
+      "id": "rest_ref_18",
+      "content": "¿Qué surge en ti ante la idea de estar genuinamente descansado? ¿Cómo sería imaginarlo?"
+    },
+    {
+      "id": "rest_ref_19",
+      "content": "¿Cuál es la descripción más honesta de cuánto tiempo llevas funcionando al límite?"
+    },
+    {
+      "id": "rest_ref_20",
+      "content": "¿Qué estás evitando sentir al mantenerte ocupado?"
+    },
+    {
+      "id": "rest_ref_21",
+      "content": "¿Cómo fue la sensación de descansar en el pasado, que has olvidado?"
+    },
+    {
+      "id": "rest_ref_22",
+      "content": "¿Qué necesitas dejar de hacer para recuperarte de verdad?"
+    },
+    {
+      "id": "rest_ref_23",
+      "content": "¿Qué significa la restauración para ti, específicamente? ¿Qué actividades, entornos o condiciones?"
+    },
+    {
+      "id": "rest_ref_24",
+      "content": "¿Cuál es el costo de continuar sin descansar? No como cálculo — solo como una mirada honesta."
+    },
+    {
+      "id": "rest_ref_25",
+      "content": "¿Cómo sería la vida si protegieras el descanso igual que proteges tus obligaciones?"
+    },
+    {
+      "id": "rest_ref_26",
+      "content": "¿Cuál es la voz que dice que no mereces descanso? ¿De dónde vino?"
+    },
+    {
+      "id": "rest_ref_27",
+      "content": "¿Cuál es el mínimo que necesitas hacer hoy para estar bien? Solo el mínimo."
+    },
+    {
+      "id": "rest_ref_28",
+      "content": "¿Qué cambiaría si aceptaras que el descanso no es una recompensa sino una necesidad?"
+    },
+    {
+      "id": "rest_ref_29",
+      "content": "¿Cuándo fue la última vez que descansar se sintió posible sin culpa?"
+    },
+    {
+      "id": "rest_ref_30",
+      "content": "¿Qué protegerías primero si decidieras que tu recuperación simplemente importa?"
+    }
+  ],
+
+  "words": [
+    { "id": "rest_w_1",  "word": "DETENERSE",   "meaning": "No fallar. No rendirse. Detenerse. Con intención." },
+    { "id": "rest_w_2",  "word": "RESTAURAR",   "meaning": "Lo que ocurre cuando le das al cuerpo lo que el agotamiento se llevó." },
+    { "id": "rest_w_3",  "word": "PERMITIR",    "meaning": "Permite la parada. Permite el descanso. Permite la necesidad." },
+    { "id": "rest_w_4",  "word": "DESPACIO",    "meaning": "El ritmo que tu cuerpo ha estado pidiendo." },
+    { "id": "rest_w_5",  "word": "RECIBIR",     "meaning": "Has estado dando. Hoy, recibe algo." },
+    { "id": "rest_w_6",  "word": "BASTA",       "meaning": "El descanso no espera a que sea suficiente. Ya está disponible para ti." },
+    { "id": "rest_w_7",  "word": "SOLTAR",      "meaning": "Lo que el cuerpo ha estado esperando hacer." },
+    { "id": "rest_w_8",  "word": "SILENCIO",    "meaning": "Sin exigencia. Sin agenda. Solo silencio." },
+    { "id": "rest_w_9",  "word": "SUAVE",       "meaning": "Suaviza el ritmo. Suaviza el estándar. Suaviza la expectativa." },
+    { "id": "rest_w_10", "word": "PROFUNDO",    "meaning": "El tipo de descanso que va por debajo de la superficie." },
+    { "id": "rest_w_11", "word": "PESADO",      "meaning": "Cuando el cuerpo se pone pesado, está diciéndote algo." },
+    { "id": "rest_w_12", "word": "HUNDIRSE",    "meaning": "Húndete en el descanso. No tienes que ganártelo antes." },
+    { "id": "rest_w_13", "word": "SANAR",       "meaning": "Lo que hace el cuerpo cuando le das permiso para detenerse." },
+    { "id": "rest_w_14", "word": "VOLVER",      "meaning": "Vuelve a ti mismo. Del dar incesante hacia afuera." },
+    { "id": "rest_w_15", "word": "RECONSTRUIR", "meaning": "Lo que ocurre en el cuerpo cuando el esfuerzo puede pausar." },
+    { "id": "rest_w_16", "word": "BAJAR",       "meaning": "Desacelera. Échate. Respira profundo. Deja que las cosas se asienten." },
+    { "id": "rest_w_17", "word": "PLENO",       "meaning": "No vacío y funcionando en automático. Pleno. Eso es hacia donde se mueve la recuperación." },
+    { "id": "rest_w_18", "word": "REPONER",     "meaning": "Lo que el cuerpo necesita cuando ha estado funcionando al límite. No por la producción — solo por sí mismo." },
+    { "id": "rest_w_19", "word": "QUIETO",      "meaning": "Quédate quieto un momento. El mundo puede esperar." },
+    { "id": "rest_w_20", "word": "ALIVIAR",     "meaning": "Entra en la parada con suavidad. No tiene que ser abrupto." },
+    { "id": "rest_w_21", "word": "CUIDAR",      "meaning": "Cuídate de la misma manera que cuidas todo lo demás." },
+    { "id": "rest_w_22", "word": "PAUSA",       "meaning": "Antes de lo siguiente. La pausa es donde comienza la recuperación." },
+    { "id": "rest_w_23", "word": "AMPLIO",      "meaning": "La respiración se vuelve más amplia cuando el cuerpo siente que puede detenerse." },
+    { "id": "rest_w_24", "word": "TIERNO",      "meaning": "Sé tierno con la parte de ti que está agotada." },
+    { "id": "rest_w_25", "word": "ESPACIO",     "meaning": "Date espacio. No tiempo para producir. Espacio." },
+    { "id": "rest_w_26", "word": "ESCUCHAR",    "meaning": "Tu cuerpo ha estado pidiendo. Hoy, escúchalo." },
+    { "id": "rest_w_27", "word": "ESPERAR",     "meaning": "Las tareas pueden esperar. El cuerpo ya está esperando." },
+    { "id": "rest_w_28", "word": "ABIERTO",     "meaning": "Abierto a recibir. Abierto a desacelerar. Abierto al descanso." },
+    { "id": "rest_w_29", "word": "AUTORIZAR",   "meaning": "Tienes que autorizarte. El descanso no es automático. Tú lo eliges." },
+    { "id": "rest_w_30", "word": "PEQUEÑO",     "meaning": "Un descanso pequeño sigue siendo descanso. Diez minutos cuentan." },
+    { "id": "rest_w_31", "word": "SEGURO",      "meaning": "Estás suficientemente seguro para detenerte. Por ahora. Por hoy." },
+    { "id": "rest_w_32", "word": "ASENTARSE",   "meaning": "Deja que el cuerpo se asiente. En la silla. En el suelo." },
+    { "id": "rest_w_33", "word": "CONCEDER",    "meaning": "Concédete esto. El permiso es tuyo para dar." },
+    { "id": "rest_w_34", "word": "ANCLA",       "meaning": "El descanso es un ancla. Te mantiene conectado a lo que realmente necesitas." },
+    { "id": "rest_w_35", "word": "SIMPLE",      "meaning": "El mínimo hoy. Eso es suficiente." },
+    { "id": "rest_w_36", "word": "RECLAMAR",    "meaning": "Reclama el descanso. Te pertenece." },
+    { "id": "rest_w_37", "word": "FRESCO",      "meaning": "La frescura de detenerse. El descenso de temperatura cuando el esfuerzo termina." },
+    { "id": "rest_w_38", "word": "SOLTAR",      "meaning": "Deja que la tensión del esfuerzo salga lentamente del cuerpo." },
+    { "id": "rest_w_39", "word": "CALMAR",      "meaning": "Calma la parte de ti que ha estado corriendo demasiado tiempo." },
+    { "id": "rest_w_40", "word": "SUELO",       "meaning": "El suelo te sostiene. No tienes que sostenerte tú mismo." },
+    { "id": "rest_w_41", "word": "GRACIA",      "meaning": "Descansa con gracia. Sin la explicación. Sin la disculpa." },
+    { "id": "rest_w_42", "word": "SOSTENER",    "meaning": "Déjate sostener. Por la silla. Por la cama. Por el suelo." },
+    { "id": "rest_w_43", "word": "INSPIRAR",    "meaning": "Inspira despacio. El cuerpo recuerda cómo recuperarse." },
+    { "id": "rest_w_44", "word": "UNIRSE",      "meaning": "Únete a la parte de ti que ya sabe que necesita detenerse." },
+    { "id": "rest_w_45", "word": "GUARDAR",     "meaning": "Guarda algo para ti hoy. No todo va hacia afuera." },
+    { "id": "rest_w_46", "word": "MENOS",       "meaning": "Menos es suficiente ahora mismo. Menos es sanar." },
+    { "id": "rest_w_47", "word": "CICATRIZAR",  "meaning": "El cuerpo cicatriza cuando dejas de desgastarte." },
+    { "id": "rest_w_48", "word": "NEUTRAL",     "meaning": "Neutral es un estado válido. No agotado. No rindiendo. Neutral." },
+    { "id": "rest_w_49", "word": "OFRECER",     "meaning": "Ofrécete el descanso que le has dado a todo lo demás." },
+    { "id": "rest_w_50", "word": "CADENCIA",    "meaning": "Encuentra una cadencia que no te cueste tanto. Más lenta que la actual." },
+    { "id": "rest_w_51", "word": "SUSURRO",     "meaning": "Una versión más suave del silencio. El susurro de un ambiente donde el descanso es finalmente posible." },
+    { "id": "rest_w_52", "word": "COMPLETO",    "meaning": "Descansado es la dirección de completo. Esa es la razón." }
+  ],
+
+  "notification_pool": [
+    { "id": "rest_n_1",  "copy": "El descanso no se gana. Se necesita.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_2",  "copy": "Tienes permiso para detenerte hoy.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_3",  "copy": "La culpa no está diciendo la verdad.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_4",  "copy": "Tu cuerpo ha estado pidiendo. Hoy, escúchalo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_5",  "copy": "Estar agotado no es un fracaso moral.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_6",  "copy": "Detenerse es parte de lo que te mantiene humano.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_7",  "copy": "Lo que necesitas para recuperarte hoy es descanso.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_8",  "copy": "El mínimo es suficiente hoy.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_9",  "copy": "Devuélvete algo de tiempo hoy.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_10", "copy": "Lo que llamas pereza es recuperación.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_11", "copy": "Di que no a una cosa hoy. Solo una.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_12", "copy": "No tienes que ganarte el descanso.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_13", "copy": "Reduce el ritmo. El permiso ya está aquí.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_14", "copy": "Una hora sin agenda. Con eso es suficiente.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_15", "copy": "El descanso es lo que hace el cuerpo cuando le das la oportunidad.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_16", "copy": "¿Qué puedes soltar hoy?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_17", "copy": "Cancela algo opcional hoy.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_18", "copy": "No estás atrasado. Estás agotado.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_19", "copy": "Permiso concedido para hacer menos hoy.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_20", "copy": "Veinte minutos acostado cambia algo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_21", "copy": "El mundo no requiere tu agotamiento.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_22", "copy": "Descansa hoy. No por el mañana. Por el ahora.", "mood_weight": { "dark": 0.5, "half": 0.3, "full": 0.2 } },
+    { "id": "rest_n_23", "copy": "Cierra los ojos cinco minutos ahora mismo.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_24", "copy": "Has estado funcionando al límite. Algo necesita volver.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_25", "copy": "Lo que tu cuerpo más necesita hoy es descanso.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "rest_n_26", "copy": "Recibe algo hoy. Has estado dando.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_27", "copy": "Descansado es la dirección de completo.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "rest_n_28", "copy": "Detente porque puedes. Esa es la elección.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "rest_ev_1",  "content": "¿Descansaste hoy? Si no, ¿qué se interpuso?" },
+    { "id": "rest_ev_2",  "content": "¿Qué necesitaba más tu cuerpo hoy que le diste o no?" },
+    { "id": "rest_ev_3",  "content": "¿Qué culpa surgió al descansar hoy? ¿De dónde viene esa culpa?" },
+    { "id": "rest_ev_4",  "content": "¿Qué soltaste hoy que esperabas necesitar?" },
+    { "id": "rest_ev_5",  "content": "¿Qué significaría darle a tu cuerpo el sueño que necesita esta noche?" },
+    { "id": "rest_ev_6",  "content": "¿Qué te agotó más hoy? ¿Hay algo que podría cambiar?" },
+    { "id": "rest_ev_7",  "content": "¿Qué hiciste para restaurarte hoy, aunque sea algo pequeño?" },
+    { "id": "rest_ev_8",  "content": "¿Qué te dirías esta noche que haría el sueño más fácil?" },
+    { "id": "rest_ev_9",  "content": "¿Qué necesitas soltar antes de dormir? ¿Qué no vale la pena cargar durante la noche?" },
+    { "id": "rest_ev_10", "content": "¿Detenerte se sintió posible hoy? ¿Qué lo hizo más fácil o más difícil?" },
+    { "id": "rest_ev_11", "content": "¿Cuál fue la cosa más restauradora que ocurrió hoy, aunque fuera brevemente?" },
+    { "id": "rest_ev_12", "content": "¿Qué necesitas esta noche para despertar sintiendo que algo alivió?" },
+    { "id": "rest_ev_13", "content": "¿Hay algo a lo que dijiste sí hoy que merecía un no?" },
+    { "id": "rest_ev_14", "content": "¿Qué harías diferente mañana para darte más espacio para respirar?" }
+  ]
+
+}

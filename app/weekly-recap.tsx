@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback, useState } from 'react';
+import { useRef, useEffect, useCallback, useState, useMemo } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   Animated, Easing, StatusBar, useWindowDimensions,
@@ -11,6 +11,10 @@ import { useProgress } from '../hooks/useProgress';
 import { useHabits } from '../hooks/useHabits';
 import { useLanguage } from '../hooks/useLanguage';
 import { useWeeklyRecap } from '../hooks/useWeeklyRecap';
+import { useEmotionalProfile } from '../hooks/useEmotionalProfile';
+import type { EmotionalProfile } from '../utils/emotionalProfile';
+import { pickRelevantGoal } from '../utils/weeklyInsights';
+import type { UserGoal } from '../utils/weeklyInsights';
 import { maybeRequestReviewAfterRecap } from '../utils/reviewRequest';
 import { Colors, Typography, Spacing, Radii, Shadows } from '../theme';
 import { getWeekAllDays, getDailyStatesForWeek, type DailyEntry } from '../utils/dailyEntries';
@@ -33,8 +37,12 @@ import {
   getSmallMoments,
   getHowYouArrivedNote,
   getCategoryContextNote,
+  getCrossWeekMemory,
+  getHabitPresenceLines,
 } from '../utils/weeklyInsights';
 import { generateWeekNote } from '../utils/weekNote';
+import { getItem, StorageKeys } from '../hooks/useStorage';
+import { shouldShowMantraInWeekly, mantraWeeklyVariant } from '../utils/mantraEcho';
 
 // ─── Staggered fade-in ────────────────────────────────────────────────────────
 
@@ -159,41 +167,51 @@ function SectionSmallMoments({ insights, lang }: { insights: WeekInsights; lang:
 
 // ─── Section 3b — Connecting the Dots ───────────────────────────────────────
 // Generates 2–3 short sentences that connect the week's real events.
-// Data-driven, template-based, never interpretive.
+// Data-driven, template-based, never interpretive. No raw state keys ever shown.
+
+// Natural-language arrival sentences per state — never interpolates state keys or labels
+const STATE_ARRIVAL_LINES: Record<string, Record<string, string>> = {
+  unclear:     { en: 'Some moments this week had less clarity than others.',                          pt: 'Em alguns momentos desta semana, a falta de clareza esteve mais presente.',          es: 'Algunos momentos de esta semana tuvieron menos claridad que otros.',              fr: 'Certains moments de cette semaine manquaient un peu de clarté.',                  de: 'Einige Momente dieser Woche hatten weniger Klarheit als andere.'          },
+  drained:     { en: 'Tiredness was present in more moments than usual this week.',                   pt: 'O cansaço esteve mais presente em alguns momentos desta semana.',                  es: 'El cansancio estuvo más presente en algunos momentos de esta semana.',           fr: "La fatigue a été plus présente qu'à l'habitude cette semaine.",                   de: 'Erschöpfung war diese Woche in mehr Momenten als sonst spürbar.'          },
+  overwhelmed: { en: 'There were moments when everything seemed to ask more than usual.',             pt: 'Houve momentos em que tudo pareceu exigir mais do que o normal.',                  es: 'Hubo momentos en que todo pareció exigir más de lo normal.',                     fr: "Il y a eu des moments où tout semblait demander plus qu'à l'accoutumée.",         de: 'Es gab Momente, in denen alles mehr als sonst zu verlangen schien.'       },
+  balanced:    { en: 'Even with its ups and downs, the week found some steadiness.',                  pt: 'Mesmo com altos e baixos, algum equilíbrio apareceu ao longo da semana.',          es: 'Incluso con sus altibajos, la semana encontró cierto equilibrio.',               fr: 'Même avec ses hauts et ses bas, la semaine a trouvé un certain équilibre.',       de: 'Auch mit seinen Höhen und Tiefen fand die Woche ein gewisses Gleichgewicht.' },
+  tired:       { en: 'Tiredness ran through most of this week.',                                     pt: 'O cansaço foi o fio condutor desta semana.',                                       es: 'El cansancio fue el hilo conductor de esta semana.',                             fr: 'La fatigue a été le fil conducteur de cette semaine.',                            de: 'Müdigkeit war der Hauptfaden dieser Woche.'                               },
+  racing:      { en: 'The mind was busier than quiet through much of this week.',                     pt: 'A mente esteve mais agitada do que quieta durante boa parte desta semana.',        es: 'La mente estuvo más agitada que tranquila durante gran parte de esta semana.',   fr: "L'esprit était plus agité que calme pendant une bonne partie de cette semaine.", de: 'Der Geist war einen Großteil dieser Woche beschäftigt.'                   },
+};
+
+const MOOD_ARRIVAL_LINES: Record<string, Record<string, string>> = {
+  hard: { en: 'Some days carried more weight than others this week.', pt: 'Alguns dias desta semana foram mais pesados do que outros.',    es: 'Algunos días de esta semana fueron más pesados que otros.',      fr: 'Certains jours de cette semaine ont été plus lourds que d\'autres.', de: 'Einige Tage dieser Woche waren schwerer als andere.'         },
+  okay: { en: 'The days moved at an even pace for the most part.',    pt: 'Os dias seguiram um ritmo relativamente estável.',             es: 'Los días transcurrieron a un ritmo bastante estable.',           fr: 'Les jours se sont écoulés à un rythme assez régulier.',              de: 'Die Tage verliefen größtenteils gleichmäßig.'               },
+  good: { en: 'There was a lightness to some days this week.',        pt: 'Alguns dias desta semana tiveram uma leveza própria.',         es: 'Algunos días de esta semana tuvieron una ligereza propia.',      fr: 'Certains jours de cette semaine avaient une légèreté particulière.', de: 'Einige Tage dieser Woche hatten eine besondere Leichtigkeit.' },
+};
 
 function getConnectionLines(insights: WeekInsights, lang: string): string[] {
   const lines: string[] = [];
 
-  // Line 1 — arrival state / mood
+  // Line 1 — arrival state / mood (natural language only — no raw keys or label interpolation)
   if (insights.dominantState) {
-    const state = getStateLabel(insights.dominantState, lang).toLowerCase();
-    const l1: Record<string, string> = {
-      pt: `Você chegou esta semana sentindo ${state}.`,
-      en: `You arrived this week feeling ${state}.`,
-      es: `Llegaste esta semana sintiéndote ${state}.`,
-      fr: `Tu es arrivé cette semaine en te sentant ${state}.`,
-      de: `Du bist diese Woche mit dem Gefühl ${state} angekommen.`,
-    };
-    lines.push(l1[lang] ?? l1.en);
+    const map = STATE_ARRIVAL_LINES[insights.dominantState];
+    if (map) lines.push(map[lang] ?? map.en);
   } else if (insights.dominantMood) {
-    const mood = getMoodLabel(insights.dominantMood, lang).toLowerCase();
-    const l1: Record<string, string> = {
-      pt: `Os dias pareceram ${mood} por aqui.`,
-      en: `The days felt ${mood} this time.`,
-      es: `Los días se sintieron ${mood} esta vez.`,
-      fr: `Les jours ont semblé ${mood} cette fois.`,
-      de: `Die Tage fühlten sich ${mood} diesmal an.`,
-    };
-    lines.push(l1[lang] ?? l1.en);
+    const map = MOOD_ARRIVAL_LINES[insights.dominantMood];
+    if (map) lines.push(map[lang] ?? map.en);
   }
 
-  // Line 2 — return count
+  // Line 2 — return count / consistency pattern
+  // For n===7: Overview already owns "returned every day" — pivot to emotional quality of the pattern.
   const n = insights.resetsCompleted;
-  if (n > 0) {
+  if (n === 7) {
+    const l2: Record<string, string> = {
+      pt: 'O ritmo se sustentou ao longo dos sete dias.',
+      en: 'The rhythm held through all seven days.',
+      es: 'El ritmo se sostuvo a lo largo de los siete días.',
+      fr: 'Le rythme a tenu tout au long des sept jours.',
+      de: 'Der Rhythmus hielt sich durch alle sieben Tage.',
+    };
+    lines.push(l2[lang] ?? l2.en);
+  } else if (n > 0) {
     const l2: Record<string, string> =
-      n === 7
-        ? { pt: 'Você voltou todos os dias.', en: 'You returned every day.', es: 'Volviste todos los días.', fr: 'Tu es revenu chaque jour.', de: 'Du bist jeden Tag zurückgekehrt.' }
-        : n >= 5
+      n >= 5
         ? { pt: `Você voltou ${n} vezes.`, en: `You showed up ${n} times.`, es: `Te mostraste ${n} veces.`, fr: `Tu es revenu ${n} fois.`, de: `Du bist ${n} Mal zurückgekehrt.` }
         : n === 1
         ? { pt: 'Você voltou uma vez.', en: 'You came back once.', es: 'Volviste una vez.', fr: 'Tu es revenu une fois.', de: 'Du bist einmal zurückgekehrt.' }
@@ -412,11 +430,139 @@ function SectionCategories({ insights, lang }: { insights: WeekInsights; lang: s
   );
 }
 
+// ─── Section 4b — What Was Present (habits, emotional) ───────────────────────
+
+// Short acknowledgment line — rotates by weekNumber
+const IDENTITY_INTRO: Record<string, string[]> = {
+  pt: [
+    'Você escreveu isso há alguns dias.',
+    'Essa direção foi escolhida por você.',
+    'Essa intenção apareceu no início do caminho.',
+  ],
+  en: [
+    'You wrote this a few days ago.',
+    'You chose this direction.',
+    'This intention appeared early on.',
+  ],
+  es: [
+    'Escribiste esto hace algunos días.',
+    'Elegiste esta dirección.',
+    'Esta intención apareció al principio del camino.',
+  ],
+  fr: [
+    'Tu as écrit ceci il y a quelques jours.',
+    'Tu as choisi cette direction.',
+    'Cette intention est apparue au début du chemin.',
+  ],
+  de: [
+    'Du hast das vor einigen Tagen geschrieben.',
+    'Du hast diese Richtung gewählt.',
+    'Diese Absicht erschien am Anfang des Weges.',
+  ],
+};
+
+// Single connection line — offset rotation so it doesn't always pair with the same intro
+const IDENTITY_CONNECTION: Record<string, string[]> = {
+  pt: [
+    'Esta semana aconteceu entre essa intenção e os seus retornos.',
+    'Os dias passaram, mas essa direção continuou aqui.',
+    'Parte desta semana aconteceu ao redor dessa escolha.',
+  ],
+  en: [
+    'This week happened between that intention and your returns.',
+    'The days passed, but that direction stayed.',
+    'Part of this week happened around that choice.',
+  ],
+  es: [
+    'Esta semana ocurrió entre esa intención y tus regresos.',
+    'Los días pasaron, pero esa dirección se mantuvo.',
+    'Parte de esta semana ocurrió alrededor de esa elección.',
+  ],
+  fr: [
+    "Cette semaine s'est déroulée entre cette intention et tes retours.",
+    'Les jours ont passé, mais cette direction est restée.',
+    "Une partie de cette semaine s'est passée autour de ce choix.",
+  ],
+  de: [
+    'Diese Woche geschah zwischen dieser Absicht und deinen Rückkehren.',
+    'Die Tage vergingen, aber diese Richtung blieb.',
+    'Ein Teil dieser Woche geschah um diese Wahl herum.',
+  ],
+};
+
+// Quality gate: returns false for placeholder answers with no real content.
+function isIdentityAnswerMeaningful(answer: string): boolean {
+  const trimmed = answer.trim();
+  if (trimmed.replace(/\s+/g, '').length < 10) return false;
+  if (trimmed.split(/\s+/).filter(Boolean).length < 3) return false;
+  const filler = /^(h+|ok+|teste|test|\.*|não sei|nao sei|sei l[aá]|nada|qualquer coisa|nenhuma|none|nothing|idk|dunno|skip|pass|n\/a|na|no idea)$/i;
+  return !filler.test(trimmed);
+}
+
+function SectionHabitPresence({ topHabits, lang, weekNumber }: { topHabits: { id: string; name: string; count: number }[]; lang: string; weekNumber: number }) {
+  const title: Record<string, string> = {
+    pt: 'O QUE ESTEVE PRESENTE',
+    en: 'WHAT WAS PRESENT',
+    es: 'LO QUE ESTUVO PRESENTE',
+    fr: 'CE QUI ÉTAIT PRÉSENT',
+    de: 'WAS PRÄSENT WAR',
+  };
+  const lines = getHabitPresenceLines(topHabits, lang, weekNumber);
+  if (lines.length === 0) return null;
+  return (
+    <FadeIn delay={310}>
+      <View style={styles.section}>
+        <SectionLabel>{title[lang] ?? title.en}</SectionLabel>
+        <View style={[styles.card, connectionCardStyle]}>
+          {lines.map((line, i) => (
+            <View key={i} style={i > 0 ? connectionLineGap : undefined}>
+              <Text style={connectionLineStyle}>{line}</Text>
+            </View>
+          ))}
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+// ─── Section 10b — On Who You Are Becoming ────────────────────────────────────
+
+function SectionIdentityAnchor({ answer, lang, weekNumber }: { answer: string; lang: string; weekNumber: number }) {
+  const title: Record<string, string> = {
+    pt: 'SOBRE QUEM VOCÊ ESTÁ SE TORNANDO',
+    en: 'ON WHO YOU ARE BECOMING',
+    es: 'SOBRE QUIÉN TE ESTÁS CONVIRTIENDO',
+    fr: 'SUR QUI TU DEVIENS',
+    de: 'ÜBER WEN DU WIRST',
+  };
+  const introPool = IDENTITY_INTRO[lang] ?? IDENTITY_INTRO.en;
+  const connPool  = IDENTITY_CONNECTION[lang] ?? IDENTITY_CONNECTION.en;
+  const intro = introPool[(weekNumber - 1) % introPool.length];
+  const conn  = connPool[weekNumber % connPool.length]; // offset so pairs vary across weeks
+  return (
+    <FadeIn delay={620}>
+      <View style={styles.section}>
+        <SectionLabel>{title[lang] ?? title.en}</SectionLabel>
+        <View style={[styles.card, styles.identityCard]}>
+          <Text style={styles.identityQuote}>{`"${answer}"`}</Text>
+          <Text style={styles.identityFraming}>{intro}</Text>
+          <Text style={styles.identityFraming}>{conn}</Text>
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
 // ─── Section 5 — Words of the Week ────────────────────────────────────────────
 
 function SectionWords({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
   const title    = lang === 'pt' ? 'PALAVRAS DA SEMANA' : lang === 'es' ? 'PALABRAS DE LA SEMANA' : lang === 'fr' ? 'MOTS DE LA SEMAINE' : lang === 'de' ? 'WORTE DER WOCHE' : 'WORDS OF THE WEEK';
-  const manyLabel = lang === 'pt' ? 'Palavras que foram aparecendo' : lang === 'es' ? 'Palabras que siguieron apareciendo' : lang === 'fr' ? 'Mots qui revenaient sans cesse' : lang === 'de' ? 'Wörter, die immer wieder auftauchten' : 'Words that kept appearing';
+  const manyLabel =
+    lang === 'pt' ? 'Palavras que estiveram presentes nos seus retornos.' :
+    lang === 'es' ? 'Palabras que estuvieron presentes en tus retornos.' :
+    lang === 'fr' ? 'Mots apparus au fil de tes retours.' :
+    lang === 'de' ? 'Wörter, die in deinen Rückkehren aufgetaucht sind.' :
+    'Words that appeared across your returns.';
 
   // Derive words from actual week data (real word_of_day first, then context)
   const words = getWeekWords(insights, lang, weekNumber);
@@ -470,20 +616,33 @@ function SectionHighlight({ insights, lang }: { insights: WeekInsights; lang: st
 
 // ─── Section 7 — What Changed ─────────────────────────────────────────────────
 
-function SectionTrend({ insights, lang }: { insights: WeekInsights; lang: string }) {
+function SectionTrend({ insights, lang, prevInsights, weekNumber }: { insights: WeekInsights; lang: string; prevInsights?: WeekInsights | null; weekNumber: number }) {
   const title = lang === 'pt' ? 'O QUE MUDOU' : lang === 'es' ? 'QUÉ CAMBIÓ' : lang === 'fr' ? 'CE QUI A CHANGÉ' : lang === 'de' ? 'WAS SICH VERÄNDERTE' : 'WHAT CHANGED';
 
-  const copy = getTrendCopy(insights, lang);
-  if (!copy) return null;
+  // Cross-week memory takes priority when previous week data is available
+  const crossWeekLine = prevInsights
+    ? getCrossWeekMemory(insights, prevInsights, lang, weekNumber)
+    : null;
+
+  // Intra-week trend as fallback (first half vs. second half of current week)
+  const intraCopy = getTrendCopy(insights, lang);
+
+  if (!crossWeekLine && !intraCopy) return null;
 
   return (
     <FadeIn delay={480}>
       <View style={styles.section}>
         <SectionLabel>{title}</SectionLabel>
         <View style={styles.card}>
-          <Text style={styles.trendBeginning}>{copy.beginning}</Text>
-          <View style={styles.trendDivider} />
-          <Text style={styles.trendEnding}>{copy.ending}</Text>
+          {crossWeekLine ? (
+            <Text style={styles.trendBeginning}>{crossWeekLine}</Text>
+          ) : (
+            <>
+              <Text style={styles.trendBeginning}>{intraCopy!.beginning}</Text>
+              <View style={styles.trendDivider} />
+              <Text style={styles.trendEnding}>{intraCopy!.ending}</Text>
+            </>
+          )}
         </View>
       </View>
     </FadeIn>
@@ -492,9 +651,9 @@ function SectionTrend({ insights, lang }: { insights: WeekInsights; lang: string
 
 // ─── Section 8 — A Quiet Observation ──────────────────────────────────────────
 
-function SectionObservation({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
+function SectionObservation({ insights, lang, weekNumber, profile, narrativeState, usedThemes }: { insights: WeekInsights; lang: string; weekNumber: number; profile?: EmotionalProfile | null; narrativeState?: string | null; usedThemes?: Set<string> }) {
   const title = lang === 'pt' ? 'UMA OBSERVAÇÃO QUIETA' : lang === 'es' ? 'UNA OBSERVACIÓN TRANQUILA' : lang === 'fr' ? 'UNE OBSERVATION CALME' : lang === 'de' ? 'EINE STILLE BEOBACHTUNG' : 'A QUIET OBSERVATION';
-  const lines = getQuietObservation(insights, lang, weekNumber);
+  const lines = getQuietObservation(insights, lang, weekNumber, profile, narrativeState, usedThemes);
 
   return (
     <FadeIn delay={540}>
@@ -514,9 +673,9 @@ function SectionObservation({ insights, lang, weekNumber }: { insights: WeekInsi
 
 // ─── Section 9 — Looking Ahead ────────────────────────────────────────────────
 
-function SectionLookingAhead({ insights, lang, weekNumber }: { insights: WeekInsights; lang: string; weekNumber: number }) {
+function SectionLookingAhead({ insights, lang, weekNumber, profile, goal, narrativeState }: { insights: WeekInsights; lang: string; weekNumber: number; profile?: EmotionalProfile | null; goal?: UserGoal | null; narrativeState?: string | null }) {
   const title = lang === 'pt' ? 'OLHANDO ADIANTE' : lang === 'es' ? 'MIRANDO ADELANTE' : lang === 'fr' ? 'EN REGARDANT DEVANT' : lang === 'de' ? 'NACH VORNE SCHAUEN' : 'LOOKING AHEAD';
-  const lines = getLookingAhead(insights, lang, weekNumber);
+  const lines = getLookingAhead(insights, lang, weekNumber, profile, goal, narrativeState);
 
   return (
     <FadeIn delay={600}>
@@ -548,17 +707,29 @@ export default function WeeklyRecapScreen() {
   const { progress, weeklyScore, loading: progressLoading } = useProgress();
   const { habitLog, habits, loading: habitsLoading }        = useHabits();
   const { lang }                                            = useLanguage();
+  const { profile }                                         = useEmotionalProfile();
   const {
+    recaps,
     generateAndSave, generateCurrentWeekPreview,
     dismissAutoTrigger, getRecapForWeek, loading: recapLoading,
   } = useWeeklyRecap(progress, weeklyScore, habitLog, habits.length);
 
-  const [recap,      setRecap]      = useState<ReturnType<typeof generateCurrentWeekPreview> | null>(null);
-  const [insights,   setInsights]   = useState<WeekInsights | null>(null);
-  const [weekDays,   setWeekDays]   = useState<(DailyEntry | null)[] | null>(null);
-  const [weekStates, setWeekStates] = useState<(string | null)[] | null>(null);
-  const [weekMonday, setWeekMonday] = useState<Date | null>(null);
+  const [recap,        setRecap]        = useState<ReturnType<typeof generateCurrentWeekPreview> | null>(null);
+  const [insights,     setInsights]     = useState<WeekInsights | null>(null);
+  const [prevInsights, setPrevInsights] = useState<WeekInsights | null>(null);
+  const [weekDays,     setWeekDays]     = useState<(DailyEntry | null)[] | null>(null);
+  const [weekStates,   setWeekStates]   = useState<(string | null)[] | null>(null);
+  const [weekMonday,   setWeekMonday]   = useState<Date | null>(null);
+  const [personalMantra,  setPersonalMantra]  = useState<string | null>(null);
+  const [identityAnswer,  setIdentityAnswer]  = useState<string | null>(null);
+  const [rawGoals,        setRawGoals]        = useState<string[]>([]);
   const dataLoading = progressLoading || habitsLoading || recapLoading;
+
+  useEffect(() => {
+    getItem<string | null>(StorageKeys.PERSONAL_MANTRA, null).then(setPersonalMantra);
+    getItem<string | null>(StorageKeys.IDENTITY_ANSWER, null).then(setIdentityAnswer);
+    getItem<string[]>(StorageKeys.USER_GOALS, []).then(g => setRawGoals(g ?? []));
+  }, []);
 
   // ── Resolve recap ────────────────────────────────────────────────────────────
   useEffect(() => {
@@ -599,6 +770,60 @@ export default function WeeklyRecapScreen() {
     if (!weekDays || !weekStates || !weekMonday) return;
     setInsights(buildWeekInsights(weekDays, weekMonday, weekStates, progress.completedByDate));
   }, [weekDays, weekStates, weekMonday, progress.completedByDate]);
+
+  // ── Load previous week's insights for cross-week memory ──────────────────────
+  useEffect(() => {
+    if (!recap || recap.weekNumber <= 1) { setPrevInsights(null); return; }
+    const prevRecap = recaps.find(r => r.weekNumber === recap.weekNumber - 1);
+    if (!prevRecap?.weekMonday) { setPrevInsights(null); return; }
+
+    Promise.all([
+      getWeekAllDays(prevRecap.weekMonday),
+      getDailyStatesForWeek(prevRecap.weekMonday),
+    ]).then(([prevDays, prevStates]) => {
+      const [y, mo, d] = prevRecap.weekMonday!.split('-').map(Number);
+      const prevMonday = new Date(y, mo - 1, d);
+      setPrevInsights(buildWeekInsights(prevDays, prevMonday, prevStates, progress.completedByDate));
+    });
+  }, [recap, recaps, progress.completedByDate]);
+
+  const goal = useMemo<UserGoal | null>(
+    () => insights ? pickRelevantGoal(rawGoals, insights) : null,
+    [rawGoals, insights],
+  );
+
+  // Tracks which narrative themes the early sections (Overview, Connections, Mood) have already
+  // claimed as protagonists. Later sections (Observation, LookingAhead) receive this set and
+  // can select alternative angles to avoid repeating the same central message.
+  const usedThemes = useMemo<Set<string>>(() => {
+    if (!insights) return new Set<string>();
+    const t = new Set<string>();
+    if (insights.resetsCompleted >= 6) t.add('return');
+    if (insights.resetsCompleted >= 5) t.add('consistency');
+    if (insights.dominantState) t.add(insights.dominantState);
+    if (insights.dominantMood) t.add(insights.dominantMood);
+    if (insights.topCategories[0]) t.add('category_' + insights.topCategories[0]);
+    return t;
+  }, [insights]);
+
+  // Top habits completed ≥ 2 days in the recap week, sorted by frequency desc.
+  const weekHabitData = useMemo(() => {
+    if (!weekMonday || !habits.length) return [];
+    const counts: Record<string, number> = {};
+    for (let i = 0; i < 7; i++) {
+      const d = new Date(weekMonday);
+      d.setDate(weekMonday.getDate() + i);
+      const key = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+      for (const id of habitLog[key] ?? []) {
+        counts[id] = (counts[id] ?? 0) + 1;
+      }
+    }
+    return habits
+      .filter(h => (counts[h.id] ?? 0) >= 2)
+      .map(h => ({ id: h.id, name: h.name, count: counts[h.id] ?? 0 }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 2);
+  }, [habitLog, habits, weekMonday]);
 
   const handleClose = useCallback(async () => {
     if (!isHistorical) await dismissAutoTrigger();
@@ -675,6 +900,9 @@ export default function WeeklyRecapScreen() {
         {/* 4 — How You Arrived */}
         {(insights.stateTotal > 0 || insights.moodTotal > 0) && <SectionMood insights={insights} lang={lang} weekNumber={recap.weekNumber} />}
 
+        {/* 4b — What Was Present (emotional habit observation, ≥ 2 completions) */}
+        {weekHabitData.length > 0 && <SectionHabitPresence topHabits={weekHabitData} lang={lang} weekNumber={recap.weekNumber} />}
+
         {/* 5 — What Your Mind Was Asking For */}
         {insights.topCategories.length > 0 && <SectionCategories insights={insights} lang={lang} />}
 
@@ -684,19 +912,34 @@ export default function WeeklyRecapScreen() {
         {/* 7 — A Moment That Stood Out */}
         {insights.highlight && <SectionHighlight insights={insights} lang={lang} />}
 
-        {/* 8 — What Changed */}
-        {insights.trendDirection && <SectionTrend insights={insights} lang={lang} />}
+        {/* 8 — What Changed (cross-week memory when prev exists; intra-week trend as fallback) */}
+        {(insights.trendDirection || prevInsights) && (
+          <SectionTrend insights={insights} lang={lang} prevInsights={prevInsights} weekNumber={recap.weekNumber} />
+        )}
 
         {/* 9 — A Quiet Observation */}
-        <SectionObservation insights={insights} lang={lang} weekNumber={recap.weekNumber} />
+        <SectionObservation insights={insights} lang={lang} weekNumber={recap.weekNumber} profile={profile} narrativeState={recap.narrativeState} usedThemes={usedThemes} />
 
         {/* 10 — Looking Ahead */}
-        <SectionLookingAhead insights={insights} lang={lang} weekNumber={recap.weekNumber} />
+        <SectionLookingAhead insights={insights} lang={lang} weekNumber={recap.weekNumber} profile={profile} goal={goal} narrativeState={recap.narrativeState} />
+
+        {/* 10b — On Who You Are Becoming (only if answer is meaningful) */}
+        {identityAnswer && isIdentityAnswerMeaningful(identityAnswer)
+          ? <SectionIdentityAnchor answer={identityAnswer} lang={lang} weekNumber={recap.weekNumber} />
+          : null}
 
         {/* 11 — A Note From Your Week (requires ≥ 4 resets and ≥ 7 days) */}
         {progress.completedDays.length >= 4 && progress.currentDay >= 7 && (
-          <SectionNoteFromWeek insights={insights} lang={lang} />
+          <SectionNoteFromWeek insights={insights} lang={lang} profile={profile} weekNumber={recap.weekNumber} goal={goal} mantra={personalMantra} narrativeState={recap.narrativeState} />
         )}
+
+        {/* 12 — A Word From Your Arrival — hidden when mantra already appears in SectionNoteFromWeek
+             or when the mantra word is present in the identity answer */}
+        {personalMantra
+          && shouldShowMantraInWeekly(recap.weekNumber, progress.completedDays.length)
+          && !(progress.completedDays.length >= 4 && progress.currentDay >= 7)
+          && !(identityAnswer && identityAnswer.toLowerCase().includes(personalMantra.toLowerCase()))
+          && <SectionMantraEcho mantra={personalMantra} weekNumber={recap.weekNumber} />}
 
         {/* CTA */}
         <FadeIn delay={680}>
@@ -718,7 +961,7 @@ export default function WeeklyRecapScreen() {
 
 // ─── Section 11 — A Note From Your Week ──────────────────────────────────────
 
-function SectionNoteFromWeek({ insights, lang }: { insights: WeekInsights; lang: string }) {
+function SectionNoteFromWeek({ insights, lang, profile, weekNumber, goal, mantra, narrativeState }: { insights: WeekInsights; lang: string; profile?: EmotionalProfile | null; weekNumber?: number; goal?: UserGoal | null; mantra?: string | null; narrativeState?: string | null }) {
   const title =
     lang === 'pt' ? 'UMA NOTA DA SUA SEMANA' :
     lang === 'es' ? 'UNA NOTA DE TU SEMANA' :
@@ -726,7 +969,7 @@ function SectionNoteFromWeek({ insights, lang }: { insights: WeekInsights; lang:
     lang === 'de' ? 'EIN WOCHENRÜCKBLICK' :
     'A NOTE FROM YOUR WEEK';
 
-  const note = generateWeekNote(insights, lang);
+  const note = generateWeekNote(insights, lang, profile, weekNumber, goal, mantra, narrativeState);
   if (!note) return null;
 
   return (
@@ -747,6 +990,50 @@ function SectionNoteFromWeek({ insights, lang }: { insights: WeekInsights; lang:
     </FadeIn>
   );
 }
+
+// ─── Section 12 — A Word From Your Arrival ───────────────────────────────────
+// Surfaces the personal mantra chosen at onboarding. Rare — ~30% of weeks.
+// The user should feel remembered, not profiled.
+
+function SectionMantraEcho({
+  mantra,
+  weekNumber,
+}: {
+  mantra: string;
+  weekNumber: number;
+}) {
+  const { t } = useLanguage();
+  const variant = mantraWeeklyVariant(weekNumber);
+  const key = `mantra.weekly.v${variant}` as const;
+  const body = t(key, { mantra });
+  const label = t('mantra.weekly.label');
+
+  return (
+    <FadeIn delay={840}>
+      <View style={styles.section}>
+        <SectionLabel>{label}</SectionLabel>
+        <View style={[styles.card, mantraStyles.card]}>
+          <Text style={mantraStyles.body}>{body}</Text>
+        </View>
+      </View>
+    </FadeIn>
+  );
+}
+
+const mantraStyles = StyleSheet.create({
+  card: {
+    borderColor: 'rgba(201,151,58,0.10)',
+    backgroundColor: 'rgba(201,151,58,0.03)',
+  },
+  body: {
+    fontSize: 15,
+    color: '#6B6B6B',
+    lineHeight: 26,
+    letterSpacing: 0.1,
+    textAlign: 'center',
+    fontStyle: 'italic',
+  },
+});
 
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
@@ -1122,5 +1409,23 @@ const styles = StyleSheet.create({
   },
   weekNoteLineIndent: {
     paddingTop: 2,
+  },
+
+  // ── Identity Anchor ──────────────────────────────────────────────────────────
+  identityCard: {
+    gap: Spacing.md,
+  },
+  identityQuote: {
+    fontSize: Typography.sizes.sm + 1,
+    color: Colors.textPrimary,
+    lineHeight: 26,
+    fontStyle: 'italic',
+    letterSpacing: 0.1,
+  },
+  identityFraming: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    lineHeight: 20,
+    letterSpacing: 0.15,
   },
 });

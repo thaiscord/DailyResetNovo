@@ -1,0 +1,553 @@
+{
+  "theme": "Clarity",
+  "user_state": "Verwirrt. Der Geist vernebelt. Kann den nächsten Schritt nicht sehen. Zu viele Optionen oder keine klare Richtung. Entscheidungsmüdigkeit. Fühlt sich im eigenen Leben verloren.",
+  "core_need": "Einfachheit. Eine klare Sache.",
+  "emotional_tone": "Klar. Ruhig. Erhellend.",
+
+  "ritual_variants": {
+
+    "arrival": [
+      {
+        "id": "clarity_arr_1",
+        "heading": "Der Nebel ist real.",
+        "subheading": "Er ist nicht dauerhaft. Er ist der Zustand, der der Klarheit vorausgeht."
+      },
+      {
+        "id": "clarity_arr_2",
+        "heading": "Du musst nicht alles sehen.",
+        "subheading": "Du musst das Nächste sehen. Nur das Nächste."
+      },
+      {
+        "id": "clarity_arr_3",
+        "heading": "Mehr denken hat keine Antwort gebracht.",
+        "subheading": "Klarheit entsteht durch Innehalten, nicht durch mehr Anstrengung."
+      },
+      {
+        "id": "clarity_arr_4",
+        "heading": "Das Einfache ist die Richtung.",
+        "subheading": "Nicht einfach, weil es leicht ist. Einfach, weil alles andere schon versucht wurde."
+      },
+      {
+        "id": "clarity_arr_5",
+        "heading": "Du bist nicht verloren.",
+        "subheading": "Du bist zwischen zwei Momenten der Klarheit. Das ist ein echter Ort. Du warst schon hier."
+      },
+      {
+        "id": "clarity_arr_6",
+        "heading": "Die Verwirrung ist eine Information.",
+        "subheading": "Sie sagt dir etwas darüber, was noch nicht geklärt ist. Das ist nützlich."
+      },
+      {
+        "id": "clarity_arr_7",
+        "heading": "Eine klare Sache.",
+        "subheading": "Das ist alles, was du jetzt brauchst. Keinen Plan. Eine klare Sache."
+      }
+    ],
+
+    "release": [
+      {
+        "id": "clarity_rel_1",
+        "heading": "Worüber bist du verwirrt?",
+        "subheading": "Schreib es auf, ohne es lösen zu wollen. Beschreib nur den Nebel.",
+        "field_placeholder": "Beschreib die Verwirrung so klar wie möglich, ohne nach der Antwort zu suchen..."
+      },
+      {
+        "id": "clarity_rel_2",
+        "heading": "Welche Möglichkeiten trägst du gerade?",
+        "subheading": "Schreib sie auf. Außerhalb des Kopfes nehmen sie weniger Platz ein.",
+        "field_placeholder": "Alle Optionen, Entscheidungen oder Richtungen, die gerade in deinem Kopf um Platz kämpfen..."
+      },
+      {
+        "id": "clarity_rel_3",
+        "heading": "Was weißt du bereits?",
+        "subheading": "Nicht, womit du unsicher bist. Was du mit Sicherheit weißt.",
+        "field_placeholder": "Was bereits klar ist, selbst inmitten des Nebels..."
+      },
+      {
+        "id": "clarity_rel_4",
+        "heading": "Worüber denkst du zu viel nach?",
+        "subheading": "Nenn das, worum du schon zu lange kreist.",
+        "field_placeholder": "Die Entscheidung oder Situation, zu der du am häufigsten zurückgekehrt bist, ohne Lösung..."
+      },
+      {
+        "id": "clarity_rel_5",
+        "heading": "Wie fühlt sich der Nebel in deinem Körper an?",
+        "subheading": "Verwirrung ist nicht nur mental. Wo spürst du sie?",
+        "field_placeholder": "Wo in deinem Körper lebt die Verwirrung oder Ungewissheit..."
+      },
+      {
+        "id": "clarity_rel_6",
+        "heading": "Was würde jetzt am meisten helfen?",
+        "subheading": "Nicht die vollständige Antwort. Nur das, was jetzt am meisten helfen würde.",
+        "field_placeholder": "Wenn eine Sache sich verändern könnte, welche wäre das..."
+      },
+      {
+        "id": "clarity_rel_7",
+        "heading": "Was wünschst du dir, dass jemand dir sagt?",
+        "subheading": "Schreib es. Das ist oft das, was du bereits weißt.",
+        "field_placeholder": "Welche Antwort suchst du, die du vielleicht schon hast..."
+      }
+    ],
+
+    "breath": [
+      {
+        "id": "clarity_br_1",
+        "heading": "Ein Atem zum Klären.",
+        "instruction": "Einatmen durch die Nase. Langer Ausatem durch den Mund. Stell dir vor, den Nebel auszuatmen. Drei Mal."
+      },
+      {
+        "id": "clarity_br_2",
+        "heading": "Das Denken verlangsamen.",
+        "instruction": "Vier Zählzeiten einatmen. Zwei halten. Sechs ausatmen. Wiederholen. Der Geist verlangsamt sich, wenn der Körper es tut."
+      },
+      {
+        "id": "clarity_br_3",
+        "heading": "Den Atem zurücksetzen lassen.",
+        "instruction": "Schließ die Augen. Atme natürlich. Konzentriere dich nur auf die Empfindung des Atmens. Nichts anderes. Eine Minute."
+      },
+      {
+        "id": "clarity_br_4",
+        "heading": "Den Geist mit dem Ausatem leeren.",
+        "instruction": "Sanft einatmen. Vollständig ausatmen. Beim Ausatmen die Gedanken mit dem Atem loslassen. Vier Zyklen."
+      },
+      {
+        "id": "clarity_br_5",
+        "heading": "Erst hier ankommen.",
+        "instruction": "Bevor du versuchst, klar zu sehen, komm hier vollständig an. Drei langsame Atemzüge. Vollständig in diesem Moment."
+      }
+    ],
+
+    "moment": [
+      {
+        "id": "clarity_mom_1",
+        "heading": "Was ist die eine Sache, die heute klar werden muss?"
+      },
+      {
+        "id": "clarity_mom_2",
+        "heading": "Was weißt du wirklich, auch wenn du nicht das ganze Bild siehst?"
+      },
+      {
+        "id": "clarity_mom_3",
+        "heading": "Was ist die einfachste Version des nächsten Schritts?"
+      },
+      {
+        "id": "clarity_mom_4",
+        "heading": "Was würdest du tun, wenn du dem vertrautest, was du bereits weißt?"
+      },
+      {
+        "id": "clarity_mom_5",
+        "heading": "Was kannst du jetzt, in diesem Moment, vereinfachen?"
+      },
+      {
+        "id": "clarity_mom_6",
+        "heading": "Welche Entscheidung wartet am längsten auf Klarheit?"
+      },
+      {
+        "id": "clarity_mom_7",
+        "heading": "Was ist die kleinste klare Sache, die du von dort, wo du stehst, sehen kannst?"
+      }
+    ],
+
+    "completion": [
+      {
+        "id": "clarity_comp_1",
+        "heading": "Etwas hat sich geklärt.",
+        "subheading": "Vielleicht nicht alles. Etwas. So kommt Klarheit."
+      },
+      {
+        "id": "clarity_comp_2",
+        "heading": "Du hast angehalten und der Nebel hat sich bewegt.",
+        "subheading": "Mehr denken war nicht die Antwort. Das hier war es."
+      },
+      {
+        "id": "clarity_comp_3",
+        "heading": "Eine klare Sache.",
+        "subheading": "Du hast sie gefunden. Oder du bist näher dran. Beides ist Fortschritt."
+      },
+      {
+        "id": "clarity_comp_4",
+        "heading": "Der Nebel ist jetzt dünner.",
+        "subheading": "Nicht weg. Nur genug Sicht, um den nächsten Schritt zu machen."
+      },
+      {
+        "id": "clarity_comp_5",
+        "heading": "Du hast vereinfacht.",
+        "subheading": "Das ist die ganze Übung. Es reicht."
+      },
+      {
+        "id": "clarity_comp_6",
+        "heading": "Du bist mit dem Unbehagen des Nicht-Wissens geblieben.",
+        "subheading": "Das erfordert mehr, als die meisten Menschen erkennen. Etwas bewegt sich oft, nachdem man damit gesessen hat."
+      },
+      {
+        "id": "clarity_comp_7",
+        "heading": "Klar genug, um weiterzumachen.",
+        "subheading": "Das ist alles, was Klarheit sein muss. Keine Gewissheit. Klar genug."
+      }
+    ]
+
+  },
+
+  "home_cards": [
+    {
+      "id": "clarity_hc_1",
+      "headline": "Mehr denken hat nicht funktioniert.",
+      "subheadline": "Klarheit entsteht durch Innehalten, nicht durch mehr Anstrengung."
+    },
+    {
+      "id": "clarity_hc_2",
+      "headline": "Du musst nicht alles sehen.",
+      "subheadline": "Nur den nächsten Schritt. Das reicht zum Anfangen."
+    },
+    {
+      "id": "clarity_hc_3",
+      "headline": "Das Einfache ist das, was bleibt, wenn alles Unnötige entfernt ist.",
+      "subheadline": "Das ist meist näher, als es gerade erscheint."
+    },
+    {
+      "id": "clarity_hc_4",
+      "headline": "Der Nebel ist nicht dauerhaft.",
+      "subheadline": "Jedes Mal, wenn du hier warst, wurde irgendwann etwas klar."
+    },
+    {
+      "id": "clarity_hc_5",
+      "headline": "Entscheidungsmüdigkeit ist real.",
+      "subheadline": "Der Geist braucht heute weniger offene Türen. Eine oder zwei reichen."
+    },
+    {
+      "id": "clarity_hc_6",
+      "headline": "Du weißt bereits mehr, als der Nebel andeutet.",
+      "subheadline": "Was weißt du jetzt mit Sicherheit?"
+    },
+    {
+      "id": "clarity_hc_7",
+      "headline": "Eine klare Sache reicht zum Anfangen.",
+      "subheadline": "Du brauchst nicht die ganze Karte. Nur die nächste Abzweigung."
+    },
+    {
+      "id": "clarity_hc_8",
+      "headline": "Verwirrung ist Information.",
+      "subheadline": "Sie sagt dir, dass noch etwas ungeklärt ist. Das ist nützlich."
+    },
+    {
+      "id": "clarity_hc_9",
+      "headline": "Die Antwort ist wahrscheinlich näher an der Oberfläche, als es sich anfühlt.",
+      "subheadline": "Klarere Fragen neigen dazu, einfachere Antworten zu zeigen."
+    },
+    {
+      "id": "clarity_hc_10",
+      "headline": "Du bist nicht verloren.",
+      "subheadline": "Du bist zwischen zwei klaren Momenten. Das ist ein echter und vorübergehender Ort."
+    },
+    {
+      "id": "clarity_hc_11",
+      "headline": "Schreib es auf. Außerhalb des Kopfes wird es kleiner.",
+      "subheadline": "Der Nebel innen ist dichter als der Nebel auf dem Papier."
+    },
+    {
+      "id": "clarity_hc_12",
+      "headline": "Hör auf, alles sehen zu wollen.",
+      "subheadline": "Sieh die nächsten Meter. Fang dort an."
+    },
+    {
+      "id": "clarity_hc_13",
+      "headline": "Was würdest du tun, wenn du die Antwort bereits wüsstest?",
+      "subheadline": "Diese Frage zeigt manchmal, dass du sie weißt."
+    },
+    {
+      "id": "clarity_hc_14",
+      "headline": "Klarheit ist nicht Gewissheit.",
+      "subheadline": "Es reicht, den nächsten Schritt zu sehen. Das ist alles, was gebraucht wird."
+    }
+  ],
+
+  "actions": [
+    {
+      "id": "clarity_act_1",
+      "content": "Schreib alles auf, was du gerade zu verstehen versuchst. Alles.",
+      "why": "Der verwirrte Geist hält zu viel gleichzeitig. Das Aufschreiben trennt die Fäden."
+    },
+    {
+      "id": "clarity_act_2",
+      "content": "Streiche alles auf deiner Liste, was heute keine Entscheidung braucht.",
+      "why": "Entscheidungsmüdigkeit wird durch Menge ausgelöst. Die aktive Liste zu kürzen stellt Klarheit wieder her."
+    },
+    {
+      "id": "clarity_act_3",
+      "content": "Frag dich: 'Was weiß ich bereits darüber?' Schreib die Antwort auf.",
+      "why": "Der Nebel verdeckt oft, was du schon weißt. Das Bekannte ans Licht zu bringen, schafft Raum."
+    },
+    {
+      "id": "clarity_act_4",
+      "content": "Vereinfach die Frage. Schreib sie in zehn Wörtern oder weniger.",
+      "why": "Wenn die Frage unklar ist, bleibt die Antwort verborgen. Kurze Fragen sind schärfer."
+    },
+    {
+      "id": "clarity_act_5",
+      "content": "Schreib zwei Optionen für die Entscheidung, bei der du feststeckst. Kreise die ein, zu der dein Instinkt neigt.",
+      "why": "Zwei Optionen machen die Wahl sichtbar. Der Instinkt zeigt sich oft, wenn der Weg so klar ist."
+    },
+    {
+      "id": "clarity_act_6",
+      "content": "Geh 20 Minuten vom Problem weg. Tu etwas Körperliches.",
+      "why": "Der Geist findet oft, was er suchte, erst nachdem du aufgehört hast zu suchen."
+    },
+    {
+      "id": "clarity_act_7",
+      "content": "Schreib eine Liste dessen, was dir wirklich wichtig ist. Dann schau die Entscheidung von dort aus an.",
+      "why": "Die meiste Verwirrung löst sich, wenn du dich erinnerst, was dir wirklich wichtig ist."
+    },
+    {
+      "id": "clarity_act_8",
+      "content": "Frag jemanden, dem du vertraust: 'Was würdest du an meiner Stelle tun?' Hör zu, ohne dich zu verteidigen.",
+      "why": "Eine Außenperspektive sieht oft, was die Nähe verdeckt."
+    },
+    {
+      "id": "clarity_act_9",
+      "content": "Schreib: 'Ich bin verwirrt über ___ weil ___.' Füll beide Lücken.",
+      "why": "Die Quelle der Verwirrung zu benennen löst oft einen Teil davon auf."
+    },
+    {
+      "id": "clarity_act_10",
+      "content": "Reduzier deine aktive To-do-Liste auf drei Punkte. Nur drei.",
+      "why": "Überforderung wächst mit der Liste. Drei Dinge reichen, um sie auf einmal zu tragen."
+    },
+    {
+      "id": "clarity_act_11",
+      "content": "Schlaf mit der Entscheidung, bei der du feststeckst. Notier, morgen darauf zurückzukommen.",
+      "why": "Im Schlaf verarbeitet das Gehirn Informationen und löst oft, was das Wachsein nicht kann."
+    },
+    {
+      "id": "clarity_act_12",
+      "content": "Schreib die Entscheidung auf, die du am meisten vermeidest. Dann schreib auf, wovor du Angst hast.",
+      "why": "Angst ist oft das, was Nebel erzeugt. Die Angst zu benennen ist der Anfang von Klarheit."
+    },
+    {
+      "id": "clarity_act_13",
+      "content": "Schalte alle Eindrücke für 30 Minuten aus. Keine Podcasts, Musik oder Inhalte.",
+      "why": "Ständige Eindrücke hindern den Geist daran, zu verarbeiten, was er bereits hat."
+    },
+    {
+      "id": "clarity_act_14",
+      "content": "Zeichne ein einfaches Diagramm des Problems. Kästchen und Pfeile. Keine Wörter nötig.",
+      "why": "Es als Form statt als Worte zu sehen, verändert, wie der Geist das Problem hält."
+    },
+    {
+      "id": "clarity_act_15",
+      "content": "Schreib deine instinktive Antwort auf die Frage, über die du zu viel nachgedacht hast. Nur der erste Gedanke.",
+      "why": "Die erste Antwort ist oft die richtige, bevor Angst und Analyse sie komplizieren."
+    },
+    {
+      "id": "clarity_act_16",
+      "content": "Schreib, was du einem Freund sagen würdest, der genau damit verwirrt ist.",
+      "why": "Ratschläge an andere sind oft weiser als Ratschläge an uns selbst. Nutz das."
+    },
+    {
+      "id": "clarity_act_17",
+      "content": "Reduzier deine Verpflichtungen diese Woche um eine. Schreib jetzt, um umzuplanen oder abzusagen.",
+      "why": "Mentaler Nebel lichtet sich oft, wenn eine Sache von deinem Teller kommt."
+    },
+    {
+      "id": "clarity_act_18",
+      "content": "Schreib, was du jetzt nicht entscheiden musst. Leg es beiseite. Was bleibt, ist kleiner.",
+      "why": "Der Geist trägt mehr als er braucht. Zu benennen, was abgelegt werden kann, schafft Raum für das, was wichtig ist."
+    },
+    {
+      "id": "clarity_act_19",
+      "content": "Sag laut: 'Ich muss nicht alles wissen. Ich muss nur diese eine Sache wissen.'",
+      "why": "Es laut zu sagen, macht die Erlaubnis real. Die Stimme bestätigt, was der Geist noch nicht akzeptiert hat."
+    },
+    {
+      "id": "clarity_act_20",
+      "content": "Gib dir eine Frist für die festgefahrene Entscheidung. Auch eine erfundene.",
+      "why": "Offene Entscheidungen bleiben offen. Eine Frist gibt dem Geist die Erlaubnis, irgendwo anzukommen."
+    },
+    {
+      "id": "clarity_act_21",
+      "content": "Schreib eine Pro-Contra-Liste für die Entscheidung. Ignorier sie dann und beobachte deine instinktive Reaktion.",
+      "why": "Pro-Contra-Listen klären oft dadurch, dass sie zeigen, auf welcher Seite man zu landen hoffte."
+    },
+    {
+      "id": "clarity_act_22",
+      "content": "Geh draußen ohne Kopfhörer spazieren. Lass den Geist ohne Richtung wandern.",
+      "why": "Etwas löst sich oft, wenn der Körper sich bewegt und der Geist keine Aufgabe hat."
+    },
+    {
+      "id": "clarity_act_23",
+      "content": "Stell dir vor, einen Moment mit jeder Option zu leben. Wie fühlt sich jede im Körper an?",
+      "why": "Der Körper reagiert oft auf vorgestellte Zukünfte, bevor der Geist entschieden hat. Diese Reaktion ist Information."
+    },
+    {
+      "id": "clarity_act_24",
+      "content": "Identifizier eine Sache, die du mit Sicherheit weißt. Sag sie laut. Fang von dort an.",
+      "why": "Von dem auszugehen, was bereits klar ist, ist immer möglich. Auch wenn sonst nichts es ist."
+    },
+    {
+      "id": "clarity_act_25",
+      "content": "Schreib 10 Minuten frei. Keine Struktur. Schreib nur, was in deinem Kopf ist.",
+      "why": "Freies Schreiben externalisiert den inneren Lärm und bringt oft unerwartete Klarheit an die Oberfläche."
+    },
+    {
+      "id": "clarity_act_26",
+      "content": "Gibt es eine Sache, die du heute entscheiden könntest, die mehrere andere Dinge leichter machen würde?",
+      "why": "Manche Entscheidungen tragen andere in sich. Diese eine zu finden, kann den Rest leichter machen."
+    },
+    {
+      "id": "clarity_act_27",
+      "content": "Frag: 'Wird diese Entscheidung in sechs Monaten wichtig sein?' Wenn ja, verlangsam. Wenn nein, entscheide jetzt.",
+      "why": "Zeit verändert das Gewicht der Dinge. Eine Sechs-Monats-Perspektive zeigt oft, wie viel Raum wirklich da ist."
+    },
+    {
+      "id": "clarity_act_28",
+      "content": "Schreib drei Dinge, die derzeit klar sind. Konzentriere dich heute nur auf diese.",
+      "why": "Auf das zu handeln, was klar ist, ist immer möglich, auch wenn das große Bild neblig ist."
+    },
+    {
+      "id": "clarity_act_29",
+      "content": "Verschieb eine nicht dringende Entscheidung auf nächste Woche. Schreib sie auf und schließ sie ab.",
+      "why": "Nicht alles muss heute entschieden werden. Es aufzuschreiben lässt den Geist loslassen, was er hält."
+    },
+    {
+      "id": "clarity_act_30",
+      "content": "Schreib einen Satz: 'Das Wichtigste jetzt ist ___.' Füll die Lücke. Vertrau ihm.",
+      "why": "Ein Satz kann mehr Wahrheit enthalten als eine lange Liste. Die Einschränkung zwingt das Wesentliche an die Oberfläche."
+    }
+  ],
+
+  "reflections": [
+    { "id": "clarity_ref_1",  "content": "Worüber bist du gerade am meisten verwirrt? Kannst du den Nebel beschreiben?" },
+    { "id": "clarity_ref_2",  "content": "Was weißt du bereits mit Sicherheit, auch wenn du nicht das ganze Bild siehst?" },
+    { "id": "clarity_ref_3",  "content": "Wann warst du in der Vergangenheit so verwirrt und Klarheit kam schließlich? Was hat geholfen?" },
+    { "id": "clarity_ref_4",  "content": "Und wenn die Frage selbst sich ändern muss?" },
+    { "id": "clarity_ref_5",  "content": "Was würde deine aktuelle Situation am meisten vereinfachen, wenn du eine Sache ändern könntest?" },
+    { "id": "clarity_ref_6",  "content": "Was hältst du offen, was heute entschieden oder losgelassen werden könnte?" },
+    { "id": "clarity_ref_7",  "content": "Welche Entscheidung hast du vermieden? Was steckt unter dieser Vermeidung?" },
+    { "id": "clarity_ref_8",  "content": "Wie würde ein einfacheres Leben für dich jetzt aussehen?" },
+    { "id": "clarity_ref_9",  "content": "Was ist trotz all deines Nachdenkens darüber unklar geblieben?" },
+    { "id": "clarity_ref_10", "content": "Was würdest du tun, wenn du aufhörtest, auf Gewissheit zu warten?" },
+    { "id": "clarity_ref_11", "content": "Was ist eine Sache, die sich für dich kürzlich geklärt hat, und wie ist das passiert?" },
+    { "id": "clarity_ref_12", "content": "Wovor schützt dich die Verwirrung, eine Entscheidung treffen zu müssen?" },
+    { "id": "clarity_ref_13", "content": "Was sagt dein Instinkt, das deine Analyse weiterhin ignoriert?" },
+    { "id": "clarity_ref_14", "content": "Was würdest du tun, wenn du wüsstest, dass die Entscheidung nicht perfekt sein muss?" },
+    { "id": "clarity_ref_15", "content": "Was sind drei Dinge, über die du heute aufhören könntest nachzudenken, die dir Raum zurückgeben würden?" },
+    { "id": "clarity_ref_16", "content": "Auf welche Information wartest du noch, die vielleicht nie kommt?" },
+    { "id": "clarity_ref_17", "content": "Was ist die einfachste Aussage dessen, was du wirklich willst?" },
+    { "id": "clarity_ref_18", "content": "Was fühlt sich in deinem Leben gerade unnötig kompliziert an?" },
+    { "id": "clarity_ref_19", "content": "Wenn du dir vorstellst, dass der Nebel sich lichtet, was siehst du auf der anderen Seite?" },
+    { "id": "clarity_ref_20", "content": "Worum kreist du immer wieder, was dir vielleicht etwas sagen könnte?" },
+    { "id": "clarity_ref_21", "content": "Vor welcher Klarheit hast du Angst? Was würde sie von dir verlangen?" },
+    { "id": "clarity_ref_22", "content": "Wie fühlt sich ein klarer Kopf in deinem Körper an, nicht in deinem Geist?" },
+    { "id": "clarity_ref_23", "content": "Was würdest du anders machen, wenn du deinem eigenen Urteil mehr vertrauen würdest?" },
+    { "id": "clarity_ref_24", "content": "Was verkomplizierst du zu sehr, was eigentlich einfach sein könnte?" },
+    { "id": "clarity_ref_25", "content": "Was ist in deinen Werten konstant geblieben, auch wenn alles andere unklar war?" },
+    { "id": "clarity_ref_26", "content": "Was würdest du jemand anderem sagen, der genauso verwirrt ist wie du gerade?" },
+    { "id": "clarity_ref_27", "content": "Wie würde es sich anfühlen, die Entscheidung zu treffen und aufzuhören zu entscheiden?" },
+    { "id": "clarity_ref_28", "content": "Was kostet es, diese Frage weiterhin offen zu halten?" },
+    { "id": "clarity_ref_29", "content": "Was musst du aufhören zu konsumieren oder aufzunehmen, damit Klarheit entstehen kann?" },
+    { "id": "clarity_ref_30", "content": "Welche eine Sache, wenn sie klar wäre, würde den Rest leichter machen?" }
+  ],
+
+  "words": [
+    { "id": "clarity_w_1",  "word": "KLAR",        "meaning": "Nicht die Abwesenheit von Nebel. Die Fähigkeit zu sehen, was wichtig ist." },
+    { "id": "clarity_w_2",  "word": "EINFACH",     "meaning": "Die andere Seite des Komplizierten. Es lohnt sich, sie zu finden." },
+    { "id": "clarity_w_3",  "word": "SEHEN",       "meaning": "Auch nur eine Sache klar zu sehen, reicht, um anzufangen." },
+    { "id": "clarity_w_4",  "word": "DIREKT",      "meaning": "Die direkte Frage zeigt oft die direkte Antwort." },
+    { "id": "clarity_w_5",  "word": "REIN",        "meaning": "Eine reine Frage. Eine reine Entscheidung. Ein reiner nächster Schritt." },
+    { "id": "clarity_w_6",  "word": "REDUZIEREN",  "meaning": "Reduzier die Optionen. Reduzier die Auswahl. Sieh, was bleibt." },
+    { "id": "clarity_w_7",  "word": "STILL",       "meaning": "Klarheit braucht Stille. Nicht mehr Eindrücke. Mehr Stille." },
+    { "id": "clarity_w_8",  "word": "LICHT",       "meaning": "Die Qualität der Dinge, wenn sich der Nebel endlich bewegt." },
+    { "id": "clarity_w_9",  "word": "WISSEN",      "meaning": "Du weißt mehr, als der Nebel andeutet. Vertrau dem." },
+    { "id": "clarity_w_10", "word": "OFFEN",       "meaning": "Ein offener Geist hält inne, bevor er sich überfüllt. Leer vor dem Empfangen." },
+    { "id": "clarity_w_11", "word": "EINS",        "meaning": "Eine klare Sache. Nicht alles. Eine." },
+    { "id": "clarity_w_12", "word": "ABLEGEN",     "meaning": "Leg das Unnötige ab. Sieh, was die Frage wirklich ist." },
+    { "id": "clarity_w_13", "word": "PAUSE",       "meaning": "Die Klarheit, die du suchst, kommt oft in der Pause." },
+    { "id": "clarity_w_14", "word": "RUHE",        "meaning": "Das Klarheitssignal ist leise. Der Lärm muss zuerst aufhören." },
+    { "id": "clarity_w_15", "word": "WAHR",        "meaning": "Was wahr ist, getrennt von dem, was gefürchtet oder erhofft wird." },
+    { "id": "clarity_w_16", "word": "ENTSCHEIDEN", "meaning": "Der Nebel lichtet sich oft in dem Moment, in dem du entscheidest. Davor kaum." },
+    { "id": "clarity_w_17", "word": "WENIGER",     "meaning": "Weniger Informationen, weniger Optionen, kürzere Listen. Weniger zeigt mehr." },
+    { "id": "clarity_w_18", "word": "FOKUS",       "meaning": "Nicht auf alles. Auf die eine unklare Sache, die am meisten zählt." },
+    { "id": "clarity_w_19", "word": "SCHRITT",     "meaning": "Nur der nächste Schritt. Du musst nicht den ganzen Weg sehen." },
+    { "id": "clarity_w_20", "word": "VERTRAUEN",   "meaning": "Vertrau dem, was du weißt. Auch bevor du alles weißt." },
+    { "id": "clarity_w_21", "word": "EINENGEN",    "meaning": "Eng die Frage ein. Die Antwort lebt in einem kleineren Raum." },
+    { "id": "clarity_w_22", "word": "ENTSTEHEN",   "meaning": "Klarheit entsteht. Du kannst sie nicht erzwingen. Du kannst Raum dafür schaffen." },
+    { "id": "clarity_w_23", "word": "WARTEN",      "meaning": "Manchmal braucht Klarheit Zeit. Das ist keine Passivität." },
+    { "id": "clarity_w_24", "word": "FINDEN",      "meaning": "Klarheit ist findbar. Nicht immer schnell. Aber findbar." },
+    { "id": "clarity_w_25", "word": "SCHARF",      "meaning": "Eine scharfe Frage schneidet durch, was eine vage nicht kann." },
+    { "id": "clarity_w_26", "word": "UMRISS",      "meaning": "Skizziere die Form des Problems, bevor du die Details füllst. Die Form ist oft schon klarer." },
+    { "id": "clarity_w_27", "word": "RAUM",        "meaning": "Klarheit braucht Raum. Hör auf, den Raum zu füllen, und sie kann ankommen." },
+    { "id": "clarity_w_28", "word": "SCHLICHT",    "meaning": "Sag es schlicht. Auch dir selbst. Schlichtheit ist eine Form von Klarheit." },
+    { "id": "clarity_w_29", "word": "ERHOLUNG",    "meaning": "Schlaf und Erholung erzeugen mehr Klarheit als weitere Analyse." },
+    { "id": "clarity_w_30", "word": "RAND",        "meaning": "Finde den Rand des Nebels. Was kannst du von dort sehen?" },
+    { "id": "clarity_w_31", "word": "HELL",        "meaning": "Ein heller Punkt im Nebel reicht zum Navigieren." },
+    { "id": "clarity_w_32", "word": "KERN",        "meaning": "Geh zum Kern der Frage. Komplexität ist oft nur eine Hülle." },
+    { "id": "clarity_w_33", "word": "BENENNEN",    "meaning": "Benenns klar, bevor du versuchst, es zu lösen. Der richtige Name verändert, was du betrachtest." },
+    { "id": "clarity_w_34", "word": "GENUG",       "meaning": "Genug Klarheit zum Weitermachen. Das ist das Ziel. Nicht alles." },
+    { "id": "clarity_w_35", "word": "GENAU",       "meaning": "Genau ist klarer als ungefähr. Benenns genau." },
+    { "id": "clarity_w_36", "word": "FRISCH",      "meaning": "Eine frische Perspektive. Ein Spaziergang. Ein Schlaf. Etwas Neues." },
+    { "id": "clarity_w_37", "word": "BODEN",       "meaning": "Bleib bei dem, was du weißt, bevor du nach dem greifst, was du nicht weißt." },
+    { "id": "clarity_w_38", "word": "HÖREN",       "meaning": "Hör, was dein Instinkt durch den Lärm hindurch gesagt hat." },
+    { "id": "clarity_w_39", "word": "EHRLICH",     "meaning": "Ehrlich über das, was du nicht weißt. Dort lebt die Klarheit." },
+    { "id": "clarity_w_40", "word": "NUR",         "meaning": "Nur diese Frage. Nicht das ganze Gebiet. Nur diese." },
+    { "id": "clarity_w_41", "word": "BEHALTEN",    "meaning": "Behalte nur, was zählt. Lass den Rest ohne Schuldgefühle los." },
+    { "id": "clarity_w_42", "word": "NEIGEN",      "meaning": "Neige zur Antwort, die dein Instinkt bereits hat." },
+    { "id": "clarity_w_43", "word": "BEGEGNEN",    "meaning": "Begegne der Verwirrung. Sitz mit ihr. Sie hat etwas zu sagen." },
+    { "id": "clarity_w_44", "word": "BENANNT",     "meaning": "Das Unbenannte kann nicht angegangen werden. Benenn es." },
+    { "id": "clarity_w_45", "word": "ORDNUNG",     "meaning": "Bring Ordnung in die Dinge. Bevor du entscheidest. Bevor du handelst." },
+    { "id": "clarity_w_46", "word": "WÖRTLICH",    "meaning": "Sag es wörtlich. Die wörtliche Frage enthält oft die wörtliche Antwort." },
+    { "id": "clarity_w_47", "word": "INNERLICH",   "meaning": "Die Antwort ist innerlich. Du hast sie bereits. Geh nach innen." },
+    { "id": "clarity_w_48", "word": "LÖSEN",       "meaning": "Löse die eine Sache, die den meisten Nebel erzeugt." },
+    { "id": "clarity_w_49", "word": "KURZ",        "meaning": "Kürzere Liste. Kürzere Frage. Weniger Zeit bis zur Klarheit." },
+    { "id": "clarity_w_50", "word": "DÜNN",        "meaning": "Der Nebel wird dünner, wenn du aufhörst, ihm etwas hinzuzufügen." },
+    { "id": "clarity_w_51", "word": "ENTHÜLLEN",   "meaning": "Enthülle, was du bereits weißt, aber unter dem Lärm begraben ist." },
+    { "id": "clarity_w_52", "word": "PERSPEKTIVE", "meaning": "Eine andere Sichtweise auf dasselbe Problem verändert, was du siehst." }
+  ],
+
+  "notification_pool": [
+    { "id": "clarity_n_1",  "copy": "Du musst nicht alles sehen. Nur den nächsten Schritt.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_2",  "copy": "Mehr denken hat das nicht geklärt. Versuch innezuhalten.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_3",  "copy": "Eine klare Sache reicht zum Anfangen.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_4",  "copy": "Der Nebel ist vorübergehend. Du warst schon hier.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_5",  "copy": "Das Einfache ist auf der anderen Seite des Komplizierten.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_6",  "copy": "Was weißt du bereits? Fang dort an.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_7",  "copy": "Verwirrung ist Information. Was sagt sie dir?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_8",  "copy": "Kürze die Liste. Drei Punkte. Los.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_9",  "copy": "Dein Instinkt hat versucht, etwas zu sagen.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_10", "copy": "Benenns die Verwirrung. Sie schrumpft, wenn man sie benennt.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_11", "copy": "Geh 20 Minuten weg. Etwas verändert sich oft.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_12", "copy": "Was würdest du tun, wenn du die Antwort schon wüsstest?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_13", "copy": "Entscheidungsmüdigkeit ist real. Entscheide heute weniger Dinge.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_14", "copy": "Die klarste Sache, die du jetzt siehst — handel danach.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_15", "copy": "Schreib es auf. Der Nebel ist innen dichter.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_16", "copy": "Keine Gewissheit. Nur genug für einen Schritt.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_17", "copy": "Stell eine einfachere Version der Frage.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_18", "copy": "Du bist nicht verloren. Zwischen zwei Momenten der Klarheit.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_19", "copy": "Was kannst du jetzt aufhören offenzuhalten?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_20", "copy": "Die einfache Version ist meist näher am Richtigen.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_21", "copy": "Weniger Eindrücke, mehr Klarheit. Schalte etwas aus.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_22", "copy": "Vertrau dem, was du weißt. Auch wenn es nicht alles ist.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_23", "copy": "Klarheit kommt meist nach der Entscheidung, nicht davor.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
+    { "id": "clarity_n_24", "copy": "Vereinfach heute eine Sache.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_25", "copy": "Was ist die echte Frage unter dem Nebel?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_26", "copy": "Hör auf, alles zu suchen. Such eine Sache.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_27", "copy": "Der Nebel wird dünner, wenn du aufhörst, ihm etwas hinzuzufügen.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "clarity_n_28", "copy": "Was würdest du tun, wenn du deinem Instinkt vertrauen würdest?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } }
+  ],
+
+  "evening_reflections": [
+    { "id": "clarity_ev_1",  "content": "Was wurde heute klarer? Auch wenn nur ein bisschen." },
+    { "id": "clarity_ev_2",  "content": "Welche Entscheidung hast du vermieden, die heute Abend getroffen werden könnte?" },
+    { "id": "clarity_ev_3",  "content": "Wo hast du heute das klarste Denken gefunden? Was hat das geschaffen?" },
+    { "id": "clarity_ev_4",  "content": "Was würdest du morgen vereinfachen, wenn du könntest?" },
+    { "id": "clarity_ev_5",  "content": "Welche Frage blieb heute ungelöst? Ist es wert, sie über Nacht mitzunehmen?" },
+    { "id": "clarity_ev_6",  "content": "Was hast du heute herausgefunden, das du nicht erwartet hast?" },
+    { "id": "clarity_ev_7",  "content": "Was blieb den ganzen Tag neblig? Was könnte helfen, es zu klären?" },
+    { "id": "clarity_ev_8",  "content": "Welche offene Entscheidung könntest du jetzt schließen, auch wenn sie unvollkommen ist?" },
+    { "id": "clarity_ev_9",  "content": "Was wusstest du heute, dem du nicht vertraut hast?" },
+    { "id": "clarity_ev_10", "content": "Was ist das Wichtigste, worüber du morgen Klarheit brauchst?" },
+    { "id": "clarity_ev_11", "content": "Was hat sich heute unnötig kompliziert?" },
+    { "id": "clarity_ev_12", "content": "Was hat das Innehalten und Zurücktreten heute enthüllt?" },
+    { "id": "clarity_ev_13", "content": "Was würde morgen einfacher machen?" },
+    { "id": "clarity_ev_14", "content": "Was ist eine Sache, über die du heute Nacht aufhören kannst nachzudenken und sie einfach sein lässt?" }
+  ]
+
+}

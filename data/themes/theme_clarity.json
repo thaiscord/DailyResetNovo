@@ -172,12 +172,12 @@
       {
         "id": "clarity_comp_5",
         "heading": "You simplified.",
-        "subheading": "That is the whole practice. And it works every time you try it."
+        "subheading": "That is the whole practice. It is enough."
       },
       {
         "id": "clarity_comp_6",
         "heading": "You stayed with the discomfort of not-knowing.",
-        "subheading": "That takes more than people realize. The clarity is a reward for that patience."
+        "subheading": "That takes more than people realize. Something usually shifts after sitting with it."
       },
       {
         "id": "clarity_comp_7",
@@ -201,8 +201,8 @@
     },
     {
       "id": "clarity_hc_3",
-      "headline": "Simple is not naive.",
-      "subheadline": "Simple is what you find on the other side of overcomplicated."
+      "headline": "Simple is what remains after everything unnecessary is removed.",
+      "subheadline": "That is usually closer than it feels right now."
     },
     {
       "id": "clarity_hc_4",
@@ -212,7 +212,7 @@
     {
       "id": "clarity_hc_5",
       "headline": "Decision fatigue is real.",
-      "subheadline": "You have been deciding too much. Reduce the number of decisions today."
+      "subheadline": "The mind needs fewer open doors today. One or two is enough."
     },
     {
       "id": "clarity_hc_6",
@@ -231,8 +231,8 @@
     },
     {
       "id": "clarity_hc_9",
-      "headline": "The answer is probably simpler than you've been making it.",
-      "subheadline": "Complexity is often a sign that you're solving the wrong problem."
+      "headline": "The answer is probably closer to the surface than it feels.",
+      "subheadline": "Clearer questions tend to reveal simpler answers."
     },
     {
       "id": "clarity_hc_10",
@@ -285,16 +285,16 @@
     {
       "id": "clarity_act_5",
       "content": "Write two options for the decision you are stuck on. Circle the one your gut leans toward.",
-      "why": "Limiting to two forces a lean. The gut often knows before the mind does."
+      "why": "Two options make the choice visible. The gut usually shows up when the path is that clear."
     },
     {
       "id": "clarity_act_6",
       "content": "Step away from the problem for 20 minutes. Do something physical.",
-      "why": "The default mode network — where insight lives — is most active during rest."
+      "why": "The mind often finds what it was looking for only after you stop looking."
     },
     {
       "id": "clarity_act_7",
-      "content": "Write a list of your values. Then look at the decision you're stuck on through that lens.",
+      "content": "Write a list of what actually matters to you. Then look at the decision from there.",
       "why": "Most confusion dissolves when you remember what actually matters to you."
     },
     {
@@ -310,7 +310,7 @@
     {
       "id": "clarity_act_10",
       "content": "Reduce your active to-do list to three items. Only three.",
-      "why": "Overwhelm is often a list problem, not a capacity problem."
+      "why": "Overwhelm grows when the list grows. Three things is enough to hold at once."
     },
     {
       "id": "clarity_act_11",
@@ -330,7 +330,7 @@
     {
       "id": "clarity_act_14",
       "content": "Draw a simple diagram of the problem. Boxes and arrows. No words needed.",
-      "why": "Spatial representation of a problem creates distance and reveals structure."
+      "why": "Seeing it as a shape instead of words changes how the mind holds the problem."
     },
     {
       "id": "clarity_act_15",
@@ -345,42 +345,42 @@
     {
       "id": "clarity_act_17",
       "content": "Reduce your commitments for this week by one. Email someone now to reschedule or decline.",
-      "why": "Mental fog is often a symptom of too many concurrent obligations."
+      "why": "Mental fog often lifts when one thing comes off your plate."
     },
     {
       "id": "clarity_act_18",
-      "content": "Write what the decision does NOT need to include. Constraints clarify.",
-      "why": "Knowing what is off the table reduces the option space to something manageable."
+      "content": "Write what you don't need to decide right now. Put it aside. What remains is smaller.",
+      "why": "The mind holds more than it needs to. Naming what can be set down creates room for what matters."
     },
     {
       "id": "clarity_act_19",
       "content": "Say aloud: 'I don't need to know everything. I just need to know this one thing.'",
-      "why": "Reducing the requirement from everything to one thing is a clarity intervention."
+      "why": "Saying it out loud makes the permission real. The voice confirms what the mind hasn't accepted yet."
     },
     {
       "id": "clarity_act_20",
       "content": "Give yourself a deadline for the stuck decision. Even a made-up one.",
-      "why": "Decisions left open indefinitely stay open indefinitely. A deadline forces resolution."
+      "why": "Open decisions stay open. A deadline gives the mind permission to arrive somewhere."
     },
     {
       "id": "clarity_act_21",
       "content": "Write a pro/con list for the decision. Then ignore it and notice your gut reaction.",
-      "why": "Pro/con lists often clarify by showing you which side you hoped would win."
+      "why": "Pro/con lists often clarify by showing you which side you were hoping to land on."
     },
     {
       "id": "clarity_act_22",
       "content": "Walk outside without headphones. Let the mind wander without direction.",
-      "why": "Unstructured outdoor movement is one of the most reliable clarity-producing states."
+      "why": "Something often loosens when the body moves and the mind has no task."
     },
     {
       "id": "clarity_act_23",
-      "content": "Write what would be true if you made a decision today, either way. Imagine both.",
-      "why": "Future projection is more useful than extended present analysis."
+      "content": "Imagine living with each option for a moment. What does each one feel like inside the body?",
+      "why": "The body often responds to imagined futures before the mind has decided. That response is information."
     },
     {
       "id": "clarity_act_24",
       "content": "Identify one thing you know for certain. State it aloud. Start from there.",
-      "why": "Clarity builds from the known outward, not from the unknown inward."
+      "why": "Starting from what is already clear is always possible. Even when nothing else is."
     },
     {
       "id": "clarity_act_25",
@@ -389,13 +389,13 @@
     },
     {
       "id": "clarity_act_26",
-      "content": "Identify the one decision that would simplify three other decisions if you made it.",
-      "why": "Not all decisions are equal. The root decision creates the most leverage."
+      "content": "Is there one thing you could decide today that would make several other things easier?",
+      "why": "Some decisions carry others inside them. Finding that one can make the rest feel lighter."
     },
     {
       "id": "clarity_act_27",
       "content": "Ask: 'In six months, will this decision matter?' If yes, slow down. If not, decide now.",
-      "why": "Temporal perspective reveals whether the fog is proportional to the actual stakes."
+      "why": "Time changes the weight of things. A six-month view often shows how much space there actually is."
     },
     {
       "id": "clarity_act_28",
@@ -405,12 +405,12 @@
     {
       "id": "clarity_act_29",
       "content": "Postpone one non-urgent decision until next week. Write it down and close it.",
-      "why": "Not every open question needs to be resolved today. Selective postponement reduces load."
+      "why": "Not everything needs to be decided today. Writing it down lets the mind release what it's holding."
     },
     {
       "id": "clarity_act_30",
       "content": "Write one sentence: 'The most important thing right now is ___.' Fill the blank. Trust it.",
-      "why": "Single-sentence clarity is often more useful than extended analysis."
+      "why": "One sentence can hold more truth than a long list. The constraint forces what actually matters to surface."
     }
   ],
 
@@ -429,7 +429,7 @@
     },
     {
       "id": "clarity_ref_4",
-      "content": "What question have you been asking that might be the wrong question?"
+      "content": "What if the question itself needs to change?"
     },
     {
       "id": "clarity_ref_5",
@@ -538,58 +538,58 @@
   ],
 
   "words": [
-    { "id": "clarity_w_1",  "word": "CLEAR",   "meaning": "Not the absence of fog. The ability to see what matters." },
-    { "id": "clarity_w_2",  "word": "SIMPLE",  "meaning": "The other side of complicated. Worth finding." },
-    { "id": "clarity_w_3",  "word": "SEE",     "meaning": "To see even one thing clearly is enough to begin." },
-    { "id": "clarity_w_4",  "word": "DIRECT",  "meaning": "The direct question often reveals the direct answer." },
-    { "id": "clarity_w_5",  "word": "CLEAN",   "meaning": "A clean question. A clean decision. A clean next step." },
-    { "id": "clarity_w_6",  "word": "REDUCE",  "meaning": "Reduce the variables. Reduce the options. See what remains." },
-    { "id": "clarity_w_7",  "word": "STILL",   "meaning": "Clarity requires stillness. Not more input. More stillness." },
-    { "id": "clarity_w_8",  "word": "LIGHT",   "meaning": "The quality of things when the fog finally shifts." },
-    { "id": "clarity_w_9",  "word": "KNOW",    "meaning": "You know more than the fog suggests. Trust that." },
-    { "id": "clarity_w_10", "word": "OPEN",    "meaning": "An open mind stops before it over-fills. Empty before receiving." },
-    { "id": "clarity_w_11", "word": "ONE",     "meaning": "One clear thing. Not everything. One." },
-    { "id": "clarity_w_12", "word": "STRIP",   "meaning": "Strip away the unnecessary. See what the question actually is." },
-    { "id": "clarity_w_13", "word": "PAUSE",   "meaning": "The clarity you're looking for often arrives in the pause." },
-    { "id": "clarity_w_14", "word": "QUIET",   "meaning": "The clarity signal is quiet. The noise has to stop first." },
-    { "id": "clarity_w_15", "word": "TRUE",    "meaning": "What is true, separate from what is feared or hoped." },
-    { "id": "clarity_w_16", "word": "DECIDE",  "meaning": "The fog often lifts the moment you decide. Before that, rarely." },
-    { "id": "clarity_w_17", "word": "LESS",    "meaning": "Less information, fewer options, shorter lists. Less reveals more." },
-    { "id": "clarity_w_18", "word": "FOCUS",   "meaning": "Not on everything. On the single unclear thing that matters most." },
-    { "id": "clarity_w_19", "word": "STEP",    "meaning": "Just the next step. You don't need to see the whole path." },
-    { "id": "clarity_w_20", "word": "TRUST",   "meaning": "Trust what you know. Even before you know it all." },
-    { "id": "clarity_w_21", "word": "NARROW",  "meaning": "Narrow the question. The answer lives in a smaller space." },
-    { "id": "clarity_w_22", "word": "EMERGE",  "meaning": "Clarity emerges. You cannot force it. You can clear space for it." },
-    { "id": "clarity_w_23", "word": "WAIT",    "meaning": "Sometimes clarity requires waiting. That is not passivity." },
-    { "id": "clarity_w_24", "word": "FIND",    "meaning": "Clarity is findable. Not always quickly. But findable." },
-    { "id": "clarity_w_25", "word": "SHARP",   "meaning": "A sharp question cuts through what a vague one cannot." },
-    { "id": "clarity_w_26", "word": "OUTLINE", "meaning": "Outline the thing before you fill it in. Structure first." },
-    { "id": "clarity_w_27", "word": "SPACE",   "meaning": "Clarity needs space. Stop filling the space and it may arrive." },
-    { "id": "clarity_w_28", "word": "PLAIN",   "meaning": "Say it plainly. Even to yourself. Plainness is a form of clarity." },
-    { "id": "clarity_w_29", "word": "REST",    "meaning": "Sleep and rest produce more clarity than further analysis." },
-    { "id": "clarity_w_30", "word": "EDGE",    "meaning": "Find the edge of the fog. What can you see from there?" },
-    { "id": "clarity_w_31", "word": "BRIGHT",  "meaning": "One bright spot in the fog is enough to navigate." },
-    { "id": "clarity_w_32", "word": "CORE",    "meaning": "Strip to the core question. Complexity is usually a shell." },
-    { "id": "clarity_w_33", "word": "DEFINE",  "meaning": "Define the problem before solving it. Definition is clarity." },
-    { "id": "clarity_w_34", "word": "ENOUGH",  "meaning": "Enough clarity to move. That is the goal. Not all of it." },
-    { "id": "clarity_w_35", "word": "EXACT",   "meaning": "Exact is clearer than approximate. Name the thing exactly." },
-    { "id": "clarity_w_36", "word": "FRESH",   "meaning": "A fresh perspective. A walk. A sleep. Something new." },
-    { "id": "clarity_w_37", "word": "GROUND",  "meaning": "Ground in what you know before reaching for what you don't." },
-    { "id": "clarity_w_38", "word": "HEAR",    "meaning": "Hear what your gut has been saying through the noise." },
-    { "id": "clarity_w_39", "word": "HONEST",  "meaning": "Honest about what you don't know. That is where clarity lives." },
-    { "id": "clarity_w_40", "word": "JUST",    "meaning": "Just this question. Not the whole territory. Just this." },
-    { "id": "clarity_w_41", "word": "KEEP",    "meaning": "Keep only what matters. Discard the rest without guilt." },
-    { "id": "clarity_w_42", "word": "LEAN",    "meaning": "Lean toward the answer your gut already has." },
-    { "id": "clarity_w_43", "word": "MEET",    "meaning": "Meet the confusion. Sit with it. It has something to say." },
-    { "id": "clarity_w_44", "word": "NAMED",   "meaning": "The unnamed thing cannot be addressed. Name it." },
-    { "id": "clarity_w_45", "word": "ORDER",   "meaning": "Put things in order. Before deciding. Before acting." },
+    { "id": "clarity_w_1",  "word": "CLEAR",    "meaning": "Not the absence of fog. The ability to see what matters." },
+    { "id": "clarity_w_2",  "word": "SIMPLE",   "meaning": "The other side of complicated. Worth finding." },
+    { "id": "clarity_w_3",  "word": "SEE",      "meaning": "To see even one thing clearly is enough to begin." },
+    { "id": "clarity_w_4",  "word": "DIRECT",   "meaning": "The direct question often reveals the direct answer." },
+    { "id": "clarity_w_5",  "word": "CLEAN",    "meaning": "A clean question. A clean decision. A clean next step." },
+    { "id": "clarity_w_6",  "word": "REDUCE",   "meaning": "Reduce the variables. Reduce the options. See what remains." },
+    { "id": "clarity_w_7",  "word": "STILL",    "meaning": "Clarity requires stillness. Not more input. More stillness." },
+    { "id": "clarity_w_8",  "word": "LIGHT",    "meaning": "The quality of things when the fog finally shifts." },
+    { "id": "clarity_w_9",  "word": "KNOW",     "meaning": "You know more than the fog suggests. Trust that." },
+    { "id": "clarity_w_10", "word": "OPEN",     "meaning": "An open mind stops before it over-fills. Empty before receiving." },
+    { "id": "clarity_w_11", "word": "ONE",      "meaning": "One clear thing. Not everything. One." },
+    { "id": "clarity_w_12", "word": "STRIP",    "meaning": "Strip away the unnecessary. See what the question actually is." },
+    { "id": "clarity_w_13", "word": "PAUSE",    "meaning": "The clarity you're looking for often arrives in the pause." },
+    { "id": "clarity_w_14", "word": "QUIET",    "meaning": "The clarity signal is quiet. The noise has to stop first." },
+    { "id": "clarity_w_15", "word": "TRUE",     "meaning": "What is true, separate from what is feared or hoped." },
+    { "id": "clarity_w_16", "word": "DECIDE",   "meaning": "The fog often lifts the moment you decide. Before that, rarely." },
+    { "id": "clarity_w_17", "word": "LESS",     "meaning": "Less information, fewer options, shorter lists. Less reveals more." },
+    { "id": "clarity_w_18", "word": "FOCUS",    "meaning": "Not on everything. On the single unclear thing that matters most." },
+    { "id": "clarity_w_19", "word": "STEP",     "meaning": "Just the next step. You don't need to see the whole path." },
+    { "id": "clarity_w_20", "word": "TRUST",    "meaning": "Trust what you know. Even before you know it all." },
+    { "id": "clarity_w_21", "word": "NARROW",   "meaning": "Narrow the question. The answer lives in a smaller space." },
+    { "id": "clarity_w_22", "word": "EMERGE",   "meaning": "Clarity emerges. You cannot force it. You can clear space for it." },
+    { "id": "clarity_w_23", "word": "WAIT",     "meaning": "Sometimes clarity requires waiting. That is not passivity." },
+    { "id": "clarity_w_24", "word": "FIND",     "meaning": "Clarity is findable. Not always quickly. But findable." },
+    { "id": "clarity_w_25", "word": "SHARP",    "meaning": "A sharp question cuts through what a vague one cannot." },
+    { "id": "clarity_w_26", "word": "OUTLINE",  "meaning": "Sketch the shape of the problem before filling in the details. The shape is often already clearer." },
+    { "id": "clarity_w_27", "word": "SPACE",    "meaning": "Clarity needs space. Stop filling the space and it may arrive." },
+    { "id": "clarity_w_28", "word": "PLAIN",    "meaning": "Say it plainly. Even to yourself. Plainness is a form of clarity." },
+    { "id": "clarity_w_29", "word": "REST",     "meaning": "Sleep and rest produce more clarity than further analysis." },
+    { "id": "clarity_w_30", "word": "EDGE",     "meaning": "Find the edge of the fog. What can you see from there?" },
+    { "id": "clarity_w_31", "word": "BRIGHT",   "meaning": "One bright spot in the fog is enough to navigate." },
+    { "id": "clarity_w_32", "word": "CORE",     "meaning": "Strip to the core question. Complexity is usually a shell." },
+    { "id": "clarity_w_33", "word": "DEFINE",   "meaning": "Name it clearly before trying to resolve it. The right name changes what you're looking at." },
+    { "id": "clarity_w_34", "word": "ENOUGH",   "meaning": "Enough clarity to move. That is the goal. Not all of it." },
+    { "id": "clarity_w_35", "word": "EXACT",    "meaning": "Exact is clearer than approximate. Name the thing exactly." },
+    { "id": "clarity_w_36", "word": "FRESH",    "meaning": "A fresh perspective. A walk. A sleep. Something new." },
+    { "id": "clarity_w_37", "word": "GROUND",   "meaning": "Ground in what you know before reaching for what you don't." },
+    { "id": "clarity_w_38", "word": "HEAR",     "meaning": "Hear what your gut has been saying through the noise." },
+    { "id": "clarity_w_39", "word": "HONEST",   "meaning": "Honest about what you don't know. That is where clarity lives." },
+    { "id": "clarity_w_40", "word": "JUST",     "meaning": "Just this question. Not the whole territory. Just this." },
+    { "id": "clarity_w_41", "word": "KEEP",     "meaning": "Keep only what matters. Discard the rest without guilt." },
+    { "id": "clarity_w_42", "word": "LEAN",     "meaning": "Lean toward the answer your gut already has." },
+    { "id": "clarity_w_43", "word": "MEET",     "meaning": "Meet the confusion. Sit with it. It has something to say." },
+    { "id": "clarity_w_44", "word": "NAMED",    "meaning": "The unnamed thing cannot be addressed. Name it." },
+    { "id": "clarity_w_45", "word": "ORDER",    "meaning": "Put things in order. Before deciding. Before acting." },
     { "id": "clarity_w_46", "word": "LITERAL",  "meaning": "Say it literally. The literal question often holds the literal answer." },
     { "id": "clarity_w_47", "word": "INTERNAL", "meaning": "The answer is internal. You already have it. Go inward." },
-    { "id": "clarity_w_48", "word": "RESOLVE", "meaning": "Resolve the one thing that is creating the most fog." },
-    { "id": "clarity_w_49", "word": "SHORT",   "meaning": "Shorter list. Shorter question. Shorter time to clarity." },
-    { "id": "clarity_w_50", "word": "THIN",    "meaning": "The fog thins when you stop adding to it." },
-    { "id": "clarity_w_51", "word": "UNCOVER", "meaning": "Uncover what you already know but buried under the noise." },
-    { "id": "clarity_w_52", "word": "VIEW",    "meaning": "A different view of the same problem changes what you see." }
+    { "id": "clarity_w_48", "word": "RESOLVE",  "meaning": "Resolve the one thing that is creating the most fog." },
+    { "id": "clarity_w_49", "word": "SHORT",    "meaning": "Shorter list. Shorter question. Shorter time to clarity." },
+    { "id": "clarity_w_50", "word": "THIN",     "meaning": "The fog thins when you stop adding to it." },
+    { "id": "clarity_w_51", "word": "UNCOVER",  "meaning": "Uncover what you already know but buried under the noise." },
+    { "id": "clarity_w_52", "word": "VIEW",     "meaning": "A different view of the same problem changes what you see." }
   ],
 
   "notification_pool": [
@@ -603,7 +603,7 @@
     { "id": "clarity_n_8",  "copy": "Reduce the list. Three items. Go.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
     { "id": "clarity_n_9",  "copy": "Your gut has been trying to say something.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "clarity_n_10", "copy": "Name the confusion. It shrinks when named.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
-    { "id": "clarity_n_11", "copy": "Step away for 20 minutes. Clarity follows.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "clarity_n_11", "copy": "Step away for 20 minutes. Something often shifts.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "clarity_n_12", "copy": "What would you do if you already knew the answer?", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },
     { "id": "clarity_n_13", "copy": "Decision fatigue is real. Decide fewer things today.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "clarity_n_14", "copy": "The clearest thing you can see right now — act on that.", "mood_weight": { "dark": 0.1, "half": 0.3, "full": 0.6 } },

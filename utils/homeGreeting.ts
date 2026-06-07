@@ -74,8 +74,8 @@ export function getMoodAwareGreeting(
 
   // Return after absence takes priority
   if (daysMissed === 1 || daysMissed === 2) {
-    if (isPt) return 'Você esteve ausente. Bem-vinda de volta.';
-    if (isEs) return 'Estuviste fuera. Bienvenida de vuelta.';
+    if (isPt) return 'Você esteve ausente. Que bom te ver.';
+    if (isEs) return 'Estuviste fuera. Qué bueno verte.';
     if (isFr) return 'Tu étais absent. Bon retour.';
     if (isDe) return 'Du warst weg. Willkommen zurück.';
     return 'You were away. Welcome back.';

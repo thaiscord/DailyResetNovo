@@ -26,7 +26,7 @@ export default function ComebackCard({
   totalDaysCompleted,
   delay = 0,
 }: Props) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const { profile } = useEmotionalProfile();
   const opacity = useRef(new Animated.Value(0)).current;
   const ty      = useRef(new Animated.Value(12)).current;
@@ -47,7 +47,7 @@ export default function ComebackCard({
   const content   = getComebackNarrativeContent(comeback, comebackCount);
   const milestone  = getComebackMilestone(comebackCount);
   const resilience = getResilienceMessage(comebackCount, totalDaysCompleted);
-  const insight    = getInsightForContext('comeback', totalDaysCompleted);
+  const insight    = getInsightForContext('comeback', totalDaysCompleted, lang);
 
   // Subtle left border color by severity
   const accentColor =

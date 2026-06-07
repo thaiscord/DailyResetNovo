@@ -108,7 +108,18 @@ export async function getDailyStatesForWeek(mondayKey: string): Promise<(string 
     date.setDate(monday.getDate() + i);
     const dateStr = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
     const raw = await AsyncStorage.getItem(`${STATE_PREFIX}${dateStr}`);
-    result.push(raw ?? null);
+    if (raw === null) {
+      result.push(null);
+    } else {
+      try {
+        // setItem JSON.stringifies, so the stored value is '"racing"' not 'racing'.
+        // JSON.parse unwraps the outer quotes. Fallback keeps raw value for legacy data.
+        const parsed = JSON.parse(raw);
+        result.push(typeof parsed === 'string' ? parsed : null);
+      } catch {
+        result.push(raw);
+      }
+    }
   }
   return result;
 }

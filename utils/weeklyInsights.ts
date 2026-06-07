@@ -3,8 +3,11 @@
 // All functions are pure — no side effects, no storage access.
 
 import { DailyEntry } from './dailyEntries';
+import type { EmotionalProfile } from './emotionalProfile';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
+
+export type UserGoal = 'calm' | 'clarity' | 'confidence' | 'consistency' | 'presence' | 'balance';
 
 export type RhythmPattern =
   | 'steady'      // completions distributed across the week
@@ -218,15 +221,27 @@ export function getMoodLabel(mood: 'hard' | 'okay' | 'good', lang: string): stri
   return MOOD_LABELS[mood][lang] ?? MOOD_LABELS[mood].en;
 }
 
-// Daily emotional state labels — matches DAILY_STATE_OPTIONS in dailyState.ts
+// Human labels for each emotional state, matching DAILY_STATE_OPTIONS exactly.
+// These are the authoritative display strings for all Weekly Summary sections.
 const STATE_LABELS: Record<string, Record<string, string>> = {
-  racing:      { en: 'Racing Mind',  pt: 'Mente acelerada',  es: 'La mente no para',      fr: 'Pensées rapides',  de: 'Gedankenkarussell' },
-  tired:       { en: 'Tired',        pt: 'Com cansaço',      es: 'Agotado',               fr: 'Fatigue',          de: 'Müde'              },
-  overwhelmed: { en: 'Overwhelmed',  pt: 'Sobrecarregado',   es: 'Todo se siente mucho',  fr: 'Trop plein',       de: 'Überwältigt'       },
-  unclear:     { en: 'Unfocused',    pt: 'Sem clareza',      es: 'Sin claridad',          fr: 'Flou',             de: 'Unklar'            },
-  drained:     { en: 'Low Energy',   pt: 'Sem energia',      es: 'Sin energía',           fr: 'Peu d\'énergie',   de: 'Wenig Energie'     },
-  balanced:    { en: 'In Balance',   pt: 'Em equilíbrio',    es: 'En equilibrio',         fr: 'En équilibre',     de: 'Im Gleichgewicht'  },
+  racing:      { en: 'Racing mind',     pt: 'Mente acelerada',   es: 'Mente acelerada',   fr: 'Esprit accéléré',  de: 'Rasende Gedanken' },
+  tired:       { en: 'Tired',           pt: 'Com cansaço',       es: 'Con cansancio',     fr: 'Fatigué',          de: 'Müde'             },
+  overwhelmed: { en: 'Overwhelmed',     pt: 'Sobrecarregado',    es: 'Abrumado',          fr: 'Débordé',          de: 'Überfordert'      },
+  unclear:     { en: 'Unclear',         pt: 'Sem clareza',       es: 'Sin claridad',      fr: 'Sans clarté',      de: 'Ohne Klarheit'    },
+  drained:     { en: 'Low energy',      pt: 'Sem energia',       es: 'Sin energía',       fr: 'Sans énergie',     de: 'Wenig Energie'    },
+  balanced:    { en: 'Balanced',        pt: 'Em equilíbrio',     es: 'En equilibrio',     fr: 'En équilibre',     de: 'Im Gleichgewicht' },
 };
+
+// Neutral localized fallback — used when an unknown state key appears in storage.
+// Never exposes the raw key to the user.
+const UNKNOWN_STATE_LABEL: Record<string, string> = {
+  en: 'An unnamed state',
+  pt: 'Um estado não identificado',
+  es: 'Un estado no identificado',
+  fr: 'Un état non identifié',
+  de: 'Ein unbekannter Zustand',
+};
+
 // Color for each state dot
 export const STATE_DOT_COLOR: Record<string, string> = {
   racing:      '#C9806A',
@@ -238,7 +253,8 @@ export const STATE_DOT_COLOR: Record<string, string> = {
 };
 export function getStateLabel(state: string, lang: string): string {
   const entry = STATE_LABELS[state];
-  return entry ? (entry[lang] ?? entry.en) : state;
+  if (entry) return entry[lang] ?? entry.en;
+  return UNKNOWN_STATE_LABEL[lang] ?? UNKNOWN_STATE_LABEL.en;
 }
 
 const CAT_LABELS: Record<string, Record<string, string>> = {
@@ -258,65 +274,75 @@ export function getCategoryLabel(category: string, lang: string): string {
 // ─── Section 4 — How You Arrived: personalized note ──────────────────────────
 // One sentence derived from dominant state, secondary states, and week pattern.
 
+// One sentence appended to state labels — describes what showed up DESPITE the state,
+// not the state itself (SectionConnections already named the state).
+// 3 variants per state, cycled by weekNumber.
 const HOW_ARRIVED_STATE_NOTES: Record<string, L5> = {
   drained: {
-    en: ['Low energy appeared more than anything else this week.', 'Your check-ins were often marked by low energy.', 'You came back even on the heavier days.'],
-    pt: ['Pouca energia apareceu mais do que qualquer outra coisa esta semana.', 'Seus check-ins foram frequentemente marcados por pouca energia.', 'Você voltou mesmo nos dias mais pesados.'],
-    es: ['Poca energía apareció más que cualquier otra cosa esta semana.', 'Tus check-ins fueron frecuentemente marcados por poca energía.', 'Volviste incluso en los días más pesados.'],
-    fr: ["Peu d'énergie est apparu plus que n'importe quoi d'autre cette semaine.", "Tes retours étaient souvent marqués par peu d'énergie.", 'Tu es revenu même les jours plus lourds.'],
-    de: ['Wenig Energie kam diese Woche mehr als alles andere vor.', 'Deine Rückkehren waren oft von wenig Energie geprägt.', 'Du bist auch an den schwereren Tagen zurückgekehrt.'],
+    en: ['Energy was lower than expected this week.', 'There was less stamina available at many moments this week.', 'Depletion showed up more often than usual this week.'],
+    pt: ['A energia esteve mais baixa do que o esperado nesta semana.', 'Havia menos fôlego disponível em vários momentos desta semana.', 'O esgotamento apareceu com mais frequência do que o habitual nesta semana.'],
+    es: ['La energía estuvo más baja de lo esperado esta semana.', 'Había menos aliento disponible en varios momentos de esta semana.', 'El agotamiento apareció con más frecuencia de lo habitual esta semana.'],
+    fr: ["L'énergie était plus basse que prévu cette semaine.", 'Il y avait moins de souffle disponible à de nombreux moments de cette semaine.', "L'épuisement s'est manifesté plus souvent que d'habitude cette semaine."],
+    de: ['Die Energie war diese Woche niedriger als erwartet.', 'In vielen Momenten dieser Woche stand weniger Ausdauer zur Verfügung.', 'Erschöpfung zeigte sich diese Woche häufiger als gewöhnlich.'],
   },
   tired: {
-    en: ['Tiredness was the main thread this week.', 'Your check-ins moved through tiredness more than anything else.', 'You came back even on the heavier days.'],
-    pt: ['O cansaço foi o fio principal desta semana.', 'Seus check-ins passaram pelo cansaço mais do que qualquer outra coisa.', 'Você voltou mesmo nos dias mais pesados.'],
-    es: ['El cansancio fue el hilo principal esta semana.', 'Tus check-ins pasaron por el cansancio más que cualquier otra cosa.', 'Volviste incluso en los días más pesados.'],
-    fr: ["La fatigue était le fil principal cette semaine.", "Tes retours ont traversé la fatigue plus que n'importe quoi d'autre.", 'Tu es revenu même les jours plus lourds.'],
-    de: ['Müdigkeit war diese Woche der Hauptfaden.', 'Deine Rückkehren bewegten sich durch Müdigkeit mehr als durch alles andere.', 'Du bist auch an den schwereren Tagen zurückgekehrt.'],
+    en: ['Tiredness was present through much of this week.', 'There was less energy available than usual this week.', 'The weight of tiredness followed many moments of this week.'],
+    pt: ['O cansaço esteve presente em boa parte desta semana.', 'Havia menos energia disponível do que o habitual nesta semana.', 'O peso do cansaço acompanhou vários momentos desta semana.'],
+    es: ['El cansancio estuvo presente durante gran parte de esta semana.', 'Había menos energía disponible de lo habitual esta semana.', 'El peso del cansancio acompañó varios momentos de esta semana.'],
+    fr: ['La fatigue était présente pendant une bonne partie de cette semaine.', "Il y avait moins d'énergie disponible qu'à l'habitude cette semaine.", 'Le poids de la fatigue a accompagné de nombreux moments de cette semaine.'],
+    de: ['Müdigkeit war einen Großteil dieser Woche präsent.', 'Diese Woche stand weniger Energie zur Verfügung als gewöhnlich.', 'Das Gewicht der Müdigkeit begleitete viele Momente dieser Woche.'],
   },
   racing: {
-    en: ['Racing thoughts showed up early this week.', 'Your mind was busy more often than quiet this week.', 'Racing thoughts appeared and softened across the week.'],
-    pt: ['Pensamentos acelerados apareceram cedo esta semana.', 'Sua mente esteve mais agitada do que quieta esta semana.', 'Pensamentos acelerados apareceram e foram se suavizando ao longo da semana.'],
-    es: ['Pensamientos acelerados aparecieron pronto esta semana.', 'Tu mente estuvo más agitada que tranquila esta semana.', 'Pensamientos acelerados aparecieron y se fueron suavizando a lo largo de la semana.'],
-    fr: ["Les pensées rapides sont apparues tôt cette semaine.", "Ton esprit était plus agité que calme cette semaine.", 'Les pensées rapides sont apparues et se sont adoucies au fil de la semaine.'],
-    de: ['Gedankenkarussell erschien früh diese Woche.', 'Dein Geist war diese Woche öfter beschäftigt als ruhig.', 'Gedankenkarussell erschien und milderte sich im Laufe der Woche.'],
+    en: ['Racing thoughts were present through much of this week.', 'The mind was fuller than quiet through this week.', 'There was a busier rhythm running through this week.'],
+    pt: ['Pensamentos acelerados estiveram presentes durante boa parte desta semana.', 'A mente esteve mais cheia do que quieta ao longo desta semana.', 'Havia um ritmo mais acelerado nos bastidores desta semana.'],
+    es: ['Los pensamientos acelerados estuvieron presentes durante gran parte de esta semana.', 'La mente estuvo más llena que tranquila a lo largo de esta semana.', 'Había un ritmo más acelerado durante esta semana.'],
+    fr: ['Des pensées accélérées ont été présentes pendant une bonne partie de cette semaine.', "L'esprit était plus plein que calme tout au long de cette semaine.", 'Un rythme plus soutenu a traversé cette semaine.'],
+    de: ['Rasende Gedanken waren einen Großteil dieser Woche präsent.', 'Der Geist war diese Woche voller als still.', 'Diese Woche hatte einen geschäftigeren Rhythmus im Hintergrund.'],
   },
   overwhelmed: {
-    en: ['Overwhelm appeared more than once this week.', 'The week carried a sense of too much, more than once.', 'Your mind asked for less noise this week.'],
-    pt: ['Sobrecarga apareceu mais de uma vez esta semana.', 'A semana carregou uma sensação de excesso, mais de uma vez.', 'Sua mente pediu menos barulho esta semana.'],
-    es: ['El agobio apareció más de una vez esta semana.', 'La semana tuvo una sensación de demasiado, más de una vez.', 'Tu mente pidió menos ruido esta semana.'],
-    fr: ["Le trop-plein est apparu plus d'une fois cette semaine.", "La semaine a porté un sentiment de trop, plus d'une fois.", 'Ton esprit a demandé moins de bruit cette semaine.'],
-    de: ['Überwältigung erschien diese Woche mehr als einmal.', 'Die Woche trug mehr als einmal ein Gefühl von zu viel.', 'Dein Geist bat diese Woche um weniger Lärm.'],
+    en: ['There were more demands than usual at some moments this week.', 'The weight of many things at once was present this week.', 'Some moments asked for more than felt easy to give this week.'],
+    pt: ['Havia mais demandas do que o usual em alguns momentos desta semana.', 'O peso de muita coisa ao mesmo tempo esteve presente esta semana.', 'Alguns momentos pediram mais do que parecia fácil dar nesta semana.'],
+    es: ['Había más demandas de lo usual en algunos momentos de esta semana.', 'El peso de muchas cosas a la vez estuvo presente esta semana.', 'Algunos momentos pidieron más de lo que parecía fácil dar esta semana.'],
+    fr: ["Il y avait plus d'exigences qu'à l'habitude à certains moments de cette semaine.", 'Le poids de nombreuses choses à la fois était présent cette semaine.', 'Certains moments ont demandé plus que ce qui semblait facile à donner cette semaine.'],
+    de: ['Es gab in einigen Momenten dieser Woche mehr Anforderungen als gewöhnlich.', 'Das Gewicht von vielem auf einmal war diese Woche präsent.', 'Einige Momente verlangten diese Woche mehr, als leicht zu geben schien.'],
   },
   unclear: {
-    en: ["There wasn't one dominant feeling. The week shifted around.", 'Unfocused days appeared more often than clear ones.', 'The week moved without a clear thread to follow.'],
-    pt: ['Não houve um sentimento dominante. A semana foi variada.', 'Dias sem foco apareceram com mais frequência do que dias claros.', 'A semana se moveu sem um fio claro a seguir.'],
-    es: ['No hubo un sentimiento dominante. La semana fue variada.', 'Días sin enfoque aparecieron más a menudo que días claros.', 'La semana se movió sin un hilo claro a seguir.'],
-    fr: ["Il n'y avait pas un sentiment dominant. La semaine a varié.", "Des jours sans clarté sont apparus plus souvent que des jours clairs.", "La semaine s'est déroulée sans un fil clair à suivre."],
-    de: ['Es gab kein dominierendes Gefühl. Die Woche wechselte sich ab.', 'Unklare Tage erschienen häufiger als klare Tage.', 'Die Woche verlief ohne einen klaren Faden zu verfolgen.'],
+    en: ['A lack of clarity was more present than usual this week.', "It wasn't always clear which direction to take this week.", 'Some things remained unanswered through moments of this week.'],
+    pt: ['A falta de clareza esteve mais presente do que o habitual nesta semana.', 'Nem sempre foi fácil saber qual direção tomar nesta semana.', 'Algumas coisas ficaram sem resposta durante vários momentos desta semana.'],
+    es: ['La falta de claridad estuvo más presente de lo habitual esta semana.', 'No siempre fue fácil saber qué dirección tomar esta semana.', 'Algunas cosas quedaron sin respuesta en varios momentos de esta semana.'],
+    fr: ["Un manque de clarté était plus présent qu'à l'habitude cette semaine.", "La direction à prendre n'était pas toujours évidente cette semaine.", 'Certaines choses sont restées sans réponse à divers moments de cette semaine.'],
+    de: ['Ein Mangel an Klarheit war diese Woche häufiger präsent als gewöhnlich.', 'Es war diese Woche nicht immer klar, welche Richtung einzuschlagen.', 'Einige Dinge blieben in verschiedenen Momenten dieser Woche unbeantwortet.'],
+  },
+  balanced: {
+    en: ['A certain balance was present at many moments this week.', 'There was more steadiness than turbulence through this week.', 'The week brought a more balanced pace than usual.'],
+    pt: ['Um certo equilíbrio esteve presente em vários momentos desta semana.', 'Houve mais estabilidade do que agitação ao longo desta semana.', 'A semana trouxe um ritmo mais equilibrado do que o habitual.'],
+    es: ['Un cierto equilibrio estuvo presente en varios momentos de esta semana.', 'Hubo más estabilidad que agitación a lo largo de esta semana.', 'La semana trajo un ritmo más equilibrado de lo habitual.'],
+    fr: ['Un certain équilibre était présent à de nombreux moments de cette semaine.', 'Il y avait plus de stabilité que de turbulences tout au long de cette semaine.', "La semaine a apporté un rythme plus équilibré qu'à l'habitude."],
+    de: ['Ein gewisses Gleichgewicht war in vielen Momenten dieser Woche präsent.', 'Diese Woche gab es mehr Beständigkeit als Unruhe.', 'Die Woche brachte einen ausgeglicheneren Rhythmus als gewöhnlich.'],
   },
 };
 
 const HOW_ARRIVED_PATTERN_NOTES: Record<string, L5> = {
   mixed: {
-    en: ["There wasn't one dominant feeling. The week shifted around."],
-    pt: ['Não houve um sentimento dominante. A semana foi variada.'],
-    es: ['No hubo un sentimiento dominante. La semana fue variada.'],
-    fr: ["Il n'y avait pas un sentiment dominant. La semaine a varié."],
-    de: ['Es gab kein dominierendes Gefühl. Die Woche wechselte sich ab.'],
+    en: ["Each day brought something different this week."],
+    pt: ['Cada dia trouxe algo diferente esta semana.'],
+    es: ['Cada día trajo algo diferente esta semana.'],
+    fr: ['Chaque jour a apporté quelque chose de différent cette semaine.'],
+    de: ['Jeder Tag brachte diese Woche etwas anderes.'],
   },
   moved_between: {
-    en: ['Your check-ins moved between pressure and tiredness.'],
-    pt: ['Seus check-ins alternaram entre pressão e cansaço.'],
-    es: ['Tus check-ins se movieron entre presión y cansancio.'],
-    fr: ['Tes retours ont oscillé entre pression et fatigue.'],
-    de: ['Deine Rückkehren bewegten sich zwischen Druck und Müdigkeit.'],
+    en: ['The week moved between pressure and tiredness in close measure.'],
+    pt: ['A semana trouxe pressão e cansaço quase em igual medida.'],
+    es: ['La semana trajo presión y cansancio casi en igual medida.'],
+    fr: ['La semaine a alterné entre pression et fatigue en proportions proches.'],
+    de: ['Die Woche bewegte sich zwischen Druck und Müdigkeit in nahezu gleichem Maß.'],
   },
   came_back_heavy: {
-    en: ['You came back even on the heavier days.'],
-    pt: ['Você voltou mesmo nos dias mais pesados.'],
-    es: ['Volviste incluso en los días más pesados.'],
-    fr: ['Tu es revenu même les jours plus lourds.'],
-    de: ['Du bist auch an den schwereren Tagen zurückgekehrt.'],
+    en: ['Some days carried a noticeably heavier weight than others.'],
+    pt: ['Alguns dias carregaram um peso visivelmente maior do que outros.'],
+    es: ['Algunos días llevaron un peso visiblemente más pesado que otros.'],
+    fr: ['Certains jours ont porté un poids visiblement plus lourd que les autres.'],
+    de: ['Einige Tage trugen ein spürbar schwereres Gewicht als andere.'],
   },
 };
 
@@ -446,11 +472,11 @@ const OVERVIEW_INTRO_POOLS: Record<string, L5> = {
     de: ['Du bist diese Woche fast jeden Tag zurückgekehrt.', 'Sechs Tage dieser Woche hatten Platz für dich.', 'Du warst für den größten Teil der Woche präsent.'],
   },
   n7: {
-    en: ['You came back each day this week.', 'You kept returning, even on ordinary days.', 'There was space for you in each day this week.'],
-    pt: ['Você voltou todos os dias desta semana.', 'Você continuou voltando, mesmo nos dias ordinários.', 'Houve espaço para você em cada dia desta semana.'],
-    es: ['Regresaste cada día de esta semana.', 'Seguiste volviendo, incluso en los días ordinarios.', 'Hubo espacio para ti en cada día de esta semana.'],
-    fr: ['Tu es revenu chaque jour cette semaine.', 'Tu as continué à revenir, même les jours ordinaires.', 'Il y avait de l\'espace pour toi chaque jour cette semaine.'],
-    de: ['Du bist jeden Tag dieser Woche zurückgekehrt.', 'Du bist immer wieder zurückgekehrt, auch an gewöhnlichen Tagen.', 'Diese Woche war jeden Tag Platz für dich.'],
+    en: ['You came back each day this week.', 'Not a single day was left out this week.', 'There was space for you in each day this week.'],
+    pt: ['Você voltou todos os dias desta semana.', 'Nenhum dia ficou completamente de fora esta semana.', 'Houve espaço para você em cada dia desta semana.'],
+    es: ['Regresaste cada día de esta semana.', 'Ningún día quedó fuera esta semana.', 'Hubo espacio para ti en cada día de esta semana.'],
+    fr: ['Tu es revenu chaque jour cette semaine.', 'Aucun jour n\'est resté en dehors cette semaine.', 'Il y avait de l\'espace pour toi chaque jour cette semaine.'],
+    de: ['Du bist jeden Tag dieser Woche zurückgekehrt.', 'Kein einziger Tag blieb diese Woche außen vor.', 'Diese Woche war jeden Tag Platz für dich.'],
   },
 };
 
@@ -462,7 +488,7 @@ const OVERVIEW_NARRATIVE: Record<string, Record<string, string>> = {
   n4: { en: 'Some days were left untouched.\nOthers became moments for yourself.', pt: 'Alguns dias ficaram sem toque.\nOutros se tornaram momentos para você.', es: 'Algunos días quedaron sin tocar.\nOtros se convirtieron en momentos para ti.', fr: 'Certains jours sont restés sans contact.\nD\'autres sont devenus des moments pour toi.', de: 'Einige Tage blieben unberührt.\nAndere wurden zu Momenten für dich.' },
   n5: { en: 'The rhythm wasn\'t perfect.\nIt didn\'t need to be.', pt: 'O ritmo não foi perfeito.\nNão precisava ser.', es: 'El ritmo no fue perfecto.\nNo necesitaba serlo.', fr: 'Le rythme n\'était pas parfait.\nIl n\'avait pas besoin de l\'être.', de: 'Der Rhythmus war nicht perfekt.\nEr musste es nicht sein.' },
   n6: { en: 'You stayed close to your reset.\nEven on the quieter days.', pt: 'Você ficou perto do seu reset.\nMesmo nos dias mais quietos.', es: 'Te mantuviste cerca de tu reset.\nIncluso en los días más tranquilos.', fr: 'Tu es resté proche de ton reset.\nMême pendant les jours plus calmes.', de: 'Du bliebst nah an deinem Reset.\nAuch an den stilleren Tagen.' },
-  n7: { en: 'An ordinary week — and you were here for all of it.', pt: 'Uma semana ordinária — e você estava aqui para todo ela.', es: 'Una semana ordinaria — y estuviste aquí para todo.', fr: 'Une semaine ordinaire — et tu étais là pour tout.', de: 'Eine gewöhnliche Woche — und du warst für alles hier.' },
+  n7: { en: 'Each day this week had a small moment for you.', pt: 'Houve um momento seu em cada dia desta semana.', es: 'Cada día de esta semana tuvo un pequeño momento tuyo.', fr: 'Chaque jour de cette semaine a eu son petit moment pour toi.', de: 'Jeder Tag dieser Woche hatte einen kleinen Moment für dich.' },
 };
 
 export function getWeekOverviewLines(insights: WeekInsights, lang: string, weekNumber: number = 1): { intro: string; narrative: string } {
@@ -604,11 +630,11 @@ const QUIET_OBS: Record<string, ObsPool> = {
       es: ['Algo se mantuvo estable esta semana.', 'En silencio, sin necesitar ser notado.'],
       fr: ['Quelque chose est resté stable cette semaine.', 'Silencieusement, sans avoir besoin d\'être remarqué.'],
       de: ['Etwas blieb diese Woche beständig.', 'Still, ohne bemerkt werden zu müssen.'] },
-    { en: ['There were ordinary moments this week.', 'You were calm enough to notice some of them.'],
-      pt: ['Houve momentos ordinários esta semana.', 'Você estava calmo o suficiente para notar alguns deles.'],
-      es: ['Hubo momentos ordinarios esta semana.', 'Estabas lo suficientemente tranquilo para notar algunos de ellos.'],
-      fr: ['Il y a eu des moments ordinaires cette semaine.', 'Tu étais assez calme pour en remarquer quelques-uns.'],
-      de: ['Es gab gewöhnliche Momente in dieser Woche.', 'Du warst ruhig genug, einige davon zu bemerken.'] },
+    { en: ['The smaller moments of this week tend to go unnoticed.', 'Calm creates the space to see them.'],
+      pt: ['Os momentos menores desta semana tendem a passar despercebidos.', 'A calma cria espaço para vê-los.'],
+      es: ['Los momentos más pequeños de esta semana tienden a pasar desapercibidos.', 'La calma crea el espacio para verlos.'],
+      fr: ['Les petits moments de cette semaine ont tendance à passer inaperçus.', 'Le calme crée l\'espace pour les voir.'],
+      de: ['Die kleineren Momente dieser Woche neigen dazu, unbemerkt zu bleiben.', 'Ruhe schafft den Raum, um sie zu sehen.'] },
     { en: ['This week didn\'t ask much from you.', 'That\'s not a small thing.'],
       pt: ['Esta semana não pediu muito de você.', 'Isso não é pouca coisa.'],
       es: ['Esta semana no te pidió mucho.', 'Eso no es poca cosa.'],
@@ -755,33 +781,33 @@ const QUIET_OBS: Record<string, ObsPool> = {
       fr: ['Tu as maintenu un fil tout au long de la semaine.', 'Même les jours plus calmes.'],
       de: ['Du hast einen Faden durch die gesamte Woche gehalten.', 'Auch an den stilleren Tagen.'] },
   ],
-  // 7/7 completions — specific acknowledgement
+  // 7/7 completions — quiet observation about what's inside the fullness, not a repeat of the count
   _7of7: [
-    { en: ['You came back each day this week.', 'Not because everything was easy.', 'Because there was a small place for you in each day.'],
-      pt: ['Você voltou todos os dias desta semana.', 'Não porque tudo foi fácil.', 'Porque havia um pequeno espaço para você em cada dia.'],
-      es: ['Regresaste cada día de esta semana.', 'No porque todo fuera fácil.', 'Porque había un pequeño lugar para ti en cada día.'],
-      fr: ['Tu es revenu chaque jour cette semaine.', "Pas parce que tout était facile.", "Parce qu'il y avait une petite place pour toi chaque jour."],
-      de: ['Du bist jeden Tag dieser Woche zurückgekehrt.', 'Nicht weil alles einfach war.', 'Weil es jeden Tag einen kleinen Platz für dich gab.'] },
-    { en: ['Every day had space for you this week.', 'Seven returns.', "That's its own kind of presence."],
-      pt: ['Cada dia teve espaço para você esta semana.', 'Sete retornos.', 'Isso é sua própria forma de presença.'],
-      es: ['Cada día tuvo espacio para ti esta semana.', 'Siete regresos.', 'Eso es su propio tipo de presencia.'],
-      fr: ["Chaque jour avait de l'espace pour toi cette semaine.", 'Sept retours.', "C'est sa propre forme de présence."],
-      de: ['Jeden Tag hatte diese Woche Platz für dich.', 'Sieben Rückkehren.', 'Das ist seine eigene Art von Präsenz.'] },
-    { en: ['Seven days.', 'Seven small returns.', 'Nothing flashy. Just consistent.'],
-      pt: ['Sete dias.', 'Sete pequenos retornos.', 'Sem exibição. Apenas consistente.'],
-      es: ['Siete días.', 'Siete pequeños regresos.', 'Sin alarde. Solo consistente.'],
-      fr: ['Sept jours.', 'Sept petits retours.', "Rien d'ostentatoire. Juste constant."],
-      de: ['Sieben Tage.', 'Sieben kleine Rückkehren.', 'Nichts Aufsehenerregendes. Nur beständig.'] },
-    { en: ['You showed up every day this week.', 'Ordinary days — and you were in all of them.'],
-      pt: ['Você apareceu todos os dias esta semana.', 'Dias ordinários — e você estava em todos eles.'],
-      es: ['Te presentaste cada día de esta semana.', 'Días ordinarios — y estuviste en todos ellos.'],
-      fr: ['Tu t\'es présenté chaque jour cette semaine.', "Des jours ordinaires — et tu étais dans chacun d'eux."],
-      de: ['Du bist jeden Tag dieser Woche erschienen.', 'Gewöhnliche Tage — und du warst in allen davon.'] },
-    { en: ["Each day had a moment that was yours.", "That's not a small thing.", 'Seven of them, this week.'],
-      pt: ['Cada dia teve um momento que foi seu.', 'Isso não é pouco.', 'Sete deles, esta semana.'],
-      es: ['Cada día tuvo un momento que fue tuyo.', 'Eso no es poca cosa.', 'Siete de ellos, esta semana.'],
-      fr: ["Chaque jour avait un moment qui était le tien.", "Ce n'est pas peu de chose.", 'Sept d\'entre eux, cette semaine.'],
-      de: ['Jeder Tag hatte einen Moment, der dir gehörte.', 'Das ist keine Kleinigkeit.', 'Sieben davon, diese Woche.'] },
+    { en: ['Seven days — each one different.', 'Not all of them were easy to be present in.', 'That detail tends to get lost in the count.'],
+      pt: ['Sete dias — cada um diferente.', 'Nem todos foram fáceis de estar presente.', 'Esse detalhe tende a se perder na contagem.'],
+      es: ['Siete días — cada uno diferente.', 'No todos fueron fáciles para estar presente.', 'Ese detalle tiende a perderse en el recuento.'],
+      fr: ['Sept jours — chacun différent.', "Pas tous faciles pour être présent.", 'Ce détail a tendance à se perdre dans le compte.'],
+      de: ['Sieben Tage — jeder anders.', 'Nicht alle waren leicht, präsent zu sein.', 'Dieses Detail geht in der Zählung verloren.'] },
+    { en: ['A full week — and still, some moments passed quietly.', "Presence doesn't mean everything was noticed.", 'Some things only appear when you keep showing up.'],
+      pt: ['Uma semana inteira — e ainda assim, alguns momentos passaram em silêncio.', 'Presença não significa que tudo foi notado.', 'Algumas coisas só aparecem quando você continua aparecendo.'],
+      es: ['Una semana completa — y aun así, algunos momentos pasaron en silencio.', 'Presencia no significa que todo fue notado.', 'Algunas cosas solo aparecen cuando sigues apareciendo.'],
+      fr: ['Une semaine complète — et pourtant, certains moments sont passés silencieusement.', "La présence ne signifie pas que tout a été remarqué.", 'Certaines choses ne se montrent que quand tu continues de te présenter.'],
+      de: ['Eine volle Woche — und trotzdem vergingen einige Momente still.', 'Präsenz bedeutet nicht, dass alles bemerkt wurde.', 'Manche Dinge zeigen sich erst, wenn du weiter erscheinst.'] },
+    { en: ['Not every day of this week felt the same.', 'The count looks clean from the outside.', 'You were the one feeling the difference.'],
+      pt: ['Nem todo dia desta semana pareceu igual.', 'A contagem parece limpa de fora.', 'Você foi quem sentiu a diferença.'],
+      es: ['No todos los días de esta semana se sintieron igual.', 'El recuento parece limpio desde afuera.', 'Tú fuiste quien sintió la diferencia.'],
+      fr: ['Tous les jours de cette semaine ne se sont pas sentis pareils.', 'Le compte semble propre de l\'extérieur.', 'Tu étais celui qui ressentait la différence.'],
+      de: ['Nicht jeder Tag dieser Woche fühlte sich gleich an.', 'Die Zählung sieht von außen sauber aus.', 'Du warst derjenige, der den Unterschied spürte.'] },
+    { en: ['Completing a week is visible.', "What it cost, or what it gave — less so.", 'That part only you carry.'],
+      pt: ['Completar uma semana é visível.', 'O que custou, ou o que deu — menos.', 'Essa parte só você carrega.'],
+      es: ['Completar una semana es visible.', 'Lo que costó, o lo que dio — menos.', 'Esa parte solo tú la cargas.'],
+      fr: ['Compléter une semaine est visible.', 'Ce qu\'elle a coûté, ou ce qu\'elle a donné — moins.', 'Cette partie, seul toi la portes.'],
+      de: ['Eine Woche abzuschließen ist sichtbar.', 'Was sie kostete oder was sie gab — weniger.', 'Diesen Teil trägst nur du.'] },
+    { en: ['Each day this week happened in its own way.', 'Being present throughout doesn\'t mean every day felt the same.', 'Worth noticing.'],
+      pt: ['Cada dia desta semana aconteceu do seu jeito.', 'Estar presente em todos não significa que todos foram iguais.', 'Vale notar.'],
+      es: ['Cada día de esta semana ocurrió a su manera.', 'Estar presente en todos no significa que todos se sintieron igual.', 'Vale la pena notarlo.'],
+      fr: ['Chaque jour de cette semaine s\'est passé à sa façon.', 'Être présent tout au long ne signifie pas que tous les jours se sont sentis pareils.', 'Ça vaut la peine de le noter.'],
+      de: ['Jeder Tag dieser Woche geschah auf seine eigene Weise.', 'Durchgehend präsent zu sein bedeutet nicht, dass sich alle Tage gleich anfühlten.', 'Es lohnt sich, das zu bemerken.'] },
   ],
   // Many skipped days — honest, non-judgmental
   _skipped_heavy: [
@@ -823,11 +849,11 @@ const QUIET_OBS: Record<string, ObsPool> = {
       es: ['Día tras día, creaste pequeños momentos para ti.', 'Eso se convierte en su propio tipo de ritmo.'],
       fr: ['Jour après jour, tu as créé de petits moments pour toi-même.', 'Ça devient son propre type de rythme.'],
       de: ['Tag für Tag hast du dir kleine Momente geschaffen.', 'Das wird zu einem eigenen Rhythmus.'] },
-    { en: ['It was an ordinary week — and you were here for most of it.', 'That\'s more than it sounds.'],
-      pt: ['Foi uma semana ordinária — e você estava aqui para a maior parte.', 'Isso é mais do que parece.'],
-      es: ['Fue una semana ordinaria — y estuviste aquí para la mayor parte.', 'Eso es más de lo que suena.'],
-      fr: ['C\'était une semaine ordinaire — et tu étais là pour la plupart.', 'C\'est plus que ça en a l\'air.'],
-      de: ['Es war eine gewöhnliche Woche — und du warst für das meiste davon hier.', 'Das ist mehr als es klingt.'] },
+    { en: ['The week moved along without announcement.', 'You kept your rhythm through it.'],
+      pt: ['A semana avançou sem anúncios.', 'Você manteve seu ritmo ao longo dela.'],
+      es: ['La semana avanzó sin anuncios.', 'Mantuviste tu ritmo a lo largo de ella.'],
+      fr: ['La semaine a avancé sans annonce.', 'Tu as maintenu ton rythme à travers elle.'],
+      de: ['Die Woche verlief ohne Ankündigung.', 'Du hieltest deinen Rhythmus dabei aufrecht.'] },
     { en: ['Nothing dramatic happened.', 'You still showed up.'],
       pt: ['Nada dramático aconteceu.', 'Você ainda apareceu.'],
       es: ['Nada dramático pasó.', 'Todavía te presentaste.'],
@@ -898,19 +924,110 @@ const QUIET_OBS: Record<string, ObsPool> = {
 function quietObsPoolKey(insights: WeekInsights): string {
   if (insights.resetsCompleted === 7) return '_7of7';
   if (insights.skippedCount >= 4)    return '_skipped_heavy';
-  const cat = insights.topCategories[0];
-  if (cat && QUIET_OBS[cat]) return cat;
   if (insights.resetsCompleted >= 5) return '_high';
   if (insights.resetsCompleted >= 3) return '_medium';
   return '_low';
 }
 
-export function getQuietObservation(insights: WeekInsights, lang: string, weekNumber: number = 1): string[] {
-  const key   = quietObsPoolKey(insights);
+// Profile-toned suffix lines appended when the base observation has 2 lines.
+// The profile is never named — only the closing note changes in emphasis.
+const QUIET_OBS_PROFILE_SUFFIX: Record<EmotionalProfile, L5> = {
+  burnout: {
+    en: ["You came back anyway.", "That's the whole thing."],
+    pt: ["Você voltou mesmo assim.", "Isso é tudo."],
+    es: ["Regresaste de todas formas.", "Eso es todo."],
+    fr: ["Tu es revenu quand même.", "C'est l'essentiel."],
+    de: ["Du bist trotzdem zurückgekehrt.", "Das ist alles."],
+  },
+  calm: {
+    en: ["The quiet was part of it.", "That's not a small thing."],
+    pt: ["O silêncio fez parte disso.", "Isso não é pouca coisa."],
+    es: ["El silencio fue parte de ello.", "Eso no es poca cosa."],
+    fr: ["Le calme en faisait partie.", "Ce n'est pas une petite chose."],
+    de: ["Die Stille war ein Teil davon.", "Das ist keine Kleinigkeit."],
+  },
+  focus: {
+    en: ["Your attention kept returning.", "That's what focus actually is."],
+    pt: ["Sua atenção continuou voltando.", "É isso que o foco realmente é."],
+    es: ["Tu atención seguía volviendo.", "Eso es lo que el enfoque realmente es."],
+    fr: ["Ton attention revenait sans cesse.", "C'est ça le vrai focus."],
+    de: ["Deine Aufmerksamkeit kehrte immer zurück.", "Das ist echter Fokus."],
+  },
+  confidence: {
+    en: ["You were here.", "A week like this is evidence of something."],
+    pt: ["Você estava aqui.", "Uma semana como esta é evidência de algo."],
+    es: ["Estabas aquí.", "Una semana como esta es evidencia de algo."],
+    fr: ["Tu étais là.", "Une semaine comme celle-ci est la preuve de quelque chose."],
+    de: ["Du warst da.", "Eine Woche wie diese ist Beweis für etwas."],
+  },
+};
+
+// Narrative state tone-modifier lines for "A Quiet Observation".
+// Appended as a closing line when the base pool has < 3 lines and profile
+// hasn't already filled the slot. Never overrides data-driven content.
+type NarrativeToneEntry = { en: string; pt: string; es: string; fr: string; de: string };
+
+const NARRATIVE_TONE_OBS: Record<string, NarrativeToneEntry[]> = {
+  first_week: [
+    { pt: 'Toda jornada tem um começo.', en: 'Every journey starts somewhere.', es: 'Todo viaje tiene un comienzo.', fr: 'Tout voyage commence quelque part.', de: 'Jede Reise beginnt irgendwo.' },
+    { pt: 'Esta semana foi a primeira.', en: 'This was the first week.', es: 'Esta fue la primera semana.', fr: "C'était la première semaine.", de: 'Dies war die erste Woche.' },
+    { pt: 'Há um começo em tudo isso.', en: "There's a beginning in all of this.", es: 'Hay un comienzo en todo esto.', fr: 'Il y a un début dans tout cela.', de: 'In all dem steckt ein Anfang.' },
+  ],
+  breakthrough: [
+    { pt: 'Há semanas que ficam na memória do caminho.', en: 'Some weeks stay in the memory of the journey.', es: 'Hay semanas que quedan en la memoria del camino.', fr: 'Certaines semaines restent dans la mémoire du chemin.', de: 'Manche Wochen bleiben im Gedächtnis des Weges.' },
+    { pt: 'Esta semana teve uma textura diferente das outras.', en: 'This week had a different texture than most.', es: 'Esta semana tuvo una textura diferente a las demás.', fr: 'Cette semaine avait une texture différente des autres.', de: 'Diese Woche hatte eine andere Textur als die meisten anderen.' },
+    { pt: 'Há semanas que não precisam ser explicadas.', en: 'Some weeks need no explanation.', es: 'Hay semanas que no necesitan explicación.', fr: "Il y a des semaines qui n'ont pas besoin d'explication.", de: 'Manche Wochen brauchen keine Erklärung.' },
+  ],
+  high_consistency: [
+    { pt: 'Algumas coisas continuaram presentes.', en: 'Some things stayed present.', es: 'Algunas cosas se mantuvieron presentes.', fr: 'Certaines choses sont restées présentes.', de: 'Einige Dinge blieben präsent.' },
+    { pt: 'Nem tudo mudou de uma vez.', en: 'Not everything changed at once.', es: 'No todo cambió de una vez.', fr: "Tout n'a pas changé d'un coup.", de: 'Nicht alles änderte sich auf einmal.' },
+    { pt: 'O ritmo parece ter encontrado alguma estabilidade.', en: 'The rhythm seemed to find some steadiness.', es: 'El ritmo parece haber encontrado cierta estabilidad.', fr: 'Le rythme semble avoir trouvé une certaine stabilité.', de: 'Der Rhythmus schien etwas Stabilität gefunden zu haben.' },
+  ],
+  momentum: [
+    { pt: 'Tem havido continuidade neste processo.', en: 'There has been continuity in this process.', es: 'Ha habido continuidad en este proceso.', fr: 'Il y a eu de la continuité dans ce processus.', de: 'In diesem Prozess gab es Kontinuität.' },
+    { pt: 'Nem toda semana precisa ser completa para importar.', en: 'Not every week needs to be full to matter.', es: 'No toda semana necesita estar completa para importar.', fr: "Toutes les semaines n'ont pas besoin d'être complètes pour compter.", de: 'Nicht jede Woche muss vollständig sein, um zu zählen.' },
+    { pt: 'Há algo se formando ao longo do caminho.', en: 'Something is taking shape along the way.', es: 'Algo se está formando en el camino.', fr: 'Quelque chose se forme en chemin.', de: 'Etwas nimmt unterwegs Gestalt an.' },
+  ],
+  comeback: [
+    { pt: 'Alguma coisa continuou viva entre uma semana e outra.', en: 'Something stayed alive from one week to the next.', es: 'Algo siguió vivo de una semana a la siguiente.', fr: "Quelque chose est resté vivant d'une semaine à l'autre.", de: 'Etwas blieb von einer Woche zur nächsten lebendig.' },
+    { pt: 'Nem toda retomada faz barulho.', en: 'Not every return makes noise.', es: 'No todo regreso hace ruido.', fr: 'Tout retour ne fait pas de bruit.', de: 'Nicht jede Rückkehr macht Lärm.' },
+    { pt: 'Mesmo depois de dias mais quietos, você encontrou um caminho de volta.', en: 'Even after quieter days, you found a way back.', es: 'Incluso después de días más tranquilos, encontraste un camino de regreso.', fr: 'Même après des jours plus calmes, vous avez trouvé un chemin de retour.', de: 'Auch nach ruhigeren Tagen hast du einen Weg zurückgefunden.' },
+  ],
+  low_activity: [
+    { pt: 'Algumas semanas ocupam menos espaço, e tudo bem.', en: 'Some weeks take up less space, and that is okay.', es: 'Algunas semanas ocupan menos espacio, y está bien.', fr: "Certaines semaines prennent moins de place, et c'est bien.", de: 'Manche Wochen nehmen weniger Platz ein, und das ist in Ordnung.' },
+    { pt: 'Nem toda semana pede a mesma energia.', en: 'Not every week asks for the same energy.', es: 'No toda semana pide la misma energía.', fr: "Toutes les semaines ne demandent pas la même énergie.", de: 'Nicht jede Woche fordert dieselbe Energie.' },
+    { pt: 'O ritmo ficou mais leve desta vez.', en: 'The rhythm was lighter this time.', es: 'El ritmo fue más ligero esta vez.', fr: 'Le rythme était plus léger cette fois.', de: 'Der Rhythmus war diesmal leichter.' },
+  ],
+};
+
+export function getQuietObservation(insights: WeekInsights, lang: string, weekNumber: number = 1, profile?: EmotionalProfile | null, narrativeState?: string | null, usedThemes?: Set<string>): string[] {
+  let key = quietObsPoolKey(insights);
+  // If 'return' was already the protagonist in Overview/Connections and this is a _7of7 week,
+  // the _7of7 pool already focuses on a different angle — no redirect needed.
+  // usedThemes is available for future guards against other theme repetitions.
   const pools = QUIET_OBS[key];
   const pool  = pools[(weekNumber - 1) % pools.length];
   const l     = (lang in pool ? lang : 'en') as keyof L5;
-  return pool[l];
+  let result  = pool[l] as string[];
+
+  if (profile && result.length < 3) {
+    const suffix = QUIET_OBS_PROFILE_SUFFIX[profile];
+    const sl = (lang in suffix ? lang : 'en') as keyof L5;
+    const suffixLines = suffix[sl] as string[];
+    const slotsLeft = 3 - result.length;
+    result = [...result, ...suffixLines.slice(0, slotsLeft)];
+  }
+
+  // Narrative state: append a tone-context line if there is still space
+  if (narrativeState && result.length < 3) {
+    const tonePool = NARRATIVE_TONE_OBS[narrativeState];
+    if (tonePool) {
+      const entry = tonePool[(weekNumber - 1) % tonePool.length];
+      result = [...result, (entry as Record<string, string>)[lang] ?? entry.en];
+    }
+  }
+
+  return result;
 }
 
 // ─── Section 9 — Looking Ahead copy ──────────────────────────────────────────
@@ -979,11 +1096,11 @@ const LOOKING_AHEAD_POOLS: L5[] = [
     es: ['La semana que viene todavía está abierta.', 'Déjala ser.'],
     fr: ['La semaine qui vient est encore ouverte.', 'Laisse-la être.'],
     de: ['Die kommende Woche ist noch offen.', 'Lass es so sein.'] },
-  { en: ["There's nothing to prepare.", 'Just continue.'],
-    pt: ['Não há nada a preparar.', 'Apenas continue.'],
-    es: ['No hay nada que preparar.', 'Solo continúa.'],
-    fr: ["Il n'y a rien à préparer.", 'Juste continuer.'],
-    de: ['Es gibt nichts vorzubereiten.', 'Einfach weitermachen.'] },
+  { en: ["There's nothing to prepare.", 'The next week arrives when it does.'],
+    pt: ['Não há nada a preparar.', 'A próxima semana chega quando chega.'],
+    es: ['No hay nada que preparar.', 'La próxima semana llega cuando llega.'],
+    fr: ["Il n'y a rien à préparer.", 'La prochaine semaine arrive quand elle arrive.'],
+    de: ['Es gibt nichts vorzubereiten.', 'Die nächste Woche kommt, wenn sie kommt.'] },
   { en: ['Next week is close.', 'No need to reach for it yet.'],
     pt: ['A próxima semana está próxima.', 'Não há necessidade de alcançá-la ainda.'],
     es: ['La próxima semana está cerca.', 'No hay necesidad de alcanzarla todavía.'],
@@ -999,11 +1116,11 @@ const LOOKING_AHEAD_POOLS: L5[] = [
     es: ['Lo que pasó esta semana se queda aquí.', 'La siguiente es diferente.'],
     fr: ['Ce qui est arrivé cette semaine reste ici.', 'La suivante est à part.'],
     de: ['Was diese Woche passiert ist, bleibt hier.', 'Die nächste ist getrennt.'] },
-  { en: ['The pace continues from wherever this week left it.', "That's enough."],
-    pt: ['O ritmo continua de onde esta semana o deixou.', 'Isso é suficiente.'],
-    es: ['El ritmo continúa desde donde esta semana lo dejó.', 'Eso es suficiente.'],
-    fr: ['Le rythme continue là où cette semaine le laisse.', 'Ça suffit.'],
-    de: ['Das Tempo setzt dort fort, wo diese Woche es gelassen hat.', 'Das reicht.'] },
+  { en: ['Each week finds its own pace.', 'The next one will too.'],
+    pt: ['Cada semana encontra seu próprio ritmo.', 'A próxima também vai encontrar.'],
+    es: ['Cada semana encuentra su propio ritmo.', 'La próxima también lo encontrará.'],
+    fr: ['Chaque semaine trouve son propre rythme.', 'La prochaine aussi.'],
+    de: ['Jede Woche findet ihr eigenes Tempo.', 'Die nächste wird es auch.'] },
   { en: ['Next week will begin quietly.', 'Like every week does.'],
     pt: ['A próxima semana vai começar quietamente.', 'Como toda semana faz.'],
     es: ['La próxima semana comenzará en silencio.', 'Como cada semana lo hace.'],
@@ -1188,26 +1305,334 @@ const LOOKING_AHEAD_CONTEXTUAL: Record<string, L5[]> = {
       fr: ["La semaine prochaine ne sait pas ce que celle-ci t'a demandé.", 'Elle commence à ses propres conditions.'],
       de: ['Die nächste Woche weiß nicht, was diese von dir verlangt hat.', 'Sie beginnt zu ihren eigenen Bedingungen.'] },
   ],
+  low_resets: [
+    { en: ['The week existed — even without many check-ins.', 'The next one will arrive as it always does.'],
+      pt: ['A semana existiu — mesmo sem muitos check-ins.', 'A próxima vai chegar como sempre faz.'],
+      es: ['La semana existió — aunque sin muchos check-ins.', 'La próxima llegará como siempre lo hace.'],
+      fr: ["La semaine a existé — même sans beaucoup de retours.", 'La suivante arrivera comme toujours.'],
+      de: ['Die Woche existierte — auch ohne viele Check-ins.', 'Die nächste wird kommen wie immer.'] },
+    { en: ['Some weeks are quieter than others.', 'The next one can begin from wherever this one left things.'],
+      pt: ['Algumas semanas são mais quietas do que outras.', 'A próxima pode começar de onde esta deixou as coisas.'],
+      es: ['Algunas semanas son más tranquilas que otras.', 'La próxima puede comenzar desde donde esta dejó las cosas.'],
+      fr: ["Certaines semaines sont plus calmes que d'autres.", "La suivante peut commencer là où celle-ci a laissé les choses."],
+      de: ['Manche Wochen sind ruhiger als andere.', 'Die nächste kann dort beginnen, wo diese die Dinge gelassen hat.'] },
+  ],
+  medium_resets: [
+    { en: ['You were here for some of it.', 'The next week begins from that.'],
+      pt: ['Você esteve aqui em parte dela.', 'A próxima semana começa a partir disso.'],
+      es: ['Estuviste aquí en parte de ella.', 'La próxima semana comienza desde ahí.'],
+      fr: ['Tu étais là pour une partie de cette semaine.', 'La suivante commence à partir de là.'],
+      de: ['Du warst für einen Teil davon hier.', 'Die nächste Woche beginnt davon aus.'] },
+    { en: ['Not every week lands the same way.', 'The next one will have its own shape.'],
+      pt: ['Nem toda semana pousa do mesmo jeito.', 'A próxima terá sua própria forma.'],
+      es: ['No cada semana aterriza de la misma manera.', 'La próxima tendrá su propia forma.'],
+      fr: ["Toutes les semaines ne se posent pas de la même façon.", 'La suivante aura sa propre forme.'],
+      de: ['Nicht jede Woche landet auf die gleiche Weise.', 'Die nächste wird ihre eigene Form haben.'] },
+  ],
 };
 
 function lookingAheadContext(insights: WeekInsights): string {
-  const { topCategories, dominantState, skippedCount, resetsCompleted, rhythmPattern } = insights;
+  const { topCategories, dominantState, skippedCount, resetsCompleted } = insights;
   const topCat = topCategories[0];
   if (skippedCount >= 4) return 'skipped_heavy';
   if (dominantState === 'overwhelmed' || dominantState === 'racing') return 'pressure_heavy';
   if (topCat === 'Rest' || topCat === 'Calm' || dominantState === 'tired' || dominantState === 'drained') return 'rest_heavy';
   if (topCat === 'Clarity' || dominantState === 'unclear') return 'clarity_seeking';
-  if (resetsCompleted >= 5 && (rhythmPattern === 'steady' || rhythmPattern === 'frontLoaded')) return 'steady';
-  return 'default';
+  if (resetsCompleted >= 5) return 'steady';
+  if (resetsCompleted <= 2) return 'low_resets';
+  return 'medium_resets';
 }
 
-export function getLookingAhead(insights: WeekInsights, lang: string, weekNumber: number = 1): string[] {
+// ─── Goal relevance helper ────────────────────────────────────────────────────
+// Picks the single most contextually relevant UserGoal for the current week.
+// When multiple goals were saved, affinity with topCategory and dominantState
+// decides — otherwise first goal in user's list is returned.
+
+const GOAL_CAT_AFFINITY: Partial<Record<string, UserGoal>> = {
+  Calm: 'calm', Focus: 'clarity', Rest: 'balance', Rhythm: 'consistency',
+  Courage: 'confidence', Clarity: 'clarity', Momentum: 'consistency', Discipline: 'consistency',
+};
+
+const GOAL_STATE_AFFINITY: Partial<Record<string, UserGoal>> = {
+  overwhelmed: 'calm', drained: 'balance', tired: 'calm', racing: 'calm', unclear: 'clarity',
+};
+
+const VALID_GOALS = new Set<UserGoal>(['calm','clarity','confidence','consistency','presence','balance']);
+
+export function pickRelevantGoal(rawGoals: string[], insights: WeekInsights): UserGoal | null {
+  const goals = rawGoals.filter((g): g is UserGoal => VALID_GOALS.has(g as UserGoal));
+  if (goals.length === 0) return null;
+  if (goals.length === 1) return goals[0];
+  const byCategory = GOAL_CAT_AFFINITY[insights.topCategories[0] ?? ''];
+  if (byCategory && goals.includes(byCategory)) return byCategory;
+  const byState = GOAL_STATE_AFFINITY[insights.dominantState ?? ''];
+  if (byState && goals.includes(byState)) return byState;
+  return goals[0];
+}
+
+// Profile-specific Looking Ahead pools — 3 pools per profile, cycled by weekNumber.
+// When profile is set, these replace the generic pool entirely.
+// Tone rule: profile pool must feel like a different person wrote it, not a different label.
+const LOOKING_AHEAD_PROFILE: Record<EmotionalProfile, L5[]> = {
+  burnout: [
+    { en: ["You don't need to resolve next week now.", "It will begin when it begins."],
+      pt: ["Você não precisa resolver a próxima semana agora.", "Ela vai começar quando começar."],
+      es: ["No tienes que resolver la próxima semana ahora.", "Comenzará cuando comience."],
+      fr: ["Tu n'as pas besoin de résoudre la semaine prochaine maintenant.", "Elle commencera quand elle commencera."],
+      de: ["Du musst die nächste Woche nicht jetzt lösen.", "Sie beginnt, wenn sie beginnt."] },
+    { en: ["The next week doesn't need to be bigger than this one.", "It carries its own weight."],
+      pt: ["A próxima semana não precisa ser maior do que esta.", "Ela carrega seu próprio peso."],
+      es: ["La próxima semana no necesita ser más grande que esta.", "Lleva su propio peso."],
+      fr: ["La semaine prochaine n'a pas besoin d'être plus grande que celle-ci.", "Elle porte son propre poids."],
+      de: ["Die nächste Woche muss nicht größer sein als diese.", "Sie trägt ihr eigenes Gewicht."] },
+    { en: ["Recovery doesn't follow a schedule.", "Next week will be what it can be."],
+      pt: ["A recuperação não segue um cronograma.", "A próxima semana será o que puder ser."],
+      es: ["La recuperación no sigue un horario.", "La próxima semana será lo que pueda ser."],
+      fr: ["La récupération ne suit pas de calendrier.", "La semaine prochaine sera ce qu'elle peut être."],
+      de: ["Erholung folgt keinem Zeitplan.", "Die nächste Woche wird sein, was sie sein kann."] },
+  ],
+  calm: [
+    { en: ["Let next week arrive at its own pace.", "No need to reach for it."],
+      pt: ["Deixe a próxima semana chegar no seu próprio ritmo.", "Não há necessidade de buscá-la."],
+      es: ["Deja que la próxima semana llegue a su propio ritmo.", "No hay necesidad de alcanzarla."],
+      fr: ["Laisse la semaine prochaine arriver à son propre rythme.", "Pas besoin de la chercher."],
+      de: ["Lass die nächste Woche in ihrem eigenen Tempo ankommen.", "Es gibt keinen Grund, danach zu greifen."] },
+    { en: ["Quiet continues into next week.", "That's allowed."],
+      pt: ["O silêncio continua na próxima semana.", "Isso é permitido."],
+      es: ["La quietud continúa en la próxima semana.", "Eso está bien."],
+      fr: ["Le calme continue jusqu'à la semaine prochaine.", "C'est permis."],
+      de: ["Die Stille geht in die nächste Woche über.", "Das ist erlaubt."] },
+    { en: ["Next week can begin as quietly as this one ends.", "There's no need for it to be different."],
+      pt: ["A próxima semana pode começar tão quietamente quanto esta termina.", "Não há necessidade de ser diferente."],
+      es: ["La próxima semana puede comenzar tan tranquila como esta termina.", "No necesita ser diferente."],
+      fr: ["La semaine prochaine peut commencer aussi calmement que celle-ci se termine.", "Pas besoin qu'elle soit différente."],
+      de: ["Die nächste Woche kann so ruhig beginnen, wie diese endet.", "Sie muss nicht anders sein."] },
+  ],
+  focus: [
+    { en: ["The next week holds its own thread.", "It can begin where attention naturally goes."],
+      pt: ["A próxima semana tem seu próprio fio.", "Ela pode começar onde a atenção naturalmente vai."],
+      es: ["La próxima semana tiene su propio hilo.", "Puede comenzar donde la atención vaya naturalmente."],
+      fr: ["La semaine prochaine a son propre fil.", "Elle peut commencer là où l'attention va naturellement."],
+      de: ["Die nächste Woche hat ihren eigenen Faden.", "Sie kann dort beginnen, wo die Aufmerksamkeit natürlich hingeht."] },
+    { en: ["Not everything needs to be carried forward.", "Keep only what still matters."],
+      pt: ["Nem tudo precisa ser carregado adiante.", "Fique apenas com o que ainda importa."],
+      es: ["No todo necesita seguir adelante.", "Quédate solo con lo que todavía importa."],
+      fr: ["Tout n'a pas besoin d'avancer.", "Garde seulement ce qui compte encore."],
+      de: ["Nicht alles muss weitergeführt werden.", "Behalte nur das, was noch wichtig ist."] },
+    { en: ["Some clarity takes another week to arrive.", "Let it."],
+      pt: ["Algumas claridades levam mais uma semana para chegar.", "Deixe-as chegar."],
+      es: ["Algunas claridades tardan una semana más en llegar.", "Deja que lleguen."],
+      fr: ["Certaines clarifications prennent encore une semaine pour arriver.", "Laisse-les venir."],
+      de: ["Manche Klarheit braucht noch eine Woche, um anzukommen.", "Lass es zu."] },
+  ],
+  confidence: [
+    { en: ["Small things accumulate.", "Next week is another one of them."],
+      pt: ["Coisas pequenas se acumulam.", "A próxima semana é mais uma delas."],
+      es: ["Las cosas pequeñas se acumulan.", "La próxima semana es otra de ellas."],
+      fr: ["Les petites choses s'accumulent.", "La semaine prochaine en est une autre."],
+      de: ["Kleine Dinge häufen sich an.", "Die nächste Woche ist eine weitere davon."] },
+    { en: ["What was practiced this week doesn't disappear.", "It goes forward with you."],
+      pt: ["O que foi praticado esta semana não desaparece.", "Vai com você para frente."],
+      es: ["Lo que se practicó esta semana no desaparece.", "Va contigo hacia adelante."],
+      fr: ["Ce qui a été pratiqué cette semaine ne disparaît pas.", "Ça avance avec toi."],
+      de: ["Was diese Woche geübt wurde, verschwindet nicht.", "Es geht mit dir weiter."] },
+    { en: ["Next week begins with what this one built.", "Even when that's hard to see."],
+      pt: ["A próxima semana começa com o que esta construiu.", "Mesmo quando é difícil de ver."],
+      es: ["La próxima semana comienza con lo que esta construyó.", "Incluso cuando es difícil de ver."],
+      fr: ["La semaine prochaine commence avec ce que celle-ci a construit.", "Même quand c'est difficile à voir."],
+      de: ["Die nächste Woche beginnt mit dem, was diese aufgebaut hat.", "Auch wenn das schwer zu erkennen ist."] },
+  ],
+};
+
+// Goal-specific Looking Ahead pools — 3 pools per goal, cycled by weekNumber.
+// When goal is set, takes priority over profile. Vocabulary follows the goal's
+// emotional territory without naming it.
+const LOOKING_AHEAD_GOAL: Record<UserGoal, L5[]> = {
+  calm: [
+    { en: ["Next week doesn't need to be won.", "It just needs a few places to breathe."],
+      pt: ["A próxima semana não precisa ser vencida.", "Ela só precisa de alguns lugares para respirar."],
+      es: ["La próxima semana no necesita ser ganada.", "Solo necesita algunos lugares para respirar."],
+      fr: ["La semaine prochaine n'a pas besoin d'être gagnée.", "Elle a juste besoin de quelques espaces pour respirer."],
+      de: ["Die nächste Woche muss nicht gewonnen werden.", "Sie braucht nur ein paar Stellen zum Atmen."] },
+    { en: ["Let next week arrive at its own pace.", "That's the kind of space you came here looking for."],
+      pt: ["Deixe a próxima semana chegar no seu ritmo.", "É esse tipo de espaço que trouxe você aqui."],
+      es: ["Deja que la próxima semana llegue a su propio ritmo.", "Es ese tipo de espacio que te trajo aquí."],
+      fr: ["Laisse la semaine prochaine arriver à son rythme.", "C'est ce genre d'espace que tu es venu chercher ici."],
+      de: ["Lass die nächste Woche in ihrem eigenen Tempo ankommen.", "Das ist die Art von Raum, nach der du hierher gekommen bist."] },
+    { en: ["Even one softer moment next week counts.", "You don't have to earn the rest."],
+      pt: ["Mesmo um momento mais suave na próxima semana já conta.", "Você não precisa merecer o descanso."],
+      es: ["Incluso un momento más suave la próxima semana cuenta.", "No tienes que ganarte el descanso."],
+      fr: ["Même un moment plus doux la semaine prochaine compte.", "Tu n'as pas à mériter le repos."],
+      de: ["Selbst ein weicherer Moment in der nächsten Woche zählt.", "Du musst die Ruhe nicht verdienen."] },
+  ],
+  clarity: [
+    { en: ["Next week may not bring all the answers.", "But it might bring a slightly clearer question."],
+      pt: ["A próxima semana pode não trazer todas as respostas.", "Mas pode trazer uma pergunta um pouco mais clara."],
+      es: ["La próxima semana puede no traer todas las respuestas.", "Pero puede traer una pregunta un poco más clara."],
+      fr: ["La semaine prochaine n'apportera peut-être pas toutes les réponses.", "Mais elle pourrait apporter une question un peu plus claire."],
+      de: ["Die nächste Woche bringt vielleicht nicht alle Antworten.", "Aber vielleicht eine etwas klarere Frage."] },
+    { en: ["Clarity tends to arrive slowly.", "Next week is another chance for something to become a little more visible."],
+      pt: ["A clareza costuma chegar devagar.", "A próxima semana é mais uma chance de algo se tornar um pouco mais visível."],
+      es: ["La claridad suele llegar despacio.", "La próxima semana es otra oportunidad de que algo se vuelva un poco más visible."],
+      fr: ["La clarté a tendance à arriver lentement.", "La semaine prochaine est une autre chance pour que quelque chose devienne un peu plus visible."],
+      de: ["Klarheit kommt langsam.", "Die nächste Woche ist eine weitere Chance, dass etwas ein wenig sichtbarer wird."] },
+    { en: ["Not everything needs to make sense at once.", "Next week, some things might settle a little more."],
+      pt: ["Nem tudo precisa fazer sentido de uma vez.", "Na próxima semana, algumas coisas podem se assentar um pouco mais."],
+      es: ["No todo tiene que tener sentido a la vez.", "La próxima semana, algunas cosas pueden asentarse un poco más."],
+      fr: ["Tout n'a pas besoin d'avoir un sens en même temps.", "La semaine prochaine, certaines choses pourraient s'établir un peu plus."],
+      de: ["Nicht alles muss auf einmal Sinn ergeben.", "In der nächsten Woche könnten sich manche Dinge ein wenig mehr setzen."] },
+  ],
+  confidence: [
+    { en: ["Confidence doesn't have to arrive whole.", "Next week is another small piece of it."],
+      pt: ["A confiança não precisa chegar inteira.", "A próxima semana é mais um pequeno pedaço dela."],
+      es: ["La confianza no tiene que llegar entera.", "La próxima semana es otra pequeña parte de ella."],
+      fr: ["La confiance n'a pas besoin d'arriver entière.", "La semaine prochaine en sera un autre petit morceau."],
+      de: ["Vertrauen muss nicht vollständig ankommen.", "Die nächste Woche ist ein weiteres kleines Stück davon."] },
+    { en: ["What you practiced this week doesn't disappear.", "It goes forward with you, quietly."],
+      pt: ["O que você praticou esta semana não desaparece.", "Vai com você para frente, silenciosamente."],
+      es: ["Lo que practicaste esta semana no desaparece.", "Va contigo hacia adelante, silenciosamente."],
+      fr: ["Ce que tu as pratiqué cette semaine ne disparaît pas.", "Ça avance avec toi, silencieusement."],
+      de: ["Was du diese Woche geübt hast, verschwindet nicht.", "Es geht still mit dir weiter."] },
+    { en: ["Next week is another seven days.", "They carry their own quiet weight."],
+      pt: ["A próxima semana são mais sete dias.", "Eles carregam seu próprio peso quieto."],
+      es: ["La próxima semana son otros siete días.", "Llevan su propio peso tranquilo."],
+      fr: ["La semaine prochaine, c'est encore sept jours.", "Ils portent leur propre poids tranquille."],
+      de: ["Die nächste Woche sind weitere sieben Tage.", "Sie tragen ihr eigenes stilles Gewicht."] },
+  ],
+  consistency: [
+    { en: ["Next week starts as its own open space.", "What you bring to it doesn't need to be perfect."],
+      pt: ["A próxima semana começa como seu próprio espaço aberto.", "O que você traz para ela não precisa ser perfeito."],
+      es: ["La próxima semana comienza como su propio espacio abierto.", "Lo que llevas a ella no necesita ser perfecto."],
+      fr: ["La semaine prochaine commence comme son propre espace ouvert.", "Ce que tu y apportes n'a pas besoin d'être parfait."],
+      de: ["Die nächste Woche beginnt als ihr eigener offener Raum.", "Was du mitbringst, muss nicht perfekt sein."] },
+    { en: ["Next week will arrive.", "And it will have its own shape."],
+      pt: ["A próxima semana vai chegar.", "E ela terá sua própria forma."],
+      es: ["La próxima semana llegará.", "Y tendrá su propia forma."],
+      fr: ["La semaine prochaine arrivera.", "Et elle aura sa propre forme."],
+      de: ["Die nächste Woche wird kommen.", "Und sie wird ihre eigene Form haben."] },
+    { en: ["Next week doesn't need to be figured out in advance.", "It arrives as it does."],
+      pt: ["A próxima semana não precisa ser resolvida com antecedência.", "Ela chega como chegar."],
+      es: ["La próxima semana no necesita ser descifrada de antemano.", "Llega como llega."],
+      fr: ["La semaine prochaine n'a pas besoin d'être anticipée.", "Elle arrive comme elle arrive."],
+      de: ["Du musst nicht perfekt erscheinen.", "Mach einfach weiter, wie bisher."] },
+  ],
+  presence: [
+    { en: ["Next week, a few moments of noticing are enough.", "You don't have to catch everything."],
+      pt: ["Na próxima semana, alguns momentos de perceber já são suficientes.", "Você não precisa capturar tudo."],
+      es: ["La próxima semana, unos pocos momentos de notar son suficientes.", "No tienes que captarlo todo."],
+      fr: ["La semaine prochaine, quelques moments d'attention suffisent.", "Tu n'as pas à tout saisir."],
+      de: ["Nächste Woche reichen ein paar Momente des Wahrnehmens.", "Du musst nicht alles erfassen."] },
+    { en: ["Next week will have its own quiet moments.", "And its less quiet ones too."],
+      pt: ["A próxima semana terá seus próprios momentos quietos.", "E os menos quietos também."],
+      es: ["La próxima semana tendrá sus propios momentos tranquilos.", "Y los menos tranquilos también."],
+      fr: ["La semaine prochaine aura ses propres moments calmes.", "Et ses moments moins calmes aussi."],
+      de: ["In der nächsten Woche hier zu sein — auch an den ruhigeren Tagen — ist noch Präsenz.", "Das ist es, wonach du gesucht hast."] },
+    { en: ["Small presence is still presence.", "Next week will offer its own small moments of it."],
+      pt: ["Pequena presença ainda é presença.", "A próxima semana vai oferecer seus próprios pequenos momentos disso."],
+      es: ["La pequeña presencia sigue siendo presencia.", "La próxima semana ofrecerá sus propios pequeños momentos de ella."],
+      fr: ["Une petite présence, c'est encore de la présence.", "La semaine prochaine offrira ses propres petits moments."],
+      de: ["Kleine Präsenz ist immer noch Präsenz.", "Die nächste Woche bietet ihre eigenen kleinen Momente davon."] },
+  ],
+  balance: [
+    { en: ["Next week doesn't have to tip too far in any direction.", "One steadier day is a start."],
+      pt: ["A próxima semana não precisa pender demais em nenhuma direção.", "Um dia mais estável já é um começo."],
+      es: ["La próxima semana no tiene que inclinarse demasiado en ninguna dirección.", "Un día más estable ya es un comienzo."],
+      fr: ["La semaine prochaine n'a pas besoin de trop pencher dans un sens.", "Un jour plus stable, c'est un début."],
+      de: ["Die nächste Woche muss sich nicht zu weit in eine Richtung neigen.", "Ein ruhigerer Tag ist ein Anfang."] },
+    { en: ["Something more sustainable doesn't build all at once.", "Next week is another piece of it."],
+      pt: ["Algo mais sustentável não se constrói de uma vez.", "A próxima semana é mais um pedaço disso."],
+      es: ["Algo más sostenible no se construye de una vez.", "La próxima semana es otra parte de ello."],
+      fr: ["Quelque chose de plus durable ne se construit pas en une fois.", "La semaine prochaine en est une autre pièce."],
+      de: ["Etwas Nachhaltigeres baut sich nicht auf einmal auf.", "Die nächste Woche ist ein weiteres Stück davon."] },
+    { en: ["A more human pace next week — that's worth returning to.", "You don't have to force it."],
+      pt: ["Um ritmo mais humano na próxima semana — isso vale a pena retornar.", "Você não precisa forçar isso."],
+      es: ["Un ritmo más humano la próxima semana — eso vale la pena volver.", "No tienes que forzarlo."],
+      fr: ["Un rythme plus humain la semaine prochaine — ça vaut la peine d'y revenir.", "Tu n'as pas à le forcer."],
+      de: ["Ein menschlicheres Tempo in der nächsten Woche — das ist es wert, dorthin zurückzukehren.", "Du musst es nicht erzwingen."] },
+  ],
+};
+
+// Narrative-aware "Looking Ahead" pools — 2-line entries, one sub-array per weekNumber rotation.
+// Used instead of generic LOOKING_AHEAD_POOLS when narrativeState is defined
+// and no goal/profile/contextual override is active.
+const NARRATIVE_TONE_AHEAD: Record<string, NarrativeToneEntry[][]> = {
+  first_week: [
+    [{ pt: 'A próxima semana começa com algo que esta criou.', en: 'The next week starts with something this one created.', es: 'La próxima semana comienza con algo que esta creó.', fr: 'La semaine prochaine commence avec quelque chose que celle-ci a créé.', de: 'Die nächste Woche beginnt mit etwas, das diese geschaffen hat.' },
+     { pt: 'Não é necessário saber para onde ainda.', en: 'No need to know where yet.', es: 'No es necesario saber adónde todavía.', fr: "Pas besoin de savoir où encore.", de: 'Es ist noch nicht nötig zu wissen, wohin.' }],
+    [{ pt: 'A segunda semana terá uma forma diferente.', en: 'The second week will have its own shape.', es: 'La segunda semana tendrá su propia forma.', fr: 'La deuxième semaine aura sa propre forme.', de: 'Die zweite Woche wird ihre eigene Form haben.' },
+     { pt: 'Ela chegará do jeito que precisar chegar.', en: 'It will arrive the way it needs to.', es: 'Llegará de la manera que necesite llegar.', fr: 'Elle arrivera de la façon dont elle doit arriver.', de: 'Sie wird so kommen, wie sie kommen muss.' }],
+    [{ pt: 'Há continuidade a partir daqui.', en: 'There is continuity from here.', es: 'Hay continuidad desde aquí.', fr: "Il y a une continuité à partir d'ici.", de: 'Es gibt Kontinuität von hier aus.' },
+     { pt: 'A próxima semana já começa.', en: 'The next week is already beginning.', es: 'La próxima semana ya está comenzando.', fr: 'La semaine prochaine commence déjà.', de: 'Die nächste Woche beginnt bereits.' }],
+  ],
+  breakthrough: [
+    [{ pt: 'A próxima semana não precisa ser igual a esta.', en: "The next week doesn't need to be like this one.", es: 'La próxima semana no necesita ser como esta.', fr: "La semaine prochaine n'a pas besoin d'être comme celle-ci.", de: 'Die nächste Woche muss nicht wie diese sein.' },
+     { pt: 'O que foi vivido esta semana fica.', en: 'What was lived this week stays.', es: 'Lo que se vivió esta semana se queda.', fr: 'Ce qui a été vécu cette semaine reste.', de: 'Was diese Woche erlebt wurde, bleibt.' }],
+    [{ pt: 'Não há pressão para repetir o que aconteceu aqui.', en: 'There is no pressure to repeat what happened here.', es: 'No hay presión para repetir lo que ocurrió aquí.', fr: "Il n'y a aucune pression pour répéter ce qui s'est passé ici.", de: 'Es gibt keinen Druck, das zu wiederholen, was hier passiert ist.' },
+     { pt: 'A próxima semana terá o que precisar ter.', en: 'The next week will have what it needs to have.', es: 'La próxima semana tendrá lo que necesite tener.', fr: "La semaine prochaine aura ce qu'elle a besoin d'avoir.", de: 'Die nächste Woche wird haben, was sie haben muss.' }],
+    [{ pt: 'Há semanas que têm peso próprio.', en: 'Some weeks carry their own weight.', es: 'Hay semanas que tienen su propio peso.', fr: 'Certaines semaines ont leur propre poids.', de: 'Manche Wochen haben ihr eigenes Gewicht.' },
+     { pt: 'A próxima chegará com o que for.', en: 'The next will arrive with what it brings.', es: 'La próxima llegará con lo que traiga.', fr: "La prochaine arrivera avec ce qu'elle apporte.", de: 'Die nächste wird mit dem kommen, was sie bringt.' }],
+  ],
+  high_consistency: [
+    [{ pt: 'O que foi construído esta semana vai junto para a próxima.', en: 'What was built this week goes with you into the next.', es: 'Lo que se construyó esta semana va contigo a la siguiente.', fr: "Ce qui a été construit cette semaine t'accompagne dans la prochaine.", de: 'Was diese Woche aufgebaut wurde, geht mit dir in die nächste.' },
+     { pt: 'A continuidade não precisa ser perfeita para ser real.', en: "Continuity doesn't need to be perfect to be real.", es: 'La continuidad no necesita ser perfecta para ser real.', fr: "La continuité n'a pas besoin d'être parfaite pour être réelle.", de: 'Kontinuität muss nicht perfekt sein, um real zu sein.' }],
+    [{ pt: 'Alguma coisa se manteve. Isso tem seu peso.', en: 'Something stayed. That has its own weight.', es: 'Algo se mantuvo. Eso tiene su propio peso.', fr: 'Quelque chose est resté. Ça a son propre poids.', de: 'Etwas blieb. Das hat sein eigenes Gewicht.' },
+     { pt: 'A próxima semana começa daqui.', en: 'The next week begins from here.', es: 'La próxima semana comienza desde aquí.', fr: "La semaine prochaine commence d'ici.", de: 'Die nächste Woche beginnt von hier.' }],
+    [{ pt: 'Nem tudo precisa mudar para a próxima semana.', en: "Not everything needs to change for the next week.", es: 'No todo necesita cambiar para la próxima semana.', fr: "Tout n'a pas besoin de changer pour la semaine prochaine.", de: 'Nicht alles muss sich für die nächste Woche ändern.' },
+     { pt: 'Algumas coisas continuarão. É suficiente.', en: 'Some things will continue. That is enough.', es: 'Algunas cosas continuarán. Es suficiente.', fr: "Certaines choses continueront. C'est suffisant.", de: 'Einige Dinge werden weitergehen. Das reicht.' }],
+  ],
+  momentum: [
+    [{ pt: 'A próxima semana encontrará algo já em movimento.', en: 'The next week will find something already in motion.', es: 'La próxima semana encontrará algo ya en movimiento.', fr: 'La semaine prochaine trouvera quelque chose déjà en mouvement.', de: 'Die nächste Woche wird etwas bereits in Bewegung vorfinden.' },
+     { pt: 'O ritmo não precisa ser reiniciado.', en: "The rhythm doesn't need to restart.", es: 'El ritmo no necesita reiniciarse.', fr: "Le rythme n'a pas besoin de redémarrer.", de: 'Der Rhythmus muss nicht neu starten.' }],
+    [{ pt: 'Algo foi construído esta semana, mesmo que discretamente.', en: 'Something was built this week, quietly.', es: 'Algo se construyó esta semana, en silencio.', fr: 'Quelque chose a été construit cette semaine, discrètement.', de: 'Etwas wurde diese Woche aufgebaut, leise.' },
+     { pt: 'A próxima começa daqui.', en: 'The next begins from here.', es: 'La siguiente comienza desde aquí.', fr: "La prochaine commence d'ici.", de: 'Die nächste beginnt von hier.' }],
+    [{ pt: 'Nem toda semana precisa ser grande para deixar algo para a próxima.', en: "Not every week needs to be big to leave something for the next.", es: 'No toda semana necesita ser grande para dejar algo para la siguiente.', fr: "Toutes les semaines n'ont pas besoin d'être grandes pour laisser quelque chose à la suivante.", de: 'Nicht jede Woche muss groß sein, um etwas für die nächste zu hinterlassen.' },
+     { pt: 'Algo continua.', en: 'Something continues.', es: 'Algo continúa.', fr: 'Quelque chose continue.', de: 'Etwas geht weiter.' }],
+  ],
+  comeback: [
+    [{ pt: 'A próxima semana começa de um lugar diferente do que esta encontrou.', en: 'The next week starts from a different place than this one found.', es: 'La próxima semana comienza desde un lugar diferente al que encontró esta.', fr: "La semaine prochaine commence d'un endroit différent de celui que celle-ci a trouvé.", de: 'Die nächste Woche beginnt von einem anderen Ort als dem, den diese gefunden hat.' },
+     { pt: 'O caminho não começou do zero.', en: 'The path did not start from zero.', es: 'El camino no comenzó desde cero.', fr: "Le chemin n'a pas commencé à zéro.", de: 'Der Weg begann nicht von vorne.' }],
+    [{ pt: 'Algo continuou. Isso vai junto para a próxima semana.', en: 'Something continued. That goes with you into the next week.', es: 'Algo continuó. Eso va contigo a la próxima semana.', fr: "Quelque chose a continué. Ça t'accompagne dans la semaine prochaine.", de: 'Etwas ist weitergegangen. Das geht mit dir in die nächste Woche.' },
+     { pt: 'Nem toda retomada precisa de impulso para durar.', en: "Not every return needs momentum to last.", es: 'No todo regreso necesita impulso para durar.', fr: "Tout retour n'a pas besoin d'élan pour durer.", de: 'Nicht jede Rückkehr braucht Schwung, um zu dauern.' }],
+    [{ pt: 'Há algo que continuou vivo. Isso vai junto.', en: 'Something stayed alive. That goes along.', es: 'Algo siguió vivo. Eso va junto.', fr: 'Quelque chose est resté vivant. Ça va avec.', de: 'Etwas blieb lebendig. Das geht mit.' },
+     { pt: 'A próxima semana não começa do vazio.', en: "The next week doesn't start from nothing.", es: 'La próxima semana no comienza de la nada.', fr: 'La semaine prochaine ne commence pas de rien.', de: 'Die nächste Woche beginnt nicht aus dem Nichts.' }],
+  ],
+  low_activity: [
+    [{ pt: 'Algumas semanas precisam acontecer para que as seguintes possam começar de outro lugar.', en: 'Some weeks need to happen for the next ones to begin somewhere different.', es: 'Algunas semanas necesitan suceder para que las siguientes puedan comenzar en otro lugar.', fr: 'Certaines semaines doivent se passer pour que les suivantes puissent commencer ailleurs.', de: 'Manche Wochen müssen geschehen, damit die nächsten woanders beginnen können.' },
+     { pt: 'Não é necessário recuperar nada.', en: 'There is nothing to recover.', es: 'No hay nada que recuperar.', fr: "Il n'y a rien à récupérer.", de: 'Es gibt nichts zu erholen.' }],
+    [{ pt: 'A próxima semana chegará com o que esta deixou.', en: 'The next week will arrive with what this one left.', es: 'La próxima semana llegará con lo que esta dejó.', fr: 'La semaine prochaine arrivera avec ce que celle-ci a laissé.', de: 'Die nächste Woche wird mit dem ankommen, was diese zurückgelassen hat.' },
+     { pt: 'Ela chegará como for.', en: 'It will arrive as it is.', es: 'Llegará como sea.', fr: "Elle arrivera telle qu'elle est.", de: 'Sie wird kommen, wie sie ist.' }],
+    [{ pt: 'Nem toda semana pede a mesma presença.', en: 'Not every week asks for the same presence.', es: 'No toda semana pide la misma presencia.', fr: "Toutes les semaines ne demandent pas la même présence.", de: 'Nicht jede Woche fordert dieselbe Präsenz.' },
+     { pt: 'A próxima será o que for.', en: 'The next will be what it is.', es: 'La siguiente será lo que sea.', fr: 'La prochaine sera ce quelle est.', de: 'Die nächste wird sein, was sie ist.' }],
+  ],
+};
+
+export function getLookingAhead(insights: WeekInsights, lang: string, weekNumber: number = 1, profile?: EmotionalProfile | null, goal?: UserGoal | null, narrativeState?: string | null): string[] {
+  if (goal) {
+    const pools = LOOKING_AHEAD_GOAL[goal];
+    const pool  = pools[(weekNumber - 1) % pools.length];
+    const l     = (lang in pool ? lang : 'en') as keyof L5;
+    return pool[l];
+  }
+  if (profile) {
+    const pools = LOOKING_AHEAD_PROFILE[profile];
+    const pool  = pools[(weekNumber - 1) % pools.length];
+    const l     = (lang in pool ? lang : 'en') as keyof L5;
+    return pool[l];
+  }
   const context = lookingAheadContext(insights);
   if (context !== 'default') {
     const pools = LOOKING_AHEAD_CONTEXTUAL[context];
     const pool  = pools[(weekNumber - 1) % pools.length];
     const l     = (lang in pool ? lang : 'en') as keyof L5;
     return pool[l];
+  }
+  // Narrative state: use a continuity-aware pool instead of the generic default
+  if (narrativeState) {
+    const narPairs = NARRATIVE_TONE_AHEAD[narrativeState];
+    if (narPairs) {
+      const pair = narPairs[(weekNumber - 1) % narPairs.length];
+      return pair.map(e => (e as Record<string, string>)[lang] ?? e.en);
+    }
   }
   const pool = LOOKING_AHEAD_POOLS[(weekNumber - 1) % LOOKING_AHEAD_POOLS.length];
   const l    = (lang in pool ? lang : 'en') as keyof L5;
@@ -1417,4 +1842,230 @@ export function getSmallMoments(insights: WeekInsights, lang: string): string[] 
   }
 
   return moments.slice(0, 3);
+}
+
+// ─── Habit Presence Observation ───────────────────────────────────────────────
+// Generates 1–2 emotional sentences about the week's most consistent habits.
+// Input: topHabits sorted desc by count, already filtered to count >= 2.
+// Never mentions numbers, percentages, or lists.
+
+const HABIT_EMOTIONAL_LABELS: Record<string, { en: string; pt: string; es: string; fr: string; de: string }> = {
+  morning:        { pt: 'A rotina da manhã',    en: 'The morning routine',   es: 'La rutina matutina',     fr: 'La routine du matin',   de: 'Die Morgenroutine'         },
+  workout:        { pt: 'O movimento',           en: 'Movement',              es: 'El movimiento',          fr: 'Le mouvement',          de: 'Die Bewegung'              },
+  deepwork:       { pt: 'O foco',                en: 'Deep focus',            es: 'El enfoque profundo',    fr: 'La concentration',      de: 'Die Konzentration'         },
+  read:           { pt: 'A leitura',             en: 'Reading',               es: 'La lectura',             fr: 'La lecture',            de: 'Das Lesen'                 },
+  water:          { pt: 'A hidratação',          en: 'Hydration',             es: 'La hidratación',         fr: "L'hydratation",         de: 'Die Flüssigkeitszufuhr'   },
+  nodistractions: { pt: 'A atenção plena',       en: 'Focused attention',     es: 'La atención plena',      fr: "L'attention pleine",    de: 'Die volle Aufmerksamkeit'  },
+  sleep:          { pt: 'O sono',                en: 'Sleep',                 es: 'El sueño',               fr: 'Le sommeil',            de: 'Der Schlaf'                },
+  plan:           { pt: 'O planejamento',        en: 'Planning',              es: 'La planificación',       fr: 'La planification',      de: 'Die Planung'               },
+  gratitude:      { pt: 'A gratidão',            en: 'Gratitude',             es: 'La gratitud',            fr: 'La gratitude',          de: 'Die Dankbarkeit'           },
+  detox:          { pt: 'O descanso digital',    en: 'Digital rest',          es: 'El descanso digital',    fr: 'Le repos numérique',    de: 'Die digitale Pause'        },
+};
+
+function habitEmotionalLabel(id: string, name: string, lang: string): string {
+  const known = HABIT_EMOTIONAL_LABELS[id];
+  if (known) return (known as Record<string, string>)[lang] ?? known.en;
+  const n = name.trim();
+  return n.charAt(0).toUpperCase() + n.slice(1);
+}
+
+export function getHabitPresenceLines(
+  topHabits: { id: string; name: string; count: number }[],
+  lang: string,
+  weekNumber: number = 1,
+): string[] {
+  if (topHabits.length === 0) return [];
+
+  const l1 = habitEmotionalLabel(topHabits[0].id, topHabits[0].name, lang);
+  const c1 = topHabits[0].count;
+  const v  = (weekNumber - 1) % 2;
+
+  let line1: string;
+  if (c1 >= 5) {
+    const t: [Record<string, string>, Record<string, string>] = [
+      { pt: `${l1} apareceu em quase todos os dias desta semana.`,     en: `${l1} showed up on most days this week.`,                es: `${l1} apareció en casi todos los días de esta semana.`,      fr: `${l1} était là presque chaque jour de cette semaine.`,      de: `${l1} war diese Woche fast jeden Tag da.`                },
+      { pt: `${l1} esteve presente na maior parte desta semana.`,       en: `${l1} was present for most of this week.`,               es: `${l1} estuvo presente en la mayor parte de esta semana.`,    fr: `${l1} était présent(e) la plupart du temps cette semaine.`, de: `${l1} war den größten Teil dieser Woche vorhanden.`       },
+    ];
+    line1 = t[v][lang] ?? t[v].en;
+  } else {
+    const t: [Record<string, string>, Record<string, string>] = [
+      { pt: `${l1} encontrou espaço em alguns dias desta semana.`,      en: `${l1} found its way in on some days this week.`,         es: `${l1} encontró espacio en algunos días de esta semana.`,     fr: `${l1} a trouvé sa place quelques jours cette semaine.`,     de: `${l1} fand diese Woche an einigen Tagen seinen Platz.`    },
+      { pt: `${l1} apareceu em alguns momentos desta semana.`,           en: `${l1} made an appearance this week.`,                    es: `${l1} apareció en algunos momentos de esta semana.`,         fr: `${l1} est apparu(e) à quelques moments cette semaine.`,     de: `${l1} tauchte diese Woche einige Male auf.`               },
+    ];
+    line1 = t[v][lang] ?? t[v].en;
+  }
+
+  const lines = [line1];
+
+  if (topHabits.length >= 2) {
+    const l2 = habitEmotionalLabel(topHabits[1].id, topHabits[1].name, lang);
+    const also: Record<string, string> = {
+      pt: `${l2} também apareceu.`,
+      en: `${l2} was there too.`,
+      es: `${l2} también apareció.`,
+      fr: `${l2} était là aussi.`,
+      de: `${l2} war auch dabei.`,
+    };
+    lines.push(also[lang] ?? also.en);
+  }
+
+  return lines;
+}
+
+// ─── Cross-Week Memory ─────────────────────────────────────────────────────────
+// Compares current week to the previous one and returns one sentence that creates
+// emotional continuity. Never uses "better/worse", comparisons, or percentages.
+// Priority: state shift > category shift > return-count comparison.
+
+type CWL = { en: string; pt: string; es: string; fr: string; de: string };
+
+function pickCWL(pool: CWL[], weekNumber: number, lang: string): string {
+  const t = pool[(Math.max(1, weekNumber) - 1) % pool.length];
+  return (t as Record<string, string>)[lang] ?? t.en;
+}
+
+function cwInterpolate(template: string, vars: Record<string, string>): string {
+  return template.replace(/\{(\w+)\}/g, (_, k) => vars[k] ?? '');
+}
+
+const CW_COMEBACK: CWL[] = [
+  { en: 'After a quieter week, this one had more room for you.',
+    pt: 'Depois de uma semana mais silenciosa, esta teve mais espaço para você.',
+    es: 'Después de una semana más tranquila, esta tuvo más espacio para ti.',
+    fr: 'Après une semaine plus calme, celle-ci avait plus de place pour toi.',
+    de: 'Nach einer ruhigeren Woche hatte diese mehr Raum für dich.' },
+  { en: 'Something returned this week that was quieter before.',
+    pt: 'Algo voltou esta semana que estava mais quieto antes.',
+    es: 'Algo volvió esta semana que antes estaba más tranquilo.',
+    fr: "Quelque chose est revenu cette semaine qui était plus calme avant.",
+    de: 'Etwas kehrte diese Woche zurück, das zuvor ruhiger war.' },
+  { en: 'After last week, this one showed up differently.',
+    pt: 'Depois da semana passada, esta se apresentou de outra forma.',
+    es: 'Después de la semana pasada, esta se presentó de otra manera.',
+    fr: "Après la semaine dernière, celle-ci s'est présentée différemment.",
+    de: 'Nach der letzten Woche zeigte sich diese anders.' },
+];
+
+const CW_QUIETER: CWL[] = [
+  { en: 'After a fuller week, this one moved at a different pace.',
+    pt: 'Depois de uma semana mais cheia, esta se moveu em outro ritmo.',
+    es: 'Después de una semana más llena, esta se movió a un ritmo diferente.',
+    fr: "Après une semaine plus chargée, celle-ci s'est déroulée à un rythme différent.",
+    de: 'Nach einer volleren Woche bewegte sich diese in einem anderen Tempo.' },
+  { en: 'This week was quieter than the last. Both have their place.',
+    pt: 'Esta semana foi mais quieta que a anterior. Ambas têm seu lugar.',
+    es: 'Esta semana fue más tranquila que la anterior. Ambas tienen su lugar.',
+    fr: "Cette semaine était plus calme que la dernière. Toutes les deux ont leur place.",
+    de: 'Diese Woche war ruhiger als die letzte. Beide haben ihren Platz.' },
+  { en: 'The rhythm was different this time — slower, more inward.',
+    pt: 'O ritmo foi diferente desta vez — mais lento, mais voltado para dentro.',
+    es: 'El ritmo fue diferente esta vez — más lento, más hacia adentro.',
+    fr: 'Le rythme était différent cette fois — plus lent, plus intérieur.',
+    de: 'Der Rhythmus war diesmal anders — langsamer, mehr nach innen.' },
+];
+
+const CW_STEADY: CWL[] = [
+  { en: 'The rhythm stayed similar to last week.',
+    pt: 'O ritmo se manteve parecido com o da semana passada.',
+    es: 'El ritmo se mantuvo similar al de la semana pasada.',
+    fr: 'Le rythme est resté similaire à la semaine dernière.',
+    de: 'Der Rhythmus blieb ähnlich wie in der letzten Woche.' },
+  { en: 'This week moved in a familiar way — close to the one before.',
+    pt: 'Esta semana se moveu de forma familiar — próxima à anterior.',
+    es: 'Esta semana se movió de manera familiar — cercana a la anterior.',
+    fr: 'Cette semaine a suivi un rythme familier — proche de la précédente.',
+    de: 'Diese Woche bewegte sich auf vertraute Weise — ähnlich wie die vorherige.' },
+  { en: 'Something continued from last week into this one.',
+    pt: 'Algo continuou da semana passada para esta.',
+    es: 'Algo continuó de la semana pasada a esta.',
+    fr: "Quelque chose a continué de la semaine dernière à celle-ci.",
+    de: 'Etwas setzte sich von letzter Woche in diese fort.' },
+];
+
+const CW_STATE_SHIFT: CWL[] = [
+  { en: 'Last week, {prev} was more present. This time, {curr} took up more space.',
+    pt: 'Na semana anterior, {prev} apareceu mais. Desta vez, {curr} ocupou mais espaço.',
+    es: 'La semana anterior, {prev} estuvo más presente. Esta vez, {curr} ocupó más espacio.',
+    fr: 'La semaine dernière, {prev} était plus présent. Cette fois, {curr} a pris plus de place.',
+    de: 'Letzte Woche war {prev} stärker präsent. Diesmal nahm {curr} mehr Raum ein.' },
+  { en: 'Something shifted between last week and this one — from {prev} to {curr}.',
+    pt: 'Algo mudou entre a semana passada e esta — de {prev} para {curr}.',
+    es: 'Algo cambió entre la semana pasada y esta — de {prev} a {curr}.',
+    fr: "Quelque chose a changé entre la semaine dernière et celle-ci — de {prev} à {curr}.",
+    de: 'Zwischen letzter Woche und dieser hat sich etwas verschoben — von {prev} zu {curr}.' },
+  { en: 'Where last week had more {prev}, this one brought {curr} instead.',
+    pt: 'Enquanto a semana passada tinha mais {prev}, esta trouxe {curr}.',
+    es: 'Mientras la semana pasada tenía más {prev}, esta trajo {curr}.',
+    fr: 'Là où la semaine dernière avait plus de {prev}, celle-ci a apporté {curr}.',
+    de: 'Wo die letzte Woche mehr {prev} hatte, brachte diese {curr}.' },
+];
+
+const CW_CAT_SHIFT: CWL[] = [
+  { en: 'Last week, your mind seemed to ask for more {prev}. This week, {curr} came up more often.',
+    pt: 'Na semana passada, sua mente parecia pedir mais {prev}. Nesta, {curr} apareceu com mais frequência.',
+    es: 'La semana pasada, tu mente parecía pedir más {prev}. Esta semana, {curr} apareció con más frecuencia.',
+    fr: "La semaine dernière, ton esprit semblait demander plus de {prev}. Cette semaine, {curr} est revenu plus souvent.",
+    de: 'Letzte Woche schien dein Geist mehr nach {prev} zu verlangen. Diese Woche tauchte {curr} häufiger auf.' },
+  { en: 'Where last week leaned toward {prev}, this one moved closer to {curr}.',
+    pt: 'Enquanto a semana passada se inclinou para {prev}, esta se aproximou mais de {curr}.',
+    es: 'Mientras la semana pasada se inclinó hacia {prev}, esta se acercó más a {curr}.',
+    fr: "Là où la semaine dernière penchait vers {prev}, celle-ci s'est rapprochée de {curr}.",
+    de: 'Während die letzte Woche zu {prev} tendierte, bewegte sich diese näher zu {curr}.' },
+  { en: 'Something different surfaced this week — {curr} instead of {prev}.',
+    pt: 'Algo diferente veio à tona esta semana — {curr} em vez de {prev}.',
+    es: 'Algo diferente emergió esta semana — {curr} en lugar de {prev}.',
+    fr: "Quelque chose de différent est apparu cette semaine — {curr} au lieu de {prev}.",
+    de: 'Etwas anderes kam diese Woche an die Oberfläche — {curr} statt {prev}.' },
+];
+
+/**
+ * Generates one sentence of cross-week emotional continuity.
+ * Priority: state shift → category shift → return-count comparison.
+ * Returns null when no meaningful comparison exists (first week, small diff, no data).
+ */
+export function getCrossWeekMemory(
+  current: WeekInsights,
+  prev: WeekInsights,
+  lang: string,
+  weekNumber: number = 1,
+): string | null {
+  // 1. Emotional state shift — most personal signal
+  if (
+    current.dominantState &&
+    prev.dominantState &&
+    current.dominantState !== prev.dominantState
+  ) {
+    const v = (Math.max(1, weekNumber) - 1) % CW_STATE_SHIFT.length;
+    const tmpl = CW_STATE_SHIFT[v];
+    const template = (tmpl as Record<string, string>)[lang] ?? tmpl.en;
+    return cwInterpolate(template, {
+      prev: getStateLabel(prev.dominantState, lang),
+      curr: getStateLabel(current.dominantState, lang),
+    });
+  }
+
+  // 2. Category shift — what the mind was asking for changed
+  if (
+    current.topCategories.length > 0 &&
+    prev.topCategories.length > 0 &&
+    current.topCategories[0] !== prev.topCategories[0]
+  ) {
+    const v = (Math.max(1, weekNumber) - 1) % CW_CAT_SHIFT.length;
+    const tmpl = CW_CAT_SHIFT[v];
+    const template = (tmpl as Record<string, string>)[lang] ?? tmpl.en;
+    return cwInterpolate(template, {
+      prev: getCategoryLabel(prev.topCategories[0], lang),
+      curr: getCategoryLabel(current.topCategories[0], lang),
+    });
+  }
+
+  // 3. Return-count comparison
+  const diff = current.resetsCompleted - prev.resetsCompleted;
+  if (diff >= 3) return pickCWL(CW_COMEBACK, weekNumber, lang);
+  if (diff <= -3) return pickCWL(CW_QUIETER, weekNumber, lang);
+  if (Math.abs(diff) <= 1 && (current.resetsCompleted > 0 || prev.resetsCompleted > 0)) {
+    return pickCWL(CW_STEADY, weekNumber, lang);
+  }
+
+  return null;
 }

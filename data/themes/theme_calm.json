@@ -66,7 +66,7 @@
       {
         "id": "calm_rel_4",
         "heading": "What does the worry say?",
-        "subheading": "Write it exactly as it sounds in your head. Then notice it is not the truth.",
+        "subheading": "Write it exactly as it sounds in your head. Then notice: how much of that is actually happening right now?",
         "field_placeholder": "What is the anxious voice saying right now..."
       },
       {
@@ -156,8 +156,8 @@
       },
       {
         "id": "calm_comp_2",
-        "heading": "The breath worked.",
-        "subheading": "It always does. Even when you can't feel it happening."
+        "heading": "The breath was here.",
+        "subheading": "Even when it didn't feel like enough. It was here."
       },
       {
         "id": "calm_comp_3",
@@ -176,13 +176,13 @@
       },
       {
         "id": "calm_comp_6",
-        "heading": "The nervous system remembers this.",
-        "subheading": "Every time you return to calm, it gets slightly easier to find."
+        "heading": "Something in the body remembers.",
+        "subheading": "Each time you slow down and breathe, you show it a way back."
       },
       {
         "id": "calm_comp_7",
         "heading": "You didn't run from it.",
-        "subheading": "You stayed, breathed, and let it pass through. That is the whole practice."
+        "subheading": "You stayed. You breathed. That is the whole practice."
       }
     ]
 
@@ -212,7 +212,7 @@
     {
       "id": "calm_hc_5",
       "headline": "The body knows how to come back.",
-      "subheadline": "You just have to let it."
+      "subheadline": "Sometimes all it needs is a little less resistance."
     },
     {
       "id": "calm_hc_6",
@@ -221,8 +221,8 @@
     },
     {
       "id": "calm_hc_7",
-      "headline": "The tightness will pass.",
-      "subheadline": "It always has before. This time is no different."
+      "headline": "The tightness can ease.",
+      "subheadline": "It has eased before. That is worth remembering."
     },
     {
       "id": "calm_hc_8",
@@ -256,8 +256,8 @@
     },
     {
       "id": "calm_hc_14",
-      "headline": "This moment is survivable.",
-      "subheadline": "You have survived every moment so far. This one too."
+      "headline": "This moment is passable.",
+      "subheadline": "Not easy. Not resolved. But you have moved through moments like this before."
     }
   ],
 
@@ -275,17 +275,17 @@
     {
       "id": "calm_act_3",
       "content": "Drink a full glass of water slowly. Taste it. Notice the temperature.",
-      "why": "Cold water activates the vagus nerve. Slow drinking grounds you in physical sensation."
+      "why": "The temperature and the slowness bring the body out of the loop it was caught in. Something in the sensation interrupts the spiral."
     },
     {
       "id": "calm_act_4",
       "content": "Name five things you can see right now. Say each one quietly.",
-      "why": "Grounding in physical reality interrupts the anxious loop in the mind."
+      "why": "Naming what is visible pulls attention away from the internal spiral and into the room. The room is already here."
     },
     {
       "id": "calm_act_5",
       "content": "Step outside for two minutes. Stand still. Let air touch your face.",
-      "why": "External temperature and fresh air reset the nervous system through sensory contrast."
+      "why": "The air, the light, the open sky remind the body that the world is larger than the worry. Even two minutes changes the frame."
     },
     {
       "id": "calm_act_6",
@@ -305,7 +305,7 @@
     {
       "id": "calm_act_9",
       "content": "Splash cold water on your wrists or face.",
-      "why": "Cold water triggers the dive reflex, which slows heart rate within seconds."
+      "why": "Cold water brings the body into sharp contact with the present. The sensation is immediate and real. The mind follows sensation."
     },
     {
       "id": "calm_act_10",
@@ -315,12 +315,12 @@
     {
       "id": "calm_act_11",
       "content": "Breathe out longer than you breathe in. Try a 4-count inhale and 8-count exhale.",
-      "why": "The extended exhale activates the parasympathetic nervous system directly."
+      "why": "A longer exhale signals to the body that the moment is over. The body listens to that signal more than most people realize."
     },
     {
       "id": "calm_act_12",
       "content": "Name the emotion you are feeling. Not the story. Just the name.",
-      "why": "Labeling an emotion reduces its intensity. Naming is a form of regulation."
+      "why": "Something shifts when a feeling has a name. It becomes something to look at rather than something that is looking through you."
     },
     {
       "id": "calm_act_13",
@@ -340,7 +340,7 @@
     {
       "id": "calm_act_16",
       "content": "Hum softly for one minute. Any sound. Just let it vibrate in your chest.",
-      "why": "Humming activates the vagus nerve, the primary calming pathway in the body."
+      "why": "The vibration in the chest settles something. The body responds to it in ways that are hard to explain and easy to feel."
     },
     {
       "id": "calm_act_17",
@@ -350,7 +350,7 @@
     {
       "id": "calm_act_18",
       "content": "Take a slow walk around the room. No destination. Just movement.",
-      "why": "Gentle movement metabolizes the stress hormones that anxiety produces."
+      "why": "The body holds anxiety still. Moving — even very slowly — gives it somewhere to go. The room is enough."
     },
     {
       "id": "calm_act_19",
@@ -365,12 +365,12 @@
     {
       "id": "calm_act_21",
       "content": "Write to the anxiety as if it were a person. Tell it you see it.",
-      "why": "Externalizing the anxiety reduces fusion with it. It becomes something to speak to."
+      "why": "Anxiety feels smaller when it has a shape outside of you. Writing to it creates that shape. It becomes something to look at, not something to be inside of."
     },
     {
       "id": "calm_act_22",
       "content": "Breathe in through the nose slowly. Breathe out through slightly pursed lips.",
-      "why": "Pursed-lip breathing slows exhalation and regulates CO2, reducing panic symptoms."
+      "why": "The slight resistance in pursed lips slows the exhale naturally. The body takes notice. The pace starts to shift."
     },
     {
       "id": "calm_act_23",
@@ -385,7 +385,7 @@
     {
       "id": "calm_act_25",
       "content": "Reduce one thing causing sensory overload right now: lower a volume, close a screen, dim a light.",
-      "why": "Overstimulation fuels anxiety. Small reductions create measurable relief."
+      "why": "Less coming in means less to process. One thing removed creates a little more room. The body notices small changes."
     },
     {
       "id": "calm_act_26",
@@ -449,7 +449,7 @@
     },
     {
       "id": "calm_ref_9",
-      "content": "When the anxiety passes — and it always has — what do you notice first?"
+      "content": "When the anxiety eases — even a little — what do you notice first?"
     },
     {
       "id": "calm_ref_10",
@@ -560,17 +560,17 @@
     { "id": "calm_w_20", "word": "PAUSE",    "meaning": "Before the next thing. Before the next response. Pause." },
     { "id": "calm_w_21", "word": "WITNESS",  "meaning": "Watch the anxiety like weather. You are not the weather." },
     { "id": "calm_w_22", "word": "HOLD",     "meaning": "Hold yourself the way you would hold someone else in pain." },
-    { "id": "calm_w_23", "word": "TRUST",    "meaning": "The nervous system knows how to regulate. Trust it." },
+    { "id": "calm_w_23", "word": "TRUST",    "meaning": "Something in the body has been finding its way back long before you started helping it. It still knows some of the route." },
     { "id": "calm_w_24", "word": "EXHALE",   "meaning": "The exhale activates calm. Let it be longer than the inhale." },
     { "id": "calm_w_25", "word": "RETURN",   "meaning": "To the body. To the breath. To right now." },
     { "id": "calm_w_26", "word": "SETTLE",   "meaning": "Like sediment in water. Given time and stillness, it settles." },
     { "id": "calm_w_27", "word": "SOFTEN",   "meaning": "The jaw. The hands. The belief that this cannot pass." },
-    { "id": "calm_w_28", "word": "PRESENT",  "meaning": "The only place where the anxiety does not live." },
+    { "id": "calm_w_28", "word": "PRESENT",  "meaning": "Not ahead. Not behind. Just here. Where you actually are." },
     { "id": "calm_w_29", "word": "LISTEN",   "meaning": "To what the body is saying before the mind overwrites it." },
     { "id": "calm_w_30", "word": "LIGHT",    "meaning": "Small and bright. The quality of the moment after a long exhale." },
     { "id": "calm_w_31", "word": "UNCLENCH", "meaning": "Find where you are clenching. Release it. Find the next place." },
     { "id": "calm_w_32", "word": "NOTICE",   "meaning": "Notice without labeling as bad. Just notice." },
-    { "id": "calm_w_33", "word": "PASS",     "meaning": "It always does. The anxiety always passes. That is true." },
+    { "id": "calm_w_33", "word": "PASS",     "meaning": "It has before. Even when it felt permanent. It changed. That is also true." },
     { "id": "calm_w_34", "word": "ANCHOR",   "meaning": "The breath is the anchor. It is always available." },
     { "id": "calm_w_35", "word": "YIELD",    "meaning": "Yield to the slowness. The body knows when to stop resisting." },
     { "id": "calm_w_36", "word": "SMALL",    "meaning": "Small breath. Small action. Small relief. Enough." },
@@ -579,7 +579,7 @@
     { "id": "calm_w_39", "word": "FLOOR",    "meaning": "It is holding you. You do not have to hold yourself today." },
     { "id": "calm_w_40", "word": "EXPAND",   "meaning": "What the chest wants to do when it is allowed." },
     { "id": "calm_w_41", "word": "SIMPLE",   "meaning": "Right now, only one thing. Breathe." },
-    { "id": "calm_w_42", "word": "RESTORE",  "meaning": "The nervous system restores itself when you stop fighting." },
+    { "id": "calm_w_42", "word": "RESTORE",  "meaning": "When you stop fighting it, something in the body begins to find its own way back. It was always going to." },
     { "id": "calm_w_43", "word": "KNOWN",    "meaning": "You know this feeling. You have left it before. You will again." },
     { "id": "calm_w_44", "word": "LOWER",    "meaning": "Lower the voice. Lower the pace. Lower the demand." },
     { "id": "calm_w_45", "word": "REST",     "meaning": "Not sleep. The quality of a moment with no urgency." },
@@ -589,7 +589,7 @@
     { "id": "calm_w_49", "word": "BREATH",   "meaning": "The one thing that was here before the anxiety. Still here." },
     { "id": "calm_w_50", "word": "WIDE",     "meaning": "Open the chest wide. Give the lungs room. Wide is calm." },
     { "id": "calm_w_51", "word": "TRUE",     "meaning": "What is actually true right now, separate from what feels true." },
-    { "id": "calm_w_52", "word": "THROUGH",  "meaning": "You will move through this. Not over it. Through." }
+    { "id": "calm_w_52", "word": "THROUGH",  "meaning": "Not over it. Not around it. The way is through. And through is possible." }
   ],
 
   "notification_pool": [
@@ -602,24 +602,24 @@
     { "id": "calm_n_7",  "copy": "One slow breath changes something.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_8",  "copy": "Safe right now. Not eventually. Now.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_9",  "copy": "Unclench your jaw. Take one breath.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
-    { "id": "calm_n_10", "copy": "The tightness always passes. Always.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_10", "copy": "The tightness has passed before. That hasn't changed.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_11", "copy": "Ground your feet. Breathe. You're here.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_12", "copy": "Let your exhale be longer than your inhale.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
-    { "id": "calm_n_13", "copy": "Your body knows how to calm itself.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_13", "copy": "The body has found its way back before. It knows some of the route.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_14", "copy": "You've felt this before. It passed.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_15", "copy": "Nothing requires your tension right now.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_16", "copy": "Soften one thing. Just one.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_17", "copy": "The nervous system is doing its job.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_18", "copy": "Anxiety is weather. You are not the weather.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
-    { "id": "calm_n_19", "copy": "Five minutes of slow is enough to shift.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_19", "copy": "Five minutes of slow is something. Start there.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_20", "copy": "Breathe out longer than you breathe in.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_21", "copy": "What would calm feel like today? Start there.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_22", "copy": "You are allowed to slow down.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
-    { "id": "calm_n_23", "copy": "The body relaxes when it feels seen.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
+    { "id": "calm_n_23", "copy": "Paying attention to the body is a kind of kindness. It tends to respond.", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
     { "id": "calm_n_24", "copy": "Three breaths. No judgment. Just three.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_25", "copy": "The worry is not the reality. Not yet.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_26", "copy": "Check in with your body. What does it need?", "mood_weight": { "dark": 0.4, "half": 0.4, "full": 0.2 } },
-    { "id": "calm_n_27", "copy": "The calm is still in you. It is always in you.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
+    { "id": "calm_n_27", "copy": "The calm is still in there, somewhere. It has been before.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } },
     { "id": "calm_n_28", "copy": "One breath. Then the next. That's the whole plan.", "mood_weight": { "dark": 0.6, "half": 0.3, "full": 0.1 } }
   ],
 

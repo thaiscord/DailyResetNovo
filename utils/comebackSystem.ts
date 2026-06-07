@@ -153,7 +153,7 @@ export function getComebackNarrativeContent(
       };
     default:
       return {
-        headline: de ? 'Willkommen zurück.' : es ? 'Bienvenido de vuelta.' : pt ? 'Bem-vinda de volta.' : fr ? 'Bon retour.' : 'Welcome back.',
+        headline: de ? 'Willkommen zurück.' : es ? 'Has vuelto.' : pt ? 'Que bom te ver.' : fr ? 'Bon retour.' : 'Welcome back.',
         body: de ? 'Heute zählt noch.' : es ? 'Hoy todavía importa.' : pt ? 'Hoje ainda importa.' : fr ? 'Aujourd\'hui compte encore.' : 'Today still matters.',
         subtext: de ? 'Der Fortschritt geht hier weiter.' : es ? 'El progreso continúa aquí.' : pt ? 'O progresso continua aqui.' : fr ? 'Le progrès continue ici.' : 'Progress continues here.',
       };

@@ -599,25 +599,25 @@ const en: TranslationMap = {
 
   // ── Mindset card titles (EN — used as fallback) ────────────────────────────
   'mindset.card.m1.title':    'One thing at a time.',
-  'mindset.card.m2.title':    'The 2-Minute Rule',
-  'mindset.card.m3.title':    'Evidence-Based Confidence',
-  'mindset.card.m4.title':    'The MIT Method',
-  'mindset.card.m5.title':    'Emotions as Data',
-  'mindset.card.m6.title':    'The Attention Economy',
-  'mindset.card.m7.title':    'The 90-Minute Work Block',
-  'mindset.card.m8.title':    'Identity-Based Habits',
-  'mindset.card.m9.title':    'Rejection as Redirection',
-  'mindset.card.m10.title':   'Time Blocking Mastery',
-  'mindset.card.m11.title':   'The Courage to Be Disliked',
+  'mindset.card.m2.title':    'Small tasks weigh more when delayed.',
+  'mindset.card.m3.title':    'Confidence is built, not waited for.',
+  'mindset.card.m4.title':    'What would make today feel complete?',
+  'mindset.card.m5.title':    'Feelings are information.',
+  'mindset.card.m6.title':    "Your attention is what they're after.",
+  'mindset.card.m7.title':    "Your brain wasn't built for continuous focus.",
+  'mindset.card.m8.title':    'You become what you do repeatedly.',
+  'mindset.card.m9.title':    'Rejection rarely means what it feels like.',
+  'mindset.card.m10.title':   'Protected hours change how days feel.',
+  'mindset.card.m11.title':   "Your choices don't require everyone's approval.",
   'mindset.card.m12.title':   'Reclaiming Boredom',
-  'mindset.card.m13.title':   'The One Thing Principle',
+  'mindset.card.m13.title':   'One thing that makes the rest easier.',
   'mindset.card.m14.title':   'Never Miss Twice',
-  'mindset.card.m15.title':   'Competence Creates Confidence',
-  'mindset.card.m16.title':   'The Weekly Review',
+  'mindset.card.m15.title':   'You act your way into confidence.',
+  'mindset.card.m16.title':   'A calm look back at the week.',
   'mindset.card.m17.title':   'The Practice of Letting Go',
-  'mindset.card.m18.title':   'Digital Minimalism',
-  'mindset.card.m19.title':   'Deep Work',
-  'mindset.card.m20.title':   'The Stockdale Paradox',
+  'mindset.card.m18.title':   'Technology used intentionally returns attention.',
+  'mindset.card.m19.title':   'One uninterrupted thing.',
+  'mindset.card.m20.title':   'Hope without denial.',
   'mindset.card.emo1.title':  'You Are Allowed to Start Again',
   'mindset.card.emo2.title':  'Rest Is Not Weakness',
   // Softer rewrites for coach-like discipline titles (Problem 2)
@@ -627,6 +627,179 @@ const en: TranslationMap = {
 
   // ── Mindset card m1 content (EN) ──────────────────────────────────────────
   'mindset.card.m1.content':  'Focus fades when divided. Every time you switch between tasks, your brain incurs a "switching cost" — an average of 23 minutes to fully regain focus. The most productive people in the world are not the ones doing the most things. They are doing the one most important thing with complete focus. Start each work session by choosing your single non-negotiable output. Put everything else out of reach. When you finish, then and only then do you move on.',
+
+  // ── Focus card translations (EN — focus1–focus57) ────────────────────────────
+  'mindset.card.focus1.title':   'Uninterrupted time feels different.',
+  'mindset.card.focus1.content':
+    'There is a difference in how time feels when you are fully absorbed in something — not pulled in multiple directions, not switching between tasks, just present with one thing. Shallow work keeps you occupied but rarely creates that quality of presence. Uninterrupted time does something else: it allows depth to develop. The thinking that happens inside it is different. The work that comes from it tends to be more real. And unlike the exhaustion created by fragmented attention, sustained focus often leaves something behind — not depletion, but a quiet sense of having actually been somewhere.',
+  'mindset.card.focus2.title':   'Remove before you add.',
+  'mindset.card.focus2.content':
+    "Before adding a new approach, routine, or system, there is something simpler to try first: notice what is already draining your attention — and remove it. Unnecessary tabs, ambient notifications, unfinished conversations, commitments that don't serve anything — each one occupies a small amount of mental space, even when you are not actively engaging with it. That quiet accumulation adds up. Simplifying what enters your environment is usually more effective than optimizing how you process what remains. Less stimulation, less to carry, more room for what actually matters.",
+  'mindset.card.focus3.title':   'Attention comes back when practiced.',
+  'mindset.card.focus3.content':
+    "Concentration is not something you either have or don't have — it is a skill that strengthens with repetition. Every time you resist distraction, you train your brain to stay present longer. Small daily moments of practice gradually build steady mental resilience. The modern world weakens attention spans by design. Focused people intentionally train the opposite habit.",
+  'mindset.card.focus4.title':   'Unfinished things stay open in the mind.',
+  'mindset.card.focus4.content':
+    'Constantly starting new tasks creates mental clutter. Every unfinished task remains open in your mind and drains mental energy. Focus grows when you complete things before jumping to the next stimulation. Finishing creates momentum, confidence, and clarity. The habit of completion is more valuable than the excitement of endless beginnings.',
+  'mindset.card.focus5.title':   'Your environment shapes your mind.',
+  'mindset.card.focus5.content':
+    'Focus is heavily influenced by what surrounds you. Cluttered spaces often create cluttered thinking. Notifications, noise, and visual distractions quietly fragment attention throughout the day. A calm environment helps your brain stay calm. Designing your space intentionally makes concentration feel easier and more natural.',
+  'mindset.card.focus6.title':   'Mental energy matters more than time.',
+  'mindset.card.focus6.content':
+    'Having more hours means nothing if your mind is exhausted. Focus depends more on mental freshness than on available time. Protecting sleep, reducing overstimulation, and taking genuine breaks improve concentration. People who protect their clarity manage energy before they manage their schedules. A focused hour is worth more than five distracted ones.',
+  'mindset.card.focus7.title':   'Consuming less leaves more room to think.',
+  'mindset.card.focus7.content':
+    'Your brain cannot focus deeply if it is constantly overloaded with stimulation. Endless scrolling, videos, and notifications train your mind to seek novelty every few seconds. Silence and stillness strengthen concentration. Focus requires space to think clearly. Sometimes the most helpful thing is simply consuming less.',
+  'mindset.card.focus8.title':   'Rushing costs more than it saves.',
+  'mindset.card.focus8.content':
+    'Rushing creates mistakes, stress, and mental fragmentation. Calm focus produces better decisions than frantic speed. Many people confuse panic with progress, but constant urgency weakens attention. Focused people slow down enough to think clearly before acting. Precision often saves more time than speed.',
+  'mindset.card.focus9.title':   'Being fully present changes how work feels.',
+  'mindset.card.focus9.content':
+    'When your attention is fully present, even simple actions become more effective. Half-focused work produces half-quality results. Being mentally absent while working increases fatigue because your brain constantly switches between thoughts. Focus is learning how to fully arrive in the current moment. Presence improves both the quality of work and the quiet inside it.',
+  'mindset.card.focus10.title':  'One decision at a time.',
+  'mindset.card.focus10.content':
+    'Mental exhaustion often comes from making too many small decisions. Every choice consumes mental energy throughout the day. Simplifying routines frees more attention for important work. Focused people reduce unnecessary decisions whenever possible. The less mental noise you create, the more clarity remains available.',
+  'mindset.card.focus11.title':  "Small limits protect the mind's quieter moments.",
+  'mindset.card.focus11.content':
+    'Motivation changes constantly, but discipline protects consistency. Focus grows stronger when you commit to working even when distractions feel tempting. The ability to stay with difficult tasks builds mental resilience over time. Focused people do not wait to feel ready. They create momentum through action.',
+  'mindset.card.focus12.title':  'Silence restores what noise takes away.',
+  'mindset.card.focus12.content':
+    'Modern life is filled with constant noise — notifications, opinions, content, and interruptions. Silence gives your brain space to think deeply again. Many breakthroughs happen when the mind finally becomes quiet enough to process clearly. Focus thrives in calm environments. Silence restores mental sharpness.',
+  'mindset.card.focus13.title':  'Protecting focus is protecting energy.',
+  'mindset.card.focus13.content':
+    'Every yes to distraction is a no to your priorities. Focused people protect their time with clear boundaries. Not every message deserves an immediate response. Not every opportunity deserves your attention. Protecting your mental space is essential for meaningful progress.',
+  'mindset.card.focus14.title':  'Starting tends to quiet the noise.',
+  'mindset.card.focus14.content':
+    'Overthinking often disappears once movement begins. The brain tends to exaggerate the difficulty of tasks before starting them. Action creates clarity faster than endless analysis. Focus improves when you stop mentally negotiating with yourself and begin. Small progress quiets mental resistance.',
+  'mindset.card.focus15.title':  'A rested mind holds more.',
+  'mindset.card.focus15.content':
+    'Constant work without recovery weakens focus over time. Your brain needs pauses to reset attention and process information properly. Rest is not laziness — it is part of sustained attention. Focused people understand that recovery protects long-term clarity. A rested mind thinks more clearly.',
+  'mindset.card.focus16.title':  'Attention rebuilds when given the chance.',
+  'mindset.card.focus16.content':
+    'Modern distractions teach the brain to constantly seek stimulation. Focus requires retraining your attention to remain with one thing longer. At first, concentration may feel uncomfortable because your mind is used to interruption. But discomfort is part of strengthening attention. The ability to stay mentally present is worth practicing.',
+  'mindset.card.focus17.title':  'Small interruptions add up quietly.',
+  'mindset.card.focus17.content':
+    'A quick notification may seem harmless, but small interruptions break mental flow. After distraction, the brain often takes significant time to fully refocus again. Tiny interruptions repeated throughout the day quietly erode deep work. Protecting concentration means respecting how fragile deep focus truly is.',
+  'mindset.card.focus18.title':  'Boredom opens a door distraction keeps closed.',
+  'mindset.card.focus18.content':
+    'Constant entertainment weakens your ability to tolerate stillness. Yet boredom often becomes the doorway to creativity, reflection, and deep thinking. Focused people do not fear quiet moments. Allowing your brain to sit without stimulation strengthens attention naturally. Creativity often appears after distraction disappears.',
+  'mindset.card.focus19.title':  'Staying with something builds trust in yourself.',
+  'mindset.card.focus19.content':
+    'Confidence does not only come from success — it also comes from knowing you can control your attention. Every focused session strengthens trust in yourself. When you consistently complete important work, your mind begins to believe in your own discipline. Focus builds self-respect over time.',
+  'mindset.card.focus20.title':  'One clear priority makes the rest quieter.',
+  'mindset.card.focus20.content':
+    'Trying to prioritize everything means prioritizing nothing. Focus improves when you identify what truly matters most right now. Too many goals create divided energy and scattered attention. Simplicity sharpens execution. Clear priorities create stronger momentum.',
+  'mindset.card.focus21.title':  'Every platform is designed to keep you there.',
+  'mindset.card.focus21.content':
+    'Most digital platforms are designed to capture and keep your attention for as long as possible. Every unnecessary notification pulls your brain away from meaningful work. Focused people intentionally control technology instead of letting technology control them. Protecting your attention is protecting what you are building.',
+  'mindset.card.focus22.title':  'Distraction is not always about technology.',
+  'mindset.card.focus22.content':
+    'Distraction is not always caused by technology. Sometimes the mind avoids focus because of stress, fear, overwhelm, or emotional discomfort. Learning emotional regulation improves concentration dramatically. Calm emotions create a calmer mind. Inner stability strengthens how you show up.',
+  'mindset.card.focus23.title':  'The more you return, the lighter it becomes.',
+  'mindset.card.focus23.content':
+    'Progress does not come from intensity alone. It comes from returning — regularly, without requiring immediate results — until the difficult becomes more familiar. Each repetition lowers the resistance slightly. What once required significant effort starts to ask less from you. This is not about reaching a destination. It is about the quiet change that happens when you stay with something long enough. The practice becomes its own rhythm, and the rhythm eventually carries you.',
+  'mindset.card.focus24.title':  'Slowing down is how clearer thinking arrives.',
+  'mindset.card.focus24.content':
+    'Fast thinking is useful for emergencies. Deep thinking requires slowness. Many people react instantly without giving themselves space to think clearly. Focused people pause long enough to observe, reflect, and choose intentionally. Better thinking creates better decisions.',
+  'mindset.card.focus25.title':  "Mental space doesn't refill on its own.",
+  'mindset.card.focus25.content':
+    'Your brain has limited mental bandwidth each day. Stress, clutter, multitasking, and overstimulation reduce your ability to think clearly. Focus improves when you intentionally reduce unnecessary mental load. Protecting your mind is essential for sustained clarity. Mental space is something worth guarding.',
+  'mindset.card.focus26.title':  'What you attend to repeatedly tends to grow.',
+  'mindset.card.focus26.content':
+    'Your future is not built in dramatic decisions. It develops through repeated moments of attention — what you return to, what you stay with, what you allow to take up space in your mind. This is not pressure. It is simply how things work. What receives consistent attention tends to develop. What gets scattered attention tends to stay shallow. Distraction is not failure — but it does feed patterns that pull you away from what matters. Presence is not optimization — but it does quietly build familiarity with what you care about. The direction of your attention, practiced across ordinary days, eventually shapes something real.',
+  'mindset.card.focus27.title':  'Jumping between things costs more than it looks.',
+  'mindset.card.focus27.content':
+    'Every time you jump between tasks, your brain wastes energy trying to reorient itself. Even brief interruptions reduce mental efficiency and increase fatigue. Many people feel exhausted not because they worked hard, but because they constantly changed focus. Protecting continuity allows the mind to operate at a much higher level. Deep concentration requires staying mentally anchored.',
+  'mindset.card.focus28.title':  'A quieter evening creates a clearer morning.',
+  'mindset.card.focus28.content':
+    'A distracted morning is often created by a disorganized evening. Preparing your priorities the night before reduces mental friction when the day begins. Your brain performs better when it wakes up with clarity instead of uncertainty. Focused people reduce decision-making early in the day. Preparation creates smoother execution.',
+  'mindset.card.focus29.title':  'Not everything deserves your reaction.',
+  'mindset.card.focus29.content':
+    'Many distractions enter your life disguised as urgency. Messages, opinions, and notifications constantly compete for your emotional attention. Focus grows when you stop reacting instantly to everything around you. Calm minds choose where attention goes instead of allowing external noise to control it. Selective attention creates inner stability.',
+  'mindset.card.focus30.title':  "Strong emotions can pull attention — and that's normal.",
+  'mindset.card.focus30.content':
+    'Strong emotions can easily pull your attention away from meaningful work. Anxiety, frustration, and comparison often create mental turbulence that weakens concentration. Focus improves when you learn to observe emotions without immediately obeying them. Emotional self-control protects mental clarity. A calm mind performs better under pressure.',
+  'mindset.card.focus31.title':  'The brain seeks novelty. Depth needs repetition.',
+  'mindset.card.focus31.content':
+    'The brain naturally seeks stimulation, variety, and entertainment. But meaningful progress usually comes from repeating important actions consistently over time. Focused people resist the temptation of constant novelty. They understand that repetition builds skill, mastery, and results. Discipline often feels boring before it becomes something more.',
+  'mindset.card.focus32.title':  'Concentration brings a quieter kind of peace.',
+  'mindset.card.focus32.content':
+    'Distraction creates internal chaos. When your mind constantly jumps between thoughts, it becomes difficult to feel calm or present. Focus simplifies mental activity and reduces overwhelm. Fully engaging in one meaningful task can create surprising emotional peace. Attention and tranquility are deeply connected.',
+  'mindset.card.focus33.title':  'Digital noise accumulates quietly.',
+  'mindset.card.focus33.content':
+    'Constant exposure to fast content shortens attention spans over time. The more stimulation your brain consumes, the harder it becomes to remain focused on slower, meaningful tasks. Focused people are careful about what enters their mental space. Protecting your attention is similar to protecting your physical health. What you consume mentally shapes how clearly you think.',
+  'mindset.card.focus34.title':  'Focus is built through recovery.',
+  'mindset.card.focus34.content':
+    'Your ability to concentrate depends heavily on recovery and restoration. Chronic exhaustion weakens memory, attention, and emotional control. People who sustain their focus take recovery seriously — mental sharpness requires maintenance. Sleep, stillness, movement, and proper rest protect the mind\'s ability to think clearly. A burned-out mind cannot focus deeply.',
+  'mindset.card.focus35.title':  'Mental habits shape mental defaults.',
+  'mindset.card.focus35.content':
+    'Whatever you repeatedly practice becomes easier over time. If you constantly practice distraction, your brain becomes trained to avoid sustained attention. But when you repeatedly practice concentration, focus gradually strengthens. Mental habits shape mental identity. Your attention patterns become your default behavior.',
+  'mindset.card.focus36.title':  'Attention given to one thing means declining others.',
+  'mindset.card.focus36.content':
+    'Concentration is not only about choosing what to work on — it is also about rejecting what does not matter. Every unnecessary commitment consumes mental energy. Focused people protect their priorities. They understand that attention is limited and cannot be endlessly divided. Clarity requires boundaries.',
+  'mindset.card.focus37.title':  "Readiness usually arrives after you've begun.",
+  'mindset.card.focus37.content':
+    'Waiting for perfect motivation often creates endless delay. Focus grows through action, not through emotional readiness. Once movement begins, resistance usually decreases naturally. Focused people train themselves to begin despite discomfort. Momentum creates mental engagement faster than overthinking ever will.',
+  'mindset.card.focus38.title':  'A simpler mind moves more freely.',
+  'mindset.card.focus38.content':
+    'Complexity often creates hesitation and confusion. When tasks become too complicated, the brain naturally seeks escape through distraction. Focus improves when systems, goals, and priorities become simpler and clearer. Simplicity reduces mental overload. Clear thinking produces cleaner execution.',
+  'mindset.card.focus39.title':  'Following through quietly builds trust in yourself.',
+  'mindset.card.focus39.content':
+    'Every time you honor your commitments to yourself, your self-trust increases. Consistent concentration builds confidence because it proves you can rely on your own discipline. Focused people stop depending entirely on motivation. They trust the systems and habits they have built. Internal trust creates emotional stability.',
+  'mindset.card.focus40.title':  'Shallow stimulation creates a kind of deep fatigue.',
+  'mindset.card.focus40.content':
+    'Scrolling endlessly may seem relaxing, but overstimulation quietly exhausts the brain. Constant novelty forces your nervous system into continuous processing mode. Many people mistake stimulation for recovery. Real recovery often comes from slowing down, disconnecting, and resting the mind. Mental stillness restores energy.',
+  'mindset.card.focus41.title':  'What you give attention to reflects what you value.',
+  'mindset.card.focus41.content':
+    'Protecting your attention means valuing your goals, your time, and your future. Constant distraction often reflects unconscious self-neglect. Focused people understand that attention is one of their most valuable resources. Choosing concentration is choosing personal growth. Your habits reveal what you truly prioritize.',
+  'mindset.card.focus42.title':  'The mind needs space to think.',
+  'mindset.card.focus42.content':
+    'Creativity and insight rarely appear during constant stimulation. The brain requires empty space to process information deeply. Focused people intentionally create moments without noise, content, or interruption. Silence allows deeper thoughts to emerge naturally. Reflection improves clarity.',
+  'mindset.card.focus43.title':  'Small completions make the next step easier.',
+  'mindset.card.focus43.content':
+    'Large goals can feel intimidating, which increases mental resistance. Small completed actions build momentum and reinforce concentration. Every finished task trains the brain to associate focus with progress. Tiny wins create psychological energy. Consistency grows faster through manageable actions.',
+  'mindset.card.focus44.title':  'A well-rested body supports a clearer mind.',
+  'mindset.card.focus44.content':
+    'Physical health strongly influences mental clarity. Poor sleep, dehydration, stress, and inactivity weaken concentration significantly. Mental clarity is deeply connected to physical well-being. Taking care of the body improves attention naturally. A healthier body supports a sharper mind.',
+  'mindset.card.focus45.title':  'An overloaded mind avoids what matters most.',
+  'mindset.card.focus45.content':
+    'When your brain feels overwhelmed, it naturally seeks easier stimulation. This is why stress often increases procrastination. Focus improves when you reduce unnecessary mental clutter and organize your priorities clearly. Calm systems create calmer thinking. Mental organization reduces resistance.',
+  'mindset.card.focus46.title':  'Returning consistently matters more than perfecting it.',
+  'mindset.card.focus46.content':
+    'Many people abandon focus routines because they expect immediate perfection. But concentration develops gradually through repeated effort. Some days will feel easier than others. What matters most is returning consistently to the practice of attention. Progress compounds quietly over time.',
+  'mindset.card.focus47.title':  'Your clearest hours. Worth protecting.',
+  'mindset.card.focus47.content':
+    'Every brain has periods of greater clarity during the day. Focused people identify when they think most clearly and protect those hours carefully. Important work should happen during periods of strongest attention. Low-value distractions should not consume your clearest hours. Strategic timing matters more than effort alone.',
+  'mindset.card.focus48.title':  'Inner noise is also a distraction.',
+  'mindset.card.focus48.content':
+    'Distraction does not always come from the outside world. Worry, self-doubt, and overthinking can interrupt concentration just as strongly as notifications. Focus improves when you learn to calm internal mental chatter. Emotional awareness strengthens your ability to stay present. A peaceful mind sustains deeper attention.',
+  'mindset.card.focus49.title':  'Full attention changes what comes from your work.',
+  'mindset.card.focus49.content':
+    'When attention is divided, work reflects it — not only in visible quality, but in the energy it requires to produce. Distracted effort often costs more than it delivers: more time, more recovery needed afterward, less of that quiet feeling of having actually completed something. Full attention, even for a shorter stretch, usually creates work that feels more real. The difference is not only in the result — it is in how the time spent feels from the inside. Presence changes what the work asks of you, and what it leaves behind.',
+  'mindset.card.focus50.title':  'Consistent returns outlast intense effort.',
+  'mindset.card.focus50.content':
+    'Extreme bursts of effort rarely create sustainable progress. Focused people prioritize consistency over temporary motivation. Small daily sessions of concentration create stronger long-term results than occasional intense work sessions. Repetition builds momentum. Sustainable focus wins over time.',
+  'mindset.card.focus51.title':  'Not responding to everything is a skill.',
+  'mindset.card.focus51.content':
+    'Modern life constantly demands your attention. Focused people develop the ability to intentionally ignore what does not serve their priorities. Not every trend, conversation, or distraction deserves mental energy. Selective ignorance protects concentration. Attention becomes stronger when it is directed intentionally.',
+  'mindset.card.focus52.title':  'What you consume daily shapes how clearly you think.',
+  'mindset.card.focus52.content':
+    'Your mental state is heavily influenced by what you consume daily. Excessive information overload makes it harder to think clearly and prioritize effectively. Focus improves when you reduce unnecessary inputs. A cleaner mental environment supports sharper thinking. Simplicity supports clearer thinking.',
+  'mindset.card.focus53.title':  'Starting creates its own energy.',
+  'mindset.card.focus53.content':
+    'Motivation fluctuates constantly, but focused action creates its own energy. Once concentration begins, the brain often becomes more engaged naturally. Waiting endlessly for inspiration delays progress. Focused people rely on structure and action instead of emotional mood. Movement creates momentum.',
+  'mindset.card.focus54.title':  'Calm attention is more reliable than urgency.',
+  'mindset.card.focus54.content':
+    'Stressful urgency creates sloppy thinking and emotional exhaustion — and it often mistakes its own speed for progress. Calm attention produces more: clearer thinking, steadier responses, less recovery time afterward. This matters especially for people carrying a lot. The sense of constant rush can feel like effort, but it drains more than it accomplishes. Steadiness is not inefficiency. It is the only pace that is actually sustainable for more than a few days. A calm mind makes better decisions — not because it is performing better, but because it has the space to actually think.',
+  'mindset.card.focus55.title':  'Every interruption takes something from you.',
+  'mindset.card.focus55.content':
+    'When focus breaks, something more than time is lost. There is the thread of thought that needed to be followed. There is the depth of presence that takes time to rebuild. There is the mental energy required to return — and return again, and again — after each interruption. Small distractions repeated across a day compound into a specific kind of tiredness: not the tiredness of hard work, but the tiredness of never quite arriving anywhere. Protecting attention is not about maximizing output. It is about reducing the quiet accumulation of fragmentation that leaves you depleted without knowing exactly why.',
+  'mindset.card.focus56.title':  'What you give attention to slowly shapes who you become.',
+  'mindset.card.focus56.content':
+    'What you repeatedly focus on slowly shapes how you think, feel, and behave. Attention is not neutral — it reinforces patterns inside the mind. Focused people intentionally direct their attention toward growth, discipline, and meaningful goals. Your focus influences who you become. Attention shapes identity.',
+  'mindset.card.focus57.title':  'Presence changes how life feels from the inside.',
+  'mindset.card.focus57.content':
+    'When attention is constantly scattered, life begins to feel reactive and chaotic. Focus creates a stronger sense of direction and control. Intentional attention allows you to experience life more deeply instead of rushing through it unconsciously. Focus is not about productivity — it is about living with awareness. A focused mind creates a more meaningful life.',
 
   // ── Mindset screen — all UI labels ───────────────────────────────────────────
   'mindset.subtitle.free':           'One meaningful insight each day.',
@@ -1123,6 +1296,21 @@ const en: TranslationMap = {
   'wb.late_night.3':  'Let the day settle.',
   'wb.late_night.4':  'Stillness is also doing something.',
 
+  // ── Personal Mantra Echo ──────────────────────────────────────────────────────
+  'mantra.weekly.label': 'A WORD FROM YOUR ARRIVAL',
+  'mantra.weekly.v0':    'When you arrived, you chose:\n\n"{{mantra}}"\n\nDid it appear somewhere in this week?',
+  'mantra.weekly.v1':    'You chose the word:\n\n"{{mantra}}"\n\nWhat does it mean to you today?',
+  'mantra.weekly.v2':    'Some time ago you chose:\n\n"{{mantra}}"\n\nDoes it still feel important?',
+  'mantra.weekly.v3':    'You arrived here carrying:\n\n"{{mantra}}"\n\nDid anything this week hold that?',
+  'mantra.weekly.v4':    'When you first came here, you chose:\n\n"{{mantra}}"\n\nIs it still something you\'re looking for?',
+  'mantra.return.v0':    'You chose the word "{{mantra}}" when you began.\n\nIt doesn\'t need to appear every day.\n\nBut maybe it still matters.',
+  'mantra.return.v1':    'When you arrived here, you chose:\n\n"{{mantra}}"\n\nPerhaps it\'s still walking with you.',
+  'mantra.return.v2':    'You came here carrying:\n\n"{{mantra}}"\n\nThat hasn\'t changed.',
+  'mantra.progress.label': 'A WORD THAT MATTERED',
+  'mantra.progress.v0': '"{{mantra}}"\n\nYou chose this when you arrived.\n\nDoes it still mean something to you?',
+  'mantra.progress.v1': 'When you came here, you brought a word:\n\n"{{mantra}}"\n\nIt hasn\'t gone anywhere.',
+  'mantra.progress.v2': '"{{mantra}}"\n\nYou picked this a while ago.\n\nIs it still something you recognize?',
+
   ...psEn,
 };
 
@@ -1362,7 +1550,7 @@ const es: TranslationMap = {
   'today.ritual.sub':               'Un momento tranquilo para reiniciarte.',
   'today.reflect.eyebrow':          'UN MOMENTO PARA REFLEXIONAR',
   'today.reflect.done':             '✓ Has dejado algo aquí.',
-  'today.messages.welcomeBack':     'BIENVENIDO DE VUELTA',
+  'today.messages.welcomeBack':     'DE REGRESO',
   'ceremony.whatsAhead':            'LO QUE VIENE',
   'today.tomorrow.label':           'MAÑANA',
   'today.tomorrow.day2begins':      'Mañana comienza el Día 2.',
@@ -1998,84 +2186,84 @@ const es: TranslationMap = {
 
   // ── Mindset card titles ───────────────────────────────────────────────────
   'mindset.card.m1.title':    'Una cosa a la vez.',
-  'mindset.card.m2.title':    'Si tarda menos de dos minutos, hazlo ahora.',
-  'mindset.card.m3.title':    'La confianza no se espera. Se recoge.',
-  'mindset.card.m4.title':    'Lo más importante primero.',
-  'mindset.card.m5.title':    'Las emociones también hablan.',
-  'mindset.card.m6.title':    'Tu atención también tiene un valor.',
-  'mindset.card.m7.title':    'El ritmo de 90 minutos.',
-  'mindset.card.m8.title':    'Cada acción también vota por quién estás llegando a ser.',
-  'mindset.card.m9.title':    'El rechazo también tiene algo que decirte.',
-  'mindset.card.m10.title':   'Tu agenda debería reflejar lo que importa.',
+  'mindset.card.m2.title':    'Las tareas pequeñas pesan más cuando se posponen.',
+  'mindset.card.m3.title':    'La confianza se construye, no se espera.',
+  'mindset.card.m4.title':    '¿Qué haría que hoy se sintiera completo?',
+  'mindset.card.m5.title':    'Las emociones son información.',
+  'mindset.card.m6.title':    'Tu atención es lo que buscan.',
+  'mindset.card.m7.title':    'Tu mente no fue hecha para enfocarse sin descanso.',
+  'mindset.card.m8.title':    'Te conviertes en lo que haces repetidamente.',
+  'mindset.card.m9.title':    'El rechazo rara vez significa lo que parece.',
+  'mindset.card.m10.title':   'Las horas protegidas cambian cómo se siente el día.',
   'mindset.card.m11.title':   'No necesitas la aprobación de todos.',
   'mindset.card.m12.title':   'El aburrimiento también crea.',
-  'mindset.card.m13.title':   'Solo una cosa.',
+  'mindset.card.m13.title':   'Una cosa que hace el resto más fácil.',
   'mindset.card.m14.title':   'Un día perdido es humano. Volver al siguiente, también.',
   'mindset.card.m15.title':   'La confianza llega haciéndolo, no antes.',
-  'mindset.card.m16.title':   'Revisar también es una forma de avanzar.',
+  'mindset.card.m16.title':   'Una mirada tranquila a la semana.',
   'mindset.card.m17.title':   'La práctica de soltar.',
-  'mindset.card.m18.title':   'Menos herramientas, más presencia.',
-  'mindset.card.m19.title':   'Trabajo profundo.',
-  'mindset.card.m20.title':   'Ver claro y seguir creyendo en el camino.',
+  'mindset.card.m18.title':   'La tecnología usada con intención devuelve tu atención.',
+  'mindset.card.m19.title':   'Una sola cosa, sin interrupciones.',
+  'mindset.card.m20.title':   'Esperanza sin negación.',
   'mindset.card.emo1.title':  'Siempre hay un momento para volver.',
   'mindset.card.emo2.title':  'Descansar no es rendirse. Es sostenerse.',
   'mindset.card.disc1.title': 'Tu cerebro confía en lo que repites.',
   'mindset.card.disc2.title': 'Las cosas difíciles se alivian cuando se convierten en rutina.',
   'mindset.card.disc3.title':  'Las pequeñas repeticiones cambian la dirección de tus días.',
   'mindset.card.disc4.title':  'La comodidad también puede frenarte sin que lo notes.',
-  'mindset.card.disc5.title':  'La disciplina también crea libertad.',
-  'mindset.card.disc6.title':  'Actuar antes de sentirte lista también crea ritmo.',
-  'mindset.card.disc7.title':  'La disciplina también se construye en los días difíciles.',
-  'mindset.card.disc8.title':  'Tu futuro también está siendo moldeado por lo que haces hoy.',
-  'mindset.card.disc9.title':  'La disciplina también reduce la negociación interna.',
-  'mindset.card.disc10.title': 'El autocontrol también es una forma de poder interior.',
+  'mindset.card.disc5.title':  'Un ritmo simple puede sentirse como alivio.',
+  'mindset.card.disc6.title':  'Empezar pequeño también es empezar.',
+  'mindset.card.disc7.title':  'Los días difíciles son parte del camino — no prueba de que estás fallando.',
+  'mindset.card.disc8.title':  'Lo que haces cada día va sumándose en silencio.',
+  'mindset.card.disc9.title':  'Las rutinas simples responden preguntas que la mente tendría que volver a hacer.',
+  'mindset.card.disc10.title': 'Dirigir tu atención es una práctica, no un rasgo de personalidad.',
   'mindset.card.disc11.title': 'La disciplina es repetición. No intensidad.',
-  'mindset.card.disc12.title': 'La disciplina también protege lo que realmente quieres.',
-  'mindset.card.disc13.title': 'Lo que sueltas ahora también construye lo que recibes después.',
-  'mindset.card.disc14.title': 'Lo que repites también te dice quién eres.',
-  'mindset.card.disc15.title': 'Las excusas también agotan el poder interior.',
-  'mindset.card.disc16.title': 'La disciplina también es saber actuar más allá de cómo te sientes.',
+  'mindset.card.disc12.title': 'Los retornos pequeños y constantes mantienen algo vivo.',
+  'mindset.card.disc13.title': 'No todo lo que vale la pena parece recompensador mientras sucede.',
+  'mindset.card.disc14.title': 'Lo que repites empieza a sentirse como parte de ti.',
+  'mindset.card.disc15.title': 'Incluso en circunstancias difíciles, algo pequeño suele ser posible.',
+  'mindset.card.disc16.title': 'Actuar desde tus valores, también en los días más difíciles.',
   'mindset.card.disc17.title': 'La disciplina también construye confianza en silencio.',
   'mindset.card.disc18.title': 'La estructura también alivia la mente.',
-  'mindset.card.disc19.title': 'La disciplina también es elegir lo que más importa.',
-  'mindset.card.disc20.title': 'Esperar también puede ser una forma de poder.',
+  'mindset.card.disc19.title': 'La claridad sobre lo que importa facilita el siguiente paso.',
+  'mindset.card.disc20.title': 'La paciencia con lo que estás construyendo cambia lo que se convierte.',
   'mindset.card.disc21.title': 'La constancia también necesita límites que la protejan.',
-  'mindset.card.disc22.title': 'Las elecciones difíciles también construyen algo en ti.',
+  'mindset.card.disc22.title': 'Las elecciones difíciles dejan algo atrás — no siempre visible, pero real.',
   'mindset.card.disc23.title': 'La disciplina también crea estabilidad cuando todo se mueve.',
-  'mindset.card.disc24.title': 'Cada hábito también está construyendo o debilitando algo.',
-  'mindset.card.disc25.title': 'Terminar lo que empiezas también forma el carácter.',
+  'mindset.card.disc24.title': 'Lo que repites tiene peso — incluso lo más silencioso.',
+  'mindset.card.disc25.title': 'Quedarte con algo más allá del comienzo crea algo real.',
   'mindset.card.disc26.title': 'El descanso también es parte de la disciplina real.',
-  'mindset.card.disc27.title': 'La disciplina también protege contra el arrepentimiento.',
-  'mindset.card.disc28.title': 'En lo que practicas repetidamente también te conviertes.',
-  'mindset.card.disc29.title': 'Cumplirte a ti misma también reconstruye la confianza propia.',
+  'mindset.card.disc27.title': 'Los pasos pequeños y constantes traen más paz que esperar.',
+  'mindset.card.disc28.title': 'Lo que practicas con constancia tiende a volverse más natural con el tiempo.',
+  'mindset.card.disc29.title': 'Volver ya es una promesa cumplida.',
   'mindset.card.disc30.title': 'Lo que haces hoy también está creando un futuro diferente.',
-  'mindset.card.disc31.title': 'Hacerlo de todas formas también es una forma de disciplina.',
-  'mindset.card.disc32.title': 'Lo que toleras en silencio también te forma.',
-  'mindset.card.disc33.title': 'El ritmo te reconecta con lo que realmente importa.',
-  'mindset.card.disc34.title': 'La fortaleza mental se construye en la repetición.',
+  'mindset.card.disc31.title': 'En los días en que cuesta empezar — incluso un pequeño paso cuenta.',
+  'mindset.card.disc32.title': 'Cuando sabes lo que valoras, las pequeñas decisiones son más fáciles.',
+  'mindset.card.disc33.title': 'En los momentos difíciles, reconectar con lo que importa crea un camino de vuelta.',
+  'mindset.card.disc34.title': 'Cuanto más vuelves, más familiar se vuelve el camino.',
   'mindset.card.disc35.title': 'El orden también cuida.',
   'mindset.card.disc36.title': 'El progreso no espera condiciones perfectas.',
   'mindset.card.disc37.title': 'Las grandes transformaciones se construyen despacio.',
   'mindset.card.disc38.title': 'Volver es más importante que no fallar.',
-  'mindset.card.disc39.title': 'A veces el progreso no se ve, pero sigue ocurriendo.',
-  'mindset.card.disc40.title': 'Tu energía también merece ser cuidada.',
+  'mindset.card.disc39.title': 'El cambio real suele ser invisible por un tiempo.',
+  'mindset.card.disc40.title': 'Los ritmos sostenibles protegen la energía que necesitas para seguir.',
   'mindset.card.disc41.title': 'Lo difícil se vuelve más ligero con la práctica.',
-  'mindset.card.disc42.title': 'Liderarte a ti misma es una forma de cuidarte.',
-  'mindset.card.disc43.title': 'El ritmo se construye en silencio, sin testigos.',
-  'mindset.card.disc44.title': 'No todo lo que se siente bien hoy cuida mañana.',
+  'mindset.card.disc42.title': 'Dirigirte con gentileza — también en los días más difíciles.',
+  'mindset.card.disc43.title': 'Las elecciones silenciosas que haces por ti son las más reales.',
+  'mindset.card.disc44.title': 'Algo de alivio restaura. Otro aplaza lo que necesita ocurrir.',
   'mindset.card.disc45.title': 'El ritmo crea estabilidad, incluso en los días difíciles.',
-  'mindset.card.disc46.title': 'Cuanto más te sostienes, menos necesitas que te empujen.',
-  'mindset.card.disc47.title': 'Incluso en los días de poca energía, un pequeño paso sostiene el ritmo.',
-  'mindset.card.disc48.title': 'La incomodidad también forma parte del camino.',
+  'mindset.card.disc46.title': 'Cuanto más apareces para ti, menos necesitas que algo externo te empuje.',
+  'mindset.card.disc47.title': 'Incluso un pequeño paso en un día difícil mantiene algo vivo.',
+  'mindset.card.disc48.title': 'Quedarte con la dificultad un poco más, cada vez.',
   'mindset.card.disc49.title': 'Tu entorno también forma parte de tu ritmo.',
-  'mindset.card.disc50.title': 'La constancia te vuelve confiable, primero para ti misma.',
-  'mindset.card.disc51.title': 'El crecimiento real ocurre en el medio, no solo al principio.',
+  'mindset.card.disc50.title': 'Cuanto más puedes contar contigo, más firme te sientes.',
+  'mindset.card.disc51.title': 'El progreso real suele vivir en la fase menos emocionante del medio.',
   'mindset.card.disc52.title': 'Cada acción hoy es un regalo para tu yo del futuro.',
-  'mindset.card.disc53.title': 'Actuar también despeja la mente.',
+  'mindset.card.disc53.title': 'Cuando actúas sobre lo que importa, la mente tiende a calmarse.',
   'mindset.card.disc54.title': 'El ritmo no evita los tropiezos, pero acorta el regreso.',
   'mindset.card.disc55.title': 'Tu identidad se construye en las decisiones de cada día.',
   'mindset.card.disc56.title': 'Con el tiempo, el ritmo fluye solo.',
-  'mindset.card.disc57.title': 'La constancia acumula en silencio.',
+  'mindset.card.disc57.title': 'Las pequeñas acciones constantes se acumulan en algo que verás después.',
   'mindset.card.conf1.title':  'La comparación roba el presente.',
   'mindset.card.conf2.title':  'La confianza tranquila es la más fuerte.',
   'mindset.card.emo5.title':   'La sanación necesita quietud.',
@@ -2616,10 +2804,10 @@ const es: TranslationMap = {
     'La mente no puede concentrarse en profundidad si está constantemente saturada de estímulos. El scroll interminable, los vídeos, las notificaciones entrenan la mente para buscar algo nuevo cada pocos segundos. El silencio y la quietud fortalecen la concentración. El enfoque necesita espacio para pensar. A veces, la mejor estrategia es simplemente consumir menos.',
   'mindset.card.focus8.title':   'La prisa destruye la precisión.',
   'mindset.card.focus8.content':
-    'Correr crea errores, estrés y fragmentación mental. La calma produce mejores decisiones que la velocidad frenética. Muchas personas confunden el pánico con la productividad, pero la urgencia constante debilita la atención. Desacelerar lo suficiente para pensar con claridad antes de actuar — eso es lo que distingue al enfoque real. La precisión suele ahorrar más tiempo que la rapidez.',
-  'mindset.card.focus9.title':   'Presencia es rendimiento.',
+    'Correr crea errores, estrés y fragmentación mental. La calma produce mejores decisiones que la velocidad frenética. Muchas personas confunden el pánico con el progreso, pero la urgencia constante debilita la atención. Desacelerar lo suficiente para pensar con claridad antes de actuar — eso es lo que distingue al enfoque real. La precisión suele ahorrar más tiempo que la rapidez.',
+  'mindset.card.focus9.title':   'Estar presente lo cambia todo.',
   'mindset.card.focus9.content':
-    'Cuando tu atención está plenamente presente, incluso las acciones simples se vuelven más efectivas. El trabajo a medias produce resultados a medias. Estar mentalmente ausente mientras trabajas aumenta la fatiga, porque la mente salta constantemente entre pensamientos. El enfoque es aprender a llegar del todo al momento en que estás. La presencia mejora tanto el rendimiento como la paz interior.',
+    'Cuando tu atención está plenamente presente, incluso las acciones simples se vuelven más efectivas. El trabajo a medias produce resultados a medias. Estar mentalmente ausente mientras trabajas aumenta la fatiga, porque la mente salta constantemente entre pensamientos. El enfoque es aprender a llegar del todo al momento en que estás. La presencia mejora tanto la calidad de lo que haces como la paz interior.',
   'mindset.card.focus10.title':   'Una decisión a la vez.',
   'mindset.card.focus10.content':
     'El agotamiento mental a menudo viene de tomar demasiadas pequeñas decisiones. Cada elección consume energía a lo largo del día. Simplificar las rutinas libera más atención para lo que importa. Cuanto menos ruido mental creas, más claridad te queda disponible. Las personas enfocadas reducen las decisiones innecesarias siempre que pueden.',
@@ -2637,7 +2825,7 @@ const es: TranslationMap = {
     'El pensamiento excesivo suele desaparecer cuando el movimiento comienza. La mente tiende a exagerar la dificultad de las tareas antes de empezarlas. La acción crea claridad más deprisa que el análisis interminable. El enfoque mejora cuando dejas de negociar contigo mismo y simplemente empiezas. El pequeño progreso silencia la resistencia mental.',
   'mindset.card.focus15.title':   'El descanso mejora la concentración.',
   'mindset.card.focus15.content':
-    'El trabajo constante sin recuperación debilita el enfoque con el tiempo. La mente necesita pausas para resetear la atención y procesar la información. El descanso no es pereza — es parte del rendimiento sostenido. Una mente descansada piensa con más claridad. El regreso después del descanso es más profundo que el que viene del agotamiento.',
+    'El trabajo constante sin recuperación debilita el enfoque con el tiempo. La mente necesita pausas para resetear la atención y procesar la información. El descanso no es pereza — es parte de la atención sostenida. Una mente descansada piensa con más claridad. El regreso después del descanso es más profundo que el que viene del agotamiento.',
   'mindset.card.focus16.title':   'Entrena tu mente para quedarse.',
   'mindset.card.focus16.content':
     'Las distracciones modernas entrenan al cerebro para buscar estimulación sin parar. Reenfocar requiere reentrenar la atención para quedarse con una sola cosa más tiempo. Al principio puede sentirse incómodo — la mente está acostumbrada a la interrupción. Pero esa incomodidad es parte del fortalecimiento. Quedarse mentalmente presente es una de las habilidades más valiosas que existen.',
@@ -2658,7 +2846,7 @@ const es: TranslationMap = {
     'La mayoría de las plataformas digitales están diseñadas para capturar y retener tu atención el mayor tiempo posible. Cada notificación innecesaria aleja tu mente del trabajo que importa. Controlar la tecnología con intención, en lugar de dejar que te controle a ti — eso marca la diferencia. Proteger tu atención es proteger lo que quieres construir.',
   'mindset.card.focus22.title':   'El enfoque también es emocional.',
   'mindset.card.focus22.content':
-    'La distracción no siempre viene de la tecnología. A veces la mente evita el enfoque por estrés, miedo, saturación o malestar emocional. Aprender a regular las emociones mejora la concentración de forma notable. La calma interior crea una mente más tranquila. La estabilidad interna fortalece el rendimiento externo.',
+    'La distracción no siempre viene de la tecnología. A veces la mente evita el enfoque por estrés, miedo, saturación o malestar emocional. Aprender a regular las emociones mejora la concentración de forma notable. La calma interior crea una mente más tranquila. La estabilidad interna cambia cómo te presentas ante el mundo.',
   'mindset.card.focus23.title':   'La repetición construye maestría.',
   'mindset.card.focus23.content':
     'La maestría rara vez viene de la intensidad sola. Viene de la repetición enfocada a lo largo del tiempo. Cada sesión de práctica profunda fortalece lo que vas construyendo. La constancia enfocada siempre supera al esfuerzo disperso. Las mejoras pequeñas se acumulan despacio — y después, de golpe.',
@@ -2667,7 +2855,7 @@ const es: TranslationMap = {
     'El pensamiento rápido es útil en emergencias. El pensamiento profundo requiere lentitud. Muchas personas reaccionan al instante sin darse espacio para pensar con claridad. Pausar lo suficiente para observar, reflexionar y elegir con intención — eso es lo que mejora las decisiones. Pensar mejor lleva a actuar mejor.',
   'mindset.card.focus25.title':   'Protege tu energía mental.',
   'mindset.card.focus25.content':
-    'Tu mente tiene un ancho de banda limitado cada día. El estrés, el desorden, la multitarea y la sobreestimulación reducen la capacidad de pensar con claridad. El enfoque mejora cuando reduces intencionalmente la carga mental innecesaria. Proteger la mente es esencial para el rendimiento sostenido. La claridad mental es una forma de riqueza que pocas personas cuidan.',
+    'Tu mente tiene un ancho de banda limitado cada día. El estrés, el desorden, la multitarea y la sobreestimulación reducen la capacidad de pensar con claridad. El enfoque mejora cuando reduces intencionalmente la carga mental innecesaria. Proteger la mente es esencial para mantener la claridad a lo largo del tiempo. La claridad mental es una forma de riqueza que pocas personas cuidan.',
   'mindset.card.focus26.title':   'El enfoque da forma a tu futuro.',
   'mindset.card.focus26.content':
     'Tu futuro no se construye en momentos dramáticos. Se construye en momentos repetidos de atención. Cada día, tu enfoque determina qué crece más en tu vida. La distracción debilita el potencial lentamente, mientras que la concentración acumula progreso. La dirección de tu atención acaba convirtiéndose en la dirección de tu vida.',
@@ -2693,10 +2881,10 @@ const es: TranslationMap = {
     'La distracción crea caos interno. Cuando la mente salta constantemente entre pensamientos, resulta difícil sentirse tranquilo o presente. El enfoque simplifica la actividad mental y reduce la saturación. Sumergirse por completo en una sola tarea significativa puede crear una paz emocional inesperada. La atención y la tranquilidad están profundamente conectadas.',
   'mindset.card.focus33.title':   'El ruido digital debilita la mente.',
   'mindset.card.focus33.content':
-    'La exposición constante a contenido rápido acorta la capacidad de atención con el tiempo. Cuanta más estimulación consume el cerebro, más difícil se vuelve concentrarse en tareas más lentas y significativas. Las personas enfocadas cuidan lo que entra en su espacio mental. Proteger tu atención es similar a proteger tu salud física. Lo que consumes mentalmente da forma a tu capacidad cognitiva.',
+    'La exposición constante a contenido rápido acorta la capacidad de atención con el tiempo. Cuanta más estimulación consume el cerebro, más difícil se vuelve concentrarse en tareas más lentas y significativas. Las personas enfocadas cuidan lo que entra en su espacio mental. Proteger tu atención es similar a proteger tu salud física. Lo que consumes mentalmente da forma a cómo piensas con claridad.',
   'mindset.card.focus34.title':   'El enfoque se construye en el descanso.',
   'mindset.card.focus34.content':
-    'Tu capacidad de concentrarte depende en gran medida de la recuperación. El agotamiento crónico debilita la memoria, la atención y el control emocional. El sueño, la quietud, el movimiento y el descanso adecuado protegen el rendimiento mental. Una mente agotada no puede concentrarse en profundidad. El regreso al enfoque empieza en el cuidado.',
+    'Tu capacidad de concentrarte depende en gran medida de la recuperación. El agotamiento crónico debilita la memoria, la atención y el control emocional. El sueño, la quietud, el movimiento y el descanso adecuado protegen la capacidad de pensar con claridad. Una mente agotada no puede concentrarse en profundidad. El regreso al enfoque empieza en el cuidado.',
   'mindset.card.focus35.title':   'La mente sigue lo que practicas.',
   'mindset.card.focus35.content':
     'Lo que practicas repetidamente se vuelve más fácil con el tiempo. Si practicas la distracción constantemente, el cerebro se entrena para evitar la atención sostenida. Pero cuando practicas la concentración con regularidad, el enfoque se fortalece gradualmente. Los hábitos mentales dan forma a la identidad mental. Tus patrones de atención se convierten en tu comportamiento predeterminado.',
@@ -2708,7 +2896,7 @@ const es: TranslationMap = {
     'Esperar la motivación perfecta suele crear un retraso interminable. El enfoque crece a través de la acción, no a través de la preparación emocional. Una vez que el movimiento comienza, la resistencia suele disminuir de forma natural. Las personas enfocadas se entrenan para empezar a pesar de la incomodidad. El impulso crea compromiso mental más deprisa que el análisis continuo.',
   'mindset.card.focus38.title':   'La simplicidad mental mejora la ejecución.',
   'mindset.card.focus38.content':
-    'La complejidad suele crear vacilación y confusión. Cuando las tareas se vuelven demasiado complicadas, el cerebro busca naturalmente la escapatoria a través de la distracción. El enfoque mejora cuando los sistemas, los objetivos y las prioridades se vuelven más simples y claros. La simplicidad reduce la sobrecarga cognitiva. El pensamiento claro produce una ejecución más limpia.',
+    'La complejidad suele crear vacilación y confusión. Cuando las tareas se vuelven demasiado complicadas, el cerebro busca naturalmente la escapatoria a través de la distracción. El enfoque mejora cuando los sistemas, los objetivos y las prioridades se vuelven más simples y claros. La simplicidad reduce la saturación mental. El pensamiento claro produce una ejecución más limpia.',
   'mindset.card.focus39.title':   'El enfoque fortalece la confianza en ti mismo.',
   'mindset.card.focus39.content':
     'Cada vez que honras tus compromisos contigo mismo, tu autoconfianza crece. La concentración constante construye confianza porque demuestra que puedes confiar en tu propia disciplina. Las personas enfocadas dejan de depender enteramente de la motivación. Confían en los sistemas y hábitos que han construido. La confianza interna crea estabilidad emocional.',
@@ -2726,7 +2914,7 @@ const es: TranslationMap = {
     'Los objetivos grandes pueden sentirse intimidantes, lo que aumenta la resistencia mental. Las pequeñas acciones completadas construyen impulso y refuerzan la concentración. Cada tarea terminada entrena al cerebro para asociar el enfoque con el progreso. Los pequeños logros crean energía interna. La constancia crece más deprisa a través de acciones manejables.',
   'mindset.card.focus44.title':   'El enfoque es más fácil cuando el cuerpo está bien.',
   'mindset.card.focus44.content':
-    'La salud física influye profundamente en la claridad mental. El mal sueño, la deshidratación, el estrés y la inactividad debilitan la concentración de forma notable. El rendimiento cognitivo está profundamente conectado al bienestar físico. Gestionar la energía mejora la atención de forma natural. Un cuerpo más descansado sostiene una mente más aguda.',
+    'La salud física influye profundamente en la claridad mental. El mal sueño, la deshidratación, el estrés y la inactividad debilitan la concentración de forma notable. La claridad mental está profundamente conectada al bienestar físico. Cuidar la energía mejora la atención de forma natural. Un cuerpo más descansado sostiene una mente más aguda.',
   'mindset.card.focus45.title':   'Las mentes saturadas evitan lo importante.',
   'mindset.card.focus45.content':
     'Cuando el cerebro se siente saturado, busca naturalmente la estimulación más fácil. Por eso el estrés suele aumentar la procrastinación. El enfoque mejora cuando reduces el ruido mental innecesario y organizas tus prioridades con claridad. Los sistemas tranquilos crean pensamientos más tranquilos. La organización mental reduce la resistencia.',
@@ -2735,10 +2923,10 @@ const es: TranslationMap = {
     'Muchas personas abandonan las rutinas de concentración porque esperan una perfección inmediata. Pero la concentración se desarrolla gradualmente a través del esfuerzo repetido. Algunos días se sentirán más fáciles que otros. Lo que más importa es volver con constancia a la práctica de la atención. El progreso se acumula despacio, en silencio.',
   'mindset.card.focus47.title':   'Protege tus mejores horas mentales.',
   'mindset.card.focus47.content':
-    'Cada mente tiene períodos de mayor energía cognitiva durante el día. Las personas enfocadas identifican cuándo piensan con más claridad y protegen esas horas. El trabajo importante debería ocurrir durante los períodos de mayor atención. Las distracciones de bajo valor no deberían consumir tu mejor estado mental. El momento adecuado mejora el rendimiento de forma notable.',
+    'Cada mente tiene períodos de mayor claridad durante el día. Las personas enfocadas identifican cuándo piensan mejor y protegen esas horas. El trabajo importante debería ocurrir durante los períodos de mayor atención. Las distracciones de bajo valor no deberían consumir tus horas más limpias. El momento adecuado hace una diferencia real.',
   'mindset.card.focus48.title':   'El ruido interior también distrae.',
   'mindset.card.focus48.content':
-    'La distracción no siempre viene del mundo exterior. La preocupación, la duda y el pensamiento excesivo pueden interrumpir la concentración con tanta fuerza como las notificaciones. El enfoque mejora cuando aprendes a calmar el ruido mental interno. La conciencia emocional fortalece el control cognitivo. Una mente en calma sostiene una atención más profunda.',
+    'La distracción no siempre viene del mundo exterior. La preocupación, la duda y el pensamiento excesivo pueden interrumpir la concentración con tanta fuerza como las notificaciones. El enfoque mejora cuando aprendes a calmar el ruido mental interno. La conciencia emocional fortalece tu capacidad de permanecer presente. Una mente en calma sostiene una atención más profunda.',
   'mindset.card.focus49.title':   'Tu enfoque determina la calidad de lo que creas.',
   'mindset.card.focus49.content':
     'La calidad de tu atención da forma a la calidad de tu trabajo. El esfuerzo apresurado y distraído suele producir resultados mediocres. El enfoque profundo mejora la creatividad, la precisión y la capacidad de resolver problemas. Las personas enfocadas entienden que la excelencia requiere presencia. Una mejor atención crea mejores resultados.',
@@ -2756,7 +2944,7 @@ const es: TranslationMap = {
     'La motivación fluctúa constantemente, pero la acción enfocada crea su propia energía. Una vez que la concentración comienza, el cerebro suele comprometerse de forma más natural. Esperar indefinidamente la inspiración retrasa el progreso. Las personas enfocadas se apoyan en la estructura y la acción en lugar del estado emocional. El movimiento crea impulso.',
   'mindset.card.focus54.title':   'La ejecución tranquila supera al caos.',
   'mindset.card.focus54.content':
-    'La urgencia estresante suele crear un pensamiento descuidado y agotamiento emocional. La ejecución tranquila y enfocada produce un rendimiento más sostenible. La serenidad mental protege la capacidad de tomar decisiones. El enfoque prospera en la estabilidad emocional. La calma no es lentitud — es precisión.',
+    'La urgencia estresante suele crear un pensamiento descuidado y agotamiento emocional. La ejecución tranquila y enfocada es un ritmo más sostenible. La serenidad mental protege la capacidad de tomar decisiones. El enfoque prospera en la estabilidad emocional. La calma no es lentitud — es precisión.',
   'mindset.card.focus55.title':   'Cada distracción tiene un coste invisible.',
   'mindset.card.focus55.content':
     'Cuando pierdes el enfoque, no solo pierdes tiempo — pierdes potencial, creatividad y energía mental. Las pequeñas distracciones repetidas cada día se acumulan en oportunidades perdidas con el tiempo. Las personas enfocadas reconocen el valor real de la atención ininterrumpida. Proteger la concentración es proteger el recorrido.',
@@ -2765,7 +2953,7 @@ const es: TranslationMap = {
     'Aquello en lo que te concentras repetidamente da forma lentamente a cómo piensas, sientes y actúas. La atención no es neutral — refuerza patrones en la mente. Las personas enfocadas dirigen intencionalmente su atención hacia el crecimiento y los objetivos que importan. Tu enfoque influye en quién te conviertes. La atención da forma a la identidad.',
   'mindset.card.focus57.title':   'Una vida enfocada se siente más intencionada.',
   'mindset.card.focus57.content':
-    'Cuando la atención está constantemente dispersa, la vida empieza a sentirse reactiva y caótica. El enfoque crea un sentido más sólido de dirección. La atención intencionada te permite experimentar la vida más profundamente en lugar de atravesarla inconscientemente. El enfoque no solo es cuestión de productividad — es cuestión de presencia. Una mente enfocada crea una vida más significativa.',
+    'Cuando la atención está constantemente dispersa, la vida empieza a sentirse reactiva y caótica. El enfoque crea un sentido más sólido de dirección. La atención intencionada te permite experimentar la vida más profundamente en lugar de atravesarla inconscientemente. El enfoque no es cuestión de productividad — es cuestión de presencia. Una mente enfocada crea una vida más significativa.',
 
   // ── Clarity card content (first 5) ──────────────────────────────────────
   'mindset.card.m6.content':
@@ -3057,7 +3245,7 @@ const es: TranslationMap = {
   'mindset.card.m20.content':
     'El almirante Stockdale vivía con una paradoja: enfrentar los hechos más duros de su realidad, mientras mantenía una fe inquebrantable en que saldría adelante. No pretendas que las cosas van mejor de lo que van. Tampoco que van peor. Ve con claridad. Cree con firmeza. Actúa con constancia. Esa combinación es la base de la resiliencia real.',
   'mindset.card.disc1.content':
-    'La disciplina no es un castigo — es una prueba de que valoras tu futuro lo suficiente como para protegerlo. Cada promesa que te cumples a ti misma fortalece tu identidad y tu autoconfianza. Las personas con disciplina no son necesariamente más motivadas; simplemente actúan según sus prioridades en lugar de sus emociones del momento. La confianza real viene de saber que puedes contar contigo misma.',
+    'Aparecer para ti misma no tiene que ver con demostrar nada — tiene que ver con construir, poco a poco, una relación contigo que puedas sostener. Cada vez que vuelves a algo que importa, aunque la semana haya sido difícil, esa confianza se profundiza.\n\nNo necesitas ser perfectamente constante para sentirlo. El ritmo no es no parar nunca — es aprender que puedes volver a empezar. Y cada regreso, por silencioso que sea, ya es una forma de respeto hacia ti misma.',
 
   // ── Rhythm card content (next 30: disc2–disc31) ───────────────────────────
   'mindset.card.disc2.content':
@@ -3087,7 +3275,7 @@ const es: TranslationMap = {
   'mindset.card.disc14.content':
     'Lo que repites le enseña a tu mente quién eres. Cada vez que cumples lo que te dijiste — aunque sea algo pequeño — fortaleces la imagen que tienes de ti misma. La identidad no se declara, se construye. Acción a acción, en silencio, con constancia.',
   'mindset.card.disc15.content':
-    'Las excusas se sienten bien en el momento — alivian la presión, justifican la pausa. Pero con el tiempo erosionan algo más profundo: la confianza que tienes en ti misma. El ritmo crece cuando empiezas a responsabilizarte de tus decisiones, no porque las circunstancias sean perfectas, sino porque tú importas.',
+    'Los obstáculos reales existen. El agotamiento es real. Los desafíos de salud mental son reales. Las circunstancias de vida — las que hacen que la constancia sea genuinamente difícil — son reales. Reconocerlos no es evitación. Es honestidad.\n\nLo que crea movimiento no es negar esas realidades, sino encontrar lo que es posible dentro de ellas. No la acción ideal. No la versión completa. Solo el siguiente paso disponible ahora, en estas condiciones reales. Ese retorno — por pequeño que sea — todavía es un retorno. Y hacer algo en circunstancias difíciles, sin esperar a que las condiciones mejoren, tiene una forma silenciosa de cambiar la relación con esas circunstancias con el tiempo.',
   'mindset.card.disc16.content':
     'Las emociones fluctúan. Eso es inevitable. El ritmo no depende de sentirte bien — depende de tener claro qué valoras. Actuar desde tus valores, y no solo desde lo que sientes en el momento, es una forma de cuidarte profundamente. La calma interna te permite seguir cuando las emociones no acompañan.',
   'mindset.card.disc17.content':
@@ -3131,7 +3319,7 @@ const es: TranslationMap = {
   'mindset.card.disc35.content':
     'La falta de estructura crea un ruido interno constante. El ritmo trae orden — no como rigidez, sino como un espacio donde tu mente puede descansar. Cuando tus rutinas tienen forma, gastas menos energía en recuperarte del caos. La simplicidad sostiene. El orden también cuida.',
   'mindset.card.disc36.content':
-    'Las excusas se sienten como alivio en el momento. Pero a lo largo del tiempo, van dejando un peso. El ritmo no pide condiciones perfectas — pide que te hagas responsable de lo que puedes hacer ahora. El progreso no depende de que todo esté bien. Depende de que sigas eligiendo avanzar.',
+    'La vida raramente crea condiciones ideales. Hay interrupciones, agotamiento, demandas que compiten, obstáculos inesperados y días en que nada coopera como necesitas. El ritmo no espera a que esas cosas se resuelvan — encuentra el pequeño movimiento disponible dentro de ellas.\n\nEsto no es minimizar las dificultades reales o fingir que las circunstancias no importan. Importan. Pero casi siempre hay algo — por pequeño que sea — que es posible dentro de las condiciones actuales. No la versión completa. No la acción ideal. Solo lo siguiente que cabe dentro de la realidad de hoy. Ese paso, dado en condiciones imperfectas, sigue siendo movimiento real.',
   'mindset.card.disc37.content':
     'Las transformaciones grandes casi nunca llegan de un solo golpe. Llegan de miles de pequeñas decisiones repetidas con constancia. La constancia rara vez es dramática — es silenciosa, invisible en el momento. Pero cada pequeña acción va dejando huella. Con el tiempo, la diferencia es enorme.',
   'mindset.card.disc38.content':
@@ -3369,6 +3557,21 @@ const es: TranslationMap = {
   'wb.late_night.2':  'Esto es suficiente.',
   'wb.late_night.3':  'Deja que el día se asiente.',
   'wb.late_night.4':  'La quietud también es algo.',
+
+  // ── Personal Mantra Echo ──────────────────────────────────────────────────────
+  'mantra.weekly.label': 'UNA PALABRA DE TU LLEGADA',
+  'mantra.weekly.v0':    'Cuando llegaste, elegiste:\n\n"{{mantra}}"\n\n¿Apareció en algún momento de esta semana?',
+  'mantra.weekly.v1':    'Elegiste la palabra:\n\n"{{mantra}}"\n\n¿Qué significa para ti hoy?',
+  'mantra.weekly.v2':    'Hace algún tiempo elegiste:\n\n"{{mantra}}"\n\n¿Todavía te parece importante?',
+  'mantra.weekly.v3':    'Llegaste aquí con:\n\n"{{mantra}}"\n\n¿Algo de esta semana contuvo eso?',
+  'mantra.weekly.v4':    'Cuando comenzaste, elegiste:\n\n"{{mantra}}"\n\n¿Sigue siendo algo que buscas?',
+  'mantra.return.v0':    'Cuando comenzaste, elegiste la palabra "{{mantra}}".\n\nNo necesita aparecer todos los días.\n\nPero quizás todavía importa.',
+  'mantra.return.v1':    'Cuando llegaste aquí, elegiste:\n\n"{{mantra}}"\n\nQuizás sigue caminando contigo.',
+  'mantra.return.v2':    'Llegaste aquí cargando:\n\n"{{mantra}}"\n\nEso no ha cambiado.',
+  'mantra.progress.label': 'UNA PALABRA QUE IMPORTABA',
+  'mantra.progress.v0': '"{{mantra}}"\n\nElegiste esto cuando llegaste.\n\n¿Todavía significa algo para ti?',
+  'mantra.progress.v1': 'Cuando llegaste, trajiste una palabra:\n\n"{{mantra}}"\n\nNo se ha ido a ningún lado.',
+  'mantra.progress.v2': '"{{mantra}}"\n\nElegiste esto hace algún tiempo.\n\n¿Sigue siendo algo que reconoces?',
 
   ...psEs,
 };
@@ -3952,25 +4155,25 @@ const fr: TranslationMap = {
 
   // ── Mindset card titles ────────────────────────────────────────────────────
   'mindset.card.m1.title':    'Une chose à la fois.',
-  'mindset.card.m2.title':    'La règle des 2 minutes',
-  'mindset.card.m3.title':    'La confiance fondée sur les preuves',
-  'mindset.card.m4.title':    'La méthode MIT',
-  'mindset.card.m5.title':    'Les émotions comme données',
-  'mindset.card.m6.title':    'L\'économie de l\'attention',
-  'mindset.card.m7.title':    'Le bloc de travail de 90 minutes',
-  'mindset.card.m8.title':    'Les habitudes fondées sur l\'identité',
-  'mindset.card.m9.title':    'Le refus comme redirection',
-  'mindset.card.m10.title':   'Maîtrise du time blocking',
-  'mindset.card.m11.title':   'Le courage d\'être soi-même',
+  'mindset.card.m2.title':    'Les petites tâches pèsent plus quand on les reporte.',
+  'mindset.card.m3.title':    "La confiance se construit. Elle ne s'attend pas.",
+  'mindset.card.m4.title':    "Qu'est-ce qui rendrait cette journée complète ?",
+  'mindset.card.m5.title':    "Les émotions sont de l'information.",
+  'mindset.card.m6.title':    "C'est ton attention qu'ils cherchent.",
+  'mindset.card.m7.title':    "Ton cerveau n'a pas été fait pour se concentrer en continu.",
+  'mindset.card.m8.title':    'Tu deviens ce que tu fais régulièrement.',
+  'mindset.card.m9.title':    "Un refus veut rarement dire ce qu'il semble vouloir dire.",
+  'mindset.card.m10.title':   'Les heures protégées changent la couleur de la journée.',
+  'mindset.card.m11.title':   "Tes choix n'ont pas besoin de l'approbation de tous.",
   'mindset.card.m12.title':   'Retrouver l\'ennui',
-  'mindset.card.m13.title':   'Le principe de l\'unique chose',
+  'mindset.card.m13.title':   'Une seule chose qui rend tout le reste plus facile.',
   'mindset.card.m14.title':   'Ne jamais rater deux fois',
-  'mindset.card.m15.title':   'La compétence crée la confiance',
-  'mindset.card.m16.title':   'La revue hebdomadaire',
+  'mindset.card.m15.title':   "La confiance vient de l'action, pas de l'attente.",
+  'mindset.card.m16.title':   'Un regard calme sur la semaine.',
   'mindset.card.m17.title':   'La pratique du lâcher-prise',
-  'mindset.card.m18.title':   'Le minimalisme numérique',
-  'mindset.card.m19.title':   'Le travail profond',
-  'mindset.card.m20.title':   'Le paradoxe de Stockdale',
+  'mindset.card.m18.title':   "Utiliser la technologie avec intention, c'est reprendre son attention.",
+  'mindset.card.m19.title':   'Une seule chose, sans interruption.',
+  'mindset.card.m20.title':   "L'espoir sans le déni.",
   'mindset.card.emo1.title':  'Tu as le droit de recommencer',
   'mindset.card.emo2.title':  'Le repos n\'est pas une faiblesse',
   'mindset.card.disc1.title': 'Ton cerveau fait confiance à ce que tu répètes.',
@@ -4020,15 +4223,15 @@ const fr: TranslationMap = {
 
   'mindset.card.focus8.title':   'La précipitation coûte plus qu\'elle ne gagne.',
   'mindset.card.focus8.content':
-    'Aller vite crée des erreurs, du stress et de la fragmentation mentale. Un focus calme produit de meilleures décisions qu\'une vitesse fébrile.\n\nBeaucoup de gens confondent l\'agitation avec la productivité. Mais l\'urgence permanente affaiblit l\'attention.\n\nRalentir suffisamment pour penser clairement avant d\'agir — c\'est souvent ce qui fait gagner du temps.',
+    'Aller vite crée des erreurs, du stress et de la fragmentation mentale. Un focus calme produit de meilleures décisions qu\'une vitesse fébrile.\n\nBeaucoup de gens confondent l\'agitation avec le progrès. Mais l\'urgence permanente affaiblit l\'attention.\n\nRalentir suffisamment pour penser clairement avant d\'agir — c\'est souvent ce qui fait gagner du temps.',
 
   'mindset.card.focus9.title':   'Être vraiment là change tout.',
   'mindset.card.focus9.content':
-    'Quand ton attention est pleinement présente, même les actions simples deviennent plus efficaces. Un travail fait à moitié donne des résultats à moitié.\n\nÊtre mentalement absent pendant qu\'on travaille augmente la fatigue — parce que le cerveau passe son temps à jongler entre les pensées plutôt qu\'à être là.\n\nLa concentration, c\'est apprendre à vraiment arriver dans ce qu\'on fait. La présence améliore à la fois la performance et la paix intérieure.',
+    'Quand ton attention est pleinement présente, même les actions simples deviennent plus efficaces. Un travail fait à moitié donne des résultats à moitié.\n\nÊtre mentalement absent pendant qu\'on travaille augmente la fatigue — parce que le cerveau passe son temps à jongler entre les pensées plutôt qu\'à être là.\n\nLa concentration, c\'est apprendre à vraiment arriver dans ce qu\'on fait. La présence améliore à la fois la qualité du travail et la paix intérieure.',
 
   'mindset.card.focus10.title':   'Une décision à la fois.',
   'mindset.card.focus10.content':
-    'La fatigue mentale vient souvent de trop de petites décisions accumulées. Chaque choix — même minuscule — consomme de l\'énergie cognitive.\n\nSimplifier ses routines libère de l\'attention pour ce qui compte vraiment.\n\nMoins de bruit mental, c\'est plus de clarté disponible. Choisir simplement est une forme de concentration.',
+    'La fatigue mentale vient souvent de trop de petites décisions accumulées. Chaque choix — même minuscule — consomme de l\'énergie mentale.\n\nSimplifier ses routines libère de l\'attention pour ce qui compte vraiment.\n\nMoins de bruit mental, c\'est plus de clarté disponible. Choisir simplement est une forme de concentration.',
 
   'mindset.card.focus11.title':   'La régularité protège ce qui compte.',
   'mindset.card.focus11.content':
@@ -4048,7 +4251,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus15.title':   'Le repos fait partie du travail.',
   'mindset.card.focus15.content':
-    'Travailler sans récupération affaiblit la concentration avec le temps. L\'esprit a besoin de pauses pour réinitialiser l\'attention et traiter l\'information correctement.\n\nSe reposer, ce n\'est pas de la paresse. C\'est une partie intégrante de la performance durable.\n\nUn esprit reposé pense plus clairement. La récupération protège la capacité à se concentrer sur le long terme.',
+    'Travailler sans récupération affaiblit la concentration avec le temps. L\'esprit a besoin de pauses pour réinitialiser l\'attention et traiter l\'information correctement.\n\nSe reposer, ce n\'est pas de la paresse. C\'est une partie intégrante d\'une attention durable.\n\nUn esprit reposé pense plus clairement. La récupération protège la capacité à se concentrer sur le long terme.',
 
   'mindset.card.focus16.title':   'Apprendre à rester.',
   'mindset.card.focus16.content':
@@ -4056,7 +4259,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus17.title':   'Les petites interruptions ont un grand coût.',
   'mindset.card.focus17.content':
-    'Une notification rapide peut sembler anodine. Mais les petites interruptions brisent le flux mental — et le cerveau met souvent du temps avant de vraiment se reconcentrer.\n\nDe minuscules distractions répétées tout au long de la journée détruisent silencieusement la productivité.\n\nProtéger sa concentration, c\'est reconnaître à quel point le focus profond est fragile.',
+    'Une notification rapide peut sembler anodine. Mais les petites interruptions brisent le flux mental — et le cerveau met souvent du temps avant de vraiment se reconcentrer.\n\nDe minuscules distractions répétées tout au long de la journée détruisent silencieusement le rythme.\n\nProtéger sa concentration, c\'est reconnaître à quel point le focus profond est fragile.',
 
   'mindset.card.focus18.title':   'L\'ennui ouvre quelque chose.',
   'mindset.card.focus18.content':
@@ -4076,7 +4279,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus22.title':   'La distraction n\'est pas toujours une question de technologie.',
   'mindset.card.focus22.content':
-    'Parfois, l\'esprit évite de se concentrer à cause du stress, de la peur, de l\'épuisement ou d\'une gêne émotionnelle.\n\nApprendre à réguler ses émotions améliore la concentration de façon significative. Des émotions calmes créent un esprit calme.\n\nLa stabilité intérieure renforce les performances extérieures. Le focus commence souvent par là.',
+    'Parfois, l\'esprit évite de se concentrer à cause du stress, de la peur, de l\'épuisement ou d\'une gêne émotionnelle.\n\nApprendre à réguler ses émotions améliore la concentration de façon significative. Des émotions calmes créent un esprit calme.\n\nLa stabilité intérieure change la façon dont on se présente. Le focus commence souvent par là.',
 
   'mindset.card.focus23.title':   'La maîtrise naît de la répétition.',
   'mindset.card.focus23.content':
@@ -4088,7 +4291,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus25.title':   'L\'espace mental est une ressource limitée.',
   'mindset.card.focus25.content':
-    'Le stress, le désordre, le multitâche et la surstimulation réduisent ta capacité à penser clairement. Le cerveau n\'est pas illimité.\n\nLa concentration s\'améliore quand on réduit intentionnellement la charge mentale inutile. Protéger son esprit est essentiel pour une performance durable.\n\nLa clarté mentale est une forme de richesse. Elle se protège, elle s\'entretient.',
+    'Le stress, le désordre, le multitâche et la surstimulation réduisent ta capacité à penser clairement. Le cerveau n\'est pas illimité.\n\nLa concentration s\'améliore quand on réduit intentionnellement la charge mentale inutile. Protéger son esprit est essentiel pour maintenir la clarté dans le temps.\n\nLa clarté mentale est une forme de richesse. Elle se protège, elle s\'entretient.',
 
   'mindset.card.focus26.title':   'Ce sur quoi tu reviens en dit long sur qui tu deviens.',
   'mindset.card.focus26.content':
@@ -4120,11 +4323,11 @@ const fr: TranslationMap = {
 
   'mindset.card.focus33.title':   'Le bruit numérique use quelque chose.',
   'mindset.card.focus33.content':
-    'Une exposition constante à des contenus rapides raccourcit l\'attention avec le temps. Plus ton cerveau consomme de stimulation, plus il devient difficile de rester concentré sur quelque chose de lent et de significatif.\n\nLes gens qui savent se concentrer font attention à ce qui entre dans leur espace mental.\n\nProtéger ton attention ressemble à protéger ta santé physique. Ce que tu consommes mentalement façonne ta capacité cognitive.',
+    'Une exposition constante à des contenus rapides raccourcit l\'attention avec le temps. Plus ton cerveau consomme de stimulation, plus il devient difficile de rester concentré sur quelque chose de lent et de significatif.\n\nLes gens qui savent se concentrer font attention à ce qui entre dans leur espace mental.\n\nProtéger ton attention ressemble à protéger ta santé physique. Ce que tu consommes mentalement façonne ta façon de penser clairement.',
 
   'mindset.card.focus34.title':   'La concentration se nourrit de récupération.',
   'mindset.card.focus34.content':
-    'Ta capacité à te concentrer dépend beaucoup de ta récupération. L\'épuisement chronique affaiblit la mémoire, l\'attention et le contrôle émotionnel.\n\nLes gens qui avancent vraiment prennent la récupération au sérieux — parce qu\'ils comprennent que la netteté mentale demande de l\'entretien.\n\nSommeil, silence, mouvement, repos vrai — ils protègent les performances cognitives. Un esprit épuisé ne peut pas se concentrer profondément.',
+    'Ta capacité à te concentrer dépend beaucoup de ta récupération. L\'épuisement chronique affaiblit la mémoire, l\'attention et le contrôle émotionnel.\n\nLes gens qui avancent vraiment prennent la récupération au sérieux — parce qu\'ils comprennent que la netteté mentale demande de l\'entretien.\n\nSommeil, silence, mouvement, repos vrai — ils protègent la clarté mentale. Un esprit épuisé ne peut pas se concentrer profondément.',
 
   'mindset.card.focus35.title':   'L\'esprit suit ce que tu répètes.',
   'mindset.card.focus35.content':
@@ -4140,7 +4343,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus38.title':   'La simplicité mentale améliore l\'exécution.',
   'mindset.card.focus38.content':
-    'La complexité crée souvent de l\'hésitation et de la confusion. Quand les tâches deviennent trop compliquées, le cerveau cherche naturellement une échappatoire dans la distraction.\n\nLa concentration s\'améliore quand les systèmes, les objectifs et les priorités deviennent plus simples et plus clairs.\n\nLa simplicité réduit la surcharge cognitive. Une pensée claire produit une exécution plus propre.',
+    'La complexité crée souvent de l\'hésitation et de la confusion. Quand les tâches deviennent trop compliquées, le cerveau cherche naturellement une échappatoire dans la distraction.\n\nLa concentration s\'améliore quand les systèmes, les objectifs et les priorités deviennent plus simples et plus clairs.\n\nLa simplicité réduit la surcharge mentale. Une pensée claire produit une exécution plus propre.',
 
   'mindset.card.focus39.title':   'Tenir ses engagements envers soi-même construit quelque chose.',
   'mindset.card.focus39.content':
@@ -4164,7 +4367,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus44.title':   'Corps en forme, esprit plus présent.',
   'mindset.card.focus44.content':
-    'La santé physique influence fortement la clarté mentale. Un mauvais sommeil, la déshydratation, le stress et l\'inactivité affaiblissent la concentration de façon significative.\n\nLes gens qui savent se concentrer comprennent que la performance cognitive est profondément liée au bien-être physique.\n\nPrendre soin de son corps, c\'est aussi prendre soin de sa capacité à penser. Un corps mieux traité soutient un esprit plus précis.',
+    'La santé physique influence fortement la clarté mentale. Un mauvais sommeil, la déshydratation, le stress et l\'inactivité affaiblissent la concentration de façon significative.\n\nLa clarté mentale est profondément liée au bien-être physique.\n\nPrendre soin de son corps, c\'est aussi prendre soin de sa capacité à penser. Un corps mieux traité soutient un esprit plus précis.',
 
   'mindset.card.focus45.title':   'Un esprit surchargé cherche la sortie facile.',
   'mindset.card.focus45.content':
@@ -4172,15 +4375,15 @@ const fr: TranslationMap = {
 
   'mindset.card.focus46.title':   'La concentration grandit par la répétition, pas par la perfection.',
   'mindset.card.focus46.content':
-    'Beaucoup abandonnent leurs habitudes de focus parce qu\'ils attendent la perfection immédiate. Mais la concentration se développe progressivement — à travers un effort répété.\n\nCertains jours seront plus faciles que d\'autres. Ce qui compte le plus, c\'est de revenir régulièrement à la pratique de l\'attention.\n\nLe progrès s\'accumule tranquillement avec le temps. La régularité compte plus que la performance.',
+    'Beaucoup abandonnent leurs habitudes de focus parce qu\'ils attendent la perfection immédiate. Mais la concentration se développe progressivement — à travers un effort répété.\n\nCertains jours seront plus faciles que d\'autres. Ce qui compte le plus, c\'est de revenir régulièrement à la pratique de l\'attention.\n\nLe progrès s\'accumule tranquillement avec le temps. La régularité compte plus que la perfection.',
 
   'mindset.card.focus47.title':   'Connaître ses meilleures heures change tout.',
   'mindset.card.focus47.content':
-    'Chaque cerveau a des périodes de plus haute énergie cognitive dans la journée. Les gens qui savent se concentrer identifient quand ils pensent le plus clairement — et protègent ces heures avec soin.\n\nLe travail important devrait avoir lieu pendant les périodes d\'attention la plus forte. Les distractions à faible valeur ne devraient pas consommer ton meilleur état mental.\n\nChoisir le bon moment améliore les performances de façon significative.',
+    'Chaque cerveau a des périodes de plus grande clarté dans la journée. Les gens qui savent se concentrer identifient quand ils pensent le plus clairement — et protègent ces heures avec soin.\n\nLe travail important devrait avoir lieu pendant les périodes d\'attention la plus forte. Les distractions à faible valeur ne devraient pas consommer tes heures les plus claires.\n\nChoisir le bon moment fait une vraie différence.',
 
   'mindset.card.focus48.title':   'Le bruit intérieur distrait autant que le bruit extérieur.',
   'mindset.card.focus48.content':
-    'La distraction ne vient pas toujours du monde extérieur. Les inquiétudes, le doute sur soi, la suranalyse peuvent interrompre la concentration aussi fortement que les notifications.\n\nLa concentration s\'améliore quand on apprend à calmer le dialogue intérieur.\n\nLa conscience émotionnelle renforce le contrôle cognitif. Un esprit en paix soutient une attention plus profonde.',
+    'La distraction ne vient pas toujours du monde extérieur. Les inquiétudes, le doute sur soi, la suranalyse peuvent interrompre la concentration aussi fortement que les notifications.\n\nLa concentration s\'améliore quand on apprend à calmer le dialogue intérieur.\n\nLa conscience émotionnelle renforce la capacité à rester présent. Un esprit en paix soutient une attention plus profonde.',
 
   'mindset.card.focus49.title':   'L\'attention détermine la qualité du travail.',
   'mindset.card.focus49.content':
@@ -4204,7 +4407,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus54.title':   'Exécuter avec calme produit plus qu\'agir sous pression.',
   'mindset.card.focus54.content':
-    'L\'urgence stressante crée souvent une pensée bâclée et une fatigue émotionnelle. Une exécution calme et concentrée produit une performance plus durable.\n\nLes gens qui avancent vraiment apprennent à opérer avec constance plutôt qu\'avec panique.\n\nLe calme mental protège la capacité à décider. La concentration s\'épanouit dans la stabilité émotionnelle.',
+    'L\'urgence stressante crée souvent une pensée bâclée et une fatigue émotionnelle. Une exécution calme et concentrée est un rythme plus durable.\n\nLes gens qui avancent vraiment apprennent à opérer avec constance plutôt qu\'avec panique.\n\nLe calme mental protège la capacité à décider. La concentration s\'épanouit dans la stabilité émotionnelle.',
 
   'mindset.card.focus55.title':   'Chaque distraction a un coût invisible.',
   'mindset.card.focus55.content':
@@ -4216,7 +4419,7 @@ const fr: TranslationMap = {
 
   'mindset.card.focus57.title':   'Une vie concentrée se sent différemment.',
   'mindset.card.focus57.content':
-    'Quand l\'attention est constamment dispersée, la vie commence à sembler réactive et chaotique. La concentration crée un sens plus fort de la direction et du contrôle.\n\nUne attention intentionnelle permet de vivre l\'expérience plus profondément — plutôt que de la traverser inconsciemment.\n\nLa concentration ne concerne pas seulement la productivité. C\'est une façon de vivre avec conscience. Un esprit concentré crée une vie plus significative.',
+    'Quand l\'attention est constamment dispersée, la vie commence à sembler réactive et chaotique. La concentration crée un sens plus fort de la direction et du contrôle.\n\nUne attention intentionnelle permet de vivre l\'expérience plus profondément — plutôt que de la traverser inconsciemment.\n\nLa concentration ne concerne pas la productivité. C\'est une façon de vivre avec conscience. Un esprit concentré crée une vie plus significative.',
 
   // ── Mindset Calm cards — Français ────────────────────────────────────────────
   'mindset.card.m5.content':
@@ -5287,9 +5490,9 @@ const fr: TranslationMap = {
   'mindset.card.disc9.content':
     'Sans rituel ni structure, l\'esprit négocie constamment avec lui-même. "Je le ferai plus tard." "Cette fois, ça ne compte pas." "Demain sera différent."\n\nQuand un rythme est en place, ces conversations s\'espacent. Pas parce qu\'on se contrôle davantage — mais parce que le chemin est déjà tracé.\n\nMoins de débat intérieur. Plus de présence.',
 
-  'mindset.card.disc10.title':  'L\'autocontrôle est une forme de pouvoir intérieur.',
+  'mindset.card.disc10.title':  'Orienter son attention est une pratique, pas un trait de personnalité.',
   'mindset.card.disc10.content':
-    'On vit entourées de choses conçues pour capter l\'attention — et pour la garder.\n\nDans ce contexte, savoir orienter son regard vers ce qu\'on a choisi est devenu quelque chose de précieux. Pas de la rigidité. Juste la capacité de rester là où ça compte.\n\nChaque fois qu\'on choisit avec calme plutôt que sur l\'impulsion, on se connaît un peu mieux.',
+    'On vit entourées de choses conçues pour capter l\'attention — et pour la garder. Chaque app, chaque flux, chaque notification est optimisé pour capturer l\'attention et la retenir. Naviguer dans tout ça sans perdre de vue ce qui compte vraiment n\'a rien de surhumain — c\'est une compétence qui se développe par la répétition, comme n\'importe quelle autre.\n\nDans ce contexte, savoir orienter son regard vers ce qu\'on a choisi est devenu quelque chose de précieux. Pas de la rigidité. Juste une présence suffisante pour continuer à choisir, imparfaitement, dans la direction de ce qui compte.',
 
   'mindset.card.disc11.title':  'Le rythme, c\'est la répétition — pas l\'intensité.',
   'mindset.card.disc11.content':
@@ -5307,9 +5510,9 @@ const fr: TranslationMap = {
   'mindset.card.disc14.content':
     'Ce qu\'on répète enseigne à l\'esprit qui on est. Chaque fois qu\'on tient ce qu\'on s\'est dit — même pour quelque chose de petit — quelque chose se consolide.\n\nL\'identité ne se déclare pas. Elle se construit.\n\nGeste après geste, en silence, avec une continuité tranquille.',
 
-  'mindset.card.disc15.title':  'Les excuses érodent doucement la confiance en soi.',
+  'mindset.card.disc15.title':  'Même dans les circonstances difficiles, quelque chose de petit est souvent possible.',
   'mindset.card.disc15.content':
-    'Les excuses soulagent sur le moment. Elles justifient la pause, allègent la pression.\n\nMais avec le temps, elles érodent quelque chose de plus profond : la confiance qu\'on a en soi-même.\n\nLe rythme se renforce quand on commence à se reconnaître dans ses décisions — pas parce que les conditions sont parfaites, mais parce qu\'on se choisit.',
+    'Les vrais obstacles existent. L\'épuisement est réel. Les défis de santé mentale sont réels. Les circonstances de vie — celles qui rendent la constance genuinement difficile — sont réelles. Les reconnaître n\'est pas de l\'évitement. C\'est de l\'honnêteté.\n\nCe qui crée du mouvement, ce n\'est pas de nier ces réalités, mais de trouver ce qui est possible à l\'intérieur. Pas l\'action idéale. Pas la version complète. Juste le prochain pas disponible maintenant, dans ces conditions réelles. Ce retour — aussi petit soit-il — reste un retour.',
 
   'mindset.card.disc16.title':  'Agir depuis ses valeurs, pas seulement depuis ses émotions.',
   'mindset.card.disc16.content':
@@ -5393,7 +5596,7 @@ const fr: TranslationMap = {
 
   'mindset.card.disc36.title':  'Le progrès n\'attend pas les conditions parfaites.',
   'mindset.card.disc36.content':
-    'Les excuses ressemblent à un soulagement sur le moment. Mais avec le temps, elles laissent un poids.\n\nLe rythme ne demande pas des conditions parfaites — il demande qu\'on se charge de ce qu\'on peut faire maintenant.\n\nLe progrès ne dépend pas que tout soit bien en place. Il dépend qu\'on continue à choisir d\'avancer.',
+    'La vie crée rarement des conditions idéales. Il y a des interruptions, de l\'épuisement, des demandes concurrentes, des obstacles inattendus. Le rythme n\'attend pas que tout se règle — il trouve le petit mouvement disponible à l\'intérieur.\n\nCe n\'est pas minimiser les vraies difficultés ou prétendre que les circonstances ne comptent pas. Elles comptent. Mais il y a presque toujours quelque chose — aussi petit soit-il — qui est possible dans les conditions actuelles. Pas la version complète. Pas l\'action idéale. Juste la prochaine chose qui tient dans la réalité d\'aujourd\'hui. Ce pas, même imparfait, reste un vrai mouvement.',
 
   'mindset.card.disc37.title':  'Les grandes transformations se construisent lentement.',
   'mindset.card.disc37.content':
@@ -5975,6 +6178,21 @@ const fr: TranslationMap = {
   'wb.late_night.3':  'Laisse la journée se poser.',
   'wb.late_night.4':  "Le silence aussi, c'est quelque chose.",
 
+  // ── Personal Mantra Echo ──────────────────────────────────────────────────────
+  'mantra.weekly.label': 'UN MOT DE TON ARRIVÉE',
+  'mantra.weekly.v0':    'Quand tu es arrivé, tu as choisi :\n\n"{{mantra}}"\n\nEst-ce qu\'il est apparu quelque part cette semaine ?',
+  'mantra.weekly.v1':    'Tu as choisi le mot :\n\n"{{mantra}}"\n\nQu\'est-ce qu\'il représente pour toi aujourd\'hui ?',
+  'mantra.weekly.v2':    'Il y a quelque temps, tu as choisi :\n\n"{{mantra}}"\n\nEst-ce qu\'il compte encore ?',
+  'mantra.weekly.v3':    'Tu es arrivé en portant :\n\n"{{mantra}}"\n\nEst-ce que quelque chose cette semaine l\'a porté ?',
+  'mantra.weekly.v4':    'Quand tu as commencé, tu as choisi :\n\n"{{mantra}}"\n\nTu le cherches encore ?',
+  'mantra.return.v0':    'Quand tu as commencé, tu as choisi le mot "{{mantra}}".\n\nIl n\'a pas besoin d\'apparaître chaque jour.\n\nMais peut-être qu\'il compte encore.',
+  'mantra.return.v1':    'Quand tu es arrivé, tu as choisi :\n\n"{{mantra}}"\n\nPeut-être qu\'il chemine encore avec toi.',
+  'mantra.return.v2':    'Tu es arrivé en portant :\n\n"{{mantra}}"\n\nCela n\'a pas changé.',
+  'mantra.progress.label': 'UN MOT QUI COMPTAIT',
+  'mantra.progress.v0': '"{{mantra}}"\n\nTu as choisi cela en arrivant.\n\nEst-ce que ça compte encore pour toi ?',
+  'mantra.progress.v1': 'En arrivant ici, tu as apporté un mot :\n\n"{{mantra}}"\n\nIl n\'est allé nulle part.',
+  'mantra.progress.v2': '"{{mantra}}"\n\nTu as choisi cela il y a quelque temps.\n\nEst-ce que tu le reconnais encore ?',
+
   ...psFr,
 };
 
@@ -6544,25 +6762,25 @@ const de: TranslationMap = {
   'mindset.cat.Momentum': 'Schwung',
   'mindset.cat.Rhythm':   'Rhythmus',
   'mindset.card.m1.title':    'Eine Sache nach der anderen.',
-  'mindset.card.m2.title':    'Die 2-Minuten-Regel',
-  'mindset.card.m3.title':    'Vertrauen durch Beweise',
-  'mindset.card.m4.title':    'Die MIT-Methode',
-  'mindset.card.m5.title':    'Emotionen als Daten',
-  'mindset.card.m6.title':    'Die Aufmerksamkeitsökonomie',
-  'mindset.card.m7.title':    'Der 90-Minuten-Arbeitsblock',
-  'mindset.card.m8.title':    'Identitätsbasierte Gewohnheiten',
-  'mindset.card.m9.title':    'Ablehnung als Umleitung',
-  'mindset.card.m10.title':   'Time-Blocking meistern',
-  'mindset.card.m11.title':   'Der Mut, unbeliebt zu sein',
+  'mindset.card.m2.title':    'Kleine Aufgaben werden schwerer, wenn man sie aufschiebt.',
+  'mindset.card.m3.title':    'Vertrauen entsteht durch Handeln, nicht durch Warten.',
+  'mindset.card.m4.title':    'Was würde diesen Tag vollständig fühlen lassen?',
+  'mindset.card.m5.title':    'Gefühle sind Information.',
+  'mindset.card.m6.title':    'Deine Aufmerksamkeit ist es, was sie wollen.',
+  'mindset.card.m7.title':    'Dein Gehirn wurde nicht für ununterbrochene Konzentration gemacht.',
+  'mindset.card.m8.title':    'Du wirst, was du regelmäßig tust.',
+  'mindset.card.m9.title':    'Eine Ablehnung bedeutet selten das, was sie zunächst zu bedeuten scheint.',
+  'mindset.card.m10.title':   'Geschützte Stunden verändern das Gefühl des Tages.',
+  'mindset.card.m11.title':   'Deine Entscheidungen brauchen nicht die Zustimmung aller.',
   'mindset.card.m12.title':   'Langeweile zurückgewinnen',
-  'mindset.card.m13.title':   'Das Eine-Ding-Prinzip',
+  'mindset.card.m13.title':   'Eine Sache, die alles andere leichter macht.',
   'mindset.card.m14.title':   'Nie zweimal in Folge auslassen',
-  'mindset.card.m15.title':   'Kompetenz schafft Vertrauen',
-  'mindset.card.m16.title':   'Der wöchentliche Rückblick',
+  'mindset.card.m15.title':   'Selbstvertrauen entsteht durch Handeln, nicht durch Warten.',
+  'mindset.card.m16.title':   'Ein ruhiger Blick auf die Woche.',
   'mindset.card.m17.title':   'Die Praxis des Loslassens',
-  'mindset.card.m18.title':   'Digitaler Minimalismus',
-  'mindset.card.m19.title':   'Tiefes Arbeiten',
-  'mindset.card.m20.title':   'Das Stockdale-Paradox',
+  'mindset.card.m18.title':   'Bewusst genutzte Technologie gibt dir deine Aufmerksamkeit zurück.',
+  'mindset.card.m19.title':   'Eine Sache, ohne Unterbrechung.',
+  'mindset.card.m20.title':   'Hoffnung ohne Verdrängung.',
   'mindset.card.emo1.title':  'Du darfst neu anfangen',
   'mindset.card.emo2.title':  'Ruhe ist keine Schwäche',
   'mindset.card.disc1.title': 'Dein Gehirn vertraut dem, was du wiederholst.',
@@ -6637,65 +6855,65 @@ const de: TranslationMap = {
 
   // ── Mindset disc content (disc3 onwards) — Deutsch ────────────────────────────
   'mindset.card.disc1.content':
-    'Beständigkeit ist kein Bestrafungswerkzeug — sie ist der Beweis, dass du deine Zukunft für schützenswert hältst. Jedes Versprechen, das du dir selbst hältst, stärkt dein Selbstbild und das Vertrauen in dich.\n\nMenschen mit Beständigkeit sind nicht unbedingt motivierter — sie handeln nach ihren Prioritäten statt nach kurzfristigen Gefühlen. Echtes Selbstvertrauen entsteht, wenn du weißt, dass du dich auf dich verlassen kannst. Beständigkeit baut dieses Vertrauen täglich auf.',
+    'Für dich da zu sein bedeutet nicht, etwas beweisen zu müssen — es geht darum, nach und nach eine Beziehung zu dir selbst aufzubauen, auf die du zählen kannst. Jedes Mal, wenn du zu etwas zurückkehrst, das dir wichtig ist, auch nach einer schwierigen Woche, wird dieses Vertrauen tiefer.\n\nDu musst nicht vollkommen konsequent sein, um das zu spüren. Rhythmus bedeutet nicht, nie aufzuhören — er bedeutet zu lernen, dass du wieder anfangen kannst. Und jede Rückkehr, so still sie auch sein mag, ist bereits eine Form von Selbstachtung.',
 
   'mindset.card.disc2.content':
-    'Motivation ist emotional und unberechenbar. Manchmal erscheint sie von selbst, manchmal verschwindet sie völlig. Beständigkeit ist das, was Fortschritt ermöglicht, auch wenn die Gefühle schwanken.\n\nErfolgreiche Menschen verlassen sich nicht allein auf Inspiration. Sie schaffen Systeme und Gewohnheiten, die unabhängig von der Stimmung weiterlaufen.',
+    'Motivation kommt und geht — und das ist völlig normal. An manchen Tagen ist sie klar und energiegeladen da. An anderen fehlt sie einfach. Was die Dinge am Laufen hält, ist nicht das Gefühl der Motivation, sondern die kleinen Handlungen, die auch in ihrer Abwesenheit geschehen.\n\nEinfache Routinen und sanfte Gewohnheiten tragen dich durch die Tage, an denen Inspiration ausbleibt. Fortschritt erfordert kein Bereit-Sein — er erfordert den nächstmöglichen Schritt, wie auch immer der heute aussieht.',
 
   'mindset.card.disc3.content':
-    'Das Leben verändert sich selten durch eine einzige große Entscheidung. Es verändert sich durch kleine, beständig wiederholte Entscheidungen. Beständigkeit entsteht in gewöhnlichen Momenten — aufstehen wie geplant, beenden was begonnen wurde, Ablenkungen widerstehen.\n\nKleine beständige Handlungen summieren sich zu großen Veränderungen. Deine Gewohnheiten werden still zu deiner Zukunft.',
+    'Das Leben verändert sich selten durch dramatische Momente. Es verändert sich durch kleine Entscheidungen, die mit der Zeit wiederholt werden — die Art, die einzeln unbedeutend erscheinen, aber zusammen etwas Echtes ergeben. Die gewöhnlichen Momente zählen: wozu du zurückkehrst, womit du bleibst, was du sanft weitermachst, auch wenn es nicht aufregend ist.\n\nDu musst das Ergebnis jetzt noch nicht klar sehen. Was du beständig tust, Tag für Tag, prägt still, was als Nächstes kommt.',
 
-  'mindset.card.disc4.title':  'Komfort hält uns oft still, ohne dass wir es merken.',
+  'mindset.card.disc4.title':  'Ruhe stellt wieder her. Aber manchmal wird Stillstand zum Warten.',
   'mindset.card.disc4.content':
-    'Das Gehirn sucht von Natur aus Komfort, Bequemlichkeit und sofortige Freude. Aber Wachstum erfordert meist vorübergehende Unbequemlichkeit. Beständigkeit bedeutet, den langfristigen Nutzen über kurzfristige Leichtigkeit zu stellen.\n\nJedes Mal, wenn du der leichteren Option widerstehst, stärkst du deine mentale Resilienz. Komfort kann sich sicher anfühlen, während er dich still festhält.',
+    'Es gibt zwei Arten von Stillstand. Einer stellt wieder her — er gibt dem Nervensystem Raum, sich zu verlangsamen, sich zu erholen und mit mehr Kapazität zurückzukehren. Der andere wird langsam zu einem Muster des Wartens: auf den richtigen Moment, das richtige Gefühl, die richtigen Bedingungen, die nie ganz so eintreffen.\n\nBeide fühlen sich von innen ähnlich an, und deshalb ist die Unterscheidung wichtig. Nicht um dich dafür zu verurteilen, dass du Ruhe brauchst — dieses Bedürfnis ist real und berechtigt. Sondern um mit Sanftheit wahrzunehmen, in welcher Art du dich befunden hast. Eine ist Erholung. Die andere ist der Beginn einer Distanz zu dem, was du eigentlich tun möchtest.',
 
-  'mindset.card.disc5.title':  'Beständigkeit schafft Freiheit — keine Enge.',
+  'mindset.card.disc5.title':  'Ein einfacher Rhythmus kann sich wie Erleichterung anfühlen.',
   'mindset.card.disc5.content':
-    'Viele glauben, Beständigkeit schränke Freiheit ein — aber das Gegenteil ist oft wahr. Mangel an Beständigkeit schafft Chaos, Stress, Schulden, Aufschub und Bedauern. Beständigkeit schafft Struktur, Stabilität und Kontrolle über dein Leben.\n\nJe mehr du deine Gewohnheiten meisterst, desto weniger bestimmen Impulse über dich. Echte Freiheit entsteht durch Selbstmeisterschaft.',
+    'Einen gewissen Rhythmus in den Tagen zu haben — auch einen lockeren — verändert, wie der Geist durch sie hindurchgeht. Wenn es eine sanfte Struktur gibt, muss man nicht jeden Morgen alles von Grund auf herausfinden. Die Energie, die man für das Entscheiden aufgewendet hätte, fließt ins tatsächliche Tun. Das ist eine stille Form der Freiheit: weniger Chaos, weniger mentale Reibung, mehr Raum für das, was wichtig ist.\n\nEs geht nicht darum, jede Stunde zu kontrollieren oder sich selbst zu beherrschen. Es geht darum, den Tagen eine Form zu geben, die sie mehr wie deine eigenen anfühlen lässt. Eine einfache Routine ist kein Käfig — für viele Menschen ist es das, was den Rest des Lebens handhabbarer macht.',
 
-  'mindset.card.disc6.title':  'Handeln, bevor man sich bereit fühlt, erzeugt auch Rhythmus.',
+  'mindset.card.disc6.title':  'Klein anfangen ist immer noch anfangen.',
   'mindset.card.disc6.content':
     'Auf das richtige Gefühl zu warten schafft oft endlose Verzögerung. Beständigkeit beginnt, wenn du handelst, bevor deine Emotionen vollständig mitmachen. Sobald Bewegung entsteht, lässt Widerstand meist nach.\n\nDer schwerste Teil ist oft der Beginn. Handeln erzeugt Schwung schneller als jedes Nachdenken.',
 
-  'mindset.card.disc7.title':  'Beständigkeit entsteht auch an schwierigen Tagen.',
+  'mindset.card.disc7.title':  'Schwierige Tage gehören dazu — sie beweisen nicht, dass du scheiterst.',
   'mindset.card.disc7.content':
-    'Jeder kann beständig sein, wenn das Leben leicht ist. Echte Beständigkeit zeigt sich in stressigen, emotionalen oder unbequemen Momenten. Schwierige Tage sind der Ort, wo mentale Stärke entsteht.\n\nJedes Mal, wenn du trotz Unbehagen weitermachst, wächst deine Resilienz. Beständigkeit in harten Momenten verändert Identität.',
+    'Schwierige Tage bedeuten nicht, dass der Rhythmus gebrochen ist. Sie sind einfach Teil davon, wie Rhythmus wirklich aussieht — nicht die polierte Version, sondern die echte. Dass es sich an manchen Tagen schwerer anfühlt, bedeutet nicht, dass du etwas falsch machst. Es bedeutet, dass du menschlich bist und ein echtes Leben lebst.\n\nWas du aus einer schwierigen Periode mitnimmst — auch wenn es nur die Entscheidung ist zurückzukehren — ist nicht nichts. Schwierige Tage sind nicht der Test, ob du Rhythmus hast. Es ist dort, wo Rhythmus lernt, ehrlich zu sein.',
 
-  'mindset.card.disc8.title':  'Deine Zukunft wird durch das geformt, was du heute täglich tust.',
+  'mindset.card.disc8.title':  'Was du jeden Tag tust, summiert sich im Stillen.',
   'mindset.card.disc8.content':
-    'Die zukünftige Version deines Lebens wird durch deine heutigen Routinen gestaltet. Beständigkeit ist keine dramatische Transformation über Nacht — es ist wiederholtes Verhalten, das lange genug geübt wird, um Wandel zu schaffen.\n\nDeine Routinen stimmen beständig dafür ab, wer du wirst. Kleine Handlungen zählen mehr, als die meisten Menschen ahnen.',
+    'Was du beständig tust, hinterlässt eine Spur. Nicht auf dramatische oder unmittelbare Weise — aber nach und nach entstehen Muster. Das Leben, das du jetzt lebst, wird durch die gewöhnlichen Dinge geprägt, zu denen du immer wieder zurückkehrst. Kleine Handlungen haben mehr Gewicht, als sie im Moment zu haben scheinen.\n\nDas soll keinen Druck erzeugen. Es ist einfach eine stille Wahrheit: Was du regelmäßig übst, neigt dazu, realer zu werden. Was zählt, ist weniger Perfektion und mehr das, was du sanft immer wieder wählst.',
 
-  'mindset.card.disc9.title':  'Beständigkeit reduziert innere Verhandlungen.',
+  'mindset.card.disc9.title':  'Einfache Routinen beantworten Fragen, die der Geist sonst wieder stellen müsste.',
   'mindset.card.disc9.content':
-    'Unbeständige Geister verhandeln ständig mit sich selbst. „Vielleicht später." „Nur diesmal." „Morgen wird besser." Beständigkeit reduziert diese inneren Debatten, indem sie klare Standards und Routinen schafft.\n\nJe weniger du emotional mit dir verhandelst, desto mehr Energie bleibt übrig. Struktur schützt Beständigkeit.',
+    'Jede Entscheidung kostet etwas — Aufmerksamkeit, Energie, ein kleines Stück mentale Kapazität. Wenn du dieselben Dinge immer wieder herausfinden musst — wann du anfangen sollst, ob du weitermachen sollst — summieren sich diese Kosten. Das ist eine der stillsten Arten, wie Energie verbraucht wird, noch bevor man begonnen hat.\n\nEinfache Routinen helfen dabei. Nicht indem sie Zweifel eliminieren oder das natürliche Abwägen des Geistes unterdrücken, sondern indem sie einige wiederkehrende Fragen im Voraus beantworten. Wenn der Rhythmus etabliert ist, verbringst du weniger Zeit damit, mit dir selbst zu verhandeln, ob du anfangen willst. Die Antwort ist bereits da.',
 
-  'mindset.card.disc10.title': 'Selbstkontrolle ist eine stille Form innerer Kraft.',
+  'mindset.card.disc10.title': 'Die eigene Aufmerksamkeit zu lenken ist eine Praxis, kein Persönlichkeitsmerkmal.',
   'mindset.card.disc10.content':
-    'In einer Welt voller Ablenkungen und sofortiger Befriedigung ist Selbstkontrolle außerordentlich wertvoll. Beständigkeit ermöglicht es dir, Impulsen zu widerstehen, die deine langfristigen Ziele schwächen.\n\nJeder Moment der Zurückhaltung stärkt deine mentale Souveränität über dich selbst. Die Fähigkeit, deine Handlungen zu steuern, schafft Stabilität und innere Ruhe.',
+    'Wir leben in einer Umgebung, die bewusst darauf ausgelegt ist, die Aufmerksamkeit in viele Richtungen zu ziehen. Jede App, jeder Feed, jede Benachrichtigung ist optimiert, um den Fokus einzufangen und zu halten. Damit umzugehen, ohne den Blick auf das zu verlieren, was einem wirklich wichtig ist, ist nicht übermenschlich — es ist eine Fähigkeit, die durch Wiederholung entwickelt wird, wie jede andere auch.\n\nAn den Tagen, an denen es funktioniert — wenn du die Aufmerksamkeit auf etwas Bedeutungsvolles lenkst statt einfach zu driften — verändert sich etwas. Nicht weil du dich gemeistert hast, sondern weil bewusster Fokus sich anders anfühlt als zerstreute Reaktivität.',
 
   'mindset.card.disc11.title': 'Beständigkeit ist Wiederholung — nicht Intensität.',
   'mindset.card.disc11.content':
     'Extreme Anstrengung über wenige Tage verändert selten ein Leben. Nachhaltige Beständigkeit entsteht durch beständige Wiederholung über lange Zeiträume. Kleine täglich wiederholte Handlungen schaffen stärkere Ergebnisse als gelegentliche Motivationsausbrüche.\n\nLangfristiger Erfolg wird meist still und langsam aufgebaut. Beständigkeit potenziert sich kraftvoll über die Zeit.',
 
-  'mindset.card.disc12.title': 'Beständigkeit schützt das, was dir wirklich wichtig ist.',
+  'mindset.card.disc12.title': 'Kleine, regelmäßige Rückkehren halten etwas am Leben.',
   'mindset.card.disc12.content':
-    'Ohne Beständigkeit bleiben Ziele Ideen statt Wirklichkeit. Begeisterung verblasst schnell, aber beständiges Handeln hält Fortschritt am Leben. Fokussierte Bemühung schützt Träume vor Ablenkung und Aufschub.\n\nBeständigkeit ist die Brücke zwischen Absicht und Verwirklichung. Ziele brauchen Struktur, um zu überleben.',
+    'Die Begeisterung für etwas, das dir am Herzen liegt, hält nicht ewig — und das ist kein Zeichen dafür, dass es aufgehört hat zu zählen. Es ist einfach, wie Energie funktioniert. Was etwas über den ersten Funken hinaus am Leben hält, ist nicht anhaltende Aufregung. Es ist etwas Kleineres, Gewöhnlicheres: zurückzukehren, wenn du kannst, irgendetwas zu tun — auch an den Tagen, an denen es sich nicht bedeutsam anfühlt.\n\nZiele sind keine fragilen Strukturen, die ohne ständige Bemühung zusammenbrechen. Sie sind Richtungen, die du immer wieder wählst, in welcher Form auch immer dir gerade zur Verfügung steht. Was du immer wieder ansteuerst, hat eine Art, real zu bleiben.',
 
-  'mindset.card.disc13.title': 'Vorübergehendes Loslassen schafft dauerhafte Geschenke.',
+  'mindset.card.disc13.title': 'Nicht alles Wertvolle fühlt sich lohnend an, während es passiert.',
   'mindset.card.disc13.content':
-    'Beständigkeit erfordert oft, sofortige Freude für zukünftigen Gewinn aufzugeben. Dieses Opfer mag im Moment unangenehm sein, aber die langfristigen Belohnungen sind meist weit größer.\n\nJede beständige Entscheidung ist eine Investition in dein zukünftiges Ich. Kurzfristiges Unbehagen kann zu lebenslanger Verbesserung führen.',
+    'Manches, was es wert ist, getan zu werden, fühlt sich in Echtzeit einfach nicht aufregend an. Nicht weil es heroische Opfer erfordert, sondern weil Tiefe und Wiederholung nicht denselben unmittelbaren Schub haben wie Neuheit. Die routinemäßige Praxis, die tägliche Rückkehr, die unscheinbare Phase — diese erscheinen oft klein, während sie gerade passieren.\n\nDas ist etwas anderes als Leiden für etwas. Es geht mehr darum zu akzeptieren, dass manche Dinge in einem langsameren Zeitrahmen entstehen, und dass das Fehlen unmittelbarer Belohnung nicht bedeutet, dass die Bemühung falsch ist.',
 
   'mindset.card.disc14.title': 'Was du wiederholst, sagt dir auch, wer du bist.',
   'mindset.card.disc14.content':
     'Jede wiederholte Handlung verstärkt dein Selbstbild. Wenn du beständig durchhältst, beginnst du dich als verlässlich, fähig und beständig zu sehen. Identität wächst aus Verhalten, nicht allein aus Absichten.\n\nDeine Handlungen lehren deinem Gehirn, wer du bist. Beständigkeit formt das Selbstbild.',
 
-  'mindset.card.disc15.title': 'Ausreden erschöpfen die innere Kraft.',
+  'mindset.card.disc15.title': 'Auch in schwierigen Umständen ist meistens etwas Kleines möglich.',
   'mindset.card.disc15.content':
-    'Ausreden schützen kurzfristig Komfort, schwächen aber langfristig das Selbstrespekt. Beständigkeit wächst, wenn du aufhörst, Umständen vollständige Kontrolle über deine Handlungen zu geben.\n\nFortschritt erfordert selten Perfektion — er erfordert Verantwortung. Eigentümerschaft schafft innere Kraft. Ausreden schaffen Stillstand.',
+    'Echte Hindernisse existieren. Erschöpfung ist real. Herausforderungen der psychischen Gesundheit sind real. Lebensumstände — die, die Konsequenz genuinement schwierig machen — sind real. Sie anzuerkennen ist keine Vermeidung. Es ist Ehrlichkeit.\n\nWas Bewegung schafft, ist nicht das Leugnen dieser Realitäten, sondern das Finden dessen, was innerhalb von ihnen möglich ist. Nicht die ideale Handlung. Nicht die vollständige Version. Nur der kleinste verfügbare Schritt jetzt, in diesen tatsächlichen Bedingungen. Diese Rückkehr — so klein sie auch ist — ist immer noch eine Rückkehr.',
 
-  'mindset.card.disc16.title': 'Beständigkeit ist auch emotionale Steuerung.',
+  'mindset.card.disc16.title': 'Aus deinen Werten heraus handeln — auch an schwierigeren Tagen.',
   'mindset.card.disc16.content':
-    'Viele Menschen bleiben nicht beständig, weil Emotionen ständig ihre Entscheidungen lenken. Beständigkeit bedeutet, nach Werten statt nach flüchtigen Gefühlen zu handeln.\n\nEmotionales Unbehagen bedeutet nicht immer, dass du aufhören solltest. Ruhige Selbstkontrolle schützt langfristigen Fortschritt. Stabilität verbessert Leistung.',
+    'Emotionen sind real — sie verdienen Aufmerksamkeit. Aber sie müssen nicht immer das letzte Wort haben. An den Tagen, an denen du keine Lust hast weiterzumachen, können deine Werte stattdessen als stiller Leitfaden dienen. Nicht als Forderung, durchzuhalten, sondern als Erinnerung an das, was dir tatsächlich wichtig ist.\n\nAus einem Ort der Klarheit heraus zu handeln, statt nur aus der Energie des Moments, geht nicht darum, zu unterdrücken, was du fühlst — es geht darum, etwas Stabiles zu haben, zu dem du zurückkehren kannst, wenn sich die Emotionen verschieben.',
 
   'mindset.card.disc17.title': 'Beständigkeit baut Selbstvertrauen still auf.',
   'mindset.card.disc17.content':
@@ -6705,29 +6923,29 @@ const de: TranslationMap = {
   'mindset.card.disc18.content':
     'Desorganisation schafft mentale Überforderung. Beständigkeit bringt Ordnung, Klarheit und Vorhersehbarkeit in den Alltag. Strukturierte Routinen reduzieren Entscheidungsermüdung und mentales Chaos.\n\nWenn Gewohnheiten automatisch werden, verschwendet das Gehirn weniger Energie damit, Handlungen zu widerstehen. Einfachheit unterstützt Beständigkeit.',
 
-  'mindset.card.disc19.title': 'Beständigkeit ist auch, das Wichtigste zu wählen.',
+  'mindset.card.disc19.title': 'Klarheit darüber, was wichtig ist, macht den nächsten Schritt leichter.',
   'mindset.card.disc19.content':
-    'Jede beständige Handlung ist letztlich eine Entscheidung über Prioritäten. Du wählst langfristigen Sinn über vorübergehende Ablenkung. Beständigkeit wird leichter, wenn deine Werte klar sind.\n\nStarke Prioritäten reduzieren innere Konflikte. Klarheit stärkt Engagement.',
+    'Wenn du weißt, was dir wirklich wichtig ist, werden Entscheidungen einfacher. Nicht weil das Leben leichter wird, sondern weil du etwas Echtes hast, worauf du dich orientieren kannst. Ein klares Gefühl für Prioritäten schafft einen Faden, dem du auch an desorientierenden Tagen folgen kannst.\n\nDu musst nicht perfekt organisiert sein — du musst wissen, wozu du zurückkehrst. Klarheit ist kein Ziel. Es ist etwas, das sich still aufbaut, während du immer wieder zu dem zurückkehrst, was dir wirklich wichtig ist.',
 
-  'mindset.card.disc20.title': 'Verzögerte Freude verändert Leben.',
+  'mindset.card.disc20.title': 'Geduld mit dem, was du aufbaust, verändert, was daraus wird.',
   'mindset.card.disc20.content':
-    'Die Fähigkeit, sofortige Freude für zukünftige Belohnung aufzuschieben, ist einer der stärksten Prädiktoren für langfristigen Erfolg. Beständigkeit stärkt diese Fähigkeit über die Zeit.\n\nSofortige Befriedigung fühlt sich oft befriedigend an, schafft aber schwache langfristige Ergebnisse. Geduld und Zurückhaltung schaffen stärkere Zukünfte. Langfristiges Denken verändert Entscheidungen.',
+    'Manche Dinge enthüllen sich langsam. Nicht weil sie Opfer erfordern, sondern weil Tiefe einfach in einem längeren Zeitrahmen arbeitet als Neuheit. Die Fähigkeit, bei etwas zu bleiben — immer wieder zurückzukehren, wenn keine unmittelbare Belohnung sichtbar ist — neigt dazu, andere Ergebnisse zu produzieren als Dringlichkeit.\n\nDas bedeutet nicht, dir Ruhe oder Freude zu verweigern. Das sind echte Bedürfnisse und sie gehören zu einem nachhaltigen Rhythmus. Es geht mehr darum, eine Art Geduld zu entwickeln, die keinen unmittelbaren Beweis erfordert. Ein Vertrauen, dass das, was du tust, Wert hat, auch wenn du noch nicht sehen kannst, wohin es führt.',
 
   'mindset.card.disc21.title': 'Beständigkeit braucht auch Grenzen, die sie schützen.',
   'mindset.card.disc21.content':
     'Beständigkeit wird schwierig, wenn alles unbegrenzten Zugang zu deiner Aufmerksamkeit hat. Beständigkeit bedeutet oft, Grenzen gegenüber Ablenkungen, Technologie, Menschen und ungesunden Gewohnheiten zu setzen.\n\nDeine Prioritäten zu schützen bedeutet, deine Zukunft zu schützen. Grenzen schaffen mentale Klarheit und innere Kontrolle.',
 
-  'mindset.card.disc22.title': 'Schwierige Entscheidungen bauen auch etwas in dir auf.',
+  'mindset.card.disc22.title': 'Schwierige Entscheidungen hinterlassen etwas — nicht immer sichtbar, aber real.',
   'mindset.card.disc22.content':
-    'Leichte Entscheidungen entwickeln selten Resilienz. Schwierige Entscheidungen bauen Ausdauer, Weisheit und Charakter auf. Beständigkeit lehrt dich, Unbehagen zu tolerieren, ohne sofort zu fliehen.\n\nMentale Stärke wächst durch Herausforderung. Wachstum versteckt sich meist in der Unbequemlichkeit.',
+    'Etwas genuinement Schwieriges durchzumachen — den ehrlicheren Weg zu wählen, bei etwas Unbequemem zu bleiben statt sofort auszuweichen — hinterlässt eine Spur. Nicht dramatisch. Nicht als Verwandlung in eine "bessere Version" von irgendetwas. Aber in der stillen Veränderung, wie du dich danach trägst.\n\nDie Erfahrung, etwas Schwierigem begegnet zu sein und nicht vollständig geflohen zu sein, wird Teil davon, wie du dich selbst verstehst. Du weißt jetzt etwas, das du vorher nicht wusstest — über das, was du tolerieren kannst. Dieses Wissen kündigt sich nicht immer an. Aber es ist da.',
 
   'mindset.card.disc23.title': 'Beständigkeit schafft Stabilität, wenn alles sich bewegt.',
   'mindset.card.disc23.content':
     'Das Leben wird immer Unsicherheit, Stress und emotionale Schwankungen enthalten. Beständigkeit schafft innere Stabilität, wenn äußere Situationen unberechenbar sind. Starke Routinen bieten Halt in schwierigen Zeiten.\n\nBeständige Gewohnheiten schaffen emotionale Struktur. Stabilität schützt Schwung.',
 
-  'mindset.card.disc24.title': 'Jede Gewohnheit baut entweder auf oder schwächt ab.',
+  'mindset.card.disc24.title': 'Was du wiederholst, hat Gewicht. Auch das Stille.',
   'mindset.card.disc24.content':
-    'Kein wiederholtes Verhalten ist neutral. Jede Gewohnheit stärkt entweder deine Zukunft oder schwächt sie still ab. Beständigkeit bedeutet, bewusster zu werden über das, was du wiederholt in dein Leben lässt.\n\nWiederholung formt Ergebnisse. Deine täglichen Muster zählen tief.',
+    'Was du beständig tust, neigt dazu, sich anzuhäufen — in die eine oder andere Richtung. Das soll keinen Druck erzeugen. So funktioniert Wiederholung eben: Dinge wachsen in die Richtung, in der sie geübt werden.\n\nDie Einladung ist nicht, bei jeder Gewohnheit perfekt zu sein. Es ist, ein kleines bisschen bewusster zu werden für das, wozu du jeden Tag still zurückkehrst, und ob es dich in eine Richtung bewegt, die sich wirklich richtig anfühlt.',
 
   'mindset.card.disc25.title': 'Vollenden, was begonnen wurde, formt auch Charakter.',
   'mindset.card.disc25.content':
@@ -6737,15 +6955,15 @@ const de: TranslationMap = {
   'mindset.card.disc26.content':
     'Erholung ist nicht der Feind von Beständigkeit. Burnout schwächt Beständigkeit und mentale Klarheit. Beständige Menschen verstehen die Wichtigkeit von Erholung, Schlaf und Balance.\n\nNachhaltige Leistung erfordert echte Wiederherstellung. Langfristige Beständigkeit hängt von Energiemanagement ab.',
 
-  'mindset.card.disc27.title': 'Beständigkeit schützt auch vor dem Bedauern.',
+  'mindset.card.disc27.title': 'Kleine, beständige Schritte bringen mehr Ruhe als Warten.',
   'mindset.card.disc27.content':
-    'Die meisten Bedauern kommen vom Vermeiden schwieriger, aber notwendiger Handlungen. Beständigkeit hilft dir, Entscheidungen zu treffen, die dein zukünftiges Ich schätzen wird. Vorübergehendes Unbehagen verhindert oft langfristige Frustration.\n\nBeständige Bemühung schützt den inneren Frieden. Handeln reduziert Bedauern.',
+    'Es gibt etwas Beruhigendes darin, einen kleinen Schritt in die Richtung dessen zu machen, was wichtig ist, auch wenn er unvollkommen ist. Nicht weil er alles löst, sondern weil er Bewegung schafft, wo Stillstand begonnen hatte, sich wie Druck anzufühlen.\n\nBeständige Bemühung — wie bescheiden sie auch sein mag — neigt dazu, mehr stille Erleichterung zu bringen als das Stehenbleiben. Du musst keine perfekten Entscheidungen treffen. Du musst weiterhin sanfte treffen, die dich irgendwohin Echtes bewegen.',
 
   'mindset.card.disc28.title': 'Du wirst zu dem, was du beständig übst.',
   'mindset.card.disc28.content':
     'Dein Gehirn passt sich wiederholtem Verhalten an. Wenn du beständig Ablenkung, Vermeidung und Unbeständigkeit übst, stärken sich diese Muster. Aber wenn du beständig Fokus und Durchhaltevermögen übst, werden auch diese stärker.\n\nWiederholung baut Identität. Übung formt Charakter.',
 
-  'mindset.card.disc29.title': 'Dir selbst Versprechen halten baut inneres Vertrauen wieder auf.',
+  'mindset.card.disc29.title': 'Zurückkehren ist bereits ein gehaltenes Versprechen.',
   'mindset.card.disc29.content':
     'Gebrochene Selbstversprechen schwächen still Selbstvertrauen und Vertrauen in sich. Beständigkeit baut diese Beziehung zu sich selbst wieder auf. Jede Verpflichtung, die du ehrst, stärkt Selbstrespekt.\n\nZuverlässigkeit dir selbst gegenüber zählt tief. Inneres Vertrauen verändert, wie du durchs Leben gehst.',
 
@@ -6753,21 +6971,21 @@ const de: TranslationMap = {
   'mindset.card.disc30.content':
     'Die meisten Menschen unterschätzen, wie stark ihre tägliche Beständigkeit ihre Zukunft beeinflusst. Die kleinen Entscheidungen, die du heute wiederholst, bestimmen still die Chancen, das Selbstvertrauen, die Gesundheit und die Stabilität, die du später erlebst.\n\nBeständigkeit bedeutet nicht, jeden Moment perfekt zu kontrollieren. Es bedeutet, beständig in die richtige Richtung zu gehen.',
 
-  'mindset.card.disc31.title': 'Es trotzdem tun ist auch eine Form von Beständigkeit.',
+  'mindset.card.disc31.title': 'An Tagen, an denen das Anfangen schwer fällt — zählt sogar ein kleiner Schritt.',
   'mindset.card.disc31.content':
-    'Es wird Tage geben, an denen du dich müde, uninspiriert, abgelenkt oder emotional ausgelaugt fühlst. Beständigkeit ist die Fähigkeit, trotz dieser Gefühle weiterzumachen, statt auf perfekte Bedingungen zu warten.\n\nFortschritt wird oft in Momenten aufgebaut, in denen Motivation fehlt. Die Menschen, die ihr Leben verändern, sind meist jene, die weitergehen, wenn es leichter wäre, aufzuhören.',
+    'Manche Tage sind genuinement schwierig. Du fühlst dich müde, unmotiviert oder emotional distanziert von den Dingen, die sich normalerweise bedeutsam anfühlen. An diesen Tagen ist der Maßstab nicht Perfektion — es ist Präsenz. Ein kleiner Schritt. In welcher Form auch immer dir gerade zur Verfügung steht.\n\nFortschritt erfordert keine guten Tage. Er bittet nur, dass du an schwierigeren Tagen so zurückkehrst, wie du kannst. Und diese Rückkehr — so still sie auch sein mag — ist genug, um den Rhythmus am Leben zu halten.',
 
-  'mindset.card.disc32.title': 'Was du beständig tolerierst, formt auch dich.',
+  'mindset.card.disc32.title': 'Wenn du weißt, was dir wichtig ist, werden kleine Entscheidungen leichter.',
   'mindset.card.disc32.content':
-    'Beständigkeit beginnt mit persönlichen Standards. Was du beständig tolerierst, wird zu deiner Normalität. Wenn deine Standards steigen, beginnen sich deine Handlungen natürlich zu verändern.\n\nBeständige Menschen entscheiden im Voraus, wie sie leben möchten, statt emotional im Moment zu reagieren. Starke Standards schaffen stärkere Leben.',
+    'Was du für wichtig hältst, prägt still, was du wählst. Nicht durch starre Kontrolle, sondern dadurch, dass du einen Sinn für Richtung hast, zu dem du zurückkehren kannst, wenn die Dinge unklar werden. Wenn deine Werte definiert sind — auch wenn locker — schaffen sie einen Rahmen für deine täglichen Entscheidungen.\n\nDu musst nicht alles im Voraus entscheiden, und du musst deine Emotionen nicht unterdrücken, um Standards zu haben. Du musst nur, mehr oder weniger, wissen, was wichtig genug ist, um weiterhin zu wählen.',
 
-  'mindset.card.disc33.title': 'Beständigkeit reconnects dich mit dem, was wirklich wichtig ist.',
+  'mindset.card.disc33.title': 'In schwierigen Momenten schafft das Verbinden mit dem, was wichtig ist, einen Weg zurück.',
   'mindset.card.disc33.content':
-    'Impulse sind vorübergehend, aber Konsequenzen halten oft viel länger an. Beständigkeit hilft dir, dich mit deinen tieferen Prioritäten zu verbinden, bevor du Entscheidungen triffst. In schwierigen Momenten schafft die Erinnerung an deine größeren Ziele Klarheit.\n\nVorübergehende Emotionen sollten nicht mehr Autorität haben als deine langfristige Vision. Beständigkeit schützt, was am meisten zählt.',
+    'Wenn sich die Dinge zerstreut oder schwer anfühlen, ist da etwas Stabilisierendes daran, zu dem zurückzukehren, was dir wirklich wichtig ist — nicht als Forderung zu performen, sondern als Anker. Impulse und schwierige Emotionen sind real und tragen Informationen, die es wert sind, gehört zu werden.\n\nAber sie müssen nicht immer jede Entscheidung lenken. Rhythmus, in seiner sanftesten Form, ist die stille Gewohnheit, sich daran zu erinnern, worauf du ausgerichtet bist, auch wenn der Tag dich davon weggezogen hat. Zu dieser Klarheit zurückzukehren ist bereits eine bedeutungsvolle Handlung.',
 
-  'mindset.card.disc34.title': 'Mentale Stärke entsteht in der Wiederholung.',
+  'mindset.card.disc34.title': 'Je öfter du zurückkehrst, desto vertrauter wird der Weg.',
   'mindset.card.disc34.content':
-    'Mentale Stärke wird nicht durch gelegentliche Anstrengung aufgebaut. Sie entsteht durch wiederholte Momente der Beständigkeit über die Zeit. Jede schwierige Handlung, die du abschließt, stärkt deine Resilienz ein kleines bisschen mehr.\n\nBeständigkeit wird leichter, je öfter du sie übst. Wiederholung trainiert den Geist, Unbehagen ruhig zu tolerieren.',
+    'Rhythmus entsteht nicht durch dramatische Anstrengung. Er wächst durch Wiederholung — dadurch, dass man oft genug zurückkommt, dass sich der Weg vertraut anfühlt. Was früher erhebliche Mühe zum Beginnen erforderte, fragt mit der Zeit weniger von dir. Nicht weil es mühelos wird, sondern weil du vertrauter damit wirst.\n\nJede Rückkehr, auch an den Tagen, an denen es schwerer erscheint, macht die nächste ein kleines bisschen leichter. So funktioniert Konsequenz tatsächlich: still, durch Anhäufung, nicht indem man sich zwingt, stärker zu sein als man sich fühlt.',
 
   'mindset.card.disc35.title': 'Ordnung pflegt auch den inneren Raum.',
   'mindset.card.disc35.content':
@@ -6775,7 +6993,7 @@ const de: TranslationMap = {
 
   'mindset.card.disc36.title': 'Fortschritt wartet nicht auf perfekte Bedingungen.',
   'mindset.card.disc36.content':
-    'Ausreden fühlen sich kurzfristig tröstlich, aber langfristig destruktiv an. Beständigkeit erfordert Verantwortung, auch wenn die Umstände nicht ideal sind. Fortschritt erfordert keine idealen Bedingungen — er erfordert beständige Bemühung.\n\nEigentümerschaft schafft Schwung. Verantwortung stärkt innere Kraft.',
+    'Das Leben schafft selten ideale Bedingungen. Es gibt Unterbrechungen, Erschöpfung, konkurrierende Anforderungen, unerwartete Hindernisse. Rhythmus wartet nicht darauf, dass sich diese Dinge lösen — er findet die kleine Bewegung, die innerhalb von ihnen verfügbar ist.\n\nDas bedeutet nicht, echte Schwierigkeiten herunterzuspielen oder so zu tun, als ob Umstände keine Rolle spielen. Sie spielen eine Rolle. Aber es gibt fast immer etwas — so klein es auch sein mag — das innerhalb der aktuellen Bedingungen möglich ist. Nicht die vollständige Version. Nicht die ideale Handlung. Nur das Nächste, das in die Realität von heute passt. Dieser Schritt, unter unvollkommenen Bedingungen unternommen, ist immer noch echte Bewegung.',
 
   'mindset.card.disc37.title': 'Große Transformationen entstehen langsam.',
   'mindset.card.disc37.content':
@@ -6785,35 +7003,35 @@ const de: TranslationMap = {
   'mindset.card.disc38.content':
     'Viele Menschen geben auf, weil sie makelloses Verhalten von sich erwarten. Beständigkeit bedeutet nicht, jeden Tag perfekt zu sein. Es bedeutet, nach Fehlern oder Rückschlägen schnell zurückzukehren.\n\nLangfristige Beständigkeit zählt weit mehr als vorübergehende Perfektion. Nachhaltiges Bemühen schafft dauerhaften Wandel.',
 
-  'mindset.card.disc39.title': 'Manchmal ist Fortschritt nicht sichtbar — er passiert trotzdem.',
+  'mindset.card.disc39.title': 'Echte Veränderung ist oft eine Weile lang unsichtbar.',
   'mindset.card.disc39.content':
-    'Echtes Wachstum geschieht in der Regel langsamer als Menschen erwarten. Beständigkeit bedeutet, weiterzumachen, auch bevor sichtbare Ergebnisse erscheinen. Ungeduld bringt viele Menschen dazu, wertvolle Gewohnheiten zu früh aufzugeben.\n\nNachhaltiger Erfolg erfordert oft lange Perioden unsichtbaren Fortschritts. Geduld stärkt Beständigkeit.',
+    'Wachstum kündigt sich selten an. Die meiste Zeit passiert echter Fortschritt still — in Momenten, die sich nicht bedeutsam anfühlen, in Gewohnheiten, die noch keine sichtbaren Ergebnisse zeigen, in der langsamen Anhäufung von Dingen, die klein erscheinen. Geduld ist nicht passiv: Es ist die Fähigkeit, weiterzumachen, auch wenn der Fortschritt noch nicht sichtbar ist.\n\nWas du während der unsichtbaren Phasen aufbaust, ist oft echter als das, was in dramatischen Momenten erscheint. Vertraue darauf, dass etwas passiert, auch wenn du es noch nicht sehen kannst.',
 
-  'mindset.card.disc40.title': 'Deine Energie verdient auch Pflege.',
+  'mindset.card.disc40.title': 'Nachhaltige Rhythmen schützen die Energie, die du brauchst, um weiterzumachen.',
   'mindset.card.disc40.content':
-    'Unbeständige Gewohnheiten erschöpfen oft mentale, emotionale und körperliche Energie. Späte Nächte, ständige Ablenkungen, Aufschieben und emotionale Impulsivität schwächen Leistung über Zeit. Beständigkeit schützt deine Energie, indem sie gesündere Muster schafft.\n\nBessere Gewohnheiten schaffen stärkeren Fokus und Resilienz.',
+    'Manche Muster erschöpfen Energie im Stillen über die Zeit — nicht durch moralisches Versagen, sondern einfach durch die Funktionsweise von Körper und Geist. Chronische Überstimulation, unregelmäßiger Schlaf, das Ignorieren eigener Bedürfnisse, ein Tempo, das sich nicht aufrechterhalten lässt — diese Dinge schaffen eine Art angehäufter Erschöpfung, die sich irgendwann in Fokus, Stimmung und Konsequenz zeigt.\n\nRhythmen aufzubauen, die wirklich nachhaltig sind — einschließlich angemessener Ruhe, realistischer Erwartungen, echter Erholung und Raum für das, was der Körper wirklich braucht — schützt die Kapazität, langfristig präsent zu bleiben.',
 
   'mindset.card.disc41.title': 'Schwieriges wird leichter mit Übung.',
   'mindset.card.disc41.content':
     'Je öfter du schwierige Verhaltensweisen übst, desto weniger Widerstand erzeugen sie. Wiederholung reduziert emotionale Reibung. Was sich einmal unmöglich anfühlte, wird durch Beständigkeit allmählich normal.\n\nWachstum passiert, wenn schwierige Handlungen zu regelmäßigen Gewohnheiten werden. Beständigkeit verändert die Wahrnehmung.',
 
-  'mindset.card.disc42.title': 'Dich selbst führen ist auch eine Form der Selbstfürsorge.',
+  'mindset.card.disc42.title': 'Dich sanft leiten — auch an schwierigeren Tagen.',
   'mindset.card.disc42.content':
     'Selbstführung ist die Fähigkeit, das eigene Handeln bewusst zu steuern statt sich von Impulsen oder Umständen kontrollieren zu lassen. Beständigkeit stärkt deine Fähigkeit, dein eigenes Verhalten zu lenken.\n\nStarke Selbstführung schafft Selbstvertrauen und emotionale Stabilität. Mit der Zeit wirst du dir selbst zuverlässiger.',
 
-  'mindset.card.disc43.title': 'Beständigkeit entsteht in stillen Momenten, ohne Zeugen.',
+  'mindset.card.disc43.title': 'Die stillen Entscheidungen, die du für dich triffst, sind die echtesten.',
   'mindset.card.disc43.content':
     'Charakter wird durch das geformt, was du beständig tust, wenn niemand zuschaut. Beständigkeit wächst durch stille Entscheidungen, die beständig im Verborgenen getroffen werden. Kleine private Handlungen bestimmen oft später sichtbare Ergebnisse.\n\nIntegrität stärkt Identität. Deine unsichtbaren Gewohnheiten formen deine sichtbare Zukunft.',
 
-  'mindset.card.disc44.title': 'Nicht alles, was sich heute gut anfühlt, pflegt das Morgen.',
+  'mindset.card.disc44.title': 'Manches Erleichternde stellt wieder her. Anderes schiebt auf, was passieren muss.',
   'mindset.card.disc44.content':
-    'Viele impulsive Entscheidungen fühlen sich vorübergehend gut an, schaffen aber später Stress, Bedauern oder Schwäche. Beständigkeit lehrt dich, langfristige Konsequenzen zu evaluieren, bevor du emotional reagierst.\n\nKurzfristiger Komfort kann langfristige Ziele still sabotieren. Weise Zurückhaltung schützt zukünftigen Frieden.',
+    'Nicht jede kurzfristige Erleichterung ist gleich. Ein Teil davon stellt wirklich wieder her: schlafen, sich von etwas Überwältigendem distanzieren, sich selbst die Erlaubnis geben, heute nicht zu drücken. Diese Art der Erleichterung ist keine Vermeidung — es ist Erholung, und sie ist notwendig.\n\nEin Teil der Erleichterung verschiebt jedoch etwas, das mit der Zeit schwieriger wird zu begegnen. Zu lernen, wahrzunehmen, nach welcher Art man greift — ohne sich dafür hart zu verurteilen, dass man sich überhaupt Erleichterung wünscht — ist eine nützliche Fähigkeit. Die Frage ist nicht "Bin ich schwach?" Die Frage ist einfach: "Hilft mir das wirklich, oder erschaffe ich etwas, mit dem ich mich später beschäftigen muss?"',
 
   'mindset.card.disc45.title': 'Beständigkeit schafft Stabilität auch an schwierigen Tagen.',
   'mindset.card.disc45.content':
     'Wenn deine Handlungen ständig von der Stimmung abhängen, wird das Leben emotional unberechenbar. Beständigkeit schafft Gleichmäßigkeit auch in stressigen Perioden. Strukturierte Gewohnheiten reduzieren emotionales Chaos durch Beständigkeit.\n\nStabilität verbessert Entscheidungsfindung. Ruhige Routinen stärken Resilienz.',
 
-  'mindset.card.disc46.title': 'Je mehr du dich trägst, desto weniger brauchst du Antrieb von außen.',
+  'mindset.card.disc46.title': 'Je mehr du für dich selbst da bist, desto weniger brauchst du externen Druck.',
   'mindset.card.disc46.content':
     'Je beständiger du wirst, desto weniger bist du auf externen Druck, Erinnerungen oder Bestätigung angewiesen, um zu handeln. Selbstbeständigkeit schafft persönliche Unabhängigkeit. Du hörst auf, darauf zu warten, dass andere dich motivieren oder retten.\n\nInnere Verantwortung schafft Freiheit und Reife.',
 
@@ -6829,7 +7047,7 @@ const de: TranslationMap = {
   'mindset.card.disc49.content':
     'Willenskraft allein reicht oft nicht. Deine Umgebung beeinflusst deine Gewohnheiten und dein Verhalten stark. Beständigkeit wird leichter, wenn deine Umgebung deine Ziele unterstützt statt ständig Ablenkungen zu bieten.\n\nStruktur reduziert unnötigen Widerstand. Kluge Umgebungen unterstützen bessere Entscheidungen.',
 
-  'mindset.card.disc50.title': 'Beständigkeit macht dich verlässlich — zuerst für dich selbst.',
+  'mindset.card.disc50.title': 'Je mehr du auf dich zählen kannst, desto gefestigter fühlst du dich.',
   'mindset.card.disc50.content':
     'Menschen vertrauen jenen, die beständig durchhalten. Verlässlichkeit entsteht durch wiederholte beständige Handlungen über die Zeit. Wenn du dir selbst und anderen gegenüber verlässlich wirst, wächst Selbstvertrauen natürlich.\n\nBeständigkeit stärkt sowohl Beziehungen als auch Identität. Verlässlichkeit schafft Respekt.',
 
@@ -6841,9 +7059,9 @@ const de: TranslationMap = {
   'mindset.card.disc52.content':
     'Jede beständige Handlung ist ein Geschenk an deine zukünftige Version. Gesunde Gewohnheiten, Verantwortungsbewusstsein, Lernen und Beständigkeit schaffen langfristige Vorteile, die sich nicht immer sofort zeigen.\n\nBeständigkeit ist langfristige Selbstfürsorge. Zukünftige Stabilität entsteht durch heutige Verantwortung.',
 
-  'mindset.card.disc53.title': 'Handeln klärt auch den Kopf.',
+  'mindset.card.disc53.title': 'Wenn du auf das reagierst, was wichtig ist, neigt der Geist dazu, ruhiger zu werden.',
   'mindset.card.disc53.content':
-    'Aufschieben und Unbeständigkeit schaffen mentales Rauschen und Schuld. Beständigkeit reduziert innere Spannung durch Handeln und Vollendung. Je mehr Verantwortlichkeiten du bewusst wahrnehmst, desto ruhiger wird dein Geist oft.\n\nOrdnung verbessert Klarheit. Klarheit verbessert Leistung.',
+    'Es gibt eine Art inneres Rauschen, das entsteht, wenn Dinge unvollständig oder unangesprochen bleiben. Kein Urteil — nur Gewicht. Intentionales Handeln, auch bei kleineren Dingen, neigt dazu, Erleichterung zu schaffen. Nicht weil alles gelöst wird, sondern weil Bewegung eine andere Beziehung zum mentalen Durcheinander schafft.\n\nJe mehr du die Dinge mit etwas Präsenz und Aufmerksamkeit handhabst, desto ruhiger wird dein Geist oft. Klarheit ist nicht nur eine Denkleistung — es ist oft das Gefühl, wirklich etwas mit dem getan zu haben, was du mit dir getragen hast.',
 
   'mindset.card.disc54.title': 'Beständigkeit verkürzt auch den Weg zurück nach einem Stolpern.',
   'mindset.card.disc54.content':
@@ -6857,9 +7075,9 @@ const de: TranslationMap = {
   'mindset.card.disc56.content':
     'Wenn positive Verhaltensweisen automatisch werden, erfordert Beständigkeit weniger emotionale Energie. Gewohnheiten reduzieren die Notwendigkeit ständiger Entscheidungsfindung und Willenskraft. Das Ziel ist nicht, für immer zu kämpfen — es ist, Systeme aufzubauen, die Beständigkeit natürlich unterstützen.\n\nAutomatisierung stärkt Stabilität.',
 
-  'mindset.card.disc57.title': 'Beständigkeit akkumuliert still über die Zeit.',
+  'mindset.card.disc57.title': 'Kleine, beständige Handlungen häufen sich zu etwas an, das du später sehen wirst.',
   'mindset.card.disc57.content':
-    'Die meisten beständigen Handlungen erscheinen im Moment klein. Ein Training, eine fokussierte Stunde, eine gesunde Wahl, ein schwieriges Gespräch. Aber über Monate und Jahre summieren sich diese Handlungen zu bedeutender Transformation.\n\nBeständigkeit schafft selten sofortige Ergebnisse. Ihre wahre Kraft zeigt sich durch Anhäufung.',
+    'Das meiste, was du heute tust, sieht im Moment nicht nach viel aus. Eine kleine Wahl. Eine stille Rückkehr. Ein Tag des Erscheinens ohne Aufhebens. Die Kraft liegt nicht in einer einzelnen Handlung — sie liegt in dem, was diese Handlungen werden, wenn sie mit der Zeit wiederholt werden.\n\nRhythmus schafft selten sofortige Ergebnisse. Seine Wahrheit zeigt sich langsam, durch Anhäufung — im Unterschied zwischen dem, wo du jetzt bist und wo du vor Monaten warst. Diese Anhäufung ist still, geduldig und echt. Du wirst sie vielleicht nicht Tag für Tag bemerken, aber sie baut etwas auf.',
 
   // ── Mindset Focus cards — Deutsch ──────────────────────────────────────────────
   'mindset.card.focus1.title':  'Tiefe Arbeit schafft echten Fortschritt.',
@@ -6876,7 +7094,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus4.title':  'Beende, bevor du etwas Neues anfängst.',
   'mindset.card.focus4.content':
-    'Ständig neue Aufgaben zu beginnen schafft mentalen Lärm. Jede unerledigte Aufgabe bleibt offen in deinem Geist und zieht kognitive Energie. Fokus wächst, wenn du Dinge vollendest, bevor du zur nächsten Stimulation springst.\n\nVollenden schafft Schwung, Selbstvertrauen und Klarheit. Die Gewohnheit der Vollendung ist wertvoller als die Aufregung endloser Anfänge.',
+    'Ständig neue Aufgaben zu beginnen schafft mentalen Lärm. Jede unerledigte Aufgabe bleibt offen in deinem Geist und zieht mentale Energie. Fokus wächst, wenn du Dinge vollendest, bevor du zur nächsten Stimulation springst.\n\nVollenden schafft Schwung, Selbstvertrauen und Klarheit. Die Gewohnheit der Vollendung ist wertvoller als die Aufregung endloser Anfänge.',
 
   'mindset.card.focus5.title':  'Deine Umgebung formt deinen Geist.',
   'mindset.card.focus5.content':
@@ -6888,19 +7106,19 @@ const de: TranslationMap = {
 
   'mindset.card.focus7.title':  'Hör auf, ständig zu konsumieren.',
   'mindset.card.focus7.content':
-    'Dein Gehirn kann sich nicht tief konzentrieren, wenn es ständig mit Stimulation überflutet wird. Endloses Scrollen, Videos und Benachrichtigungen trainieren deinen Geist, alle paar Sekunden Neuheit zu suchen.\n\nStille und Ruhe stärken Konzentration. Fokus braucht Raum zum klaren Denken. Manchmal ist die beste Produktivitätsstrategie einfach, weniger Informationen zu konsumieren.',
+    'Dein Gehirn kann sich nicht tief konzentrieren, wenn es ständig mit Stimulation überflutet wird. Endloses Scrollen, Videos und Benachrichtigungen trainieren deinen Geist, alle paar Sekunden Neuheit zu suchen.\n\nStille und Ruhe stärken Konzentration. Fokus braucht Raum zum klaren Denken. Manchmal ist der hilfreichste Schritt einfach, weniger Informationen zu konsumieren.',
 
   'mindset.card.focus8.title':  'Eile zerstört Präzision.',
   'mindset.card.focus8.content':
-    'Hetze schafft Fehler, Stress und mentale Fragmentierung. Ruhiger Fokus produziert bessere Entscheidungen als hektische Schnelligkeit. Viele Menschen verwechseln Panik mit Produktivität, aber ständige Dringlichkeit schwächt Aufmerksamkeit.\n\nFokussierte Menschen verlangsamen sich genug, um klar zu denken, bevor sie handeln. Präzision spart oft mehr Zeit als Schnelligkeit.',
+    'Hetze schafft Fehler, Stress und mentale Fragmentierung. Ruhiger Fokus produziert bessere Entscheidungen als hektische Schnelligkeit. Viele Menschen verwechseln Panik mit Fortschritt, aber ständige Dringlichkeit schwächt Aufmerksamkeit.\n\nFokussierte Menschen verlangsamen sich genug, um klar zu denken, bevor sie handeln. Präzision spart oft mehr Zeit als Schnelligkeit.',
 
   'mindset.card.focus9.title':  'Präsenz verbessert alles.',
   'mindset.card.focus9.content':
-    'Wenn deine Aufmerksamkeit vollständig präsent ist, werden selbst einfache Handlungen effektiver. Halbfokussierte Arbeit produziert halbwertige Ergebnisse. Geistig abwesend zu arbeiten erhöht Müdigkeit, weil das Gehirn ständig zwischen Gedanken wechselt.\n\nFokus ist zu lernen, vollständig im gegenwärtigen Moment anzukommen. Präsenz verbessert sowohl Leistung als auch inneren Frieden.',
+    'Wenn deine Aufmerksamkeit vollständig präsent ist, werden selbst einfache Handlungen effektiver. Halbfokussierte Arbeit produziert halbwertige Ergebnisse. Geistig abwesend zu arbeiten erhöht Müdigkeit, weil das Gehirn ständig zwischen Gedanken wechselt.\n\nFokus ist zu lernen, vollständig im gegenwärtigen Moment anzukommen. Präsenz verbessert sowohl die Qualität der Arbeit als auch den inneren Frieden.',
 
   'mindset.card.focus10.title': 'Eine Entscheidung nach der anderen.',
   'mindset.card.focus10.content':
-    'Mentale Erschöpfung kommt oft davon, zu viele kleine Entscheidungen zu treffen. Jede Wahl verbraucht im Laufe des Tages kognitive Energie. Routinen zu vereinfachen befreit mehr Aufmerksamkeit für wichtige Arbeit.\n\nFokussierte Menschen reduzieren unnötige Entscheidungen wann immer möglich. Je weniger mentalen Lärm du erzeugst, desto mehr Klarheit bleibt verfügbar.',
+    'Mentale Erschöpfung kommt oft davon, zu viele kleine Entscheidungen zu treffen. Jede Wahl verbraucht im Laufe des Tages mentale Energie. Routinen zu vereinfachen befreit mehr Aufmerksamkeit für wichtige Arbeit.\n\nFokussierte Menschen reduzieren unnötige Entscheidungen wann immer möglich. Je weniger mentalen Lärm du erzeugst, desto mehr Klarheit bleibt verfügbar.',
 
   'mindset.card.focus11.title': 'Beständigkeit schützt den Fokus.',
   'mindset.card.focus11.content':
@@ -6920,7 +7138,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus15.title': 'Erholung verbessert Konzentration.',
   'mindset.card.focus15.content':
-    'Konstantes Arbeiten ohne Erholung schwächt Fokus über Zeit. Dein Gehirn braucht Pausen, um Aufmerksamkeit zurückzusetzen und Informationen richtig zu verarbeiten. Erholung ist keine Faulheit — sie ist Teil nachhaltiger Leistung.\n\nFokussierte Menschen verstehen, dass Erholung langfristige Produktivität schützt. Ein ausgeruhter Geist denkt klarer.',
+    'Konstantes Arbeiten ohne Erholung schwächt Fokus über Zeit. Dein Gehirn braucht Pausen, um Aufmerksamkeit zurückzusetzen und Informationen richtig zu verarbeiten. Erholung ist keine Faulheit — sie ist Teil nachhaltiger Aufmerksamkeit.\n\nFokussierte Menschen verstehen, dass Erholung langfristige Klarheit schützt. Ein ausgeruhter Geist denkt klarer.',
 
   'mindset.card.focus16.title': 'Trainiere deinen Geist zum Bleiben.',
   'mindset.card.focus16.content':
@@ -6928,7 +7146,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus17.title': 'Kleine Ablenkungen werden zu großen Verzögerungen.',
   'mindset.card.focus17.content':
-    'Eine schnelle Benachrichtigung mag harmlos erscheinen, aber kleine Unterbrechungen unterbrechen den mentalen Fluss. Nach einer Ablenkung braucht das Gehirn oft erhebliche Zeit, um sich vollständig neu zu fokussieren.\n\nKleine Unterbrechungen, den ganzen Tag wiederholt, zerstören still die Produktivität. Konzentration zu schützen bedeutet, zu respektieren, wie fragil tiefer Fokus wirklich ist.',
+    'Eine schnelle Benachrichtigung mag harmlos erscheinen, aber kleine Unterbrechungen unterbrechen den mentalen Fluss. Nach einer Ablenkung braucht das Gehirn oft erhebliche Zeit, um sich vollständig neu zu fokussieren.\n\nKleine Unterbrechungen, den ganzen Tag wiederholt, zerstören still den Rhythmus. Konzentration zu schützen bedeutet, zu respektieren, wie fragil tiefer Fokus wirklich ist.',
 
   'mindset.card.focus18.title': 'Langeweile stärkt Aufmerksamkeit.',
   'mindset.card.focus18.content':
@@ -6948,7 +7166,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus22.title': 'Fokus ist auch emotional.',
   'mindset.card.focus22.content':
-    'Ablenkung wird nicht immer durch Technologie verursacht. Manchmal meidet der Geist Fokus wegen Stress, Angst, Überforderung oder emotionalem Unbehagen. Emotionale Regulierung zu lernen verbessert Konzentration dramatisch.\n\nRuhige Emotionen schaffen einen ruhigeren Geist. Innere Stabilität stärkt äußere Leistung.',
+    'Ablenkung wird nicht immer durch Technologie verursacht. Manchmal meidet der Geist Fokus wegen Stress, Angst, Überforderung oder emotionalem Unbehagen. Emotionale Regulierung zu lernen verbessert Konzentration dramatisch.\n\nRuhige Emotionen schaffen einen ruhigeren Geist. Innere Stabilität verändert, wie du dich in der Welt zeigst.',
 
   'mindset.card.focus23.title': 'Wiederholung schafft Meisterschaft.',
   'mindset.card.focus23.content':
@@ -6958,9 +7176,9 @@ const de: TranslationMap = {
   'mindset.card.focus24.content':
     'Schnelles Denken ist nützlich für Notfälle. Tiefes Denken erfordert Langsamkeit. Viele Menschen reagieren sofort, ohne sich Raum zu lassen, klar zu denken. Fokussierte Menschen pausieren lange genug, um zu beobachten, zu reflektieren und bewusst zu wählen.\n\nBesseres Denken schafft bessere Entscheidungen.',
 
-  'mindset.card.focus25.title': 'Schütze deine kognitive Kapazität.',
+  'mindset.card.focus25.title': 'Schütze deinen mentalen Raum.',
   'mindset.card.focus25.content':
-    'Dein Gehirn hat täglich begrenzte mentale Kapazität. Stress, Unordnung, Multitasking und Überstimulation reduzieren deine Fähigkeit, klar zu denken. Fokus verbessert sich, wenn du unnötige mentale Belastung bewusst reduzierst.\n\nDeinen Geist zu schützen ist für nachhaltige Leistung unerlässlich. Mentale Klarheit ist eine Form von Reichtum.',
+    'Dein Gehirn hat täglich begrenzte mentale Kapazität. Stress, Unordnung, Multitasking und Überstimulation reduzieren deine Fähigkeit, klar zu denken. Fokus verbessert sich, wenn du unnötige mentale Belastung bewusst reduzierst.\n\nDeinen Geist zu schützen ist für nachhaltige Klarheit unerlässlich. Mentale Klarheit ist eine Form von Reichtum.',
 
   'mindset.card.focus26.title': 'Fokus formt deine Zukunft.',
   'mindset.card.focus26.content':
@@ -6992,11 +7210,11 @@ const de: TranslationMap = {
 
   'mindset.card.focus33.title': 'Digitaler Lärm schwächt mentale Stärke.',
   'mindset.card.focus33.content':
-    'Konstante Exposition gegenüber schnellen Inhalten verkürzt über Zeit Aufmerksamkeitsspannen. Je mehr Stimulation dein Gehirn konsumiert, desto schwieriger wird es, bei langsameren, bedeutungsvollen Aufgaben fokussiert zu bleiben.\n\nFokussierte Menschen sind vorsichtig mit dem, was in ihren mentalen Raum eintritt. Deine Aufmerksamkeit zu schützen ähnelt dem Schutz deiner körperlichen Gesundheit. Was du mental konsumierst, formt deine kognitive Fähigkeit.',
+    'Konstante Exposition gegenüber schnellen Inhalten verkürzt über Zeit Aufmerksamkeitsspannen. Je mehr Stimulation dein Gehirn konsumiert, desto schwieriger wird es, bei langsameren, bedeutungsvollen Aufgaben fokussiert zu bleiben.\n\nFokussierte Menschen sind vorsichtig mit dem, was in ihren mentalen Raum eintritt. Deine Aufmerksamkeit zu schützen ähnelt dem Schutz deiner körperlichen Gesundheit. Was du mental konsumierst, formt, wie klar du denkst.',
 
   'mindset.card.focus34.title': 'Fokus entsteht auch durch Erholung.',
   'mindset.card.focus34.content':
-    'Deine Fähigkeit zur Konzentration hängt stark von Erholung und Wiederherstellung ab. Chronische Erschöpfung schwächt Gedächtnis, Aufmerksamkeit und emotionale Kontrolle. Spitzenleister nehmen Erholung ernst, weil sie verstehen, dass mentale Schärfe Wartung erfordert.\n\nSchlaf, Stille, Bewegung und echte Ruhe schützen kognitive Leistung. Ein ausgebrannter Geist kann sich nicht tief konzentrieren.',
+    'Deine Fähigkeit zur Konzentration hängt stark von Erholung und Wiederherstellung ab. Chronische Erschöpfung schwächt Gedächtnis, Aufmerksamkeit und emotionale Kontrolle. Menschen, die ihren Fokus erhalten, nehmen Erholung ernst — mentale Schärfe braucht Pflege.\n\nSchlaf, Stille, Bewegung und echte Ruhe schützen die Fähigkeit, klar zu denken. Ein ausgebrannter Geist kann sich nicht tief konzentrieren.',
 
   'mindset.card.focus35.title': 'Der Geist folgt dem, was du übst.',
   'mindset.card.focus35.content':
@@ -7012,7 +7230,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus38.title': 'Mentale Einfachheit verbessert Ausführung.',
   'mindset.card.focus38.content':
-    'Komplexität schafft oft Zögern und Verwirrung. Wenn Aufgaben zu kompliziert werden, sucht das Gehirn natürlich Flucht durch Ablenkung. Fokus verbessert sich, wenn Systeme, Ziele und Prioritäten einfacher und klarer werden.\n\nEinfachheit reduziert kognitive Überlastung. Klares Denken produziert sauberere Ausführung.',
+    'Komplexität schafft oft Zögern und Verwirrung. Wenn Aufgaben zu kompliziert werden, sucht das Gehirn natürlich Flucht durch Ablenkung. Fokus verbessert sich, wenn Systeme, Ziele und Prioritäten einfacher und klarer werden.\n\nEinfachheit reduziert mentale Überlastung. Klares Denken produziert sauberere Ausführung.',
 
   'mindset.card.focus39.title': 'Fokus stärkt Selbstvertrauen.',
   'mindset.card.focus39.content':
@@ -7036,7 +7254,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus44.title': 'Fokus ist leichter, wenn dein Körper sich gut fühlt.',
   'mindset.card.focus44.content':
-    'Körperliche Gesundheit beeinflusst stark mentale Klarheit. Schlechter Schlaf, Dehydrierung, Stress und Inaktivität schwächen Konzentration erheblich. Fokussierte Menschen verstehen, dass kognitive Leistung tief mit körperlichem Wohlbefinden verbunden ist.\n\nEnergiemanagement verbessert Aufmerksamkeit auf natürliche Weise. Ein gesünderer Körper unterstützt einen schärferen Geist.',
+    'Körperliche Gesundheit beeinflusst stark mentale Klarheit. Schlechter Schlaf, Dehydrierung, Stress und Inaktivität schwächen Konzentration erheblich. Mentale Klarheit ist tief mit körperlichem Wohlbefinden verbunden.\n\nEnergiemanagement verbessert Aufmerksamkeit auf natürliche Weise. Ein gesünderer Körper unterstützt einen schärferen Geist.',
 
   'mindset.card.focus45.title': 'Überlastete Geister meiden wichtige Arbeit.',
   'mindset.card.focus45.content':
@@ -7046,13 +7264,13 @@ const de: TranslationMap = {
   'mindset.card.focus46.content':
     'Viele Menschen geben Fokus-Routinen auf, weil sie sofortige Perfektion erwarten. Aber Konzentration entwickelt sich allmählich durch wiederholte Bemühung. Manche Tage werden sich leichter anfühlen als andere.\n\nWas am meisten zählt, ist beständig zur Praxis der Aufmerksamkeit zurückzukehren. Fortschritt summiert sich still über Zeit.',
 
-  'mindset.card.focus47.title': 'Schütze deine mentalen Spitzenstunden.',
+  'mindset.card.focus47.title': 'Schütze deine klarsten Stunden.',
   'mindset.card.focus47.content':
-    'Jedes Gehirn hat Perioden höchster kognitiver Energie im Laufe des Tages. Fokussierte Menschen erkennen, wann sie am klarsten denken, und schützen diese Stunden sorgfältig. Wichtige Arbeit sollte während Perioden stärkster Aufmerksamkeit stattfinden.\n\nAblenku­ngen mit geringem Wert sollten deinen mentalen Spitzenzustand nicht verbrauchen. Strategisches Timing verbessert Leistung dramatisch.',
+    'Jedes Gehirn hat Perioden größerer Klarheit im Laufe des Tages. Fokussierte Menschen erkennen, wann sie am klarsten denken, und schützen diese Stunden sorgfältig. Wichtige Arbeit sollte während Perioden stärkster Aufmerksamkeit stattfinden.\n\nAblenkungen mit geringem Wert sollten deine klarsten Stunden nicht verbrauchen. Strategisches Timing macht einen echten Unterschied.',
 
   'mindset.card.focus48.title': 'Innerer Lärm ist auch eine Ablenkung.',
   'mindset.card.focus48.content':
-    'Ablenkung kommt nicht immer von außen. Sorgen, Selbstzweifel und Grübeln können Konzentration genauso stark unterbrechen wie Benachrichtigungen. Fokus verbessert sich, wenn du lernst, inneres mentales Geschwätz zu beruhigen.\n\nEmotionales Bewusstsein stärkt kognitive Kontrolle. Ein friedlicher Geist hält tiefere Aufmerksamkeit aufrecht.',
+    'Ablenkung kommt nicht immer von außen. Sorgen, Selbstzweifel und Grübeln können Konzentration genauso stark unterbrechen wie Benachrichtigungen. Fokus verbessert sich, wenn du lernst, inneres mentales Geschwätz zu beruhigen.\n\nEmotionales Bewusstsein stärkt die Fähigkeit, präsent zu bleiben. Ein friedlicher Geist hält tiefere Aufmerksamkeit aufrecht.',
 
   'mindset.card.focus49.title': 'Dein Fokus bestimmt deine Ergebnisqualität.',
   'mindset.card.focus49.content':
@@ -7076,7 +7294,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus54.title': 'Ruhige Ausführung übertrifft Chaos.',
   'mindset.card.focus54.content':
-    'Stressige Dringlichkeit schafft oft unscharfes Denken und emotionale Erschöpfung. Ruhige, fokussierte Ausführung produziert nachhaltigere Leistung. Spitzenleister lernen, mit Gleichmäßigkeit statt Panik zu arbeiten.\n\nMentale Gelassenheit schützt Entscheidungsfähigkeit. Fokus gedeiht in emotionaler Stabilität.',
+    'Stressige Dringlichkeit schafft oft unscharfes Denken und emotionale Erschöpfung. Ruhige, fokussierte Ausführung ist ein nachhaltigerer Weg. Menschen, die ihren Rhythmus schützen, lernen, mit Gleichmäßigkeit statt Panik zu arbeiten.\n\nMentale Gelassenheit schützt Entscheidungsfähigkeit. Fokus gedeiht in emotionaler Stabilität.',
 
   'mindset.card.focus55.title': 'Jede Ablenkung hat Opportunitätskosten.',
   'mindset.card.focus55.content':
@@ -7088,7 +7306,7 @@ const de: TranslationMap = {
 
   'mindset.card.focus57.title': 'Ein fokussiertes Leben fühlt sich bewusster an.',
   'mindset.card.focus57.content':
-    'Wenn Aufmerksamkeit ständig zerstreut ist, fühlt sich das Leben reaktiv und chaotisch an. Fokus schafft ein stärkeres Gefühl von Richtung und innerem Steuer. Bewusste Aufmerksamkeit ermöglicht es dir, das Leben tiefer zu erleben statt unbewusst durchzueilen.\n\nFokus geht nicht nur um Produktivität — er geht darum, mit Bewusstsein zu leben. Ein fokussierter Geist schafft ein bedeutungsvolleres Leben.',
+    'Wenn Aufmerksamkeit ständig zerstreut ist, fühlt sich das Leben reaktiv und chaotisch an. Fokus schafft ein stärkeres Gefühl von Richtung und innerem Steuer. Bewusste Aufmerksamkeit ermöglicht es dir, das Leben tiefer zu erleben statt unbewusst durchzueilen.\n\nFokus geht nicht um Produktivität — er geht darum, mit Bewusstsein zu leben. Ein fokussierter Geist schafft ein bedeutungsvolleres Leben.',
 
   // ── Mindset Clarity (detox) cards — Deutsch ────────────────────────────────────
   'mindset.card.detox1.title':  'Deine Aufmerksamkeit ist wertvoll. Behandle sie so.',
@@ -8561,6 +8779,21 @@ const de: TranslationMap = {
   'wb.late_night.3':  'Lass den Tag sich setzen.',
   'wb.late_night.4':  'Stille ist auch etwas.',
 
+  // ── Personal Mantra Echo ──────────────────────────────────────────────────────
+  'mantra.weekly.label': 'EIN WORT VON DEINER ANKUNFT',
+  'mantra.weekly.v0':    'Als du ankamst, hast du gewählt:\n\n"{{mantra}}"\n\nTauchte es irgendwann in dieser Woche auf?',
+  'mantra.weekly.v1':    'Du hast das Wort gewählt:\n\n"{{mantra}}"\n\nWas bedeutet es dir heute?',
+  'mantra.weekly.v2':    'Vor einer Weile hast du gewählt:\n\n"{{mantra}}"\n\nFühlt es sich noch wichtig an?',
+  'mantra.weekly.v3':    'Du bist hierher gekommen mit:\n\n"{{mantra}}"\n\nHat etwas in dieser Woche das in sich getragen?',
+  'mantra.weekly.v4':    'Als du begonnen hast, hast du gewählt:\n\n"{{mantra}}"\n\nSuchst du es noch?',
+  'mantra.return.v0':    'Als du begonnen hast, hast du das Wort "{{mantra}}" gewählt.\n\nEs muss nicht jeden Tag erscheinen.\n\nAber vielleicht ist es noch wichtig.',
+  'mantra.return.v1':    'Als du ankamst, hast du gewählt:\n\n"{{mantra}}"\n\nVielleicht geht es noch mit dir.',
+  'mantra.return.v2':    'Du bist hierher gekommen und hast mitgebracht:\n\n"{{mantra}}"\n\nDas hat sich nicht geändert.',
+  'mantra.progress.label': 'EIN WORT, DAS ZÄHLTE',
+  'mantra.progress.v0': '"{{mantra}}"\n\nDu hast das gewählt, als du ankamst.\n\nBedeutet es dir noch etwas?',
+  'mantra.progress.v1': 'Als du hierher kamst, hast du ein Wort mitgebracht:\n\n"{{mantra}}"\n\nEs ist nirgendwo hingegangen.',
+  'mantra.progress.v2': '"{{mantra}}"\n\nDu hast das vor einer Weile gewählt.\n\nErkennst du es noch?',
+
   ...psDe,
 };
 
@@ -8685,7 +8918,7 @@ const pt: TranslationMap = {
   'today.ritual.sub':  'Um momento calmo para voltar para si.',
   'today.reflect.eyebrow':        'UM MOMENTO PARA REFLETIR',
   'today.reflect.done':           '✓ Você deixou algo aqui.',
-  'today.messages.welcomeBack':   'BEM-VINDA DE VOLTA',
+  'today.messages.welcomeBack':   'DE VOLTA',
 
   // Completion ceremony
   'ceremony.whatsAhead': 'O QUE VEM A SEGUIR',
@@ -9136,25 +9369,25 @@ const pt: TranslationMap = {
 
   // ── Mindset — títulos dos cards em PT ────────────────────────────────────────
   'mindset.card.m1.title':    'Uma coisa de cada vez.',
-  'mindset.card.m2.title':    'A Regra dos 2 Minutos',
-  'mindset.card.m3.title':    'Confiança Construída aos Poucos',
-  'mindset.card.m4.title':    'O Método MIT',
-  'mindset.card.m5.title':    'Emoções Também Dizem Muito',
-  'mindset.card.m6.title':    'A Economia da Atenção',
-  'mindset.card.m7.title':    'O Bloco de 90 Minutos',
-  'mindset.card.m8.title':    'Hábitos Baseados em Identidade',
-  'mindset.card.m9.title':    'Rejeição como Redirecionamento',
-  'mindset.card.m10.title':   'Dominando o Bloqueio de Tempo',
-  'mindset.card.m11.title':   'A Coragem de Não Agradar Todo Mundo',
+  'mindset.card.m2.title':    'Tarefas pequenas pesam mais quando adiadas.',
+  'mindset.card.m3.title':    'A confiança se constrói, não se espera.',
+  'mindset.card.m4.title':    'O que faria hoje se sentir completo?',
+  'mindset.card.m5.title':    'Sentimentos são informação.',
+  'mindset.card.m6.title':    'É a sua atenção que eles buscam.',
+  'mindset.card.m7.title':    'Sua mente não foi feita para se concentrar sem parar.',
+  'mindset.card.m8.title':    'Você se torna o que faz repetidamente.',
+  'mindset.card.m9.title':    'Rejeição raramente significa o que parece.',
+  'mindset.card.m10.title':   'Horas protegidas mudam como o dia se sente.',
+  'mindset.card.m11.title':   'Suas escolhas não precisam da aprovação de todos.',
   'mindset.card.m12.title':   'Recuperando o Espaço Mental',
-  'mindset.card.m13.title':   'O Princípio de Uma Coisa',
+  'mindset.card.m13.title':   'Uma coisa que torna o restante mais fácil.',
   'mindset.card.m14.title':   'Nunca Falhe Duas Vezes',
-  'mindset.card.m15.title':   'Competência Cria Confiança',
-  'mindset.card.m16.title':   'A Revisão Semanal',
+  'mindset.card.m15.title':   'A confiança vem da ação, não da espera.',
+  'mindset.card.m16.title':   'Um olhar tranquilo sobre a semana.',
   'mindset.card.m17.title':   'A Prática de Soltar',
-  'mindset.card.m18.title':   'Minimalismo Digital',
-  'mindset.card.m19.title':   'Trabalho Profundo',
-  'mindset.card.m20.title':   'O Paradoxo de Stockdale',
+  'mindset.card.m18.title':   'Tecnologia usada com intenção devolve sua atenção.',
+  'mindset.card.m19.title':   'Uma coisa só, sem interrupção.',
+  'mindset.card.m20.title':   'Esperança sem negação.',
   'mindset.card.emo1.title':  'Você Tem Permissão para Recomeçar',
   'mindset.card.emo2.title':  'Descansar Não É Fraqueza',
 
@@ -9193,23 +9426,23 @@ const pt: TranslationMap = {
 
   'mindset.card.focus6.title':   'Energia mental importa mais do que tempo.',
   'mindset.card.focus6.content':
-    'Ter mais horas não adianta nada se a mente está esgotada. O foco depende mais da qualidade da sua presença mental do que do tempo disponível.\n\nProteger o sono, reduzir a superestimulação e fazer pausas estratégicas melhoram a concentração de forma dramática.\n\nPessoas com alto desempenho gerenciam energia antes de gerenciar agenda. Uma hora focada vale mais do que cinco horas dispersas.',
+    'Ter mais horas não adianta nada se a mente está esgotada. O foco depende mais da qualidade da sua presença mental do que do tempo disponível.\n\nProteger o sono, reduzir a superestimulação e fazer pausas estratégicas melhoram a concentração de forma dramática.\n\nQuem protege a clareza gerencia energia antes de gerenciar a agenda. Uma hora focada vale mais do que cinco horas dispersas.',
 
   'mindset.card.focus7.title':   'Consuma menos, pense mais.',
   'mindset.card.focus7.content':
-    'O cérebro não consegue se concentrar se está constantemente sobrecarregado de estímulos. Rolagem infinita, vídeos e notificações treinam a mente a buscar novidade a cada segundo.\n\nSilêncio e quietude fortalecem a capacidade de atenção.\n\nÀs vezes a melhor estratégia de produtividade é simplesmente consumir menos.',
+    'O cérebro não consegue se concentrar se está constantemente sobrecarregado de estímulos. Rolagem infinita, vídeos e notificações treinam a mente a buscar novidade a cada segundo.\n\nSilêncio e quietude fortalecem a capacidade de atenção.\n\nÀs vezes a coisa mais útil é simplesmente consumir menos.',
 
   'mindset.card.focus8.title':   'Urgência destrói precisão.',
   'mindset.card.focus8.content':
-    'Pressa cria erros, estresse e fragmentação mental. Foco calmo produz decisões melhores do que velocidade frenética.\n\nMuita gente confunde pânico com produtividade — mas urgência constante enfraquece a atenção.\n\nDesacelerar o suficiente para pensar com clareza antes de agir economiza mais tempo do que qualquer atalho.',
+    'Pressa cria erros, estresse e fragmentação mental. Foco calmo produz decisões melhores do que velocidade frenética.\n\nMuita gente confunde pânico com progresso — mas urgência constante enfraquece a atenção.\n\nDesacelerar o suficiente para pensar com clareza antes de agir economiza mais tempo do que qualquer atalho.',
 
   'mindset.card.focus9.title':   'Presença melhora tudo.',
   'mindset.card.focus9.content':
-    'Quando a atenção está completamente presente, até ações simples se tornam mais eficazes. Trabalho com meio foco entrega metade da qualidade.\n\nEstar mentalmente ausente enquanto trabalha aumenta o cansaço, porque a mente fica dividida o tempo todo.\n\nFoco é aprender a chegar de verdade no momento atual. Presença melhora o desempenho — e a paz.',
+    'Quando a atenção está completamente presente, até ações simples se tornam mais eficazes. Trabalho com meio foco entrega metade da qualidade.\n\nEstar mentalmente ausente enquanto trabalha aumenta o cansaço, porque a mente fica dividida o tempo todo.\n\nFoco é aprender a chegar de verdade no momento atual. Presença melhora a qualidade do que você faz — e a paz de estar ali.',
 
   'mindset.card.focus10.title':  'Uma decisão de cada vez.',
   'mindset.card.focus10.content':
-    'O cansaço mental muitas vezes vem de tomar decisões pequenas em excesso. Cada escolha consome energia cognitiva ao longo do dia.\n\nSimplificar rotinas libera mais atenção para o que realmente importa.\n\nQuanto menos ruído mental você gera, mais clareza sobra.',
+    'O cansaço mental muitas vezes vem de tomar decisões pequenas em excesso. Cada escolha consome energia mental ao longo do dia.\n\nSimplificar rotinas libera mais atenção para o que realmente importa.\n\nQuanto menos ruído mental você gera, mais clareza sobra.',
 
   'mindset.card.focus11.title':  'Disciplina protege o foco.',
   'mindset.card.focus11.content':
@@ -9229,7 +9462,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus15.title':  'Descanso afina a mente.',
   'mindset.card.focus15.content':
-    'Trabalho constante sem recuperação enfraquece o foco com o tempo. O cérebro precisa de pausas para redefinir a atenção e processar informações corretamente.\n\nDescanso não é preguiça — é parte da performance sustentada.\n\nUma mente descansada pensa com mais clareza. Pessoas focadas entendem que a recuperação protege a produtividade a longo prazo.',
+    'Trabalho constante sem recuperação enfraquece o foco com o tempo. O cérebro precisa de pausas para redefinir a atenção e processar informações corretamente.\n\nDescanso não é preguiça — é parte da atenção sustentada.\n\nUma mente descansada pensa com mais clareza. Pessoas focadas entendem que a recuperação protege o foco a longo prazo.',
 
   'mindset.card.focus16.title':  'Treine sua mente para ficar.',
   'mindset.card.focus16.content':
@@ -9237,7 +9470,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus17.title':  'Pequenas distrações, grandes atrasos.',
   'mindset.card.focus17.content':
-    'Uma notificação pode parecer inofensiva, mas pequenas interrupções quebram o fluxo mental. Depois de se distrair, o cérebro precisa de tempo para retomar o foco com a mesma profundidade.\n\nInterrupções repetidas ao longo do dia destroem a produtividade em silêncio.\n\nProteger a concentração é respeitar o quanto o foco profundo é frágil.',
+    'Uma notificação pode parecer inofensiva, mas pequenas interrupções quebram o fluxo mental. Depois de se distrair, o cérebro precisa de tempo para retomar o foco com a mesma profundidade.\n\nInterrupções repetidas ao longo do dia destroem o ritmo em silêncio.\n\nProteger a concentração é respeitar o quanto o foco profundo é frágil.',
 
   'mindset.card.focus18.title':  'O tédio fortalece a atenção.',
   'mindset.card.focus18.content':
@@ -9257,7 +9490,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus22.title':  'Foco também é emocional.',
   'mindset.card.focus22.content':
-    'A distração nem sempre tem a ver com tecnologia. Às vezes a mente foge do foco por causa do estresse, do medo, da sobrecarga ou do desconforto emocional.\n\nAprender a regular as emoções melhora a concentração de forma profunda.\n\nEmoções calmas criam uma mente mais calma. Equilíbrio interno fortalece o desempenho externo.',
+    'A distração nem sempre tem a ver com tecnologia. Às vezes a mente foge do foco por causa do estresse, do medo, da sobrecarga ou do desconforto emocional.\n\nAprender a regular as emoções melhora a concentração de forma profunda.\n\nEmoções calmas criam uma mente mais calma. Equilíbrio interno muda como você se apresenta para o mundo.',
 
   'mindset.card.focus23.title':  'A repetição cria excelência.',
   'mindset.card.focus23.content':
@@ -9269,7 +9502,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus25.title':  'Clareza mental é um recurso.',
   'mindset.card.focus25.content':
-    'Seu cérebro tem uma capacidade mental limitada a cada dia. Estresse, desorganização, multitarefa e superestimulação reduzem sua capacidade de pensar com clareza.\n\nO foco melhora quando você reduz intencionalmente a carga mental desnecessária.\n\nCuidar da sua mente é essencial para uma performance sustentada. Clareza mental é uma forma de riqueza.',
+    'Seu cérebro tem uma capacidade mental limitada a cada dia. Estresse, desorganização, multitarefa e superestimulação reduzem sua capacidade de pensar com clareza.\n\nO foco melhora quando você reduz intencionalmente a carga mental desnecessária.\n\nCuidar da sua mente é essencial para manter a clareza ao longo do tempo. Clareza mental é uma forma de riqueza.',
 
   'mindset.card.focus26.title':  'Sua atenção molda sua vida.',
   'mindset.card.focus26.content':
@@ -9301,11 +9534,11 @@ const pt: TranslationMap = {
 
   'mindset.card.focus33.title':  'O ruído digital enfraquece a mente.',
   'mindset.card.focus33.content':
-    'A exposição constante a conteúdo rápido reduz a capacidade de atenção ao longo do tempo. Quanto mais estímulo o cérebro consome, mais difícil fica manter o foco em tarefas mais lentas e significativas.\n\nPessoas focadas são cuidadosas com o que entra no seu espaço mental.\n\nO que você consome mentalmente molda sua capacidade cognitiva.',
+    'A exposição constante a conteúdo rápido reduz a capacidade de atenção ao longo do tempo. Quanto mais estímulo o cérebro consome, mais difícil fica manter o foco em tarefas mais lentas e significativas.\n\nPessoas focadas são cuidadosas com o que entra no seu espaço mental.\n\nO que você consome mentalmente molda como você pensa com clareza.',
 
   'mindset.card.focus34.title':  'O foco se constrói no descanso.',
   'mindset.card.focus34.content':
-    'Sua capacidade de concentração depende muito de recuperação e restauração. O esgotamento crônico enfraquece a memória, a atenção e o controle emocional.\n\nPessoas de alta performance levam a recuperação a sério, porque entendem que a nitidez mental exige manutenção.\n\nUma mente esgotada não consegue se concentrar com profundidade.',
+    'Sua capacidade de concentração depende muito de recuperação e restauração. O esgotamento crônico enfraquece a memória, a atenção e o controle emocional.\n\nQuem mantém o foco leva a recuperação a sério — a nitidez mental precisa de manutenção.\n\nUma mente esgotada não consegue se concentrar com profundidade.',
 
   'mindset.card.focus35.title':  'A mente segue o que você pratica.',
   'mindset.card.focus35.content':
@@ -9345,7 +9578,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus44.title':  'Corpo bem cuidado, mente mais focada.',
   'mindset.card.focus44.content':
-    'A saúde física influencia profundamente a clareza mental. Sono ruim, desidratação, estresse e inatividade enfraquecem a concentração de forma significativa.\n\nPessoas focadas entendem que o desempenho cognitivo está profundamente conectado ao bem-estar físico.\n\nCuidar da energia melhora a atenção naturalmente. Um corpo mais saudável sustenta uma mente mais nítida.',
+    'A saúde física influencia profundamente a clareza mental. Sono ruim, desidratação, estresse e inatividade enfraquecem a concentração de forma significativa.\n\nA clareza mental está profundamente conectada ao bem-estar físico.\n\nCuidar da energia melhora a atenção naturalmente. Um corpo mais saudável sustenta uma mente mais nítida.',
 
   'mindset.card.focus45.title':  'Mente sobrecarregada evita o que importa.',
   'mindset.card.focus45.content':
@@ -9357,11 +9590,11 @@ const pt: TranslationMap = {
 
   'mindset.card.focus47.title':  'Proteja suas melhores horas.',
   'mindset.card.focus47.content':
-    'Todo cérebro tem períodos de maior energia cognitiva durante o dia. Pessoas focadas identificam quando pensam com mais clareza — e protegem essas horas com cuidado.\n\nO trabalho importante deve acontecer nos momentos de maior atenção. Distrações de baixo valor não devem consumir o seu estado mental de pico.\n\nO momento certo melhora o desempenho de forma significativa.',
+    'Todo cérebro tem períodos de maior clareza durante o dia. Pessoas focadas identificam quando pensam com mais clareza — e protegem essas horas com cuidado.\n\nO trabalho importante deve acontecer nos momentos de maior atenção. Distrações de baixo valor não devem consumir suas horas mais claras.\n\nO momento certo faz uma diferença real.',
 
   'mindset.card.focus48.title':  'O ruído interno também distrai.',
   'mindset.card.focus48.content':
-    'A distração nem sempre vem de fora. A preocupação, a dúvida sobre si mesmo e o excesso de pensamentos podem interromper a concentração com a mesma força que uma notificação.\n\nO foco melhora quando você aprende a acalmar o barulho mental interno.\n\nConsciência emocional fortalece o controle cognitivo. Uma mente em paz sustenta uma atenção mais profunda.',
+    'A distração nem sempre vem de fora. A preocupação, a dúvida sobre si mesmo e o excesso de pensamentos podem interromper a concentração com a mesma força que uma notificação.\n\nO foco melhora quando você aprende a acalmar o barulho mental interno.\n\nConsciência emocional fortalece sua capacidade de permanecer presente. Uma mente em paz sustenta uma atenção mais profunda.',
 
   'mindset.card.focus49.title':  'Atenção define qualidade.',
   'mindset.card.focus49.content':
@@ -9377,7 +9610,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus52.title':  'O que você consome molda como você pensa.',
   'mindset.card.focus52.content':
-    'Seu estado mental é profundamente influenciado pelo que você consome diariamente. O excesso de informação torna mais difícil pensar com clareza e priorizar de forma eficaz.\n\nO foco melhora quando você reduz entradas desnecessárias.\n\nUm ambiente mental mais limpo sustenta um pensamento mais nítido. Simplicidade melhora a cognição.',
+    'Seu estado mental é profundamente influenciado pelo que você consome diariamente. O excesso de informação torna mais difícil pensar com clareza e priorizar de forma eficaz.\n\nO foco melhora quando você reduz entradas desnecessárias.\n\nUm ambiente mental mais limpo sustenta um pensamento mais nítido. Simplicidade apoia o pensamento mais claro.',
 
   'mindset.card.focus53.title':  'Foco cria momentum mais rápido do que a motivação.',
   'mindset.card.focus53.content':
@@ -9385,7 +9618,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus54.title':  'Execução calma supera o caos.',
   'mindset.card.focus54.content':
-    'A urgência estressante costuma criar pensamentos desleixados e esgotamento emocional. Uma execução calma e focada produz uma performance mais sustentável.\n\nPessoas de alta performance aprendem a operar com firmeza em vez de pânico.\n\nEquilíbrio mental protege a capacidade de decisão. O foco prospera na estabilidade emocional.',
+    'A urgência estressante costuma criar pensamentos desleixados e esgotamento emocional. Uma execução calma e focada é um ritmo mais sustentável.\n\nPessoas que protegem seu ritmo aprendem a operar com firmeza em vez de pânico.\n\nEquilíbrio mental protege a capacidade de decisão. O foco prospera na estabilidade emocional.',
 
   'mindset.card.focus55.title':  'Toda distração tem um custo invisível.',
   'mindset.card.focus55.content':
@@ -9397,7 +9630,7 @@ const pt: TranslationMap = {
 
   'mindset.card.focus57.title':  'Uma vida focada tem mais sentido.',
   'mindset.card.focus57.content':
-    'Quando a atenção está constantemente dispersa, a vida começa a parecer reativa e caótica. O foco cria um senso mais forte de direção e controle.\n\nA atenção intencional permite que você vivencie a vida com mais profundidade, em vez de passar por ela inconscientemente.\n\nFoco não é só produtividade — é viver com presença. Uma mente focada cria uma vida mais significativa.',
+    'Quando a atenção está constantemente dispersa, a vida começa a parecer reativa e caótica. O foco cria um senso mais forte de direção e controle.\n\nA atenção intencional permite que você vivencie a vida com mais profundidade, em vez de passar por ela inconscientemente.\n\nFoco não é produtividade — é viver com presença. Uma mente focada cria uma vida mais significativa.',
 
   // ── Mindset — conteúdo dos cards CALMA em PT ──────────────────────────────────
   'mindset.card.m5.content':
@@ -10434,67 +10667,67 @@ const pt: TranslationMap = {
 
   'mindset.card.disc1.title':  'Seu cérebro confia no que você repete.',
   'mindset.card.disc1.content':
-    'Disciplina não é punição — é a prova de que você valoriza seu futuro o suficiente para protegê-lo. Cada promessa que você cumpre consigo mesmo fortalece sua identidade e sua autoconfiança.\n\nPessoas disciplinadas não são necessariamente mais motivadas; elas simplesmente agem de acordo com suas prioridades em vez de ceder a emoções passageiras. A verdadeira confiança vem de saber que você pode contar consigo mesmo. A disciplina constrói essa confiança todos os dias.',
+    'Mostrar-se para si mesmo não é sobre provar nada — é sobre construir, aos poucos, uma relação consigo que você pode contar. Cada vez que você volta a algo que importa, mesmo depois de uma semana difícil, essa confiança se aprofunda.\n\nVocê não precisa ser perfeitamente consistente para sentir isso. Ritmo não é sobre nunca parar — é sobre aprender que você pode recomeçar. E cada retorno, por mais silencioso que seja, já é uma forma de autorrespeito.',
 
   'mindset.card.disc2.title':  'O difícil fica mais leve quando vira rotina.',
   'mindset.card.disc2.content':
-    'A motivação é emocional e imprevisível. Em alguns dias ela aparece naturalmente; em outros, some por completo. A disciplina é o que permite que o progresso continue mesmo quando as emoções oscilam.\n\nPessoas que alcançam o que querem não dependem de se sentir inspiradas. Elas criam sistemas e hábitos que funcionam independentemente do humor.',
+    'A motivação vem e vai — e isso é completamente normal. Em alguns dias ela aparece com clareza e energia. Em outros, simplesmente não está lá. O que mantém as coisas em movimento não é a sensação de motivação, mas as pequenas ações feitas mesmo na ausência dela.\n\nRotinas simples e hábitos gentis te sustentam nos dias em que a inspiração não aparece. Progresso não exige estar pronto — exige o próximo passo possível, seja lá como ele seja hoje.',
 
   'mindset.card.disc3.title':  'Pequenas repetições mudam a direção dos dias.',
   'mindset.card.disc3.content':
-    'A vida raramente muda por uma decisão enorme. Ela muda por escolhas pequenas repetidas com consistência ao longo do tempo. A disciplina se constrói nos momentos ordinários — acordar quando planejou, terminar o que começou, resistir à distração, cumprir o que prometeu.\n\nPequenas ações disciplinadas se acumulam em transformações profundas. Seus hábitos, silenciosamente, vão se tornando seu futuro.',
+    'A vida raramente se transforma por momentos dramáticos. Ela muda por pequenas escolhas repetidas ao longo do tempo — do tipo que parecem insignificantes individualmente, mas que se somam em algo real. Os momentos ordinários importam: o que você volta a fazer, o que permanece fazendo, o que continua com gentileza mesmo quando não está empolgante.\n\nVocê não precisa enxergar o resultado com clareza agora. O que você faz de forma consistente, dia a dia, vai silenciosamente moldando o que vem a seguir.',
 
-  'mindset.card.disc4.title':  'O conforto frequentemente atrasa o crescimento.',
+  'mindset.card.disc4.title':  'Descanso restaura. Mas às vezes a imobilidade vira espera.',
   'mindset.card.disc4.content':
-    'O cérebro naturalmente busca conforto, conveniência e prazer imediato. Mas o crescimento geralmente exige desconforto temporário. Disciplina é escolher o benefício de longo prazo em vez da facilidade de agora.\n\nCada vez que você resiste à opção mais fácil, fortalece sua resiliência mental. O conforto pode parecer seguro enquanto, silenciosamente, te mantém parado.',
+    'Existem dois tipos de imobilidade. Um restaura — dá ao sistema nervoso espaço para desacelerar, se recuperar e voltar com mais capacidade do que antes. O outro se torna lentamente um padrão de espera: aguardando o momento certo, a sensação certa, as condições certas que nunca chegam exatamente assim.\n\nOs dois parecem semelhantes por dentro, e é por isso que a distinção importa. Não para se julgar por precisar de descanso — essa necessidade é real e legítima. Mas para perceber, com gentileza, em qual tipo você esteve. Um é recuperação. O outro é o início de um distanciamento do que você realmente quer estar fazendo. Só ter consciência dessa diferença já é um passo em direção à escolha.',
 
-  'mindset.card.disc5.title':  'Disciplina cria liberdade.',
+  'mindset.card.disc5.title':  'Um ritmo simples pode parecer alívio.',
   'mindset.card.disc5.content':
-    'Muita gente acredita que disciplina restringe a liberdade, mas o oposto costuma ser verdade. A falta de disciplina cria caos, estresse, procrastinação e arrependimento. A disciplina cria estrutura, estabilidade e controle sobre a própria vida.\n\nQuanto mais você domina seus hábitos, menos seus impulsos te controlam. A verdadeira liberdade nasce do autodomínio.',
+    'Ter algum ritmo nos seus dias — mesmo que solto — muda como a mente se move por eles. Quando há uma estrutura gentil, você não precisa resolver tudo do zero toda manhã. A energia que você teria gasto decidindo vai ser usada em realmente fazer. É uma forma silenciosa de liberdade: menos caos, menos atrito mental, mais espaço para o que importa.\n\nNão se trata de controlar cada hora ou dominar a si mesmo. É sobre dar aos seus dias uma forma que os faça parecer mais seus. Uma rotina simples não é uma prisão — para muitas pessoas, é o que torna o resto da vida mais manejável. Você não precisa de um sistema perfeito. Precisa de algo que sustente sem exigir força de vontade constante para manter.',
 
-  'mindset.card.disc6.title':  'A ação cria impulso.',
+  'mindset.card.disc6.title':  'Começar pequeno ainda é começar.',
   'mindset.card.disc6.content':
-    'Esperar estar pronto muitas vezes cria um atraso sem fim. A disciplina começa quando você age antes que suas emoções cooperem completamente. Uma vez que o movimento começa, a resistência costuma enfraquecer.\n\nA parte mais difícil é sempre o começo. A ação cria impulso muito mais rápido do que qualquer excesso de pensamento.',
+    'Você não precisa se sentir completamente pronto para começar. Às vezes o ato de iniciar — mesmo de forma imperfeita, mesmo que só um pouco — é o que cria a sensação que você estava esperando. A parte mais difícil costuma ser simplesmente decidir se mover.\n\nUma vez que algo começa, o peso tende a diminuir. Um passo pequeno hoje não precisa virar um grande amanhã. Ele só precisa existir — e isso já é suficiente para mover algo.',
 
-  'mindset.card.disc7.title':  'A disciplina se forja nos dias difíceis.',
+  'mindset.card.disc7.title':  'Dias difíceis fazem parte — não são prova de que você está falhando.',
   'mindset.card.disc7.content':
-    'Qualquer pessoa consegue manter a consistência quando a vida está fácil. A disciplina real aparece nos momentos de estresse, emoção ou inconveniência. Os dias difíceis são onde a força mental se desenvolve.\n\nCada vez que você continua apesar do desconforto, sua resiliência cresce. A consistência nos momentos duros muda a identidade.',
+    'Dias difíceis não significam que o ritmo quebrou. Eles são simplesmente parte de como o ritmo realmente é — não a versão polida, mas a versão real. O fato de parecer mais difícil em alguns dias não significa que você está fazendo algo errado. Significa que você é humano, vivendo uma vida real.\n\nO que você carrega de um período difícil — mesmo que seja só a decisão de voltar — não é pouca coisa. Dias difíceis não são o teste de se você tem ritmo. É onde o ritmo aprende a ser honesto.',
 
-  'mindset.card.disc8.title':  'Seu futuro está observando seus hábitos de hoje.',
+  'mindset.card.disc8.title':  'O que você faz a cada dia vai se somando em silêncio.',
   'mindset.card.disc8.content':
-    'A versão futura da sua vida está sendo moldada pelas suas rotinas de agora. Disciplina não é sobre transformação dramática da noite para o dia — é sobre comportamentos repetidos por tempo suficiente para criar mudança. Suas rotinas estão constantemente votando pela pessoa que você está se tornando.\n\nAs pequenas ações importam mais do que a maioria das pessoas percebe.',
+    'O que você faz consistentemente tende a deixar um rastro. Não de forma dramática ou imediata — mas gradualmente, ao longo do tempo, padrões surgem. A vida que você vive agora é moldada pelas coisas ordinárias a que você continua voltando. Pequenas ações têm mais peso do que parecem ter no momento.\n\nIsso não é para criar pressão. É simplesmente uma verdade silenciosa: o que você pratica regularmente tende a se tornar mais real. O que importa é menos sobre perfeição e mais sobre o que você continua escolhendo gentilmente.',
 
-  'mindset.card.disc9.title':  'Disciplina elimina a negociação interna.',
+  'mindset.card.disc9.title':  'Rotinas simples respondem perguntas que a mente teria que fazer de novo.',
   'mindset.card.disc9.content':
-    'Mentes indisciplinadas estão sempre negociando consigo mesmas. Talvez depois. Só dessa vez. Amanhã vai ser melhor. A disciplina reduz o debate interno criando padrões e rotinas claras. Quanto menos decisões você negocia emocionalmente, mais energia você preserva.\n\nEstrutura protege a consistência.',
+    'Cada decisão tem um custo — atenção, energia, um pequeno pedaço da capacidade mental. Quando você precisa resolver as mesmas coisas repetidamente — quando começar, se continuar, se hoje é um bom dia — esse custo se acumula. É uma das formas mais silenciosas de energia ser gasta antes mesmo de você começar.\n\nRotinas simples ajudam com isso. Não eliminando a dúvida ou suprimindo a deliberação natural da mente, mas respondendo algumas perguntas recorrentes com antecedência. Quando o ritmo está estabelecido, você gasta menos tempo negociando consigo mesmo sobre se vai começar. A resposta já está lá. Essa energia mental preservada é real — e tende a aparecer como mais espaço para o que realmente exige atenção plena.',
 
-  'mindset.card.disc10.title':  'Autocontrole é um superpoder.',
+  'mindset.card.disc10.title':  'Escolher para onde sua atenção vai é uma prática, não um traço de personalidade.',
   'mindset.card.disc10.content':
-    'Em um mundo cheio de distrações e gratificação instantânea, o autocontrole se tornou algo extremamente valioso. A disciplina permite resistir a impulsos que enfraquecem seus objetivos de longo prazo. Cada momento de contenção fortalece sua autoridade mental sobre si mesmo.\n\nA capacidade de controlar suas próprias ações cria estabilidade e confiança.',
+    'Vivemos em um ambiente deliberadamente projetado para puxar a atenção em muitas direções ao mesmo tempo. Cada aplicativo, cada feed, cada notificação é otimizado para capturar e manter o foco. Navegar por isso sem perder de vista o que você realmente se importa não é sobre-humano — é uma habilidade desenvolvida através da repetição, como qualquer outra.\n\nNos dias em que funciona — quando você direciona a atenção para algo significativo em vez de apenas derivar — algo muda. Não porque você dominou a si mesmo, mas porque foco intencional é diferente de reatividade dispersa. Você não precisa de autocontrole perfeito. Precisa de presença suficiente para continuar escolhendo, de forma imperfeita, na direção do que importa.',
 
   'mindset.card.disc11.title':  'Disciplina é repetição, não intensidade.',
   'mindset.card.disc11.content':
     'Esforço extremo por alguns dias raramente muda uma vida. A disciplina sustentável vem da repetição consistente ao longo de longos períodos. Pequenas ações repetidas diariamente criam resultados mais sólidos do que explosões ocasionais de motivação.\n\nO sucesso de longo prazo geralmente é construído de forma lenta e silenciosa. A consistência se acumula com um poder impressionante ao longo do tempo.',
 
-  'mindset.card.disc12.title':  'Disciplina protege seus objetivos.',
+  'mindset.card.disc12.title':  'Retornos pequenos e consistentes mantêm algo vivo.',
   'mindset.card.disc12.content':
-    'Sem disciplina, os objetivos permanecem como ideias em vez de realidade. O entusiasmo desaparece rápido, mas a ação disciplinada mantém o progresso vivo. Esforço focado protege seus sonhos da distração e da procrastinação.\n\nA disciplina é a ponte entre a intenção e a conquista. Objetivos precisam de estrutura para sobreviver.',
+    'O entusiasmo em torno de algo que você se importa não dura para sempre — e isso não é sinal de que parou de importar. É só como a energia funciona. O que mantém algo vivo além da faísca inicial não é empolgação sustentada. É algo menor, mais ordinário: voltar a ele quando você pode, fazer algo — qualquer coisa — mesmo nos dias em que não parece significativo.\n\nObjetivos não são estruturas frágeis que desmoronam sem dedicação constante. São direções que você continua escolhendo, de qualquer forma disponível para você. Alguns minutos de atenção. Um pequeno passo que não parece grande coisa. Esses retornos se somam de forma diferente do que parecem no momento. O que você continua voltando tem um jeito de permanecer real.',
 
-  'mindset.card.disc13.title':  'Sacrifício temporário cria recompensas duradouras.',
+  'mindset.card.disc13.title':  'Nem tudo que vale a pena parece recompensador enquanto está acontecendo.',
   'mindset.card.disc13.content':
-    'A disciplina frequentemente exige abrir mão do prazer imediato em favor de um benefício futuro. Esse sacrifício pode parecer desconfortável no momento, mas as recompensas a longo prazo costumam ser muito maiores.\n\nCada decisão disciplinada é um investimento no seu eu futuro. O desconforto de curto prazo pode criar melhorias que duram uma vida inteira.',
+    'Parte do que vale a pena fazer simplesmente não parece empolgante em tempo real. Não porque exige sacrifício heroico, mas porque profundidade e repetição não têm a mesma carga imediata que a novidade tem. A prática rotineira, o retorno diário, a fase sem glamour — essas costumam parecer insignificantes enquanto estão acontecendo.\n\nIsso é diferente de sofrer por algo. É mais sobre aceitar que algumas coisas se desenvolvem em um prazo mais lento, e que a ausência de recompensa imediata não significa que o esforço está errado. O que você está construindo durante as fases silenciosas e comuns costuma ser mais durável do que o que chega com uma explosão de energia. Presença e paciência, ao longo do tempo, criam coisas que o entusiasmo sozinho não consegue.',
 
-  'mindset.card.disc14.title':  'Disciplina fortalece a identidade.',
+  'mindset.card.disc14.title':  'O que você retorna a fazer começa a parecer parte de você.',
   'mindset.card.disc14.content':
-    'Cada ação repetida reforça a forma como você se vê. Quando você cumpre o que planeja de forma consistente, começa a se identificar como disciplinado, capaz e confiável. A identidade cresce a partir do comportamento, não apenas da intenção.\n\nSuas ações ensinam ao seu cérebro quem você é. A consistência reconstrói a autoimagem.',
+    'O que você faz repetidamente acaba se tornando parte de como você se vê — não pela perfeição, mas pelo padrão. Cada vez que você volta a algo, mesmo depois de uma pausa, você está reforçando um senso de si que não é construído apenas em sequências ininterruptas.\n\nA identidade que importa não é "nunca paro" — é "sei como voltar." Suas ações ao longo do tempo, incluindo os retornos, ensinam algo sobre quem você é. Isso já é suficiente para construir a partir daí.',
 
-  'mindset.card.disc15.title':  'Desculpas drenam seu poder pessoal.',
+  'mindset.card.disc15.title':  'Mesmo em circunstâncias difíceis, algo pequeno costuma ser possível.',
   'mindset.card.disc15.content':
-    'Desculpas protegem o conforto temporariamente, mas enfraquecem o autorrespeito ao longo do tempo. A disciplina cresce quando você para de dar às circunstâncias controle total sobre suas ações. O progresso raramente exige perfeição — exige responsabilidade.\n\nA responsabilidade cria poder pessoal. As desculpas criam estagnação.',
+    'Obstáculos reais existem. Esgotamento é real. Desafios de saúde mental são reais. Circunstâncias de vida — as que tornam a consistência genuinamente difícil — são reais. Reconhecê-los não é evitação. É honestidade.\n\nO que cria movimento não é negar essas realidades, mas encontrar o que é possível dentro delas. Não a ação ideal. Não a versão completa. Apenas o menor passo disponível agora, nestas condições reais. O menor retorno possível — a um hábito, uma prática, uma direção — ainda é um retorno. E fazer algo em circunstâncias difíceis, sem esperar as condições melhorarem primeiro, tem um jeito silencioso de mudar a relação com essas circunstâncias ao longo do tempo.',
 
-  'mindset.card.disc16.title':  'Disciplina é regulação emocional.',
+  'mindset.card.disc16.title':  'Agir a partir dos seus valores, mesmo nos dias mais difíceis.',
   'mindset.card.disc16.content':
-    'Muitas pessoas falham em manter a consistência porque as emoções dirigem constantemente suas decisões. Disciplina é aprender a agir de acordo com os próprios valores em vez de sentimentos passageiros. Desconforto emocional nem sempre significa que você deve parar.\n\nAutocontrole calmo protege o progresso de longo prazo. Estabilidade melhora o desempenho.',
+    'As emoções são reais — merecem atenção. Mas nem sempre precisam ser a palavra final. Nos dias em que você não sente vontade de continuar, seus valores podem agir como um guia silencioso em vez de uma demanda para seguir em frente.\n\nAgir a partir de um lugar de clareza, em vez de apenas a partir da energia do momento, não é sobre suprimir o que você sente — é sobre ter algo estável ao qual voltar quando as emoções mudam. Uma constância gentil, praticada ao longo do tempo, constrói algo duradouro.',
 
   'mindset.card.disc17.title':  'Disciplina constrói confiança silenciosamente.',
   'mindset.card.disc17.content':
@@ -10504,77 +10737,77 @@ const pt: TranslationMap = {
   'mindset.card.disc18.content':
     'A desorganização cria sobrecarga mental. A disciplina introduz ordem, clareza e previsibilidade na vida cotidiana. Rotinas estruturadas reduzem o cansaço de tomar decisões e o caos mental.\n\nQuando seus hábitos se tornam automáticos, seu cérebro desperdiça menos energia resistindo à ação. Simplicidade sustenta a consistência.',
 
-  'mindset.card.disc19.title':  'Disciplina é escolher o que importa mais.',
+  'mindset.card.disc19.title':  'Clareza sobre o que importa torna o próximo passo mais fácil.',
   'mindset.card.disc19.content':
-    'Cada ação disciplinada é, em última análise, uma decisão sobre prioridades. Você está escolhendo um propósito de longo prazo em vez de uma distração temporária. A disciplina fica mais fácil quando seus valores estão claros.\n\nPrioridades fortes reduzem o conflito interno. Clareza fortalece o compromisso.',
+    'Quando você sabe o que realmente importa para você, as decisões ficam mais simples. Não porque a vida fica mais fácil, mas porque você tem algo real pelo qual se orientar. Um senso claro de prioridades cria um fio que você pode seguir mesmo nos dias de desorientação.\n\nVocê não precisa ser perfeitamente organizado — precisa saber ao que está voltando. Clareza não é um destino. É algo que se constrói silenciosamente enquanto você continua voltando ao que realmente valoriza.',
 
-  'mindset.card.disc20.title':  'Gratificação adiada muda vidas.',
+  'mindset.card.disc20.title':  'Paciência com algo que você está construindo muda o que ele se torna.',
   'mindset.card.disc20.content':
-    'A capacidade de adiar o prazer em troca de uma recompensa futura é um dos preditores mais fortes de sucesso a longo prazo. A disciplina fortalece essa habilidade com o tempo. A gratificação imediata muitas vezes parece satisfatória, mas cria resultados fracos no longo prazo.\n\nPaciência e contenção criam futuros mais sólidos. Pensar no longo prazo muda as decisões.',
+    'Algumas coisas se revelam lentamente. Não porque exigem sacrifício, mas porque profundidade simplesmente funciona em um prazo mais longo do que a novidade. A capacidade de permanecer com algo — de continuar voltando quando não há recompensa imediata visível — tende a produzir resultados diferentes da urgência.\n\nIsso não é sobre se negar descanso ou prazer. Essas são necessidades reais e pertencem a um ritmo sustentável. É mais sobre desenvolver um tipo de paciência que não exige prova imediata. Uma confiança de que o que você está fazendo tem valor mesmo quando você ainda não consegue ver onde está indo. Essa paciência não é contenção — é uma relação diferente com o tempo.',
 
   'mindset.card.disc21.title':  'Disciplina exige limites.',
   'mindset.card.disc21.content':
     'A consistência se torna difícil quando tudo tem acesso ilimitado à sua atenção. Disciplina frequentemente significa estabelecer limites com distrações, tecnologia, pessoas e hábitos que te enfraquecem. Proteger suas prioridades é proteger seu futuro.\n\nLimites criam clareza mental e controle.',
 
-  'mindset.card.disc22.title':  'A escolha difícil constrói a melhor versão de você.',
+  'mindset.card.disc22.title':  'Escolhas difíceis deixam algo para trás — nem sempre visível, mas real.',
   'mindset.card.disc22.content':
-    'Escolhas fáceis raramente desenvolvem resiliência. Escolhas difíceis constroem resistência, sabedoria e caráter. A disciplina te ensina a tolerar o desconforto sem fugir imediatamente.\n\nA força mental cresce através do desafio. O crescimento costuma se esconder dentro da inconveniência.',
+    'Passar por algo genuinamente difícil — escolher o caminho mais honesto, permanecer com algo desconfortável em vez de escapar imediatamente — tende a deixar um rastro. Não de forma dramática. Não como uma transformação em uma "versão melhor" de qualquer coisa. Mas na mudança silenciosa em como você se carrega depois.\n\nA experiência de ter encontrado algo difícil e não ter corrido completamente se torna parte de como você se entende. Você sabe algo agora que não sabia antes — sobre o que você consegue tolerar, o que está disposto a fazer, como é permanecer. Esse conhecimento nem sempre se anuncia. Mas está lá, e tende a tornar o próximo momento difícil um pouco menos desconhecido.',
 
   'mindset.card.disc23.title':  'Disciplina cria estabilidade no caos.',
   'mindset.card.disc23.content':
     'A vida sempre vai conter incerteza, estresse e oscilações emocionais. A disciplina cria estabilidade interna quando as situações externas parecem imprevisíveis. Rotinas sólidas oferecem ancoragem nos períodos difíceis.\n\nHábitos consistentes criam estrutura emocional. A estabilidade protege o impulso.',
 
-  'mindset.card.disc24.title':  'Seus hábitos estão te construindo ou te enfraquecendo.',
+  'mindset.card.disc24.title':  'O que você repete tem peso. Mesmo as coisas silenciosas.',
   'mindset.card.disc24.content':
-    'Nenhum comportamento repetido é neutro. Cada hábito ou fortalece seu futuro ou o enfraquece lentamente. A disciplina é se tornar mais intencional sobre o que você permite repetidamente na sua vida.\n\nA repetição molda os resultados. Seus padrões diários importam profundamente.',
+    'O que você faz de forma consistente tende a se acumular — em uma direção ou outra. Isso não é para criar pressão. É simplesmente como a repetição funciona: as coisas crescem na direção em que são praticadas.\n\nO convite não é ser perfeito em cada hábito. É se tornar um pouco mais consciente do que você está silenciosamente voltando a fazer a cada dia, e se isso está te movendo em direção a algo que realmente parece certo. Mesmo pequenos ajustes no que você repete podem, ao longo do tempo, criar mudanças reais.',
 
-  'mindset.card.disc25.title':  'Disciplina é terminar o que você começa.',
+  'mindset.card.disc25.title':  'Permanecer com algo além do começo cria algo real.',
   'mindset.card.disc25.content':
-    'Muitas pessoas adoram começos porque eles parecem empolgantes. A disciplina é o que permite continuar depois que o entusiasmo desaparece. Terminar desenvolve confiabilidade, paciência e resiliência.\n\nA conclusão constrói um caráter mais forte do que recomeços infinitos. A consistência cria resultados.',
+    'Começos são energizantes — e essa energia é real e útil. O que fica mais difícil é o meio: quando a novidade passou e o trabalho ainda precisa acontecer. É aqui que o ritmo se desenvolve. Não através de se forçar, mas através de escolher ficar com algo um pouco mais, mesmo quando é menos empolgante.\n\nOs resultados que mais significam geralmente vêm das fases mais silenciosas, não dos começos brilhantes. Paciência com o meio é muitas vezes onde o progresso mais honesto mora.',
 
   'mindset.card.disc26.title':  'Disciplina também se constrói na recuperação.',
   'mindset.card.disc26.content':
     'Descanso não é inimigo da disciplina. O esgotamento enfraquece a consistência e a clareza mental. Pessoas disciplinadas entendem a importância da recuperação, do sono e do equilíbrio. Desempenho sustentável exige restauração adequada.\n\nA consistência de longo prazo depende de como você gerencia sua energia.',
 
-  'mindset.card.disc27.title':  'Disciplina reduz o arrependimento.',
+  'mindset.card.disc27.title':  'Pequenos passos consistentes tendem a trazer mais paz do que esperar.',
   'mindset.card.disc27.content':
-    'A maior parte do arrependimento vem de evitar ações difíceis mas necessárias. A disciplina te ajuda a tomar decisões que seu eu futuro vai agradecer. O desconforto temporário frequentemente previne frustrações de longo prazo.\n\nEsforço consistente protege a paz de espírito. A ação reduz o arrependimento.',
+    'Há algo que acalma em dar um pequeno passo na direção do que importa, mesmo quando é imperfeito. Não porque resolve tudo, mas porque cria movimento onde a imobilidade estava começando a parecer pressão.\n\nEsforço consistente — por mais modesto que seja — tende a trazer mais alívio silencioso do que ficar parado. Você não precisa tomar decisões perfeitas. Precisa continuar tomando decisões gentis que te movem em direção a algo real. A paz de espírito costuma surgir daí.',
 
-  'mindset.card.disc28.title':  'Você se torna o que pratica repetidamente.',
+  'mindset.card.disc28.title':  'O que você pratica consistentemente tende a se tornar mais natural com o tempo.',
   'mindset.card.disc28.content':
-    'Seu cérebro se adapta ao comportamento repetido. Se você pratica repetidamente distração, evitação e inconsistência, esses padrões se fortalecem. Mas se você pratica repetidamente disciplina, foco e comprometimento, esses padrões também se tornam mais fortes.\n\nA repetição constrói a identidade. A prática molda o caráter.',
+    'O cérebro se adapta ao que faz repetidamente. É assim que o sistema nervoso funciona — padrões que aparecem de forma consistente tendem a se tornar mais automáticos ao longo do tempo. Isso não é um julgamento de onde você está agora. É uma observação sobre como a mudança realmente acontece.\n\nSe você quiser que algo pareça mais natural — um hábito, um ritmo, uma forma de responder — pequenas repetições consistentes, sem drama ou autoavaliação severa, gradualmente mudam o padrão. Incluindo o próprio ato de voltar. Quanto mais você volta a algo depois de uma pausa, mais natural esse retorno se torna. O que você pratica com gentileza, ao longo do tempo, começa a parecer menos esforço.',
 
-  'mindset.card.disc29.title':  'Disciplina é honrar as promessas que você faz a si mesmo.',
+  'mindset.card.disc29.title':  'Voltar já é uma promessa cumprida.',
   'mindset.card.disc29.content':
-    'Promessas quebradas a si mesmo enfraquecem lentamente a confiança interna. A disciplina reconstrói essa relação consigo mesmo. Cada compromisso que você honra fortalece o autorrespeito.\n\nSer confiável para você mesmo importa profundamente. A confiança interna muda a forma como você vive.',
+    'A relação que você tem com você mesmo se constrói ao longo do tempo — não pela perfeição, mas pelo retorno. Cada vez que você volta a algo depois de um período difícil, você está silenciosamente reconstruindo algo: um senso de que você pode contar consigo mesmo, mesmo de forma imperfeita.\n\nVocê não precisa de uma sequência ininterrupta para ter autoconfiança. O que importa é que o fio permaneça — que depois dos dias difíceis, você encontre seu caminho de volta. Esse retorno, por menor que seja, já é um compromisso honrado.',
 
   'mindset.card.disc30.title':  'Disciplina cria um futuro diferente.',
   'mindset.card.disc30.content':
     'A maioria das pessoas subestima o quanto sua disciplina diária influencia o futuro. As pequenas escolhas que você repete hoje determinam silenciosamente as oportunidades, a confiança, a saúde e a estabilidade que você vai experimentar mais tarde.\n\nDisciplina não é controlar cada momento com perfeição. É se mover consistentemente na direção certa.',
 
-  'mindset.card.disc31.title':  'Disciplina é fazer mesmo assim.',
+  'mindset.card.disc31.title':  'Nos dias em que é difícil começar — mesmo um pequeno passo conta.',
   'mindset.card.disc31.content':
-    'Haverá dias em que você se sentirá cansado, sem inspiração, distraído ou emocionalmente esgotado. Disciplina é a capacidade de continuar apesar desses sentimentos, em vez de esperar por condições perfeitas. O progresso frequentemente é construído nos momentos em que a motivação está ausente.\n\nAs pessoas que mudam suas vidas geralmente são as que continuam se movendo quando seria mais fácil parar.',
+    'Alguns dias são genuinamente difíceis. Você se sente cansado, sem motivação ou emocionalmente distante das coisas que normalmente parecem significativas. Nesses dias, o padrão não é perfeição — é presença. Um pequeno passo. Aparecer da forma que está disponível para você.\n\nProgresso não exige bons dias. Ele pede apenas que, nos dias mais difíceis, você volte a ele da forma que puder. E esse retorno — por mais silencioso que seja — é suficiente para manter o ritmo vivo.',
 
-  'mindset.card.disc32.title':  'Seus padrões moldam seus resultados.',
+  'mindset.card.disc32.title':  'Quando você sabe o que valoriza, pequenas decisões ficam mais fáceis.',
   'mindset.card.disc32.content':
-    'A disciplina começa com padrões pessoais. O que você tolera repetidamente se torna seu normal. Quando seus padrões sobem, suas ações naturalmente começam a mudar.\n\nPessoas disciplinadas decidem com antecedência como querem viver em vez de reagir emocionalmente no momento. Padrões elevados criam vidas mais sólidas.',
+    'O que você considera importante molda silenciosamente o que você escolhe. Não através de controle rígido, mas através de ter um senso de direção ao qual voltar quando as coisas ficam confusas. Quando seus valores estão definidos — mesmo que de forma solta — eles criam um quadro para suas decisões diárias.\n\nVocê não precisa decidir tudo com antecedência, e não precisa suprimir suas emoções para ter padrões. Só precisa saber, mais ou menos, o que importa suficientemente para continuar escolhendo. Esse saber já é uma forma de disciplina.',
 
-  'mindset.card.disc33.title':  'Disciplina é lembrar o que você realmente quer.',
+  'mindset.card.disc33.title':  'Nos momentos difíceis, reconectar com o que importa cria um caminho de volta.',
   'mindset.card.disc33.content':
-    'Impulsos são temporários, mas as consequências frequentemente duram muito mais. A disciplina te ajuda a reconectar com suas prioridades mais profundas antes de tomar decisões. Nos momentos difíceis, lembrar dos seus objetivos maiores cria clareza.\n\nEmoções temporárias não deveriam ter mais autoridade do que sua visão de longo prazo. A disciplina protege o que importa mais.',
+    'Quando as coisas parecem dispersas ou pesadas, há algo estabilizador em voltar ao que realmente importa para você — não como uma demanda de performar, mas como uma âncora. Impulsos e emoções difíceis são reais, e carregam informações que valem a pena ouvir.\n\nMas eles nem sempre precisam direcionar cada decisão. A disciplina, em sua forma mais gentil, é o hábito silencioso de lembrar para onde você está orientado, mesmo quando o dia te puxou para longe disso. Voltar a essa clareza já é um ato significativo.',
 
-  'mindset.card.disc34.title':  'Repetição cria força mental.',
+  'mindset.card.disc34.title':  'Quanto mais você volta, mais familiar o caminho fica.',
   'mindset.card.disc34.content':
-    'A força mental não se constrói através de esforço ocasional. Ela se constrói através de momentos repetidos de consistência ao longo do tempo. Cada ação difícil que você conclui fortalece um pouco mais sua resiliência.\n\nA disciplina fica mais fácil quanto mais você a pratica. A repetição treina a mente para tolerar o desconforto com calma.',
+    'O ritmo não se constrói através do esforço dramático. Ele cresce pela repetição — através de voltar com tanta frequência que o caminho começa a parecer conhecido. O que antes exigia esforço significativo para começar, gradualmente pede menos de você ao longo do tempo. Não porque fica sem esforço, mas porque você se torna mais familiar com ele.\n\nCada retorno, mesmo nos dias em que parece mais difícil, torna o próximo um pouco mais fácil. É assim que a consistência realmente funciona: silenciosamente, por acumulação, não forçando a si mesmo a ser mais forte do que se sente.',
 
   'mindset.card.disc35.title':  'Disciplina reduz o caos.',
   'mindset.card.disc35.content':
     'A falta de estrutura frequentemente cria estresse e confusão desnecessários. A disciplina traz ordem para suas rotinas, prioridades e responsabilidades. Hábitos organizados reduzem a sobrecarga mental e o esgotamento emocional.\n\nQuando sua vida tem estrutura, seu cérebro gasta menos energia se recuperando da desordem. Simplicidade cria estabilidade.',
 
-  'mindset.card.disc36.title':  'Disciplina é escolher o progresso em vez das desculpas.',
+  'mindset.card.disc36.title':  'Progresso não exige condições perfeitas. Só o próximo passo possível.',
   'mindset.card.disc36.content':
-    'Desculpas frequentemente parecem reconfortantes no curto prazo, mas se tornam destrutivas ao longo do tempo. A disciplina exige assumir a responsabilidade mesmo quando as circunstâncias são imperfeitas. O progresso não exige condições ideais — exige esforço consistente.\n\nA responsabilidade cria impulso. Assumir o controle fortalece o poder pessoal.',
+    'A vida raramente cria condições ideais. Há interrupções, esgotamento, demandas concorrentes, obstáculos inesperados e dias em que nada coopera da forma que você precisa. O ritmo não espera essas coisas se resolverem — ele encontra o pequeno movimento disponível dentro delas.\n\nIsso não é sobre minimizar dificuldades reais ou fingir que as circunstâncias não importam. Importam. Mas quase sempre há algo — por menor que seja — que é possível dentro das condições atuais. Não a versão completa. Não a ação ideal. Apenas a próxima coisa que cabe dentro da realidade de hoje. Esse passo, tomado em condições imperfeitas, ainda é movimento real. E movimento real, por mais modesto que seja, tende a criar mais movimento real.',
 
   'mindset.card.disc37.title':  'Disciplina se constrói uma decisão de cada vez.',
   'mindset.card.disc37.content':
@@ -10584,65 +10817,65 @@ const pt: TranslationMap = {
   'mindset.card.disc38.content':
     'Muitas pessoas desistem porque esperam desempenho impecável de si mesmas. Disciplina não é ser perfeito todos os dias. É voltar rapidamente após erros ou contratempos.\n\nA consistência de longo prazo importa muito mais do que a perfeição temporária. Esforço sustentável cria mudança duradoura.',
 
-  'mindset.card.disc39.title':  'Disciplina exige paciência.',
+  'mindset.card.disc39.title':  'Mudança real costuma ser invisível por um tempo.',
   'mindset.card.disc39.content':
-    'O crescimento real geralmente acontece mais devagar do que as pessoas esperam. Disciplina significa continuar trabalhando mesmo antes que os resultados visíveis apareçam. A impaciência leva muitas pessoas a abandonar hábitos valiosos cedo demais.\n\nO sucesso duradouro frequentemente exige longos períodos de progresso invisível. A paciência fortalece a consistência.',
+    'O crescimento raramente se anuncia. Na maior parte do tempo, o progresso real acontece silenciosamente — em momentos que não parecem significativos, em hábitos que ainda não mostram resultados visíveis, na lenta acumulação de coisas que parecem pequenas. Paciência não é passiva: é a capacidade de continuar mesmo quando o progresso ainda não é visível.\n\nO que você está construindo durante as fases invisíveis costuma ser mais real do que o que aparece nos momentos dramáticos. Confie que algo está acontecendo, mesmo quando você ainda não consegue ver.',
 
-  'mindset.card.disc40.title':  'Disciplina protege sua energia.',
+  'mindset.card.disc40.title':  'Ritmos sustentáveis protegem a energia que você precisa para continuar.',
   'mindset.card.disc40.content':
-    'Hábitos indisciplinados frequentemente drenam energia mental, emocional e física. Noites tardias, distrações constantes, procrastinação e impulsividade emocional enfraquecem o desempenho ao longo do tempo. A disciplina protege sua energia criando padrões mais saudáveis.\n\nMelhores hábitos criam foco mais forte e resiliência.',
+    'Alguns padrões drenam energia silenciosamente ao longo do tempo — não por falha moral, mas simplesmente pela forma como o corpo e a mente funcionam. Superestimulação crônica, sono irregular, ignorar o que você precisa, operar em um ritmo que não é sustentável — essas coisas criam um tipo de esgotamento acumulado que eventualmente aparece no foco, no humor e na consistência.\n\nConstruir ritmos que são realmente sustentáveis — incluindo descanso adequado, expectativas realistas, recuperação genuína e espaço para o que o corpo realmente precisa — protege a capacidade de continuar aparecendo ao longo do tempo. Não se trata de autocontrole ou restrição. É sobre construir um ritmo que não exige se desgastar para manter. Um ritmo que pode durar é aquele que leva em conta o quadro completo do que você realmente precisa.',
 
   'mindset.card.disc41.title':  'Disciplina torna as coisas difíceis mais fáceis.',
   'mindset.card.disc41.content':
     'Quanto mais você pratica comportamentos difíceis, menos resistência eles criam. A repetição reduz o atrito emocional. O que antes parecia impossível gradualmente se torna normal através da disciplina.\n\nO crescimento acontece quando ações difíceis se tornam hábitos regulares. A consistência muda a percepção.',
 
-  'mindset.card.disc42.title':  'Disciplina é se liderar.',
+  'mindset.card.disc42.title':  'Se direcionar gentilmente — mesmo nos dias mais difíceis.',
   'mindset.card.disc42.content':
-    'Autoliderança é a capacidade de guiar suas ações com intenção em vez de ser controlado por impulso ou circunstância. A disciplina fortalece sua capacidade de dirigir seu próprio comportamento.\n\nAutoliderança forte cria confiança e estabilidade emocional. Com o tempo, você se torna mais confiável para si mesmo.',
+    'Há um tipo silencioso de força em se guiar com alguma intencionalidade — não forçando, não controlando, mas navegando em direção ao que você decidiu que importa. Nos dias mais fáceis, isso parece natural. Nos mais difíceis, é mais sobre permanecer conectado ao que você valoriza mesmo quando tudo puxa em outra direção.\n\nCom o tempo, essa autodireção gentil constrói algo real: um senso crescente de que você pode contar consigo mesmo. Não porque nunca sai do caminho, mas porque encontra o caminho de volta.',
 
-  'mindset.card.disc43.title':  'Disciplina se constrói nos momentos privados.',
+  'mindset.card.disc43.title':  'As escolhas silenciosas que você faz por você mesmo são as mais reais.',
   'mindset.card.disc43.content':
-    'O caráter é moldado pelo que você faz repetidamente quando ninguém está assistindo. A disciplina cresce através de escolhas silenciosas feitas consistentemente nos bastidores. Pequenas ações privadas frequentemente determinam resultados visíveis mais tarde.\n\nIntegridade fortalece a identidade. Seus hábitos invisíveis moldam seu futuro visível.',
+    'A disciplina mais honesta acontece nos momentos que pertencem apenas a você. Não para provar nada a ninguém, não para construir um histórico visível — mas simplesmente porque você decidiu assim. Essas escolhas privadas — ao que você silenciosamente volta, o que você gentilmente protege, o que você escolhe quando ninguém mais saberia de qualquer forma — são o que molda seu senso de si ao longo do tempo.\n\nO trabalho que acontece nos bastidores tende a ser mais honesto do que o que é visível. E é nessa honestidade que o ritmo real cresce.',
 
-  'mindset.card.disc44.title':  'Prazer imediato pode criar dor duradoura.',
+  'mindset.card.disc44.title':  'Algum alívio restaura. Outro adia o que precisa acontecer.',
   'mindset.card.disc44.content':
-    'Muitas decisões impulsivas parecem boas temporariamente, mas criam estresse, arrependimento ou fraqueza depois. A disciplina te ensina a avaliar as consequências de longo prazo antes de reagir emocionalmente.\n\nO conforto de curto prazo pode silenciosamente sabotar objetivos de longo prazo. Contenção sábia protege a paz futura.',
+    'Nem todo alívio de curto prazo é igual. Parte dele realmente restaura: dormir, se afastar de algo esmagador, se dar permissão para não forçar hoje. Esse tipo de alívio não é evitação — é recuperação, e é necessário.\n\nMas parte do alívio adia algo que fica mais difícil de encarar ao longo do tempo: a conversa que não acontece, o hábito que continua sendo adiado, a coisa que você continua contornando. Aprender a notar qual tipo você está buscando — sem se julgar duramente por querer alívio em primeiro lugar — é uma habilidade útil. A pergunta não é "estou sendo fraco?" A pergunta é simplesmente: "Isso realmente está me ajudando, ou criando algo que vou ter que lidar depois?"',
 
   'mindset.card.disc45.title':  'Disciplina cria estabilidade emocional.',
   'mindset.card.disc45.content':
     'Quando suas ações dependem constantemente do humor, a vida se torna emocionalmente imprevisível. A disciplina cria constância mesmo durante períodos estressantes. Hábitos estruturados reduzem o caos emocional ao criar consistência.\n\nEstabilidade melhora a tomada de decisões. Rotinas calmas fortalecem a resiliência.',
 
-  'mindset.card.disc46.title':  'Autodisciplina constrói independência.',
+  'mindset.card.disc46.title':  'Quanto mais você aparece para si mesmo, menos precisa de pressão externa para começar.',
   'mindset.card.disc46.content':
-    'Quanto mais disciplinado você se torna, menos você depende de pressão externa, lembretes ou validação para agir. A autodisciplina cria independência pessoal. Você para de esperar que outros te motivem ou te resgatem.\n\nResponsabilidade interna cria liberdade e maturidade.',
+    'Há algo libertador em encontrar movimento por dentro — em começar porque foi você quem escolheu, não porque alguém te lembrou ou pressão externa forçou. Esse tipo de motivação interna cresce gradualmente, através de pequenos atos repetidos de autoconfiança.\n\nIsso não significa que você nunca precisa de apoio, ou que pedir ajuda é fraqueza. Significa apenas que, com o tempo, você se torna uma fonte mais confiável de movimento para frente por conta própria. Essa estabilidade interna, construída silenciosamente, cria um tipo de liberdade que pressão externa não consegue te dar.',
 
-  'mindset.card.disc47.title':  'Disciplina é manter o impulso vivo.',
+  'mindset.card.disc47.title':  'Mesmo um pequeno passo num dia difícil mantém algo vivo.',
   'mindset.card.disc47.content':
-    'O impulso é frágil. Pequenos períodos de inconsistência podem rapidamente enfraquecer o progresso e a motivação. A disciplina protege o impulso através de ação constante, especialmente nos dias de baixa energia.\n\nAté os pequenos esforços ajudam a manter o movimento para frente. A consistência mantém o crescimento vivo.',
+    'Nos dias em que a energia está baixa e tudo parece mais pesado, você não precisa manter o mesmo ritmo. Um passo menor ainda conta. Uma versão mais silenciosa do que você costuma fazer ainda honra o ritmo.\n\nO impulso não é construído apenas nos dias fortes — é mantido nos gentis. Até o menor esforço num dia difícil mantém um fio vivo, uma conexão ativa entre quem você é e o que você está construindo. Esse fio é suficiente. Você não precisa estar no seu melhor para continuar.',
 
-  'mindset.card.disc48.title':  'Disciplina te ensina a lidar com o desconforto.',
+  'mindset.card.disc48.title':  'Sentar com a dificuldade um pouco mais, cada vez.',
   'mindset.card.disc48.content':
-    'A maioria das pessoas instintivamente evita o desconforto, mas a disciplina te ensina a permanecer calmo dentro dos momentos difíceis. O crescimento frequentemente exige tédio, repetição, incerteza ou esforço. Evitar todo o desconforto enfraquece a resiliência.\n\nAprender a tolerar o desconforto temporário fortalece o controle emocional.',
+    'Alguns momentos são simplesmente difíceis — entediantes, incertos, repetitivos, ou desconfortáveis de maneiras que fazem tudo em você querer se afastar. O ritmo inclui aprender a estar presente nesses momentos sem escapar imediatamente. Não porque o desconforto seja sempre bom ou produtivo, mas porque aprender a ficar com a dificuldade um pouco mais cria algo silencioso: um senso de que você consegue atravessar as coisas, mesmo quando não parecem boas.\n\nCom o tempo, isso se torna seu próprio tipo de constância — não dureza, mas presença.',
 
   'mindset.card.disc49.title':  'Seu ambiente influencia sua disciplina.',
   'mindset.card.disc49.content':
     'A força de vontade sozinha frequentemente não é suficiente. Seu entorno influencia fortemente seus hábitos e comportamentos. A disciplina fica mais fácil quando seu ambiente apoia seus objetivos em vez de oferecer distrações constantemente.\n\nEstrutura reduz a resistência desnecessária. Ambientes inteligentes apoiam melhores decisões.',
 
-  'mindset.card.disc50.title':  'Disciplina cria confiabilidade.',
+  'mindset.card.disc50.title':  'Quanto mais você pode contar consigo mesmo, mais firme você se sente.',
   'mindset.card.disc50.content':
-    'As pessoas confiam naquelas que consistentemente cumprem o que prometem. A confiabilidade é construída através de ações disciplinadas repetidas ao longo do tempo. Quando você se torna confiável para si mesmo e para os outros, a confiança naturalmente aumenta.\n\nA consistência fortalece tanto os relacionamentos quanto a identidade. Confiabilidade cria respeito.',
+    'Um dos benefícios mais silenciosos de um ritmo consistente é o que ele faz pelo seu senso de si mesmo. Quando você cumpre o que propõe — mesmo de formas pequenas, mesmo de forma imperfeita — você gradualmente se torna alguém com quem pode contar. Não principalmente para os outros, mas para si mesmo.\n\nEssa confiabilidade interna cria um tipo de solidez que não depende de validação externa. Você sabe que, quando se compromete com algo, parte de você vai realmente aparecer para isso. Esse conhecimento, construído pela repetição ao longo do tempo, é uma forma de confiança que parece real porque é.',
 
-  'mindset.card.disc51.title':  'Disciplina é terminar também a parte difícil.',
+  'mindset.card.disc51.title':  'O progresso real costuma morar na fase menos empolgante do meio.',
   'mindset.card.disc51.content':
-    'Começar é importante, mas disciplina também significa continuar quando as coisas se tornam repetitivas ou difíceis. Muitas pessoas perdem o impulso depois que o entusiasmo inicial desaparece. O crescimento real frequentemente acontece durante a fase intermediária menos empolgante.\n\nA persistência cria conclusão. A conclusão cria transformação.',
+    'O começo de algo geralmente carrega energia e clareza. O meio é mais silencioso — menos empolgante, mais repetitivo, e mais fácil de abandonar. Mas o progresso real tende a acontecer ali, nas fases que não parecem muito de fora. Continuar além do impulso inicial não é sobre se forçar — é sobre confiar que o meio sem glamour também tem valor.\n\nO que você constrói ao permanecer com algo através de suas fases menos inspiradoras costuma ser mais honesto, e mais durável, do que o que começa com uma explosão de entusiasmo.',
 
   'mindset.card.disc52.title':  'Disciplina é proteger seu eu futuro.',
   'mindset.card.disc52.content':
     'Cada ação disciplinada é um presente para a sua versão futura. Hábitos saudáveis, responsabilidade financeira, aprendizado e consistência criam benefícios de longo prazo que podem não aparecer imediatamente. Disciplina é autocuidado de longo prazo.\n\nA estabilidade futura é construída através da responsabilidade presente.',
 
-  'mindset.card.disc53.title':  'Disciplina fortalece a clareza mental.',
+  'mindset.card.disc53.title':  'Quando você age sobre o que importa, a mente tende a se acalmar.',
   'mindset.card.disc53.content':
-    'Procrastinação e inconsistência criam ruído mental e culpa. A disciplina reduz a tensão interna criando ação e conclusão. Quanto mais responsabilidades você lida intencionalmente, mais calma sua mente costuma ficar.\n\nOrdem melhora a clareza. Clareza melhora o desempenho.',
+    'Existe um tipo de ruído interno que se constrói quando as coisas ficam inacabadas ou sem ser abordadas. Não julgamento — apenas peso. Tomar ação intencional, mesmo em coisas menores, tende a criar alívio. Não porque tudo se resolve, mas porque movimento cria uma relação diferente com a confusão mental.\n\nQuanto mais você lida com as coisas com alguma presença e atenção, mais quieta sua mente costuma ficar. Clareza não é apenas uma conquista de pensamento — é muitas vezes a sensação de ter realmente feito algo com o que você estava carregando.',
 
   'mindset.card.disc54.title':  'Disciplina acelera a recuperação.',
   'mindset.card.disc54.content':
@@ -10656,9 +10889,9 @@ const pt: TranslationMap = {
   'mindset.card.disc56.content':
     'Quando comportamentos positivos se tornam automáticos, a disciplina exige menos energia emocional. Hábitos reduzem a necessidade de tomada de decisão constante e força de vontade. O objetivo não é lutar para sempre — é construir sistemas que apoiam a consistência naturalmente.\n\nAutomatização fortalece a estabilidade.',
 
-  'mindset.card.disc57.title':  'Disciplina se acumula silenciosamente com o tempo.',
+  'mindset.card.disc57.title':  'Pequenas ações consistentes se acumulam em algo que você verá depois.',
   'mindset.card.disc57.content':
-    'A maioria das ações disciplinadas parece pequena no momento. Um treino, uma hora de foco, uma escolha saudável, uma conversa difícil. Mas ao longo de meses e anos, essas ações se acumulam em transformação significativa.\n\nA disciplina raramente cria resultados instantâneos. Seu verdadeiro poder aparece através da acumulação.',
+    'A maior parte do que você faz hoje não parece muito no momento. Uma pequena escolha. Um retorno silencioso. Um dia de aparecer sem alarde. O poder não está em nenhuma ação isolada — está no que essas ações se tornam quando são repetidas ao longo do tempo.\n\nO ritmo raramente cria resultados instantâneos. Sua verdade aparece lentamente, por acumulação — na diferença entre onde você está agora e onde estava meses atrás. Essa acumulação é silenciosa, paciente e real. Você pode não notar dia a dia, mas ela está construindo algo.',
 
   // ── Mindset ───────────────────────────────────────────────────────────────────
   'mindset.eyebrow':    'REFLEXÕES',
@@ -10850,7 +11083,7 @@ const pt: TranslationMap = {
   'wb.returning.0':   'Você sempre pode recomeçar.',
   'wb.returning.1':   'Sem pressão. Só hoje.',
   'wb.returning.2':   'Não há nada para compensar.',
-  'wb.returning.3':   'Bem-vinda de volta para si.',
+  'wb.returning.3':   'Que bom estar de volta.',
   'wb.returning.4':   'Ainda aqui. Ainda seu.',
   'wb.active.0':      'Progresso silencioso.',
   'wb.active.1':      'Você tem aparecido por você.',
@@ -10862,6 +11095,21 @@ const pt: TranslationMap = {
   'wb.late_night.2':  'Isso é suficiente.',
   'wb.late_night.3':  'Deixe o dia se assentar.',
   'wb.late_night.4':  'A quietude também é algo.',
+
+  // ── Personal Mantra Echo ──────────────────────────────────────────────────────
+  'mantra.weekly.label': 'UMA PALAVRA DA SUA CHEGADA',
+  'mantra.weekly.v0':    'Quando você chegou, escolheu:\n\n"{{mantra}}"\n\nEssa palavra apareceu em algum momento desta semana?',
+  'mantra.weekly.v1':    'Você escolheu a palavra:\n\n"{{mantra}}"\n\nO que ela significa para você hoje?',
+  'mantra.weekly.v2':    'Há algum tempo você escolheu:\n\n"{{mantra}}"\n\nEla ainda parece importante?',
+  'mantra.weekly.v3':    'Você chegou aqui com:\n\n"{{mantra}}"\n\nAlgo desta semana carregou isso?',
+  'mantra.weekly.v4':    'Quando você começou, escolheu:\n\n"{{mantra}}"\n\nEla ainda é algo que você procura?',
+  'mantra.return.v0':    'Quando você começou, escolheu a palavra "{{mantra}}".\n\nEla não precisa aparecer todos os dias.\n\nMas talvez ainda importe.',
+  'mantra.return.v1':    'Quando você chegou aqui, escolheu:\n\n"{{mantra}}"\n\nTalvez ela ainda esteja caminhando com você.',
+  'mantra.return.v2':    'Você chegou aqui carregando:\n\n"{{mantra}}"\n\nIsso não mudou.',
+  'mantra.progress.label': 'UMA PALAVRA QUE IMPORTAVA',
+  'mantra.progress.v0': '"{{mantra}}"\n\nVocê escolheu isso quando chegou.\n\nAinda significa algo para você?',
+  'mantra.progress.v1': 'Quando você chegou, trouxe uma palavra:\n\n"{{mantra}}"\n\nEla não foi a lugar nenhum.',
+  'mantra.progress.v2': '"{{mantra}}"\n\nVocê escolheu isso há um tempo.\n\nAinda é algo que você reconhece?',
 
   ...psPt,
 
