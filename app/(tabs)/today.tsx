@@ -843,7 +843,9 @@ export default function TodayScreen() {
 
         {/* Add to Home Screen — shown after completing at least 1 reset */}
         {completed && progress.completedDays.length >= 1 && (
-          <AddToHomeScreenPrompt delay={800} />
+          <View style={{ marginTop: 28, marginHorizontal: Spacing.xl }}>
+            <AddToHomeScreenPrompt delay={800} />
+          </View>
         )}
 
         {/* Finish button — inline in the scroll flow, appears after all reset content */}

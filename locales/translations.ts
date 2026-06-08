@@ -405,7 +405,7 @@ const en: TranslationMap = {
 
   // ── Tomorrow — stage-based messages ──────────────────────────────────────────
   'today.tomorrow.s1.0': "You don't need to do more. Just return.",
-  'today.tomorrow.s1.1': 'The path begins exactly here.',
+  'today.tomorrow.s1.1': 'Tomorrow, this space will be here for you.',
   'today.tomorrow.s1.2': 'Every return counts, even the quiet ones.',
   'today.tomorrow.s1.3': 'There is something waiting for you tomorrow.',
   'today.tomorrow.s1.4': 'One step at a time is already enough.',
@@ -1311,6 +1311,14 @@ const en: TranslationMap = {
   'mantra.progress.v1': 'When you came here, you brought a word:\n\n"{{mantra}}"\n\nIt hasn\'t gone anywhere.',
   'mantra.progress.v2': '"{{mantra}}"\n\nYou picked this a while ago.\n\nIs it still something you recognize?',
 
+  // ── Add to Home Screen prompt ──────────────────────────────────────────────
+  'ath.title':       'Coming back tomorrow can be simpler.',
+  'ath.body':        'Add Daily Reset to your home screen so you can find it when you need it.',
+  'ath.ios.hint':    "Tap Share, then 'Add to Home Screen'.",
+  'ath.cta.ios':     'Got it',
+  'ath.cta.android': 'Add to home screen',
+  'ath.dismiss':     'Not now',
+
   ...psEn,
 };
 
@@ -1575,7 +1583,7 @@ const es: TranslationMap = {
 
   // ── Mañana — mensajes por etapa ──────────────────────────────────────────────
   'today.tomorrow.s1.0': 'No necesitas hacer más. Solo volver.',
-  'today.tomorrow.s1.1': 'El camino empieza exactamente aquí.',
+  'today.tomorrow.s1.1': 'Mañana, este espacio estará esperándote.',
   'today.tomorrow.s1.2': 'Cada regreso cuenta, incluso los silenciosos.',
   'today.tomorrow.s1.3': 'Hay algo esperándote mañana.',
   'today.tomorrow.s1.4': 'Un paso a la vez ya es suficiente.',
@@ -3573,6 +3581,14 @@ const es: TranslationMap = {
   'mantra.progress.v1': 'Cuando llegaste, trajiste una palabra:\n\n"{{mantra}}"\n\nNo se ha ido a ningún lado.',
   'mantra.progress.v2': '"{{mantra}}"\n\nElegiste esto hace algún tiempo.\n\n¿Sigue siendo algo que reconoces?',
 
+  // ── Add to Home Screen prompt ──────────────────────────────────────────────
+  'ath.title':       'Volver mañana puede ser más simple.',
+  'ath.body':        'Añade Daily Reset a tu pantalla de inicio para encontrarlo cuando lo necesites.',
+  'ath.ios.hint':    "Toca Compartir y luego 'Añadir a pantalla de inicio'.",
+  'ath.cta.ios':     'Entendido',
+  'ath.cta.android': 'Añadir a pantalla de inicio',
+  'ath.dismiss':     'Ahora no',
+
   ...psEs,
 };
 
@@ -3981,7 +3997,7 @@ const fr: TranslationMap = {
 
   // ── Demain — messages par étape ──────────────────────────────────────────────
   'today.tomorrow.s1.0': "Tu n'as pas besoin de faire plus. Juste revenir.",
-  'today.tomorrow.s1.1': 'Le chemin commence exactement ici.',
+  'today.tomorrow.s1.1': 'Demain, cet espace sera là pour vous.',
   'today.tomorrow.s1.2': 'Chaque retour compte, même les plus discrets.',
   'today.tomorrow.s1.3': "Il y a quelque chose qui t'attend demain.",
   'today.tomorrow.s1.4': "Un pas à la fois, c'est déjà suffisant.",
@@ -6193,6 +6209,14 @@ const fr: TranslationMap = {
   'mantra.progress.v1': 'En arrivant ici, tu as apporté un mot :\n\n"{{mantra}}"\n\nIl n\'est allé nulle part.',
   'mantra.progress.v2': '"{{mantra}}"\n\nTu as choisi cela il y a quelque temps.\n\nEst-ce que tu le reconnais encore ?',
 
+  // ── Add to Home Screen prompt ──────────────────────────────────────────────
+  'ath.title':       'Revenir demain peut être plus simple.',
+  'ath.body':        "Ajoutez Daily Reset à votre écran d'accueil pour le retrouver quand vous en avez besoin.",
+  'ath.ios.hint':    "Appuyez sur Partager, puis sur 'Ajouter à l'écran d'accueil'.",
+  'ath.cta.ios':     'Compris',
+  'ath.cta.android': "Ajouter à l'écran d'accueil",
+  'ath.dismiss':     'Pas maintenant',
+
   ...psFr,
 };
 
@@ -6597,7 +6621,7 @@ const de: TranslationMap = {
 
   // ── Morgen — Nachrichten nach Phase ──────────────────────────────────────────
   'today.tomorrow.s1.0': 'Du musst nicht mehr tun. Nur zurückkehren.',
-  'today.tomorrow.s1.1': 'Der Weg beginnt genau hier.',
+  'today.tomorrow.s1.1': 'Morgen ist dieser Raum wieder für dich da.',
   'today.tomorrow.s1.2': 'Jede Rückkehr zählt, auch die stillen.',
   'today.tomorrow.s1.3': 'Morgen wartet etwas auf dich.',
   'today.tomorrow.s1.4': 'Ein Schritt nach dem anderen ist schon genug.',
@@ -8794,6 +8818,14 @@ const de: TranslationMap = {
   'mantra.progress.v1': 'Als du hierher kamst, hast du ein Wort mitgebracht:\n\n"{{mantra}}"\n\nEs ist nirgendwo hingegangen.',
   'mantra.progress.v2': '"{{mantra}}"\n\nDu hast das vor einer Weile gewählt.\n\nErkennst du es noch?',
 
+  // ── Add to Home Screen prompt ──────────────────────────────────────────────
+  'ath.title':       'Morgen zurückzukommen kann einfacher sein.',
+  'ath.body':        'Füge Daily Reset zu deinem Startbildschirm hinzu, damit du es findest, wenn du es brauchst.',
+  'ath.ios.hint':    "Tippe auf Teilen und dann auf 'Zum Home-Bildschirm'.",
+  'ath.cta.ios':     'Verstanden',
+  'ath.cta.android': 'Zum Startbildschirm hinzufügen',
+  'ath.dismiss':     'Nicht jetzt',
+
   ...psDe,
 };
 
@@ -8951,7 +8983,7 @@ const pt: TranslationMap = {
 
   // Amanhã — mensagens por estágio
   'today.tomorrow.s1.0': 'Você não precisa fazer mais. Só voltar.',
-  'today.tomorrow.s1.1': 'O caminho começa exatamente aqui.',
+  'today.tomorrow.s1.1': 'Amanhã, este espaço estará esperando por você.',
   'today.tomorrow.s1.2': 'Cada retorno conta, mesmo os pequenos.',
   'today.tomorrow.s1.3': 'Há algo te esperando amanhã.',
   'today.tomorrow.s1.4': 'Um passo de cada vez já é suficiente.',
@@ -11110,6 +11142,14 @@ const pt: TranslationMap = {
   'mantra.progress.v0': '"{{mantra}}"\n\nVocê escolheu isso quando chegou.\n\nAinda significa algo para você?',
   'mantra.progress.v1': 'Quando você chegou, trouxe uma palavra:\n\n"{{mantra}}"\n\nEla não foi a lugar nenhum.',
   'mantra.progress.v2': '"{{mantra}}"\n\nVocê escolheu isso há um tempo.\n\nAinda é algo que você reconhece?',
+
+  // ── Add to Home Screen prompt ──────────────────────────────────────────────
+  'ath.title':       'Voltar amanhã pode ser mais simples.',
+  'ath.body':        'Adicione o Daily Reset à sua tela inicial para encontrá-lo quando precisar.',
+  'ath.ios.hint':    "Toque em compartilhar e depois em 'Adicionar à Tela de Início'.",
+  'ath.cta.ios':     'Ok, entendi',
+  'ath.cta.android': 'Adicionar à tela inicial',
+  'ath.dismiss':     'Agora não',
 
   ...psPt,
 

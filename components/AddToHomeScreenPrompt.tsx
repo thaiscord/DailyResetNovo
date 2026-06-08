@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, StyleSheet, Animated, Easing, Platform } 
 import { Ionicons } from '@expo/vector-icons';
 import { Colors, Typography, Spacing, Radii } from '../theme';
 import { useAddToHomeScreen } from '../hooks/useAddToHomeScreen';
+import { useLanguage } from '../hooks/useLanguage';
 
 interface Props {
   /** Delay in ms before the card fades in */
@@ -11,6 +12,7 @@ interface Props {
 
 export default function AddToHomeScreenPrompt({ delay = 600 }: Props) {
   const { status, accept, dismiss } = useAddToHomeScreen();
+  const { t } = useLanguage();
   const opacity = useRef(new Animated.Value(0)).current;
   const ty = useRef(new Animated.Value(10)).current;
 
@@ -46,30 +48,25 @@ export default function AddToHomeScreenPrompt({ delay = 600 }: Props) {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.title}>Deixe o Daily Reset mais perto de você</Text>
+      <Text style={styles.title}>{t('ath.title')}</Text>
 
-      <Text style={styles.body}>
-        Adicione à tela inicial para voltar com mais facilidade amanhã.
-      </Text>
+      <Text style={styles.body}>{t('ath.body')}</Text>
 
       {isIos && (
         <View style={styles.iosHint}>
           <Ionicons name="share-outline" size={13} color={Colors.textSecondary} style={{ marginTop: 1 }} />
-          <Text style={styles.iosHintText}>
-            Toque em compartilhar e depois em{' '}
-            <Text style={styles.iosHintEmphasis}>"Adicionar à Tela de Início"</Text>.
-          </Text>
+          <Text style={styles.iosHintText}>{t('ath.ios.hint')}</Text>
         </View>
       )}
 
       <View style={styles.actions}>
         <TouchableOpacity style={styles.btnPrimary} onPress={accept} activeOpacity={0.8}>
           <Text style={styles.btnPrimaryText}>
-            {isIos ? 'Ok, entendi' : 'Adicionar à tela inicial'}
+            {isIos ? t('ath.cta.ios') : t('ath.cta.android')}
           </Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.btnSecondary} onPress={dismiss} activeOpacity={0.7}>
-          <Text style={styles.btnSecondaryText}>Agora não</Text>
+          <Text style={styles.btnSecondaryText}>{t('ath.dismiss')}</Text>
         </TouchableOpacity>
       </View>
 
@@ -85,7 +82,6 @@ const styles = StyleSheet.create({
     borderColor: 'rgba(201,168,76,0.18)',
     padding: Spacing.lg,
     gap: Spacing.sm,
-    // Subtle shadow
     shadowColor: '#1C1C1C',
     shadowOffset: { width: 0, height: 3 },
     shadowOpacity: 0.07,
@@ -134,10 +130,6 @@ const styles = StyleSheet.create({
     fontSize: Typography.sizes.sm,
     color: Colors.textSecondary,
     lineHeight: 19,
-  },
-  iosHintEmphasis: {
-    fontWeight: Typography.weights.semibold,
-    color: Colors.textPrimary,
   },
   actions: {
     flexDirection: 'column',
