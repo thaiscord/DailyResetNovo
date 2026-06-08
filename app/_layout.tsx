@@ -14,6 +14,11 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   useEffect(() => {
+    // Register service worker on web — required for Chrome/Android beforeinstallprompt
+    if (Platform.OS === 'web' && typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+
     loadAppDateOffset().finally(() => {
       SplashScreen.hideAsync();
     });

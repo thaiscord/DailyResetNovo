@@ -35,6 +35,7 @@ import {
 import { didReturnAfterAbsence, getContinuityPhrase } from '../../utils/progressionEngine';
 import { getAppNow } from '../../utils/appDate';
 import ComebackCard from '../../components/ComebackCard';
+import AddToHomeScreenPrompt from '../../components/AddToHomeScreenPrompt';
 import { useContentMemory } from '../../hooks/useContentMemory';
 import { getReflectionWithId } from '../../utils/contentSystem';
 import { getInsightForContext, shouldShowCompletionInsight } from '../../utils/socialProof';
@@ -838,6 +839,11 @@ export default function TodayScreen() {
         {/* Tomorrow Continuity Card — after completion, no spoilers */}
         {completed && (
           <TomorrowContinuityCard seed={progress.currentDay} streak={progress.streak} />
+        )}
+
+        {/* Add to Home Screen — shown after completing at least 1 reset */}
+        {completed && progress.completedDays.length >= 1 && (
+          <AddToHomeScreenPrompt delay={800} />
         )}
 
         {/* Finish button — inline in the scroll flow, appears after all reset content */}

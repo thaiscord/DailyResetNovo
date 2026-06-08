@@ -22,6 +22,16 @@ export default function Root({ children }: { children: React.ReactNode }) {
 
         <ScrollViewStyleReset />
 
+        {/* Capture beforeinstallprompt before React mounts — prevents race condition
+            where Chrome fires the event before useEffect registers a listener. */}
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.__ath_deferred = null;
+          window.addEventListener('beforeinstallprompt', function(e) {
+            e.preventDefault();
+            window.__ath_deferred = e;
+          });
+        `}} />
+
         {/* Keep the page background matching the app cream so any brief rendering
             gap never shows a white flash — this is the single most reliable
             anti-flicker measure on web. */}

@@ -62,6 +62,9 @@ export const StorageKeys = {
   SPACE_PROMPT_HISTORY: 'space_prompt_history_v1',
   // Path memories — tracks which memories have been surfaced
   PATH_MEMORY_SEEN: 'path_memory_seen_v1',
+  // Add to Home Screen prompt
+  ATH_ACCEPTED: 'ath_accepted_v1',
+  ATH_DISMISSED_AT: 'ath_dismissed_at_v1',
 };
 
 /**
