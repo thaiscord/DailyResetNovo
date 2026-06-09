@@ -1266,6 +1266,21 @@ const en: TranslationMap = {
   'profile.footer.p4': 'Growth is built softly.',
   'profile.footer.p5': 'Quiet progress still counts.',
 
+  // ── Feedback ──────────────────────────────────────────────────────────────────
+  'feedback.row.label':             'Share Feedback',
+  'feedback.sheet.eyebrow':         'YOUR VOICE',
+  'feedback.sheet.title':           'How has it been?',
+  'feedback.sheet.sub':             'A few words go a long way.',
+  'feedback.type.positive':         'Something that helped',
+  'feedback.type.positive.sub':     'Share what made a difference.',
+  'feedback.type.suggestion':       'Suggestion or idea',
+  'feedback.type.suggestion.sub':   'Something you\'d like to see.',
+  'feedback.input.placeholder':     'Share what\'s on your mind...',
+  'feedback.send':                  'Send',
+  'feedback.success':               'Thank you for sharing.',
+  'feedback.error':                 'Couldn\'t send this right now.',
+  'feedback.back':                  'Back',
+
   // ── Return experience ────────────────────────────────────────────────────────
   'return.heading':       "You're back.",
   'return.30plus.body':   "You were away for a while.\n\nNothing here kept score.\nNothing here needs an explanation.\n\nYou showed up.\nThat's the whole thing.",
@@ -2018,6 +2033,21 @@ const es: TranslationMap = {
   'profile.footer.p3': 'El impulso comienza en silencio.',
   'profile.footer.p4': 'El crecimiento se construye suavemente.',
   'profile.footer.p5': 'El progreso silencioso también cuenta.',
+
+  // ── Feedback ──────────────────────────────────────────────────────────────────
+  'feedback.row.label':             'Compartir opinión',
+  'feedback.sheet.eyebrow':         'TU VOZ',
+  'feedback.sheet.title':           '¿Cómo ha sido?',
+  'feedback.sheet.sub':             'Unas palabras marcan la diferencia.',
+  'feedback.type.positive':         'Algo que te ayudó',
+  'feedback.type.positive.sub':     'Comparte lo que hizo diferencia.',
+  'feedback.type.suggestion':       'Sugerencia o mejora',
+  'feedback.type.suggestion.sub':   'Algo que te gustaría ver.',
+  'feedback.input.placeholder':     'Escribe lo que quieras...',
+  'feedback.send':                  'Enviar',
+  'feedback.success':               'Gracias por compartir.',
+  'feedback.error':                 'No pudimos enviarlo ahora.',
+  'feedback.back':                  'Volver',
 
   // ── Habits — locked state ──────────────────────────────────────────────────
   'habits.locked.title': 'Los hábitos se desbloquean en el Día 7',
@@ -5713,6 +5743,22 @@ const fr: TranslationMap = {
   'profile.footer.p3': 'L\'élan commence doucement.',
   'profile.footer.p4': 'La croissance se construit en douceur.',
   'profile.footer.p5': 'Le progrès silencieux compte aussi.',
+
+  // ── Feedback ──────────────────────────────────────────────────────────────────
+  'feedback.row.label':             'Donner mon avis',
+  'feedback.sheet.eyebrow':         'TA VOIX',
+  'feedback.sheet.title':           'Comment ça s\'est passé ?',
+  'feedback.sheet.sub':             'Quelques mots font toute la différence.',
+  'feedback.type.positive':         'Quelque chose qui m\'a aidé',
+  'feedback.type.positive.sub':     'Partage ce qui a fait la différence.',
+  'feedback.type.suggestion':       'Suggestion ou idée',
+  'feedback.type.suggestion.sub':   'Quelque chose que tu aimerais voir.',
+  'feedback.input.placeholder':     'Écris ce qui te passe par la tête...',
+  'feedback.send':                  'Envoyer',
+  'feedback.success':               'Merci d\'avoir partagé.',
+  'feedback.error':                 'Impossible d\'envoyer pour l\'instant.',
+  'feedback.back':                  'Retour',
+
   'profile.section.transformation': 'MA TRANSFORMATION',
   'profile.section.journey':        'MON VOYAGE',
   'profile.section.intentions':     'MES INTENTIONS',
@@ -8324,6 +8370,22 @@ const de: TranslationMap = {
   'profile.footer.p3': 'Schwung beginnt leise.',
   'profile.footer.p4': 'Wachstum entsteht sanft.',
   'profile.footer.p5': 'Stiller Fortschritt zählt auch.',
+
+  // ── Feedback ──────────────────────────────────────────────────────────────────
+  'feedback.row.label':             'Feedback geben',
+  'feedback.sheet.eyebrow':         'DEINE STIMME',
+  'feedback.sheet.title':           'Wie war es bisher?',
+  'feedback.sheet.sub':             'Ein paar Worte bewirken viel.',
+  'feedback.type.positive':         'Etwas, das mir geholfen hat',
+  'feedback.type.positive.sub':     'Teile, was einen Unterschied gemacht hat.',
+  'feedback.type.suggestion':       'Vorschlag oder Idee',
+  'feedback.type.suggestion.sub':   'Etwas, das du dir wünschst.',
+  'feedback.input.placeholder':     'Schreib, was dir in den Sinn kommt...',
+  'feedback.send':                  'Senden',
+  'feedback.success':               'Danke für dein Feedback.',
+  'feedback.error':                 'Senden gerade nicht möglich.',
+  'feedback.back':                  'Zurück',
+
   'profile.section.transformation': 'MEINE TRANSFORMATION',
   'profile.section.journey':        'MEINE REISE',
   'profile.section.intentions':     'MEINE ABSICHTEN',
@@ -11097,6 +11159,21 @@ const pt: TranslationMap = {
   'profile.footer.p3': 'O ritmo começa em silêncio.',
   'profile.footer.p4': 'O crescimento acontece devagar.',
   'profile.footer.p5': 'Progresso silencioso também conta.',
+
+  // ── Feedback ──────────────────────────────────────────────────────────────────
+  'feedback.row.label':             'Sua opinião',
+  'feedback.sheet.eyebrow':         'SUA VOZ',
+  'feedback.sheet.title':           'Como está sendo?',
+  'feedback.sheet.sub':             'Algumas palavras fazem diferença.',
+  'feedback.type.positive':         'Algo que me ajudou',
+  'feedback.type.positive.sub':     'Compartilhe o que fez diferença.',
+  'feedback.type.suggestion':       'Sugestão ou melhoria',
+  'feedback.type.suggestion.sub':   'Algo que você gostaria de ver.',
+  'feedback.input.placeholder':     'Escreva o que quiser...',
+  'feedback.send':                  'Enviar',
+  'feedback.success':               'Obrigado por compartilhar.',
+  'feedback.error':                 'Não conseguimos enviar agora.',
+  'feedback.back':                  'Voltar',
 
   // ── Return experience ────────────────────────────────────────────────────────
   'return.heading':       'Você voltou.',

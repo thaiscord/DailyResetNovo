@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   View, Text, StyleSheet, ScrollView, TouchableOpacity,
   TextInput, Modal, Animated, Platform, useWindowDimensions,
+  KeyboardAvoidingView,
 } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { DailyResetLogo } from '../../components/DailyResetLogo';
@@ -631,6 +632,13 @@ export default function ProfileScreen() {
   const [lang, setLangState]              = useState<Lang>(contextLang);
   const [showLangPicker, setShowLangPicker] = useState(false);
   const [showProfilePicker, setShowProfilePicker] = useState(false);
+  // Feedback
+  const [showFeedback, setShowFeedback]       = useState(false);
+  const [feedbackStep, setFeedbackStep]       = useState<'type' | 'message'>('type');
+  const [feedbackType, setFeedbackType]       = useState<'positive' | 'suggestion' | null>(null);
+  const [feedbackText, setFeedbackText]       = useState('');
+  const [feedbackStatus, setFeedbackStatus]   = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+
   // DEV-only time travel panel state
   const [showDevPanel, setShowDevPanel]   = useState(false);
   const [devBusy, setDevBusy]             = useState(false);
@@ -728,6 +736,30 @@ export default function ProfileScreen() {
 
   const { t } = useLanguage();
 
+  const handleSendFeedback = async () => {
+    if (!feedbackText.trim() || !feedbackType) return;
+    setFeedbackStatus('sending');
+    try {
+      const res = await fetch('https://appdailyreset.com/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type: feedbackType, message: feedbackText.trim(), lang }),
+      });
+      if (!res.ok) throw new Error('non-ok');
+      setFeedbackStatus('success');
+    } catch {
+      setFeedbackStatus('error');
+    }
+  };
+
+  const closeFeedback = () => {
+    setShowFeedback(false);
+    setFeedbackStep('type');
+    setFeedbackType(null);
+    setFeedbackText('');
+    setFeedbackStatus('idle');
+  };
+
   const rows = [
     {
       icon: 'notifications-outline',
@@ -736,6 +768,7 @@ export default function ProfileScreen() {
       onPress: () => router.push('/notification-settings'),
     },
     { icon: 'language-outline', label: t('profile.row.language'), value: LANG_LABELS[lang] ?? 'English', onPress: () => setShowLangPicker(true) },
+    { icon: 'chatbubble-ellipses-outline', label: t('feedback.row.label'), onPress: () => setShowFeedback(true) },
     { icon: 'document-text-outline', label: t('profile.row.privacy'),  onPress: () => setShowPrivacy(true) },
     { icon: 'reader-outline',        label: t('profile.row.terms'),    onPress: () => setShowTerms(true) },
     { icon: 'trash-outline',         label: t('profile.row.reset'),    onPress: handleReset, danger: true },
@@ -1282,6 +1315,126 @@ export default function ProfileScreen() {
           </ScrollView>
         </View>
       </Modal>
+      {/* ── Feedback Modal ──────────────────────────────────────────────────── */}
+      <Modal
+        visible={showFeedback}
+        animationType="slide"
+        transparent
+        onRequestClose={closeFeedback}
+      >
+        <TouchableOpacity
+          style={styles.langOverlay}
+          activeOpacity={1}
+          onPress={closeFeedback}
+        >
+          <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
+          <View style={styles.feedbackSheet}>
+            <View style={styles.langHandle} />
+
+            {feedbackStatus === 'success' ? (
+              /* ── Success state ── */
+              <View style={styles.feedbackOutcome}>
+                <View style={styles.feedbackOutcomeIcon}>
+                  <Ionicons name="checkmark" size={22} color={Colors.charcoal} />
+                </View>
+                <Text style={styles.feedbackOutcomeTitle}>{t('feedback.success')}</Text>
+                <TouchableOpacity style={styles.feedbackOutcomeBtn} onPress={closeFeedback} activeOpacity={0.75}>
+                  <Text style={styles.feedbackOutcomeBtnText}>OK</Text>
+                </TouchableOpacity>
+              </View>
+            ) : feedbackStatus === 'error' ? (
+              /* ── Error state ── */
+              <View style={styles.feedbackOutcome}>
+                <View style={[styles.feedbackOutcomeIcon, styles.feedbackOutcomeIconError]}>
+                  <Ionicons name="alert" size={20} color={Colors.danger} />
+                </View>
+                <Text style={styles.feedbackOutcomeTitle}>{t('feedback.error')}</Text>
+                <TouchableOpacity style={styles.feedbackOutcomeBtn} onPress={() => setFeedbackStatus('idle')} activeOpacity={0.75}>
+                  <Text style={styles.feedbackOutcomeBtnText}>{t('feedback.back')}</Text>
+                </TouchableOpacity>
+              </View>
+            ) : feedbackStep === 'type' ? (
+              /* ── Step 1: choose type ── */
+              <>
+                <View style={styles.langHeader}>
+                  <Text style={styles.langEyebrow}>{t('feedback.sheet.eyebrow')}</Text>
+                  <Text style={styles.langTitle}>{t('feedback.sheet.title')}</Text>
+                  <Text style={styles.feedbackSub}>{t('feedback.sheet.sub')}</Text>
+                </View>
+                <TouchableOpacity
+                  style={styles.feedbackTypeOption}
+                  activeOpacity={0.82}
+                  onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setFeedbackType('positive'); setFeedbackStep('message'); }}
+                >
+                  <View style={styles.feedbackTypeIconWrap}>
+                    <Ionicons name="heart-outline" size={18} color={Colors.gold} />
+                  </View>
+                  <View style={styles.feedbackTypeText}>
+                    <Text style={styles.feedbackTypeLabel}>{t('feedback.type.positive')}</Text>
+                    <Text style={styles.feedbackTypeSub}>{t('feedback.type.positive.sub')}</Text>
+                  </View>
+                  <Ionicons name="chevron-forward" size={14} color={Colors.textMuted} />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={styles.feedbackTypeOption}
+                  activeOpacity={0.82}
+                  onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); setFeedbackType('suggestion'); setFeedbackStep('message'); }}
+                >
+                  <View style={styles.feedbackTypeIconWrap}>
+                    <Ionicons name="bulb-outline" size={18} color={Colors.gold} />
+                  </View>
+                  <View style={styles.feedbackTypeText}>
+                    <Text style={styles.feedbackTypeLabel}>{t('feedback.type.suggestion')}</Text>
+                    <Text style={styles.feedbackTypeSub}>{t('feedback.type.suggestion.sub')}</Text>
+                  </View>
+                  <Ionicons name="chevron-forward" size={14} color={Colors.textMuted} />
+                </TouchableOpacity>
+              </>
+            ) : (
+              /* ── Step 2: write message ── */
+              <>
+                <View style={styles.langHeader}>
+                  <Text style={styles.langEyebrow}>{t('feedback.sheet.eyebrow')}</Text>
+                  <Text style={styles.langTitle}>
+                    {feedbackType === 'positive' ? t('feedback.type.positive') : t('feedback.type.suggestion')}
+                  </Text>
+                </View>
+                <TextInput
+                  style={styles.feedbackInput}
+                  placeholder={t('feedback.input.placeholder')}
+                  placeholderTextColor={Colors.textMuted}
+                  multiline
+                  value={feedbackText}
+                  onChangeText={setFeedbackText}
+                  autoFocus
+                  maxLength={500}
+                />
+                <View style={styles.feedbackActions}>
+                  <TouchableOpacity
+                    style={styles.feedbackBackBtn}
+                    onPress={() => { setFeedbackStep('type'); setFeedbackText(''); }}
+                    activeOpacity={0.75}
+                  >
+                    <Text style={styles.feedbackBackBtnText}>{t('feedback.back')}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[styles.feedbackSendBtn, (!feedbackText.trim() || feedbackStatus === 'sending') && styles.feedbackSendBtnDisabled]}
+                    onPress={handleSendFeedback}
+                    disabled={!feedbackText.trim() || feedbackStatus === 'sending'}
+                    activeOpacity={0.82}
+                  >
+                    <Text style={styles.feedbackSendBtnText}>
+                      {feedbackStatus === 'sending' ? '...' : t('feedback.send')}
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </>
+            )}
+          </View>
+          </KeyboardAvoidingView>
+        </TouchableOpacity>
+      </Modal>
+
       {/* ── DEV Time Travel Modal ───────────────────────────────────── */}
       {__DEV__ && (
         <Modal
@@ -1911,6 +2064,136 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexShrink: 0,
+  },
+
+  // ── Feedback Sheet ───────────────────────────────────────────────────────────
+  feedbackSheet: {
+    backgroundColor: Colors.card,
+    borderTopLeftRadius: 28,
+    borderTopRightRadius: 28,
+    paddingHorizontal: Spacing.xl,
+    paddingTop: Spacing.md,
+    paddingBottom: 52,
+    gap: 10,
+    shadowColor: '#1C1C1C',
+    shadowOffset: { width: 0, height: -8 },
+    shadowOpacity: 0.12,
+    shadowRadius: 28,
+    elevation: 16,
+  },
+  feedbackSub: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+    fontStyle: 'italic',
+    marginTop: 2,
+  },
+  feedbackTypeOption: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.md,
+    backgroundColor: Colors.background,
+    borderRadius: Radii.lg,
+    padding: Spacing.base,
+    borderWidth: 1,
+    borderColor: 'rgba(28,28,28,0.07)',
+  },
+  feedbackTypeIconWrap: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: Colors.accentDim,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexShrink: 0,
+  },
+  feedbackTypeText: { flex: 1, gap: 2 },
+  feedbackTypeLabel: {
+    fontSize: Typography.sizes.sm,
+    fontWeight: Typography.weights.bold,
+    color: Colors.textPrimary,
+    letterSpacing: -0.1,
+  },
+  feedbackTypeSub: {
+    fontSize: Typography.sizes.xs,
+    color: Colors.textMuted,
+  },
+  feedbackInput: {
+    backgroundColor: Colors.background,
+    borderRadius: Radii.lg,
+    borderWidth: 1,
+    borderColor: 'rgba(28,28,28,0.1)',
+    padding: Spacing.base,
+    fontSize: Typography.sizes.sm,
+    color: Colors.textPrimary,
+    minHeight: 100,
+    textAlignVertical: 'top',
+    lineHeight: 22,
+  },
+  feedbackActions: {
+    flexDirection: 'row',
+    gap: Spacing.sm,
+  },
+  feedbackBackBtn: {
+    flex: 1,
+    paddingVertical: Spacing.md,
+    borderRadius: Radii.lg,
+    backgroundColor: Colors.backgroundSecondary,
+    alignItems: 'center',
+  },
+  feedbackBackBtnText: {
+    fontSize: Typography.sizes.sm,
+    fontWeight: Typography.weights.semibold,
+    color: Colors.textSecondary,
+  },
+  feedbackSendBtn: {
+    flex: 2,
+    paddingVertical: Spacing.md,
+    borderRadius: Radii.lg,
+    backgroundColor: Colors.accent,
+    alignItems: 'center',
+  },
+  feedbackSendBtnDisabled: {
+    opacity: 0.45,
+  },
+  feedbackSendBtnText: {
+    fontSize: Typography.sizes.sm,
+    fontWeight: Typography.weights.bold,
+    color: Colors.charcoal,
+  },
+  feedbackOutcome: {
+    alignItems: 'center',
+    paddingVertical: Spacing.xl,
+    gap: Spacing.md,
+  },
+  feedbackOutcomeIcon: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    backgroundColor: Colors.accent,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  feedbackOutcomeIconError: {
+    backgroundColor: 'rgba(224,64,64,0.12)',
+  },
+  feedbackOutcomeTitle: {
+    fontSize: Typography.sizes.base,
+    fontWeight: Typography.weights.bold,
+    color: Colors.textPrimary,
+    textAlign: 'center',
+    letterSpacing: -0.2,
+  },
+  feedbackOutcomeBtn: {
+    marginTop: Spacing.sm,
+    paddingVertical: Spacing.md,
+    paddingHorizontal: Spacing.xl,
+    borderRadius: Radii.full,
+    backgroundColor: Colors.backgroundSecondary,
+  },
+  feedbackOutcomeBtnText: {
+    fontSize: Typography.sizes.sm,
+    fontWeight: Typography.weights.semibold,
+    color: Colors.textPrimary,
   },
 
   // ── DEV Time Travel ───────────────────────────────────────────────────────────

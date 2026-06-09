@@ -748,7 +748,25 @@ export default function TodayScreen() {
             />
           </Animated.View>
         ) : (
-          <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
+          <>
+            {progress.completedDays.length === 0 && (
+              <Text style={{
+                textAlign: 'center',
+                fontSize: Typography.sizes.sm,
+                color: Colors.textMuted,
+                fontStyle: 'italic',
+                marginHorizontal: Spacing.xl,
+                marginTop: Spacing.md,
+                marginBottom: 4,
+              }}>
+                {lang === 'pt' ? 'Seu primeiro reset. Leva menos de 2 minutos.' :
+                 lang === 'es' ? 'Tu primer reset. Tarda menos de 2 minutos.' :
+                 lang === 'fr' ? 'Votre premier reset. Prend moins de 2 minutes.' :
+                 lang === 'de' ? 'Dein erstes Reset. Dauert weniger als 2 Minuten.' :
+                 'Your first reset. Takes less than 2 minutes.'}
+              </Text>
+            )}
+            <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
             <DailyResetCard
               data={dayData}
               categoryOverride={getStateCategory(dailyState) ?? undefined}
@@ -775,6 +793,7 @@ export default function TodayScreen() {
               })}
             />
           </Animated.View>
+          </>
         )}
 
         {/* "What I've Noticed" — conditional pattern card */}
@@ -1097,7 +1116,7 @@ function DailyResetCard({ data, categoryOverride, onActionSave, onReflectionSave
 }) {
   const { t: cardT } = useLanguage();
   const activeTheme = categoryOverride ?? data.theme;
-  const [expanded, setExpanded] = useState<string | null>(null);
+  const [expanded, setExpanded] = useState<string | null>(data.day === 1 ? 'action' : null);
   const toggle = (key: string) => {
     setExpanded(prev => {
       const next = prev === key ? null : key;
