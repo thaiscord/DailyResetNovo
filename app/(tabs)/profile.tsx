@@ -740,7 +740,7 @@ export default function ProfileScreen() {
     if (!feedbackText.trim() || !feedbackType) return;
     setFeedbackStatus('sending');
     try {
-      const res = await fetch('https://appdailyreset.com/api/feedback', {
+      const res = await fetch('https://www.appdailyreset.com/api/feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type: feedbackType, message: feedbackText.trim(), lang }),
